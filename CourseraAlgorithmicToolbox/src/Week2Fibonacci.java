@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -27,25 +26,13 @@ public class Week2Fibonacci {
     static class FastScan {
         BufferedReader br;
         StringTokenizer st;
-
         FastScan() {
             try {
-                br = new BufferedReader(new
-                        InputStreamReader(System.in));
+                br = new BufferedReader(new InputStreamReader(System.in));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-        FastScan(InputStream stream) {
-            try {
-                br = new BufferedReader(new
-                        InputStreamReader(stream));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
         String next() {
             while (st == null || !st.hasMoreTokens()) {
                 try {
@@ -56,7 +43,6 @@ public class Week2Fibonacci {
             }
             return st.nextToken();
         }
-
         int nextInt() {
             return Integer.parseInt(next());
         }
