@@ -2,7 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.StringTokenizer;
 
 /*
@@ -33,31 +35,35 @@ Output:
 2
 𝐹10 + 𝐹11 + · · · + 𝐹200 = 734 544 867 157 818 093 234 908 902 110 449 296 423 262
  */
-public class Week2FibonacciLastDigitOfSumAgain {
+public class Week2FibonacciLastDigitOfSumOfSquare {
     public static void main(String[] args) {
         FastScan scan = new FastScan();
-        int fibonacciNumber = scan.nextInt();
-        BigInteger[] nFibonacciNumber = getNFibonacciNumber(fibonacciNumber + 1);
-        String valueOf = String.valueOf(sumOfArray(nFibonacciNumber));
-        System.out.println(valueOf.charAt(valueOf.length() - 1));
+        long fibonacciNumber = scan.nextLong();
+        LocalDateTime startTime = LocalDateTime.now();
+        System.out.println(getFibonacciLastDigitOfSquareSum(fibonacciNumber));
+        System.out.println("Time took to complete (in sec) is: " + ChronoUnit.SECONDS.between(startTime, LocalDateTime.now()));
     }
 
-    private static BigInteger sumOfArray(BigInteger[] nFibonacciNumber) {
-        BigInteger result = BigInteger.ZERO;
-        for (int i = 0; i < nFibonacciNumber.length; i++) {
-            result = result.add(nFibonacciNumber[i]);
+    private static int getFibonacciLastDigitOfSquareSum(long fibonacciNumber) {
+        BigDecimal fistNumber = BigDecimal.ONE;
+        BigDecimal secondNumber = BigDecimal.ZERO;
+        BigDecimal fibNumber = BigDecimal.ONE;
+        int sumLastDigit = 1;
+        for (int i = 2; i <= fibonacciNumber; i++) {
+            fibNumber = fistNumber.add(secondNumber);
+            sumLastDigit = getSquareLastDigit(fibNumber);
+            secondNumber = fistNumber;
+            fistNumber = fibNumber;
         }
-        return result;
+        return sumLastDigit;
     }
 
-    private static BigInteger[] getNFibonacciNumber(int fibonacciNumber) {
-        BigInteger[] numberArray = new BigInteger[fibonacciNumber];
-        for (int i = 0; i < fibonacciNumber; i++) {
-            if (i == 0) numberArray[i] = BigInteger.valueOf(0);
-            else if (i == 1) numberArray[i] = BigInteger.valueOf(1);
-            else numberArray[i] = numberArray[i - 1].add(numberArray[i - 2]);
-        }
-        return numberArray;
+    private static int getSquareLastDigit(BigDecimal fib) {
+        return getLastDigit(fib.multiply(fib).toString());
+    }
+
+    private static int getLastDigit(String number) {
+        return Integer.parseInt(String.valueOf(number.charAt(number.length() - 1)));
     }
 
     static class FastScan {
@@ -95,6 +101,10 @@ public class Week2FibonacciLastDigitOfSumAgain {
 
         int nextInt() {
             return Integer.parseInt(next());
+        }
+
+        long nextLong() {
+            return Long.parseLong(next());
         }
     }
 }

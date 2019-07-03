@@ -2,9 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.StringTokenizer;
-import java.util.stream.Collectors;
 
 /*
 
@@ -26,35 +25,43 @@ Input:
 Output:
 5
 The sum is equal to 927 372 692 193 078 999 175, the last digit is 5.
-
+0 1 1 2 3
  */
 public class Week2FibonacciLastDigitOfSum {
     public static void main(String[] args) {
         FastScan scan = new FastScan();
         long fibonacciNumber = scan.nextLong();
-        ArrayList<Integer> nFibonacciNumber = getNFibonacciNumber(fibonacciNumber + 1);
-        System.out.println(getLastDigit(sumOfArray(nFibonacciNumber)));
+        System.out.println(getFibonacciLastDigitOfSum(fibonacciNumber));
     }
 
-    private static int sumOfArray(ArrayList<Integer> nFibonacciNumber) {
-        int result = 0;
-        return nFibonacciNumber.stream().collect(Collectors.summingInt(Integer::intValue));
-    }
+    private static int getFibonacciLastDigitOfSum(long fibonacciNumber) {
+        BigDecimal fistNumber = BigDecimal.ONE;
+        BigDecimal secondNumber = BigDecimal.ZERO;
+        BigDecimal fibNumber = BigDecimal.ONE;
+        int sumLastDigit = 1;
 
-    static ArrayList<Integer> getNFibonacciNumber(long fibonacciNumber) {
-        ArrayList<Integer> numberArray = new ArrayList<>();
-//        int[] numberArray = new int[fibonacciNumber];
-        for (int i = 0; i < fibonacciNumber; i++) {
-            if (i == 0) numberArray.add(0);
-            else if (i == 1) numberArray.add(1);
-            else numberArray.add(getLastDigit(numberArray.get(i - 1) + numberArray.get(i - 2)));
+        if (fibonacciNumber == 0) {
+            return 0;
         }
-        return numberArray;
+        if (fibonacciNumber == 1) {
+            return 1;
+        }
+        for (int i = 2; i <= fibonacciNumber; i++) {
+            fibNumber = fistNumber.add(secondNumber);
+            sumLastDigit = getLastDigit(sumLastDigit + getLastDigit(fibNumber.toString()));
+            secondNumber = fistNumber;
+            fistNumber = fibNumber;
+        }
+        return sumLastDigit;
     }
 
-    static int getLastDigit(int number) {
+    private static int getLastDigit(int number) {
         String value = String.valueOf(number);
         return Integer.parseInt(String.valueOf(value.charAt(value.length() - 1)));
+    }
+
+    private static int getLastDigit(String number) {
+        return Integer.parseInt(String.valueOf(number.charAt(number.length() - 1)));
     }
 
     static class FastScan {
