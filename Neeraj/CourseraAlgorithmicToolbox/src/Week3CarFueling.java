@@ -35,14 +35,15 @@ Start from 0
 loop from start to the total distance.
 Again loop through all the fuel stations from current point, to the maximum point that can be travelled.
 
-Sample 4: (10 3 4 1 2 5 9)
-10
-3
+Sample 4: (700 200 4 100 200 300 400)
+Input:
+700
+200
 4
-1 2 5 9
+100 200 300 400
 Output: -1
  */
-public class Week3CarFuelingGreedy {
+public class Week3CarFueling {
 
     public static void main(String[] args) {
         int totalDistance = FastScan.nextInt();
@@ -53,32 +54,60 @@ public class Week3CarFuelingGreedy {
             pumpsDistanceArray[i] = FastScan.nextInt();
         }
         System.out.println(minimumRefills(pumpsDistanceArray, capacityOfFuelTank, totalDistance));
+//        System.out.println(minimumRefills2(pumpsDistanceArray, capacityOfFuelTank, totalDistance));
+    }
+
+    private static int minimumRefills2(int[] pumpsDistanceArray, int capacityOfFuelTank, int totalDistance) {
+        int numberOfRefills = 0;
+        int currentRefill = 0;
+        int lastRefill = 0;
+        int numberOfPumps = pumpsDistanceArray.length;
+
+        while (currentRefill <= numberOfPumps) {
+            lastRefill = currentRefill;
+            while (currentRefill <= numberOfPumps && pumpsDistanceArray[currentRefill + 1] - pumpsDistanceArray[lastRefill] <= capacityOfFuelTank) {
+                currentRefill++;
+            }
+            if (currentRefill == lastRefill) return -1;
+            if (currentRefill <= numberOfPumps) numberOfRefills++;
+        }
+        return numberOfRefills;
     }
 
     private static int minimumRefills(int[] pumpsDistanceArray, int capacityOfFuelTank, int totalDistance) {
         int numberOfRefills = 0;
         int currentRefill = 0;
         int lastRefill = 0;
+        int distanceCovered = 0;
 
-        for (int i = 0; i < pumpsDistanceArray.length; i++) {
+//        Loop the total distance is covered.
+        while (distanceCovered < totalDistance) {
             lastRefill = currentRefill;
-//            Loop and get the Next Best distance that can be traveled with the capacity.
             for (int j = currentRefill; j < pumpsDistanceArray.length; j++) {
-                int nextBestDistance = 0;
-                if (lastRefill == 0) nextBestDistance = pumpsDistanceArray[currentRefill];
-                else nextBestDistance = pumpsDistanceArray[currentRefill] - pumpsDistanceArray[lastRefill];
-                if (nextBestDistance <= capacityOfFuelTank) {
+                int currentDistance = pumpsDistanceArray[currentRefill];
+                if ((currentDistance - distanceCovered) < capacityOfFuelTank) {
+//                    If the difference between current point and distance covered is less than fuel capacity. Go to find the next best.
+                    if (currentRefill == pumpsDistanceArray.length - 1) {
+//                        You have reached to the end of fuel pump.
+                        distanceCovered = currentDistance;
+                        numberOfRefills++;
+                        break;
+                    }
                     currentRefill++;
+                } else if ((currentDistance - distanceCovered) == capacityOfFuelTank) {
+//                    If the difference is same then add a refill.
+                    distanceCovered = currentDistance;
+                    numberOfRefills++;
+                    break;
                 } else {
                     currentRefill--;
+                    distanceCovered = pumpsDistanceArray[currentRefill];
+                    numberOfRefills++;
                     break;
                 }
             }
-            if (currentRefill == lastRefill) return -1;
-            if (currentRefill <= pumpsDistanceArray.length) {
-                numberOfRefills++;
-                i = currentRefill;
-            } else break;
+            if (lastRefill == currentRefill) return -1;
+            if ((pumpsDistanceArray[currentRefill] + capacityOfFuelTank) >= totalDistance) break;
         }
         return numberOfRefills;
     }
