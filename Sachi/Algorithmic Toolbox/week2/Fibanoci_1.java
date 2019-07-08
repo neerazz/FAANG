@@ -1,0 +1,56 @@
+import java.util.*;
+import java.io.*;
+
+//Given an integer 𝑛, find the 𝑛th Fibonacci number 𝐹𝑛
+public class Fibanoci_1 {
+
+    public static void main(String[] args) {
+        FastScanner scanner = new FastScanner(System.in);
+        int n = scanner.nextInt();
+        System.out.println(getFibonacciNumber(n));
+    }
+
+
+    private static long getFibonacciNumber(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        long first = 0, second = 1, sum = 0;
+        for (int i = 1; i < n; i++) {
+            sum = first + second;
+            first = second;
+            second = sum;
+        }
+        return sum;
+    }
+
+
+    static class FastScanner {
+        BufferedReader br;
+        StringTokenizer st;
+
+        FastScanner(InputStream stream) {
+            try {
+                br = new BufferedReader(new
+                        InputStreamReader(stream));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreTokens()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+    }
+
+}
