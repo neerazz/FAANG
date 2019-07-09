@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 //Given an integer 𝑛, find the last digit of the 𝑛th Fibonacci number 𝐹𝑛 (that is, 𝐹𝑛 mod 10).
+//SOL : Same as fibonaci, just store only the last value
 
 public class LastDigitOfFibanoci_2 {
 
@@ -26,11 +27,8 @@ public class LastDigitOfFibanoci_2 {
         if (n == 0) return 0;
         if (n == 1) return 1;
         int f = 0, s = 1, sum = 0;
-        for (long i = 2; i <= n; i++) {
-            sum = f + s;
-            if (sum > 9) {
-                sum = sum % 10;
-            }
+        for (long i = 1; i < n; i++) {
+            sum = (f + s) % 10;
             f = s;
             s = sum;
         }

@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 //Given two integers 𝑎 and 𝑏, find their greatest common divisor.
+//SOL : GCD(a,b) = GCD(b,a%b)
+
 public class GCD_3 {
 
 
@@ -13,8 +15,7 @@ public class GCD_3 {
     }
 
     private static long findGCd(int a, int b) {
-        if (b == 0) return 1;
-        if (a == 0) return 1;
+        if (a == 0 || b == 0) return 1;
         int rem = a % b;
         if (rem == 0) {
             return b;

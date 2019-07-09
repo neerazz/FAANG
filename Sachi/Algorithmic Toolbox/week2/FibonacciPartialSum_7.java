@@ -31,4 +31,3 @@ public class FibonacciPartialSum_7 {
         return sum % 10;
     }
 }
-

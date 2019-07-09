@@ -1,6 +1,8 @@
 import java.util.*;
 
 //Given two integers 𝑎 and 𝑏, find their least common multiple.
+//SOL: LCM(a,b) = a*b / GCD(a,b)
+
 //Do LCM of three
 //DO HCF and others
 //DO GCD of three
