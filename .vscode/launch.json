@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MoneyChange1",
+            "request": "launch",
+            "mainClass": "MoneyChange1",
+            "projectName": "FAANGJobPreperation_317b6fb4"
+        }
+    ]
+}
