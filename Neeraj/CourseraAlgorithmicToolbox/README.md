@@ -4,8 +4,8 @@ Algorithmic Toolbox
 ####Basics (Week 1)
 
 ####Introduction (Week 2)
-|No.	|Problem	|Status|
-| --- | --- |--- |
+|No.	|Problem	|Status
+| --- | --- |--- 
 |1	|Small fibonacci number	|``Solved``
 |2	|Last Digit of a Large Fibonacci Number	|``Solved``
 |3	|Greatest Common Divisor	|`Solved`
@@ -16,8 +16,8 @@ Algorithmic Toolbox
 |8	|Last Digit of the Sum of Squares of Fibonacci Numbers	|`UnSolved`
 
 ####Greedy algorithms
-|No.	|Problem	|Status|
-| --- | --- |--- |
+|No.	|Problem	|Status
+| --- | --- |--- 
 |1	|Changing Money	|`Solved`
 |2	|Maximizing the Value of a Loot	|`Solved`
 |3	|Car Fueling	|`UnSolved`
