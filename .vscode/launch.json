@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GCD_3",
+            "request": "launch",
+            "mainClass": "GCD_3",
+            "projectName": "FAANGJobPreperation_ff432124"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FibonacciSumLastDigit_6",
+            "request": "launch",
+            "mainClass": "FibonacciSumLastDigit_6",
+            "projectName": "FAANGJobPreperation_ff432124"
+        }
+    ]
+}
