@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FibonacciSumLastDigit_6 {
+public class W2_FibonacciSumLastDigit {
 
     //Given an integer 𝑛, find the last digit of the sum 𝐹0 +𝐹1 +···+𝐹𝑛.
     //SOL: F(0) + F(1) + F(2) + .... F(n-1) + F(n) = F(n+2) - 1

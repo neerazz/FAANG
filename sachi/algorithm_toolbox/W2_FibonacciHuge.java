@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.*;
 
-public class FibonacciHuge_5 {
+public class W2_FibonacciHuge {
 
     //Given two integers 𝑛 and 𝑚, output 𝐹𝑛 mod 𝑚 (that is, the remainder of 𝐹𝑛 when divided by 𝑚).
     //SOL: Pisano series -> Starts with 0,1

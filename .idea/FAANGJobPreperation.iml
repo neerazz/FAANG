@@ -3,8 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/week1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/week2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sachi/algorithm_toolbox" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Neeraj/CourseraAlgorithmicToolbox/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

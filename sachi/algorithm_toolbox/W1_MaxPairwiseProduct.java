@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class MaxPairwiseProduct {
+public class W1_MaxPairwiseProduct {
     static long getMaxPairwiseProduct(int[] numbers) {
         long max_product = 0;
         int n = numbers.length;

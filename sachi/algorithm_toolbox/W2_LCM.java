@@ -7,7 +7,7 @@ import java.util.*;
 //DO HCF and others
 //DO GCD of three
 
-public class LCM_4 {
+public class W2_LCM {
     private static long lcm_naive(int a, int b) {
         for (long l = 1; l <= (long) a * b; ++l)
             if (l % a == 0 && l % b == 0)
@@ -21,6 +21,7 @@ public class LCM_4 {
         long a = scanner.nextLong();
         long b = scanner.nextLong();
         System.out.println(lcm_quick(a, b));
+        scanner.close();
         //test();
     }
 

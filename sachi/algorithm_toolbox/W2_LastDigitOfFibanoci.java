@@ -3,7 +3,7 @@ import java.util.Scanner;
 //Given an integer 𝑛, find the last digit of the 𝑛th Fibonacci number 𝐹𝑛 (that is, 𝐹𝑛 mod 10).
 //SOL : Same as fibonaci, just store only the last value
 
-public class LastDigitOfFibanoci_2 {
+public class W2_LastDigitOfFibanoci {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
