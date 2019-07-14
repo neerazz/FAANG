@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+
+//Given numbers a1,a2,a3,a4...an & b1, b2, b3... bn Find a combination of max cartisean product
+//(ai*bj)
+
 public class W3_DotProduct {
 
     public static void main(String[] args) {
