@@ -5,16 +5,17 @@
 
 import java.util.Scanner;
 
-public class MoneyChange1 {
+public class W3_MoneyChange {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         System.out.println(calculateMoneyChangeFast(n));
+        scanner.close();
     }
 
     private static int calculateMoneyChangeFast(int n) {
-        int[] denominations = {10, 5, 1};
+        int[] denominations = { 10, 5, 1 };
         int coins = 0, i = 0;
         while (n > 0) {
             int a = 0, sum = 0;

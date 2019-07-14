@@ -5,7 +5,7 @@ import java.io.*;
 //SOL : a=0, b=1, a+b
 //Fi = Fi-1 + Fi-2
 
-public class Fibanoci_1 {
+public class W2_Fibanoci {
 
     public static void main(String[] args) {
         FastScanner scanner = new FastScanner(System.in);

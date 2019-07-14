@@ -3,7 +3,7 @@ import java.util.Scanner;
 //Given two integers 𝑎 and 𝑏, find their greatest common divisor.
 //SOL : GCD(a,b) = GCD(b,a%b)
 
-public class GCD_3 {
+public class W2_GCD {
 
 
     public static void main(String[] args) {

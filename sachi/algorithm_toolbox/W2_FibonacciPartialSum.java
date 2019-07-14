@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FibonacciPartialSum_7 {
+public class W2_FibonacciPartialSum {
 
     //Given two non-negative integers 𝑚 and 𝑛, where 𝑚 ≤ 𝑛, find the last digit of the sum 𝐹𝑚 + 𝐹𝑚+1 + ···+𝐹𝑛.
 
