@@ -37,7 +37,6 @@ public class Week3MoneyChange {
         int givenMoney = 0;
         while (givenMoney < inputValue) {
             int remainingMoney = inputValue - givenMoney;
-            int largestDenomination = 0;
 //            Find the largest denomination that can be given. Assuming that the denominations are in acceding order.
             for (int i = inputDenominations.length - 1; i >= 0; i--) {
                 if (inputDenominations[i] <= remainingMoney) {

@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
 
@@ -16,11 +17,13 @@ public class Week4ImprovingQuickSort {
         for (int i = 0; i < count; i++) {
             numbers[i] = FastScan.nextInt();
         }
+        randomizedQuickSort(numbers, 0, count - 1);
+        System.out.println(Arrays.toString(numbers));
     }
 
-    private static int[] randomizedQuickSort(int[] a, int l, int r) {
+    private static void randomizedQuickSort(int[] a, int l, int r) {
         if (l >= r) {
-            return a;
+            return;
         }
         int k = random.nextInt(r - l + 1) + l;
         int t = a[l];
@@ -29,7 +32,6 @@ public class Week4ImprovingQuickSort {
         int m = partition2(a, l, r);
         randomizedQuickSort(a, l, m - 1);
         randomizedQuickSort(a, m + 1, r);
-        return a;
     }
 
     private static int partition2(int[] a, int l, int r) {
