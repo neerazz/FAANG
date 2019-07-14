@@ -2,6 +2,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "W3_DotProduct",
+            "request": "launch",
+            "mainClass": "W3_DotProduct",
+            "console": "integratedTerminal",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
             "name": "W3_CarFueling",
             "request": "launch",
             "mainClass": "W3_CarFueling",
