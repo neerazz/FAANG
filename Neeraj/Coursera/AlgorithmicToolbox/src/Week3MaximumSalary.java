@@ -54,11 +54,11 @@ public class Week3MaximumSalary {
 
         List<Integer> listOfNumbers = new ArrayList<>();
         for (int i = 0; i < numberOfNumbers; i++) {
-            String input = FastScan.next();
-            char[] toCharArray = input.toCharArray();
-            for (char c : toCharArray) {
-                listOfNumbers.add(Integer.parseInt(String.valueOf(c)));
-            }
+            listOfNumbers.add(FastScan.nextInt());
+//            char[] toCharArray = input.toCharArray();
+//            for (char c : toCharArray) {
+//                listOfNumbers.add(Integer.parseInt(String.valueOf(c)));
+//            }
         }
         StringBuilder stringBuilder = new StringBuilder();
         listOfNumbers.stream().sorted(Comparator.reverseOrder()).forEach(stringBuilder::append);
