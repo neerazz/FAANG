@@ -97,7 +97,9 @@ public class Week4OrganizingALottery {
         }
 
         for (int i = 0; i < numberOfPoints; i++) {
-            result[i] = pointValueMap.get(points[i]);
+            int currentPoint = points[i];
+            result[i] = pointValueMap.get(currentPoint);
+            pointValueMap.remove(currentPoint);
         }
 
         return result;
