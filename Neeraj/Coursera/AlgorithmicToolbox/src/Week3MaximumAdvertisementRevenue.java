@@ -75,7 +75,7 @@ public class Week3MaximumAdvertisementRevenue {
         List<Integer> sortedNoOfClicks = noOfClicks.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
         for (int i = 0; i < numberOfAds; i++) {
-            outputValue += sortedProfitsPerClick.get(i) * sortedNoOfClicks.get(i);
+            outputValue += (long) sortedProfitsPerClick.get(i) * sortedNoOfClicks.get(i);
         }
         return outputValue;
     }

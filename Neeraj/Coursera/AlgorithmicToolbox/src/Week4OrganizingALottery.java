@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /*
 Organizing a Lottery
@@ -43,6 +43,11 @@ Input:
 Output:
 2 0
 
+Solution:
+We will turn [ai, aj] and points [pk] into 3 arrays: [ai, LEFT], [aj, RIGHT], [pk, POINT] with LEFT = 1, POINT = 2, RIGHT = 3.
+We try to sort [ai, LEFT] + [aj, RIGHT] + [pk, POINT]. To compare 2 elements [x, LEFT/RIGHT/POINT] and [y, LEFT/RIGHT/POINT],
+we compare x and y, if x == y, we compare LEFT/RIGHT/POINT basing on the value of LEFT = L, POINT = P, RIGHT = R.
+
  */
 
 public class Week4OrganizingALottery {
@@ -61,13 +66,46 @@ public class Week4OrganizingALottery {
             points[i] = FastScan.nextInt();
         }
 
-        int[] theNeareastNumberOfSegment = getTheNeareastNumberOfSegment(segments, numberOfSegments, points, numberOfPoints);
-        for (int i = 0; i < numberOfPoints; i++) {
-            System.out.print(theNeareastNumberOfSegment[i] + " ");
-        }
+//        int[] theNeareastNumberOfSegment = navieGetTheNeareastNumberOfSegment(segments, numberOfSegments, points, numberOfPoints);
+
+        Arrays.stream(optimalGetTheNeareastNumberOfSegment(segments, numberOfSegments, points, numberOfPoints))
+                .forEach(i -> System.out.print(i + " "));
     }
 
-    private static int[] getTheNeareastNumberOfSegment(int[][] segments, int numberOfSegments, int[] points, int numberOfPoints) {
+    private static int[] optimalGetTheNeareastNumberOfSegment(int[][] segments, int numberOfSegments, int[] points, int numberOfPoints) {
+        int[] result = new int[numberOfPoints];
+        Map<Integer, String> combinedMap = new TreeMap<>();
+
+//        Sort and assign all the values
+        for (int i = 0; i < numberOfSegments; i++) {
+            combinedMap.put(segments[i][0], "L");
+            combinedMap.put(segments[i][1], "R");
+        }
+
+        for (int i = 0; i < numberOfPoints; i++) {
+            combinedMap.put(points[i], "P");
+        }
+
+        int left = 0;
+        Map<Integer, Integer> pointValueMap = new HashMap<>();
+        for (Map.Entry e : combinedMap.entrySet()) {
+            if (e.getValue() == "L") left++;
+            else if (e.getValue() == "R") left--;
+            else {
+                pointValueMap.put((Integer) e.getKey(), left);
+            }
+        }
+
+        for (int i = 0; i < numberOfPoints; i++) {
+            int currentPoint = points[i];
+            result[i] = pointValueMap.get(currentPoint);
+            pointValueMap.remove(currentPoint);
+        }
+
+        return result;
+    }
+
+    private static int[] navieGetTheNeareastNumberOfSegment(int[][] segments, int numberOfSegments, int[] points, int numberOfPoints) {
         int[] result = new int[numberOfPoints];
 
         for (int i = 0; i < numberOfPoints; i++) {
@@ -78,10 +116,11 @@ public class Week4OrganizingALottery {
     }
 
     private static int findCurrentPointSegment(int[][] segments, int numberOfSegments, int currentPoint) {
+        int found = 0;
         for (int j = numberOfSegments - 1; j >= 0; j--) {
-            if (segments[j][0] <= currentPoint && currentPoint <= segments[j][1]) return j + 1;
+            if (segments[j][0] <= currentPoint && currentPoint <= segments[j][1]) found++;
         }
-        return 0;
+        return found;
     }
 
 

@@ -32,6 +32,6 @@ Algorithmic Toolbox
 |1	|Binary Search	|`Solved`
 |2	|Finding a Majority Element	|`Solved`
 |3	|Improving Quick Sort	|`UnSolved`
-|4	|How Close a Data is To Being Sorted?	|`Solved`
+|4	|Number of Inversions	|`Solved`
 |5	|Organizing a Lottery	|`UnSolved`
 |6	|Finding the Closest Pair of Points	|`UnSolved`
