@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
-import com.sun.org.apache.regexp.internal.recompile;
-
 public class Fibonaci {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         System.out.println(calculateFastFibonaci(n));
-        //1System.out.println(calculateFibonaci(n));
+        System.out.println(calculateFibonaci(n));
         scanner.close();
     }
 
