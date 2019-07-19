@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-public class W3_MoneyChange {
+public class W3_1MoneyChange {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

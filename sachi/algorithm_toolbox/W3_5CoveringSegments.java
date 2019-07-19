@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class W3_CoveringSegments {
+public class W3_5CoveringSegments {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -20,9 +20,16 @@ public class W3_CoveringSegments {
     }
 
     private static int[] optimalPoints(Segment[] segments) {
-        //TODO - Incomplete
+
         int[] points = new int[segments.length];
-        return new int[]{1,2,3};
+
+        //Sort the segments on the right values
+        Arrays.sort(segments, Comparator.comparing(Segment::getEnd));
+
+        for (Segment segment : segments) {
+
+        }
+        return new int[]{1, 2, 3};
     }
 
     private static class Segment {
@@ -32,6 +39,21 @@ public class W3_CoveringSegments {
             this.start = start;
             this.end = end;
         }
+
+        public int getStart() {
+            return start;
+        }
+
+        public void setStart(int start) {
+            this.start = start;
+        }
+
+        public int getEnd() {
+            return end;
+        }
+
+        public void setEnd(int end) {
+            this.end = end;
+        }
     }
 }
- 

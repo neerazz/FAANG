@@ -14,7 +14,7 @@ To ensure this, output your answer with at least four digits after the decimal p
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class W3_MaxValueLoot {
+public class W3_2MaxValueLoot {
 
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);

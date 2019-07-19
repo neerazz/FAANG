@@ -13,7 +13,7 @@ and there are gas stations at distances stop1 , stop2 , . . . , stop𝑛 along t
 Assume that the car starts with a full tank. If it is not possible to reach the destination, output −1.
 */
 
-public class W3_CarFueling {
+public class W3_3CarFueling {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

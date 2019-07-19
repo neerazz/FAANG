@@ -2,42 +2,42 @@
     "configurations": [
         {
             "type": "java",
-            "name": "W3_CoveringSegments",
+            "name": "W3_5CoveringSegments",
             "request": "launch",
             "console": "integratedTerminal",
-            "mainClass": "W3_CoveringSegments",
+            "mainClass": "W3_5CoveringSegments",
             "projectName": "algorithm_toolbox_408c6b3f"
         },
         {
             "type": "java",
-            "name": "W3_DotProduct",
+            "name": "W3_4DotProduct",
             "request": "launch",
-            "mainClass": "W3_DotProduct",
             "console": "integratedTerminal",
+            "mainClass": "W3_4DotProduct",
             "projectName": "algorithm_toolbox_408c6b3f"
         },
         {
             "type": "java",
-            "name": "W3_CarFueling",
+            "name": "W3_3CarFueling",
             "request": "launch",
-            "mainClass": "W3_CarFueling",
             "console": "integratedTerminal",
+            "mainClass": "W3_3CarFueling",
             "projectName": "algorithm_toolbox_408c6b3f"
         },
         {
             "type": "java",
-            "name": "W3_MaxValueLoot",
+            "name": "W3_2MaxValueLoot",
             "request": "launch",
-            "mainClass": "W3_MaxValueLoot",
             "console": "integratedTerminal",
+            "mainClass": "W3_2MaxValueLoot",
             "projectName": "algorithm_toolbox_408c6b3f"
         },
         {
             "type": "java",
-            "name": "W3_MoneyChange",
+            "name": "W3_1MoneyChange",
             "request": "launch",
-            "mainClass": "W3_MoneyChange",
             "console": "integratedTerminal",
+            "mainClass": "W3_1MoneyChange",
             "projectName": "algorithm_toolbox_408c6b3f"
         }
     ]
