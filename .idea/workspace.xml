@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="811ebfe8-43eb-477e-b962-922a5f495c81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/exportToHTML/Hello.kt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_1MoneyChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_2MaxValueLoot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_3CarFueling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_4DotProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_5CoveringSegments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/kotlin/Hello.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FAANGJobPreperation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FAANGJobPreperation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/algorithm_toolbox/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_CarFueling.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_CoveringSegments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_DotProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_MaxValueLoot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_MoneyChange.java" beforeDir="false" />
-    </list>
+    <list default="true" id="811ebfe8-43eb-477e-b962-922a5f495c81" name="Default Changelist" comment="More files" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +10,11 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="2" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -96,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sachi/kotlin/Hello.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -281,15 +270,24 @@
       <workItem from="1562631076611" duration="3099000" />
       <workItem from="1563062429997" duration="517000" />
       <workItem from="1563063717403" duration="781000" />
-      <workItem from="1563531046522" duration="2359000" />
+      <workItem from="1563531046522" duration="2438000" />
     </task>
+    <task id="LOCAL-00001" summary="More files">
+      <created>1563539567335</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563539567335</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14356000" />
+    <option name="totallyTimeSpent" value="14435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1602" height="933" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24615385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -306,10 +304,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32936978" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49935898" visible="true" weight="0.32936978" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50064105" side_tool="true" weight="0.32936978" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3290398" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -324,6 +322,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="More files" />
+    <option name="LAST_COMMIT_MESSAGE" value="More files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CourseraAlgorithmicToolbox Problems/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/FibonacciSumLastDigit.java" />
@@ -412,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sachi/kotlin/Hello.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
         </state>
       </provider>
     </entry>
