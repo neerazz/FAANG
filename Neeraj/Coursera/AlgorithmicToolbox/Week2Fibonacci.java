@@ -26,6 +26,7 @@ public class Week2Fibonacci {
     static class FastScan {
         BufferedReader br;
         StringTokenizer st;
+
         FastScan() {
             try {
                 br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,6 +34,7 @@ public class Week2Fibonacci {
                 e.printStackTrace();
             }
         }
+
         String next() {
             while (st == null || !st.hasMoreTokens()) {
                 try {
@@ -43,6 +45,7 @@ public class Week2Fibonacci {
             }
             return st.nextToken();
         }
+
         int nextInt() {
             return Integer.parseInt(next());
         }

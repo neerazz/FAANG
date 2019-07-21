@@ -89,10 +89,10 @@ public class Week4ClosestPoints {
 
     private static void findClosestPoint(Coordinate[] coordinates, int n) {
         if (n == 1) checkDistance(coordinates[0], coordinates[1]);
-        if (n < 2){
+        if (n < 2) {
             return;
         }
-        int mid = n /2;
+        int mid = n / 2;
 
 //            Split it into 2 and assign values.
         Coordinate[] left = new Coordinate[mid];
@@ -101,8 +101,8 @@ public class Week4ClosestPoints {
         for (int i = 0; i < mid; i++) left[i] = coordinates[i];
         for (int i = mid; i < n; i++) right[i - mid] = coordinates[i];
 
-        findClosestPoint(left, left.length-1);
-        findClosestPoint(coordinates,right.length-1);
+        findClosestPoint(left, left.length - 1);
+        findClosestPoint(coordinates, right.length - 1);
 
 //        Merge the array.
         findClosestMergePoint(left, right);
@@ -131,6 +131,7 @@ public class Week4ClosestPoints {
     static class Coordinate {
         int x;
         int y;
+
         public Coordinate(int x, int y) {
             this.x = x;
             this.y = y;
