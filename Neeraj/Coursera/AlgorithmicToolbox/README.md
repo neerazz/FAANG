@@ -1,9 +1,10 @@
-Algorithmic Toolbox
-###Course assignments
+# Algorithmic Toolbox
 
-####Basics (Week 1)
+## Course assignments
 
-####Introduction (Week 2)
+### Basics (Week 1)
+
+### Introduction (Week 2)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -16,7 +17,7 @@ Algorithmic Toolbox
 |7	|Last Digit of the Sum of Fibonacci Numbers Again	|`UnSolved`
 |8	|Last Digit of the Sum of Squares of Fibonacci Numbers	|`UnSolved`
 
-####Greedy algorithms
+### Greedy algorithms
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -28,7 +29,7 @@ Algorithmic Toolbox
 |6	|Maximizing the Number of Prize Places in a Competition	|`Solved`
 |7	|Maximizing Your Salary	|`UnSolved`
 
-####Divide and conquer
+### Divide and conquer
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -39,7 +40,7 @@ Algorithmic Toolbox
 |5	|Organizing a Lottery	|`UnSolved`
 |6	|Finding the Closest Pair of Points	|`UnSolved`
 
-####Dynamic Programming (Part 1)
+### Dynamic Programming (Part 1)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
