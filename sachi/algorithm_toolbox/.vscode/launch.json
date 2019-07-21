@@ -2,6 +2,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "P_SortSelection",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "P_SortSelection",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
+            "name": "P_PolynomialMul",
+            "request": "launch",
+            "mainClass": "P_PolynomialMul",
+            "console": "integratedTerminal",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
             "name": "P_BinarySearch",
             "request": "launch",
             "console": "integratedTerminal",
