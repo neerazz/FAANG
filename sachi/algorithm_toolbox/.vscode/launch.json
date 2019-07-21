@@ -2,6 +2,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "P_BinarySearch",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "P_BinarySearch",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
             "name": "W3_5CoveringSegments",
             "request": "launch",
             "console": "integratedTerminal",
