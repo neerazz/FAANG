@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-/*Selection Sort
+/*Selection Sort - O(n2)
 FInd least in the remaining array
 Move that to front
 Keep doing this for all records until you finish*/

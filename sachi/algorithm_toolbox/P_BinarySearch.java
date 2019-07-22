@@ -39,9 +39,9 @@ public class P_BinarySearch {
             if (p == a[m]) {
                 return m;
             } else if (p < a[m]) {
-                binarySearch(a, l, m - 1, p);
+                return binarySearch(a, l, m - 1, p);
             } else if (p > a[m]) {
-                binarySearch(a, m + 1, r, p);
+                return binarySearch(a, m + 1, r, p);
             }
         }
         return -1;
