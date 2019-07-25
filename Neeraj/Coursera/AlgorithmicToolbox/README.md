@@ -49,3 +49,17 @@
 |3	|Edit Distance	|`Solved`
 |4	|Longest Common Subsequence of Two Sequences 	|`Solved`
 |5	| Longest Common Subsequence of Three Sequences	|`Solved`
+
+#### Sources
+https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr
+
+### Dynamic Programming (Part 2)
+
+|No.	|Problem	|Status|
+| --- | --- |--- |
+|1	|Maximum Amount of Gold	|`Solved`
+|2	|Partitioning Souvenirs	|`UnSolved\Copied`
+|3	|Maximum Value of an Arithmetic Expression	|`UnSolved`
+
+#### Sources
+https://www.techiedelight.com/3-partition-problem/
