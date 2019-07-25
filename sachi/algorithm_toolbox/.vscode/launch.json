@@ -2,6 +2,30 @@
     "configurations": [
         {
             "type": "java",
+            "name": "W4_MajorityElement2",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "W4_MajorityElement2",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
+            "name": "W4_BInarySearch1",
+            "request": "launch",
+            "mainClass": "W4_BInarySearch1",
+            "console": "integratedTerminal",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
+            "name": "Solution",
+            "console": "integratedTerminal",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
             "name": "P_SortSelection",
             "request": "launch",
             "console": "integratedTerminal",
