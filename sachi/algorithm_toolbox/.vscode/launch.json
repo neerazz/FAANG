@@ -2,6 +2,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "W4_ImprovingQuickSort3",
+            "console": "integratedTerminal",
+            "request": "launch",
+            "mainClass": "W4_ImprovingQuickSort3",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
+            "name": "P_QuickSort",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "mainClass": "P_QuickSort",
+            "projectName": "algorithm_toolbox_408c6b3f"
+        },
+        {
+            "type": "java",
             "name": "W4_MajorityElement2",
             "request": "launch",
             "console": "integratedTerminal",

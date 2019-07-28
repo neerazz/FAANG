@@ -1,17 +1,6 @@
-	class Solution {
-	    public int[] twoSum(int[] nums, int target) {
+import java.util.HashMap;
+import java.util.Map;
 
-	        Map<Integer, Integer> map = new HashMap<>();
-	        for(int i=0; i<nums.length; i++){
-	        	map.put(target-nums[i], i);            
-	        }
+class TwoSum_E {
 
-	        for(int j=0; j<nums.length; j++){
-	        	int complement = target-nums[i];
-	        	if(map.contains(complement)){
-	        		return new int[]{j,map.get(complement)};
-	        	}	
-	        }
-
-	    }
-	}
+}
