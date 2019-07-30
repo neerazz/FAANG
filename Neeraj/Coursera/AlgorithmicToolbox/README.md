@@ -17,7 +17,7 @@
 |7	|Last Digit of the Sum of Fibonacci Numbers Again	|`UnSolved`
 |8	|Last Digit of the Sum of Squares of Fibonacci Numbers	|`UnSolved`
 
-### Greedy algorithms
+### Greedy algorithms (Week 3)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -29,7 +29,7 @@
 |6	|Maximizing the Number of Prize Places in a Competition	|`Solved`
 |7	|Maximizing Your Salary	|`UnSolved`
 
-### Divide and conquer
+### Divide and conquer (Week 4)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -40,7 +40,7 @@
 |5	|Organizing a Lottery	|`UnSolved`
 |6	|Finding the Closest Pair of Points	|`UnSolved`
 
-### Dynamic Programming (Part 1)
+### Dynamic Programming [Part 1] (Week 5)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |
@@ -53,7 +53,7 @@
 #### Sources
 https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr
 
-### Dynamic Programming (Part 2)
+### Dynamic Programming [Part 2] (Week 6)
 
 |No.	|Problem	|Status|
 | --- | --- |--- |

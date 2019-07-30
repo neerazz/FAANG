@@ -1,232 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="811ebfe8-43eb-477e-b962-922a5f495c81" name="Default Changelist" comment="More files" />
+    <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="Week 5 (1 of 5 completed)">
+      <change afterPath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1CheckBrackets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1ComputeTreeHeight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1ExtendingStackInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulationTest.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/LongestPalindromicSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/LongestSubstringWithoutRepeating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Coursera/Algorithms Specialization/Week1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/CrackCodingInterview/CrackCodingInterview.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/CrackCodingInterview/src/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/UdemyAlgorithms/GreedyAlgorithm/ActivitySelection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/2_maximum_pairwise_product/MaxPairwiseProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/2_maximum_pairwise_product/MaxPairwiseProduct.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/2_maximum_pairwise_product/by_learners/max_pairwise_product.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/2_maximum_pairwise_product/max_pairwise_product.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/2_maximum_pairwise_product/max_pairwise_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/week1_programming_challenges.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/Fibonacci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/Fibonacci.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/by_learners/fibonacci.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/fibonacci.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/fibonacci.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/1_fibonacci_number/fibonacci.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/FibonacciLastDigit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/FibonacciLastDigit.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/by_learners/fibonacci_last_digit.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/fibonacci_last_digit.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/fibonacci_last_digit.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/fibonacci_last_digit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/GCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/GCD.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/by_learners/gcd.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/gcd.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/gcd.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/3_greatest_common_divisor/gcd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/LCM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/LCM.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/by_learners/lcm.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/lcm.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/lcm.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/4_least_common_multiple/lcm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/FibonacciHuge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/FibonacciHuge.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/by_learners/fibonacci_huge.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/fibonacci_huge.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/fibonacci_huge.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/5_fibonacci_number_again/fibonacci_huge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/FibonacciSumLastDigit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/FibonacciSumLastDigit.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/by_learners/fibonacci_sum_last_digit.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/fibonacci_sum_last_digit.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/fibonacci_sum_last_digit.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/fibonacci_sum_last_digit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/FibonacciPartialSum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/FibonacciPartialSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/by_learners/fib_partial_sum.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/fibonacci_partial_sum.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/fibonacci_partial_sum.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/fibonacci_partial_sum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/8_last_digit_of_the_sum_of_squares_of_fibonacci_numbers/FibonacciSumSquares.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/8_last_digit_of_the_sum_of_squares_of_fibonacci_numbers/fibonacci_sum_squares.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/8_last_digit_of_the_sum_of_squares_of_fibonacci_numbers/fibonacci_sum_squares.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week2_algorithmic_warmup/week2_algorithmic_warmup.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/Change.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/Change.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/by_learners/change.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/change.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/change.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/1_money_change/change.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/FractionalKnapsack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/FractionalKnapsack.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/by_learners/fractional_knapsack.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/fractional_knapsack.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/fractional_knapsack.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/2_maximum_value_of_the_loot/fractional_knapsack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/3_car_fueling/CarFueling.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/3_car_fueling/car_fueling.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/3_car_fueling/car_fueling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/DotProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/DotProduct.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/by_learners/dot_rpoduct.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/dot_product.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/dot_product.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/4_maximum_advertisement_revenue/dot_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/CoveringSegments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/CoveringSegments.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/by_learners/covering_segments.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/covering_segments.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/covering_segments.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/5_collecting_signatures/covering_segments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/DifferentSummands.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/DifferentSummands.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/by_learners/different_summands.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/different_summands.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/different_summands.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/6_maximum_number_of_prizes/different_summands.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/LargestNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/LargestNumber.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/by_learners/largest_number.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/largest_number.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/largest_number.hs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/7_maximum_salary/largest_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week3_greedy_algorithms/week3_greedy_algorithms.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/1_binary_search/BinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/1_binary_search/BinarySearch.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/1_binary_search/binary_search.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/1_binary_search/binary_search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/1_binary_search/by_learners/binary_search.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/2_majority_element/MajorityElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/2_majority_element/MajorityElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/2_majority_element/by_learners/majority_element.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/2_majority_element/majority_element.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/2_majority_element/majority_element.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/3_improving_quicksort/Sorting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/3_improving_quicksort/Sorting.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/3_improving_quicksort/by_learners/sorting.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/3_improving_quicksort/sorting.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/3_improving_quicksort/sorting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/4_number_of_inversions/Inversions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/4_number_of_inversions/Inversions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/4_number_of_inversions/by_learners/inversions.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/4_number_of_inversions/inversions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/4_number_of_inversions/inversions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/5_organizing_a_lottery/PointsAndSegments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/5_organizing_a_lottery/PointsAndSegments.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/5_organizing_a_lottery/by_learners/points_and_segments.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/5_organizing_a_lottery/points_and_segments.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/5_organizing_a_lottery/points_and_segments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/6_closest_points/Closest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/6_closest_points/Closest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/6_closest_points/by_learners/closest.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/6_closest_points/closest.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/6_closest_points/closest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week4_divide_and_conquer/week4_divide_and_conquer.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/1_money_change_again/ChangeDP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/1_money_change_again/ChangeDP.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/1_money_change_again/change_dp.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/1_money_change_again/change_dp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/2_primitive_calculator/PrimitiveCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/2_primitive_calculator/PrimitiveCalculator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/2_primitive_calculator/by_learners/primitive_calculator.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/2_primitive_calculator/primitive_calculator.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/2_primitive_calculator/primitive_calculator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/3_edit_distance/EditDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/3_edit_distance/EditDistance.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/3_edit_distance/by_learners/edit_distance.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/3_edit_distance/edit_distance.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/3_edit_distance/edit_distance.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/4_longest_common_subsequence_of_two_sequences/LCS2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/4_longest_common_subsequence_of_two_sequences/LCS2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/4_longest_common_subsequence_of_two_sequences/lcs2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/4_longest_common_subsequence_of_two_sequences/lcs2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/5_longest_common_subsequence_of_three_sequences/LCS3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/5_longest_common_subsequence_of_three_sequences/LCS3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/5_longest_common_subsequence_of_three_sequences/by_learners/lcs3.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/5_longest_common_subsequence_of_three_sequences/lcs3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/5_longest_common_subsequence_of_three_sequences/lcs3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week5_dynamic_programming1/week5_dynamic_programming1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/1_maximum_amount_of_gold/Knapsack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/1_maximum_amount_of_gold/Knapsack.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/1_maximum_amount_of_gold/by_learners/knapsack.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/1_maximum_amount_of_gold/knapsack.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/1_maximum_amount_of_gold/knapsack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/2_partitioning_souvenirs/Partition3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/2_partitioning_souvenirs/Partition3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/2_partitioning_souvenirs/partition3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/2_partitioning_souvenirs/partition3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/3_maximum_value_of_an_arithmetic_expression/PlacingParentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/3_maximum_value_of_an_arithmetic_expression/PlacingParentheses.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/3_maximum_value_of_an_arithmetic_expression/by_learners/placing_parentheses.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/3_maximum_value_of_an_arithmetic_expression/placing_parentheses.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/3_maximum_value_of_an_arithmetic_expression/placing_parentheses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week6_dynamic_programming2/week6_dynamic_programming2.pdf" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExportToHTMLSettings">
-    <option name="printScope" value="2" />
-    <option name="OPEN_IN_BROWSER" value="true" />
-    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_LCM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_FibonacciHuge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W1_APlusB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W1_MaxPairwiseProduct.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="3" column="34" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_Fibanoci.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W3_5CoveringSegments.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="e#1117#1118#0" expanded="true" />
-                <element signature="e#1153#1154#0" expanded="true" />
-                <element signature="e#1196#1197#0" expanded="true" />
-                <element signature="e#1238#1239#0" expanded="true" />
-                <element signature="e#1269#1270#0" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-                <element signature="e#1380#1381#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sachi/kotlin/Hello.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="868">
-              <caret line="1430" column="27" selection-start-line="1430" selection-start-column="27" selection-end-line="1430" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>System.out.println</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
       <list>
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/Fibanoci.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LastDigitOfFibanoci.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LCM.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciPartialSum.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciSumLastDigit.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/GCD.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciHuge.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/Fibanoci_1.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LastDigitOfFibanoci_2.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/GCD_3.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LCM_4.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciHuge_5.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciSumLastDigit_6.java" />
-        <option value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciPartialSum_7.java" />
-        <option value="$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week2LCM.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/week2/LCM_4.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/week1/APlusB.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/week1/MaxPairwiseProduct.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/week2/Fibanoci_1.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/week2/W2_Fibanoci.java" />
-        <option value="$PROJECT_DIR$/sachi/algorithm_toolbox/W3_5CoveringSegments.java" />
-        <option value="$PROJECT_DIR$/sachi/kotlin/Hello.kt" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="25" />
-    <option name="y" value="23" />
-    <option name="width" value="1602" />
-    <option name="height" value="933" />
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FAANGJobPreperation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FAANGJobPreperation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FAANGJobPreperation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FAANGJobPreperation" type="462c0819:PsiDirectoryNode" />
-              <item name="Sachi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FAANGJobPreperation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FAANGJobPreperation" type="462c0819:PsiDirectoryNode" />
-              <item name="Sachi" type="462c0819:PsiDirectoryNode" />
-              <item name="Algorithmic Toolbox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FAANGJobPreperation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FAANGJobPreperation" type="462c0819:PsiDirectoryNode" />
-              <item name="Sachi" type="462c0819:PsiDirectoryNode" />
-              <item name="Algorithmic Toolbox" type="462c0819:PsiDirectoryNode" />
-              <item name="week2" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="FAANGJobPreperation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="FAANGJobPreperation" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="FAANGJobPreperation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="FAANGJobPreperation" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="sachi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="FAANGJobPreperation" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="FAANGJobPreperation" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="sachi" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="kotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1OZPNshtPdLj4lSV0Y1ndGgYscR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Neeraj/Leetcode" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/sachi/algorithm_toolbox" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2" />
+      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CrackCodingInterview" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="spock.lang.Specification" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CourseraAlgorithmicToolbox" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -241,258 +263,367 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="HelloKt" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
-      <module name="FAANGJobPreperation" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="HelloKt" />
-      <option name="WORKING_DIRECTORY" />
+  <component name="RunManager" selected="Application.W1ExtendingStackInterface">
+    <configuration name="W1ComputeTreeHeight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W1ComputeTreeHeight" />
+      <module name="DataStructures" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="W1ExtendingStackInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W1ExtendingStackInterface" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="W1NetworkPacketProcessingSimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W1NetworkPacketProcessingSimulation" />
+      <module name="DataStructures" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="W1NetworkPacketProcessingSimulationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataStructures" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="W1NetworkPacketProcessingSimulationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="W1NetworkPacketProcessingSimulationTest.Read From File" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataStructures" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="W1NetworkPacketProcessingSimulationTest" />
+      <option name="METHOD_NAME" value="Read From File" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.W1ExtendingStackInterface" />
+        <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest" />
+        <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest.Read From File" />
+        <item itemvalue="Application.W1NetworkPacketProcessingSimulation" />
+        <item itemvalue="Application.W1ComputeTreeHeight" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="811ebfe8-43eb-477e-b962-922a5f495c81" name="Default Changelist" comment="" />
-      <created>1562506320348</created>
+      <changelist id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="" />
+      <created>1561598437697</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1562506320348</updated>
-      <workItem from="1562506323197" duration="7600000" />
-      <workItem from="1562631076611" duration="3099000" />
-      <workItem from="1563062429997" duration="517000" />
-      <workItem from="1563063717403" duration="781000" />
-      <workItem from="1563531046522" duration="2438000" />
+      <updated>1561598437697</updated>
     </task>
-    <task id="LOCAL-00001" summary="More files">
-      <created>1563539567335</created>
+    <task id="LOCAL-00001" summary="Completed Week 1.">
+      <created>1561604898322</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1563539567335</updated>
+      <updated>1561604898322</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added project Structure to CrackCodingInterview">
+      <created>1561605271819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561605271819</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Today's Commit">
+      <created>1561690051946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561690051946</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Week 2 Partial">
+      <created>1561932785495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561932785495</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Week 2&#10;Completed 5 out of 3.&#10;Last digit sum &amp; other are not working.">
+      <created>1562114508716</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562114508716</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Coursera AlgorithmicToolbox problems list">
+      <created>1562119064562</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562119064562</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Week 3 partial committed.">
+      <created>1562210568687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562210568687</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Week 3 Completed.">
+      <created>1562468652522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562468652522</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Week 3 all assignment.">
+      <created>1562539979126</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562539979126</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Week 4 (3 of 6 completed)">
+      <created>1562991076703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562991076703</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Week 4 (3 of 6 completed) Corrections">
+      <created>1563117586694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563117586694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Week 5 (1 of 5 completed)">
+      <created>1563675943718</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1563675943718</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Week 5 (4 of 5 completed)">
+      <created>1563676679286</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1563676679286</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Week 6 (2 of 3 completed)">
+      <created>1564018905864</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564018905865</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14435000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="25" y="23" width="1602" height="933" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24615385" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32818073" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2604043" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49935898" visible="true" weight="0.32936978" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50064105" side_tool="true" weight="0.32936978" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3290398" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="More files" />
-    <option name="LAST_COMMIT_MESSAGE" value="More files" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Completed Week 1." />
+    <MESSAGE value="Added project Structure to CrackCodingInterview" />
+    <MESSAGE value="Today's Commit" />
+    <MESSAGE value="Week 2 Partial" />
+    <MESSAGE value="Week 2&#10;Completed 5 out of 3.&#10;Last digit sum &amp; other are not working." />
+    <MESSAGE value="Added Coursera AlgorithmicToolbox problems list" />
+    <MESSAGE value="Week 3 partial committed." />
+    <MESSAGE value="Week 3 Completed." />
+    <MESSAGE value="Added Week 3 all assignment." />
+    <MESSAGE value="Week 4 (3 of 6 completed)" />
+    <MESSAGE value="Week 4 (3 of 6 completed) Corrections" />
+    <MESSAGE value="Week 5 (1 of 5 completed)" />
+    <MESSAGE value="Week 5 (4 of 5 completed)" />
+    <MESSAGE value="Week 6 (2 of 3 completed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Week 6 (2 of 3 completed)" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CourseraAlgorithmicToolbox Problems/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/FibonacciSumLastDigit.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/Fibanoci_1.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LastDigitOfFibanoci_2.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/GCD_3.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/LCM_4.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciHuge_5.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciSumLastDigit_6.java" />
-    <entry file="file://$PROJECT_DIR$/Sachi/Algorithmic Toolbox/week2/FibonacciPartialSum_7.java" />
-    <entry file="file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week2LCM.java" />
-    <entry file="file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week2GCD.java" />
-    <entry file="file://$PROJECT_DIR$/Resources/CourseraAlgorithmicToolbox/week1_programming_challenges/1_sum_of_two_digits/APlusB.scala" />
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_LCM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_FibonacciHuge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W1_APlusB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W1_MaxPairwiseProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W2_Fibanoci.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="1430" column="27" selection-start-line="1430" selection-start-column="27" selection-end-line="1430" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/algorithm_toolbox/W3_5CoveringSegments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1238#1239#0" expanded="true" />
-            <element signature="e#1269#1270#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#1380#1381#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/generated/_Arrays.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="6423" column="35" selection-start-line="6423" selection-start-column="35" selection-end-line="6423" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Array.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sachi/kotlin/Hello.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>FAANGJobPreperation</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CourseraAlgorithmicToolbox/src/Week1Assign2.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3MaximumValueOfLoot.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CarFueling.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CollectingSignatures.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CollectingSignatures.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3MaximizingTheNumberOfPrize.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week4NumberOfInversions.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week4ImprovingQuickSort.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/UdemyAlgorithms/GreedyAlgorithm/ActivitySelection.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/TwoSum.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5MoneyChange.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5PrimitiveCalculator.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5PrimitiveCalculator.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week5LongestCommonSubsequenceOfTwoSequences.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumAmountOfGold.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/LongestSubstringWithoutRepeating.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1ComputeTreeHeight.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulation.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulation.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
