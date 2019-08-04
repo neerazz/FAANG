@@ -53,8 +53,8 @@ public class LongestSubstringWithoutRepeating {
                 subString = currentCharString;
                 current++;
             }
-            max = current > max ? current : max;
+            max = Math.max(current, max);
         }
-        return current > max ? current : max;
+        return Math.max(current, max);
     }
 }

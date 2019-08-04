@@ -1,4 +1,4 @@
-# FAANGJobPreperation
+# FAANG Job Preparation
 Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 
 ## Source:
