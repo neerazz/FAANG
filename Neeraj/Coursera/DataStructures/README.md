@@ -11,3 +11,11 @@
 |3	|Network packet processing simulation 	|`` UnSolved ``
 |4	|Extending stack interface 	|`` Implemented ``
 |5	|Maximum in Sliding Window 	|`` UnderStand Question ``
+
+### Priority Queues & Disjoint Sets (Week 3)
+
+|No.	|Problem	|Status|
+| --- | --- |--- |
+|1	|Make Heap 	|`` Attempted ``
+|2	|Parallel Processing 	|`` Attempted ``
+|3	|Merging Tables 	|`` UnSolved ``
