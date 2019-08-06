@@ -3,6 +3,74 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 
 # Leetcode Problems
 
+## Recursion
+
+|#	|Title	|Acceptance	|Difficulty|
+|---|---|---|---|
+|698	|Partition to K Equal Sum Subsets	|43.00%	|Medium
+|726	|Number of Atoms	|45.30%	|Hard
+|247	|Strobogrammatic Number II	|44.90%	|Medium
+|794	|Valid Tic-Tac-Toe State	|30.30%	|Medium
+|938	|Range Sum of BST	|78.20%	|Easy
+|776	|Split BST	|52.90%	|Medium
+|761	|Special Binary String	|52.50%	|Hard
+|894	|All Possible Full Binary Trees	|71.60%	|Medium
+
+## Array, Hash Table, Linked List, Stack, Heap, Graph, Tree, Queue
+
+| **#** | **Title** | **Acceptance** | **Difficulty** |
+| --- | --- | --- | --- |
+| 1 | [Two Sum    ](https://leetcode.com/problems/two-sum) | 44.40% | **Easy** |
+| 2 | [Add Two Numbers    ](https://leetcode.com/problems/add-two-numbers) | 31.50% | **Medium** |
+| 4 | [Median of Two Sorted Arrays    ](https://leetcode.com/problems/median-of-two-sorted-arrays) | 26.90% | **Hard** |
+| 42 | [Trapping Rain Water    ](https://leetcode.com/problems/trapping-rain-water) | 44.00% | **Hard** |
+| 3 | [Longest Substring Without Repeating Characters    ](https://leetcode.com/problems/longest-substring-without-repeating-characters) | 28.70% | **Medium** |
+| 15 | [3Sum    ](https://leetcode.com/problems/3sum) | 24.50% | **Medium** |
+| 973 | [K Closest Points to Origin    ](https://leetcode.com/problems/k-closest-points-to-origin) | 61.60% | **Medium** |
+| 53 | [Maximum Subarray    ](https://leetcode.com/problems/maximum-subarray) | 44.10% | **Easy** |
+| 21 | [Merge Two Sorted Lists    ](https://leetcode.com/problems/merge-two-sorted-lists) | 48.20% | **Easy** |
+| 23 | [Merge k Sorted Lists    ](https://leetcode.com/problems/merge-k-sorted-lists) | 35.40% | **Hard** |
+| 56 | [Merge Intervals    ](https://leetcode.com/problems/merge-intervals) | 36.20% | **Medium** |
+| 206 | [Reverse Linked List    ](https://leetcode.com/problems/reverse-linked-list) | 56.00% | **Easy** |
+| 20 | [Valid Parentheses    ](https://leetcode.com/problems/valid-parentheses) | 37.00% | **Easy** |
+| 253 | [Meeting Rooms II    ](https://leetcode.com/problems/meeting-rooms-ii) | 43.20% | **Medium** |
+| 297 | [Serialize and Deserialize Binary Tree    ](https://leetcode.com/problems/serialize-and-deserialize-binary-tree) | 41.90% | **Hard** |
+| 76 | [Minimum Window Substring    ](https://leetcode.com/problems/minimum-window-substring) | 31.50% | **Hard** |
+| 238 | [Product of Array Except Self    ](https://leetcode.com/problems/product-of-array-except-self) | 55.90% | **Medium** |
+| 121 | [Best Time to Buy and Sell Stock    ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | 47.80% | **Easy** |
+| 33 | [Search in Rotated Sorted Array    ](https://leetcode.com/problems/search-in-rotated-sorted-array) | 33.10% | **Medium** |
+| 49 | [Group Anagrams    ](https://leetcode.com/problems/group-anagrams) | 48.30% | **Medium** |
+| 11 | [Container With Most Water    ](https://leetcode.com/problems/container-with-most-water) | 45.80% | **Medium** |
+| 560 | [Subarray Sum Equals K    ](https://leetcode.com/problems/subarray-sum-equals-k) | 42.60% | **Medium** |
+| 336 | [Palindrome Pairs    ](https://leetcode.com/problems/palindrome-pairs) | 31.50% | **Hard** |
+| 771 | [Jewels and Stones    ](https://leetcode.com/problems/jewels-and-stones) | 83.40% | **Easy** |
+| 289 | [Game of Life    ](https://leetcode.com/problems/game-of-life) | 46.80% | **Medium** |
+| 79 | [Word Search    ](https://leetcode.com/problems/word-search) | 31.90% | **Medium** |
+| 269 | [Alien Dictionary    ](https://leetcode.com/problems/alien-dictionary) | 31.70% | **Hard** |
+| 380 | [Insert Delete GetRandom O(1)    ](https://leetcode.com/problems/insert-delete-getrandom-o1) | 43.30% | **Medium** |
+| 88 | [Merge Sorted Array    ](https://leetcode.com/problems/merge-sorted-array) | 36.40% | **Easy** |
+| 31 | [Next Permutation    ](https://leetcode.com/problems/next-permutation) | 30.80% | **Medium** |
+| 295 | [Find Median from Data Stream    ](https://leetcode.com/problems/find-median-from-data-stream) | 37.70% | **Hard** |
+| 138 | [Copy List with Random Pointer    ](https://leetcode.com/problems/copy-list-with-random-pointer) | 28.10% | **Medium** |
+| 332 | [Reconstruct Itinerary    ](https://leetcode.com/problems/reconstruct-itinerary) | 32.10% | **Medium** |
+| 811 | [Subdomain Visit Count    ](https://leetcode.com/problems/subdomain-visit-count) | 66.10% | **Easy** |
+| 54 | [Spiral Matrix    ](https://leetcode.com/problems/spiral-matrix) | 31.00% | **Medium** |
+| 215 | [Kth Largest Element in an Array    ](https://leetcode.com/problems/kth-largest-element-in-an-array) | 49.00% | **Medium** |
+| 394 | [Decode String    ](https://leetcode.com/problems/decode-string) | 45.70% | **Medium** |
+| 981 | [Time Based Key-Value Store    ](https://leetcode.com/problems/time-based-key-value-store) | 51.10% | **Medium** |
+| 224 | [Basic Calculator    ](https://leetcode.com/problems/basic-calculator) | 33.40% | **Hard** |
+| 155 | [Min Stack    ](https://leetcode.com/problems/min-stack) | 38.00% | **Easy** |
+| 609 | [Find Duplicate File in System    ](https://leetcode.com/problems/find-duplicate-file-in-system) | 55.90% | **Medium** |
+| 41 | [First Missing Positive    ](https://leetcode.com/problems/first-missing-positive) | 29.40% | **Hard** |
+| 692 | [Top K Frequent Words    ](https://leetcode.com/problems/top-k-frequent-words) | 46.50% | **Medium** |
+| 124 | [Binary Tree Maximum Path Sum    ](https://leetcode.com/problems/binary-tree-maximum-path-sum) | 30.50% | **Hard** |
+| 85 | [Maximal Rectangle    ](https://leetcode.com/problems/maximal-rectangle) | 34.10% | **Hard** |
+| 283 | [Move Zeroes    ](https://leetcode.com/problems/move-zeroes) | 54.80% | **Easy** |
+| 341 | [Flatten Nested List Iterator    ](https://leetcode.com/problems/flatten-nested-list-iterator) | 48.60% | **Medium** |
+| 126 | [Word Ladder II    ](https://leetcode.com/problems/word-ladder-ii) | 18.30% | **Hard** |
+| 103 | [Binary Tree Zigzag Level Order Traversal    ](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal) | 42.60% | **Medium** |
+| 149 | [Max Points on a Line    ](https://leetcode.com/problems/max-points-on-a-line) | 16.00% | **Hard** |
+
 ## Search
 
 | **#** | **Title** | **Acceptance** | **Difficulty** |
@@ -70,61 +138,6 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | 139 | [Word Break    ](https://leetcode.com/problems/word-break) | 36.00% | **Medium** |
 | 85 | [Maximal Rectangle    ](https://leetcode.com/problems/maximal-rectangle) | 34.10% | **Hard** |
 | 975 | [Odd Even Jump    ](https://leetcode.com/problems/odd-even-jump) | 46.40% | **Hard** |
-
-## Array, Hash Table, Linked List, Stack, Heap, Graph, Tree, Queue
-
-| **#** | **Title** | **Acceptance** | **Difficulty** |
-| --- | --- | --- | --- |
-| 1 | [Two Sum    ](https://leetcode.com/problems/two-sum) | 44.40% | **Easy** |
-| 2 | [Add Two Numbers    ](https://leetcode.com/problems/add-two-numbers) | 31.50% | **Medium** |
-| 4 | [Median of Two Sorted Arrays    ](https://leetcode.com/problems/median-of-two-sorted-arrays) | 26.90% | **Hard** |
-| 42 | [Trapping Rain Water    ](https://leetcode.com/problems/trapping-rain-water) | 44.00% | **Hard** |
-| 3 | [Longest Substring Without Repeating Characters    ](https://leetcode.com/problems/longest-substring-without-repeating-characters) | 28.70% | **Medium** |
-| 15 | [3Sum    ](https://leetcode.com/problems/3sum) | 24.50% | **Medium** |
-| 973 | [K Closest Points to Origin    ](https://leetcode.com/problems/k-closest-points-to-origin) | 61.60% | **Medium** |
-| 53 | [Maximum Subarray    ](https://leetcode.com/problems/maximum-subarray) | 44.10% | **Easy** |
-| 21 | [Merge Two Sorted Lists    ](https://leetcode.com/problems/merge-two-sorted-lists) | 48.20% | **Easy** |
-| 23 | [Merge k Sorted Lists    ](https://leetcode.com/problems/merge-k-sorted-lists) | 35.40% | **Hard** |
-| 56 | [Merge Intervals    ](https://leetcode.com/problems/merge-intervals) | 36.20% | **Medium** |
-| 206 | [Reverse Linked List    ](https://leetcode.com/problems/reverse-linked-list) | 56.00% | **Easy** |
-| 20 | [Valid Parentheses    ](https://leetcode.com/problems/valid-parentheses) | 37.00% | **Easy** |
-| 253 | [Meeting Rooms II    ](https://leetcode.com/problems/meeting-rooms-ii) | 43.20% | **Medium** |
-| 297 | [Serialize and Deserialize Binary Tree    ](https://leetcode.com/problems/serialize-and-deserialize-binary-tree) | 41.90% | **Hard** |
-| 76 | [Minimum Window Substring    ](https://leetcode.com/problems/minimum-window-substring) | 31.50% | **Hard** |
-| 238 | [Product of Array Except Self    ](https://leetcode.com/problems/product-of-array-except-self) | 55.90% | **Medium** |
-| 121 | [Best Time to Buy and Sell Stock    ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock) | 47.80% | **Easy** |
-| 33 | [Search in Rotated Sorted Array    ](https://leetcode.com/problems/search-in-rotated-sorted-array) | 33.10% | **Medium** |
-| 49 | [Group Anagrams    ](https://leetcode.com/problems/group-anagrams) | 48.30% | **Medium** |
-| 11 | [Container With Most Water    ](https://leetcode.com/problems/container-with-most-water) | 45.80% | **Medium** |
-| 560 | [Subarray Sum Equals K    ](https://leetcode.com/problems/subarray-sum-equals-k) | 42.60% | **Medium** |
-| 336 | [Palindrome Pairs    ](https://leetcode.com/problems/palindrome-pairs) | 31.50% | **Hard** |
-| 771 | [Jewels and Stones    ](https://leetcode.com/problems/jewels-and-stones) | 83.40% | **Easy** |
-| 289 | [Game of Life    ](https://leetcode.com/problems/game-of-life) | 46.80% | **Medium** |
-| 79 | [Word Search    ](https://leetcode.com/problems/word-search) | 31.90% | **Medium** |
-| 269 | [Alien Dictionary    ](https://leetcode.com/problems/alien-dictionary) | 31.70% | **Hard** |
-| 380 | [Insert Delete GetRandom O(1)    ](https://leetcode.com/problems/insert-delete-getrandom-o1) | 43.30% | **Medium** |
-| 88 | [Merge Sorted Array    ](https://leetcode.com/problems/merge-sorted-array) | 36.40% | **Easy** |
-| 31 | [Next Permutation    ](https://leetcode.com/problems/next-permutation) | 30.80% | **Medium** |
-| 295 | [Find Median from Data Stream    ](https://leetcode.com/problems/find-median-from-data-stream) | 37.70% | **Hard** |
-| 138 | [Copy List with Random Pointer    ](https://leetcode.com/problems/copy-list-with-random-pointer) | 28.10% | **Medium** |
-| 332 | [Reconstruct Itinerary    ](https://leetcode.com/problems/reconstruct-itinerary) | 32.10% | **Medium** |
-| 811 | [Subdomain Visit Count    ](https://leetcode.com/problems/subdomain-visit-count) | 66.10% | **Easy** |
-| 54 | [Spiral Matrix    ](https://leetcode.com/problems/spiral-matrix) | 31.00% | **Medium** |
-| 215 | [Kth Largest Element in an Array    ](https://leetcode.com/problems/kth-largest-element-in-an-array) | 49.00% | **Medium** |
-| 394 | [Decode String    ](https://leetcode.com/problems/decode-string) | 45.70% | **Medium** |
-| 981 | [Time Based Key-Value Store    ](https://leetcode.com/problems/time-based-key-value-store) | 51.10% | **Medium** |
-| 224 | [Basic Calculator    ](https://leetcode.com/problems/basic-calculator) | 33.40% | **Hard** |
-| 155 | [Min Stack    ](https://leetcode.com/problems/min-stack) | 38.00% | **Easy** |
-| 609 | [Find Duplicate File in System    ](https://leetcode.com/problems/find-duplicate-file-in-system) | 55.90% | **Medium** |
-| 41 | [First Missing Positive    ](https://leetcode.com/problems/first-missing-positive) | 29.40% | **Hard** |
-| 692 | [Top K Frequent Words    ](https://leetcode.com/problems/top-k-frequent-words) | 46.50% | **Medium** |
-| 124 | [Binary Tree Maximum Path Sum    ](https://leetcode.com/problems/binary-tree-maximum-path-sum) | 30.50% | **Hard** |
-| 85 | [Maximal Rectangle    ](https://leetcode.com/problems/maximal-rectangle) | 34.10% | **Hard** |
-| 283 | [Move Zeroes    ](https://leetcode.com/problems/move-zeroes) | 54.80% | **Easy** |
-| 341 | [Flatten Nested List Iterator    ](https://leetcode.com/problems/flatten-nested-list-iterator) | 48.60% | **Medium** |
-| 126 | [Word Ladder II    ](https://leetcode.com/problems/word-ladder-ii) | 18.30% | **Hard** |
-| 103 | [Binary Tree Zigzag Level Order Traversal    ](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal) | 42.60% | **Medium** |
-| 149 | [Max Points on a Line    ](https://leetcode.com/problems/max-points-on-a-line) | 16.00% | **Hard** |
 
 ## Google
 
