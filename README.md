@@ -7,14 +7,14 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 
 |#	|Title	|Acceptance	|Difficulty|
 |---|---|---|---|
-|698	|Partition to K Equal Sum Subsets	|43.00%	|Medium
-|726	|Number of Atoms	|45.30%	|Hard
-|247	|Strobogrammatic Number II	|44.90%	|Medium
-|794	|Valid Tic-Tac-Toe State	|30.30%	|Medium
-|938	|Range Sum of BST	|78.20%	|Easy
-|776	|Split BST	|52.90%	|Medium
-|761	|Special Binary String	|52.50%	|Hard
-|894	|All Possible Full Binary Trees	|71.60%	|Medium
+|698	|[Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets)	|43.00%	|Medium
+|726	|[Number of Atoms](https://leetcode.com/problems/number-of-atoms)	|45.30%	|Hard
+|247	|[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii)	|44.90%	|Medium
+|794	|[Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state)	|30.30%	|Medium
+|938	|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst)	|78.20%	|Easy
+|776	|[Split BST](https://leetcode.com/problems/split-bst)	|52.90%	|Medium
+|761	|[Special Binary String](https://leetcode.com/problems/special-binary-string)	|52.50%	|Hard
+|894	|[All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees)	|71.60%	|Medium
 
 ## Array, Hash Table, Linked List, Stack, Heap, Graph, Tree, Queue
 
