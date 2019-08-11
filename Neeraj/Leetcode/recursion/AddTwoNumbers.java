@@ -1,3 +1,5 @@
+package recursion;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -67,6 +69,7 @@ public class AddTwoNumbers {
     public static class ListNode {
         int val;
         ListNode next;
+
         ListNode(int x) {
             val = x;
         }
