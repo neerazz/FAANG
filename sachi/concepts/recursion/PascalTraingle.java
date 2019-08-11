@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import com.sun.javafx.print.PrintHelper.PrintAccessor;
-
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,7 +17,7 @@ public class PascalTraingle {
      * @return
      */
     private static List<List<Integer>> pascalIteration(int n) {
-        List<List<Integer>> sol = new ArrayList();
+        List<List<Integer>> sol = new ArrayList<>();
         List<Integer> prev;
         List<Integer> row;
         for (int i = 0; i < n; i++) {
@@ -39,7 +36,7 @@ public class PascalTraingle {
     }
 
     public static List<List<Integer>> pascalRecursion(int numRows) {
-        List<List<Integer>> sol = new ArrayList();
+        List<List<Integer>> sol = new ArrayList<>();
         for(int i=0; i<numRows; i++){
             List<Integer> row = new ArrayList<>();
             for(int j=0; j<=i; j++){
