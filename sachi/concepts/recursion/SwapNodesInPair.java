@@ -40,7 +40,7 @@ public class SwapNodesInPair {
     }
 
     /**
-     * Print LinkedLIst
+     * Print LinkedList
      * 
      * @param head
      */
