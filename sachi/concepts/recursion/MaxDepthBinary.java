@@ -12,20 +12,10 @@ public class MaxDepthBinary{
         System.out.println(maxDepth(t1));
     }
     public static int maxDepth(TreeNode root) {
-        return max_depth(root,0);        
-    }
-
-    public static int max_depth(TreeNode root, int i){
-        if(root == null){
-            return i;
+        if(root == null){    
+            return 0;
         }else{
-            i += max(max_depth(root.left,i),max_depth(root.right,i));
-            return i;
-        }
+            return Math.max(maxDepth(root.left),maxDepth(root.right)) + 1;
+        }        
     }
-
-    private static int max(int a, int b){
-        return a>b ? a : b;
-    }
-
 }
