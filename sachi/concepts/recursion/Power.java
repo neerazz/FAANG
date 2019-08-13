@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//TODO: - Write Iterative method
 public class Power {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,32 +18,14 @@ public class Power {
         return fastPow(x, N);
     }
 
-    private static double fastPow(double x, long n){
-        if(n==0) return 1.0;
-        double half = fastPow(x,n/2);
-        if(n%2 == 0){
+    private static double fastPow(double x, long n) {
+        if (n == 0)
+            return 1.0;
+        double half = fastPow(x, n / 2);
+        if (n % 2 == 0) {
             return half * half;
-        }else{
+        } else {
             return half * half * x;
         }
-    }
-
-    /**
-     * Brute Force approach
-     * @param x
-     * @param n
-     * @return
-     */
-    private static double myPow(double x, int n) {
-        int N = n;
-        double ans = 1;
-        if (n < 0) {
-            x = 1/x;
-            N = -N;
-        }
-        for(int i=0; i<N; i++){
-            ans = ans * x;
-        }
-        return ans;
     }
 }
