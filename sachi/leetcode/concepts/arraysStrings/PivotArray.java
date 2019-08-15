@@ -29,7 +29,7 @@ public class PivotArray{
     private static int pivotIndex(int[] nums) {
         if(nums== null || nums.length <=1) return -1;
         int sum = 0, temp =0;
-        for(int i=0; i<nums.length; i++) sum += nums[i];
+        for (int num : nums) sum += num;
         //Check for 1st Index
         if(sum-nums[0] == 0) return 0;
         for(int i=0; i<nums.length-1; i++){

@@ -33,7 +33,7 @@ public class LargestNumberTwice {
         scanner.close();
     }
 
-    public static int dominantIndex(int[] nums) {
+    private static int dominantIndex(int[] nums) {
         if (nums == null || nums.length == 0) return -1;
         if (nums.length == 1) return 0;
         int largest = Integer.MIN_VALUE;

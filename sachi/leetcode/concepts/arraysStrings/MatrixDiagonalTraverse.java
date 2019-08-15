@@ -1,17 +1,32 @@
+/*
+Given a matrix of M x N elements (M rows, N columns), return all elements of the matrix in diagonal order as shown in the below image.
+Example:
+
+Input:
+[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+Output:  [1,2,4,7,5,3,6,8,9]
+The total number of elements of the given matrix will not exceed 10,000.
+
+ */
+
 import java.util.Arrays;
 
 public class MatrixDiagonalTraverse {
     public static void main(String[] args) {
-        int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-        int[][] matrix1 = new int[][] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 },
-                { 16, 17, 18, 19, 20 } };
+        int[][] matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrix1 = new int[][]{{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15},
+                {16, 17, 18, 19, 20}};
         Arrays.stream(findDiagonalOrder(matrix1)).forEach(e -> System.out.print(e + " "));
-
+        Arrays.stream(findDiagonalOrderElegant(matrix1)).forEach(e -> System.out.print(e + " "));
     }
 
     private static int[] findDiagonalOrder(int[][] matrix) {
         if (matrix == null || matrix.length == 0)
-            return new int[] {};
+            return new int[]{};
         int row = matrix.length;
         int col = matrix[0].length;
         int[] sol = new int[row * col];
@@ -52,7 +67,7 @@ public class MatrixDiagonalTraverse {
         return sol;
     }
 
-    public int[] findDiagonalOrderElegant(int[][] matrix) {
+    private static int[] findDiagonalOrderElegant(int[][] matrix) {
         if (matrix.length == 0) return new int[0];
         int r = 0, c = 0, m = matrix.length, n = matrix[0].length, arr[] = new int[m * n];
         for (int i = 0; i < arr.length; i++) {
