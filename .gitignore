@@ -46,6 +46,9 @@ gradle-app.setting
 
 # User-specific stuff
 .idea/**/workspace.xml
+.idea/**/modules.xml
+.idea/workspace.xml
+.idea/modules.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries

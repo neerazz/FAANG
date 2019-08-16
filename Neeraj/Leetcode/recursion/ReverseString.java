@@ -18,11 +18,15 @@ Output: ["h","a","n","n","a","H"]
 public class ReverseString {
     public static void main(String[] args) {
         char[] input = {'h', 'e', 'l', 'l', 'o'};
-        printInputInReverseOrder(input, 0, input.length - 1);
+        reverseString(input);
         System.out.println(Arrays.toString(input));
     }
 
-    private static void printInputInReverseOrder(char[] input, int start, int end) {
+    public static void reverseString(char[] s) {
+        printInputInReverseOrder(s, 0, s.length - 1);
+    }
+
+    public static void printInputInReverseOrder(char[] input, int start, int end) {
         if (start == end || start > end) {
             return;
         }
