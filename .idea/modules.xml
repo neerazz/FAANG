@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/AlgorithmicToolbox.iml" filepath="$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/AlgorithmicToolbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/DataStructures.iml" filepath="$PROJECT_DIR$/Neeraj/Coursera/DataStructures/DataStructures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Neeraj/Hackerrank/Hackerrank.iml" filepath="$PROJECT_DIR$/Neeraj/Hackerrank/Hackerrank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Neeraj/Leetcode/Leetcode.iml" filepath="$PROJECT_DIR$/Neeraj/Leetcode/Leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sachi/algorithm_toolbox/algorithm_toolbox.iml" filepath="$PROJECT_DIR$/Sachi/algorithm_toolbox/algorithm_toolbox.iml" />
+    </modules>
+  </component>
+</project>

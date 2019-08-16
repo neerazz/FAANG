@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /* Find a Pivot in a n array
 We define the pivot index as the index where the sum of the numbers to the left of the index is equal to the 
 sum of the numbers to the right of the index.
@@ -14,6 +12,7 @@ The sum of the numbers to the left of index 3 (nums[3] = 6) is equal to the sum 
 Also, 3 is the first index where this occurs.
 
 */
+import java.util.Scanner;
 
 public class PivotArray{
     public static void main(String[] args) {
@@ -30,7 +29,7 @@ public class PivotArray{
     private static int pivotIndex(int[] nums) {
         if(nums== null || nums.length <=1) return -1;
         int sum = 0, temp =0;
-        for(int i=0; i<nums.length; i++) sum += nums[i];
+        for (int num : nums) sum += num;
         //Check for 1st Index
         if(sum-nums[0] == 0) return 0;
         for(int i=0; i<nums.length-1; i++){

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="Moved the README file.">
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/AddBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ArrayPartitionI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ImplementStrStr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/LongestCommonPrefix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/TwoSumII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/DiagonalTraverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/DiagonalTraverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/FindPivotIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/FindPivotIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/LargestNumberAtLeastTwiceOfOthers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/LargestNumberAtLeastTwiceOfOthers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/PlusOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/PlusOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/SpiralMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/recursion/ReverseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/recursion/ReverseString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/string/AddBinary.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1OZPNshtPdLj4lSV0Y1ndGgYscR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Neeraj/Hackerrank" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CrackCodingInterview" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="spock.lang.Specification" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CourseraAlgorithmicToolbox" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TwoSumII">
+    <configuration name="AddBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysAndString.AddBinary" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysAndString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayPartitionI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysAndString.ArrayPartitionI" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysAndString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImplementStrStr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysAndString.ImplementStrStr" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysAndString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongestCommonPrefix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysAndString.LongestCommonPrefix" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysAndString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TwoSumII" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="arraysAndString.TwoSumII" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="arraysAndString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TwoSumII" />
+        <item itemvalue="Application.ArrayPartitionI" />
+        <item itemvalue="Application.LongestCommonPrefix" />
+        <item itemvalue="Application.ImplementStrStr" />
+        <item itemvalue="Application.AddBinary" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="" />
+      <created>1561598437697</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561598437697</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Completed Week 1.">
+      <created>1561604898322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561604898322</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added project Structure to CrackCodingInterview">
+      <created>1561605271819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561605271819</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Today's Commit">
+      <created>1561690051946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561690051946</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Week 2 Partial">
+      <created>1561932785495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561932785495</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Week 2&#10;Completed 5 out of 3.&#10;Last digit sum &amp; other are not working.">
+      <created>1562114508716</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562114508716</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Coursera AlgorithmicToolbox problems list">
+      <created>1562119064562</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562119064562</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Week 3 partial committed.">
+      <created>1562210568687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562210568687</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Week 3 Completed.">
+      <created>1562468652522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562468652522</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Week 3 all assignment.">
+      <created>1562539979126</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562539979126</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Week 4 (3 of 6 completed)">
+      <created>1562991076703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562991076703</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Week 4 (3 of 6 completed) Corrections">
+      <created>1563117586694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563117586694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Week 5 (1 of 5 completed)">
+      <created>1563675943718</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1563675943718</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Week 5 (4 of 5 completed)">
+      <created>1563676679286</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1563676679286</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Week 6 (2 of 3 completed)">
+      <created>1564018905864</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564018905865</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Data Structures Week 1 Completed">
+      <created>1564452188084</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564452188084</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Data Structures Week 3 Completed">
+      <created>1564936667363</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1564936667363</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added README page for leetcode.">
+      <created>1564958988036</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1564958988037</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Moved the README file.">
+      <created>1564959363440</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1564959363440</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added Recursion the README file.">
+      <created>1565092388877</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1565092388877</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added links in README file.">
+      <created>1565092601674</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1565092601674</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Completed Recursion.">
+      <created>1565453162047</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1565453162047</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added hackerrank and leetcode code.">
+      <created>1565789034295</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1565789034296</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Completed Week 1." />
+    <MESSAGE value="Added project Structure to CrackCodingInterview" />
+    <MESSAGE value="Today's Commit" />
+    <MESSAGE value="Week 2 Partial" />
+    <MESSAGE value="Week 2&#10;Completed 5 out of 3.&#10;Last digit sum &amp; other are not working." />
+    <MESSAGE value="Added Coursera AlgorithmicToolbox problems list" />
+    <MESSAGE value="Week 3 partial committed." />
+    <MESSAGE value="Week 3 Completed." />
+    <MESSAGE value="Added Week 3 all assignment." />
+    <MESSAGE value="Week 4 (3 of 6 completed)" />
+    <MESSAGE value="Week 4 (3 of 6 completed) Corrections" />
+    <MESSAGE value="Week 5 (1 of 5 completed)" />
+    <MESSAGE value="Week 5 (4 of 5 completed)" />
+    <MESSAGE value="Week 6 (2 of 3 completed)" />
+    <MESSAGE value="Data Structures Week 1 Completed" />
+    <MESSAGE value="Data Structures Week 3 Completed" />
+    <MESSAGE value="Added README page for leetcode." />
+    <MESSAGE value="Moved the README file." />
+    <MESSAGE value="Added Recursion the README file." />
+    <MESSAGE value="Added links in README file." />
+    <MESSAGE value="Completed Recursion." />
+    <MESSAGE value="Added hackerrank and leetcode code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added hackerrank and leetcode code." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CourseraAlgorithmicToolbox/src/Week1Assign2.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3MaximumValueOfLoot.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CarFueling.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CollectingSignatures.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3CollectingSignatures.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week3MaximizingTheNumberOfPrize.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week4NumberOfInversions.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/CourseraAlgorithmicToolbox/src/Week4ImprovingQuickSort.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week4ClosestPoints.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/UdemyAlgorithms/GreedyAlgorithm/ActivitySelection.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/TwoSum.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5MoneyChange.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5PrimitiveCalculator.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/src/Week5PrimitiveCalculator.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week5LongestCommonSubsequenceOfTwoSequences.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumAmountOfGold.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/AlgorithmicToolbox/Week6MaximumValueOfArithmeticExpression.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/LongestSubstringWithoutRepeating.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1ComputeTreeHeight.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulation.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W1NetworkPacketProcessingSimulation.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3DisJointSet.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3DisJointSet.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3MakeHeap.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3ParallelProcessing.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3ParallelProcessing.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3ParallelProcessing.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3ParallelProcessing.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/PartitionToKEqualSumSubsets.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/PartitionToKEqualSumSubsets.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/PascalTriangle.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/PascalTriangle.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/ClimbingStairs.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/MaximumDepthOfBinaryTree.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/Power.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion/MergeTwoSortedLists.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/CountingValleys.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JumpingOnTheClouds.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/RepeatedString.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaSubstringComparisons.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/DiagonalTraverse.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/DiagonalTraverse.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/AddBinary.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ImplementStrStr.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/LongestCommonPrefix.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/TwoSumII.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
