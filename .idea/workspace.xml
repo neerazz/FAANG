@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="Moved the README file.">
       <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/AddBinary.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ArrayPartitionI.java" afterDir="false" />
@@ -17,6 +18,12 @@
       <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arrays/SpiralMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/SpiralMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/recursion/ReverseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/recursion/ReverseString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/string/AddBinary.java" beforeDir="false" />
+=======
+    <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="Week 5 (1 of 5 completed)">
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/SpiralMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +64,16 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
     <property name="create.test.in.the.same.root" value="true" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Neeraj/Hackerrank" />
     <property name="project.structure.last.edited" value="Modules" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Neeraj/Leetcode" />
+    <property name="project.structure.last.edited" value="Project" />
+>>>>>>> Stashed changes
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -93,6 +105,7 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.TwoSumII">
     <configuration name="AddBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="arraysAndString.AddBinary" />
@@ -129,6 +142,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+=======
+  <component name="RunManager" selected="Application.SpiralMatrix">
+    <configuration name="SpiralMatrix" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="SpiralMatrix" />
+      <module name="sachi" />
+>>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -159,13 +180,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.SpiralMatrix" />
+      <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest" />
+      <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest.Read From File" />
+    </list>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="Application.TwoSumII" />
         <item itemvalue="Application.ArrayPartitionI" />
         <item itemvalue="Application.LongestCommonPrefix" />
         <item itemvalue="Application.ImplementStrStr" />
         <item itemvalue="Application.AddBinary" />
+=======
+        <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest" />
+        <item itemvalue="JUnit.W1NetworkPacketProcessingSimulationTest.Read From File" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -544,6 +575,7 @@
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Neeraj/Coursera/DataStructures/W3DisJointSet.java</url>
           <line>11</line>
           <option name="timeStamp" value="71" />
@@ -698,6 +730,12 @@
           <line>13</line>
           <option name="timeStamp" value="133" />
         </line-breakpoint>
+=======
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/SpiralMatrix.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+>>>>>>> Stashed changes
       </breakpoints>
     </breakpoint-manager>
   </component>
