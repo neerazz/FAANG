@@ -1,6 +1,14 @@
 # FAANG Job Preparation
 Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 
+# [Complexities](https://www.bigocheatsheet.com/)
+| Type | Notation | Time Complexities Resources | Space Complexities Resources |
+|-----------|:--------:|------------------------------------------------------------------------------------------------------|------------------------------|
+| Constant | O(1) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+| Linear | O(n) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+| Logarithm | O(Log n) | https://www.interviewcake.com/article/python/logarithms? https://www.youtube.com/watch?v=M4ubFru2O80 |  |
+| Quadratic | O(n*n) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+
 # Leetcode Problems
 
 ## Recursion
