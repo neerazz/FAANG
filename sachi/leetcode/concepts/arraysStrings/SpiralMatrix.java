@@ -60,7 +60,7 @@ public class SpiralMatrix {
                     row++;
                 }
             } else if (dir == 2) {
-                if (row + d == m - 1) {
+                if (col - d == 0) {
                     c++;
                     row--;
                     dir = 3;
@@ -68,7 +68,7 @@ public class SpiralMatrix {
                     col--;
                 }
             } else if (dir == 3) {
-                if (row + a == m - 1) {
+                if (row - a == 0) {
                     d++;
                     col++;
                     dir = 0;
