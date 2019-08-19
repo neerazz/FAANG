@@ -10,8 +10,12 @@ public class RotateArray {
         for (int i = 0; i < n; i++) {
             input[i] = scanner.nextInt();
         }
+        int[] input2 = input.clone();
         rotate(input, k);
+        rotateInPlace(input2, k);
         Arrays.stream(input).forEach(e -> System.out.print(e + " "));
+        System.out.println("\n");
+        Arrays.stream(input2).forEach(e -> System.out.print(e + " "));
         scanner.close();
     }
 
@@ -39,8 +43,24 @@ public class RotateArray {
 
     // Inplace
     private static void rotateInPlace(int[] nums, int k) {
-        if (nums == null || nums.length == 0 || k <= 0) {
+        if (nums == null || nums.length < 2 || k <= 0) {
             return;
         }
+        k = k % nums.length;
+        reverse(nums, 0, nums.length - k - 1);
+        reverse(nums, nums.length - k, nums.length - 1);
+        reverse(nums, 0, nums.length - 1);
     }
+
+    private static void reverse(int[] nums, int i, int j) {
+        int temp = 0;
+        while (i < j) {
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
 }
