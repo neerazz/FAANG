@@ -15,11 +15,18 @@ public class RotateArray {
         scanner.close();
     }
 
+    // O(n) - But requires two passes - One to copy array
+    // Also O(n) space
     private static void rotate(int[] nums, int k) {
-        if (nums == null || nums.length == 0 || k <= 0) {
+        if (nums == null || nums.length <= 1 || k <= 0 || k == nums.length) {
             return;
         }
-        int pointer = nums.length - k;
+        int pointer;
+        if (k > nums.length) {
+            pointer = 2 * nums.length - k;
+        } else {
+            pointer = nums.length - k;
+        }
         int[] res = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             if (pointer == nums.length) {
@@ -28,5 +35,12 @@ public class RotateArray {
             res[i] = nums[pointer++];
         }
         System.arraycopy(res, 0, nums, 0, res.length);
+    }
+
+    // Inplace
+    private static void rotateInPlace(int[] nums, int k) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return;
+        }
     }
 }
