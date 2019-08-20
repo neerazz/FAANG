@@ -14,7 +14,7 @@ public class MinimumSizeSubarraySum {
         scanner.close();
     }
 
-    // O(n*2) Solution
+    //O(n*2) Solution
     private static int minSubArrayLen(int s, int[] nums) {
         int res = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -29,7 +29,7 @@ public class MinimumSizeSubarraySum {
         return res;
     }
 
-    // O(n) Solution
+    //O(n) Solution
     private static int minSubArrayLenOptimized(int s, int[] nums) {
         int left = 0, res = Integer.MAX_VALUE, sum = 0;
         for (int i = 0; i < nums.length; i++) {

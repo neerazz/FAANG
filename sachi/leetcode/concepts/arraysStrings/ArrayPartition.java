@@ -29,7 +29,7 @@ public class ArrayPartition {
     }
 
     //Sort the array and go over even items. 
-    public static int arrayPairSum(int[] nums) {
+    private static int arrayPairSum(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }

@@ -14,6 +14,8 @@ Also, 3 is the first index where this occurs.
 */
 import java.util.Scanner;
 
+//--Edge case
+
 public class PivotArray{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
