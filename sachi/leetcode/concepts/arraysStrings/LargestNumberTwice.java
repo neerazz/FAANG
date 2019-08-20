@@ -21,6 +21,7 @@ int second = Integer.MIN_VALUE;
 */
 import java.util.Scanner;
 
+
 public class LargestNumberTwice {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

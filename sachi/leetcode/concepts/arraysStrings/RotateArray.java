@@ -19,8 +19,8 @@ public class RotateArray {
         scanner.close();
     }
 
-    // O(n) - But requires two passes - One to copy array
-    // Also O(n) space
+    //O(n) - But requires two passes - One to copy array
+    //Also O(n) space
     private static void rotate(int[] nums, int k) {
         if (nums == null || nums.length <= 1 || k <= 0 || k == nums.length) {
             return;
@@ -41,7 +41,7 @@ public class RotateArray {
         System.arraycopy(res, 0, nums, 0, res.length);
     }
 
-    // Inplace
+    //Inplace
     private static void rotateInPlace(int[] nums, int k) {
         if (nums == null || nums.length < 2 || k <= 0) {
             return;
