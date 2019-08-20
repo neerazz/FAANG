@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/MoveZeros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/RemoveDuplicates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/ReverseString2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/ReverseWords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ImplementStrStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/ImplementStrStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/ArrayPartition.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/ArrayPartition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/LargestNumberTwice.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/LargestNumberTwice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/MinimumSizeSubarraySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/MinimumSizeSubarraySum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/PivotArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/PivotArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/RotateArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/arraysStrings/RotateArray.java" afterDir="false" />
-    </list>
+    <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566236621691</updated>
       <workItem from="1566236624919" duration="3112000" />
-      <workItem from="1566241214936" duration="13930000" />
+      <workItem from="1566241214936" duration="13993000" />
     </task>
     <servers />
   </component>
