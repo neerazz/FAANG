@@ -1,8 +1,5 @@
 package LinkedList;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*
 https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1296/
 Given a linked list, remove the n-th node from the end of list and return its head.
@@ -27,6 +24,14 @@ public class RemoveNthNodeFromEndOfList {
         System.out.println("Output: " + removeNthFromEnd(listNode,6));
     }
 
+    /*
+        Solution: Take two pointer.
+        The first pointer advances the list by n+1n+1 steps from the beginning, while the second pointer starts from the beginning of the list.
+        Now, both pointers are exactly separated by nn nodes apart.
+        We maintain this constant gap by advancing both pointers together until the first pointer arrives past the last node.
+        The second pointer will be pointing at the nnth node counting from the last.
+        We relink the next pointer of the node referenced by the second pointer to point to the node's next next node.
+     */
     private static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
@@ -57,7 +62,7 @@ public class RemoveNthNodeFromEndOfList {
         current = current.next;
         while (current != null){
             if (counter < n-1){
-                output.next = new ListNode(current.val);;
+                output.next = new ListNode(current.val);
                 output = output.next;
             }else if (counter > n-1){
                 output.next = new ListNode(current.val);
@@ -69,7 +74,7 @@ public class RemoveNthNodeFromEndOfList {
         return outputHead;
     }
 
-    private static ListNode createListNode(int[] nums) {
+    public static ListNode createListNode(int[] nums) {
         if (nums.length == 0) return null;
         ListNode output = new ListNode(nums[0]), current = output;
         for (int i = 1; i < nums.length; i++) {
@@ -77,19 +82,5 @@ public class RemoveNthNodeFromEndOfList {
             current = current.next;
         }
         return output;
-    }
-}
-class ListNode{
-    int val;
-    ListNode next;
-
-    public ListNode(int val) {
-        this.val = val;
-    }
-
-    @Override
-    public String toString() {
-        return "val=" + val +
-                ", next=" + next;
     }
 }
