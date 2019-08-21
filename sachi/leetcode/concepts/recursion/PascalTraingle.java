@@ -1,7 +1,24 @@
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
+/*
+Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
+In Pascal's triangle, each number is the sum of the two numbers directly above it.
+
+Example:
+
+Input: 5
+Output:
+[
+     [1],
+    [1,1],
+   [1,2,1],
+  [1,3,3,1],
+ [1,4,6,4,1]
+]
+
+ */
 public class PascalTraingle {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -13,6 +30,7 @@ public class PascalTraingle {
 
     /**
      * Pascal Traingle - Iteration
+     *
      * @param n
      * @return
      */
@@ -35,23 +53,23 @@ public class PascalTraingle {
         return sol;
     }
 
-    public static List<List<Integer>> pascalRecursion(int numRows) {
+    private static List<List<Integer>> pascalRecursion(int numRows) {
         List<List<Integer>> sol = new ArrayList<>();
-        for(int i=0; i<numRows; i++){
+        for (int i = 0; i < numRows; i++) {
             List<Integer> row = new ArrayList<>();
-            for(int j=0; j<=i; j++){
-                row.add(calculate(i,j));
+            for (int j = 0; j <= i; j++) {
+                row.add(calculate(i, j));
             }
             sol.add(row);
         }
         return sol;
     }
-    
-    public static int calculate(int i, int j){
-        if(i==0 || j==0 || j==i){
+
+    private static int calculate(int i, int j) {
+        if (i == 0 || j == 0 || j == i) {
             return 1;
-        }else{
-            return calculate(i-1,j-1) + calculate(i-1,j);
+        } else {
+            return calculate(i - 1, j - 1) + calculate(i - 1, j);
         }
     }
 

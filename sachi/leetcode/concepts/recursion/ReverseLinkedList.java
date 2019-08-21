@@ -1,4 +1,15 @@
-public class ReverseLinkedList{
+/*
+Reverse a singly linked list.
+
+Example:
+
+Input: 1->2->3->4->5->NULL
+Output: 5->4->3->2->1->NULL
+Follow up:
+
+A linked list can be reversed either iteratively or recursively. Could you implement both?
+ */
+public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode h = new ListNode(1);
         h.next = new ListNode(2);
@@ -16,12 +27,12 @@ public class ReverseLinkedList{
         System.out.println("\nOutput");
         print(reverseList(h));
         System.out.println("\nRecusrion");
-        print(reverseList(h1,null));
+        print(reverseList(h1, null));
     }
 
-    public static ListNode reverseList(ListNode head){
+    private static ListNode reverseList(ListNode head) {
         ListNode sol = null;
-        while(head !=null){
+        while (head != null) {
             ListNode next = head.next;
             head.next = sol;
             sol = head;
@@ -40,7 +51,7 @@ public class ReverseLinkedList{
 
     /**
      * Print LinkedLIst
-     * 
+     *
      * @param head
      */
     public static void print(ListNode head) {
