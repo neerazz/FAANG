@@ -20,7 +20,7 @@ public class LongestCommonPrefix {
         int size = strs.length;
         if (size ==1) return strs[0];
         if (size >1){
-            Arrays.sort(strs, Comparator.comparingInt(String::length).reversed());
+            Arrays.sort(strs, Comparator.comparingInt(String::length));
             String first = strs[0];
             if (first.length() == 0) return max;
             for (int i = 0; i < first.length(); i++) {
