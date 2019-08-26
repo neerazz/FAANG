@@ -1,11 +1,8 @@
-package concepts.linkedlist;
-
 public class MyLinkedList {
 
     static class ListNode {
         int val;
         ListNode next;
-
         ListNode(int val) {
             this.val = val;
         }
@@ -29,7 +26,7 @@ public class MyLinkedList {
     public int get(int index) {
         if (index < 0 || index > size) return -1;
         ListNode curr = head;
-        for (int i = 0; i <= index; i++) {
+        for (int i = 0; i < index; i++) {
             curr = curr.next;
         }
         return curr.val;
@@ -98,29 +95,37 @@ public class MyLinkedList {
      * Delete the index-th node in the linked list, if the index is valid.
      */
     public void deleteAtIndex(int index) {
-        if(index < 0 || index >= size) return;
-        if(index == 0) {
+        if (index < 0 || index >= size) return;
+        if (index == 0) {
             deleteHead();
-        }else{
+        } else {
             ListNode curr = head;
-            for(int i=0; i<= index; i++){
+            for (int i = 0; i < index-1; i++) {
                 curr = curr.next;
             }
-            curr = curr.next;
+            curr.next = curr.next.next;
             size--;
-
         }
-
     }
 
-    private void deleteHead(){
-        if(size > 0){
+    private void deleteHead() {
+        if (size > 0) {
             head = head.next;
-            size --;
-            if(size == 0){
+            size--;
+            if (size == 0) {
                 tail = null;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        MyLinkedList linkedList = new MyLinkedList();
+        linkedList.addAtHead(1);
+        linkedList.addAtTail(3);
+        linkedList.addAtIndex(1, 2);  // linked list becomes 1->2->3
+        linkedList.get(1);            // returns 2
+        linkedList.deleteAtIndex(1);  // now the linked list is 1->3
+        linkedList.get(1);            // returns 3
     }
 
 }

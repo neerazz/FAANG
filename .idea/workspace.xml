@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="" />
+    <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/IntersectionOfLInkedLIsts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveLinkedListElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveNthNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/ReverseLinkedList1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +37,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -41,30 +51,37 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MoveZeros">
-    <configuration name="MoveZeros" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MoveZeros" />
+  <component name="RunManager" selected="Application.RemoveLinkedListElements">
+    <configuration name="LinkedListCycle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinkedListCycle" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveDuplicates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RemoveDuplicates" />
+    <configuration name="LinkedListCycle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinkedListCycle2" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseString2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ReverseString2" />
+    <configuration name="RemoveLinkedListElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RemoveLinkedListElements" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ReverseWords" />
+    <configuration name="RemoveNthNode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RemoveNthNode" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReverseLinkedList1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReverseLinkedList1" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,10 +89,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MoveZeros" />
-        <item itemvalue="Application.RemoveDuplicates" />
-        <item itemvalue="Application.ReverseString2" />
-        <item itemvalue="Application.ReverseWords" />
+        <item itemvalue="Application.RemoveLinkedListElements" />
+        <item itemvalue="Application.ReverseLinkedList1" />
+        <item itemvalue="Application.RemoveNthNode" />
+        <item itemvalue="Application.LinkedListCycle2" />
+        <item itemvalue="Application.LinkedListCycle" />
       </list>
     </recent_temporary>
   </component>
@@ -93,6 +111,8 @@
       <workItem from="1566241214936" duration="13993000" />
       <workItem from="1566302113604" duration="1495000" />
       <workItem from="1566352167881" duration="6704000" />
+      <workItem from="1566521628807" duration="20000" />
+      <workItem from="1566521675888" duration="13607000" />
     </task>
     <servers />
   </component>
@@ -111,5 +131,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
