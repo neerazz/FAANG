@@ -12,12 +12,14 @@ The following example may help you understand the problem better:
 public class InsertIntoACyclicSortedList {
     public static void main(String[] args) {
         Node one = new Node(1, null);
+        Node two = new Node(2, null);
         Node three = new Node(3, null);
         Node four = new Node(4, null);
-        one.next = three;
+        Node five = new Node(5, null);
         three.next = four;
         four.next = one;
-        System.out.println("Answer is :" + insert(one, 2) + " should be [1,2,3,4,Loop].");
+        one.next = three;
+        System.out.println("Answer is :" + insert(three, 2) + " should be [3,4,1,2,Loop].");
         three = new Node(3, null);
         Node three1 = new Node(3, null);
         Node three2 = new Node(3, null);
@@ -26,34 +28,41 @@ public class InsertIntoACyclicSortedList {
         three2.next = three;
         System.out.println("Answer is :" + insert(three, 0) + " should be [0,3,3,3,Loop].");
         one.next = new Node(1, one);
-        System.out.println("Answer is :" + insert(one, 0) + " should be [0,3,3,3,Loop].");
+        System.out.println("Answer is :" + insert(one, 0) + " should be [0,1,1,Loop].");
     }
 
     public static Node insert(Node head, int insertVal) {
         if (head == null) return new Node(insertVal, null);
-        if (head.val > insertVal) {
-//            Insert the new Node at the start, and loop till the last node to link it back to the newly inserted node.
-            Node headRef = head, slow = head, fast = head.next;
-            headRef = new Node(insertVal, head);
-            while (slow != fast) {
-                slow = slow.next;
-                fast = fast.next.next;
-                if (slow == fast || fast == head) {
-//                    This is the last node.
-                    slow.next = headRef;
-                    return headRef;
-                }
-            }
+        Node temp = head;
+        while (temp.val > insertVal || temp.next.val < insertVal) {
+            if ((temp.next.val < temp.val)
+                    && (insertVal <= temp.next.val || insertVal >= temp.val)) break;
+            temp = temp.next;
+            if (head == temp) break;
         }
-        Node headRef = head, starting = head, next = head.next;
-        while (next != null) {
-            if (starting.val < insertVal && insertVal <= next.val) {
+        Node insert = new Node(insertVal, temp.next);
+        temp.next = insert;
+        return head;
+    }
+
+    public static Node insert_wrong(Node head, int insertVal) {
+        if (head == null) return new Node(insertVal, null);
+        Node headRef = head, starting = head, next = head.next, fast = head.next;
+
+        while (headRef != null) {
+            if (insertVal <= next.val && (starting.val < insertVal || starting.val > insertVal)) {
                 starting.next = new Node(insertVal, next);
+                break;
+            }
+            if (starting == fast) {
+//                Reached the last node, inserted the new node before the beginning.
+                starting.next = new Node(insertVal, starting.next);
                 break;
             }
             headRef = headRef.next;
             starting = next;
             next = next.next;
+            fast = fast.next.next;
         }
         return head;
     }
