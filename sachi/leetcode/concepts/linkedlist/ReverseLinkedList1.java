@@ -1,4 +1,3 @@
-import sun.plugin.dom.core.CoreConstants;
 
 public class ReverseLinkedList1 {
     public static void main(String[] args) {

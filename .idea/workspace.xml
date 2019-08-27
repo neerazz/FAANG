@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/IntersectionOfLInkedLIsts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveLinkedListElements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveNthNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/ReverseLinkedList1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/ReverseLinkedList1.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/ReverseLinkedList1.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +107,7 @@
       <workItem from="1566352167881" duration="6704000" />
       <workItem from="1566521628807" duration="20000" />
       <workItem from="1566521675888" duration="13607000" />
+      <workItem from="1566820590953" duration="1770000" />
     </task>
     <servers />
   </component>
@@ -131,21 +126,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
