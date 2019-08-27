@@ -18,6 +18,37 @@ public class NumberOfIslands {
         char[][] grid1 = new char[][]{{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 1}};
         System.out.println("Answer is: " + numIslands(grid1) + " should be [3]");
     }
+//     Loop through the array and when you encounter 1, find the neighbouring 1's. Always change the visited values to 0.
+    public static int numIslands(char[][] grid) {
+        int row = grid.length;
+        int column = row>0 ? grid[0].length:0;
+        if (column == 0) return 0;
+        int islands= 0;
+        char one = '1';
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (grid[i][j] == '1'){
+                    islands++;
+                    findConnectedIslands(grid,i,j,row,column);
+                }
+            }
+        }
+        return islands;
+    }
+
+    private static void findConnectedIslands(char[][] grid, int i, int j, int row, int column) {
+        if (i<0 || i>= row|| j<0 || j>= column) return;
+        char one = '1';
+        if (grid[i][j] == '1'){
+            grid[i][j] = 0;
+//            Check for connected island.
+            findConnectedIslands(grid,i-1,j,row,column);
+            findConnectedIslands(grid,i+1,j,row,column);
+            findConnectedIslands(grid,i,j-1,row,column);
+            findConnectedIslands(grid,i,j+1,row,column);
+        }
+    }
 
     public static int namIslands_elegant(char[][] grid) {
         int islands = 0;
