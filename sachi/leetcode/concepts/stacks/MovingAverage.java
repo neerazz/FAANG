@@ -1,5 +1,6 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class MovingAverage {
     private int size;
@@ -7,7 +8,7 @@ public class MovingAverage {
     private double sum;
 
     private MovingAverage(int size) {
-        queue = new ArrayDeque<>();
+        queue = new LinkedList<>();
         this.size = size;
         sum = 0;
     }
