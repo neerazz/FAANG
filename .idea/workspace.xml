@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7937a174-f858-464f-b8cb-df6470d9769f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/IntersectionOfLInkedLIsts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/LinkedListCycle2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveLinkedListElements.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/RemoveNthNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/ReverseLinkedList1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/OddEvenLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MyCircularQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,16 +47,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RemoveLinkedListElements">
-    <configuration name="LinkedListCycle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LinkedListCycle" />
+  <component name="RunManager" selected="Application.MovingAverage">
+    <configuration name="MovingAverage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MovingAverage" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListCycle2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LinkedListCycle2" />
+    <configuration name="MyCircularQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyCircularQueue" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,11 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MovingAverage" />
+        <item itemvalue="Application.MyCircularQueue" />
         <item itemvalue="Application.RemoveLinkedListElements" />
         <item itemvalue="Application.ReverseLinkedList1" />
         <item itemvalue="Application.RemoveNthNode" />
-        <item itemvalue="Application.LinkedListCycle2" />
-        <item itemvalue="Application.LinkedListCycle" />
       </list>
     </recent_temporary>
   </component>
@@ -113,6 +109,7 @@
       <workItem from="1566352167881" duration="6704000" />
       <workItem from="1566521628807" duration="20000" />
       <workItem from="1566521675888" duration="13666000" />
+      <workItem from="1566867741925" duration="8364000" />
     </task>
     <servers />
   </component>
@@ -144,6 +141,26 @@
           <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/linkedlist/MyLinkedList.java</url>
           <line>97</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MyCircularQueue.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MyCircularQueue.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MyCircularQueue.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
