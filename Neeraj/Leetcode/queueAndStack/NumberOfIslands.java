@@ -87,7 +87,7 @@ public class NumberOfIslands {
         }
     }
 
-    public static int numIslands(char[][] grid) {
+    public static int numIslands_option2(char[][] grid) {
         int rows = grid.length;
         int column = rows > 0 ? grid[0].length : 0;
         if (column == 0) return 0;
