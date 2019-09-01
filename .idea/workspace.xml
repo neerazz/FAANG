@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="Linked list day2 (EOD)">
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/BinaryTreeInorderTraversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ImplementQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/FloodFill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ZeroOneMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/MinStackImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ImplementStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +52,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
@@ -84,35 +85,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DecodeString">
-    <configuration name="BinaryTreeInorderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.BinaryTreeInorderTraversal" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CloneGraph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.CloneGraph" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.KeysAndRooms">
     <configuration name="DecodeString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="queueAndStack.DecodeString" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queueAndStack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FloodFill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queueAndStack.FloodFill" />
       <module name="Leetcode" />
       <extension name="coverage">
         <pattern>
@@ -137,8 +125,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TargetSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.TargetSum" />
+    <configuration name="KeysAndRooms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queueAndStack.KeysAndRooms" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="queueAndStack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZeroOneMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="queueAndStack.ZeroOneMatrix" />
       <module name="Leetcode" />
       <extension name="coverage">
         <pattern>
@@ -152,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KeysAndRooms" />
+        <item itemvalue="Application.ZeroOneMatrix" />
+        <item itemvalue="Application.FloodFill" />
         <item itemvalue="Application.DecodeString" />
         <item itemvalue="Application.ImplementQueue" />
-        <item itemvalue="Application.BinaryTreeInorderTraversal" />
-        <item itemvalue="Application.TargetSum" />
-        <item itemvalue="Application.CloneGraph" />
       </list>
     </recent_temporary>
   </component>
@@ -395,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566994708494</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Stacks and Queue (Day 5 EOD)">
+      <created>1567081493159</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1567081493159</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,7 +437,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Week 3 Completed." />
     <MESSAGE value="Added Week 3 all assignment." />
     <MESSAGE value="Week 4 (3 of 6 completed)" />
     <MESSAGE value="Week 4 (3 of 6 completed) Corrections" />
@@ -454,7 +461,8 @@
     <MESSAGE value="Stacks and Queue (Day 2 EOD)" />
     <MESSAGE value="Stacks and Queue (Day 3 EOD)" />
     <MESSAGE value="Stacks and Queue (Day 4 EOD)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stacks and Queue (Day 4 EOD)" />
+    <MESSAGE value="Stacks and Queue (Day 5 EOD)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stacks and Queue (Day 5 EOD)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1019,13 +1027,78 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/BinaryTreeInorderTraversal.java</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/BinaryTreeInorderTraversal.java</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/FloodFill.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/FloodFill.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="252" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ZeroOneMatrix.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ZeroOneMatrix.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="267" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="270" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="273" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -127,38 +127,38 @@ public class NumberOfIslands {
         indices = findIslands(i, j - 1, grid, indices);
         return indices;
     }
+}
 
-    static class Index {
-        int i;
-        int j;
+class Index {
+    int i;
+    int j;
 
-        public Index(int i, int j) {
-            this.i = i;
-            this.j = j;
-        }
+    public Index(int i, int j) {
+        this.i = i;
+        this.j = j;
+    }
 
-        @Override
-        public String toString() {
-            return "i=" + i +
-                    ", j=" + j;
-        }
+    @Override
+    public String toString() {
+        return "i=" + i +
+                ", j=" + j;
+    }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-            Index index = (Index) o;
+        Index index = (Index) o;
 
-            if (i != index.i) return false;
-            return j == index.j;
-        }
+        if (i != index.i) return false;
+        return j == index.j;
+    }
 
-        @Override
-        public int hashCode() {
-            int result = i;
-            result = 31 * result + j;
-            return result;
-        }
+    @Override
+    public int hashCode() {
+        int result = i;
+        result = 31 * result + j;
+        return result;
     }
 }
