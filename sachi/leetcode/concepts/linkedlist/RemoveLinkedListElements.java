@@ -1,5 +1,3 @@
-import org.omg.PortableServer.LIFESPAN_POLICY_ID;
-
 public class RemoveLinkedListElements {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
