@@ -2,9 +2,33 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-//Mistake -
-// fast == slow and not fast.val == slow.val
-//Since values can be same.
+/*
+Linked List Cycle
+Solution
+Given a linked list, determine if it has a cycle in it.
+To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.
+
+Example 1:
+Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+
+Example 2:
+Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+
+*/
+/*
+Mistake -
+1. fast == slow and not fast.val == slow.val
+Since values can be same.
+
+2.
+head = head.next;
+fast = fast.next.next;
+while (head != null && fast != null && fast.next != null)
+*/
 
 public class LinkedListCycle {
     public static void main(String[] args) {
@@ -23,20 +47,20 @@ public class LinkedListCycle {
         System.out.println(hasCycleElegant(head));
     }
 
-    //Two pointers - Fast method
+    // Two pointers - Fast method
     private static boolean hasCycleElegant(ListNode head) {
-        if (head == null) return false;
-        ListNode fast = head.next;
-        ListNode slow = head;
-        while (fast != null && slow != null & fast.next != null) {
-            if (fast == slow) return true;
+        ListNode fast = head;
+        while (head != null && fast != null && fast.next != null) {
+            head = head.next;
             fast = fast.next.next;
-            slow = slow.next;
+            if (fast == head) {
+                return true;
+            }
         }
         return false;
     }
 
-    private static boolean hasCycleSet(ListNode head){
+    private static boolean hasCycleSet(ListNode head) {
         Set<ListNode> nodesSeen = new HashSet<>();
         while (head != null) {
             if (nodesSeen.contains(head)) {
@@ -49,8 +73,7 @@ public class LinkedListCycle {
         return false;
     }
 
-
-    //Using a cache. Slow method
+    // Using a cache. Slow method
     private static boolean hasCycleNaive(ListNode head) {
         Map<Integer, Integer> cache = new HashMap<>();
         while (head != null) {
