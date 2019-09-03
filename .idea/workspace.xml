@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/FloodFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/ZeroOneMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/WallsAndGates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/util/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/DecodeString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/leetcode/SortedArray_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/other/SortedArray_E.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/leetcode/TwoSum_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/other/TwoSum_E.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,26 +44,21 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Spock" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Spock" value="spock.lang.Specification" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Sachi/leetcode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CourseraAlgorithmicToolbox" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="spock.lang.Specification" />
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -71,6 +66,15 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CrackCodingInterview" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="spock.lang.Specification" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sachi/leetcode/other" />
+      <recent name="$PROJECT_DIR$/sachi/leetcode/concepts/util" />
+      <recent name="D:\OneDrive - leverage proactive deliverables\Java\JavaProjects\FAANGJobPreperation\CourseraAlgorithmicToolbox" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,79 +89,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.KeysAndRooms">
-    <configuration name="DecodeString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.DecodeString" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FloodFill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.FloodFill" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImplementQueue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.ImplementQueue" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KeysAndRooms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.KeysAndRooms" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ZeroOneMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="queueAndStack.ZeroOneMatrix" />
-      <module name="Leetcode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="queueAndStack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager">
+    <configuration name="WallsAndGates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WallsAndGates" />
+      <module name="leetcode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KeysAndRooms" />
-        <item itemvalue="Application.ZeroOneMatrix" />
-        <item itemvalue="Application.FloodFill" />
-        <item itemvalue="Application.DecodeString" />
-        <item itemvalue="Application.ImplementQueue" />
+        <item itemvalue="Application.WallsAndGates" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +113,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561598437697</updated>
+      <workItem from="1567438384938" duration="31000" />
+      <workItem from="1567438428162" duration="746000" />
+      <workItem from="1567439688076" duration="16000" />
+      <workItem from="1567439709203" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Week 1.">
       <created>1561604898322</created>
@@ -405,6 +351,9 @@
     </task>
     <option name="localTasksCounter" value="34" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -681,26 +630,6 @@
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/CountingValleys.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JumpingOnTheClouds.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/RepeatedString.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaSubstringComparisons.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/arraysAndString/DiagonalTraverse.java</url>
           <line>52</line>
           <option name="timeStamp" value="111" />
@@ -789,26 +718,6 @@
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/recursion2/ValidateBinarySearchTree.java</url>
           <line>70</line>
           <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaAnagrams.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaAnagrams.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaStringTokens.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Neeraj/Hackerrank/JavaArraylist.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/LinkedList/DesignLinkedList.java</url>
@@ -947,12 +856,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java</url>
-          <line>90</line>
+          <line>121</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/NumberOfIslands.java</url>
-          <line>112</line>
+          <line>144</line>
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
