@@ -29,7 +29,7 @@ public class CTCIRemoveDuplicates {
             if (cache.contains(curr.val)) {
                 prev.next = curr.next;
             } else {
-                cache.add(head.val);
+                cache.add(curr.val);
                 prev = curr;
             }
             curr = curr.next;
