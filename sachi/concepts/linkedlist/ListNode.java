@@ -12,8 +12,8 @@ public class ListNode {
             System.out.print(val + " ");
         }
         while (next != null) {
+            System.out.print(next.val + " ");
             next = next.next;
-            System.out.print(val + " ");
         }
     }
 }
