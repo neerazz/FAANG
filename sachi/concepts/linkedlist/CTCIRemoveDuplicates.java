@@ -17,8 +17,8 @@ public class CTCIRemoveDuplicates {
         l2.next = l3;
         l1.next = l2;
         head.next = l1;
-        print(head);
-        print(removeDuplicatesLinkedList(head));
+        Util.print(head);
+        Util.print(removeDuplicatesLinkedList(head));
     }
 
     private static ListNode removeDuplicatesLinkedList(ListNode head) {
@@ -35,13 +35,5 @@ public class CTCIRemoveDuplicates {
             curr = curr.next;
         }
         return head;
-    }
-
-    public static void print(ListNode head) {
-        System.out.println("");
-        while (head != null) {
-            System.out.print(head.val + " ");
-            head = head.next;
-        }
     }
 }

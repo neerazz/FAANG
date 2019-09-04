@@ -26,6 +26,7 @@ public class MoveZeros {
         }
         moveZeroes(nums);
         Arrays.stream(nums).forEach(e -> System.out.print(e + " "));
+        scanner.close();
 
     }
 

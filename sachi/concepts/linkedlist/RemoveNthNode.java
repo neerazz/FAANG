@@ -31,7 +31,7 @@ public class RemoveNthNode {
         l1.next = l2;
         head.next = l1;
         //removeNthFromEnd(head, 1).print(true);
-        removeNthFromEndElegant(head, 1).print(true);
+        Util.print(removeNthFromEndElegant(head, 1));
     }
 
     //One Pass

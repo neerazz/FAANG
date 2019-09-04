@@ -10,7 +10,7 @@ public class OddEvenLinkedList {
         l2.next = l3;
         l1.next = l2;
         head.next = l1;
-        oddEvenList(head).print(true);
+        Util.print(oddEvenList(head));
     }
 
     private static ListNode oddEvenList(ListNode head) {

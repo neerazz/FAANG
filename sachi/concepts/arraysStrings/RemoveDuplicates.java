@@ -27,6 +27,7 @@ public class RemoveDuplicates {
             nums[i] = scanner.nextInt();
         }
         System.out.print(removeDuplicatesElegant(nums));
+        scanner.close();
     }
 
     private static int removeDuplicatesElegant(int[] nums) {

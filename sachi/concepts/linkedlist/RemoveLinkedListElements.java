@@ -21,7 +21,7 @@ public class RemoveLinkedListElements {
         l2.next = l3;
         l1.next = l2;
         head.next = l1;
-        removeElements(head, 6).print(true);
+        Util.print(removeElements(head, 6));
     }
 
     private static ListNode removeElements(ListNode head, int val) {

@@ -15,6 +15,7 @@ public class ReverseString2 {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         System.out.println(reverseWords(s));
+        scanner.close();
     }
 
     private static String reverseWords(String s) {

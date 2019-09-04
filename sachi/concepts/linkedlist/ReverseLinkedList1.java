@@ -23,7 +23,7 @@ public class ReverseLinkedList1 {
         l2.next = l3;
         l1.next = l2;
         head.next = l1;
-        reverseLinkedList(head).print(true);
+        Util.print(reverseLinkedList(head));
     }
 
     private static ListNode reverseLinkedList(ListNode head) {

@@ -12,7 +12,7 @@ public class Merge2SortedLists {
         l2.next.next = new ListNode(4);
         l2.next.next.next = new ListNode(5);
         // l2.next.next.next.next = new ListNode(5);
-        mergeTwoListsIt(l1, l2).print(true);
+        Util.print(mergeTwoListsIt(l1, l2));
     }
 
     // Iteration
