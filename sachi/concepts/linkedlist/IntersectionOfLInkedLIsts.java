@@ -19,7 +19,7 @@ Input Explanation: The intersected node's value is 8 (note that this must not be
 Mistake :
 Do not use tail and worry about wether list will meet or not.
 */
-public class IntersectionOfLInkedLIsts {
+public class IntersectionOfLinkedLists {
     public static void main(String[] args) {
 
     }
