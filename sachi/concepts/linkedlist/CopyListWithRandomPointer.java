@@ -20,15 +20,13 @@ public class CopyListWithRandomPointer {
     }
 
     public static Node copyRandomList(Node head) {
-        if(head == null) return head;
+        if (head == null)
+            return head;
         Node cloneRandom = head.random;
         Node itr = cloneRandom;
+        while (itr != null) {
 
-        while(itr != null){
-            
         }
-        
-
-        
+        return null;
     }
 }
