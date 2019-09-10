@@ -11,12 +11,11 @@ public class AmazonModuloOfAllPossible {
         System.out.println(moduloBruteForce(arr));
     }
 
-    private static int moduloArrayElegant(int[] input){
-        int len = input.length-1;
-        int sum = 0, i =0, j = len;
-        while(i==len && j == len){
-            
-            sum = sum + input[]
+    private static int moduloArrayElegant(int[] input) {
+        int len = input.length - 1;
+        int sum = 0, i = 0, j = len;
+        while (i == len && j == len) {
+
         }
     }
 
