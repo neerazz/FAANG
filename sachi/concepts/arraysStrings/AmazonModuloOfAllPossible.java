@@ -17,6 +17,7 @@ public class AmazonModuloOfAllPossible {
         while (i == len && j == len) {
 
         }
+        return 0;
     }
 
     private static int moduloBruteForce(int[] input) {
