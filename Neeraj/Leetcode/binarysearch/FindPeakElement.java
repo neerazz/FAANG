@@ -21,8 +21,8 @@ public class FindPeakElement {
         System.out.println("Answer is:" + findPeakElement(new int[]{1, 2, 3, 1}) + " should be [2].");
         System.out.println("Answer is:" + findPeakElement(new int[]{1, 2, 1, 3, 5, 6, 4}) + " should be [1 or 5].");
     }
-  
-    public int findPeakElement(int[] nums) {
+
+    public static int findPeakElement(int[] nums) {
         int l = 0, r = nums.length - 1;
         while (l < r) {
             int mid = (l + r) / 2;
@@ -34,7 +34,7 @@ public class FindPeakElement {
         return l;
     }
 
-    public static int findPeakElement(int[] nums) {
+    public static int findPeakElement_wrong(int[] nums) {
         return findPeakElementHelper(nums, 0, nums.length - 1);
     }
 
@@ -48,7 +48,7 @@ public class FindPeakElement {
         int startValue = nums[start];
         int endValue = nums[end];
         if (startValue < midValue) {
-            if (endValue > midValue)
+            if (endValue < midValue)
                 return findPeakElementHelper(nums, start, mid);
             return findPeakElementHelper(nums, mid, end);
         } else {
