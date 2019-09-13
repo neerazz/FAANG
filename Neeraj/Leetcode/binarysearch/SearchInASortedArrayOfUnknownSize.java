@@ -11,12 +11,14 @@ public class SearchInASortedArrayOfUnknownSize {
 
     public static int search(ArrayReader reader, int target) {
         int max = getArraySize(reader), min = 0;
-        while (min <= max) {
+        while (min < max) {
             int avg = min + (max - min) / 2;
 
             int cur = reader.get(avg);
+            if (cur == target) return avg;
             if (cur > target) max = avg;
             else min = avg + 1;
+            if (min == max && reader.get(min) == target) return min;
         }
         return -1;
     }
@@ -26,14 +28,13 @@ public class SearchInASortedArrayOfUnknownSize {
         while (min < max) {
             int avg = min + (max - min) / 2;
             if (reader.get(avg) == Integer.MAX_VALUE) {
-                max = avg - 1;
+                max = avg;
             } else {
-                min = avg;
+                min = avg+1;
             }
         }
         return min;
     }
-}
 
 class ArrayReader {
     int[] array;
