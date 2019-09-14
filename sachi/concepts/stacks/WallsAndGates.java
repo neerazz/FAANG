@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /*
 You are given a m x n 2D grid initialized with these three possible values.
 
@@ -31,70 +36,36 @@ public class WallsAndGates {
   }
 
   public static void wallsAndGates(int[][] rooms) {
-    int m = rooms.length - 1;
-    int n = rooms[0].length - 1;
-    // Iterate through Matrix
-    for (int i = 0; i <= m; i++) {
-      for (int j = 0; j <= n; j++) {
-        // Check if Infinity
-        if (rooms[i][j] != 2147483647) {
-          continue;
-        }
-        // Counters on each side
-        int a = 2147483647, b = 2147483647, c = 2147483647, d = 2147483647, p = i, q = j;
-        // Left
-        for (p = i, q = j - 1; q >= 0; q--) {
-          if (rooms[p][q] == -1) {
-            a = 2147483647;
-            break;
-          }
-          if (rooms[i][j] != 2147483647 && rooms[i][j] > 0) {
-            break;
-          }
-          a = (a == 2147483647) ? 1 : a + 1;
-          if (rooms[p][q] == 0) {
-            break;
-          }
-        }
+    if (rooms == null || rooms.length == 0)
+      return;
+    int EMPTY = Integer.MAX_VALUE;
+    int m = rooms.length;
+    int n = rooms[0].length;
+    List<int[]> dirList = Arrays.asList(new int[] { 1, 0 }, new int[] { -1, 0 }, new int[] { 0, 1 },
+        new int[] { 0, -1 });
+    Queue<int[]> queue = new LinkedList<>();
 
-        // Right
-        for (p = i, q = j + 1; q <= n; q++) {
-          if (rooms[p][q] == -1) {
-            b = 2147483647;
-            break;
-          }
-          b = (b == 2147483647) ? 1 : b + 1;
-          if (rooms[p][q] == 0) {
-            break;
-          }
+    for (int i = 0; i < m; i++) {
+      for (int j = 0; j < n; j++) {
+        if (rooms[i][j] == 0) {
+          queue.add(new int[] { i, j });
         }
-
-        // Top
-        for (p = i - 1, q = j; p >= 0; p--) {
-          if (rooms[p][q] == -1) {
-            c = 2147483647;
-            break;
-          }
-          c = (c == 2147483647) ? 1 : c + 1;
-          if (rooms[p][q] == 0) {
-            break;
-          }
-        }
-
-        // Bottom
-        for (p = i + 1, q = j; p <= m; p++) {
-          if (rooms[p][q] == -1) {
-            d = 2147483647;
-            break;
-          }
-          d = (d == 2147483647) ? 1 : d + 1;
-          if (rooms[p][q] == 0) {
-            break;
-          }
-        }
-        int min = Math.min(Math.min(Math.min(a, b), c), d);
-        rooms[i][j] = min;
       }
     }
+
+    while (!queue.isEmpty()) {
+      int[] point = queue.poll();
+      int row = point[0];
+      int col = point[1];
+      for (int[] dir : dirList) {
+        int r = row + dir[0];
+        int c = col + dir[1];
+        if (r < 0 || r >= m || c < 0 || c >= n || rooms[r][c] != EMPTY)
+          continue;
+        rooms[r][c] = rooms[row][col] + 1;
+        queue.add(new int[] { r, c });
+      }
+    }
+
   }
 }
