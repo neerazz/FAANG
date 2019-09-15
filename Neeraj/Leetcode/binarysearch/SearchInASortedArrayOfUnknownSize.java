@@ -30,12 +30,12 @@ public class SearchInASortedArrayOfUnknownSize {
             if (reader.get(avg) == Integer.MAX_VALUE) {
                 max = avg;
             } else {
-                min = avg+1;
+                min = avg + 1;
             }
         }
         return min;
     }
-
+}
 class ArrayReader {
     int[] array;
 
