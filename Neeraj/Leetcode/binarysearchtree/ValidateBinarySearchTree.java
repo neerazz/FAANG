@@ -28,7 +28,7 @@ Explanation: The root node's value is 5 but its right child's value is 4.
  */
 public class ValidateBinarySearchTree {
     public static void main(String[] args) {
-        System.out.println(isValidBST(createTreeNode(new Integer[]{2, 1, 3})) + " should be true");
+        System.out.println(isValidBST(createTreeNode(new Integer[]{2, 1, 3, null})) + " should be true");
         System.out.println(isValidBST(createTreeNode(new Integer[]{5, 1, 4, null, null, 3, 6})) + " should be false");
         System.out.println(isValidBST(createTreeNode(new Integer[]{10, 5, 15, null, null, 6, 20})) + " should be false");
     }
