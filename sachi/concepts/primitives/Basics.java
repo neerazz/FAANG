@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Bitwise {
+public class Basics {
     public static void main(String[] args) {
         System.out.println("Integer.MIN_VALUE=" + Integer.MIN_VALUE);
         System.out.println("Float.MAX_VALUE=" + Float.MAX_VALUE);
