@@ -12,13 +12,14 @@ F(N) = F(N - 1) + F(N - 2), for N > 1.
  */
 public class Fibonacci {
     private static Map<Integer, Integer> cache;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         System.out.println(printFibonaciIt(n));
         cache = new HashMap<Integer, Integer>();
-        cache.put(0,0);
-        cache.put(0,1);
+        cache.put(0, 0);
+        cache.put(0, 1);
         System.out.println(fiboRecusrion(n));
         scanner.close();
     }
@@ -37,20 +38,20 @@ public class Fibonacci {
         return sum;
     }
 
-    private static int fiboRecusrion(int n){
-        if(n <= 1){
+    private static int fiboRecusrion(int n) {
+        if (n <= 1) {
             return n;
-        }else{
+        } else {
             int first, second;
-            if(cache.get(n) !=null){
+            if (cache.get(n) != null) {
                 return cache.get(n);
-            }else{
-                first = fiboRecusrion(n-1);
-                cache.put(n-1,first);
-                second = fiboRecusrion(n-2);
-                cache.put(n-2,second);
+            } else {
+                first = fiboRecusrion(n - 1);
+                cache.put(n - 1, first);
+                second = fiboRecusrion(n - 2);
+                cache.put(n - 2, second);
             }
-            return  first + second;
+            return first + second;
         }
     }
 }

@@ -1,5 +1,4 @@
-
-//The goal in this problem is to find the minimum number of coins needed to change 
+//The goal in this problem is to find the minimum number of coins needed to change
 //the input value (an integer) into coins with denominations 1, 5, and 10.
 //-- Output Format. Output the minimum number of coins with denominations 1, 5, 10 that changes 𝑚.
 
@@ -15,7 +14,7 @@ public class W3_1MoneyChange {
     }
 
     private static int calculateMoneyChangeFast(int n) {
-        int[] denominations = { 10, 5, 1 };
+        int[] denominations = {10, 5, 1};
         int coins = 0, i = 0;
         while (n > 0) {
             int a = 0, sum = 0;

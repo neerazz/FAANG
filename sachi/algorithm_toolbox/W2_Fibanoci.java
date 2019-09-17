@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 //Given an integer 𝑛, find the 𝑛th Fibonacci number 𝐹𝑛
 //SOL : a=0, b=1, a+b
 //Fi = Fi-1 + Fi-2

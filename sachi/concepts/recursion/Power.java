@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 //TODO: - Write Iterative method
 public class Power {
     public static void main(String[] args) {

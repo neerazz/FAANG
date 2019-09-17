@@ -1,6 +1,6 @@
-import java.util.Scanner;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class W4_MajorityElement2 {
     public static void main(String[] args) {

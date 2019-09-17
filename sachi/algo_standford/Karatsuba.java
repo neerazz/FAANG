@@ -1,8 +1,7 @@
-
 /******************************************************************************
  *  Compilation:  javac Karatsuba.java
  *  Execution:    java Karatsuba N
- *  
+ *
  *  Multiply two positive N-bit BigIntegers using Karatsuba multiplication.
  *
  *

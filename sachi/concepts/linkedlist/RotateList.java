@@ -9,7 +9,7 @@ public class RotateList {
     private static ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null || k == 0)
             return head;
-            
+
         ListNode temp = head;
         int len = 0;
         while (temp != null) {

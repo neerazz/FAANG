@@ -6,7 +6,7 @@ class Solution {
 
     public static void main(String[] args) {
         // printArray(twoSum(new int[]{2,5,5,11},10));
-        System.out.println(maxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
+        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 
     private static int maxSubArray(int[] nums) {
@@ -32,10 +32,10 @@ class Solution {
         for (int j = 0; j < nums.length; j++) {
             int complement = target - nums[j];
             if (map.containsKey(complement) && map.get(complement) != j) {
-                return new int[] { j, map.get(complement) };
+                return new int[]{j, map.get(complement)};
             }
         }
-        return new int[] { -1 };
+        return new int[]{-1};
     }
 
     private static void printArray(int[] a) {

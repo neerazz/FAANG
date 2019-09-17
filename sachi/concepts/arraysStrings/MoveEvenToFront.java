@@ -4,7 +4,7 @@ Move all even elements to first and odd elements to end
 
 public class MoveEvenToFront {
     public static void main(String[] args) {
-        int[] input = new int[] { 1, 3, 5 };
+        int[] input = new int[]{1, 3, 5};
         Util.print(input);
         moveEven(input);
         Util.print(input);

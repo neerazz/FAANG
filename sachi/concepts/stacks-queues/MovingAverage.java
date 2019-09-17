@@ -12,6 +12,14 @@ public class MovingAverage {
         sum = 0;
     }
 
+    public static void main(String[] args) {
+        MovingAverage movingAverage = new MovingAverage(3);
+        System.out.println(movingAverage.next(1));
+        System.out.println(movingAverage.next(10));
+        System.out.println(movingAverage.next(3));
+        System.out.println(movingAverage.next(5));
+    }
+
     public double next(int val) {
         if (queue.size() < size) {
             sum += val;
@@ -23,13 +31,5 @@ public class MovingAverage {
             sum -= queue.pollFirst();
             return sum / size;
         }
-    }
-
-    public static void main(String[] args) {
-        MovingAverage movingAverage = new MovingAverage(3);
-        System.out.println(movingAverage.next(1));
-        System.out.println(movingAverage.next(10));
-        System.out.println(movingAverage.next(3));
-        System.out.println(movingAverage.next(5));
     }
 }

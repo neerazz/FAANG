@@ -11,6 +11,7 @@ To ensure this, output your answer with at least four digits after the decimal p
 (otherwise your answer, while being computed correctly, can turn out to be wrong because of rounding issues).
 
 */
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class W3_2MaxValueLoot {
         // Iterate through to put all max from first and going forward
         double finalVal = 0;
         int i = 0, filledCapacity = 0;
-        while (capacity > 0 && i< values.length) {
+        while (capacity > 0 && i < values.length) {
             if (capacity >= weights[i]) {
                 // Take Full
                 finalVal += weights[i] * ratio[i];

@@ -5,21 +5,24 @@ import java.util.Queue;
 
 public class NumberOfIslands {
     public static void main(String[] args) {
-        char[][] grid = new char[][] { { '1', '1', '1', '1', '0' }, { '1', '1', '0', '1', '0' },
-                { '1', '1', '0', '0', '0' }, { '0', '0', '0', '0', '0' } };
+        char[][] grid = new char[][]{
+                {'1', '1', '1', '1', '0'},
+                {'1', '1', '0', '1', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '0', '0', '0'}};
         System.out.println(numIslands(grid));
     }
 
     private static int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0)
             return 0;
-        List<int[]> dirList = Arrays.asList(new int[] { -1, 0 }, new int[] { 1, 0 }, new int[] { 0, 1 },
-                new int[] { 0, -1 });
+        List<int[]> dirList = Arrays.asList(new int[]{-1, 0}, new int[]{1, 0}, new int[]{0, 1},
+                new int[]{0, -1});
         int m = grid.length;
         int n = grid[0].length;
         Queue<int[]> q = new LinkedList<>();
         boolean[][] visited = new boolean[m][n];
-        q.add(new int[] { 0, 0 });
+        q.add(new int[]{0, 0});
         visited[0][0] = true;
         while (!q.isEmpty()) {
             int[] point = q.poll();
@@ -32,7 +35,7 @@ public class NumberOfIslands {
                 if (r < 0 || c < 0 || r >= m || c >= n)
                     continue;
                 if (!visited[r][c]) {
-                    q.add(new int[] { r, c });
+                    q.add(new int[]{r, c});
                     visited[r][c] = true;
                     if (grid[r][c] != '0') {
                         grid[r][c] = (char) (grid[row][col] + 1);

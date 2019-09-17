@@ -72,7 +72,7 @@ public class MergeSort {
 
     /**
      * Print Array
-     * 
+     *
      * @param input
      */
     private static void printArray(String message, int input[]) {

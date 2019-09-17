@@ -1,27 +1,18 @@
 public class DoublyLinkedList {
 
+    private int size;
+    private DoublyListNode head, tail;
+    DoublyLinkedList() {
+        size = 0;
+        head = null;
+        tail = null;
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList myList = new DoublyLinkedList();
         myList.addAtIndex(-1, 0);
         myList.get(0);
         myList.deleteAtIndex(-1);
-    }
-
-    private int size;
-    private DoublyListNode head, tail;
-    static class DoublyListNode {
-        int val;
-        DoublyListNode prev, next;
-
-        DoublyListNode(int x) {
-            val = x;
-        }
-    }
-
-    DoublyLinkedList() {
-        size = 0;
-        head = null;
-        tail = null;
     }
 
     /**
@@ -64,7 +55,9 @@ public class DoublyLinkedList {
         size++;
     }
 
-    /** Append a node of value val to the last element of the linked list. */
+    /**
+     * Append a node of value val to the last element of the linked list.
+     */
     public void addAtTail(int val) {
         DoublyListNode elem = new DoublyListNode(val);
         if (size == 0) {
@@ -111,7 +104,9 @@ public class DoublyLinkedList {
         }
     }
 
-    /** Delete the index-th node in the linked list, if the index is valid. */
+    /**
+     * Delete the index-th node in the linked list, if the index is valid.
+     */
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= size)
             return;
@@ -137,6 +132,15 @@ public class DoublyLinkedList {
             newNext.prev = newPrev;
         }
         size--;
+    }
+
+    static class DoublyListNode {
+        int val;
+        DoublyListNode prev, next;
+
+        DoublyListNode(int x) {
+            val = x;
+        }
     }
 
 }

@@ -1,5 +1,22 @@
 public class CopyListWithRandomPointer {
 
+    public static void main(String[] args) {
+
+    }
+
+    ;
+
+    public static Node copyRandomList(Node head) {
+        if (head == null)
+            return head;
+        Node cloneRandom = head.random;
+        Node itr = cloneRandom;
+        while (itr != null) {
+
+        }
+        return null;
+    }
+
     class Node {
         public int val;
         public Node next;
@@ -13,20 +30,5 @@ public class CopyListWithRandomPointer {
             next = _next;
             random = _random;
         }
-    };
-
-    public static void main(String[] args) {
-
-    }
-
-    public static Node copyRandomList(Node head) {
-        if (head == null)
-            return head;
-        Node cloneRandom = head.random;
-        Node itr = cloneRandom;
-        while (itr != null) {
-
-        }
-        return null;
     }
 }

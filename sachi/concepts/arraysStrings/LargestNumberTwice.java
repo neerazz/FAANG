@@ -19,6 +19,7 @@ int largest = Integer.MIN_VALUE;
 int second = Integer.MIN_VALUE;
 
 */
+
 import java.util.Scanner;
 
 
@@ -45,7 +46,7 @@ public class LargestNumberTwice {
                 second = largest;
                 largest = nums[i];
                 index = i;
-            }else if(nums[i]> second){
+            } else if (nums[i] > second) {
                 second = nums[i];
             }
         }

@@ -39,7 +39,7 @@ public class W3_3CarFueling {
         }
 
         //No need to refill
-        if(tank >= dist){
+        if (tank >= dist) {
             return 0;
         }
 

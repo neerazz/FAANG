@@ -12,16 +12,17 @@ The sum of the numbers to the left of index 3 (nums[3] = 6) is equal to the sum 
 Also, 3 is the first index where this occurs.
 
 */
+
 import java.util.Scanner;
 
 //--Edge case
 
-public class PivotArray{
+public class PivotArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] input = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             input[i] = scanner.nextInt();
         }
         System.out.println(pivotIndex(input));
@@ -29,21 +30,21 @@ public class PivotArray{
     }
 
     private static int pivotIndex(int[] nums) {
-        if(nums== null || nums.length <=1) return -1;
-        int sum = 0, temp =0;
+        if (nums == null || nums.length <= 1) return -1;
+        int sum = 0, temp = 0;
         for (int num : nums) sum += num;
         //Check for 1st Index
-        if(sum-nums[0] == 0) return 0;
-        for(int i=0; i<nums.length-1; i++){
+        if (sum - nums[0] == 0) return 0;
+        for (int i = 0; i < nums.length - 1; i++) {
             temp += nums[i];
-            if(sum-nums[i+1] == temp*2){
-                return i+1;
-            }    
+            if (sum - nums[i + 1] == temp * 2) {
+                return i + 1;
+            }
         }
         return -1;
     }
 
-    
+
 }
 
 

@@ -21,7 +21,7 @@ public class P_PolynomialMul {
 
     /**
      * Naive Imp i < 0 to n, j < 0 to n
-     * 
+     *
      * @param a
      * @param b
      * @return

@@ -1,16 +1,7 @@
 public class MyLinkedList {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-
     private ListNode head, tail;
     private int size;
-
     /**
      * Initialize your data structure here.
      */
@@ -18,6 +9,16 @@ public class MyLinkedList {
         size = 0;
         head = null;
         tail = null;
+    }
+
+    public static void main(String[] args) {
+        MyLinkedList linkedList = new MyLinkedList();
+        linkedList.addAtHead(1);
+        linkedList.addAtTail(3);
+        linkedList.addAtIndex(1, 2);  // linked list becomes 1->2->3
+        linkedList.get(1);            // returns 2
+        linkedList.deleteAtIndex(1);  // now the linked list is 1->3
+        linkedList.get(1);            // returns 3
     }
 
     /**
@@ -100,7 +101,7 @@ public class MyLinkedList {
             deleteHead();
         } else {
             ListNode curr = head;
-            for (int i = 0; i < index-1; i++) {
+            for (int i = 0; i < index - 1; i++) {
                 curr = curr.next;
             }
             curr.next = curr.next.next;
@@ -118,14 +119,13 @@ public class MyLinkedList {
         }
     }
 
-    public static void main(String[] args) {
-        MyLinkedList linkedList = new MyLinkedList();
-        linkedList.addAtHead(1);
-        linkedList.addAtTail(3);
-        linkedList.addAtIndex(1, 2);  // linked list becomes 1->2->3
-        linkedList.get(1);            // returns 2
-        linkedList.deleteAtIndex(1);  // now the linked list is 1->3
-        linkedList.get(1);            // returns 3
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int val) {
+            this.val = val;
+        }
     }
 
 }

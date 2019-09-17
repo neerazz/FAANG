@@ -7,6 +7,7 @@ public class Util {
 
     /**
      * Generate array of size less than 100
+     *
      * @return
      */
     public static int[] generateRandomArray() {

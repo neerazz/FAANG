@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/WallsAndGates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/EvaluateRPNExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/SortedArray_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/other/SortedArray_E.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/TwoSum_E.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/other/TwoSum_E.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/leetcode/concepts/stacks/MovingAverage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/linkedlist/IntersectionOfLInkedLIsts.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/linkedlist/IntersectionOfLinkedLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLInkedListInReverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLInkedListInReverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/stacks-queues/WallsAndGates.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/WallsAndGates.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +56,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -90,18 +91,13 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="WallsAndGates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WallsAndGates" />
-      <module name="leetcode" />
+    <configuration name="PrintLinkedListInReverse" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrintLinkedListInReverse" />
+      <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.WallsAndGates" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -117,6 +113,8 @@
       <workItem from="1567438428162" duration="746000" />
       <workItem from="1567439688076" duration="16000" />
       <workItem from="1567439709203" duration="18000" />
+      <workItem from="1568748578886" duration="3144000" />
+      <workItem from="1568764242827" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Week 1.">
       <created>1561604898322</created>
@@ -1008,6 +1006,11 @@
           <url>file://$PROJECT_DIR$/Neeraj/Leetcode/queueAndStack/KeysAndRooms.java</url>
           <line>50</line>
           <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLinkedListInReverse.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="275" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

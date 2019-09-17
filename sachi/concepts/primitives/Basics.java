@@ -39,9 +39,9 @@ public class Basics {
         System.out.println("String.valueOf(123)=" + String.valueOf(123));
         // Random
         Random rand = new Random();
-        System.out.println("rand.nextInt()="+rand.nextInt());
-        System.out.println("rand.nextInt(10)="+rand.nextInt(10));
-        System.out.println("rand.nextDouble()="+rand.nextDouble());
-        System.out.println("rand.nextBoolean()="+rand.nextBoolean());
+        System.out.println("rand.nextInt()=" + rand.nextInt());
+        System.out.println("rand.nextInt(10)=" + rand.nextInt(10));
+        System.out.println("rand.nextDouble()=" + rand.nextDouble());
+        System.out.println("rand.nextBoolean()=" + rand.nextBoolean());
     }
 }

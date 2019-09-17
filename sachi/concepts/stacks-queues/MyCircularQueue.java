@@ -12,6 +12,21 @@ public class MyCircularQueue {
         _input = new int[k];
     }
 
+    public static void main(String[] args) {
+        MyCircularQueue circularQueue = new MyCircularQueue(6);
+        System.out.println(circularQueue.enQueue(6));
+        System.out.println(circularQueue.Rear());
+        System.out.println(circularQueue.Rear());
+        System.out.println(circularQueue.deQueue());
+        System.out.println(circularQueue.enQueue(5));
+        System.out.println(circularQueue.Rear());
+        System.out.println(circularQueue.deQueue());
+        System.out.println(circularQueue.Front());
+        System.out.println(circularQueue.deQueue());
+        System.out.println(circularQueue.deQueue());
+        System.out.println(circularQueue.deQueue());
+    }
+
     /**
      * Insert an element into the circular queue. Return true if the operation is successful.
      */
@@ -41,7 +56,6 @@ public class MyCircularQueue {
             return ++pointer;
         }
     }
-
 
     /**
      * Delete an element from the circular queue. Return true if the operation is successful.
@@ -89,20 +103,5 @@ public class MyCircularQueue {
      */
     public boolean isFull() {
         return increment(tail) == head;
-    }
-
-    public static void main(String[] args) {
-        MyCircularQueue circularQueue = new MyCircularQueue(6);
-        System.out.println(circularQueue.enQueue(6));
-        System.out.println(circularQueue.Rear());
-        System.out.println(circularQueue.Rear());
-        System.out.println(circularQueue.deQueue());
-        System.out.println(circularQueue.enQueue(5));
-        System.out.println(circularQueue.Rear());
-        System.out.println(circularQueue.deQueue());
-        System.out.println(circularQueue.Front());
-        System.out.println(circularQueue.deQueue());
-        System.out.println(circularQueue.deQueue());
-        System.out.println(circularQueue.deQueue());
     }
 }

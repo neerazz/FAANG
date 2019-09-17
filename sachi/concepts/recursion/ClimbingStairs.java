@@ -9,13 +9,13 @@ public class ClimbingStairs {
     }
 
     private static int climbStairs(int n) {
-        int[] stairs = {1,2};
+        int[] stairs = {1, 2};
         int res = 0;
-        if(n<=1)return n;
-        while(true){
+        if (n <= 1) return n;
+        while (true) {
             int sum = 0;
-            while(sum <= n){
-                
+            while (sum <= n) {
+
             }
         }
     }

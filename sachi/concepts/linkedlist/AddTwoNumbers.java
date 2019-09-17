@@ -8,7 +8,7 @@ public class AddTwoNumbers {
         l2.next = new ListNode(6);
         l2.next.next = new ListNode(4);
 
-        Util.print(addTwoNumbers(l1,l2));
+        Util.print(addTwoNumbers(l1, l2));
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -25,7 +25,7 @@ public class AddTwoNumbers {
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
-        if(carry != 0){
+        if (carry != 0) {
             curr.next = new ListNode(carry);
         }
         return dummy.next;

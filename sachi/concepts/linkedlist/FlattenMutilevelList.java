@@ -1,6 +1,29 @@
 //TODO: REdo  this problem
 public class FlattenMutilevelList {
 
+    public static void main(String[] args) {
+    }
+
+    public static Node flatten(Node head) {
+        if (head == null)
+            return head;
+        Node ptr = head;
+        while (ptr != null) {
+            if (ptr.child != null) {
+                flatten(ptr, ptr.child);
+            }
+        }
+        return null;
+    }
+
+    public static Node flatten(Node head, Node child) {
+        if (child == null) return head;
+        head.next = child;
+        head.next.child = null;
+        child = child.child == null ? child.next : child.child;
+        return flatten(head.next, child);
+    }
+
     static class Node {
         public int val;
         public Node prev;
@@ -16,29 +39,6 @@ public class FlattenMutilevelList {
             next = _next;
             child = _child;
         }
-    }
-
-    public static void main(String[] args) {
-    }
-
-    public static Node flatten(Node head) {
-        if (head == null)
-            return head;
-        Node ptr = head;
-        while (ptr != null) {
-            if (ptr.child != null) {
-                flatten(ptr , ptr.child);    
-            }
-        }
-        return null;
-    }
-
-    public static Node flatten(Node head, Node child) {
-        if (child == null) return head;
-        head.next = child;
-        head.next.child = null;
-        child = child.child == null ? child.next : child.child;
-        return flatten(head.next, child);
     }
 
 }

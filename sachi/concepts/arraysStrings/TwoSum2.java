@@ -1,4 +1,3 @@
-
 /*
 Given an array of integers that is already sorted in ascending order, find two numbers such that they 
 add up to a specific target number.
@@ -43,7 +42,7 @@ public class TwoSum2 {
         while (i < j) {
             int sum = numbers[i] + numbers[j];
             if (sum == target) {
-                return new int[] { ++i, ++j };
+                return new int[]{++i, ++j};
             } else if (sum > target) {
                 j--;
             } else if (sum < target) {
