@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/concepts/arraysStrings/StringReplace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/OpenTheLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/PerfectSquares.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/concepts/stacks-queues/NumberOfIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/NumberOfIslands.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +108,7 @@
       <workItem from="1567439688076" duration="16000" />
       <workItem from="1567439709203" duration="18000" />
       <workItem from="1568748578886" duration="3144000" />
-      <workItem from="1568764242827" duration="1763000" />
+      <workItem from="1568764242827" duration="3210000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Week 1.">
       <created>1561604898322</created>
