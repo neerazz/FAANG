@@ -3,6 +3,7 @@ package narraytree;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /*
 https://leetcode.com/explore/learn/card/n-ary-tree/132/conclusion/924/
@@ -31,23 +32,29 @@ public class SerializeAndDeserializeNaryTree {
 //        Your Codec object will be instantiated and called as such:
         Codec codec = new Codec();
         System.out.println(codec.serialize(root));
-        codec.deserialize(codec.serialize(root));
+        System.out.println(codec.deserialize(codec.serialize(root)));
+        Codec codec1 = new Codec();
+        Node node44 = new Node(44, null);
+        System.out.println(codec1.serialize(node44));
+        System.out.println(codec1.deserialize(codec1.serialize(node44)));
     }
 
     static class Codec {
 
+        int deserializeIndex = 0;
         // Encodes a tree to a single string.
         public String serialize(Node root) {
-            return "[" + serializeHelper(root) + "]";
+            String s = serializeHelper(root);
+            return "[" + s + "]";
         }
 
         private String serializeHelper(Node root) {
             if (root == null) return "";
             if (root.children == null || root.children.isEmpty()) return String.valueOf(root.val);
             StringBuilder sb = new StringBuilder();
-            sb.append(root.val);
+            sb.append(root.val).append(",");
             sb.append('[');
-            root.children.forEach(node -> sb.append(serializeHelper(node)));
+            root.children.forEach(node -> sb.append(serializeHelper(node)).append(","));
             sb.append(']');
             return sb.toString();
         }
@@ -55,27 +62,35 @@ public class SerializeAndDeserializeNaryTree {
         // Decodes your encoded data to tree.
         public Node deserialize(String data) {
             if (data.length() <= 2) return null;
-            return deserializeHelper(data.substring(1, data.length() - 1));
+            return deserializeHelper(data.substring(1, data.length() - 1)).get(0);
         }
 
-        private Node deserializeHelper(String data) {
-            System.out.println("data = " + data);
+        private List<Node> deserializeHelper(String data) {
             if (data.isEmpty()) return null;
-            int index = 1;
-            Node node = new Node();
-            List<Node> children = new ArrayList<>();
-            while (index < data.length()) {
-                char current = data.charAt(index++);
-                if (current == '[') {
-                    children.add(deserializeHelper(data.substring(index)));
-                } else if (Character.isDigit(current)) {
-                    node.val = Integer.parseInt(String.valueOf(current));
-                } else {
+            Stack<Node> nodes = new Stack<>();
+            while (deserializeIndex < data.length()) {
+                char current = data.charAt(deserializeIndex);
+                Node node = new Node();
+                node.children = new ArrayList<>();
+                if (current == ']') {
+                    deserializeIndex++;
                     break;
+                } else if (current == '[') {
+                    deserializeIndex++;
+                    nodes.peek().children.addAll(deserializeHelper(data));
+                } else if (current == ',') {
+                    deserializeIndex++;
+                } else {
+                    int comma = data.substring(deserializeIndex).indexOf(',');
+                    String value = null;
+                    if (comma != -1) value = data.substring(deserializeIndex, deserializeIndex + comma);
+                    else value = data.substring(deserializeIndex);
+                    deserializeIndex += value.length();
+                    node.val = Integer.parseInt(value);
+                    nodes.add(node);
                 }
             }
-            node.children = children;
-            return node;
+            return nodes;
         }
     }
 }
