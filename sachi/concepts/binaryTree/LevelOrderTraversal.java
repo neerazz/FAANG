@@ -30,27 +30,33 @@ public class LevelOrderTraversal {
         root.right = new TreeNode(20);
         root.right.left = new TreeNode(15);
         root.right.right = new TreeNode(7);
-        //Util.print(levelOrder(root));
         levelOrder(root).forEach(e -> System.out.print(e + " "));
     }
 
-    private static List<Integer> levelOrder(TreeNode root) {
-        //List<List<Integer>> sol = new ArrayList<>();
-        List<Integer> sol = new ArrayList<>();
+    private static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> levels = new ArrayList<>();
         Deque<TreeNode> queue = new LinkedList<>();
-        if (root == null) return sol;
+        if (root == null) return levels;
         queue.addLast(root);
+        int level = 0;
         while (!queue.isEmpty()) {
-            TreeNode node = queue.pollFirst();
-            sol.add(node.val);
-            if (node.left != null) {
-                queue.addLast(node.left);
+            levels.add(new ArrayList<>());
+            int noOfElements = queue.size();
+            for (int i = 0; i < noOfElements; ++i) {
+                TreeNode node = queue.pollFirst();
+                levels.get(level).add(node.val);
+                if (node.left != null) {
+                    queue.addLast(node.left);
+                }
+                if (node.right != null) {
+                    queue.addLast(node.right);
+                }
             }
-            if (node.right != null) {
-                queue.addLast(node.right);
-            }
+            level++;
         }
-        return sol;
+        return levels;
     }
+
+    //TODO: Write recursion method for this
 
 }
