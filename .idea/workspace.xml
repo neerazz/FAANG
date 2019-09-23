@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/InOrderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/LevelOrderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/PostOrderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/PreOrderTraversal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/util/TreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/recursion/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/kotlin/Hello.kt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +92,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LevelOrderTraversal">
+    <configuration name="InOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InOrderTraversal" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LevelOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LevelOrderTraversal" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PostOrderTraversal" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PreOrderTraversal" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PreOrderTraversal" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PrintLinkedListInReverse" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PrintLinkedListInReverse" />
       <module name="sachi" />
@@ -92,6 +128,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LevelOrderTraversal" />
+        <item itemvalue="Application.PostOrderTraversal" />
+        <item itemvalue="Application.InOrderTraversal" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -109,6 +152,7 @@
       <workItem from="1567439709203" duration="18000" />
       <workItem from="1568748578886" duration="3144000" />
       <workItem from="1568764242827" duration="3210000" />
+      <workItem from="1569182946468" duration="6755000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Week 1.">
       <created>1561604898322</created>
