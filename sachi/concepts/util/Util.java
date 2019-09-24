@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 public class Util {
 
@@ -79,15 +82,20 @@ public class Util {
         System.out.println("\n---------- END LinkedList-------------");
     }
 
-    public static void print(List<List<Integer>> listOfList) {
-        System.out.println("\n---------- PRINTING ArrayList-------------");
-        for (List<Integer> outer : listOfList) {
-            for (Integer inner : outer) {
-                System.out.print(inner + " ");
-            }
-            System.out.println();
+    public TreeNode convertArrayToTreeNode(Integer[] arr) {
+        if (arr == null || arr.length == 0) return null;
+        TreeNode[] nodes = new TreeNode[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int parentIndex = (2 * i) - 1;
+            int leftIndex = (2 * parentIndex) + 1;
+            int rightIndex = (2 * parentIndex) + 2;
+            TreeNode parent = nodes[parentIndex] == null ? new TreeNode(arr[parentIndex]) : nodes[parentIndex];
+            TreeNode left = nodes[leftIndex] == null ? new TreeNode(arr[leftIndex]) : nodes[leftIndex];
+            TreeNode right = nodes[rightIndex] == null ? new TreeNode(arr[rightIndex]) : nodes[rightIndex];
+            parent.left = left;
+            parent.right = right;
+            i--;
         }
-        System.out.println("\n---------- END ArrayList-------------");
+        return nodes[0];
     }
-
 }
