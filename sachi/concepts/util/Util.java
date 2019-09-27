@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Util {
 
@@ -82,20 +79,48 @@ public class Util {
         System.out.println("\n---------- END LinkedList-------------");
     }
 
-    public TreeNode convertArrayToTreeNode(Integer[] arr) {
+    public static TreeNode convertArrayToTreeNode(Integer[] arr) {
         if (arr == null || arr.length == 0) return null;
         TreeNode[] nodes = new TreeNode[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
-            int parentIndex = (2 * i) - 1;
+            int parentIndex = (i - 1) / 2;
             int leftIndex = (2 * parentIndex) + 1;
             int rightIndex = (2 * parentIndex) + 2;
             TreeNode parent = nodes[parentIndex] == null ? new TreeNode(arr[parentIndex]) : nodes[parentIndex];
-            TreeNode left = nodes[leftIndex] == null ? new TreeNode(arr[leftIndex]) : nodes[leftIndex];
-            TreeNode right = nodes[rightIndex] == null ? new TreeNode(arr[rightIndex]) : nodes[rightIndex];
-            parent.left = left;
-            parent.right = right;
+            //Set Left index
+            if (nodes[leftIndex] == null) {
+                if (arr[leftIndex] != null) {
+                    parent.left = null;
+                } else {
+                    parent.left = new TreeNode(arr[leftIndex]);
+                }
+            }
+            //Set Right index
+            if (nodes[rightIndex] == null) {
+                if (arr[rightIndex] != null) {
+                    parent.right = null;
+                } else {
+                    parent.right = new TreeNode(arr[rightIndex]);
+                }
+            }
+            nodes[parentIndex] = parent;
             i--;
         }
         return nodes[0];
+    }
+
+    public static void print(TreeNode root) {
+        System.out.println("---------- Printing TreeNode-------------");
+        //Print using BFS
+        if (root == null) return;
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.addLast(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.removeFirst();
+            System.out.print(node.val + " ");
+            if (node.left != null) queue.addLast(node.left);
+            if (node.right != null) queue.addLast(node.right);
+        }
+        System.out.println("\n---------- END TreeNode-------------");
     }
 }

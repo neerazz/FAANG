@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f9f285b-0463-497b-89b4-747f0924968a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/MaxDepthOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/SymmetricTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/CountUniValueSubTrees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/PathSum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sachi/concepts/binaryTree/LevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/LevelOrderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/binaryTree/SymmetricTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/SymmetricTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sachi/concepts/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/util/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,9 +88,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MaxDepthOfBinaryTree">
-    <configuration name="InOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InOrderTraversal" />
+  <component name="RunManager" selected="Application.CountUniValueSubTrees">
+    <configuration name="CountUniValueSubTrees" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CountUniValueSubTrees" />
       <module name="sachi" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,12 +131,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SymmetricTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SymmetricTree" />
+      <module name="sachi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CountUniValueSubTrees" />
+        <item itemvalue="Application.SymmetricTree" />
         <item itemvalue="Application.MaxDepthOfBinaryTree" />
         <item itemvalue="Application.LevelOrderTraversal" />
         <item itemvalue="Application.PostOrderTraversal" />
-        <item itemvalue="Application.InOrderTraversal" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +165,10 @@
       <workItem from="1568748578886" duration="3144000" />
       <workItem from="1568764242827" duration="3210000" />
       <workItem from="1569182946468" duration="7018000" />
-      <workItem from="1569239756612" duration="3003000" />
+      <workItem from="1569239756612" duration="3027000" />
+      <workItem from="1569354894199" duration="3404000" />
+      <workItem from="1569361594073" duration="1636000" />
+      <workItem from="1569366942649" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Week 1.">
       <created>1561604898322</created>
@@ -1054,6 +1065,21 @@
           <url>file://$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLinkedListInReverse.java</url>
           <line>19</line>
           <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/concepts/util/Util.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/concepts/binaryTree/SymmetricTree.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sachi/concepts/binaryTree/CountUniValueSubTrees.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="282" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
