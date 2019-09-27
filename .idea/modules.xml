@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/sachi/EPIJudge/EPIJudge.iml" filepath="$PROJECT_DIR$/sachi/EPIJudge/EPIJudge.iml" />
       <module fileurl="file://$PROJECT_DIR$/Neeraj/Neeraj.iml" filepath="$PROJECT_DIR$/Neeraj/Neeraj.iml" />
-      <module fileurl="file://$PROJECT_DIR$/resources/resources.iml" filepath="$PROJECT_DIR$/resources/resources.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sachi/sachi.iml" filepath="$PROJECT_DIR$/sachi/sachi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sachi/concepts/concepts.iml" filepath="$PROJECT_DIR$/sachi/concepts/concepts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sachi/EPIJudge/epi_judge_java_solutions/epi_judge_java_solutions.iml" filepath="$PROJECT_DIR$/sachi/EPIJudge/epi_judge_java_solutions/epi_judge_java_solutions.iml" />
     </modules>
   </component>
 </project>
