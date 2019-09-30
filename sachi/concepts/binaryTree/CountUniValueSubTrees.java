@@ -32,9 +32,12 @@ public class CountUniValueSubTrees {
     }
 
     private static int countUnivalSubtrees(TreeNode root) {
-        if (root == null) return count;
-        if (root.left == null && root.right == null)  ++count;
-        if (root.left.val == root.right.val) return ++count;
+        if (root == null)
+            return count;
+        if (root.left == null && root.right == null)
+            ++count;
+        if (root.left.val == root.right.val)
+            return ++count;
         return countUnivalSubtrees(root.left) + countUnivalSubtrees(root.right);
     }
 
