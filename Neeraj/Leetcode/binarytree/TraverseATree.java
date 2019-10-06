@@ -16,10 +16,17 @@ PostOrder Traversal Output: [3,2,1]
  */
 public class TraverseATree {
     public static void main(String[] args) {
-        TreeNode treeNode = createTreeNode(new ArrayList<>(Arrays.asList(3, 9, 20, null, null, 15, 7)));
+        TreeNode treeNode = createTreeNode(new ArrayList<>(Arrays.asList(5, 6, 7, 3, 4, 3, 2, null, 1, null, null, null, null, null, 9)));
+        System.out.println("===================Recursive========================");
         System.out.println("Actual Node\t:" + treeNode);
         System.out.println("PreOrder   \t:" + preorderTraversal(treeNode));
         System.out.println("InOrder    \t:" + inorderTraversal(treeNode));
+        System.out.println("PostOrder  \t:" + postorderTraversal(treeNode));
+        System.out.println("LevelOrder \t:" + levelOrder(treeNode));
+        System.out.println("===================Iterative========================");
+        System.out.println("Actual Node\t:" + treeNode);
+        System.out.println("PreOrder   \t:" + preorderTraversal_iterative(treeNode));
+        System.out.println("InOrder    \t:" + inorderTraversal_iterative(treeNode));
         System.out.println("PostOrder  \t:" + postorderTraversal(treeNode));
         System.out.println("LevelOrder \t:" + levelOrder(treeNode));
     }
@@ -55,12 +62,45 @@ public class TraverseATree {
         return output;
     }
 
+    public static List<Integer> preorderTraversal_iterative(TreeNode root) {
+        List<Integer> output = new ArrayList<>();
+        if (root == null) return output;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            TreeNode peek = stack.pop();
+            if (peek != null) {
+                output.add(peek.val);
+                stack.add(peek.right);
+                stack.add(peek.left);
+            }
+        }
+        return output;
+    }
+
     public static List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) return new ArrayList<>();
         List<Integer> output = new ArrayList<>();
         output.addAll(inorderTraversal(root.left));
         output.add(root.val);
         output.addAll(inorderTraversal(root.right));
+        return output;
+    }
+
+    public static List<Integer> inorderTraversal_iterative(TreeNode root) {
+        List<Integer> output = new ArrayList<>();
+        if (root == null) return output;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty()) {
+            while (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            output.add(curr.val);
+            curr = curr.right;
+        }
         return output;
     }
 
