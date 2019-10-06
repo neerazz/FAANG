@@ -9,20 +9,7 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | Logarithm | O(Log n) | https://www.interviewcake.com/article/python/logarithms? https://www.youtube.com/watch?v=M4ubFru2O80 |  |
 | Quadratic | O(n*n) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
 
-# Leetcode Problems
-
-## Recursion
-
-|#	|Title	|Acceptance	|Difficulty|
-|---|---|---|---|
-|698	|[Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets)	|43.00%	|Medium
-|726	|[Number of Atoms](https://leetcode.com/problems/number-of-atoms)	|45.30%	|Hard
-|247	|[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii)	|44.90%	|Medium
-|794	|[Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state)	|30.30%	|Medium
-|938	|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst)	|78.20%	|Easy
-|776	|[Split BST](https://leetcode.com/problems/split-bst)	|52.90%	|Medium
-|761	|[Special Binary String](https://leetcode.com/problems/special-binary-string)	|52.50%	|Hard
-|894	|[All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees)	|71.60%	|Medium
+# DataStructures & Algorithm Problems
 
 ## Array, Hash Table, Linked List, Stack, Heap, Graph, Tree, Queue
 
@@ -101,6 +88,52 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | 98 | [Validate Binary Search Tree    ](https://leetcode.com/problems/validate-binary-search-tree) | 26.00% | **Medium** |
 | 207 | [Course Schedule    ](https://leetcode.com/problems/course-schedule) | 38.60% | **Medium** |
 
+## Recursion
+
+|#	|Title	|Acceptance	|Difficulty|
+|---|---|---|---|
+|698	|[Partition to K Equal Sum Subsets](https://leetcode.com/problems/partition-to-k-equal-sum-subsets)	|43.00%	|Medium
+|726	|[Number of Atoms](https://leetcode.com/problems/number-of-atoms)	|45.30%	|Hard
+|247	|[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii)	|44.90%	|Medium
+|794	|[Valid Tic-Tac-Toe State](https://leetcode.com/problems/valid-tic-tac-toe-state)	|30.30%	|Medium
+|938	|[Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst)	|78.20%	|Easy
+|776	|[Split BST](https://leetcode.com/problems/split-bst)	|52.90%	|Medium
+|761	|[Special Binary String](https://leetcode.com/problems/special-binary-string)	|52.50%	|Hard
+|894	|[All Possible Full Binary Trees](https://leetcode.com/problems/all-possible-full-binary-trees)	|71.60%	|Medium
+
+## Backtracking
+
+| **#** | **Title** | **Acceptance** | **Difficulty** |
+| --- | --- | --- | --- |
+| 22 | [Generate Parentheses    ](https://leetcode.com/problems/generate-parentheses) | 57.40% | Medium |
+| 10 | [Regular Expression Matching    ](https://leetcode.com/problems/regular-expression-matching) | 25.80% | Hard |
+| 17 | [Letter Combinations of a Phone Number    ](https://leetcode.com/problems/letter-combinations-of-a-phone-number) | 43.20% | Medium |
+| 46 | [Permutations    ](https://leetcode.com/problems/permutations) | 57.80% | Medium |
+| 79 | [Word Search    ](https://leetcode.com/problems/word-search) | 32.50% | Medium |
+| 212 | [Word Search II    ](https://leetcode.com/problems/word-search-ii) | 30.30% | Hard |
+| 51 | [N-Queens    ](https://leetcode.com/problems/n-queens) | 41.70% | Hard |
+| 78 | [Subsets    ](https://leetcode.com/problems/subsets) | 55.50% | Medium |
+| 39 | [Combination Sum    ](https://leetcode.com/problems/combination-sum) | 51.10% | Medium |
+| 37 | [Sudoku Solver    ](https://leetcode.com/problems/sudoku-solver) | 39.00% | Hard |
+| 126 | [Word Ladder II    ](https://leetcode.com/problems/word-ladder-ii) | 19.10% | Hard |
+| 93 | [Restore IP Addresses    ](https://leetcode.com/problems/restore-ip-addresses) | 32.60% | Medium |
+| 44 | [Wildcard Matching    ](https://leetcode.com/problems/wildcard-matching) | 23.50% | Hard |
+| 140 | [Word Break II    ](https://leetcode.com/problems/word-break-ii) | 28.40% | Hard |
+| 40 | [Combination Sum II    ](https://leetcode.com/problems/combination-sum-ii) | 43.80% | Medium |
+| 47 | [Permutations II    ](https://leetcode.com/problems/permutations-ii) | 42.50% | Medium |
+| 980 | [Unique Paths III    ](https://leetcode.com/problems/unique-paths-iii) | 71.50% | Hard |
+| 131 | [Palindrome Partitioning    ](https://leetcode.com/problems/palindrome-partitioning) | 43.00% | Medium |
+| 77 | [Combinations    ](https://leetcode.com/problems/combinations) | 50.10% | Medium |
+| 211 | [Add and Search Word - Data structure design    ](https://leetcode.com/problems/add-and-search-word-data-structure-design) | 32.10% | Medium |
+| 291 | [Word Pattern II    ](https://leetcode.com/problems/word-pattern-ii) | 42.00% | Hard |
+| 306 | [Additive Number    ](https://leetcode.com/problems/additive-number) | 28.70% | Medium |
+| 1066 | [Campus Bikes II    ](https://leetcode.com/problems/campus-bikes-ii) | 52.60% | Medium |
+| 691 | [Stickers to Spell Word    ](https://leetcode.com/problems/stickers-to-spell-word) | 39.70% | Hard |
+| 90 | [Subsets II    ](https://leetcode.com/problems/subsets-ii) | 43.90% | Medium |
+| 1087 | [Brace Expansion    ](https://leetcode.com/problems/brace-expansion) | 59.60% | Medium |
+| 351 | [Android Unlock Patterns    ](https://leetcode.com/problems/android-unlock-patterns) | 46.90% | Medium |
+| 425 | [Word Squares    ](https://leetcode.com/problems/word-squares) | 45.50% | Hard |
+
 ## Divide and Conquer
 
 | **#** | **Title** | **Acceptance** | **Difficulty** |
@@ -116,7 +149,7 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | 315 | [Count of Smaller Numbers After Self    ](https://leetcode.com/problems/count-of-smaller-numbers-after-self) | 38.80% | **Hard** |
 | 240 | [Search a 2D Matrix II    ](https://leetcode.com/problems/search-a-2d-matrix-ii) | 41.20% | **Medium** |
 
-## Greedy
+## Greedy Algorithm
 
 | **#** | **Title** | **Acceptance** | **Difficulty** |
 | --- | --- | --- | --- |
@@ -146,6 +179,8 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | 139 | [Word Break    ](https://leetcode.com/problems/word-break) | 36.00% | **Medium** |
 | 85 | [Maximal Rectangle    ](https://leetcode.com/problems/maximal-rectangle) | 34.10% | **Hard** |
 | 975 | [Odd Even Jump    ](https://leetcode.com/problems/odd-even-jump) | 46.40% | **Hard** |
+
+# Questions by Companies
 
 ## Google
 
@@ -298,6 +333,5 @@ Facebook, Amazon, Apple, Netflix and Google (FAANG) Job preparation.
 | 68 | [Text Justification    ](https://leetcode.com/problems/text-justification) | 23.90% | **Hard** |
 | 366 | [Find Leaves of Binary Tree    ](https://leetcode.com/problems/find-leaves-of-binary-tree) | 66.50% | **Medium** |
 | 605 | [Can Place Flowers    ](https://leetcode.com/problems/can-place-flowers) | 31.10% | **Easy** |
-
 
 ##### _`Note: Refer individual folder for more details.`_
