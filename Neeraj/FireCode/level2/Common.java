@@ -21,6 +21,67 @@ public class Common {
         preorder(createTreeNode(new Integer[]{1, 2, 3, 4, 5, 6, 7}));
         System.out.println(preorderedList);
         System.out.println(removeDuplicates(Arrays.asList("Hi", "Hello", "Hey", "Hi", "Hello", "Hey")) + " should be [Hello, Hey, Hi].");
+        System.out.println(validateBST(createTreeNode(new Integer[]{1, 2, 3, 4, 5, 6, 7})) + " should be [true]");
+        System.out.println(findNode(createTreeNode(new Integer[]{1, 2, 3, 4, 5, 6, 7}), 5) + " should be [5]");
+        System.out.println(size(createTreeNode(new Integer[]{1, 2, 3, 4, 5, 6, 7})) + " should be [7]");
+        System.out.println(reverseInt(-123) + " should be -321");
+        System.out.println(reverseInt(123) + " should be 321");
+        System.out.println(reverseInt(1) + " should be 1");
+        System.out.println(reverseInt(12) + " should be 21");
+        System.out.println(pow(2, 3) + " should be [8.0].");
+        System.out.println(pow(2, 10) + " should be " + Math.pow(2, 10));
+        System.out.println(deleteAtTail(createListNode(new int[]{1, 2, 3, 4, 5}, 'c')));
+    }
+
+    public static double pow(double x, int n) {
+        if (n == 0) return 1;
+        if (n == 1) return x;
+        if (x == 0) return x;
+        if (n < 0) {
+            x = 1 / x;
+            n = -n;
+        }
+        if (n % 2 > 0) { //n is odd
+            return x * pow(x * x, n / 2);
+        } else { //n is even
+            return pow(x * x, n / 2);
+        }
+    }
+
+    public static int reverseInt(int x) {
+        int rev = 0;
+        while (x != 0) {
+            rev = rev * 10 + x % 10;
+            x = x / 10;
+        }
+        return rev;
+    }
+
+    public static int size(TreeNode root) {
+        if (root == null) return 0;
+        return size(root.left) + size(root.right) + 1;
+    }
+
+    public static TreeNode findNode(TreeNode root, int val) {
+        if (root == null || root.data == val) return root;
+        TreeNode left = findNode(root.left, val);
+        if (left == null) {
+            return findNode(root.right, val);
+        } else {
+            return left;
+        }
+    }
+
+    public static boolean validateBST(TreeNode root) {
+        if (root == null) return true;
+        return isValidBSTWithMinAndMax(root, null, null);
+    }
+
+    public static boolean isValidBSTWithMinAndMax(TreeNode root, Integer minvalue, Integer maxValue) {
+        if (root == null) return true;
+        if (minvalue != null && root.data <= minvalue) return false;
+        if (maxValue != null && root.data >= maxValue) return false;
+        return isValidBSTWithMinAndMax(root.left, minvalue, root.data) && isValidBSTWithMinAndMax(root.right, root.data, maxValue);
     }
 
     public static ArrayList<String> removeDuplicates(List<String> input) {
@@ -146,6 +207,18 @@ public class Common {
         }
         head.data = head.next.data;
         head.next = head.next.next;
+        return head;
+    }
+
+    public static ListNode deleteAtTail(ListNode head) {
+        if (head == null || head.next == head) {
+            return null;
+        }
+        ListNode slow = head, fast = head.next.next;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
         return head;
     }
 
