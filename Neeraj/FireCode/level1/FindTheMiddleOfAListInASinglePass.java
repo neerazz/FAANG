@@ -29,7 +29,7 @@ public class FindTheMiddleOfAListInASinglePass {
         return slow;
     }
 
-    private static ListNode createListNode(List<Integer> nums) {
+    public static ListNode createListNode(List<Integer> nums) {
         if (nums.size() == 0) return null;
         ListNode listNode = new ListNode(nums.get(0)), listNodeRef = listNode;
         for (int i = 1; i < nums.size(); i++) {

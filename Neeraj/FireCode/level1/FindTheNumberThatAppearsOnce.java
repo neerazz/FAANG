@@ -1,6 +1,7 @@
 package level1;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FindTheNumberThatAppearsOnce {
     public static void main(String[] args) {
@@ -8,16 +9,22 @@ public class FindTheNumberThatAppearsOnce {
     }
 
     public static int singleNumber(int[] A) {
-        ArrayList<Integer> values = new ArrayList<>();
-        ArrayList<Integer> duplicates = new ArrayList<>();
+//        Java 8
+        Map<Integer, Integer> integerMap = new HashMap<>();
         for (int i = 0; i < A.length; i++) {
             int current = A[i];
-            if (values.contains(current)) duplicates.add(current);
-            else values.add(current);
+            integerMap.put(current, integerMap.getOrDefault(current, 0) + 1);
         }
-        for (Integer i : values) {
-            if (!duplicates.contains(i)) return i;
-        }
-        return -1;
+        return integerMap.entrySet()
+                .stream()
+                .filter(e -> e.getValue() == 1).map(Map.Entry::getKey)
+                .findFirst().orElse(-1);
+//        Java 8 +
+//        return Arrays.stream(A).boxed()
+//                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+//                .entrySet()
+//                .stream()
+//                .filter(e -> e.getValue()==1).map(Map.Entry::getKey)
+//                .findFirst().orElse(-1);
     }
 }
