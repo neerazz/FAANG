@@ -4,6 +4,15 @@ import java.util.*;
 
 /*
 https://leetcode.com/explore/learn/card/trie/149/practical-application-ii/1138/
+Given a list of unique words, find all pairs of distinct indices (i, j) in the given list, so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
+Example 1:
+Input: ["abcd","dcba","lls","s","sssll"]
+Output: [[0,1],[1,0],[3,2],[2,4]]
+Explanation: The palindromes are ["dcbaabcd","abcddcba","slls","llssssll"]
+Example 2:
+Input: ["bat","tab","cat"]
+Output: [[0,1],[1,0]]
+Explanation: The palindromes are ["battab","tabbat"]
  */
 public class PalindromePairs {
     public static void main(String[] args) {
@@ -59,9 +68,21 @@ public class PalindromePairs {
             for (int j = i + 1; j < words.length; j++) {
                 if (isPalindrome(words, i, j)) output.add(Arrays.asList(i, j));
                 if (isPalindrome(words, j, i)) output.add(Arrays.asList(j, i));
+//                if (isPalindrome(words[i] + words[j])) output.add(Arrays.asList(i, j));
+//                if (isPalindrome(words[j] + words[i])) output.add(Arrays.asList(j, i));
             }
         }
         return output;
+    }
+
+    private static boolean isPalindrome(String string) {
+        int start = 0, end = string.length() - 1;
+        while (start < end) {
+            if (string.charAt(start) != string.charAt(end)) return false;
+            start++;
+            end--;
+        }
+        return true;
     }
 
     static class TrieNode {

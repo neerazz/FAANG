@@ -36,15 +36,24 @@ public class ValidSudoku {
         }) + " should be [false]");
     }
 
-    public static boolean isValidSudoku(char[][] board) {
-        return validateRowsAndColumns(board) && validateSubBox(board);
+    private static int getBoxNumber(int i, int j) {
+        if (i >= 0 && i <= 2 && j >= 0 && j <= 2) return 0;
+        if (i >= 3 && i <= 5 && j >= 0 && j <= 2) return 1;
+        if (i >= 6 && i <= 8 && j >= 0 && j <= 2) return 2;
+        if (i >= 0 && i <= 2 && j >= 3 && j <= 5) return 3;
+        if (i >= 3 && i <= 5 && j >= 3 && j <= 5) return 4;
+        if (i >= 6 && i <= 8 && j >= 3 && j <= 5) return 5;
+        if (i >= 0 && i <= 2 && j >= 6 && j <= 8) return 6;
+        if (i >= 3 && i <= 5 && j >= 6 && j <= 8) return 7;
+        else return 8;
     }
 
-    private static boolean validateSubBox(char[][] board) {
-        return false;
-    }
+    private static boolean isValidSudoku(char[][] board) {
+        HashSet[] nums = new HashSet[9];
+        for (int i = 0; i < 9; i++) {
+            nums[i] = new HashSet<>(Arrays.asList('1', '2', '3', '4', '5', '6', '7', '8', '9'));
+        }
 
-    private static boolean validateRowsAndColumns(char[][] board) {
         for (int i = 0; i < 9; i++) {
             HashSet<Character> columnNums = new HashSet<>(Arrays.asList('1', '2', '3', '4', '5', '6', '7', '8', '9'));
             HashSet<Character> rowNums = new HashSet<>(Arrays.asList('1', '2', '3', '4', '5', '6', '7', '8', '9'));
@@ -61,6 +70,14 @@ public class ValidSudoku {
                 if (Character.isDigit(columnCurrent)) {
                     if (columnNums.contains(columnCurrent))
                         columnNums.remove(columnCurrent);
+                    else return false;
+                }
+//                Check the internal-boxes
+                char current = board[i][j];
+                if (Character.isDigit(current)) {
+                    HashSet set = nums[getBoxNumber(i, j)];
+                    if (set.contains(current))
+                        set.remove(current);
                     else return false;
                 }
             }
