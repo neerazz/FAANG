@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0dea455-1331-4d31-b0eb-bcc7b2e84074" name="Default Changelist" comment="" />
+    <list default="true" id="b0dea455-1331-4d31-b0eb-bcc7b2e84074" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sachi/concepts/binaryTree/SearchForValueBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLInkedListInReverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/sachi/concepts/stacks-queues/PrintLinkedListInReverse.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,7 +46,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SearchForValueBinaryTree">
+    <configuration name="SearchForValueBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SearchForValueBinaryTree" />
+      <module name="concepts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TwoSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="epi.TwoSum" />
       <module name="EPIJudge" />
@@ -51,6 +69,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SearchForValueBinaryTree" />
         <item itemvalue="Application.TwoSum" />
       </list>
     </recent_temporary>
@@ -66,6 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569618200934</updated>
       <workItem from="1569618202215" duration="452000" />
+      <workItem from="1569680787265" duration="846000" />
     </task>
     <servers />
   </component>
@@ -77,7 +97,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
