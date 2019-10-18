@@ -6,10 +6,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class TinyurlApplication {
+public class TinyURLApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TinyurlApplication.class, args);
+        SpringApplication.run(TinyURLApplication.class, args);
     }
 
 }
