@@ -1,7 +1,7 @@
 package com.sachi.micro.tinyurl.service;
 
-import com.sachi.micro.tinyurl.data.model.URL;
-import com.sachi.micro.tinyurl.data.repo.URLRepository;
+import com.sachi.micro.tinyurl.model.URL;
+import com.sachi.micro.tinyurl.repo.URLRepository;
 import com.sachi.micro.tinyurl.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +31,7 @@ public class URLService {
 
 
     public URL getShortURL(String longURL, int length) {
+
         //Check if Long URL already exists in DB
         List<URL> longURLData = urlRepository.findByLongURL(longURL);
         if (longURLData != null && longURLData.size() > 0) {

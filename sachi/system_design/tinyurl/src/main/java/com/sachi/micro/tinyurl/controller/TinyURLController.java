@@ -1,7 +1,6 @@
 package com.sachi.micro.tinyurl.controller;
 
-import com.sachi.micro.tinyurl.data.model.InputURL;
-import com.sachi.micro.tinyurl.data.model.URL;
+import com.sachi.micro.tinyurl.model.URL;
 import com.sachi.micro.tinyurl.exception.BadInput;
 import com.sachi.micro.tinyurl.exception.ResourceNotFoundException;
 import com.sachi.micro.tinyurl.service.URLService;
@@ -35,11 +34,11 @@ public class TinyURLController {
     }
 
     @PostMapping("/shorten")
-    public ResponseEntity<URL> shortenURL(@RequestBody InputURL input) throws BadInput {
-        if (input == null || input.getUrl() == null || input.getUrl().isBlank()) {
-            throw new BadInput("Code cannot be null");
+    public ResponseEntity<URL> shortenURL(@RequestBody URL input) throws BadInput {
+        if (input == null || input.getLongURL() == null || input.getLongURL().isBlank()) {
+            throw new BadInput("URL cannot be null");
         }
-        return ResponseEntity.ok().body(urlService.getShortURL(input.getUrl(), 3));
+        return ResponseEntity.ok().body(urlService.getShortURL(input.getLongURL(), 3));
     }
 }
 

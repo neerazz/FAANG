@@ -1,19 +1,22 @@
-package com.sachi.micro.tinyurl.data.model;
+package com.sachi.micro.tinyurl.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 public @Data
 class URL {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
+    @JsonIgnore
     private long id;
     private String shortURL;
     private String longURL;
