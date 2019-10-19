@@ -1,11 +1,14 @@
 package com.sachi.micro.tinyurl.controller;
 
+import com.sachi.micro.tinyurl.data.model.InputURL;
 import com.sachi.micro.tinyurl.data.model.URL;
-import com.sachi.micro.tinyurl.data.repo.URLRepository;
+import com.sachi.micro.tinyurl.exception.BadInput;
 import com.sachi.micro.tinyurl.exception.ResourceNotFoundException;
+import com.sachi.micro.tinyurl.service.URLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -13,55 +16,30 @@ import java.util.List;
 public class TinyURLController {
 
     @Autowired
-    private URLRepository URLRepository;
+    private URLService urlService;
 
     @GetMapping("/all")
-    public List<URL> getAllURLs() {
-        return URLRepository.findAll();
+    public ResponseEntity<List<URL>> getAll() {
+        return ResponseEntity.ok().body(urlService.getAll());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<URL> getURLById(@PathVariable(value = "id") Long id)
-            throws ResourceNotFoundException {
-        URL URL = URLRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("URL not found for this id : " + id));
-        return ResponseEntity.ok().body(URL);
+    @GetMapping("/{shortCode}")
+    public RedirectView getURLById(@PathVariable(value = "shortCode") String shortCode) throws ResourceNotFoundException, BadInput {
+        if (shortCode == null || shortCode.isBlank()) {
+            throw new BadInput("Code cannot be null");
+        }
+        URL url = urlService.getURLById(shortCode);
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl(url.getLongURL());
+        return redirectView;
     }
 
     @PostMapping("/shorten")
-    public URL shortenURL(@RequestBody String longURL) {
-        URL url = new URL();
-        url.setShortURL("http://lol");
-        url.setLongURL(longURL);
-        return URLRepository.save(url);
+    public ResponseEntity<URL> shortenURL(@RequestBody InputURL input) throws BadInput {
+        if (input == null || input.getUrl() == null || input.getUrl().isBlank()) {
+            throw new BadInput("Code cannot be null");
+        }
+        return ResponseEntity.ok().body(urlService.getShortURL(input.getUrl(), 3));
     }
-
-
-    /*@PostMapping("/employee
-    public URL createEmployee(@Valid @RequestBody URL URL) {
-        return URLRepository.save(URL);
-    }
-
-    @PutMapping("/employees/{id}")
-    public ResponseEntity<URL> updateEmployee(@PathVariable(value = "id") Long employeeId,
-                                              @Valid @RequestBody URL URLDetails) throws ResourceNotFoundException {
-        URL URL = URLRepository.findById(employeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-
-        final URL updatedURL = URLRepository.save(URL);
-        return ResponseEntity.ok(updatedURL);
-    }
-
-    @DeleteMapping("/employees/{id}")
-    public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long employeeId)
-            throws ResourceNotFoundException {
-        URL URL = URLRepository.findById(employeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
-
-        URLRepository.delete(URL);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return response;
-    }*/
 }
 

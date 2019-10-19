@@ -12,11 +12,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 public @Data
 class URL {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE )
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
     private String shortURL;
     private String longURL;
-
 }

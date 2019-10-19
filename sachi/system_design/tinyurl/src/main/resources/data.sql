@@ -1,5 +1,5 @@
-insert into url
-values (100, 'http://gg', 'http://google.com');
+insert into url (id, shortURL, longURL)
+values (100, 'abc', 'http://google.com');
 
-insert into url
-values (200 ,'http://yh', 'http://yahoo.com');
+insert into url (id, shortURL, longURL)
+values (200, 'def', 'http://yahoo.com');
