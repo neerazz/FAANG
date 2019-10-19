@@ -30,3 +30,5 @@ out/
 
 ### VS Code ###
 .vscode/
+!/reports/
+/reports/tests/test/

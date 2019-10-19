@@ -12,4 +12,6 @@ public interface TinyURLRepo extends JpaRepository<TinyURLEntity, Long> {
     List<TinyURLEntity> findByShortURL(String randomString);
 
     Long countByShortURL(String randomString);
+
+    List<TinyURLEntity> findByLongURL(String longURL);
 }
