@@ -2,6 +2,7 @@ package com.neeraj.tinyurl.model;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,6 +22,7 @@ public class TinyURLEntity {
     private Long id;
 
     private String userID;
+    @Column(length = 2000)
     private String longURL;
     private String shortURL;
     private LocalDateTime createdAt;
