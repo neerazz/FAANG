@@ -38,11 +38,22 @@ public class TinnyURLController {
 
     @GetMapping("/expand")
     @ApiOperation(value = "This endpoint will accept a short URL and will redirect it to the long URL.")
-    public ModelAndView getLargeURL(@RequestParam String shortURL) {
+    public ModelAndView getLargeURL(@RequestParam("shortURL") String shortURL) {
         String getExpandedURL = tinnyURLService.getExpandedURL(shortURL);
         if (getExpandedURL == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");
         }
         return new ModelAndView("redirect:" + getExpandedURL);
+    }
+
+    @GetMapping("/expandedURL")
+    @ResponseBody
+    @ApiOperation(value = "This endpoint will accept a short URL and will redirect it to the long URL.")
+    public String getExpandedURL(@RequestParam("shortURL") String shortURL) {
+        String getExpandedURL = tinnyURLService.getExpandedURL(shortURL);
+        if (getExpandedURL == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");
+        }
+        return getExpandedURL;
     }
 }
