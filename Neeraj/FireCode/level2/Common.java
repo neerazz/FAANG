@@ -31,6 +31,40 @@ public class Common {
         System.out.println(pow(2, 3) + " should be [8.0].");
         System.out.println(pow(2, 10) + " should be " + Math.pow(2, 10));
         System.out.println(deleteAtTail(createListNode(new int[]{1, 2, 3, 4, 5}, 'c')));
+        System.out.println(deleteAtMiddle(createListNode(new int[]{1, 2, 3}, 'x'), 4));
+        System.out.println(deleteAtMiddle(createListNode(new int[]{1, 2, 3, 4}, 'x'), 3));
+        System.out.println(isAnagram("abc", "cba") + " should be [true]");
+        System.out.println(isAnagram("b", "b") + " should be [true]");
+        System.out.println(isAnagram("bd", "cb") + " should be [false]");
+        System.out.println(isAnagram("abcde", "acdbe") + " should be [true]");
+        System.out.println(isAnagram("yellow", "llowey") + " should be [true]");
+    }
+
+    public static boolean isAnagram(String input1, String input2) {
+        if (input1 == null || input2 == null || input1.length() != input2.length()) return false;
+        Map<Character, Character> characterMap = new HashMap<>();
+        for (int i = 0; i < input1.length(); i++) {
+            char first = input1.charAt(i);
+            char second = input2.charAt(i);
+            if ((characterMap.containsKey(first) && characterMap.get(first) != second) ||
+                    (characterMap.containsValue(second) && !characterMap.containsKey(first))) {
+                return false;
+            }
+            characterMap.put(first, second);
+        }
+        return true;
+    }
+
+    public static boolean isAnagram_elegent(String input1, String input2) {
+        if (input1 == null || input2 == null || (input1.length() != input2.length())) {
+            return false;
+        }
+        int[] buffer = new int[26];
+        for (int i = 0; i < input1.length(); i++) {
+            buffer[input1.charAt(i) - 'a']++;
+            buffer[input2.charAt(i) - 'a']--;
+        }
+        return !Arrays.stream(buffer).anyMatch(i -> i != 0);
     }
 
     public static double pow(double x, int n) {
@@ -214,11 +248,30 @@ public class Common {
         if (head == null || head.next == head) {
             return null;
         }
-        ListNode slow = head, fast = head.next.next;
-        while (slow != fast) {
-            slow = slow.next;
-            fast = fast.next.next;
+        HashSet<ListNode> hashSet = new HashSet<>();
+        hashSet.add(head);
+        hashSet.add(head.next);
+        ListNode next = head.next.next, prev = head;
+        while (!hashSet.contains(next)) {
+            hashSet.add(next);
+            next = next.next;
+            prev = prev.next;
         }
+        prev.next = next;
+        return head;
+    }
+
+    public static ListNode deleteAtMiddle(ListNode head, int position) {
+        if (head == null) return head;
+        if (position == 1) return head.next;
+        int currentIndex = 2;
+        ListNode current = head.next, pre = head;
+        while (current != null && currentIndex < position) {
+            current = current.next;
+            pre = pre.next;
+            currentIndex++;
+        }
+        pre.next = current != null ? current.next : null;
         return head;
     }
 
