@@ -32,32 +32,44 @@ public class TinnyURLService {
     private ModelMapper modelMapper;
 
     public MinifyResponseDto minifyURL(MinifyRequestDto minifyRequestDto) {
+//        Check if the provided custom URL is already taken.
         if (minifyRequestDto.getShortURL() != null) {
-            if (tinyURLNotAvailable(minifyRequestDto.getShortURL())) {
+//            Throw an error when a custom short URL is already taken.
+            if (tinyURLAlreadyTaken(minifyRequestDto.getShortURL())) {
                 throw new ResponseStatusException(HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE,
                         "Short URL is already occupied. Send an empty short URL to let a random short URL to be created.");
-            } else {
-                TinyURLEntity build = createTinyEntityURL(minifyRequestDto, minifyRequestDto.getShortURL());
-                return saveAndReturnResponse(build);
             }
+//            Check if long URL is already registered.
+            final List<TinyURLEntity> longURLs = tinyURLRepo.findByLongURL(minifyRequestDto.getLongURL());
+            if (!longURLs.isEmpty()) {
+//                If long URL is already registered the return the existing URL.
+                return modelMapper.map(longURLs.get(0), MinifyResponseDto.class);
+            }
+//            Else save the Long URL with the custom short URL received.
+            TinyURLEntity build = createTinyEntityURL(minifyRequestDto, minifyRequestDto.getShortURL());
+            return saveAndReturnResponse(build);
         }
+//        If no any custom Short URL is given then create a random short URl.
         String randomString = getARandomTinyURL();
         TinyURLEntity build = createTinyEntityURL(minifyRequestDto, randomString);
         return saveAndReturnResponse(build);
     }
 
     private String getARandomTinyURL() {
-        String randomString = generateRandomString();
+//        Generates a random short URL
+        String randomShortURL = generateRandomString();
         int tryies = 0;
-        while (tinyURLNotAvailable(randomString)) {
+//        If the random shortURL is already taken then loop for maxReties and keep generating randomShort URL's.
+        while (tinyURLAlreadyTaken(randomShortURL)) {
             if (tryies > maxReties) {
+//                If the random generated URL's is generated for maxReties and still didn't a shortURL then return a PreCondition Filed error.
                 throw new ResponseStatusException(HttpStatus.PRECONDITION_FAILED,
                         "Short URL cannot be connected at this moment. Kindly try after some time.");
             }
-            randomString = generateRandomString();
+            randomShortURL = generateRandomString();
             tryies++;
         }
-        return randomString;
+        return randomShortURL;
     }
 
     private MinifyResponseDto saveAndReturnResponse(TinyURLEntity build) {
@@ -76,7 +88,7 @@ public class TinnyURLService {
                 .build();
     }
 
-    private boolean tinyURLNotAvailable(String tinyURL) {
+    private boolean tinyURLAlreadyTaken(String tinyURL) {
         return tinyURLRepo.countByShortURL(tinyURL) > 0;
     }
 
