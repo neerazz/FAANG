@@ -1,4 +1,4 @@
-package com.neeraj.tinyurl.model;
+package com.neeraj.tinyurl.model.entity;
 
 import lombok.*;
 
