@@ -30,3 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### LOG FILES ###
+/logs/*
