@@ -1,6 +1,5 @@
 package com.sachi.micro.tinyurl.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,11 +12,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public @Data
-class URL {
+class TinyURL {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    @JsonIgnore
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String shortURL;
     private String longURL;

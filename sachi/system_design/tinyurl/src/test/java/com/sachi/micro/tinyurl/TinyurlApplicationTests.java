@@ -1,10 +1,11 @@
 package com.sachi.micro.tinyurl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sachi.micro.tinyurl.model.URL;
+import com.sachi.micro.tinyurl.model.TinyURL;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -20,10 +21,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class TinyURLApplicationTests {
+class TinyTinyURLApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Value("${env.url}")
+    private String envURL;
 
     @Test
     public void contextLoads() {
@@ -39,7 +43,7 @@ class TinyURLApplicationTests {
 
     @Test
     public void shouldReturnSameURLForMultipleRquests() throws Exception {
-        URL myInput = new URL();
+        TinyURL myInput = new TinyURL();
         myInput.setLongURL("http://github.com");
         this.mockMvc.perform(post("http://localhost:8080/shorten")
                 .content(asJsonString(myInput))

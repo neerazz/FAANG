@@ -28,8 +28,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     //Data
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-    runtimeOnly group: 'com.h2database', name: 'h2'
 
     //Swagger
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
