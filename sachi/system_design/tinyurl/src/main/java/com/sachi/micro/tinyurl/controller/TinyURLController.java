@@ -1,45 +1,53 @@
 package com.sachi.micro.tinyurl.controller;
 
-import com.sachi.micro.tinyurl.data.model.InputURL;
-import com.sachi.micro.tinyurl.data.model.URL;
-import com.sachi.micro.tinyurl.exception.BadInput;
 import com.sachi.micro.tinyurl.exception.ResourceNotFoundException;
+import com.sachi.micro.tinyurl.model.TinyURL;
+import com.sachi.micro.tinyurl.model.TinyURLDTO;
 import com.sachi.micro.tinyurl.service.URLService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class TinyURLController {
 
+    private final URLService urlService;
+
     @Autowired
-    private URLService urlService;
+    public TinyURLController(URLService urlService) {
+        log.debug("Instantiating  Controller");
+        this.urlService = urlService;
+    }
 
     @GetMapping("/all")
-    public ResponseEntity<List<URL>> getAll() {
+    public ResponseEntity<List<TinyURLDTO>> getAll() {
+        log.debug("All");
         return ResponseEntity.ok().body(urlService.getAll());
     }
 
     @GetMapping("/{shortCode}")
-    public RedirectView getURLById(@PathVariable(value = "shortCode") String shortCode) throws ResourceNotFoundException, BadInput {
-        if (shortCode == null || shortCode.isBlank()) {
-            throw new BadInput("Code cannot be null");
-        }
-        URL url = urlService.getURLById(shortCode);
+    public RedirectView expandURL(@PathVariable(value = "shortCode")
+                                  @NotBlank @Size(max = 16, message = "Bad Request.")
+                                          String shortCode)
+            throws ResourceNotFoundException {
+        TinyURL tinyURL = urlService.getURLById(shortCode);
         RedirectView redirectView = new RedirectView();
-        redirectView.setUrl(url.getLongURL());
+        redirectView.setUrl(tinyURL.getLongURL());
         return redirectView;
     }
 
-    @PostMapping("/shorten")
-    public ResponseEntity<URL> shortenURL(@RequestBody InputURL input) throws BadInput {
-        if (input == null || input.getUrl() == null || input.getUrl().isBlank()) {
-            throw new BadInput("Code cannot be null");
-        }
-        return ResponseEntity.ok().body(urlService.getShortURL(input.getUrl(), 3));
+    @PostMapping("/minify")
+    public ResponseEntity<TinyURLDTO> minifyURL(@Valid @RequestBody TinyURLDTO input) {
+        log.debug("Minify");
+        return ResponseEntity.ok().body(urlService.getShortURL(input.getLongURL(), input.getUserId()));
     }
 }
 

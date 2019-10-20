@@ -1,65 +1,78 @@
 package com.sachi.micro.tinyurl.service;
 
-import com.sachi.micro.tinyurl.data.model.URL;
-import com.sachi.micro.tinyurl.data.repo.URLRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sachi.micro.tinyurl.exception.ResourceNotFoundException;
+import com.sachi.micro.tinyurl.model.TinyURL;
+import com.sachi.micro.tinyurl.model.TinyURLDTO;
+import com.sachi.micro.tinyurl.repo.URLRepository;
+import com.sachi.micro.tinyurl.util.Util;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
-import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@PropertySource("classpath:application.properties")
+@Slf4j
 public class URLService {
 
+    private final URLRepository urlRepository;
+
+    private final ObjectMapper objectMapper;
+
     @Autowired
-    private URLRepository urlRepository;
-
-    private static final String INPUT = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-    public List<URL> getAll() {
-        return urlRepository.findAll();
+    public URLService(URLRepository urlRepository, ObjectMapper objectMapper) {
+        this.urlRepository = urlRepository;
+        this.objectMapper = objectMapper;
     }
 
-    public URL getURLById(String shortCode) throws ResourceNotFoundException {
-        List<URL> url = urlRepository.findByShortURL(shortCode);
-        if (url == null || url.isEmpty()) {
+    @Value("${env.url}")
+    private String url;
+
+    public List<TinyURLDTO> getAll() {
+        List<TinyURL> urls = urlRepository.findAll();
+        List<TinyURLDTO> urlDtos = new ArrayList<>();
+        for (TinyURL tinyURL : urls) {
+            TinyURLDTO urldto = objectMapper.convertValue(tinyURL, TinyURLDTO.class);
+            urldto.setShortURL(url + urldto.getShortURL());
+            urlDtos.add(urldto);
+        }
+        return urlDtos;
+    }
+
+    public TinyURL getURLById(String shortCode) throws ResourceNotFoundException {
+        List<TinyURL> tinyURL = urlRepository.findByShortURL(shortCode);
+        if (tinyURL == null || tinyURL.isEmpty()) {
             throw new ResourceNotFoundException("URL not found for this id : " + shortCode);
         }
-        return url.get(0);
+        return tinyURL.get(0);
     }
 
 
-    public URL getShortURL(String longURL, int length) {
-        //Check if Long URL already exists in DB
-        List<URL> longURLData = urlRepository.findByLongURL(longURL);
-        if (longURLData != null && longURLData.size() > 0) {
-            URL url = longURLData.get(0);
-            String code = url.getShortURL();
-            url.setShortURL("http://localhost:8080/" + code);
-            return url;
-        }
+    public TinyURLDTO getShortURL(String longURL, String userId) {
+        log.debug("getShortURL");
+        //Create a new code and save it in DB
+        TinyURL tinyURL = new TinyURL();
+        tinyURL.setShortURL(getUniqueHash(longURL, userId));
+        tinyURL.setLongURL(longURL);
+        TinyURL savedTinyURL = urlRepository.save(tinyURL);
+        String generatedCode = savedTinyURL.getShortURL();
+        savedTinyURL.setShortURL(url + generatedCode);
+        return objectMapper.convertValue(savedTinyURL, TinyURLDTO.class);
+    }
 
-        //We did not already cache LongURL - So build one
-        SecureRandom rnd = new SecureRandom();
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            sb.append(INPUT.charAt(rnd.nextInt(INPUT.length())));
-        }
-
-        //Check if generated long URL is unique
-        List<URL> data = urlRepository.findByShortURL(sb.toString());
+    private String getUniqueHash(String longURL, String userId) {
+        String code = Util.generateHash(longURL, userId);
+        //Check if generated long URL code is unique
+        List<TinyURL> data = urlRepository.findByShortURL(code);
         if (data != null && !data.isEmpty()) {
-            getShortURL(longURL, ++length);
+            code = getUniqueHash(longURL, userId);
         }
-
-        //Save the new one in DB
-        URL url = new URL();
-        url.setShortURL(sb.toString());
-        url.setLongURL(longURL);
-        URL savedURL = urlRepository.save(url);
-        String generatedCode = savedURL.getShortURL();
-        savedURL.setShortURL("http://localhost:8080/" + generatedCode);
-        return savedURL;
+        return code;
     }
+
 }
