@@ -25,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //    All the URL matching with request pattern /api/** are secure and need a valid token for the access.
     private static final RequestMatcher PROTECTED_URLS = new OrRequestMatcher(new AntPathRequestMatcher("/api/**"));
     AuthenticationProvider provider;
+
     @Value("${spring.security.allowedResources}")
     private String allowedResources;
 
@@ -61,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    private AuthenticationFilter authenticationFilter() throws Exception {
+    AuthenticationFilter authenticationFilter() throws Exception {
         final AuthenticationFilter filter = new AuthenticationFilter(PROTECTED_URLS);
         filter.setAuthenticationManager(authenticationManager());
         //filter.setAuthenticationSuccessHandler(successHandler());

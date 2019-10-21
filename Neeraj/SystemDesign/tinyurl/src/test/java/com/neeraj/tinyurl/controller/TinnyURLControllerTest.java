@@ -49,7 +49,7 @@ public class TinnyURLControllerTest {
                 .userId(userID)
                 .longURL(longURL)
                 .build();
-        MockHttpServletResponse response = mvc.perform(post("/minify")
+        MockHttpServletResponse response = mvc.perform(post("/api/minify")
                 .param("accessToken", accessToken)
                 .content(objectMapper.writeValueAsString(requestDto))
                 .contentType("application/json"))
@@ -61,10 +61,10 @@ public class TinnyURLControllerTest {
 
     private String createAccessToken(SignUpRequestDto signUpRequestDto) throws Exception {
         System.out.println("shortURL = " + signUpRequestDto.toString());
-        MockHttpServletResponse response = mvc.perform(get("/signup")
+        MockHttpServletResponse response = mvc.perform(post("/signup")
                 .content(objectMapper.writeValueAsString(signUpRequestDto))
                 .contentType("application/json"))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andReturn()
                 .getResponse();
         return objectMapper.readValue(response.getContentAsString(), SignUpResponseDto.class).getAccessToken();
