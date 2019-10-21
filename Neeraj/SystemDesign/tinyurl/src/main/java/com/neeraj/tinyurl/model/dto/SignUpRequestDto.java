@@ -1,6 +1,8 @@
 package com.neeraj.tinyurl.model.dto;
 
 import com.neeraj.tinyurl.model.UsagePlan;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +12,8 @@ import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class SignUpRequestDto {
 
     @NotNull(message = "User ID Field cannot be null")
