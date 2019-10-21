@@ -15,8 +15,22 @@ POST http://localhost:8080/minify
 Content-Type: application/json
 
 {
-"longURL": "https://mail.google.com",
+  "longURL": "https://mail.google.com",
   "userId": "12321"
+}
+
+###Get All users
+GET http://localhost:8080/users/all
+Content-Type: application/json
+
+###Create User
+POST http://localhost:8080/users/create
+Content-Type: application/json
+
+{
+  "firstName": "Sachin",
+  "lastName": "Singh",
+  "email": "ss@gmail.com"
 }
 
 ###

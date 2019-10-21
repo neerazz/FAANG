@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface URLRepository extends JpaRepository<TinyURL, Long> {
-    List<TinyURL> findByShortURL(String shortURL);
+    TinyURL findByShortURL(String shortURL);
     List<TinyURL> findByLongURL(String longURL);
 }

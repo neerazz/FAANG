@@ -27,7 +27,7 @@ public class TinyURLController {
         this.urlService = urlService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/urls/all")
     public ResponseEntity<List<TinyURLDTO>> getAll() {
         log.debug("All");
         return ResponseEntity.ok().body(urlService.getAll());
@@ -44,10 +44,10 @@ public class TinyURLController {
         return redirectView;
     }
 
-    @PostMapping("/minify")
-    public ResponseEntity<TinyURLDTO> minifyURL(@Valid @RequestBody TinyURLDTO input) {
+    @PostMapping("/url/minify")
+    public ResponseEntity<TinyURLDTO> minifyURL(@Valid @RequestBody TinyURLDTO input) throws ResourceNotFoundException {
         log.debug("Minify");
-        return ResponseEntity.ok().body(urlService.getShortURL(input.getLongURL(), input.getUserId()));
+        return ResponseEntity.ok().body(urlService.getShortURL(input.getLongURL(), input.getApiKey()));
     }
 }
 

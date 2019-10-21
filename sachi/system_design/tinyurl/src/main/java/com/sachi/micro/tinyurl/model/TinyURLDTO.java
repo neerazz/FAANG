@@ -1,5 +1,6 @@
 package com.sachi.micro.tinyurl.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.validation.constraints.Max;
@@ -13,8 +14,8 @@ class TinyURLDTO {
     @Max(16)
     private String shortURL;
     private String longURL;
-    @NotBlank
-    private String userId;
     private Date createDate;
     private Date expiryDate;
+    @NotBlank
+    private String apiKey;
 }
