@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 class ErrorDetails {
     private Date timestamp;
-    private List<String> message;
     private String details;
+    private String message;
+    private List<String> messages;
 }
