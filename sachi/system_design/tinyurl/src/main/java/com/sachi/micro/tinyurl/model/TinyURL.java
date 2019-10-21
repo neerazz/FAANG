@@ -22,5 +22,4 @@ class TinyURL {
     private long hits;
     private Date createDate;
     private Date expiryDate;
-
 }
