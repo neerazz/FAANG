@@ -9,6 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -106,5 +109,9 @@ public class UserManagementService {
 
     private boolean userIDNotAvailable(String userID) {
         return userDetailsRepo.countByUserID(userID) > 0;
+    }
+
+    public UserDetails getUserDetails(String token, String username) {
+        return new User(username, token, AuthorityUtils.createAuthorityList("USER"));
     }
 }

@@ -35,9 +35,10 @@ public class TinnyURLController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userManagementService.createNewUser(signUpRequestDto));
     }
 
-    @PostMapping("/minify")
+    @PostMapping("/api/minify")
     @ApiOperation(value = "This endpoint will accept a user name and a Long URl and will create a short URL.")
-    public ResponseEntity<MinifyResponseDto> createShorter(@Validated @RequestBody MinifyRequestDto minifyRequestDto) {
+    public ResponseEntity<MinifyResponseDto> createShorter(@Validated @RequestBody MinifyRequestDto minifyRequestDto,
+                                                           @RequestParam("accessToken") String accessToken) {
         MinifyResponseDto minifyResponseDto = tinnyURLService.minifyURL(minifyRequestDto);
         log.info("created a short URL.");
         log.info("Request : {}", minifyRequestDto.toString());
@@ -58,21 +59,16 @@ public class TinnyURLController {
     @GetMapping("/expand/{shortURL}")
     @ApiOperation(value = "This endpoint will accept a short URL and will redirect it to the long URL.")
     public RedirectView getRedirectToLongURL(@PathVariable("shortURL") String shortURL) {
-        String redirectURL = null;
-        if (shortURL.contains("swagger-ui.html")) {
-            redirectURL = shortURL;
-        } else {
-            redirectURL = tinnyURLService.getExpandedURL(shortURL);
-            if (redirectURL == null) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");
-            }
+        String redirectURL = tinnyURLService.getExpandedURL(shortURL);
+        if (redirectURL == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");
         }
         return new RedirectView(redirectURL);
     }
 
     @GetMapping("/expandedURL")
     @ApiOperation(value = "This endpoint will accept a short URL and will redirect it to the long URL.")
-    public String getExpandedURL(@RequestParam("shortURL") String shortURL) {
+    public String getExpandedURL(@RequestParam("shortURL") String shortURL, @RequestParam("accessToken") String accessToken) {
         String getExpandedURL = tinnyURLService.getExpandedURL(shortURL);
         if (getExpandedURL == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");

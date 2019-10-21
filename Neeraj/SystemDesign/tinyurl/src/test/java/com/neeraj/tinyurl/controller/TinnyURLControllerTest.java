@@ -1,8 +1,11 @@
 package com.neeraj.tinyurl.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.neeraj.tinyurl.model.UsagePlan;
 import com.neeraj.tinyurl.model.dto.MinifyRequestDto;
 import com.neeraj.tinyurl.model.dto.MinifyResponseDto;
+import com.neeraj.tinyurl.model.dto.SignUpRequestDto;
+import com.neeraj.tinyurl.model.dto.SignUpResponseDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,19 +31,26 @@ public class TinnyURLControllerTest {
     void test_to_create_a_sortURL_and_check_if_it_returns_same_longURL() throws Exception {
         String userID = "1234";
         String longURL = "https://www.google.com/search?safe=active&rlz=1C1SQJL_enUS807US807&sxsrf=ACYBGNRx5ybGi72w6lRU9s_0PUs8iPn-UQ%3A1571455118815&ei=joCqXbmyMe_l_Qbd87uwCA&q=recursive+mockmvc+example&oq=recursive+mockmvc+&gs_l=psy-ab.3.0.33i160.114926.123218..124835...0.1..0.154.1989.1j16......0....1..gws-wiz.......0i71j35i39j0i67j0j0i131j0i20i263j0i70i249j0i22i30j0i13i30j0i13i5i30j0i8i13i30j0i13.nuNl5STQCIk";
+
+        SignUpRequestDto signUpRequestDto = SignUpRequestDto.builder()
+                .usagePlan(UsagePlan.BASIC)
+                .userID(userID)
+                .build();
+        String accessToken = createAccessToken(signUpRequestDto);
 //        Place a call to get the short URL.
-        MinifyResponseDto minifyResponseDto = getShortURLResponseObject(longURL, userID);
+        MinifyResponseDto minifyResponseDto = getShortURLResponseObject(longURL, userID, accessToken);
 //        Then place a get call to check if it returns the same long url
-        Assertions.assertEquals(longURL, getExpandedURL(minifyResponseDto.getShortURL()));
+        Assertions.assertEquals(longURL, getExpandedURL(minifyResponseDto.getShortURL(), accessToken));
     }
 
-    private MinifyResponseDto getShortURLResponseObject(String longURL, String userID) throws Exception {
+    private MinifyResponseDto getShortURLResponseObject(String longURL, String userID, String accessToken) throws Exception {
         System.out.println("longURL = " + longURL + ", userID = " + userID);
         MinifyRequestDto requestDto = MinifyRequestDto.builder()
                 .userId(userID)
                 .longURL(longURL)
                 .build();
         MockHttpServletResponse response = mvc.perform(post("/minify")
+                .param("accessToken", accessToken)
                 .content(objectMapper.writeValueAsString(requestDto))
                 .contentType("application/json"))
                 .andExpect(status().isCreated())
@@ -49,10 +59,22 @@ public class TinnyURLControllerTest {
         return objectMapper.readValue(response.getContentAsString(), MinifyResponseDto.class);
     }
 
-    private String getExpandedURL(String shortURL) throws Exception {
+    private String createAccessToken(SignUpRequestDto signUpRequestDto) throws Exception {
+        System.out.println("shortURL = " + signUpRequestDto.toString());
+        MockHttpServletResponse response = mvc.perform(get("/signup")
+                .content(objectMapper.writeValueAsString(signUpRequestDto))
+                .contentType("application/json"))
+                .andExpect(status().isOk())
+                .andReturn()
+                .getResponse();
+        return objectMapper.readValue(response.getContentAsString(), SignUpResponseDto.class).getAccessToken();
+    }
+
+    private String getExpandedURL(String shortURL, String accessToken) throws Exception {
         System.out.println("shortURL = " + shortURL);
         return mvc.perform(get("/expandedURL")
                 .param("shortURL", shortURL)
+                .param("accessToken", accessToken)
                 .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andReturn()
