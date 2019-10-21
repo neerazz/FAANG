@@ -1,6 +1,6 @@
 package com.neeraj.tinyurl.repository;
 
-import com.neeraj.tinyurl.model.TinyURLEntity;
+import com.neeraj.tinyurl.model.entity.TinyURLEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

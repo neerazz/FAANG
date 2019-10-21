@@ -1,8 +1,8 @@
 package com.neeraj.tinyurl.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.neeraj.tinyurl.model.MinifyRequestDto;
-import com.neeraj.tinyurl.model.MinifyResponseDto;
+import com.neeraj.tinyurl.model.dto.MinifyRequestDto;
+import com.neeraj.tinyurl.model.dto.MinifyResponseDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

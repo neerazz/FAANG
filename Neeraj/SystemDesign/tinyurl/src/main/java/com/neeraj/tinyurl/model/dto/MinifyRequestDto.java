@@ -1,4 +1,4 @@
-package com.neeraj.tinyurl.model;
+package com.neeraj.tinyurl.model.dto;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;

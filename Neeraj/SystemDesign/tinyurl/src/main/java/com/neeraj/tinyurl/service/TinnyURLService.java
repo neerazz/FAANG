@@ -1,8 +1,8 @@
 package com.neeraj.tinyurl.service;
 
-import com.neeraj.tinyurl.model.MinifyRequestDto;
-import com.neeraj.tinyurl.model.MinifyResponseDto;
-import com.neeraj.tinyurl.model.TinyURLEntity;
+import com.neeraj.tinyurl.model.dto.MinifyRequestDto;
+import com.neeraj.tinyurl.model.dto.MinifyResponseDto;
+import com.neeraj.tinyurl.model.entity.TinyURLEntity;
 import com.neeraj.tinyurl.repository.TinyURLRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
@@ -22,6 +24,7 @@ public class TinnyURLService {
 
     private static final String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     private static final int RANDOM_STRING_LENGTH = 10;
+
     @Value("${tiny.url.host.name}")
     private String urlHostName;
     @Value("${tiny.url.max.retries:0}")
@@ -56,6 +59,11 @@ public class TinnyURLService {
     }
 
     private String getARandomTinyURL() {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 //        Generates a random short URL
         String randomShortURL = generateRandomString();
         int tryies = 0;
@@ -81,7 +89,7 @@ public class TinnyURLService {
         return TinyURLEntity.builder()
                 .userID(minifyRequestDto.getUserId())
                 .longURL(minifyRequestDto.getLongURL())
-                .shortURL(urlHostName + "/" + randomString)
+                .shortURL(urlHostName + "/expand/" + randomString)
                 .createdAt(currentTime)
                 .expiringOn(currentTime.plusDays(1))
                 .noOfTimesAccessed(0L)
@@ -94,9 +102,17 @@ public class TinnyURLService {
 
     public String getExpandedURL(String shortURL) {
         String longURL = null;
+        if (!shortURL.contains(urlHostName)) {
+            shortURL = urlHostName + "/expand/" + shortURL;
+        }
         final List<TinyURLEntity> shortURLs = tinyURLRepo.findByShortURL(shortURL);
         if (shortURLs.size() > 0) {
             final TinyURLEntity tinyURLEntity = shortURLs.get(0);
+//            Check if it is expired. And send a error message if expired.
+            if (tinyURLEntity.getExpiringOn().isBefore(LocalDateTime.now())) {
+                throw new ResponseStatusException(HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE,
+                        "Short URL is expired.Try creating a new short URL.");
+            }
             tinyURLEntity.setNoOfTimesAccessed(tinyURLEntity.getNoOfTimesAccessed() + 1);
             tinyURLRepo.save(tinyURLEntity);
             longURL = tinyURLEntity.getLongURL();

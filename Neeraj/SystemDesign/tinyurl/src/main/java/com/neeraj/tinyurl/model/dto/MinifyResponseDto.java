@@ -1,4 +1,4 @@
-package com.neeraj.tinyurl.model;
+package com.neeraj.tinyurl.model.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
