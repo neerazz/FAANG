@@ -68,7 +68,7 @@ public class TinnyURLController {
 
     @GetMapping("/expandedURL")
     @ApiOperation(value = "This endpoint will accept a short URL and will redirect it to the long URL.")
-    public String getExpandedURL(@RequestParam("shortURL") String shortURL, @RequestParam("accessToken") String accessToken) {
+    public String getExpandedURL(@RequestParam("shortURL") String shortURL) {
         String getExpandedURL = tinnyURLService.getExpandedURL(shortURL);
         if (getExpandedURL == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Short URL not found. It might be either expired or never created.");

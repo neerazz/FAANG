@@ -2,8 +2,11 @@ package com.neeraj.tinyurl.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.neeraj.tinyurl.model.UsagePlan;
 import com.neeraj.tinyurl.model.dto.MinifyRequestDto;
 import com.neeraj.tinyurl.model.dto.MinifyResponseDto;
+import com.neeraj.tinyurl.model.dto.SignUpRequestDto;
+import com.neeraj.tinyurl.model.dto.SignUpResponseDto;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class TinnyURLDynamicControllerTest {
 
     private final Random random = new Random();
-    private final Integer numberOfTests = 100000;
+    private final Integer numberOfTests = 100;
     @Autowired
     private MockMvc mvc;
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -50,18 +54,30 @@ public class TinnyURLDynamicControllerTest {
                 "https://www.google.com/search?q=junit+5+dynamic+tests+examples&safe=active&rlz=1C1SQJL_enUS807US807&sxsrf=ACYBGNQrwYwyQkGyeiAk-ntGDjR4M8mCwg:1571491152998&source=lnms&tbm=vid&sa=X&ved=0ahUKEwi-qMTftKjlAhUHh-AKHZAPClIQ_AUIEygC&biw=1536&bih=754"
         );
 
+        Collection<DynamicTest> getAccessToken = stringMap.entrySet()
+                .parallelStream()
+                .map(e -> DynamicTest.dynamicTest(
+                        "Creating Access Token for ID:" + e.getKey(),
+                        () -> createAccessToken(new SignUpRequestDto(e.getKey() + "T", UsagePlan.PREMIUM))))
+                .collect(Collectors.toList());
+
+        Map<String, SignUpResponseDto> userTokenMap = stringMap.entrySet()
+                .parallelStream()
+                .map(e -> createAccessToken(new SignUpRequestDto(e.getKey(), UsagePlan.PREMIUM)))
+                .collect(Collectors.toMap(SignUpResponseDto::getUserID, Function.identity()));
+
 //        Call end point to test and get all the list of URl's
         Collection<DynamicTest> urlShorterCreation = stringMap.entrySet()
                 .parallelStream()
                 .map(e -> DynamicTest.dynamicTest(
                         "Creating a short URL for the ID:" + e.getKey(),
-                        () -> getShortURLResponseObject(e.getValue(), e.getKey())))
+                        () -> getShortURLResponseObject(e.getValue(), e.getKey(), userTokenMap.get(e.getKey()).getAccessToken())))
                 .collect(Collectors.toList());
 
-//        Call end point to get the URL's into a list.
+//        Call end point to get the short URL's into a list.
         List<MinifyResponseDto> minifyResponseDtos = stringMap.entrySet()
                 .parallelStream()
-                .map(e -> getShortURLResponseObject(e.getValue(), e.getKey()))
+                .map(e -> getShortURLResponseObject(e.getValue(), e.getKey(), userTokenMap.get(e.getKey()).getAccessToken()))
                 .collect(Collectors.toList());
 
 //        Iterate over Response List and place a call to get the same long URL for the given short URL.
@@ -81,10 +97,32 @@ public class TinnyURLDynamicControllerTest {
         Collection<DynamicTest> testResults = new ArrayList<>();
         testResults.addAll(urlShorterCreation);
         testResults.addAll(urlExpander);
+        testResults.addAll(getAccessToken);
         return testResults;
     }
 
-    private MinifyResponseDto getShortURLResponseObject(String longURL, String userID) {
+    private SignUpResponseDto createAccessToken(SignUpRequestDto signUpRequestDto) {
+        System.out.println("shortURL = " + signUpRequestDto.toString());
+        MockHttpServletResponse response = null;
+        try {
+            response = mvc.perform(post("/signup")
+                    .content(objectMapper.writeValueAsString(signUpRequestDto))
+                    .contentType("application/json"))
+                    .andExpect(status().isCreated())
+                    .andReturn()
+                    .getResponse();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            return objectMapper.readValue(response.getContentAsString(), SignUpResponseDto.class);
+        } catch (JsonProcessingException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private MinifyResponseDto getShortURLResponseObject(String longURL, String userID, String accessToken) {
         System.out.println("longURL = " + longURL + ", userID = " + userID);
         MinifyRequestDto requestDto = MinifyRequestDto.builder()
                 .userId(userID)
@@ -92,7 +130,8 @@ public class TinnyURLDynamicControllerTest {
                 .build();
         MockHttpServletResponse response = null;
         try {
-            response = mvc.perform(post("/minify")
+            response = mvc.perform(post("/api/minify")
+                    .param("accessToken", accessToken)
                     .content(objectMapper.writeValueAsString(requestDto))
                     .contentType("application/json"))
                     .andExpect(status().isCreated())

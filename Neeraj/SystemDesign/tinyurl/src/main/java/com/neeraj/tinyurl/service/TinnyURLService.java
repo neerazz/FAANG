@@ -97,7 +97,7 @@ public class TinnyURLService {
     }
 
     private boolean tinyURLAlreadyTaken(String tinyURL) {
-        return tinyURLRepo.countByShortURL(tinyURL) > 0;
+        return tinyURLRepo.findByShortURL(tinyURL).size() > 0;
     }
 
     public String getExpandedURL(String shortURL) {

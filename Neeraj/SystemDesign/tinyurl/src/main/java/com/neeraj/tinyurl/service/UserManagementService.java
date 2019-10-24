@@ -49,7 +49,6 @@ public class UserManagementService {
                 .noOfRequestsPerDay(signUpRequestDto.getUsagePlan().getNumberOfHitsPerDay())
                 .build();
         UserDetailsEntity savedObject = userDetailsRepo.save(userDetailsEntity);
-        validUserAndHasAccessLimit(savedObject.getAccessToken());
         return modelMapper.map(savedObject, SignUpResponseDto.class);
     }
 

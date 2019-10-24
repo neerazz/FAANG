@@ -40,7 +40,7 @@ public class TinnyURLControllerTest {
 //        Place a call to get the short URL.
         MinifyResponseDto minifyResponseDto = getShortURLResponseObject(longURL, userID, accessToken);
 //        Then place a get call to check if it returns the same long url
-        Assertions.assertEquals(longURL, getExpandedURL(minifyResponseDto.getShortURL(), accessToken));
+        Assertions.assertEquals(longURL, getExpandedURL(minifyResponseDto.getShortURL()));
     }
 
     private MinifyResponseDto getShortURLResponseObject(String longURL, String userID, String accessToken) throws Exception {
@@ -70,11 +70,10 @@ public class TinnyURLControllerTest {
         return objectMapper.readValue(response.getContentAsString(), SignUpResponseDto.class).getAccessToken();
     }
 
-    private String getExpandedURL(String shortURL, String accessToken) throws Exception {
+    private String getExpandedURL(String shortURL) throws Exception {
         System.out.println("shortURL = " + shortURL);
         return mvc.perform(get("/expandedURL")
                 .param("shortURL", shortURL)
-                .param("accessToken", accessToken)
                 .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andReturn()
