@@ -10,22 +10,22 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
-import java.security.*;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.X509EncodedKeySpec;
+import java.io.*;
+import java.security.KeyPair;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Security;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.function.Function;
 
 @Component
 public class JWTTokenUtil implements Serializable {
 
+    private static final long serialVersionUID = -2550185111566077488L;
     private final ResourceLoader resourceLoader;
-
-    private static final long serialVersionUID = -2550185165626007488L;
 
     public JWTTokenUtil(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
@@ -109,11 +109,11 @@ public class JWTTokenUtil implements Serializable {
      */
     private Optional<PublicKey> getPublicKey() {
         try {
-            byte[] publicKeyBytes = this.getClass().getClassLoader().getResourceAsStream("certificate.pem").readAllBytes();
-            X509EncodedKeySpec publicSpec = new X509EncodedKeySpec(publicKeyBytes);
-            KeyFactory kf = KeyFactory.getInstance("RSA");
-            return Optional.of(kf.generatePublic(publicSpec));
-        } catch (NoSuchAlgorithmException | IOException | InvalidKeySpecException e) {
+            InputStream publicKeyFileStream = resourceLoader.getResource("classpath:certificate.pem").getInputStream();
+            CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+            X509Certificate certificate = (X509Certificate) certificateFactory.generateCertificate(publicKeyFileStream);
+            return Optional.of(certificate.getPublicKey());
+        } catch (IOException | CertificateException e) {
             e.printStackTrace();
         }
         return Optional.empty();

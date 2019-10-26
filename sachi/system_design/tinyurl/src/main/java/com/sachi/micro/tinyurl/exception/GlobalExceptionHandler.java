@@ -34,6 +34,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<?> unAuthorized(Exception ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(new Date(), request.getDescription(false), ex.getMessage(), null);
+        log.error("Unauthorized Exception. Message - {} - Stack Trace - {}", ex.getMessage(), ex.getStackTrace());
+        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globalExceptionHandler(Exception ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), request.getDescription(false), ex.getMessage(), null);
@@ -49,10 +56,8 @@ public class GlobalExceptionHandler {
                 .parallelStream()
                 .map(ConstraintViolation::getMessage)
                 .collect(Collectors.toList());
-
         ErrorDetails error = new ErrorDetails(new Date(), request.getDescription(false), null, messages);
         log.error("Constraint violation exception. Error message - {}. Constraint Violations - {} - Stack Trace - {} ", ex.getMessage(), messages, ex.getStackTrace());
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
-
 }

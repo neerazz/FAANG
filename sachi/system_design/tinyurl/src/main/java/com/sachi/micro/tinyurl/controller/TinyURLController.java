@@ -21,7 +21,6 @@ public class TinyURLController {
 
     private final URLService urlService;
 
-    @Autowired
     public TinyURLController(URLService urlService) {
         log.debug("Instantiating  Controller");
         this.urlService = urlService;
@@ -33,7 +32,7 @@ public class TinyURLController {
         return ResponseEntity.ok().body(urlService.getAll());
     }
 
-    @GetMapping("/{shortCode}")
+    @GetMapping("/expand/{shortCode}")
     public RedirectView expandURL(@PathVariable(value = "shortCode")
                                   @NotBlank @Size(max = 16, message = "Bad Request.")
                                           String shortCode)

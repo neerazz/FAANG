@@ -27,7 +27,8 @@ public class TinyRequestFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
         final String requestTokenHeader = request.getHeader("Authorization");
         String username = null;
         String jwtToken = null;
