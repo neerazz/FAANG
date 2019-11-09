@@ -1,0 +1,73 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+    id 'groovy'
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+subprojects {
+
+    group = 'io.reflectoring.reviewapp'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.2.0.RELEASE")
+        }
+    }
+
+}
+
+group = 'com.neeraj'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    afterTest { desc, result ->
+        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+        if (!desc.parent) {
+            println("${result.resultType} " +
+                    "(${result.testCount} tests, " +
+                    "${result.successfulTestCount} successes, " +
+                    "${result.failedTestCount} failures, " +
+                    "${result.skippedTestCount} skipped)")
+        }
+    }
+}
+
+reporting.baseDir = "reports"
+testResultsDirName = "$buildDir/my-test-results"
+
+task showDirs {
+    doLast {
+        logger.quiet(rootDir.toPath().relativize(project.reportsDir.toPath()).toString())
+        logger.quiet(rootDir.toPath().relativize(project.testResultsDir.toPath()).toString())
+    }
+}
