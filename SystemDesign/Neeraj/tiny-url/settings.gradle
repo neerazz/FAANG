@@ -1,4 +1,3 @@
 rootProject.name = 'tinyurl'
-include 'application'
 include 'id-generation'
 
