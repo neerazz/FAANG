@@ -1,5 +1,7 @@
 dependencies {
 
+    implementation 'org.springframework.kafka:spring-kafka'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'

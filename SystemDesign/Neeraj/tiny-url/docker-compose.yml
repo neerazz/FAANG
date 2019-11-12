@@ -1,0 +1,41 @@
+version: '2'
+services:
+  zookeeper:
+    hostname: zookeeper
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    hostname: kafka
+    image: wurstmeister/kafka:0.9.0.0-1
+    ports:
+      - "8092:8092"
+      - "8093:8093"
+    links:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      JMX_PORT: 9093
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_DELETE_TOPIC_ENABLE: 'true'
+      KAFKA_LOG_RETENTION_HOURS: 1
+      KAFKA_MESSAGE_MAX_BYTES: 10000000
+      KAFKA_REPLICA_FETCH_MAX_BYTES: 10000000
+      KAFKA_GROUP_MAX_SESSION_TIMEOUT_MS: 60000
+      KAFKA_NUM_PARTITIONS: 2
+      KAFKA_DELETE_RETENTION_MS: 1000
+      KAFKA_CREATE_TOPICS: "idgeneration:1:3,tinyurl:1:1:compact"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  kafka-manager:
+    hostname: kafka-manager
+    image: sheepkiller/kafka-manager
+    ports:
+      - "8010:9000"
+    links:
+      - zookeeper
+      - kafka
+    environment:
+      ZK_HOSTS: zookeeper:2181
+      APPLICATION_SECRET: letmein
