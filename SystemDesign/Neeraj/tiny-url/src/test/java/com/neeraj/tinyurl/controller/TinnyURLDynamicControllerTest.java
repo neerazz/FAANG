@@ -13,8 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 import java.util.function.Function;
@@ -27,6 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 public class TinnyURLDynamicControllerTest {
 
     private final Random random = new Random();
@@ -116,7 +119,7 @@ public class TinnyURLDynamicControllerTest {
         }
         try {
             return objectMapper.readValue(response.getContentAsString(), SignUpResponseDto.class);
-        } catch (JsonProcessingException | UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;

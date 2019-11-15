@@ -1,3 +1,4 @@
 rootProject.name = 'tinyurl'
 include 'id-generation'
+include 'naming-server'
 

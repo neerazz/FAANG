@@ -6,7 +6,7 @@ plugins {
     id 'groovy'
 }
 // This is to define the tasks for the sub-projects. If we specify common tasks and dependencies here, it is not required to specify in individual sub-project.
-subprojects {
+allprojects {
 
     group = 'com.neeraj'
     version = '1.0.0-SNAPSHOT'
@@ -21,10 +21,27 @@ subprojects {
         mavenCentral()
     }
 
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
     dependencyManagement {
         imports {
-            mavenBom("org.springframework.boot:spring-boot-dependencies:2.2.0.RELEASE")
+            mavenBom "org.springframework.boot:spring-boot-dependencies:2.2.0.RELEASE"
+            mavenBom "org.springframework.cloud:spring-cloud-starter-parent:Greenwich.SR3"
         }
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+        compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+        compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+        testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
     }
 
     test {
@@ -40,20 +57,6 @@ subprojects {
             }
         }
     }
-}
-
-group = 'com.neeraj'
-version = '1.0.0-SNAPSHOT'
-sourceCompatibility = '11'
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {
@@ -79,25 +82,7 @@ dependencies {
 //    compile "org.springframework.data:spring-data-redis"
 //    compile 'redis.clients:jedis:3.1.0'
 
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-}
 
-test {
-    useJUnitPlatform()
-    afterTest { desc, result ->
-        logger.quiet "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
-        if (!desc.parent) {
-            println("${result.resultType} " +
-                    "(${result.testCount} tests, " +
-                    "${result.successfulTestCount} successes, " +
-                    "${result.failedTestCount} failures, " +
-                    "${result.skippedTestCount} skipped)")
-        }
-    }
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 }

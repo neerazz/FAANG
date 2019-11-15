@@ -1,0 +1,4 @@
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

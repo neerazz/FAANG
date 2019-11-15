@@ -1,6 +1,6 @@
 dependencies {
 
-    implementation 'org.springframework.kafka:spring-kafka'
+    compile project(':naming-server')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
@@ -15,11 +15,7 @@ dependencies {
 // https://mvnrepository.com/artifact/com.h2database/h2
     implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 }
