@@ -7,4 +7,4 @@ eureka:
     service-url:
       defaultZone: http://localhost:8003/eureka
   server:
-    eviction-interval-timer-in-ms: 2000
+    eviction-interval-timer-in-ms: 10000
