@@ -2,6 +2,12 @@
 //SOL : a=0, b=1, a+b
 //Fi = Fi-1 + Fi-2
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class W2_Fibanoci {
 
     public static void main(String[] args) {

@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class W1_MaxPairwiseProduct {
     static long getMaxPairwiseProduct(int[] numbers) {
         long max_product = 0;

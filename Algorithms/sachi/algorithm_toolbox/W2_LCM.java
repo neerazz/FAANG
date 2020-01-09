@@ -5,6 +5,8 @@
 //DO HCF and others
 //DO GCD of three
 
+import java.util.Scanner;
+
 public class W2_LCM {
     private static long lcm_naive(int a, int b) {
         for (long l = 1; l <= (long) a * b; ++l)
