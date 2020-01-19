@@ -16,5 +16,14 @@ public class BitwiseOperators {
         //x&(x-1)
         System.out.println("Value in Binary: " + Integer.toBinaryString(x));
         System.out.println("x & (x-1) on the Binary: " + Integer.toBinaryString(x & (x - 1)));
+
+        System.out.println("6 & 4 is " + (6 & 4));
+        System.out.println("1 | 2 is " + (1 | 2));
+        System.out.println("8 >>> 1 is " + (8 >>> 1));
+        System.out.println("16 >>> 2 is " + (16 >>> 2));
+
+        System.out.println("-16 in Binary: " + Integer.toBinaryString(-16));
+        System.out.println("16 in Binary: " + Integer.toBinaryString(16));
+
     }
 }
