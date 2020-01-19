@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class W2_FibonacciSumLastDigit {
 
     //Given an integer 𝑛, find the last digit of the sum 𝐹0 +𝐹1 +···+𝐹𝑛.
