@@ -5,7 +5,7 @@ public class BuildTreeInorder {
         Util.print(buildTree(inOrder, postOrder));
     }
 
-    public static TreeNode buildTree(int[] inorder, int[] postorder) {
+    public static TreeNode buildTree(int[] inOrder, int[] postOrder) {
         return null;
     }
 }
