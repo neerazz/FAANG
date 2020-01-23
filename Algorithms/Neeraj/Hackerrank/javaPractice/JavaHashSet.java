@@ -1,4 +1,4 @@
-package java;
+package javaPractice;
 
 import java.util.HashSet;
 import java.util.Objects;
