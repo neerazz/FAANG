@@ -15,7 +15,7 @@ public class PalindromeTester {
     }
 
     public static boolean isStringPalindrome(String str) {
-        if (str.isEmpty() || str.isBlank()) return true;
+        if (str.isEmpty() || str.isEmpty()) return true;
         int stat = 0, end = str.length() - 1;
         while (stat < end) {
             if (str.charAt(stat++) != str.charAt(end--)) return false;

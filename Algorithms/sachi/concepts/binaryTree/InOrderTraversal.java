@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 /*
 Given a binary tree, return the inorder traversal of its nodes' values.
@@ -35,7 +37,7 @@ public class InOrderTraversal {
         return sol;
     }
 
-    private static void inOrderTraversalHelper(TreeNode node, List sol) {
+    private static void inOrderTraversalHelper(TreeNode node, List<Integer> sol) {
         if (node == null) return;
         inOrderTraversalHelper(node.left, sol);
         sol.add(node.val);
@@ -43,8 +45,21 @@ public class InOrderTraversal {
     }
 
     private static List<Integer> inOrderTraversalIteration(TreeNode root) {
-        //TODO: Implement this
-        return new ArrayList<>();
+        List<Integer> sol = new ArrayList<>();
+        if (root == null) return sol;
+        TreeNode node = root;
+        Deque<TreeNode> stack = new LinkedList<>();
+        while (!stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.addLast(node);
+                node = node.left;
+            } else {
+                node = stack.removeLast();
+                sol.add(node.val);
+                node = node.right;
+            }
+        }
+        return sol;
     }
 
 }

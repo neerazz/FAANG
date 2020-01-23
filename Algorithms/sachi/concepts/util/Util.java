@@ -123,4 +123,14 @@ public class Util {
         }
         System.out.println("\n---------- END TreeNode-------------");
     }
+
+   /* public static TreeNode arrayToTreeBFS(int[] array) {
+        if (array == null || array.length == 0) return null;
+        TreeNode root = new TreeNode(array[0]);
+
+    }*/
+
+    public static void main(String[] args) {
+        //TreeNode root = arrayToTreeBFS(new int[]{1, 1});
+    }
 }

@@ -1,6 +1,9 @@
 /*
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+LC:EASY
 
+https://leetcode.com/problems/symmetric-tree/
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
 
     1
@@ -20,7 +23,7 @@ But the following [1,2,2,null,3,null,3] is not:
 Note:
 Bonus points if you could solve it both recursively and iteratively.
 
-Sol: Left and right -
+Sol: Compare t1.val == t2.val && t1.left, t2.right && t1.right, t2.left
  */
 public class SymmetricTree {
     public static void main(String[] args) {

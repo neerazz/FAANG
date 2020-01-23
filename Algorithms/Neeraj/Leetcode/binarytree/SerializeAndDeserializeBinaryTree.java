@@ -56,7 +56,7 @@ class Codec {
                 }
             }
             if (allNulls) {
-//            If the execution is reaching this point means all the last level values from the output and break.
+//            If the execution is reaching this point means all the last level values are null that needs to deleted and then break.
                 for (int i = 0; i < queue.size(); i++) {
                     output.pollLast();
                 }
