@@ -7,7 +7,25 @@ public class LowestCommonAncestor {
                                               BinaryTreeNode<Integer> node0,
                                               BinaryTreeNode<Integer> node1) {
         // TODO - you fill in here.
-        return null;
+        return findLCA(tree,node0,node1);
+    }
+
+    public static BinaryTreeNode<Integer> findLCA(BinaryTreeNode<Integer> node, BinaryTreeNode<Integer> p, BinaryTreeNode<Integer> q) {
+
+        if (node == null) {
+            return null;
+        }
+        if (node.equals(p) || node.equals(q)) {
+            return node;
+        }
+
+        BinaryTreeNode<Integer> leftTree = findLCA(node.left, p, q);
+        BinaryTreeNode<Integer> rightTree = findLCA(node.right, p, q);
+
+        if (leftTree != null && rightTree != null) {
+            return node;
+        }
+        return leftTree != null ? leftTree : rightTree;
     }
 
     @EpiTest(testDataFile = "lowest_common_ancestor.tsv")

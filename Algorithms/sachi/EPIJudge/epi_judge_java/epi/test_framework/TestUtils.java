@@ -36,7 +36,7 @@ public class TestUtils {
         final int MAX_SEARCH_DEPTH = 4;
         final String DIR_NAME = "test_data";
 
-        Path path = Paths.get("sachi/EPIJudge").toAbsolutePath();
+        Path path = Paths.get("/Users/sachi/dev/Algorithms/Algorithms/sachi/EPIJudge").toAbsolutePath();
         //Path path = Paths.get(".").toAbsolutePath();
         for (int i = 0; i < MAX_SEARCH_DEPTH; i++) {
             if (Files.isDirectory(path.resolve(DIR_NAME))) {
