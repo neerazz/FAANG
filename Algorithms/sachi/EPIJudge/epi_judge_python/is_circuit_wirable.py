@@ -10,7 +10,7 @@ class GraphVertex:
         self.edges = []
 
 
-def is_any_placement_feasible(graph):
+def is_any_placement_feasible(problems.graph):
     # TODO - you fill in here.
     return True
 
@@ -19,14 +19,14 @@ def is_any_placement_feasible(graph):
 def is_any_placement_feasible_wrapper(executor, k, edges):
     if k <= 0:
         raise RuntimeError('Invalid k value')
-    graph = [GraphVertex() for _ in range(k)]
+    problems.graph = [GraphVertex() for _ in range(k)]
 
     for (fr, to) in edges:
         if fr < 0 or fr >= k or to < 0 or to >= k:
             raise RuntimeError('Invalid vertex index')
-        graph[fr].edges.append(graph[to])
+        problems.graph[fr].edges.append(problems.graph[to])
 
-    return executor.run(functools.partial(is_any_placement_feasible, graph))
+    return executor.run(functools.partial(is_any_placement_feasible, problems.graph))
 
 
 if __name__ == '__main__':

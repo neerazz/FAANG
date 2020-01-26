@@ -13,7 +13,7 @@ class GraphVertex:
         self.edges = []
 
 
-def is_deadlocked(graph):
+def is_deadlocked(problems.graph):
     def has_cycle(cur):
         # Visiting a gray vertex means a cycle.
         if cur.color == GraphVertex.GRAY:
@@ -28,21 +28,21 @@ def is_deadlocked(graph):
         return False
 
     return any(vertex.color == GraphVertex.WHITE and has_cycle(vertex)
-               for vertex in graph)
+               for vertex in problems.graph)
 
 
 @enable_executor_hook
 def is_deadlocked_wrapper(executor, num_nodes, edges):
     if num_nodes <= 0:
         raise RuntimeError('Invalid num_nodes value')
-    graph = [GraphVertex() for _ in range(num_nodes)]
+    problems.graph = [GraphVertex() for _ in range(num_nodes)]
 
     for (fr, to) in edges:
         if fr < 0 or fr >= num_nodes or to < 0 or to >= num_nodes:
             raise RuntimeError('Invalid vertex index')
-        graph[fr].edges.append(graph[to])
+        problems.graph[fr].edges.append(problems.graph[to])
 
-    return executor.run(functools.partial(is_deadlocked, graph))
+    return executor.run(functools.partial(is_deadlocked, problems.graph))
 
 
 if __name__ == '__main__':

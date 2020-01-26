@@ -47,7 +47,7 @@ public class SwapNodesInPair {
     }
 
     /**
-     * Print LinkedList
+     * Print problems.LinkedList
      *
      * @param head
      */

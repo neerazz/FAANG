@@ -11,7 +11,7 @@ class GraphVertex:
         self.edges = []
 
 
-def is_any_placement_feasible(graph):
+def is_any_placement_feasible(problems.graph):
     def bfs(s):
         s.d = 0
         q = collections.deque([s])
@@ -26,21 +26,21 @@ def is_any_placement_feasible(graph):
             del q[0]
         return True
 
-    return all(bfs(v) for v in graph if v.d == -1)
+    return all(bfs(v) for v in problems.graph if v.d == -1)
 
 
 @enable_executor_hook
 def is_any_placement_feasible_wrapper(executor, k, edges):
     if k <= 0:
         raise RuntimeError('Invalid k value')
-    graph = [GraphVertex() for _ in range(k)]
+    problems.graph = [GraphVertex() for _ in range(k)]
 
     for (fr, to) in edges:
         if fr < 0 or fr >= k or to < 0 or to >= k:
             raise RuntimeError('Invalid vertex index')
-        graph[fr].edges.append(graph[to])
+        problems.graph[fr].edges.append(problems.graph[to])
 
-    return executor.run(functools.partial(is_any_placement_feasible, graph))
+    return executor.run(functools.partial(is_any_placement_feasible, problems.graph))
 
 
 if __name__ == '__main__':

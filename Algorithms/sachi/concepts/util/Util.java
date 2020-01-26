@@ -41,25 +41,25 @@ public class Util {
     }
 
     public static void print(ListNode head) {
-        System.out.println("\n---------- PRINTING LinkedList-------------");
+        System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         while (head != null) {
             System.out.print(head.val + " ");
             head = head.next;
         }
-        System.out.println("\n---------- END LinkedList-------------");
+        System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
     public static void print(Node head) {
-        System.out.println("\n---------- PRINTING LinkedList-------------");
+        System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         while (head != null) {
             System.out.print(head.val + " ");
             head = head.next;
         }
-        System.out.println("\n---------- END LinkedList-------------");
+        System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
     public static void print(Node head, boolean isCyclic) {
-        System.out.println("\n---------- PRINTING LinkedList-------------");
+        System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         if (!isCyclic) {
             while (head != null) {
                 System.out.print(head.val + " ");
@@ -76,7 +76,7 @@ public class Util {
             }
 
         }
-        System.out.println("\n---------- END LinkedList-------------");
+        System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
     public static TreeNode convertArrayToTreeNode(Integer[] arr) {

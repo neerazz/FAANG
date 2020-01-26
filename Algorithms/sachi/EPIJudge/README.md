@@ -222,8 +222,8 @@ Then just open `epi_judge_cpp/vs/epi_judge_cpp.sln` solution with Visual Studio 
 | Compute the LCA when nodes have parent pointers | lowest\_common\_ancestor\_with\_parent.cc | LowestCommonAncestorWithParent.java | lowest\_common\_ancestor\_with\_parent.py | 
 | Sum the root-to-leaf paths in a binary tree | sum\_root\_to\_leaf.cc | SumRootToLeaf.java | sum\_root\_to\_leaf.py | 
 | Find a root to leaf path with specified sum | path\_sum.cc | PathSum.java | path\_sum.py | 
-| Implement an inorder traversal without recursion | tree\_inorder.cc | TreeInorder.java | tree\_inorder.py | 
-| Implement a preorder traversal without recursion | tree\_preorder.cc | TreePreorder.java | tree\_preorder.py | 
+| Implement an inorder traversal without problems.recursion | tree\_inorder.cc | TreeInorder.java | tree\_inorder.py | 
+| Implement a preorder traversal without problems.recursion | tree\_preorder.cc | TreePreorder.java | tree\_preorder.py | 
 | Compute the kth node in an inorder traversal | kth\_node\_in\_tree.cc | KthNodeInTree.java | kth\_node\_in\_tree.py | 
 | Compute the successor | successor\_in\_tree.cc | SuccessorInTree.java | successor\_in\_tree.py | 
 | Implement an inorder traversal with O(1) space | tree\_with\_parent\_inorder.cc | TreeWithParentInorder.java | tree\_with\_parent\_inorder.py | 
@@ -320,7 +320,7 @@ Then just open `epi_judge_cpp/vs/epi_judge_cpp.sln` solution with Visual Studio 
 | Paint a Boolean matrix | matrix\_connected\_regions.cc | MatrixConnectedRegions.java | matrix\_connected\_regions.py | 
 | Compute enclosed regions | matrix\_enclosed\_regions.cc | MatrixEnclosedRegions.java | matrix\_enclosed\_regions.py | 
 | Deadlock detection | deadlock\_detection.cc | DeadlockDetection.java | deadlock\_detection.py | 
-| Clone a graph | graph\_clone.cc | GraphClone.java | graph\_clone.py | 
+| Clone a problems.graph | problems.graph\_clone.cc | GraphClone.java | problems.graph\_clone.py | 
 | Making wired connections | is\_circuit\_wirable.cc | IsCircuitWirable.java | is\_circuit\_wirable.py | 
 | Transform one string to another | string\_transformability.cc | StringTransformability.java | string\_transformability.py | 
 | Team photo day - 2 | max\_teams\_in\_photograph.cc | MaxTeamsInPhotograph.java | max\_teams\_in\_photograph.py | 
@@ -336,7 +336,7 @@ Then just open `epi_judge_cpp/vs/epi_judge_cpp.sln` solution with Visual Studio 
 | Copy a postings list | copy\_posting\_list.cc | CopyPostingList.java | copy\_posting\_list.py | 
 | Compute the longest substring with matching parens | longest\_substring\_with\_matching\_parentheses.cc | LongestSubstringWithMatchingParentheses.java | longest\_substring\_with\_matching\_parentheses.py | 
 | Compute the maximum of a sliding window | max\_of\_sliding\_window.cc | MaxOfSlidingWindow.java | max\_of\_sliding\_window.py | 
-| Implement a postorder traversal without recursion | tree\_postorder.cc | TreePostorder.java | tree\_postorder.py | 
+| Implement a postorder traversal without problems.recursion | tree\_postorder.cc | TreePostorder.java | tree\_postorder.py | 
 | Compute fair bonuses | bonus.cc | Bonus.java | bonus.py | 
 | Search a sorted array of unknown length | search\_unknown\_length\_array.cc | SearchUnknownLengthArray.java | search\_unknown\_length\_array.py | 
 | Search in two sorted arrays | kth\_largest\_element\_in\_two\_sorted\_arrays.cc | KthLargestElementInTwoSortedArrays.java | kth\_largest\_element\_in\_two\_sorted\_arrays.py | 

@@ -10,12 +10,12 @@ class GraphVertex:
         self.edges = []
 
 
-def clone_graph(graph):
-    if not graph:
+def clone_graph(problems.graph):
+    if not problems.graph:
         return None
 
-    q = collections.deque([graph])
-    vertex_map = {graph: GraphVertex(graph.label)}
+    q = collections.deque([problems.graph])
+    vertex_map = {problems.graph: GraphVertex(problems.graph.label)}
     while q:
         v = q.popleft()
         for e in v.edges:
@@ -25,14 +25,14 @@ def clone_graph(graph):
                 q.append(e)
             # Copy edge.
             vertex_map[v].edges.append(vertex_map[e])
-    return vertex_map[graph]
+    return vertex_map[problems.graph]
 
 
 def copy_labels(edges):
     return [e.label for e in edges]
 
 
-def check_graph(node, graph):
+def check_graph(node, problems.graph):
     if node is None:
         raise TestFailure('Graph was not copied')
 
@@ -42,10 +42,10 @@ def check_graph(node, graph):
     vertex_set.add(node)
     while q:
         vertex = q.popleft()
-        if vertex.label >= len(graph):
+        if vertex.label >= len(problems.graph):
             raise TestFailure('Invalid vertex label')
         label1 = copy_labels(vertex.edges)
-        label2 = copy_labels(graph[vertex.label].edges)
+        label2 = copy_labels(problems.graph[vertex.label].edges)
         if sorted(label1) != sorted(label2):
             raise TestFailure('Edges mismatch')
         for e in vertex.edges:
@@ -57,15 +57,15 @@ def check_graph(node, graph):
 def clone_graph_test(k, edges):
     if k <= 0:
         raise RuntimeError('Invalid k value')
-    graph = [GraphVertex(i) for i in range(k)]
+    problems.graph = [GraphVertex(i) for i in range(k)]
 
     for (fr, to) in edges:
         if fr < 0 or fr >= k or to < 0 or to >= k:
             raise RuntimeError('Invalid vertex index')
-        graph[fr].edges.append(graph[to])
+        problems.graph[fr].edges.append(problems.graph[to])
 
-    result = clone_graph(graph[0])
-    check_graph(result, graph)
+    result = clone_graph(problems.graph[0])
+    check_graph(result, problems.graph)
 
 
 if __name__ == '__main__':

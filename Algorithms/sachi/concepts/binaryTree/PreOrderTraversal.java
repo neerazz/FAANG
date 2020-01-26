@@ -20,7 +20,7 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 
 PreOrder  ->  Node -> Left -> Right
 Solutions:
-1. Use recursion
+1. Use problems.recursion
 2. Use Stacks - Deque (Add right and then left)
  */
 public class PreOrderTraversal {

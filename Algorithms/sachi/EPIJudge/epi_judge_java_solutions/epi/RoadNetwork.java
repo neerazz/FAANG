@@ -14,7 +14,7 @@ public class RoadNetwork {
     public static HighwaySection
     findBestProposals(List<HighwaySection> H, List<HighwaySection> P, int n) {
 
-        // graph stores the shortest path distances between all pairs of vertices.
+        // problems.graph stores the shortest path distances between all pairs of vertices.
         List<List<Integer>> graph = new ArrayList<>(n);
         for (int i = 0; i < n; ++i) {
             graph.add(new ArrayList<>(Collections.nCopies(n, Integer.MAX_VALUE)));
@@ -22,7 +22,7 @@ public class RoadNetwork {
         for (int i = 0; i < n; ++i) {
             graph.get(i).set(i, 0);
         }
-        // Builds an undirected graph graph based on existing highway sections H.
+        // Builds an undirected problems.graph problems.graph based on existing highway sections H.
         for (HighwaySection h : H) {
             graph.get(h.x).set(h.y, h.distance);
             graph.get(h.y).set(h.x, h.distance);
