@@ -10,6 +10,8 @@ public class AddBinary {
         scanner.close();
     }
 
+    //TODO - DO this Add binary numbers
+
     private static String addBinary(String a, String b) {
         if (a == null || a.isEmpty()) {
             return b;

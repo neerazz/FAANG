@@ -1,4 +1,12 @@
 /*
+
+
+LC and EPI
+
+LC: EASY
+https://leetcode.com/problems/plus-one/
+
+
 Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 The digits are stored such that the most significant digit is at the head of the list, and each element in the 
 array contain a single digit.
@@ -21,7 +29,9 @@ If coming outside -> create new array n+1 and add 1 in front.
 */
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+
 
 public class PlusOne {
     public static void main(String[] args) {
@@ -65,5 +75,26 @@ public class PlusOne {
         int[] sol = new int[n + 1];
         sol[0] = 1;
         return sol;
+    }
+
+    //When the input is an Arraylist
+    public static List<Integer> plusOne(List<Integer> A) {
+        // TODO - you fill in here.
+        int carry = 1, sum = 0;
+        for (int i = A.size() - 1; i >= 0; i--) {
+            sum = carry + A.get(i);
+            if (sum > 9) {
+                carry = 1;
+                A.set(i, 0);
+            } else {
+                carry = 0;
+                A.set(i, sum);
+            }
+        }
+        if (carry > 0) {
+            A.set(0, 1);
+            A.add(0);
+        }
+        return A;
     }
 }
