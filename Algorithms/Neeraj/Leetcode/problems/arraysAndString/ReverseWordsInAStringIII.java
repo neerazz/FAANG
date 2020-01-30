@@ -20,21 +20,19 @@ public class ReverseWordsInAStringIII {
         StringBuilder sb = new StringBuilder();
         Arrays.stream(strings).forEach(str -> {
             char[] chars = str.toCharArray();
-            printInputInReverseOrder(chars, 0, chars.length - 1);
+            reverse(chars, 0, chars.length - 1);
             sb.append(String.valueOf(chars)).append(" ");
         });
         return sb.toString().trim();
     }
 
-    public static void printInputInReverseOrder(char[] input, int start, int end) {
-        if (start == end || start > end) {
-            return;
+    public static void reverse(char[] chars, int i, int j) {
+        while (i < j) {
+            char temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
+            j--;
+            i++;
         }
-        char temp = input[start];
-        input[start] = input[end];
-        input[end] = temp;
-        start++;
-        end--;
-        printInputInReverseOrder(input, start, end);
     }
 }

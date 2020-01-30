@@ -24,8 +24,8 @@ public class AddBinary {
         int carry = 0;
         StringBuilder stringBuilder = new StringBuilder();
         while (i >= 0 || j >= 0) {
-            int aValue = i >= 0 ? Integer.parseInt(String.valueOf(aToChars[i])) : 0;
-            int bValue = j >= 0 ? Integer.parseInt(String.valueOf(bToChars[j])) : 0;
+            int aValue = aToChars[i--] == '1' ? 1 : 0;
+            int bValue = bToChars[j--] == '1' ? 1 : 0;
             int sum = aValue + bValue + carry;
             if (sum == 2) {
                 stringBuilder.append(0);
@@ -37,8 +37,6 @@ public class AddBinary {
                 stringBuilder.append(sum);
                 carry = 0;
             }
-            i--;
-            j--;
         }
         if (carry > 0) {
             stringBuilder.append(carry);

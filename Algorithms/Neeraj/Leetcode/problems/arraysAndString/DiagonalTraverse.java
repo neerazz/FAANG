@@ -1,6 +1,8 @@
 package problems.arraysAndString;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /*
 Problem: https://leetcode.com/explore/learn/card/array-and-string/202/introduction-to-2d-array/1167/
@@ -9,10 +11,10 @@ Solution: https://leetcode.com/explore/learn/card/array-and-string/202/introduct
  */
 public class DiagonalTraverse {
     public static void main(String[] args) {
-        System.out.println(findDiagonalOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
+        System.out.println(Arrays.toString(findDiagonalOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})));
     }
 
-    public static int[] findDiagonalOrder(int[][] matrix) {
+    public static int[] findDiagonalOrder_elegent(int[][] matrix) {
         int row = matrix.length;
         if (row == 0) return (new int[0]); //if empty matrix
         int col = matrix[0].length;
@@ -21,7 +23,6 @@ public class DiagonalTraverse {
         int i = 0, j = 0;
 
         while (i < row && j < col) {
-
             while (i >= 0 && j < col) { //moving up
                 ans[index] = matrix[i][j];
                 index++;
@@ -44,47 +45,40 @@ public class DiagonalTraverse {
                 i--;
                 j++;
             }
-            // for(int tmp = 0; tmp<index;tmp++) System.out.print(ans[tmp]+" ");
         }
         return ans;
     }
 
-    public static int[] findDiagonalOrder2(int[][] matrix) {
+    public static int[] findDiagonalOrder(int[][] matrix) {
+        if (matrix == null || matrix.length <= 0){
+            return new int[0];
+        }
         int rows = matrix.length;
-        int columns = rows > 0 ? matrix[0].length : 0;
-        if (columns == 0) {
-            return new int[]{};
+        int cols = matrix[0].length;
+        int[] result = new int[rows*cols];
+        int resultIndex = 0;
+        ArrayList<Integer> digits = new ArrayList<>();
+
+        for (int i = 0; i < rows + cols - 1; i++) {
+//            Find the starting row.
+            int row = i < cols ? 0 : i - cols + 1;
+            int col = i < cols ? i : cols - 1;
+
+            while (row >= 0 && row < rows && col >= 0 && col < cols) {
+                digits.add(matrix[row][col]);
+                row++;
+                col--;
+            }
+
+            if (i % 2 == 0) {
+//                All even diagonal should travel up.
+                Collections.reverse(digits);
+            }
+            for (int num : digits){
+                result[resultIndex++] = num;
+            }
+            digits.clear();
         }
-        if (rows == 1 && columns == 1) return matrix[0];
-        int[] output = new int[rows * columns];
-        boolean goUp = true, goDown = false;
-        int currentRow = 0, currentColumn = 0;
-
-        for (int i = 0; i < rows * columns - 1; i++) {
-            output[i] = matrix[currentRow][currentColumn];
-
-            if (currentRow == 0 && currentColumn == 0) {
-                goDown = false;
-                goUp = true;
-            } else if (currentRow == 0) {
-                goDown = true;
-                goUp = false;
-            } else if (currentColumn == 0) {
-                goDown = false;
-                goUp = true;
-            }
-
-            if (goUp) {
-                currentColumn = currentColumn + 1;
-                currentRow = currentRow == 0 ? currentRow : currentRow - 1;
-            }
-            if (goDown) {
-                currentColumn--;
-                currentRow++;
-            }
-
-        }
-        System.out.println(Arrays.toString(output));
-        return output;
+        return result;
     }
 }

@@ -62,6 +62,7 @@ public class ImplementStrStr {
         return lps;
     }
 
+//    Elegent Solution.
     public static int strStr(String haystack, String needle) {
         int hayLength = haystack.length();
         int needleLength = needle.length();

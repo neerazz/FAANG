@@ -16,6 +16,33 @@ public class LongestCommonPrefix {
         System.out.println("Answer is: " + longestCommonPrefix(new String[]{"aca", "cba"}) + " should be <empty>");
     }
 
+    public static String longestCommonPrefix_elegent(String[] strs) {
+        if(strs.length < 1) {
+            return "";
+        }
+        String max = strs[0];
+        String min = strs[0];
+
+        // find lexicographic max and min strings
+        for(String s : strs) {
+            if( max.compareTo(s) < 0 ) {
+                max = s;
+            }
+            if( min.compareTo(s) > 0 ) {
+                min = s;
+            }
+        }
+
+        // count largest common prefix between min and max
+        int i = 0;
+        for( ; i < max.length() && i < min.length(); i++) {
+            if( max.charAt(i) != min.charAt(i)) {
+                break;
+            }
+        }
+        return max.substring(0, i);
+    }
+
     public static String longestCommonPrefix(String[] strs) {
         String max = "", current = "";
         int size = strs.length;
