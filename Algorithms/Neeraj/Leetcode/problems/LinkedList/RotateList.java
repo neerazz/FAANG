@@ -38,6 +38,34 @@ public class RotateList {
         System.out.println(rotateRight(listNode, 10));
     }
 
+//  Run time: O(N), Space: O(1)
+    public static ListNode rotateRight_elegent(ListNode head, int k) {
+        ListNode headRef = head, pointer1 = head, pointer2 = head, lengthPointer = head;
+//        Find teh length.
+        int length = 0;
+        while (lengthPointer != null) {
+            length++;
+            lengthPointer = lengthPointer.next;
+        }
+        if(length==0||length==1) return head;
+        int rotate = k % length;
+        if (rotate == 0) return head;
+//        Forward the second pointer to n distance.
+        for (int i = 0; i < rotate; i++) {
+            pointer2 = pointer2.next;
+        }
+
+//        Move both pointer by one. When the second pointer next value is null. Then link the second pointer next to head.
+        while (pointer2.next != null){
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
+        }
+        ListNode output = pointer1.next;
+        pointer1.next = null;
+        pointer2.next = head;
+        return output;
+    }
+    
     public static ListNode rotateRight(ListNode head, int k) {
         if (head == null) return null;
         ListNode headcount = head;
