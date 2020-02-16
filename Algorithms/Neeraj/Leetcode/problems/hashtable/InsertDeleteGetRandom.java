@@ -1,8 +1,6 @@
 package problems.hashtable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /*
 https://leetcode.com/explore/learn/card/hash-table/187/conclusion-hash-table/1141/
@@ -51,9 +49,70 @@ public class InsertDeleteGetRandom {
 
 // Since 2 is the only number in the set, getRandom always return 2.
         System.out.println(randomSet.getRandom() + " -> 2.");
+
+        RandomizedSet_Elegent randomizedSet_elegent = new RandomizedSet_Elegent();
+        // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+        System.out.println(randomizedSet_elegent.insert(1) + " -> true.");
+
+// Returns false as 2 does not exist in the set.
+        System.out.println(randomizedSet_elegent.remove(2) + " -> false.");
+
+// Inserts 2 to the set, returns true. Set now contains [1,2].
+        System.out.println(randomizedSet_elegent.insert(2) + " -> true.");
+
+// getRandom should return either 1 or 2 randomly.
+        System.out.println(randomizedSet_elegent.getRandom() + " -> [1 or 2]].");
+
+// Removes 1 from the set, returns true. Set now contains [2].
+        System.out.println(randomizedSet_elegent.remove(1) + " -> true.");
+
+// 2 was already in the set, so return false.
+        System.out.println(randomizedSet_elegent.insert(2) + " -> false.");
+
+// Since 2 is the only number in the set, getRandom always return 2.
+        System.out.println(randomizedSet_elegent.getRandom() + " -> 2.");
     }
 }
+class RandomizedSet_Elegent{
+    Map<Integer,Integer> map;
+    List<Integer> list;
+    Random r;
 
+
+    public RandomizedSet_Elegent() {
+        r= new Random();
+        map = new HashMap<>();
+        list = new ArrayList<>();
+    }
+
+    public boolean insert(int val) {
+        if(map.containsKey(val)) return false;
+        map.put(val,list.size());
+        list.add(val);
+        return true;
+    }
+
+    /*
+    Replace that element with last
+    Remove from map
+    Modify last element index in map
+    Otherwise, delete in arraylist take O(n) time
+    */
+    public boolean remove(int val) {
+        if(!map.containsKey(val)) return false;
+        int idx = map.get(val);
+        int last = list.get( list.size()-1) ;
+        list.set(idx ,last );
+        list.remove(list.size()-1);
+        map.put(last, idx);
+        map.remove(val);
+        return true;
+    }
+
+    public int getRandom() {
+        return list.get(r.nextInt(list.size()));
+    }
+}
 class RandomizedSet {
 
     List<Integer> integers;

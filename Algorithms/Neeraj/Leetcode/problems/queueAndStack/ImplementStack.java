@@ -32,12 +32,6 @@ class MyStack {
         arrayList.add(x);
     }
 
-//    public void pop() {
-//        if (arrayList.size() > 0) {
-//            arrayList.remove(arrayList.size() - 1);
-//        }
-//    }
-
     public int pop() {
         int result = -1;
         if (arrayList.size() > 0) {

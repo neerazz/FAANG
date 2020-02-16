@@ -1,5 +1,8 @@
 package problems.queueAndStack;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1379/
 Given an encoded string, return its decoded string.
@@ -14,41 +17,36 @@ s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
  */
 public class DecodeString {
     public static void main(String[] args) {
-        System.out.println("Answer is: \t" + decodeString("3[a]2[bc]") + "\nshould be \taaabcbc.");
+//        System.out.println("Answer is: \t" + decodeString("3[a]2[bc]") + "\nshould be \taaabcbc.");
         System.out.println("Answer is: \t" + decodeString("3[a2[c]]") + "\nshould be \taccaccacc.");
         System.out.println("Answer is: \t" + decodeString("2[abc]3[cd]ef") + "\nshould be \tabcabccdcdcdef.");
         System.out.println("Answer is: \t" + decodeString("3[a]2[b4[F]c]") + "\nshould be \taaabFFFFcbFFFFc.");
         System.out.println("Answer is: \t" + decodeString("3[z]2[2[y]pq4[2[jk]e1[f]]]ef") + "\nshould be \tzzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef.");
     }
 
+    static Map<String, String> map = new HashMap<>();
     public static String decodeString(String s) {
+        if (map.containsKey(s)) return map.get(s);
         char[] arr = s.toCharArray();
         int k = 0;
         StringBuilder sb = new StringBuilder();
-
         for (int i = 0; i < arr.length; i++) {
             if (Character.isDigit(arr[i])) {
                 String num = getNumber(s, i);
-
                 i += (num.length() - 1);
-
                 // i should be at last digit
                 k = Integer.parseInt(num);
-
                 String decoded = getDecoded(s, i + 1);
-
                 // Increment i to next encoding
                 i += (decoded.length() + 2);
-
                 for (int j = 0; j < k; j++) {
                     sb.append(decodeString(decoded));
                 }
             } else if (arr[i] != '[' && arr[i] != ']') {
                 sb.append(arr[i]);
             }
-
         }
-
+        map.put(s,sb.toString());
         return sb.toString();
     }
 
@@ -80,7 +78,6 @@ public class DecodeString {
                 return sb.substring(1, sb.length() - 1);
             }
         }
-
         return sb.substring(1, sb.length() - 1);
     }
 

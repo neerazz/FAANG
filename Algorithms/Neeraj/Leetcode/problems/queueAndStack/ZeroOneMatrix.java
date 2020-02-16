@@ -33,15 +33,15 @@ public class ZeroOneMatrix {
     public static void main(String[] args) {
 //        int[][] matrix = new int[][]{{0,0,0},{0,1,0},{0,0,0}};
 //        Arrays.stream(updateMatrix(matrix)).forEach(a -> System.out.println(Arrays.toString(a)));
-//        System.out.println("========================================");
-//        int[][] matrix2 = new int[][]{{0,0,0},{0,1,0},{1,1,1}};
-//        Arrays.stream(updateMatrix(matrix2)).forEach(a -> System.out.println(Arrays.toString(a)));
-//        System.out.println("========================================");
-//        int[][] matrix3 = new int[][]{{0,1,0,1,1},{1,1,0,0,1},{0,0,0,1,0},{1,0,1,1,1},{1,0,0,0,1}};
-//        Arrays.stream(updateMatrix(matrix3)).forEach(a -> System.out.println(Arrays.toString(a)));
-//        System.out.println("========================================");
-//        int[][] matrix4 = new int[][]{{1,0,1,1,0,0,1,0,0,1},{0,1,1,0,1,0,1,0,1,1},{0,0,1,0,1,0,0,1,0,0},{1,0,1,0,1,1,1,1,1,1},{0,1,0,1,1,0,0,0,0,1},{0,0,1,0,1,1,1,0,1,0},{0,1,0,1,0,1,0,0,1,1},{1,0,0,0,1,1,1,1,0,1},{1,1,1,1,1,1,1,0,1,0},{1,1,1,1,0,1,0,0,1,1}};
-//        Arrays.stream(updateMatrix(matrix4)).forEach(a -> System.out.println(Arrays.toString(a)));
+        System.out.println("========================================");
+        int[][] matrix2 = new int[][]{{0,0,0},{0,1,0},{1,1,1}};
+        Arrays.stream(updateMatrix(matrix2)).forEach(a -> System.out.println(Arrays.toString(a)));
+        System.out.println("========================================");
+        int[][] matrix3 = new int[][]{{0,1,0,1,1},{1,1,0,0,1},{0,0,0,1,0},{1,0,1,1,1},{1,0,0,0,1}};
+        Arrays.stream(updateMatrix(matrix3)).forEach(a -> System.out.println(Arrays.toString(a)));
+        System.out.println("========================================");
+        int[][] matrix4 = new int[][]{{1,0,1,1,0,0,1,0,0,1},{0,1,1,0,1,0,1,0,1,1},{0,0,1,0,1,0,0,1,0,0},{1,0,1,0,1,1,1,1,1,1},{0,1,0,1,1,0,0,0,0,1},{0,0,1,0,1,1,1,0,1,0},{0,1,0,1,0,1,0,0,1,1},{1,0,0,0,1,1,1,1,0,1},{1,1,1,1,1,1,1,0,1,0},{1,1,1,1,0,1,0,0,1,1}};
+        Arrays.stream(updateMatrix(matrix4)).forEach(a -> System.out.println(Arrays.toString(a)));
         System.out.println("========================================");
         int[][] matrix5 = new int[][]{{0, 0, 1, 0, 1, 1, 1, 0, 1, 1}, {1, 1, 1, 1, 0, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 0, 0, 0, 1, 1}, {1, 0, 1, 0, 1, 1, 1, 0, 1, 1}, {0, 0, 1, 1, 1, 0, 1, 1, 1, 1}, {1, 0, 1, 1, 1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 0, 1, 0, 1, 0, 1}, {0, 1, 0, 0, 0, 1, 0, 0, 1, 1}, {1, 1, 1, 0, 1, 1, 0, 1, 0, 1}, {1, 0, 1, 1, 1, 0, 1, 1, 1, 0}};
         Arrays.stream(updateMatrix(matrix5)).forEach(a -> System.out.println(Arrays.toString(a)));
@@ -53,7 +53,7 @@ public class ZeroOneMatrix {
         int[][] res = new int[rows][columns];
         Queue<Position> q = new LinkedList<Position>();
 
-        for (int r = 0; r < rows; r++)
+        for (int r = 0; r < rows; r++){
             for (int c = 0; c < columns; c++) {
                 if (matrix[r][c] == 0) {
                     res[r][c] = 0;
@@ -62,13 +62,14 @@ public class ZeroOneMatrix {
                     res[r][c] = Integer.MAX_VALUE;
                 }
             }
+        }
 
         while (!q.isEmpty()) {
-            Position next = q.poll();
-            UpdateMatrix(res, q, new Position(next.dis + 1, next.r + 1, next.c));
-            UpdateMatrix(res, q, new Position(next.dis + 1, next.r, next.c + 1));
-            UpdateMatrix(res, q, new Position(next.dis + 1, next.r - 1, next.c));
-            UpdateMatrix(res, q, new Position(next.dis + 1, next.r, next.c - 1));
+            Position currentPosition = q.poll();
+            UpdateMatrix(res, q, new Position(currentPosition.dis + 1, currentPosition.r + 1, currentPosition.c));
+            UpdateMatrix(res, q, new Position(currentPosition.dis + 1, currentPosition.r, currentPosition.c + 1));
+            UpdateMatrix(res, q, new Position(currentPosition.dis + 1, currentPosition.r - 1, currentPosition.c));
+            UpdateMatrix(res, q, new Position(currentPosition.dis + 1, currentPosition.r, currentPosition.c - 1));
         }
 
         return res;

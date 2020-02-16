@@ -40,7 +40,6 @@ public class SearchA2DMatrixII {
 
         int rowIndex = 0, columnIndex = column - 1;
         while (rowIndex < row && columnIndex >= 0) {
-
 //            Loop through the first Row from last to first.
             while (columnIndex >= 0) {
                 int current = matrix[0][columnIndex];

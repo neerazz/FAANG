@@ -79,9 +79,9 @@ Turn right because now there is an obstacle (or a virtual obstacle) just in fron
         robot.clean();
         visited.add(currentHash);
         for (int n = 0; n < 4; n++) {
-            // the robot can to four directions, we use right turn
+            // the robot will check all four directions, we use right turn
             if (robot.move()) {
-                // can go directly. Find the (x, y) for the next cell based on current direction
+                // Find the (row , col) for the next cell based on current direction
                 int x = row, y = col;
                 switch (dir) {
                     case 0:
@@ -103,7 +103,6 @@ Turn right because now there is an obstacle (or a virtual obstacle) just in fron
                     default:
                         break;
                 }
-
                 backtrack(robot, x, y, visited, dir);
                 // go back to the starting position
                 robot.turnLeft();
