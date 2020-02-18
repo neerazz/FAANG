@@ -3,6 +3,9 @@ package epi;
 import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class ConvertBase {
     @EpiTest(testDataFile = "convert_base.tsv")
 

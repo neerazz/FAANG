@@ -5,6 +5,7 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.awt.event.ItemEvent;
 import java.util.List;
 
 public class CircularQueue {
@@ -54,11 +55,28 @@ public class CircularQueue {
     }
 
     public static class Queue {
+        Integer[] myList;
+        int start;
+        int end;
+
         public Queue(int capacity) {
+            myList = new Integer[capacity];
+            start = 0;
+            end = 0;
         }
 
         public void enqueue(Integer x) {
             // TODO - you fill in here.
+            if (size() < myList.length) {
+                myList[++end] = x;
+            } else {
+                //Double the array size
+                Integer[] temp = myList;
+                myList = new Integer[temp.length * 2];
+                if (temp.length >= 0){
+                    System.arraycopy(temp, 0, myList, 0, temp.length);
+                }
+            }
             return;
         }
 
@@ -69,7 +87,12 @@ public class CircularQueue {
 
         public int size() {
             // TODO - you fill in here.
-            return 0;
+            if (end == -1) return 0;
+            if (end > start) {
+                return myList.length - end - start + 1;
+            } else {
+                return end - start + 1;
+            }
         }
 
         @Override
