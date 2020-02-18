@@ -98,7 +98,7 @@
 | 359 | [Logger Rate Limiter    ](https://leetcode.com/problems/logger-rate-limiter) | 66.80% | Easy |
 | 108 | [Convert Sorted Array to Binary Search Tree    ](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree) | 53.00% | Easy |
 | 118 | [Pascal&#39;s Triangle    ](https://leetcode.com/problems/pascals-triangle) | 48.20% | Easy |
-| 211 | [Add and Search Word - Data structure problems.design    ](https://leetcode.com/problems/add-and-search-word-data-structure-design) | 32.10% | Medium |
+| 211 | [Add and Search Word - Data structure ds.design    ](https://leetcode.com/problems/add-and-search-word-data-structure-design) | 32.10% | Medium |
 | 703 | [Kth Largest Element in a Stream    ](https://leetcode.com/problems/kth-largest-element-in-a-stream) | 47.00% | Easy |
 | 117 | [Populating Next Right Pointers in Each Node II    ](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii) | 35.70% | Medium |
 | 542 | [01 Matrix    ](https://leetcode.com/problems/01-matrix) | 37.00% | Medium |
@@ -129,7 +129,7 @@
 | 217 | [Contains Duplicate    ](https://leetcode.com/problems/contains-duplicate) | 53.50% | Easy |
 | 100 | [Same Tree    ](https://leetcode.com/problems/same-tree) | 50.90% | Easy |
 | 142 | [Linked List Cycle II    ](https://leetcode.com/problems/linked-list-cycle-ii) | 33.70% | Medium |
-| 170 | [Two Sum III - Data structure problems.design    ](https://leetcode.com/problems/two-sum-iii-data-structure-design) | 31.70% | Easy |
+| 170 | [Two Sum III - Data structure ds.design    ](https://leetcode.com/problems/two-sum-iii-data-structure-design) | 31.70% | Easy |
 | 145 | [Binary Tree Postorder Traversal    ](https://leetcode.com/problems/binary-tree-postorder-traversal) | 50.50% | Hard |
 | 652 | [Find Duplicate Subtrees    ](https://leetcode.com/problems/find-duplicate-subtrees) | 47.10% | Medium |
 | 561 | [Array Partition I    ](https://leetcode.com/problems/array-partition-i) | 70.10% | Easy |
