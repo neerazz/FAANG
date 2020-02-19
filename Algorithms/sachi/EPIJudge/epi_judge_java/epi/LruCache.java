@@ -5,10 +5,16 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LruCache {
+
+    Map<Integer, Integer> isbnCache;
+
     LruCache(final int capacity) {
+        isbnCache = new HashMap<>();
     }
 
     @EpiTest(testDataFile = "lru_cache.tsv")
@@ -54,17 +60,22 @@ public class LruCache {
 
     public Integer lookup(Integer key) {
         // TODO - you fill in here.
-        return 0;
+        return isbnCache.get(key);
     }
 
     public void insert(Integer key, Integer value) {
         // TODO - you fill in here.
-        return;
+        //evict and add
+        isbnCache.put(key, value);
     }
 
     public Boolean erase(Object key) {
         // TODO - you fill in here.
-        return true;
+        if (isbnCache.containsKey(key)) {
+            isbnCache.remove(key);
+            return true;
+        }
+        return false;
     }
 
     @EpiUserType(ctorParams = {String.class, int.class, int.class})
