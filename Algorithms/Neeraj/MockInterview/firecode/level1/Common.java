@@ -1,8 +1,9 @@
-package firecode.level1;
+package level1;
 
 import java.util.*;
 
-import static firecode.level1.FindTheMiddleOfAListInASinglePass.createListNode;
+import static level1.FindTheMiddleOfAListInASinglePass.createListNode;
+
 
 public class Common {
     public static void main(String[] args) {
