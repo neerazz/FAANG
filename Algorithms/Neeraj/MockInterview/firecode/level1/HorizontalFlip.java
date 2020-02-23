@@ -1,4 +1,4 @@
-package firecode.level1;
+package level1;
 
 import java.util.Arrays;
 

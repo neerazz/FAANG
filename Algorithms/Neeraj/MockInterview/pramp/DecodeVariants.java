@@ -1,4 +1,3 @@
-package pramp;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,7 +29,7 @@ public class DecodeVariants {
     static int decodeVariations(String s) {
         if(s.length()>0 && s.charAt(0)=='0') return 0;
         if(s.length() <= 1) return 1;
-        if(map.get(s) != null) return map.get(s);
+        if(map.containsKey(s)) return map.get(s);
         int result = 0;
         if(Integer.parseInt(s.substring(0,2)) <=26 ) {
             result = decodeVariations(s.substring(1)) + decodeVariations(s.substring(2));

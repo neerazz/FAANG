@@ -1,4 +1,4 @@
-package firecode.level2;
+package level2;
 
 import java.util.*;
 
