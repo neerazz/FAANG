@@ -17,7 +17,7 @@ public class SearchMaze {
     public static List<Coordinate> searchMaze(List<List<Color>> maze, Coordinate s, Coordinate e) {
         // TODO - you fill in here.
         //White is open area
-/*
+        /*
         Map<Integer, List<Integer>> mazeMap = new HashMap<>();
         List<Integer> list;
         //Create a Graph
@@ -45,8 +45,8 @@ public class SearchMaze {
                 //return current;
             }
         }
-*/
-return null;
+        */
+        return null;
     }
 
     public static boolean pathElementIsFeasible(List<List<Integer>> maze,
