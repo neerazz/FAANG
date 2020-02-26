@@ -15,15 +15,30 @@ public class AlienDictionary {
     public static String alienOrder(String[] words) {
         if (words.length == 0) return "";
         HashMap<Character, Graph> graphHashMap = new HashMap<>();
-        List<Graph> graphs = new ArrayList<>();
+        // Create a graph of letters for each word.
         for (int i = 0; i < words.length; i++) {
-            graphs.add(createGraph(words[i].toCharArray(), graphHashMap));
+            createGraph(words[i].toCharArray(), graphHashMap);
+        }
+        // Link the existing graph's with other words graph. As soon as the releation is created between two words exit the loop.
+        for (int i = 1; i < words.length; i++) {
+            String pre = words[i-1];
+            String cur = words[i];
+            for(int j =0; j< Math.min(pre.length(),cur.length()) ; j++){
+              char preChar = pre.charAt(j);
+              char curChar = cur.charAt(j);
+              if (preChar != curChar) {
+                graphHashMap.get(preChar).neighbours.add(graphHashMap.get(curChar));
+                // Break the loop because teh releation between two word graph is done.
+                break;
+              }
+            }
         }
         HashSet<Character> visited = new HashSet<>();
         Stack<Character> characterStack = new Stack<>();
-        for (Graph g : graphs) {
-            if (!visited.contains(g.aChar))
-                performTopologicalSort(g, visited, characterStack);
+        for (char c : graphHashMap.keySet()) {
+            if (!visited.contains(c)){
+              performTopologicalSort(graphHashMap.get(c), visited, characterStack);
+            }
         }
         StringBuilder sb = new StringBuilder();
         while (!characterStack.isEmpty()) {
@@ -50,7 +65,7 @@ public class AlienDictionary {
     }
 
     private static Graph createGraph(char[] word, HashMap<Character, Graph> graphHashMap) {
-        if (word.length == 0) return null;
+        if (word.length <= 0) return null;
         int index = 0;
         Graph graph;
         char first = word[index++];
@@ -63,22 +78,13 @@ public class AlienDictionary {
         graph.neighbours.add(createGraph(Arrays.copyOfRange(word, index, word.length), graphHashMap));
         return graph;
     }
-}
+    static class Graph {
+        char aChar;
+        HashSet<Graph> neighbours;
 
-class Graph {
-    char aChar;
-    HashSet<Graph> neighbours;
-
-    public Graph(char aChar, HashSet<Graph> neighbours) {
-        this.aChar = aChar;
-        this.neighbours = neighbours;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Graph graph = (Graph) o;
-        return aChar == graph.aChar;
+        public Graph(char aChar, HashSet<Graph> neighbours) {
+            this.aChar = aChar;
+            this.neighbours = neighbours;
+        }
     }
 }

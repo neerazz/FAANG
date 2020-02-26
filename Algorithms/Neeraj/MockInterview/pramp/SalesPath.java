@@ -29,18 +29,19 @@ class Solution1 {
   static class SalesPath {
     static int output = Integer.MAX_VALUE;
     static int getCheapestCost(Node rootNode) {
-
       getCheapestCost_Helper(rootNode,0);
+      // Return -1 if the root Node is null.
       output = output == Integer.MAX_VALUE ? -1 : output;
-
-      //System.out.println("result = " + output);
       return output;
     }
 
     static void getCheapestCost_Helper(Node rootNode, int sum) {
-      System.out.println("sum = " + sum);
       if(rootNode == null){
         output = Math.min(sum,output);
+        return;
+      }
+      // Check if the sum the previous nodes & current node is more than the current minimum value. Then donot go deeper.
+      if(sum + rootNode.cost >= output){
         return;
       }
       if(rootNode.children != null ){
