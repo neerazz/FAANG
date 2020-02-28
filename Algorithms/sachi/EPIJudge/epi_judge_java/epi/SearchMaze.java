@@ -5,15 +5,48 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SearchMaze {
-    public static List<Coordinate> searchMaze(List<List<Color>> maze,
-                                              Coordinate s, Coordinate e) {
+    public static List<Coordinate> searchMaze(List<List<Color>> maze, Coordinate s, Coordinate e) {
         // TODO - you fill in here.
-        return Collections.emptyList();
+        //White is open area
+        /*
+        Map<Integer, List<Integer>> mazeMap = new HashMap<>();
+        List<Integer> list;
+        //Create a Graph
+        for (int i = 0; i < maze.size(); i++) {
+            for (int j = 0; j < maze.get(i).size(); j++) {
+                Color c = maze.get(i).get(j);
+                if (c == Color.WHITE) {
+                    if (mazeMap.containsKey(i)) {
+                        list = mazeMap.get(i);
+                    } else {
+                        list = new ArrayList<>();
+                    }
+                    list.add(j);
+                    mazeMap.put(i, list);
+                }
+            }
+        }
+
+        //Traverse the graph - To find out if you can reach the position
+        //Do BFS to check if reachable
+        Deque<Coordinate> queue = new ArrayDeque<>();
+        while(queue.isEmpty()){
+            Coordinate current = queue.pop();
+            if(current == e){
+                //return current;
+            }
+        }
+        */
+        return null;
     }
 
     public static boolean pathElementIsFeasible(List<List<Integer>> maze,

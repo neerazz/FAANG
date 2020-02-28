@@ -5,6 +5,10 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import javax.swing.*;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -63,24 +67,36 @@ public class StackWithMax {
     }
 
     public static class Stack {
+
+        Deque<Integer> myStack = new LinkedList<>();
+        Integer maxVal = Integer.MIN_VALUE;
+
         public boolean empty() {
-            // TODO - you fill in here.
-            return true;
+            return myStack.isEmpty();
         }
 
         public Integer max() {
-            // TODO - you fill in here.
-            return 0;
+            return maxVal;
         }
 
         public Integer pop() {
-            // TODO - you fill in here.
-            return 0;
+            if (maxVal.equals(myStack.peek())) {
+                //Compute new MAX Val
+                maxVal = Integer.MIN_VALUE;
+                Integer popValue = myStack.pop();
+                Iterator<Integer> it = myStack.iterator();
+                while (it.hasNext()) {
+                    maxVal = Math.max(maxVal, (Integer) it.next());
+                }
+                return popValue;
+
+            }
+            return myStack.pop();
         }
 
         public void push(Integer x) {
-            // TODO - you fill in here.
-            return;
+            maxVal = Math.max(x, maxVal);
+            myStack.push(x);
         }
     }
 
