@@ -1,5 +1,3 @@
-package algorithms.GreedyAlgorithm;
-
 import java.util.Arrays;
 
 public class JumpGameII {

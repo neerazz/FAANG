@@ -11,7 +11,6 @@ public class DecodeVariants {
     }
 
     static HashSet<String> possibilities;
-
     static int decodeVariations_1(String S) {
         if (S == null || S.length() < 1) return 0;
         // Keep all the charecter's and the int mapping in a map.

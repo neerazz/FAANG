@@ -1,7 +1,3 @@
-package algorithms.GreedyAlgorithm;
-
-import groovyx.gpars.extra166y.Ops;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;

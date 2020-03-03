@@ -1,5 +1,3 @@
-package algorithms.GreedyAlgorithm;
-
 import java.util.*;
 
 public class TaskScheduler {

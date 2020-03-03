@@ -1,5 +1,3 @@
-package algorithms.GreedyAlgorithm;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

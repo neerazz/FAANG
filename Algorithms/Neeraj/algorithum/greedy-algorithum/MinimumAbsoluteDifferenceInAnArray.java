@@ -1,5 +1,3 @@
-package InterviewPreparation.GreedyAlgorithms;
-
 import java.util.Arrays;
 
 /*
