@@ -32,12 +32,16 @@ public class InsertIntoABinarySearchTree {
     }
 
     public static TreeNode insertIntoBST(TreeNode root, int val) {
-        if (root == null) return new TreeNode(val);
-//        if (root.left != null && root.val > val) root.left = insertIntoBST(root.left, val);
-//        if (root.right != null && root.val < val) root.right = insertIntoBST(root.right, val);
-//        if (root.left == null && root.val > val) root.left = new TreeNode(val);
-//        if (root.right == null && root.val < val) root.right = new TreeNode(val);
-        return root;
+      if(root == null) return new TreeNode(val);
+      int cur = root.val;
+      if(val < cur){
+//             Go Left and insert
+          root.left = insertIntoBST(root.left,val);
+      }else{
+//             Go right and insert
+          root.right = insertIntoBST(root.right,val);
+      }
+      return root;
     }
     static class TreeNode {
         int val;
