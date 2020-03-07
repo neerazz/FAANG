@@ -14,7 +14,7 @@ import java.util.Map;
 
 //Sol - Use a hashmap
 //Can be done in O(n) and one pass.
-public class TwoSum {
+public class TwoSum3 {
 
     public static void main(String[] args) {
         int[] arr = new int[]{2, 7, 11, 15};
