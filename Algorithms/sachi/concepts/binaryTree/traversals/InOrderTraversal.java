@@ -12,4 +12,13 @@ class InOrderTraversal{
     	sol.add(root.val);
     	inorderTraversalRecur(root.right, sol);  
     }
+
+    public  List<Integer> inOrderTraversalIter(TreeNode root){
+        List<Integer> sol = new ArrayList<>();
+		Deque<TreeNode> stack = new LinkedList<>();
+		stack.add(root);
+		while(!stack.isEmpty()){
+			
+		}
+    }
 }
