@@ -8,6 +8,7 @@ public class LongestPalindromicSubstring{
       System.out.println(longestPalindrome_dp_consecutive_character("cbbd"));
       System.out.println(longestPalindrome_dp_consecutive_character("a"));
       System.out.println(longestPalindrome_dp_consecutive_character("bb"));
+      System.out.println(longestPalindrome_dp_consecutive_character("it's highnoon") + " should be [noon]");
   }
 
   public static int longestPalindrome_dp_len(String s) {
