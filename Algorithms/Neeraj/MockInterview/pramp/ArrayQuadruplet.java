@@ -33,7 +33,7 @@ class ArrayQuadruplet {
               List<Integer> cur = Arrays.asList(arr[i],arr[j],arr[k],arr[l]);
               Collections.sort(cur);
               output.add(cur);
-              // return op;
+              return op;
             }
           }
         }
@@ -45,8 +45,12 @@ class ArrayQuadruplet {
   }
 
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{2, 7, 4, 0, 9, 5, 1, 3},20)));
-    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{4,4,4},12)));
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{2, 7, 4, 0, 9, 5, 1, 3},20)) + " should be [0, 4, 7, 9]");
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{},12)) + " should be []");
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{4,4,4},12)) + " should be []");
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{4,4,4,4},16)) + " should be [4,4,4,4]");
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{2,7,4,0,9,5,1,3},120)) + " should be []");
+    System.out.println(Arrays.toString(findArrayQuadruplet(new int[]{1,2,3,4,5,9,19,12,12,19},40)) + " should be [4, 5, 12, 19]");
   }
 
 }
