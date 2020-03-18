@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class AwardCuts{
+class AwardCuts {
 
     static double findGrantsCap(double[] grantsArray, double newBudget) {
         if (grantsArray.length == 0) return 0.0;
