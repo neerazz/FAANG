@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 Reverse a singly linked list.
 
@@ -22,23 +25,25 @@ public class ReverseLinkedList {
         h1.next.next = new ListNode(3);
         h1.next.next.next = new ListNode(4);
         h1.next.next.next.next = new ListNode(5);
+
         System.out.println("\nInput");
         print(h);
         System.out.println("\nOutput");
         print(reverseList(h));
-        System.out.println("\nRecusrion");
+        System.out.println("\nRecursion");
         print(reverseList(h1, null));
     }
 
-    private static ListNode reverseList(ListNode head) {
-        ListNode sol = null;
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = sol;
-            sol = head;
-            head = next;
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        return sol;
+        return prev;
     }
 
     private static ListNode reverseList(ListNode head, ListNode newHead) {
@@ -56,10 +61,18 @@ public class ReverseLinkedList {
      */
     public static void print(ListNode head) {
         if (head == null) {
-            return;
         } else {
             System.out.print(head.val);
             print(head.next);
         }
+    }
+
+    public static List<Integer> convertToList(ListNode head) {
+        List<Integer> sol = new ArrayList<>();
+        while (head != null) {
+            sol.add(head.val);
+            head = head.next;
+        }
+        return sol;
     }
 }
