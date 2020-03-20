@@ -17,6 +17,7 @@ class WordCountEngine {
 
     int size = map.size();
     List[] lists = new ArrayList[size];
+    // Fill the list with default values.
     for(int i = 0 ; i < size ; i++){
         List<String> list = new ArrayList<>();
         lists[i] = list;

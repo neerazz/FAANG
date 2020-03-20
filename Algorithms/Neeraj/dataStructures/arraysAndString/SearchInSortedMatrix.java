@@ -10,6 +10,8 @@ class SearchInSortedMatrix{
       {40,41,42,44,45,1003},
       {99,100,103,106,128,1004}
     },44)));
+    System.out.println(Arrays.toString(searchInSortedMatrix(
+    new int[][]{{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}},44)));
   }
   public static int[] searchInSortedMatrix(int[][] matrix, int target) {
     int rows = matrix.length, cols = rows>0 ? matrix[0].length : 0;
