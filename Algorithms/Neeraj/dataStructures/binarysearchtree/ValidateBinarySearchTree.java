@@ -31,32 +31,32 @@ public class ValidateBinarySearchTree {
         System.out.println(isValidBST(createTreeNode(new Integer[]{10, 5, 15, null, null, 6, 20})) + " should be false");
     }
 
-    public static TraverseATree.TreeNode createTreeNode(Integer[] integers) {
-        Queue<TraverseATree.TreeNode> nodes = new LinkedList<>();
-        TraverseATree.TreeNode head = null;
+    public static TreeNode createTreeNode(Integer[] integers) {
+        Queue<TreeNode> nodes = new LinkedList<>();
+        TreeNode head = null;
         int index = 0;
         while (index < integers.length) {
             if (nodes.isEmpty()) {
                 Integer current = integers[index++];
                 if (current != null) {
-                    TraverseATree.TreeNode treeNode = new TreeNode(current);
+                    TreeNode treeNode = new TreeNode(current);
                     nodes.add(treeNode);
                     head = treeNode;
                 }
             } else {
 //                Create left and right child.
-                TraverseATree.TreeNode currentHead = nodes.poll();
+                TreeNode currentHead = nodes.poll();
 //                Create left Child.
                 Integer left = integers[index++];
                 if (left != null) {
-                    TraverseATree.TreeNode treeNode = new TreeNode(left);
+                    TreeNode treeNode = new TreeNode(left);
                     currentHead.left = treeNode;
                     nodes.add(treeNode);
                 }
 //                Create Right Child.
                 Integer right = integers[index++];
                 if (right != null) {
-                    TraverseATree.TreeNode treeNode = new TreeNode(right);
+                    TreeNode treeNode = new TreeNode(right);
                     currentHead.right = treeNode;
                     nodes.add(treeNode);
                 }
@@ -65,12 +65,12 @@ public class ValidateBinarySearchTree {
         return head;
     }
 
-    public static boolean isValidBST(TraverseATree.TreeNode root) {
+    public static boolean isValidBST(TreeNode root) {
         if (root == null) return true;
         return isValidBSTWithMinAndMax(root, null, null);
     }
 
-    public static boolean isValidBSTWithMinAndMax(TraverseATree.TreeNode root, Integer minvalue, Integer maxValue) {
+    public static boolean isValidBSTWithMinAndMax(TreeNode root, Integer minvalue, Integer maxValue) {
         if (root == null) return true;
         if (minvalue != null && root.val <= minvalue) return false;
         if (maxValue != null && root.val >= maxValue) return false;
@@ -78,8 +78,8 @@ public class ValidateBinarySearchTree {
     }
     static class TreeNode {
         int val;
-        TraverseATree.TreeNode left;
-        TraverseATree.TreeNode right;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int x) {
             val = x;

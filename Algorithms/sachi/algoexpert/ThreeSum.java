@@ -1,24 +1,34 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 class ThreeSum {
+
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         List<Integer[]> sol = new ArrayList<>();
+        //Sort the arrays
         Arrays.sort(array);
-        for (int i = 0; i < array.length; i++) {
-            int p1 = i + 1, p2 = array.length - 1, target = targetSum - array[i];
-            while (p1 < p2) {
-                if (array[p1] + array[p2] == target) {
-                    sol.add(new Integer[]{array[i], array[p1], array[p2]});
-                    p1++;
-                    p2--;
-                } else if (array[p1] + array[p2] < target) {
-                    p1++;
-                } else {
-                    p2--;
-                }
-            }
+        for (int i = 0; i < array.length - 2; i++) {
+            getTwoSum(array, i + 1, targetSum - array[i], sol);
         }
         return sol;
+    }
+
+    public static void getTwoSum(int[] arr, int start, int target, List<Integer[]> sol) {
+        int myStart = start - 1;
+        int end = arr.length - 1;
+        while (start < end) {
+            int sum = arr[start] + arr[end];
+            if (sum == target) {
+                sol.add(new Integer[]{arr[myStart], arr[start], arr[end]});
+                start++;
+                end--;
+            } else if (target < sum) {
+                end--;
+            } else {
+                start++;
+            }
+        }
     }
 
     public static void main(String[] args) {
