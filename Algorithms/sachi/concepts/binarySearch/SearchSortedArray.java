@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SearchSortedArray {
 
     public static void main(String[] args) {
