@@ -1,11 +1,12 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Util {
 
     /**
-     * Generate array of size less than 100
+     * Generate Random Array
      *
-     * @return
+     * @return Random Array
      */
     public static int[] generateRandomArray() {
         Random rand = new Random();
@@ -13,6 +14,12 @@ public class Util {
         return generateRandomArray(size);
     }
 
+    /**
+     * Generate Random Array of Size
+     *
+     * @param size size
+     * @return Return array of size
+     */
     private static int[] generateRandomArray(int size) {
         Random random = new Random();
         int[] arr = new int[size];
@@ -23,12 +30,22 @@ public class Util {
         return arr;
     }
 
+    /**
+     * Print an Array
+     *
+     * @param array array
+     */
     public static void print(int[] array) {
         System.out.println("\n---------- PRINTING Array-------------");
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
         System.out.println("\n---------- FInished Printing Array-------------");
     }
 
+    /**
+     * Print 2d matrix
+     *
+     * @param matrix Matrix
+     */
     public static void print(int[][] matrix) {
         System.out.println("\n---------- PRINTING MATRIX-------------");
         for (int[] ints : matrix) {
@@ -40,6 +57,11 @@ public class Util {
         System.out.println("\n---------- END MATRIX-------------");
     }
 
+    /**
+     * Print Linked List
+     *
+     * @param head Head
+     */
     public static void print(ListNode head) {
         System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         while (head != null) {
@@ -49,6 +71,11 @@ public class Util {
         System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
+    /**
+     * Print Linked List
+     *
+     * @param head head
+     */
     public static void print(Node head) {
         System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         while (head != null) {
@@ -58,6 +85,12 @@ public class Util {
         System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
+    /**
+     * Print Linkedlist when cyclic
+     *
+     * @param head     head
+     * @param isCyclic isLinkedList cyclic
+     */
     public static void print(Node head, boolean isCyclic) {
         System.out.println("\n---------- PRINTING problems.LinkedList-------------");
         if (!isCyclic) {
@@ -79,7 +112,13 @@ public class Util {
         System.out.println("\n---------- END problems.LinkedList-------------");
     }
 
-    public static TreeNode convertArrayToTreeNode(Integer[] arr) {
+    /**
+     * Convert an Array into Tree
+     *
+     * @param arr Input array
+     * @return TreeNode
+     */
+    public static TreeNode createTreeFromArray(Integer[] arr) {
         if (arr == null || arr.length == 0) return null;
         TreeNode[] nodes = new TreeNode[arr.length];
         for (int i = arr.length - 1; i >= 0; i--) {
@@ -109,6 +148,11 @@ public class Util {
         return nodes[0];
     }
 
+    /**
+     * Print Tree
+     *
+     * @param root tree
+     */
     public static void print(TreeNode root) {
         System.out.println("---------- Printing TreeNode-------------");
         //Print using BFS
@@ -130,7 +174,42 @@ public class Util {
 
     }*/
 
+    /**
+     * Create LinkedList From Array
+     *
+     * @param array array
+     * @return array
+     */
+    public static ListNode createLinkedListFromArray(List<Integer> array) {
+        ListNode dummy = new ListNode(-1);
+        ListNode sol = dummy;
+        for (Integer i : array) {
+            sol.next = new ListNode(i);
+            sol = sol.next;
+        }
+        return dummy.next;
+    }
+
+    /**
+     * Create LinkedList From Array
+     *
+     * @param array array
+     * @return ListNode
+     */
+    public static ListNode createLinkedListFromArray(int[] array) {
+        return createLinkedListFromArray(Arrays.stream(array).boxed().collect(Collectors.toList()));
+    }
+
+    /**
+     * Create LinkedList From Array
+     *
+     * @param array array
+     * @return ListNode
+     */
+    public static ListNode createLinkedListFromArray(Integer[] array) {
+        return createLinkedListFromArray(Arrays.asList(array));
+    }
+
     public static void main(String[] args) {
-        //TreeNode root = arrayToTreeBFS(new int[]{1, 1});
     }
 }
