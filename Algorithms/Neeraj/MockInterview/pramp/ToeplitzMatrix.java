@@ -1,6 +1,7 @@
 import java.util.*;
 
 class ToeplitzMatrix{
+
     static boolean isToeplitz(int[][] arr) {
       System.out.println(Arrays.deepToString(arr));
       int rows = arr.length;
@@ -40,5 +41,12 @@ class ToeplitzMatrix{
     System.out.println(isToeplitz(new int[][]{{1,2,3,4},{5,1,2,3},{6,4,1,2}}) + " ans should be [false]");
     System.out.println(isToeplitz(new int[][]{{3,9},{5,3},{6,5}}) + " ans should be [true]");
     System.out.println(isToeplitz(new int[][]{{6,4,4}}) + " ans should be [true]");
+    System.out.println("*********************************");
+    System.out.println("isToeplitz2");
+    System.out.println("*********************************");
+    System.out.println(isToeplitz2(new int[][]{{1,2,3,4},{5,1,2,3},{6,5,1,2}}) + " ans should be [true]");
+    System.out.println(isToeplitz2(new int[][]{{1,2,3,4},{5,1,2,3},{6,4,1,2}}) + " ans should be [false]");
+    System.out.println(isToeplitz2(new int[][]{{3,9},{5,3},{6,5}}) + " ans should be [true]");
+    System.out.println(isToeplitz2(new int[][]{{6,4,4}}) + " ans should be [true]");
   }
 }

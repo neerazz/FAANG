@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -21,8 +22,33 @@ Explanation: The answer is "wke", with the length of 3.
 public class LongestSubstringWithoutRepeating {
 
     public static void main(String[] args) {
-        String input = "dvdf";
-        System.out.println(lengthOfLongestSubstring(input));
+        System.out.println(lengthOfLongestSubstring("dvdf") + " should be [2]");
+        System.out.println(lengthOfLongestSubstring2("dvdf") + " should be [2]");
+        System.out.println(lengthOfLongestSubstring("pwwkew") + " should be [3]");
+        System.out.println(lengthOfLongestSubstring2("pwwkew") + " should be [3]");
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
+        Set<Character> set = new HashSet<>();
+        int max = Integer.MIN_VALUE, p1 =0;
+        for(int i =0; i<s.length() ; i++){
+            char c = s.charAt(i);
+            if(set.contains(c)){
+//                 Then keep removing from the queue till you encounter the current char.
+                while(p1 <= i){
+                  char p1Char =s.charAt(p1++);
+                    if(p1Char == c){
+                        break;
+                    }else{
+                      set.remove(p1Char);
+                    }
+                }
+            }
+            set.add(c);
+            max = Math.max(max,set.size());
+            // System.out.println(set);
+        }
+        return max;
     }
 
     private static int lengthOfLongestSubstring(String input) {
