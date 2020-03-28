@@ -8,8 +8,8 @@ class PizzaWith3nSlices{
   }
 
   // Below is a naive solution.
-  int max = Integer.MIN_VALUE;
-  public int maxSizeSlices(int[] slices) {
+  static int max = Integer.MIN_VALUE;
+  public static int maxSizeSlices(int[] slices) {
       LinkedList<Integer> list = new LinkedList<>();
       for(int i : slices){
           list.add(i);
@@ -17,7 +17,7 @@ class PizzaWith3nSlices{
       performCheck(list,0);
       return max;
   }
-  private void performCheck(LinkedList<Integer> list, int sum){
+  private static void performCheck(LinkedList<Integer> list, int sum){
       if(list.isEmpty()){
           max = Math.max(max,sum);
       }
@@ -28,7 +28,7 @@ class PizzaWith3nSlices{
           performCheck(temp,sum+cur);
       }
   }
-  private LinkedList<Integer> takeIthSlice(int index, LinkedList<Integer> list){
+  private static LinkedList<Integer> takeIthSlice(int index, LinkedList<Integer> list){
       int pre = index-1 < 0 ? list.size()-1 : index-1;
       int next= index+1 >= list.size() ? 0 : index+1;
       LinkedList<Integer> op = new LinkedList<>();

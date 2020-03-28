@@ -47,97 +47,97 @@ public class KthLargestElementInAStream {
         System.out.println(kthLargest.add(4) + " should be 3");
         System.out.println(kthLargest.add(4) + " should be 4");
     }
-}
+    static class KthLargest {
+        int k;
+        TreeNode root;
 
-class KthLargest {
-    int k;
-    TreeNode root;
-
-    public KthLargest(int k, int[] nums) {
-        this.k = k;
-        for (int num : nums) root = add(root, num);
-    }
-
-    public int add(int val) {
-        root = add(root, val);
-        return findKthLargest(root, k);
-    }
-
-    private TreeNode add(TreeNode root, int val) {
-        if (root == null) return new TreeNode(val);
-        root.subtreeSize++;
-        if (val < root.val) root.left = add(root.left, val);
-        else root.right = add(root.right, val);
-
-        return root;
-    }
-
-    public int findKthLargest(TreeNode node, int k) {
-        int targetSizeOfRightSubtree = k - 1;
-        int sizeOfRightSubtree = node.right != null ? node.right.subtreeSize : 0;
-        if (sizeOfRightSubtree == targetSizeOfRightSubtree) {
-            return node.val;
+        public KthLargest(int k, int[] nums) {
+            this.k = k;
+            for (int num : nums) root = add(root, num);
         }
 
-        if (targetSizeOfRightSubtree > sizeOfRightSubtree) {
-            return findKthLargest(node.left, targetSizeOfRightSubtree - sizeOfRightSubtree);
+        public int add(int val) {
+            root = add(root, val);
+            return findKthLargest(root, k);
         }
 
-        return findKthLargest(node.right, k);
-    }
+        private TreeNode add(TreeNode root, int val) {
+            if (root == null) return new TreeNode(val);
+            root.subtreeSize++;
+            if (val < root.val) root.left = add(root.left, val);
+            else root.right = add(root.right, val);
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
+            return root;
         }
 
-        @Override
-        public String toString() {
-            return val +
-                    ", left=" + left +
-                    ", right=" + right;
+        public int findKthLargest(TreeNode node, int k) {
+            int targetSizeOfRightSubtree = k - 1;
+            int sizeOfRightSubtree = node.right != null ? node.right.subtreeSize : 0;
+            if (sizeOfRightSubtree == targetSizeOfRightSubtree) {
+                return node.val;
+            }
+
+            if (targetSizeOfRightSubtree > sizeOfRightSubtree) {
+                return findKthLargest(node.left, targetSizeOfRightSubtree - sizeOfRightSubtree);
+            }
+
+            return findKthLargest(node.right, k);
         }
-    }
-}
 
-class KthLargest_BrootForce {
+        static class TreeNode {
+            int val;
+            TreeNode left;
+            TreeNode right;
+            int subtreeSize;
 
-    TreeNode node = null;
-    ArrayList<Integer> nodes = null;
-    int index = 0;
+            public TreeNode(int val) {
+                this.val = val;
+            }
 
-    public KthLargest_BrootForce(int k, int[] nums) {
-        this.index = k;
-        if (nums.length > 0) {
-            node = new TreeNode(nums[0]);
-            for (int i = 1; i < nums.length; i++) {
-                add(node, nums[i]);
+            @Override
+            public String toString() {
+                return val +
+                        ", left=" + left +
+                        ", right=" + right;
             }
         }
     }
 
-    public TreeNode add(TreeNode root, int val) {
-        if (root == null) return new TreeNode(val);
-        if (val < root.val) root.left = add(root.left, val);
-        else root.right = add(root.right, val);
-        return root;
-    }
+    static class KthLargest_BrootForce {
 
-    public int add(int val) {
-        node = add(node, val);
-        nodes = new ArrayList<>();
-        performInOrderTraversal(node);
-        return nodes.get(nodes.size() - index);
-    }
+        TreeNode node = null;
+        ArrayList<Integer> nodes = null;
+        int index = 0;
 
-    private void performInOrderTraversal(TreeNode root) {
-        if (root == null) return;
-        if (root.left != null) performInOrderTraversal(root.left);
-        nodes.add(root.val);
-        if (root.right != null) performInOrderTraversal(root.right);
+        public KthLargest_BrootForce(int k, int[] nums) {
+            this.index = k;
+            if (nums.length > 0) {
+                node = new TreeNode(nums[0]);
+                for (int i = 1; i < nums.length; i++) {
+                    add(node, nums[i]);
+                }
+            }
+        }
+
+        public TreeNode add(TreeNode root, int val) {
+            if (root == null) return new TreeNode(val);
+            if (val < root.val) root.left = add(root.left, val);
+            else root.right = add(root.right, val);
+            return root;
+        }
+
+        public int add(int val) {
+            node = add(node, val);
+            nodes = new ArrayList<>();
+            performInOrderTraversal(node);
+            return nodes.get(nodes.size() - index);
+        }
+
+        private void performInOrderTraversal(TreeNode root) {
+            if (root == null) return;
+            if (root.left != null) performInOrderTraversal(root.left);
+            nodes.add(root.val);
+            if (root.right != null) performInOrderTraversal(root.right);
+        }
     }
 }

@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 class TimeNeededToInformAllEmployees{
   public static void main(String[] args) {
     System.out.println(numOfMinutes(1,0,new int[]{-1},new int[]{0}));

@@ -23,9 +23,9 @@ class BSTConstruction{
       if(this.value == value) return true;
 			else if(value < this.value) return left.contains(value);
 			else return right.contains(value);
-      return false;
     }
 
+    /*
     public BST remove(int value) {
 // 			Find the element.
 			if(value < this.value) return left.remove(value);
@@ -49,6 +49,8 @@ class BSTConstruction{
 			}
       return this;
     }
+
+     */
     public int findLowest(){
       // This is to get the Lowest Value
       if(left != null) return left.findLowest();

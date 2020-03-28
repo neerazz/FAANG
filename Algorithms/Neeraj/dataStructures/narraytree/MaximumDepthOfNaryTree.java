@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /*
@@ -53,5 +54,16 @@ public class MaximumDepthOfNaryTree {
             }
         }
         return height;
+    }
+    static class Node {
+        Integer val;
+        List<Node> children;
+
+        public Node() {
+        }
+
+        public Node(int value) {
+            this.val = value;
+        }
     }
 }

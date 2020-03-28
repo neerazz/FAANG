@@ -2,7 +2,7 @@ import java.util.*;
 
 class SmallestDifference{
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(smallestDifference(new int[]{-1,5,10,20,28,,3},new int[]{26,134,135,15,17})));
+    System.out.println(Arrays.toString(smallestDifference(new int[]{-1,5,10,20,28,3},new int[]{26,134,135,15,17})));
   }
   public static int[] smallestDifference(int[] arrayOne, int[] arrayTwo) {
    Arrays.sort(arrayOne);

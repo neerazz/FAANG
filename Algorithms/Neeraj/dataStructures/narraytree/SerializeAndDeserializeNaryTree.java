@@ -92,4 +92,20 @@ public class SerializeAndDeserializeNaryTree {
             return nodes;
         }
     }
+    static class Node {
+        Integer val;
+        List<Node> children;
+
+        public Node() {
+        }
+
+        public Node(int value) {
+            this.val = value;
+        }
+
+        public Node(Integer val, List<Node> children) {
+            this.val = val;
+            this.children = children;
+        }
+    }
 }

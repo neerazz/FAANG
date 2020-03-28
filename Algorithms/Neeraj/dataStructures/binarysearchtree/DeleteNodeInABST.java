@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/141/basic-operations-in-a-bst/1006/
 Given a root node reference of a BST and a key, delete the node with the given key in the BST. Return the root node reference (possibly updated) of the BST.
@@ -30,16 +33,16 @@ Another valid answer is [5,2,6,null,4,null,7].
  */
 public class DeleteNodeInABST {
     public static void main(String[] args) {
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 5));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{3, 2, 4, 1, null, null, null}), 3));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{3, 1, 4, null, 2}), 3));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 2));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 4));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 6));
-        System.out.println(deleteNode(ValidateBinarySearchTree.createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 3));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 5));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{3, 2, 4, 1, null, null, null}), 3));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{3, 1, 4, null, 2}), 3));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 2));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 4));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 6));
+        System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 3));
     }
 
-    public static TraverseATree.TreeNode deleteNode(TraverseATree.TreeNode root, int key) {
+    public static TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) return null;
         if (root.val == key) return deleteCurrentNode(root);
         if (root.val > key) root.left = deleteNode(root.left, key);
@@ -47,7 +50,7 @@ public class DeleteNodeInABST {
         return root;
     }
 
-    private static TraverseATree.TreeNode deleteCurrentNode(TraverseATree.TreeNode root) {
+    private static TreeNode deleteCurrentNode(TreeNode root) {
 //        If root is leaf node.
         if (root.left == null && root.right == null) return null;
 //        If root has only one node.
@@ -57,14 +60,14 @@ public class DeleteNodeInABST {
         return findAndRemoveSuccessor(root);
     }
 
-    public static TraverseATree.TreeNode findAndRemoveSuccessor(TraverseATree.TreeNode root) {
-        TraverseATree.TreeNode successor = findSuccessor(root);
+    public static TreeNode findAndRemoveSuccessor(TreeNode root) {
+        TreeNode successor = findSuccessor(root);
         root = removeSuccessor(root, successor);
         root.val = successor.val;
         return root;
     }
 
-    private static TraverseATree.TreeNode removeSuccessor(TraverseATree.TreeNode root, TraverseATree.TreeNode successor) {
+    private static TreeNode removeSuccessor(TreeNode root, TreeNode successor) {
         if (root == null) return null;
         if (root.val == successor.val) {
             if (root.left == null && root.right == null) return null;
@@ -80,9 +83,60 @@ public class DeleteNodeInABST {
         return root;
     }
 
-    private static TraverseATree.TreeNode findSuccessor(TraverseATree.TreeNode root) {
+    private static TreeNode findSuccessor(TreeNode root) {
         root = root.right;
         while (root.left != null) root = root.left;
         return root;
+    }
+    public static TreeNode createTreeNode(Integer[] integers) {
+        Queue<TreeNode> nodes = new LinkedList<>();
+        TreeNode head = null;
+        int index = 0;
+        while (index < integers.length) {
+            if (nodes.isEmpty()) {
+                Integer current = integers[index++];
+                if (current != null) {
+                    TreeNode treeNode = new TreeNode(current);
+                    nodes.add(treeNode);
+                    head = treeNode;
+                }
+            } else {
+//                Create left and right child.
+                TreeNode currentHead = nodes.poll();
+//                Create left Child.
+                Integer left = integers[index++];
+                if (left != null) {
+                    TreeNode treeNode = new TreeNode(left);
+                    currentHead.left = treeNode;
+                    nodes.add(treeNode);
+                }
+//                Create Right Child.
+                Integer right = integers[index++];
+                if (right != null) {
+                    TreeNode treeNode = new TreeNode(right);
+                    currentHead.right = treeNode;
+                    nodes.add(treeNode);
+                }
+            }
+        }
+        return head;
+    }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "val=" + val +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
+        }
     }
 }

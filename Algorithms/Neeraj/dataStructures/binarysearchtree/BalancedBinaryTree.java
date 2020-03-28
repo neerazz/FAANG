@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/143/appendix-height-balanced-bst/1027/
 Given a binary tree, determine if it is height-balanced.
@@ -27,17 +30,69 @@ public class BalancedBinaryTree {
     static boolean isBalanced = true;
 
     public static void main(String[] args) {
-        System.out.println(isBalanced(ValidateBinarySearchTree.createTreeNode(new Integer[]{3, 9, 20, null, null, 15, 7})));
-        System.out.println(isBalanced(ValidateBinarySearchTree.createTreeNode(new Integer[]{1, 2, 2, 3, 3, null, null, 4, 4})));
+        System.out.println(isBalanced(createTreeNode(new Integer[]{3, 9, 20, null, null, 15, 7})));
+        System.out.println(isBalanced(createTreeNode(new Integer[]{1, 2, 2, 3, 3, null, null, 4, 4})));
     }
 
-    public static boolean isBalanced(TraverseATree.TreeNode root) {
+    public static TreeNode createTreeNode(Integer[] integers) {
+        Queue<TreeNode> nodes = new LinkedList<>();
+        TreeNode head = null;
+        int index = 0;
+        while (index < integers.length) {
+            if (nodes.isEmpty()) {
+                Integer current = integers[index++];
+                if (current != null) {
+                    TreeNode treeNode = new TreeNode(current);
+                    nodes.add(treeNode);
+                    head = treeNode;
+                }
+            } else {
+//                Create left and right child.
+                TreeNode currentHead = nodes.poll();
+//                Create left Child.
+                Integer left = integers[index++];
+                if (left != null) {
+                    TreeNode treeNode = new TreeNode(left);
+                    currentHead.left = treeNode;
+                    nodes.add(treeNode);
+                }
+//                Create Right Child.
+                Integer right = integers[index++];
+                if (right != null) {
+                    TreeNode treeNode = new TreeNode(right);
+                    currentHead.right = treeNode;
+                    nodes.add(treeNode);
+                }
+            }
+        }
+        return head;
+    }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "val=" + val +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
+        }
+    }
+
+    public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         isBalancedHelper(root, 0);
         return isBalanced;
     }
 
-    private static int isBalancedHelper(TraverseATree.TreeNode root, int height) {
+    private static int isBalancedHelper(TreeNode root, int height) {
         if (root == null) return height;
         int leftCounter = 1, rightCounter = 1;
         if (root.left != null) leftCounter += isBalancedHelper(root.left, height);
