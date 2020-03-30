@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 public class Util {
 
     /**
-     * Generate Random Array
+     * Generate Random Array between 0 and 100
      *
      * @return Random Array
      */
@@ -20,7 +20,7 @@ public class Util {
      * @param size size
      * @return Return array of size
      */
-    private static int[] generateRandomArray(int size) {
+    public static int[] generateRandomArray(int size) {
         Random random = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -38,7 +38,7 @@ public class Util {
     public static void print(int[] array) {
         System.out.println("\n---------- PRINTING Array-------------");
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
-        System.out.println("\n---------- FInished Printing Array-------------");
+        System.out.println("\n---------- FINISHED Printing Array-------------");
     }
 
     /**
