@@ -22,7 +22,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         System.out.println(buildTree(new int[]{9, 3, 15, 20, 7}, new int[]{9, 15, 7, 20, 3}));
     }
 
-    public static TraverseATree.TreeNode buildTree(int[] inorder, int[] postorder) {
+    public static TreeNode buildTree(int[] inorder, int[] postorder) {
 //        Set the root index.
         rootIndex = postorder.length - 1;
 //        Set values in a map.
@@ -33,11 +33,11 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         return buildTreeHelper(inorder, postorder, 0, inorder.length - 1);
     }
 
-    private static TraverseATree.TreeNode buildTreeHelper(int[] inorder, int[] postorder, int left, int right) {
+    private static TreeNode buildTreeHelper(int[] inorder, int[] postorder, int left, int right) {
         if (left > right) return null;
 //        Get the last value of post and create a root.
         int postRootValue = postorder[rootIndex];
-        TraverseATree.TreeNode root = new TreeNode(postRootValue);
+        TreeNode root = new TreeNode(postRootValue);
         rootIndex--;
 
 //      Now get the index of root and divide the array into two from the index position.

@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 /*
 https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/141/basic-operations-in-a-bst/1003/
@@ -28,7 +30,7 @@ This tree is also valid:
  */
 public class InsertIntoABinarySearchTree {
     public static void main(String[] args) {
-//        System.out.println(insertIntoBST(createTreeNode(new Integer[]{4, 2, 7, 1, 3}), 5));
+        System.out.println(insertIntoBST(createTreeNode(new Integer[]{4, 2, 7, 1, 3}), 5));
     }
 
     public static TreeNode insertIntoBST(TreeNode root, int val) {
@@ -43,20 +45,55 @@ public class InsertIntoABinarySearchTree {
       }
       return root;
     }
+    public static TreeNode createTreeNode(Integer[] integers) {
+        Queue<TreeNode> nodes = new LinkedList<>();
+        TreeNode head = null;
+        int index = 0;
+        while (index < integers.length) {
+            if (nodes.isEmpty()) {
+                Integer current = integers[index++];
+                if (current != null) {
+                    TreeNode treeNode = new TreeNode(current);
+                    nodes.add(treeNode);
+                    head = treeNode;
+                }
+            } else {
+//                Create left and right child.
+                TreeNode currentHead = nodes.poll();
+//                Create left Child.
+                Integer left = integers[index++];
+                if (left != null) {
+                    TreeNode treeNode = new TreeNode(left);
+                    currentHead.left = treeNode;
+                    nodes.add(treeNode);
+                }
+//                Create Right Child.
+                Integer right = integers[index++];
+                if (right != null) {
+                    TreeNode treeNode = new TreeNode(right);
+                    currentHead.right = treeNode;
+                    nodes.add(treeNode);
+                }
+            }
+        }
+        return head;
+    }
     static class TreeNode {
         int val;
-        TraverseATree.TreeNode left;
-        TraverseATree.TreeNode right;
+        TreeNode left;
+        TreeNode right;
 
-        public TreeNode(int val) {
-            this.val = val;
+        TreeNode(int x) {
+            val = x;
         }
 
         @Override
         public String toString() {
-            return val +
+            return "TreeNode{" +
+                    "val=" + val +
                     ", left=" + left +
-                    ", right=" + right;
+                    ", right=" + right +
+                    '}';
         }
     }
 }

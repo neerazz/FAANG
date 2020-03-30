@@ -1,5 +1,3 @@
-package algorithms.GreedyAlgorithm;
-
 public class Candy {
     public static void main(String[] args) {
         System.out.println(candy(new int[]{1, 0, 2}) + " should be [5].");

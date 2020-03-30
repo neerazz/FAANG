@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /*
 Input:
@@ -21,7 +18,7 @@ public class MergeKSortedLists {
         }));
     }
 
-    public ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
     if(lists.length == 0) return null;
     int len = lists.length;
     Queue<ListNode> queue = new LinkedList<>();
@@ -41,7 +38,7 @@ public class MergeKSortedLists {
     }
     return null;
     }
-    private ListNode mergeSorted(ListNode l1, ListNode l2){
+    private static ListNode mergeSorted(ListNode l1, ListNode l2){
         if(l1 == null && l2 == null) return null;
         ListNode newNode = new ListNode(-1), nR = newNode;
         while(l1 != null && l2 != null){
@@ -68,7 +65,7 @@ public class MergeKSortedLists {
         return listNode;
     }
 
-    public static ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists2(ListNode[] lists) {
         List<Integer> integers = new ArrayList<>();
         for (int i = 0; i < lists.length; i++) {
             ListNode current = lists[i];

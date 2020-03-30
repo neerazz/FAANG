@@ -4,11 +4,11 @@ class CheckIfThereIsAValidPathInAGrid{
   public static void main(String[] args) {
 
   }
-  static int rows =0, cols =0
+  static int rows =0, cols =0;
   public static boolean hasValidPath(int[][] grid) {
       rows = grid.length;
       cols = grid[0].length;
-      int row =0, col = 0, pre =
+      int row =0, col = 0, pre = 0;
       while(row < rows && col < cols){
           int[] indxs = {row,col};
       }

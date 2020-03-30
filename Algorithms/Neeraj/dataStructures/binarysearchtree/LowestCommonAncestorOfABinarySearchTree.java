@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/142/conclusion/1012/
 Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
@@ -17,18 +20,69 @@ p and q are different and both values will exist in the BST.
  */
 public class LowestCommonAncestorOfABinarySearchTree {
     public static void main(String[] args) {
-        System.out.println("Answer is : " + lowestCommonAncestor(ValidateBinarySearchTree.createTreeNode(new Integer[]{6, 2, 8, 0, 4, 7, 9, null, null, 3, 5}),
+        System.out.println("Answer is : " + lowestCommonAncestor(createTreeNode(new Integer[]{6, 2, 8, 0, 4, 7, 9, null, null, 3, 5}),
                 new TreeNode(2), new TreeNode(8)) + " should be [6].");
-        System.out.println("Answer is : " + lowestCommonAncestor(ValidateBinarySearchTree.createTreeNode(new Integer[]{6, 2, 8, 0, 4, 7, 9, null, null, 3, 5}),
+        System.out.println("Answer is : " + lowestCommonAncestor(createTreeNode(new Integer[]{6, 2, 8, 0, 4, 7, 9, null, null, 3, 5}),
                 new TreeNode(2), new TreeNode(4)) + " should be [2].");
     }
 
-    public static TraverseATree.TreeNode lowestCommonAncestor(TraverseATree.TreeNode root, TreeNode p, TreeNode q) {
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root.val == p.val || root.val == q.val) return root;
-        TraverseATree.TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TraverseATree.TreeNode right = lowestCommonAncestor(root.right, p, q);
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
         if (left != null && right != null) return root;
         if (left != null) return left;
         return right;
+    }
+    public static TreeNode createTreeNode(Integer[] integers) {
+        Queue<TreeNode> nodes = new LinkedList<>();
+        TreeNode head = null;
+        int index = 0;
+        while (index < integers.length) {
+            if (nodes.isEmpty()) {
+                Integer current = integers[index++];
+                if (current != null) {
+                    TreeNode treeNode = new TreeNode(current);
+                    nodes.add(treeNode);
+                    head = treeNode;
+                }
+            } else {
+//                Create left and right child.
+                TreeNode currentHead = nodes.poll();
+//                Create left Child.
+                Integer left = integers[index++];
+                if (left != null) {
+                    TreeNode treeNode = new TreeNode(left);
+                    currentHead.left = treeNode;
+                    nodes.add(treeNode);
+                }
+//                Create Right Child.
+                Integer right = integers[index++];
+                if (right != null) {
+                    TreeNode treeNode = new TreeNode(right);
+                    currentHead.right = treeNode;
+                    nodes.add(treeNode);
+                }
+            }
+        }
+        return head;
+    }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "val=" + val +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
+        }
     }
 }

@@ -45,4 +45,15 @@ public class NaryTreeLevelOrderTraversal {
         }
         return output;
     }
+    static class Node {
+        Integer val;
+        List<Node> children;
+
+        public Node() {
+        }
+
+        public Node(int value) {
+            this.val = value;
+        }
+    }
 }

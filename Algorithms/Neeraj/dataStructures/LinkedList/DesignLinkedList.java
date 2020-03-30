@@ -133,79 +133,79 @@ class MyLinkedList {
             val = v;
         }
     }
+    class DoublyLinkedList {
+        public DoubleNode head;
+        public DoubleNode tail;
+
+        public void setHead(DoubleNode node) {
+            if(head == null){
+                head = node;
+                tail = node;
+            }else if(head == tail){
+                // There is only one value in the node.
+
+            }else{
+                head.prev = node;
+                node.next = head;
+                head = node;
+            }
+        }
+
+        public void setTail(DoubleNode node) {
+            if(tail == null){
+                head = node;
+                tail = node;
+            }else if(head == tail){
+                // There is only one value in the node.
+                head.next = node;
+                node.prev = head;
+                tail = node;
+            }else{
+                // There are multiple values in teh node.
+                tail.next = node;
+                node.prev = tail;
+                tail = node;
+            }
+        }
+
+        public void insertBefore(DoubleNode node, DoubleNode nodeToInsert) {
+            // Write your code here.
+        }
+
+        private Node getNode(){
+            return null;
+        }
+
+        public void insertAfter(DoubleNode node, DoubleNode nodeToInsert) {
+            // Write your code here.
+        }
+
+        public void insertAtPosition(int position, DoubleNode nodeToInsert) {
+            // Write your code here.
+        }
+
+        public void removeNodesWithValue(int value) {
+            // Write your code here.
+        }
+
+        public void remove(DoubleNode node) {
+            // Write your code here.
+        }
+
+        public boolean containsNodeWithValue(int value) {
+            // Write your code here.
+            return false;
+        }
+    }
+
+    // Do not edit the class below.
+    static class DoubleNode {
+        public int value;
+        public DoubleNode prev;
+        public DoubleNode next;
+
+        public DoubleNode(int value) {
+            this.value = value;
+        }
+    }
 }
-class DoublyLinkedList {
-    public Node head;
-    public Node tail;
-
-    public void setHead(Node node) {
-      if(head == null){
-        head = node;
-        tail = node;
-      }else if(head == tail){
-        // There is only one value in the node.
-        
-      }else{
-        head.prev = node;
-        node.next = head;
-        head = node;
-      }
-    }
-
-    public void setTail(Node node) {
-      if(tail == null){
-        head = node;
-        tail = node;
-      }else if(head == tail){
-        // There is only one value in the node.
-        head.next = node;
-        node.prev = head;
-        tail = node;
-      }else{
-        // There are multiple values in teh node.
-        tail.next = node;
-        node.pre = tail;
-        tail = node;
-      }
-    }
-
-    public void insertBefore(Node node, Node nodeToInsert) {
-      // Write your code here.
-    }
-
-    private Node getNode(){
-
-    }
-
-    public void insertAfter(Node node, Node nodeToInsert) {
-      // Write your code here.
-    }
-
-    public void insertAtPosition(int position, Node nodeToInsert) {
-      // Write your code here.
-    }
-
-    public void removeNodesWithValue(int value) {
-      // Write your code here.
-    }
-
-    public void remove(Node node) {
-      // Write your code here.
-    }
-
-    public boolean containsNodeWithValue(int value) {
-      // Write your code here.
-      return false;
-    }
-  }
-
-  // Do not edit the class below.
-  static class Node {
-    public int value;
-    public Node prev;
-    public Node next;
-
-    public Node(int value) {
-      this.value = value;
-    }
-  }

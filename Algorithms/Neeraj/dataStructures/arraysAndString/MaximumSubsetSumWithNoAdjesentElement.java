@@ -8,6 +8,7 @@ class MaximumSubsetSumWithNoAdjesentElement{
     if(array.length == 0) return 0;
     int len = array.length;
     int[] op = new int[len];
+    int[] sum = new int[len];
     for (int i = 0; i < len ; i++ ) {
       int cur = array[i];
       if(i >= 2) {

@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class LongestPalindromicSubstring{
   public static void main(String[] arg){
-
+      
       System.out.println(longestPalindrome_dp_consecutive_character("babad"));
       System.out.println(longestPalindrome_dp_consecutive_character("cbbd"));
       System.out.println(longestPalindrome_dp_consecutive_character("a"));
@@ -45,6 +45,29 @@ public class LongestPalindromicSubstring{
       return collect.get(0);
   }
 
+    public static String longestPalindrome_revision(String s) {
+        if (s == null || s.length() <= 1) return s;
+        int len = s.length();
+        boolean[][] dp = new boolean[len][len];
+        dp[0][0] = true;
+        String result = "";
+        for (int l = 0; l < len; l++) {
+            for (int row = 0; row + l < len; row++) {
+                int col = row + l;
+                char rowChar = s.charAt(row);
+                char colChar = s.charAt(col);
+                if (rowChar == colChar) {
+                    dp[row][col] = l <= 1 || dp[row + 1][col-1];
+                }
+                if (dp[row][col] && result.length() <= l) {
+                    result = s.substring(row, col+1);
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(dp));
+        return result;
+    }
+
   public static String longestPalindrome_dp_consecutive_character(String s) {
       int len = s.length();
       boolean[][] dp = new boolean[len][len];
@@ -59,7 +82,7 @@ public class LongestPalindromicSubstring{
 //                    if length is 0 (one char), set to true.
 //                    If len is one (two char) and both are same then set true.
 //                    If len is greater then 1 then take the adjacent value (next row & pre col).
-                  dp[row][col] = l <= 1 ? true : dp[row+1][col-1];
+                  dp[row][col] = l <= 1 || dp[row + 1][col - 1];
               }
 
 //                If the current value is true and

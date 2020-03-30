@@ -1,5 +1,3 @@
-package contests.jan25th9am;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

@@ -8,14 +8,14 @@ class GenerateTheString{
       StringBuilder sb = new StringBuilder(n);
       if(n %2 == 0){
         //Then even number of times.
-        chars[] chars = new char[n-1];
+        char[] chars = new char[n-1];
         Arrays.fill(chars,'a');
         sb.append(chars);
         sb.append('b');
         return sb.toString();
       }else{
         // Odd number of times.
-        chars[] chars = new char[n];
+        char[] chars = new char[n];
         Arrays.fill(chars,'a');
         sb.append(chars);
         return sb.toString();
