@@ -1,21 +1,65 @@
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.Arrays;
 
 public class WildcardMatching {
     public static void main(String[] args) {
-//        System.out.println(isMatch("aa", "a") + " should be [false]");
-//        System.out.println(isMatch("aa", "*") + " should be [true]");
-//        System.out.println(isMatch("cb", "?a") + " should be [false]");
+        System.out.println("****************** Recursion ************************");
+        System.out.println(isMatch("aa", "a") + " should be [false]");
+        System.out.println(isMatch("aa", "*") + " should be [true]");
+        System.out.println(isMatch("cb", "?a") + " should be [false]");
         System.out.println(isMatch("adceb", "*a*b") + " should be [true]");
         System.out.println(isMatch("acdcb", "a*c?b") + " should be [false]");
+        System.out.println(isMatch("ho", "**ho") + " should be [true]");
+        System.out.println("****************** DP ************************");
+        System.out.println(isMatch_dp("aa", "a") + " should be [false]");
+        System.out.println(isMatch_dp("aa", "*") + " should be [true]");
+        System.out.println(isMatch_dp("cb", "?a") + " should be [false]");
+        System.out.println(isMatch_dp("adceb", "*a*b") + " should be [true]");
+        System.out.println(isMatch_dp("acdcb", "a*c?b") + " should be [false]");
+        System.out.println(isMatch_dp("ho", "**ho") + " should be [true]");
+        System.out.println("****************** Revision ************************");
+        System.out.println(isMatch_dp2("aa", "a") + " should be [false]");
+        System.out.println(isMatch_dp2("aa", "*") + " should be [true]");
+        System.out.println(isMatch_dp2("cb", "?a") + " should be [false]");
+        System.out.println(isMatch_dp2("adceb", "*a*b") + " should be [true]");
+        System.out.println(isMatch_dp2("acdcb", "a*c?b") + " should be [false]");
+        System.out.println(isMatch_dp2("ho", "**ho") + " should be [true]");
+    }
+
+    public static boolean isMatch_dp2(String s, String p) {
+        if (s == null && p == null) return true;
+        if (s == null || p == null) return false;
+        int rows = p.length(), cols = s.length();
+        boolean[][] dp = new boolean[rows + 1][cols + 1];
+        dp[0][0] = true;
+//        Fill all the
+        for (int row = 1; row <= rows; row++) {
+            if (p.charAt(row - 1) == '*') {
+                Arrays.fill(dp[row], true);
+            } else break;
+        }
+        for (int row = 1; row <= rows; row++) {
+            for (int col = 1; col <= cols; col++) {
+                char pChar = p.charAt(row - 1), sChar = s.charAt(col - 1);
+                if (pChar == sChar || pChar == '?') {
+                    dp[row][col] = dp[row - 1][col - 1] || (row == 1 && col == 1);
+                } else if (pChar == '*') {
+//                    Then take value by either ignoring "*" or by ignoring cur value at s.
+                    dp[row][col] = dp[row - 1][col] || dp[row][col - 1];
+                } else {
+                    dp[row][col] = false;
+                }
+            }
+        }
+//        System.out.println(Arrays.deepToString(dp));
+        return dp[rows][cols];
     }
 
     //    Solution: https://www.youtube.com/watch?v=3ZDZ-N0EPV0
     public static boolean isMatch_dp(String s, String p) {
+        if (s == null && p == null) return true;
+        if (s == null || p == null) return false;
         int sLen = s.length(), pLen = p.length();
-
         // base cases
         if (p.equals(s) || p.equals("*")) return true;
         if (p.isEmpty() || s.isEmpty()) return false;
@@ -42,8 +86,9 @@ public class WildcardMatching {
             }
             // the current character in the pattern is '?'
             else if (p.charAt(pIdx - 1) == '?') {
-                for (int sIdx = 1; sIdx < sLen + 1; sIdx++)
+                for (int sIdx = 1; sIdx < sLen + 1; sIdx++) {
                     d[pIdx][sIdx] = d[pIdx - 1][sIdx - 1];
+                }
             }
             // the current character in the pattern is not '*' or '?'
             else {
@@ -97,7 +142,7 @@ public class WildcardMatching {
         }
 
         // The remaining characters in the pattern should all be '*' characters
-        for (int i = pIdx; i < pLen; i++){
+        for (int i = pIdx; i < pLen; i++) {
             if (p.charAt(i) != '*') return false;
         }
         return true;
