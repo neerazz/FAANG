@@ -1,4 +1,4 @@
-package contests.weekly176;
+package weekly176;
 
 public class CountNegativeNumbersinaSortedMatrix {
     public static void main(String[] args) {

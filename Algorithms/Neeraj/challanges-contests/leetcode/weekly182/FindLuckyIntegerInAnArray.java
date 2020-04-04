@@ -1,3 +1,5 @@
+package weekly182;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -6,6 +8,7 @@ public class FindLuckyIntegerInAnArray {
     public static void main(String[] args) {
 
     }
+
     public static int findLucky(int[] arr) {
         if(arr == null || arr.length == 0) return -1;
         Map<Integer, Integer> map = new HashMap<>();

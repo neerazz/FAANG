@@ -92,7 +92,7 @@ public class SerializeAndDeserializeBinaryTree {
             String[] split = data.replace("[", "").replace("]", "").split(",");
             for (String current : split) {
                 if (!current.trim().isEmpty()) {
-                    Integer currentValue = current.trim().equals("null") ? null : new Integer(current.trim());
+                    Integer currentValue = current.trim().equals("null") ? null : Integer.valueOf(current.trim());
                     output.add(currentValue);
                 }
             }

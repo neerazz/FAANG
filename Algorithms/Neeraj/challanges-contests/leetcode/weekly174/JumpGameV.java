@@ -1,4 +1,4 @@
-package contests.weekly174;
+package weekly174;
 /*
 https://leetcode.com/contest/weekly-contest-174/problems/jump-game-v/
  */

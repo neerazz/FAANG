@@ -1,4 +1,4 @@
-package contests.jan25th9am;
+package biweekly18;
 
 /*
 Given a palindromic string palindrome, replace exactly one character by any lowercase English letter so that the string becomes the lexicographically smallest possible string that isn't a palindrome.
