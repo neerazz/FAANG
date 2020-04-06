@@ -33,7 +33,48 @@ public class SpiralMatrix {
         spiralOrder(matrix).forEach(e -> System.out.print(e + " "));
     }
 
-    private static List<Integer> spiralOrder(int[][] matrix) {
+    public static List<Integer> spiralOrder(int[][] matrix) {
+        int rows = matrix.length, cols = matrix[0].length;
+        List<Integer> sol = new ArrayList<>();
+        int right = 0, down = 0, left = 0, top = 0;
+        int i = 0, j = 0;
+        while (sol.size() < rows * cols) {
+            //Going right
+            while (j < cols - down) {
+                sol.add(matrix[i][j++]);
+            }
+            i++;
+            j--;
+            right++;
+            if (sol.size() == rows * cols) return sol;
+            //Going down
+            while (i < rows - left) {
+                sol.add(matrix[i++][j]);
+            }
+            j--;
+            i--;
+            down++;
+            if (sol.size() == rows * cols) return sol;
+            //Going left
+            while (j >= top) {
+                sol.add(matrix[i][j--]);
+            }
+            i--;
+            j++;
+            left++;
+            if (sol.size() == rows * cols) return sol;
+            //Going up
+            while (i >= right) {
+                sol.add(matrix[i--][j]);
+            }
+            j++;
+            i++;
+            top++;
+        }
+        return sol;
+    }
+
+    private static List<Integer> spiralOrderOld(int[][] matrix) {
         if (matrix.length == 0) return new ArrayList<>();
         int m = matrix.length;
         int n = matrix[0].length;
