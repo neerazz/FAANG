@@ -15,38 +15,33 @@ import java.util.Map;
 
 public class SearchMaze {
     public static List<Coordinate> searchMaze(List<List<Color>> maze, Coordinate s, Coordinate e) {
-        // TODO - you fill in here.
-        //White is open area
-        /*
-        Map<Integer, List<Integer>> mazeMap = new HashMap<>();
-        List<Integer> list;
-        //Create a Graph
-        for (int i = 0; i < maze.size(); i++) {
-            for (int j = 0; j < maze.get(i).size(); j++) {
-                Color c = maze.get(i).get(j);
-                if (c == Color.WHITE) {
-                    if (mazeMap.containsKey(i)) {
-                        list = mazeMap.get(i);
-                    } else {
-                        list = new ArrayList<>();
-                    }
-                    list.add(j);
-                    mazeMap.put(i, list);
-                }
-            }
+        List<Coordinate> sol = new ArrayList<>();
+        dfs(maze, s, e, sol);
+        return sol;
+    }
+
+    public static boolean dfs(List<List<Color>> maze, Coordinate s, Coordinate e, List<Coordinate> sol) {
+        //Base Case
+        int x = s.x, y = s.y;
+        if (x >= maze.size() || x < 0 || y < 0 || y >= maze.get(x).size()) return false; //Out of Bounds
+        if (maze.get(x).get(y) != Color.WHITE) return false;  //Wall
+        sol.add(s);     //Valid - Add to path
+        maze.get(x).set(y, Color.BLACK);         //Mark current as visited
+        if (s.equals(e)) return true; //Reached
+
+        //All 4 directions
+        boolean b1 = dfs(maze, new Coordinate(x - 1, y), e, sol)
+                || dfs(maze, new Coordinate(x + 1, y), e, sol)
+                || dfs(maze, new Coordinate(x, y - 1), e, sol)
+                || dfs(maze, new Coordinate(x, y + 1), e, sol);
+        if (b1) {
+            return true;
+        } else {
+            sol.remove(sol.size() - 1);
+            return false;
         }
 
-        //Traverse the graph - To find out if you can reach the position
-        //Do BFS to check if reachable
-        Deque<Coordinate> queue = new ArrayDeque<>();
-        while(queue.isEmpty()){
-            Coordinate current = queue.pop();
-            if(current == e){
-                //return current;
-            }
-        }
-        */
-        return null;
+
     }
 
     public static boolean pathElementIsFeasible(List<List<Integer>> maze,
