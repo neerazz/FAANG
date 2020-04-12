@@ -2490,7 +2490,7 @@ problem_mapping = {
                 "total": 51
             },
             "Java: MatrixEnclosedRegions.java": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Python: matrix_enclosed_regions.py": {
