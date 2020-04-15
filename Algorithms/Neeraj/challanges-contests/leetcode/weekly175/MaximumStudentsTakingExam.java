@@ -1,4 +1,4 @@
-package contests.weekly175;
+package weekly175;
 
 public class MaximumStudentsTakingExam {
     public static void main(String[] args) {
@@ -43,9 +43,6 @@ public class MaximumStudentsTakingExam {
             return true;
         }
 //        Check if candidate is sitting at right cross.
-        if (col+1 < cols && row-1 >= 0 && seats[row-1][col+1] == '.'){
-            return true;
-        }
-        return false;
+        return col + 1 < cols && row - 1 >= 0 && seats[row - 1][col + 1] == '.';
     }
 }

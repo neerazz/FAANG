@@ -21,7 +21,8 @@ public class PathSum {
     }
 
     private static boolean hasPathSumHelper(TraverseATree.TreeNode root, int remainingSum, int sum) {
-//        This is set to false, or else if the sum is reached in any intermediate node it will return true. We have to make sure that sum of root-to-leaf nodes should be sum.
+//        This is set to false, or else if the sum is reached in any intermediate node it will return true.
+//        We have to make sure that sum of root-to-leaf nodes should be sum.
         if (root == null) return false;
         remainingSum -= root.val;
         if (root.left == null && root.right == null) return remainingSum == 0;

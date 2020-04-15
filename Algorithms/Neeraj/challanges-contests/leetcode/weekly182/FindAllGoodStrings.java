@@ -1,12 +1,15 @@
+package weekly182;
+
 import java.util.*;
 
 public class FindAllGoodStrings {
     public static void main(String[] args) {
-        System.out.println(findGoodStrings(2,"aa","da","b"));
+        System.out.println(findGoodStrings(2, "aa", "da", "b"));
         Solution_Copied solution_copied = new Solution_Copied();
-        System.out.println(solution_copied.findGoodStrings(2,"aa","da","b"));
-        System.out.println(solution_copied.findGoodStrings(8,"leetcode","leetgoes","leet"));
+        System.out.println(solution_copied.findGoodStrings(2, "aa", "da", "b"));
+        System.out.println(solution_copied.findGoodStrings(8, "leetcode", "leetgoes", "leet"));
     }
+
     public static int findGoodStrings(int n, String s1, String s2, String evil) {
         if(s1.contains(evil) && s2.contains(evil)) return 0;
         if(s1.equals(s2)) return 1;
@@ -20,10 +23,12 @@ public class FindAllGoodStrings {
         }
         return result;
     }
+
     static class Solution_Copied {
         final int MOD = 1_000_000_000 + 7;
         String[][] cache;
         Map<String, Integer> memo = new HashMap<>();
+
         public int findGoodStrings(int n, String s1, String s2, String evil) {
             cache = new String[2][n];
             return f(n, s1, s2, evil, Collections.emptyList());

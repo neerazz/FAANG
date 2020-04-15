@@ -1,3 +1,5 @@
+package biweekly21;
+
 import java.util.*;
 
 class MaximumBSTSum {
@@ -84,6 +86,7 @@ class MaximumBSTSum {
             return new Pair(root.val, root.val, root.val, false);
         }
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

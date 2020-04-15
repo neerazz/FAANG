@@ -1,4 +1,4 @@
-package contests.weekly176;
+package weekly176;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

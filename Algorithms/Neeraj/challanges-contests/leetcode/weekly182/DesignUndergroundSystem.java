@@ -1,3 +1,5 @@
+package weekly182;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,9 +21,11 @@ public class DesignUndergroundSystem {
         undergroundSystem.checkOut(10, "Waterloo", 38);
         undergroundSystem.getAverageTime("Leyton", "Waterloo");          // return 12.0
     }
+
     static class UndergroundSystem {
         Map<String, int[]> map ;
         Map<Integer,Action> started;
+
         public UndergroundSystem() {
             map = new HashMap<>();
             started = new HashMap<>();
@@ -52,6 +56,7 @@ public class DesignUndergroundSystem {
 //            return sum/integers.size();
         }
     }
+
     static class Action{
         int id;
         int time;

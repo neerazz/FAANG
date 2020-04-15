@@ -18,16 +18,46 @@ Explanation:
 public class HappyNumber {
     static HashSet<Integer> history = new HashSet<>();
 
+    static HashSet<Integer> set = new HashSet<>();
+
     public static void main(String[] args) {
+        System.out.println("******************** Revision 1 **************************");
+        System.out.println(isHappy_Wrong(19) + " should be [true].");
+        System.out.println(isHappy_Wrong(2) + " should be [false].");
+        System.out.println(isHappy_Wrong(4) + " should be [false].");
+        System.out.println(isHappy_Wrong(7) + " should be [true].");
+        System.out.println("******************** Revision 2 **************************");
         System.out.println(isHappy(19) + " should be [true].");
         System.out.println(isHappy(2) + " should be [false].");
         System.out.println(isHappy(4) + " should be [false].");
+        System.out.println(isHappy(7) + " should be [true].");
     }
 
     public static boolean isHappy(int n) {
         if (n == 1) return true;
+        if (n < 4 || set.contains(n)) return false;
+        return isHappy(squareSumNumber(n));
+    }
+
+    private static int squareSumNumber(int n) {
+        set.add(n);
+        int len = (int) Math.floor(Math.log10(n)) + 1;
+        if (len == 1) {
+            return n * n;
+        }
+        int sum = 0;
+        for (int i = 0; i < len; i++) {
+            int temp = (int) (n / Math.pow(10, i));
+            int val = temp % 10;
+            sum += val * val;
+        }
+        return sum;
+    }
+
+    public static boolean isHappy_Wrong(int n) {
+        if (n == 1) return true;
         if (n < 4 || history.contains(n)) return false;
-        return isHappy(squares(n));
+        return isHappy_Wrong(squares(n));
     }
 
     private static int squares(int n) {

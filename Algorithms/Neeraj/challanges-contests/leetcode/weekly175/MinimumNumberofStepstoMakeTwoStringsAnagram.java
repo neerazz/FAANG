@@ -1,4 +1,4 @@
-package contests.weekly175;
+package weekly175;
 
 public class MinimumNumberofStepstoMakeTwoStringsAnagram {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class MinimumNumberofStepstoMakeTwoStringsAnagram {
         int count = 0;
 
         // store the count of character
-        int char_count[] = new int[26];
+        int[] char_count = new int[26];
 
         // iterate though the first String and update
         // count

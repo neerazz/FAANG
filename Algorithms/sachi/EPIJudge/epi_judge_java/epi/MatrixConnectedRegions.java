@@ -8,9 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MatrixConnectedRegions {
+
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
     public static void flipColor(int x, int y, List<List<Boolean>> image) {
         // TODO - you fill in here.
-        return;
+        boolean toColor = !image.get(x).get(y);
+        flipColor(x, y, image, toColor);
+    }
+
+    public static void flipColor(int x, int y, List<List<Boolean>> image, boolean toColor) {
+        if (x < 0 || y < 0 || x >= image.size() || y >= image.get(x).size() || image.get(x).get(y) == toColor) return;
+        image.get(x).set(y, toColor);
+        for (int[] dir : dirs) {
+            flipColor(x + dir[0], y + dir[1], image, toColor);
+        }
     }
 
     @EpiTest(testDataFile = "painting.tsv")

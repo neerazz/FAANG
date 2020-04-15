@@ -1,4 +1,4 @@
-package contests.biweekly19;
+package biweekly19;
 /*
 
  */

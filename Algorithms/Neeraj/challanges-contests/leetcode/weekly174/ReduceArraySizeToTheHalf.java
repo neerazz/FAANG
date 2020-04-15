@@ -1,4 +1,4 @@
-package contests.weekly174;
+package weekly174;
 
 import java.util.*;
 import java.util.stream.Collectors;

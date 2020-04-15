@@ -1,3 +1,5 @@
+package weekly182;
+
 /*
 There are n soldiers standing in a line. Each soldier is assigned a unique rating value.
 You have to form a team of 3 soldiers amongst them under the following rules:
@@ -24,6 +26,7 @@ public class CountNumberOfTeams {
         System.out.println(numTeams_copied(new int[]{2,5,3,4,1}));
         System.out.println(numTeams_copied(new int[]{1,2,3,4}));
     }
+
     public static int numTeams(int[] rating) {
         if(rating == null || rating.length < 3) return 0;
         int len = rating.length;
@@ -39,6 +42,7 @@ public class CountNumberOfTeams {
         }
         return count;
     }
+
     public static int numTeams_copied(int[] rating) {
 //        Find all the greater then the current value at a given instance
         int len = rating.length;

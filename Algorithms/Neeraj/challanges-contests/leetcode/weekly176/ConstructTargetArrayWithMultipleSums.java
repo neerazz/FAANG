@@ -1,4 +1,4 @@
-package contests.weekly176;
+package weekly176;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -53,8 +53,6 @@ public class ConstructTargetArrayWithMultipleSums {
 
     private static boolean isPossible(int[] target, int[] myArray, int sum, int min, int max) {
         if (sum > max) return false;
-        if (Arrays.equals(target,myArray)) return true;
-
-        return false;
+        return Arrays.equals(target, myArray);
     }
 }

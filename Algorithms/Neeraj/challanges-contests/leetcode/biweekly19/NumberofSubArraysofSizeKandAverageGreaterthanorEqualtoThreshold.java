@@ -1,4 +1,4 @@
-package contests.biweekly19;
+package biweekly19;
 
 import java.util.ArrayList;
 import java.util.List;

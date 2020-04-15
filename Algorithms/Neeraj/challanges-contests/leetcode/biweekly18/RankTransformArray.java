@@ -1,4 +1,4 @@
-package contests.jan25th9am;
+package biweekly18;
 
 import java.util.Arrays;
 import java.util.HashMap;
