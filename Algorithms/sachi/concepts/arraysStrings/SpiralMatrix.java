@@ -26,49 +26,49 @@ import java.util.List;
 public class SpiralMatrix {
     public static void main(String[] args) {
         int[][] matrix = new int[][]{
-                {1, 2, 3, 4},
-                {5, 6, 7, 8},
-                {9, 10, 11, 12}
+                {1, 2, 3},
+                {4, 5, 6}
         };
         spiralOrder(matrix).forEach(e -> System.out.print(e + " "));
     }
 
     public static List<Integer> spiralOrder(int[][] matrix) {
-        int rows = matrix.length, cols = matrix[0].length;
         List<Integer> sol = new ArrayList<>();
+        if (matrix == null || matrix.length == 0) return sol;
+        int rows = matrix.length, cols = matrix[0].length;
         int right = 0, down = 0, left = 0, top = 0;
-        int i = 0, j = 0;
+        int r = 0, c = 0;
         while (sol.size() < rows * cols) {
             //Going right
-            while (j < cols - down) {
-                sol.add(matrix[i][j++]);
+            while (c < cols - down) {
+                sol.add(matrix[r][c++]);
             }
-            i++;
-            j--;
+            r++;
+            c--;
             right++;
             if (sol.size() == rows * cols) return sol;
             //Going down
-            while (i < rows - left) {
-                sol.add(matrix[i++][j]);
+            while (r < rows - left) {
+                sol.add(matrix[r++][c]);
             }
-            j--;
-            i--;
+            c--;
+            r--;
             down++;
             if (sol.size() == rows * cols) return sol;
             //Going left
-            while (j >= top) {
-                sol.add(matrix[i][j--]);
+            while (c >= top) {
+                sol.add(matrix[r][c--]);
             }
-            i--;
-            j++;
+            r--;
+            c++;
             left++;
             if (sol.size() == rows * cols) return sol;
             //Going up
-            while (i >= right) {
-                sol.add(matrix[i--][j]);
+            while (r >= right) {
+                sol.add(matrix[r--][c]);
             }
-            j++;
-            i++;
+            c++;
+            r++;
             top++;
         }
         return sol;

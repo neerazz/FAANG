@@ -6,54 +6,62 @@ import java.util.Set;
 public class MinimumWindowsSubstring {
 
     public static String minWindow(String s, String t) {
-        if (s.equals(t)) return s;
-        int len = t.length();
-        Map<Character, Integer> map = new HashMap<>();
-        int i = 0;
-        String sol = s;
-        boolean updated = false;
+        //Missed base case
+        if (s.length() < t.length()) return "";
+        Map<Character, Integer> tMap = new HashMap<>();
+        Map<Character, Integer> sMap = new HashMap<>();
 
-        Set<Character> set = new HashSet<>();
-        for (int z = 0; z < t.length(); z++) {
-            set.add(t.charAt(z));
+        //tData
+        int tCount = t.length();
+        for (char c : t.toCharArray()) {
+            tMap.putIfAbsent(c, 0);
+            tMap.put(c, tMap.get(c) + 1);
         }
-
-        for (int j = 0; j < s.length(); j++) {
-
-            char c = s.charAt(j);
-            if (!set.contains(c)) continue;
-
-            map.put(c, map.getOrDefault(c, 0) + 1);
-
-            if (map.size() == len && j - i < sol.length()) {
-                sol = s.substring(i, j + 1);
-                updated = true;
+        //Initialization was wrong for vp1 & vp2;
+        int p1 = 0, p2 = 0, validCount = 0, vp1 = -1, vp2 = s.length() - 1;
+        while (p2 < s.length()) {
+            char c = s.charAt(p2);
+            if (tMap.containsKey(c)) { //Found a valid char
+                sMap.putIfAbsent(c, 0);
+                sMap.put(c, sMap.get(c) + 1);   //Add it to counter Map
+                int required = tMap.get(c);
+                int actual = sMap.get(c);
+                if (actual <= required) {          //Is this an additional char
+                    validCount++;
+                }
             }
-
-            while (j - i + 1 >= len && map.size() == len) {
-                char d = s.charAt(i);
-                if (!set.contains(d)) {
-                    i++;
-                    continue;
+            //Is this a valid window ? If so assign vp1 & vp2
+            while (validCount == tCount) {
+                //Is new window better than previous window
+                if (Math.abs(p1 - p2) < Math.abs(vp1 - vp2)) {
+                    //Valid Shorter Window - Assign
+                    vp1 = p1;
+                    vp2 = p2;
                 }
-                if (j - i < sol.length()) {
-                    sol = s.substring(i, j + 1);
+                //Minimize window - Increase P1 till p1 becomes invalid
+                char c1 = s.charAt(p1);
+                if (sMap.containsKey(c1)) {
+                    int required = tMap.get(c1);
+                    int actual = sMap.get(c1);
+                    if (actual <= required) {
+                        validCount--;
+                    }
+                    if (sMap.get(c1) == 1) {
+                        sMap.remove(c1);
+                    } else {
+                        sMap.put(c1, sMap.get(c1) - 1);
+                    }
                 }
-                int val = map.get(d);
-                if (val == 1) {
-                    map.remove(d);
-                } else {
-                    map.put(d, val - 1);
-                }
-                i++;
+                //These are to be incremented at the end
+                p1++;
             }
+            p2++;
         }
-
-        return updated ? sol : "";
-
+        if (vp1 == -1) return "";
+        return s.substring(vp1, vp2 + 1);
     }
 
     public static void main(String[] args) {
-        System.out.println(minWindow("bbaa", "aba"));
+        System.out.println(minWindow("ADOBECODEBANC", "ABC"));
     }
 }
