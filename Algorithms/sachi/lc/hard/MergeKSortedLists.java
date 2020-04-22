@@ -25,7 +25,7 @@ public class MergeKSortedLists {
     public static ListNode mergeKLists(ListNode[] lists) {
         ListNode dummy = new ListNode(-1);
         ListNode prev = dummy;
-        Queue<ListNode> pq = new PriorityQueue<>((l1, l2) -> l1.val - l2.val);
+        Queue<ListNode> pq = new PriorityQueue<> ((l1, l2) -> l1.val - l2.val);
         pq.add(lists[0]);
         while (!pq.isEmpty()) {
             for (int i = 1; i < lists.length; i++) {
