@@ -3,6 +3,8 @@ import java.util.stream.Collectors;
 
 public class Util {
 
+    static Random random = new Random();
+
     /**
      * Generate Random Array between 0 and 100
      *
@@ -211,5 +213,20 @@ public class Util {
     }
 
     public static void main(String[] args) {
+    }
+
+    public static TreeNode generateRandomTree(int length) {
+        TreeNode tree = generateRandomTreeLength(length);
+        System.out.println("Generated tree of length: " + length);
+        Util.print(tree);
+        return tree;
+    }
+
+    private static TreeNode generateRandomTreeLength(int length) {
+        if (length == 0) return null;
+        TreeNode node = new TreeNode(random.nextInt(50));
+        node.left = generateRandomTreeLength(length - 1);
+        node.right = generateRandomTreeLength(length - 1);
+        return node;
     }
 }

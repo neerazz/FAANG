@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class WordSearch2 {
+public class BoggleBoard {
 
     public static List<String> boggleBoard(char[][] board, String[] words) {
         // Write your code here.
@@ -76,5 +76,4 @@ public class WordSearch2 {
                 {"this", "is", "not", "a", "simple", "boggle", "board", "test", "REPEATED", "NOTRE-PEATED"};
         System.out.println(boggleBoard(board, words));
     }
-
 }

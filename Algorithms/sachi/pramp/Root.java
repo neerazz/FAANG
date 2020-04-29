@@ -1,9 +1,31 @@
+import epi.NonuniformRandomNumber;
+import epi.RangeLookupInBst;
+
+import java.util.Random;
+
 public class Root {
 
     public static void main(String[] args) {
-        System.out.println(rootQuick(11, 2));
-        System.out.println(root(11, 2));
-        System.out.println("Actual: " + Math.sqrt(11));
+        tester();
+    }
+
+    public static void tester() {
+        Random rand = new Random();
+        while (true) {
+            int x = rand.nextInt(1000);
+            x = x + 1;
+            int n = rand.nextInt(x);
+            n = n + 1;
+            double actual = root(x, n);
+            double expected = Math.pow(x, 1.0 / n);
+            if (expected - actual > 0.001) {
+                System.out.println("x: " + x + " n: " + n);
+                System.out.println("Failed. Actual:" + actual + "  Expected" + expected);
+                break;
+            } else {
+                System.out.println("x: " + x + " n: " + n);
+            }
+        }
     }
 
     static double rootQuick(double x, int n) {
