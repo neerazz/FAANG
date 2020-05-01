@@ -34,17 +34,18 @@ public class InsertIntoABinarySearchTree {
     }
 
     public static TreeNode insertIntoBST(TreeNode root, int val) {
-      if(root == null) return new TreeNode(val);
-      int cur = root.val;
-      if(val < cur){
+        if (root == null) return new TreeNode(val);
+        int cur = root.val;
+        if (val < cur) {
 //             Go Left and insert
-          root.left = insertIntoBST(root.left,val);
-      }else{
+            root.left = insertIntoBST(root.left, val);
+        } else {
 //             Go right and insert
-          root.right = insertIntoBST(root.right,val);
-      }
-      return root;
+            root.right = insertIntoBST(root.right, val);
+        }
+        return root;
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -78,6 +79,7 @@ public class InsertIntoABinarySearchTree {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

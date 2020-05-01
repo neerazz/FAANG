@@ -19,7 +19,7 @@ public class AlienDictionary {
         for (int i = 0; i < words.length; i++) {
             createGraph(words[i].toCharArray(), graphHashMap);
         }
-        // Link the existing graph's with other words graph. As soon as the releation is created between two words exit the loop.
+        // Link the existing graph's with other words graph. As soon as the relation is created between two words exit the loop.
         for (int i = 1; i < words.length; i++) {
             String pre = words[i-1];
             String cur = words[i];
@@ -28,7 +28,7 @@ public class AlienDictionary {
               char curChar = cur.charAt(j);
               if (preChar != curChar) {
                 graphHashMap.get(preChar).neighbours.add(graphHashMap.get(curChar));
-                // Break the loop because teh releation between two word graph is done.
+                // Break the loop because the relation between two word graph is done.
                 break;
               }
             }
