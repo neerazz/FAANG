@@ -3,11 +3,7 @@ package virtualOnline;/*
  */
 
 /**
- * Questions:
- */
-
-/*
-Given a matrix from start to end, navigate and collect the maximum points.
+ * Questions: Given a matrix from start to end, navigate and collect the maximum points.
  */
 public class Question3 {
     public static void main(String[] args) {

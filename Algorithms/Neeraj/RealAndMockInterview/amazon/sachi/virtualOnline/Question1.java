@@ -5,8 +5,8 @@ package virtualOnline;
  */
 
 /**
- * Questions: Given a 8*8 grid chess board and a starting and ending point.
- *  Write a function that return's number of steps needed to reach from start and endpoint.
+ * Questions: Given a 8*8 grid chess board with a starting and ending point.
+ *  Write a function that return's number of steps needed for an horse reach from start and endpoint.
  */
 
 import java.util.LinkedList;

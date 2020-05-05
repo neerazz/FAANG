@@ -21,7 +21,7 @@ public class JewelsAndStones {
     }
 
     public static int numJewelsInStones(String J, String S) {
-        HashSet<Character> jewels = new HashSet<Character>();
+        HashSet<Character> jewels = new HashSet<>();
         for (int i = 0; i < J.length(); i++) {
             jewels.add(J.charAt(i));
         }
