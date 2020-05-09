@@ -16,6 +16,21 @@ public class FirstUniqueCharacterInAString {
         System.out.println(firstUniqChar("leetcode") + " should be [0]");
         System.out.println(firstUniqChar("loveleetcode") + " should be [2]");
         System.out.println(firstUniqChar("aadadaad") + " should be [-1]");
+        System.out.println("*********************************");
+        System.out.println(firstUniqChar_rev1("leetcode") + " should be [0]");
+        System.out.println(firstUniqChar_rev1("loveleetcode") + " should be [2]");
+        System.out.println(firstUniqChar_rev1("aadadaad") + " should be [-1]");
+    }
+
+    public static int firstUniqChar_rev1(String s) {
+        int[] chars = new int[26];
+        for (char c : s.toCharArray()) {
+            chars[c - 'a']++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (chars[s.charAt(i) - 'a'] == 1) return i;
+        }
+        return -1;
     }
 
     public static int firstUniqChar(String s) {
