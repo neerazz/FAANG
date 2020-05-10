@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /*
@@ -20,6 +21,42 @@ class TwoSum {
         }
         int target = Integer.parseInt(scanner.next());
         System.out.println(Arrays.toString(twoSum(nums, target)));
+    }
+
+    /*
+    Return the two numbers
+    Time: O(NLogN), Space: O(1)
+     */
+    public static int[] twoSum_elegant1(int[] nums, int target) {
+        Arrays.sort(nums);
+        int p1 = 0, p2 = nums.length - 1;
+        while (p1 < p2) {
+            int sum = nums[p1] + nums[p2];
+            if (sum == target) {
+                return new int[]{nums[p1], nums[p2]};
+            } else if (sum > target) {
+                p2--;
+            } else {
+                p1++;
+            }
+        }
+        return new int[0];
+    }
+
+    /*
+    Return the indices of teh first two number that resulted in sum.
+    Time: O(N), Space: O(N)
+     */
+    public static int[] twoSum_elegant2(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int cur = nums[i], rem = target - cur;
+            if (map.containsKey(cur)) {
+                return new int[]{map.get(cur), i};
+            }
+            map.putIfAbsent(rem, i);
+        }
+        return new int[0];
     }
 
     public static int[] twoSum(int[] nums, int target) {
