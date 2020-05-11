@@ -1,6 +1,6 @@
 ### Below are the list of EPI Questions along with the topics. 
 
-|Topic                           |QuestionNo|Question Description                                            |Link                                                                                                                                                                                    |
+|Topic                           |Question Number|Question Description                                            |Link                                                                                                                                                                                    |
 |--------------------------------|:--------:|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Primitive Types                 |    4     |Primitive Types                                                 | [CountBits.java](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/EPIJudge/epi_judge_java/epi/CountBits.java)                                                            |
 |Primitive Types                 |   4.01   |Computing the parity of a word                                  | [Parity.java](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/EPIJudge/epi_judge_java/epi/Parity.java)                                                                  |
@@ -223,7 +223,7 @@
 
 
 
-###Below are the questions and the respective page number in EPI book:
+### Below are the questions and the respective page number in EPI book:
 
 
 |No   |Problem                                           |Page      |
