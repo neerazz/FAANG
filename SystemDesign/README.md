@@ -1,4 +1,4 @@
-#Tips for System Design
+# Tips for System Design
 
 - Read the question properly? **[2-3 mins]**
     > Understand the question.
