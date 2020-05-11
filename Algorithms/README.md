@@ -19,6 +19,4 @@
 >[Questions List by topics](https://github.com/neerazz/FAANG/blob/master/Algorithms/EPI_Questions_List.md)
 
 
-
-
-##### Note:[Click here](https://github.com/neerazz/FAANG/tree/master/SystemDesign/Neeraj) to check individual folder for more details.
+##### Note: [Click here](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj) to check individual folder for more details.
