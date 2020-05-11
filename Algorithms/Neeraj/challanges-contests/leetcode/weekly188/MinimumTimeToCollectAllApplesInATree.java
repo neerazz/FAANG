@@ -6,7 +6,7 @@ package weekly188;
 import java.util.*;
 
 /**
- * Questions: https://leetcode.com/contest/weekly-contest-188/problems/minimum-time-to-collect-all-apples-in-a-tree/
+ * Questions: https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/
  */
 public class MinimumTimeToCollectAllApplesInATree {
     public static void main(String[] args) {
