@@ -13,13 +13,17 @@ public class NumberComplement {
         System.out.println(findComplement_optimal(5));
     }
     public static int findComplement_optimal(int num) {
-        int cal = num;
-        int sum =0;
-        while(num >0){
-            sum = (sum << 1) + 1;
-            num >>=1;
+        int temp = num;
+        int allOnes =0;
+//        Loop till the binary value is greater than zero. And keep shifting and adding 1.
+//        So that binary representation of allOnes will be all 1's.
+//        Ex: num = 5 (101), then loop till allOnes = (111),
+//          And then do an XOR of allOnes & num. It will give (010).
+        while(temp >0){
+            allOnes = (allOnes << 1) + 1;
+            temp >>=1;
         }
-       return sum ^ cal;
+       return allOnes ^ num;
     }
     public static int findComplement(int num) {
         String string = Integer.toString(num, 2);

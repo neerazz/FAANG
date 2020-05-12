@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 /*
 https://leetcode.com/explore/learn/card/queue-stack/239/conclusion/1393/
@@ -26,8 +25,54 @@ The value of each color in image[i][j] and newColor will be an integer in [0, 65
  */
 public class FloodFill {
     public static void main(String[] args) {
-        int[][] image = new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
-        Arrays.stream(floodFill(image, 1, 1, 2)).forEach(a -> System.out.println(Arrays.toString(a)));
+        System.out.println(Arrays.deepToString(floodFill(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2)));
+        System.out.println(Arrays.deepToString(floodFill_bfs(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2)));
+        System.out.println(Arrays.deepToString(floodFill_dfs(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2)));
+    }
+
+    private static int[][] floodFill_dfs(int[][] image, int sr, int sc, int newColour) {
+        if (image == null || image[sr][sc] == newColour) return image;
+        int rows = image.length, cols = image[0].length;
+        dfs(image, sr, sc, rows, cols, newColour, image[sr][sc]);
+        return image;
+    }
+
+    private static void dfs(int[][] image, int sr, int sc, int rows, int cols, int newColour, int startColour) {
+        if (sr < 0 || sr >= rows || sc < 0 || sc >= cols || image[sr][sc] != startColour) return;
+        image[sr][sc] = newColour;
+        for (int[] dir : dirs) {
+            dfs(image, sr + dir[0], sc + dir[1], rows, cols, newColour, startColour);
+        }
+    }
+
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+    public static int[][] floodFill_bfs(int[][] image, int sr, int sc, int newColor) {
+        int rows = image.length, cols = image[0].length;
+        Set<Integer> visited = new HashSet<>();
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{sr, sc});
+        int startColour = image[sr][sc];
+        while (!queue.isEmpty()) {
+            int[] poll = queue.poll();
+            visited.add(getHash(poll[0], poll[1]));
+            for (int[] dir : dirs) {
+                int newRow = poll[0] + dir[0], newCol = poll[1] + dir[1];
+                if (isInRange(newRow, newCol, rows, cols) && image[newRow][newCol] == startColour && !visited.contains(getHash(newRow, newCol))) {
+                    queue.add(new int[]{newRow, newCol});
+                }
+            }
+            image[poll[0]][poll[1]] = newColor;
+        }
+        return image;
+    }
+
+    private static boolean isInRange(int row, int col, int rows, int cols) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
+    }
+
+    private static int getHash(int row, int col) {
+        return row * 1000000 + col;
     }
 
     public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
