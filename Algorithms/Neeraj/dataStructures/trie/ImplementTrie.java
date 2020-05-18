@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 https://leetcode.com/explore/learn/card/trie/147/basic-operations/1047/
@@ -18,6 +17,7 @@ All inputs are guaranteed to be non-empty strings.
  */
 public class ImplementTrie {
     public static void main(String[] args) {
+        System.out.println("**************************  Method 1 **************************");
         Trie trie = new Trie();
         trie.insert("apple");
         System.out.println(trie.search("apple") + " should be [true].");   // returns true
@@ -25,7 +25,104 @@ public class ImplementTrie {
         System.out.println(trie.startsWith("app") + " should be [true]."); // returns true
         trie.insert("app");
         System.out.println(trie.search("app") + " should be [true].");     // returns true
+        System.out.println("**************************  Method 2 **************************");
+        Trie_Array trieArray = new Trie_Array();
+        trieArray.insert("apple");
+        System.out.println(trieArray.search("apple") + " should be [true].");   // returns true
+        System.out.println(trieArray.search("app") + " should be [false].");     // returns false
+        System.out.println(trieArray.startsWith("app") + " should be [true]."); // returns true
+        trieArray.insert("app");
+        System.out.println(trieArray.search("app") + " should be [true].");     // returns true
 
+        System.out.println("**************************  Method 3 **************************");
+        Trie_Revision trieRevision = new Trie_Revision();
+        trieRevision.insert("apple");
+        System.out.println(trieRevision.search("apple") + " should be [true].");   // returns true
+        System.out.println(trieRevision.search("app") + " should be [false].");     // returns false
+        System.out.println(trieRevision.startsWith("app") + " should be [true]."); // returns true
+        trieRevision.insert("app");
+        System.out.println(trieRevision.search("app") + " should be [true].");     // returns true
+        trieRevision = new Trie_Revision();
+        trieRevision.insert("a");
+        System.out.println(trieRevision.search("a") + " should be [true].");   // returns true
+        System.out.println(trieRevision.startsWith("a") + " should be [true]."); // returns true
+    }
+}
+
+class Trie_Revision {
+    class TrieNode {
+        char c;
+        TrieNode[] child = new TrieNode[26];
+        boolean isEnd = false;
+
+        public TrieNode() {
+        }
+
+        public TrieNode(char c) {
+            this.c = c;
+        }
+    }
+
+    TrieNode[] nodes;
+
+    /**
+     * Initialize your data structure here.
+     */
+    public Trie_Revision() {
+        nodes = new TrieNode[26];
+    }
+
+    /**
+     * Inserts a word into the trie.
+     */
+    public void insert(String word) {
+        TrieNode pre = nodes[word.charAt(0) - 'a'];
+        if (pre == null) {
+            pre = new TrieNode(word.charAt(0));
+            nodes[word.charAt(0) - 'a'] = pre;
+        }
+        for (int i = 1; i < word.length(); i++) {
+            TrieNode cur = insert(pre, word.charAt(i));
+            pre = cur;
+        }
+        pre.isEnd = true;
+    }
+
+    private TrieNode insert(TrieNode node, char cur) {
+        TrieNode curNode = node.child[cur - 'a'];
+        if (curNode == null) {
+            curNode = new TrieNode(cur);
+            node.child[cur - 'a'] = curNode;
+        }
+        return curNode;
+    }
+
+    /**
+     * Returns if the word is in the trie.
+     */
+    public boolean search(String word) {
+        TrieNode search = search(this.nodes, word);
+        return search != null && search.isEnd;
+    }
+
+    private TrieNode search(TrieNode[] nodes, String word) {
+        if (nodes == null) return null;
+        char cur = word.charAt(0);
+        if (nodes[cur - 'a'] != null && nodes[cur - 'a'].c == cur) {
+            if (word.length() > 1) {
+                return search(nodes[cur - 'a'].child, word.substring(1));
+            } else {
+                return nodes[cur - 'a'];
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns if there is any word in the trie that starts with the given prefix.
+     */
+    public boolean startsWith(String prefix) {
+        return search(this.nodes, prefix) != null;
     }
 }
 
