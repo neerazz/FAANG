@@ -26,19 +26,14 @@ public class CanYouSolveIt {
 
     private static int solve(int[] nums) {
         int len = nums.length;
-        int[] plus = new int[len], minus = new int[len];
 //        There are total four possibilities if we remove the mode factor.
-        for (int i = 0; i < len; i++) {
-            plus[i] = nums[i] + i;
-            minus[i] = nums[i] - i;
-        }
 //        Find the maximum difference in both the plus and minus array.
         int plusMax = Integer.MIN_VALUE, plusMin = Integer.MAX_VALUE, minusMax = Integer.MIN_VALUE, minusMin = Integer.MAX_VALUE;
         for (int i = 0; i < len; i++) {
-            plusMax = Math.max(plusMax, plus[i]);
-            plusMin = Math.min(plusMin, plus[i]);
-            minusMax = Math.max(minusMax, minus[i]);
-            minusMin = Math.min(minusMin, minus[i]);
+            plusMax = Math.max(plusMax, nums[i] + i);
+            plusMin = Math.min(plusMin, nums[i] + i);
+            minusMax = Math.max(minusMax, nums[i] - i);
+            minusMin = Math.min(minusMin, nums[i] - i);
         }
         return Math.max(plusMax - plusMin, minusMax - minusMin);
     }
