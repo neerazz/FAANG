@@ -8,17 +8,21 @@ public class IsListPalindromic {
 
     public static boolean isLinkedListAPalindrome(ListNode<Integer> L) {
         if (L == null) return true;
-        ListNode<Integer> reverse = getReverse(L);
-        System.out.println("Input   : " + L.toString());
-        System.out.println("Reverse : " + reverse.toString());
-        while (L != null && reverse != null) {
-            if (L.data != reverse.data) {
+        ListNode<Integer> slow = L, fast = L;
+//        Advance to middle
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        ListNode<Integer> reverse = getReverse(slow), original = L;
+        while (original != null && reverse != null) {
+            if (!original.data.equals(reverse.data)) {
                 return false;
             }
-            L = L.next;
+            original = original.next;
             reverse = reverse.next;
         }
-        return L == reverse;
+        return true;
     }
 
     private static ListNode<Integer> getReverse(ListNode<Integer> L) {

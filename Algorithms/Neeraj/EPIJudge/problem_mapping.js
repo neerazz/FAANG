@@ -834,7 +834,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: IsListPalindromic.java": {
-                "passed": 2,
+                "passed": 203,
                 "total": 203
             },
             "Python: is_list_palindromic.py": {
