@@ -10,24 +10,20 @@ public class EvaluateRpn {
 
     public static int eval(String expression) {
         Stack<Integer> stack = new Stack<>();
-        int val = 0;
-        for (int i = 0; i < expression.length(); i++) {
-            char cur = expression.charAt(i);
-            if (cur == ',') {
-                stack.add(val);
-                val = 0;
-            } else if (Character.isDigit(cur)) {
-                val = val * 10 + (cur - '0');
-            } else {
+        String[] split = expression.split(",");
+        for (String val : split) {
+            if (val.length() == 1 && !Character.isDigit(val.charAt(0))) {
                 int second = stack.pop();
                 int first = stack.pop();
-                if (cur == '+') stack.add(first + second);
-                if (cur == '-') stack.add(first - second);
-                if (cur == '*') stack.add(first * second);
-                if (cur == '/') stack.add(first / second);
+                if (val.charAt(0) == '+') stack.add(first + second);
+                if (val.charAt(0) == '-') stack.add(first - second);
+                if (val.charAt(0) == '*') stack.add(first * second);
+                if (val.charAt(0) == '/') stack.add(first / second);
+            } else {
+                stack.add(Integer.parseInt(val));
             }
         }
-        return stack.isEmpty() ? 0 : stack.peek();
+        return stack.isEmpty() ? -1 : stack.peek();
     }
 
     public static void main(String[] args) {
