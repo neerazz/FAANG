@@ -36,7 +36,7 @@ public class TestUtils {
     final int MAX_SEARCH_DEPTH = 4;
     final String DIR_NAME = "test_data";
 
-    Path path = Paths.get(".").toAbsolutePath();
+    Path path = Paths.get("EPIJudge").toAbsolutePath();
     for (int i = 0; i < MAX_SEARCH_DEPTH; i++) {
       if (Files.isDirectory(path.resolve(DIR_NAME))) {
         return path.resolve(DIR_NAME).toString();

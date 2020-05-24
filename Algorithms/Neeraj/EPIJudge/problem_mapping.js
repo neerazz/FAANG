@@ -906,7 +906,7 @@ problem_mapping = {
                 "total": 78
             },
             "Java: IsValidParenthesization.java": {
-                "passed": 0,
+                "passed": 78,
                 "total": 78
             },
             "Python: is_valid_parenthesization.py": {
@@ -920,7 +920,7 @@ problem_mapping = {
                 "total": 255
             },
             "Java: DirectoryPathNormalization.java": {
-                "passed": 0,
+                "passed": 255,
                 "total": 255
             },
             "Python: directory_path_normalization.py": {
@@ -976,7 +976,7 @@ problem_mapping = {
                 "total": 65
             },
             "Java: QueueFromStacks.java": {
-                "passed": 0,
+                "passed": 65,
                 "total": 65
             },
             "Python: queue_from_stacks.py": {
