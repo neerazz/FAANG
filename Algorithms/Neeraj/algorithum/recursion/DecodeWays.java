@@ -16,7 +16,30 @@ import java.util.Map;
  */
 public class DecodeWays {
     public static void main(String[] args) {
+        System.out.println("*************************** Method 1 *******************************");
+        System.out.println(numDecodings("12") + " should be [2]");
+        System.out.println(numDecodings("226") + " should be [3]");
+        System.out.println("*************************** Method 2 *******************************");
+        System.out.println(numDecodings_rev1("12") + " should be [2]");
+        System.out.println(numDecodings_rev1("226") + " should be [3]");
+    }
 
+    public static int numDecodings_rev1(String s) {
+        if (s.length() == 0) return 1;
+        if (s.length() == 1) {
+            return s.charAt(0) == '0' ? 0 : 1;
+        }
+        if (memo.containsKey(s)) return memo.get(s);
+        if (s.charAt(0) == '0') {
+            memo.put(s, 0);
+            return 0;
+        }
+        int op = numDecodings_rev1(s.substring(1));
+        if (Integer.parseInt(s.substring(0, 2)) < 27) {
+            op += numDecodings_rev1(s.substring(2));
+        }
+        memo.put(s, op);
+        return op;
     }
 
     static Map<String, Integer> memo = new HashMap<>();
