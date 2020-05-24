@@ -7,7 +7,7 @@
    >
    > [Sachi](https://github.com/neerazz/FAANG/tree/master/Algorithms/sachi)
 
-### [System Design](https://github.com/neerazz/FAANG/blob/master/SystemDesign/README.md#tips-for-system-design)
-> [Neeraj](https://github.com/neerazz/FAANG/tree/master/SystemDesign/Neeraj)
+### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
+> [Neeraj](https://github.com/neerazz/faang-system-design/tree/master/Neeraj)
 >
-> [Sachi](https://github.com/neerazz/FAANG/tree/master/SystemDesign/Sachi)
+> [Sachi](https://github.com/neerazz/faang-system-design/tree/master/Sachi)
