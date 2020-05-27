@@ -3,7 +3,7 @@ import java.util.Stack;
 
 /**
  * Created on:  May 19, 2020
- * Questions: https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/536/week-3-may-15th-may-21st/3334/
+ * Questions: https://leetcode.com/problems/online-stock-span/
  */
 public class OnlineStockSpan {
     public static void main(String[] args) {

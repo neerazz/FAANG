@@ -598,7 +598,7 @@ problem_mapping = {
                 "total": 10008
             },
             "Java: ValidIpAddresses.java": {
-                "passed": 10008,
+                "passed": 0,
                 "total": 10008
             },
             "Python: valid_ip_addresses.py": {
@@ -1006,7 +1006,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: IsTreeBalanced.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: is_tree_balanced.py": {
@@ -1020,7 +1020,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: IsTreeSymmetric.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: is_tree_symmetric.py": {
@@ -1034,7 +1034,7 @@ problem_mapping = {
                 "total": 948
             },
             "Java: LowestCommonAncestor.java": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Python: lowest_common_ancestor.py": {
@@ -1048,7 +1048,7 @@ problem_mapping = {
                 "total": 948
             },
             "Java: LowestCommonAncestorWithParent.java": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Python: lowest_common_ancestor_with_parent.py": {
@@ -1132,7 +1132,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: TreeWithParentInorder.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: tree_with_parent_inorder.py": {
@@ -1146,7 +1146,7 @@ problem_mapping = {
                 "total": 3852
             },
             "Java: TreeFromPreorderInorder.java": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Python: tree_from_preorder_inorder.py": {

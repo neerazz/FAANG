@@ -15,6 +15,31 @@ public class PermutationInString {
         System.out.println(checkInclusion_optimal("ab", "eidbaooo") + " should be [true]");
         System.out.println(checkInclusion_optimal("ab", "eidboaoo") + " should be [false]");
         System.out.println(checkInclusion_optimal("adc", "dcda") + " should be [true]");
+        System.out.println("********************* Method 3 ************************");
+        System.out.println(checkInclusion_rev1("ab", "eidbaooo") + " should be [true]");
+        System.out.println(checkInclusion_rev1("ab", "eidboaoo") + " should be [false]");
+        System.out.println(checkInclusion_rev1("ab", "ba") + " should be [true]");
+        System.out.println(checkInclusion_rev1("adc", "dcda") + " should be [true]");
+    }
+
+    public static boolean checkInclusion_rev1(String s1, String s2) {
+        int[] counts = new int[26];
+        for (char c : s1.toCharArray()) {
+            counts[c - 'a']++;
+        }
+        int start = 0, end = 0, len = s1.length();
+        while (end < s2.length()) {
+            if (counts[s2.charAt(end) - 'a'] > 0) {
+                counts[s2.charAt(end++) - 'a']--;
+            } else if (start == end) {
+                start++;
+                end++;
+            } else {
+                counts[s2.charAt(start++) - 'a']++;
+            }
+            if ((end - start) == len) return true;
+        }
+        return (end - start) == len;
     }
 
     public static boolean checkInclusion_optimal(String s1, String s2) {

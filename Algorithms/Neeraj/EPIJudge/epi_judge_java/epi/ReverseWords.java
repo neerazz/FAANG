@@ -8,6 +8,24 @@ import java.util.Arrays;
 
 public class ReverseWords {
 
+    public static void reverseWords_rev1(char[] input) {
+        char[] temp = Arrays.copyOf(input, input.length);
+        int index = input.length - 1, index2 = 0;
+        while (index >= 0) {
+            int tempIndex = index;
+            while (index >= 0 && temp[index] != ' ') {
+                index--;
+            }
+//            Now append from index to tempIndex into temp array. Starting from index+1 because the index is at space.
+            for (int i = index + 1; i <= tempIndex; i++) {
+                input[index2++] = temp[i];
+            }
+            while (index >= 0 && temp[index] == ' ') {
+                input[index2++] = temp[index--];
+            }
+        }
+    }
+
     public static void reverseWords(char[] input) {
         char[] temp = Arrays.copyOf(input, input.length);
         int index = input.length - 1, start = 0;
@@ -31,7 +49,8 @@ public class ReverseWords {
             throws Exception {
         char[] sCopy = s.toCharArray();
 
-        executor.run(() -> reverseWords(sCopy));
+//        executor.run(() -> reverseWords(sCopy));
+        executor.run(() -> reverseWords_rev1(sCopy));
 
         return String.valueOf(sCopy);
     }
