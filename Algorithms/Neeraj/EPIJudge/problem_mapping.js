@@ -598,7 +598,7 @@ problem_mapping = {
                 "total": 10008
             },
             "Java: ValidIpAddresses.java": {
-                "passed": 0,
+                "passed": 10008,
                 "total": 10008
             },
             "Python: valid_ip_addresses.py": {
@@ -1202,7 +1202,7 @@ problem_mapping = {
                 "total": 10
             },
             "Java: TreeRightSibling.java": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Python: tree_right_sibling.py": {
@@ -1218,7 +1218,7 @@ problem_mapping = {
                 "total": 152
             },
             "Java: SortedArraysMerge.java": {
-                "passed": 0,
+                "passed": 152,
                 "total": 152
             },
             "Python: sorted_arrays_merge.py": {
@@ -1232,7 +1232,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: SortIncreasingDecreasingArray.java": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Python: sort_increasing_decreasing_array.py": {
@@ -1246,7 +1246,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: SortAlmostSortedArray.java": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Python: sort_almost_sorted_array.py": {
@@ -1274,7 +1274,7 @@ problem_mapping = {
                 "total": 55
             },
             "Java: OnlineMedian.java": {
-                "passed": 0,
+                "passed": 55,
                 "total": 55
             },
             "Python: online_median.py": {

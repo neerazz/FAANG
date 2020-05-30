@@ -9,10 +9,10 @@ import java.util.List;
 public class Tools {
     public static void main(String[] args) {
 
-        System.out.println(getCamelCase("Root of Number"));
+        System.out.println(getCamelCase("K Closest Points to Origin"));
 
         System.out.println(getReplaced(
-                "",
+                "[[3,1,1],[2,5,1],[1,5,5],[2,1,1]]",
                 Arrays.asList("[", "{"),
                 Arrays.asList("]", "}")
         ));
@@ -29,7 +29,7 @@ public class Tools {
                     sb.append(Character.toUpperCase(c));
                     capitalize = false;
                 } else {
-                    sb.append(Character.toLowerCase(c));
+                    sb.append(c);
                 }
             } else {
                 capitalize = true;

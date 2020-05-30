@@ -31,6 +31,9 @@ public class ValidIpAddresses {
             String cur = "";
             for (int end = start; end < s.length(); end++) {
                 cur += s.charAt(end);
+//                Make a recursive call only in below conditions:
+//                  1. If the first digit is zero then consider making "only one" recursive call.
+//                  2. If the character is between 1 & 255.
                 if ((Integer.parseInt(cur) == 0 && cur.length() == 1) || ((Integer.parseInt(cur) > 0 && Integer.parseInt(cur) < 256) && cur.charAt(0) != '0')) {
                     backtrace(s, end + 1, dots + 1, soFar.equals("") ? soFar + cur : soFar + "." + cur);
                 }
