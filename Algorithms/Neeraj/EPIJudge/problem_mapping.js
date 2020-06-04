@@ -1304,7 +1304,7 @@ problem_mapping = {
                 "total": 314
             },
             "Java: SearchFirstKey.java": {
-                "passed": 0,
+                "passed": 314,
                 "total": 314
             },
             "Python: search_first_key.py": {
@@ -1332,7 +1332,7 @@ problem_mapping = {
                 "total": 307
             },
             "Java: SearchShiftedSortedArray.java": {
-                "passed": 0,
+                "passed": 307,
                 "total": 307
             },
             "Python: search_shifted_sorted_array.py": {
@@ -1346,7 +1346,7 @@ problem_mapping = {
                 "total": 2000
             },
             "Java: IntSquareRoot.java": {
-                "passed": 0,
+                "passed": 2000,
                 "total": 2000
             },
             "Python: int_square_root.py": {
@@ -1360,7 +1360,7 @@ problem_mapping = {
                 "total": 11003
             },
             "Java: RealSquareRoot.java": {
-                "passed": 0,
+                "passed": 2,
                 "total": 11003
             },
             "Python: real_square_root.py": {
@@ -1374,7 +1374,7 @@ problem_mapping = {
                 "total": 194
             },
             "Java: SearchRowColSortedMatrix.java": {
-                "passed": 0,
+                "passed": 194,
                 "total": 194
             },
             "Python: search_row_col_sorted_matrix.py": {
@@ -1388,7 +1388,7 @@ problem_mapping = {
                 "total": 501
             },
             "Java: SearchForMinMaxInArray.java": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Python: search_for_min_max_in_array.py": {
@@ -1402,7 +1402,7 @@ problem_mapping = {
                 "total": 503
             },
             "Java: KthLargestInArray.java": {
-                "passed": 0,
+                "passed": 503,
                 "total": 503
             },
             "Python: kth_largest_in_array.py": {
@@ -1416,7 +1416,7 @@ problem_mapping = {
                 "total": 100
             },
             "Java: AbsentValueArray.java": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             },
             "Python: absent_value_array.py": {
@@ -1430,7 +1430,7 @@ problem_mapping = {
                 "total": 50
             },
             "Java: SearchForMissingElement.java": {
-                "passed": 0,
+                "passed": 50,
                 "total": 50
             },
             "Python: search_for_missing_element.py": {
@@ -1474,7 +1474,7 @@ problem_mapping = {
                 "total": 212
             },
             "Java: IsAnonymousLetterConstructible.java": {
-                "passed": 0,
+                "passed": 212,
                 "total": 212
             },
             "Python: is_anonymous_letter_constructible.py": {
@@ -1488,7 +1488,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: LruCache.java": {
-                "passed": 0,
+                "passed": 1,
                 "total": 101
             },
             "Python: lru_cache.py": {
@@ -1502,7 +1502,7 @@ problem_mapping = {
                 "total": 948
             },
             "Java: LowestCommonAncestorCloseAncestor.java": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Python: lowest_common_ancestor_close_ancestor.py": {
@@ -1516,7 +1516,7 @@ problem_mapping = {
                 "total": 505
             },
             "Java: NearestRepeatedEntries.java": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             },
             "Python: nearest_repeated_entries.py": {

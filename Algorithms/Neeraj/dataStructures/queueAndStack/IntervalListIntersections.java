@@ -8,6 +8,7 @@ import java.util.List;
  */
 public class IntervalListIntersections {
     public static void main(String[] args) {
+        System.out.println("************************* Method 1 ********************************");
         System.out.println(Arrays.deepToString(
                 intervalIntersection(
                         new int[][]{{0, 2}, {5, 10}, {13, 23}, {24, 25}},
@@ -18,6 +19,39 @@ public class IntervalListIntersections {
                         new int[][]{{3, 5}, {9, 20}},
                         new int[][]{{4, 5}, {7, 10}, {11, 12}, {14, 15}, {16, 20}}
                 )));
+        System.out.println("************************* Method 2 ********************************");
+        System.out.println(Arrays.deepToString(
+                intervalIntersection_rev1(
+                        new int[][]{{0, 2}, {5, 10}, {13, 23}, {24, 25}},
+                        new int[][]{{1, 5}, {8, 12}, {15, 24}, {25, 26}}
+                )));
+        System.out.println(Arrays.deepToString(
+                intervalIntersection_rev1(
+                        new int[][]{{3, 5}, {9, 20}},
+                        new int[][]{{4, 5}, {7, 10}, {11, 12}, {14, 15}, {16, 20}}
+                )));
+    }
+
+    public static int[][] intervalIntersection_rev1(int[][] A, int[][] B) {
+        int p1 = 0, p2 = 0;
+        List<int[]> op = new ArrayList<>();
+        while (p1 < A.length && p2 < B.length) {
+            int row = Math.max(A[p1][0], B[p2][0]);
+            int col = Math.min(A[p1][1], B[p2][1]);
+            if(col >= row){
+                op.add(new int[]{row,col});
+            }
+//            Pointer needs to be increased for teh interval that is ending first.
+            if(A[p1][1] > B[p2][1]){
+                p2++;
+            }else if(A[p1][1] < B[p2][1]){
+                p1++;
+            }else{
+                p1++;
+                p2++;
+            }
+        }
+        return op.toArray(new int[0][0]);
     }
 
     public static int[][] intervalIntersection(int[][] A, int[][] B) {

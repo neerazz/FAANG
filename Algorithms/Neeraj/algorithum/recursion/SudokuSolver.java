@@ -18,20 +18,111 @@ public class SudokuSolver {
     static int counter = 0;
 
     public static void main(String[] args) {
-        char[][] board = {
-                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
-                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
-                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
-                {'4', '.', '.', '8', '.', '.', '.', '.', '1'},
-                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
-                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
-                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
-                {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
-        };
+        System.out.println("************************* Solution 1 *******************************");
+        System.out.println(Arrays.deepToString(callSudokuSolver(new char[][]
+                {
+                        {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                        {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                        {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                        {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                        {'4', '.', '.', '8', '.', '.', '.', '.', '1'},
+                        {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                        {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                        {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+                })));
+
+        System.out.println(Arrays.deepToString(callSudokuSolver(new char[][]
+                {
+                        {'.', '.', '.', '7', '.', '.', '3', '.', '1'},
+                        {'3', '.', '.', '9', '.', '.', '.', '.', '.'},
+                        {'.', '4', '.', '3', '1', '.', '2', '.', '.'},
+                        {'.', '6', '.', '4', '.', '.', '5', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '1', '.', '.', '8', '.', '4', '.'},
+                        {'.', '.', '6', '.', '2', '1', '.', '5', '.'},
+                        {'.', '.', '.', '.', '.', '9', '.', '.', '8'},
+                        {'8', '.', '5', '.', '.', '4', '.', '.', '.'}
+                })));
+        System.out.println("************************* Solution 2 *******************************");
+        System.out.println(Arrays.deepToString(callSudokuSolver2(new char[][]
+                {
+                        {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                        {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                        {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                        {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                        {'4', '.', '.', '8', '.', '.', '.', '.', '1'},
+                        {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                        {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                        {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+                })));
+
+        System.out.println(Arrays.deepToString(callSudokuSolver2(new char[][]
+                {
+                        {'.', '.', '.', '7', '.', '.', '3', '.', '1'},
+                        {'3', '.', '.', '9', '.', '.', '.', '.', '.'},
+                        {'.', '4', '.', '3', '1', '.', '2', '.', '.'},
+                        {'.', '6', '.', '4', '.', '.', '5', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '1', '.', '.', '8', '.', '4', '.'},
+                        {'.', '.', '6', '.', '2', '1', '.', '5', '.'},
+                        {'.', '.', '.', '.', '.', '9', '.', '.', '8'},
+                        {'8', '.', '5', '.', '.', '4', '.', '.', '.'}
+                })));
+    }
+
+    private static char[][] callSudokuSolver(char[][] board) {
         solveSudoku(board);
-        Arrays.stream(board).forEach(i -> System.out.println(Arrays.toString(i)));
-        System.out.println("counter = " + counter);
+        return board;
+    }
+
+    private static char[][] callSudokuSolver2(char[][] board) {
+        sudokuSolve_rev1(board);
+        return board;
+    }
+
+    static void sudokuSolve_rev1(char[][] board) {
+        boolean[][] rows = new boolean[9][10], cols = new boolean[9][10], inner = new boolean[9][10];
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] != '.') {
+                    int val = board[i][j] - '0';
+                    rows[i][val] = cols[j][val] = inner[getInner(i, j)][val] = true;
+                }
+            }
+        }
+        helper(board, 0, 0, rows, cols, inner);
+    }
+
+    private static boolean helper(char[][] board, int row, int col, boolean[][] rows, boolean[][] cols, boolean[][] inner) {
+        if (row == 8 && col == 9) return true;
+        if (col > 8) {
+            row++;
+            col = 0;
+        }
+        if (board[row][col] == '.') {
+            for (int i = 1; i <= 9; i++) {
+//                Check for all possible number that can be placed at a position.
+                if (!rows[row][i] && !cols[col][i] && !inner[getInner(row, col)][i]) {
+//                    When possible, then block the number to be used further in the recursion.
+                    rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = true;
+                    board[row][col] = (char) ('0' + i);
+                    if (helper(board, row, col + 1, rows, cols, inner)) {
+                        return true;
+                    }
+                    board[row][col] = '.';
+                    rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = false;
+                }
+            }
+            return false;
+        } else {
+            return helper(board, row, col + 1, rows, cols, inner);
+        }
+    }
+
+    private static int getInner(int row, int col) {
+        return (row / 3) * 3 + (col / 3);
     }
 
     public static void solveSudoku(char[][] board) {

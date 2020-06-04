@@ -17,12 +17,48 @@ n is a 32-bit signed integer, within the range [−231, 231 − 1]
  */
 public class Pow {
     public static void main(String[] args) {
+        System.out.println("************************* Method 1 *******************************");
         System.out.println("Answer is:" + myPow(2.00000, 10) + " should be [1024.00000].");
         System.out.println("Answer is:" + myPow(2.10000, 3) + " should be [9.26100].");
         System.out.println("Answer is:" + myPow(2.00000, -2) + " should be [0.25000].");
         System.out.println("Answer is:" + myPow(2.00000, -2147483648) + " should be [0.0].");
+        System.out.println("Answer is:" + myPow(-1.00000, 2147483647) + " should be [-1.0].");
+
+        System.out.println("************************* Method 2 *******************************");
+        System.out.println("Answer is:" + myPow_elegent(2.00000, 10) + " should be [1024.00000].");
+        System.out.println("Answer is:" + myPow_elegent(2.10000, 3) + " should be [9.26100].");
+        System.out.println("Answer is:" + myPow_elegent(2.00000, -2) + " should be [0.25000].");
+        System.out.println("Answer is:" + myPow_elegent(2.00000, -2147483648) + " should be [0.0].");
         System.out.println("Answer is:" + myPow_elegent(-1.00000, 2147483647) + " should be [-1.0].");
-        System.out.println("Answer is:" + myPow_elegent(-1.00000, -2147483648) + " should be [1.0].");
+
+        System.out.println("************************* Method 3 *******************************");
+//        System.out.println("Answer is:" + myPow_spaceOptimal(2.00000, 10) + " should be [1024.00000].");
+//        System.out.println("Answer is:" + myPow_spaceOptimal(2.10000, 3) + " should be [9.26100].");
+//        System.out.println("Answer is:" + myPow_spaceOptimal(2.00000, -2) + " should be [0.25000].");
+//        System.out.println("Answer is:" + myPow_spaceOptimal(2.00000, -2147483648) + " should be [0.0].");
+//        System.out.println("Answer is:" + myPow_spaceOptimal(-1.00000, 2147483647) + " should be [-1.0].");
+        System.out.println("Answer is:" + myPow_spaceOptimal(8.84372, -5) + " should be [2e-05].");
+    }
+
+    public static double myPow_spaceOptimal(double x, int n) {
+        if (n == 0) return 1;
+        if (n == 1) return x;
+        boolean isNegative = false;
+        long pow = n;
+        if (pow < 0) {
+            pow = Math.abs(pow);
+            isNegative = true;
+        }
+        double result = x;
+       while (pow > 1) {
+            if (pow % 2 == 1) {
+                result *= result * x;
+            } else {
+                result *= result;
+            }
+           pow = pow / 2;
+        }
+        return isNegative && result > 0 ? 1 / result : result;
     }
 
     public static double myPow_elegent(double x, int n) {

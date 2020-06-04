@@ -1,10 +1,7 @@
 package weekly188;
-/*
-    Created on:  May 09, 2020
- */
-
 /**
- * Questions: https://leetcode.com/contest/weekly-contest-188/problems/number-of-ways-of-cutting-a-pizza/
+ * Created on:  May 09, 2020
+ * Questions: https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/
  */
 public class NumberOfWaysOfCuttingAPizza {
     public static void main(String[] args) {

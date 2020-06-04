@@ -108,7 +108,7 @@ public class SudokuSolver {
             for (int i = 1; i < 10; i++) {
 //                Check if 1 to 9 numbers can be placed on the board.
                 if (isPossible(row, col, i, rows, cols, inner)) {
-//                    If able to blace on teh board then set the taken flag to true and make a recursive call.
+//                    If able to place on the board then set the taken flag to true and make a recursive call.
                     rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = true;
                     board[row][col] = (char) ('0' + i);
                     if (backtrack(board, row, col + 1, rows, cols, inner)) {
