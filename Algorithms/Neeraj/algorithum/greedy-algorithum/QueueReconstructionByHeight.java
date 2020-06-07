@@ -13,6 +13,6 @@ public class QueueReconstructionByHeight {
         for(int[] p : people) {
             res.add(p[1], p);
         }
-        return res.toArray(new int[people.length][2]);
+        return res.toArray(new int[0][2]);
     }
 }

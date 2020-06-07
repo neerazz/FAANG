@@ -24,4 +24,21 @@ public class KthSmallestElementInaBST {
         list.add(root.val);
         helper(root.right, k);
     }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        @Override
+        public String toString() {
+            return val +
+                    ", left=" + left +
+                    ", right=" + right;
+        }
+    }
 }

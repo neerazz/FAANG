@@ -7,6 +7,9 @@ import java.util.*;
  * Questions: https://leetcode.com/problems/cherry-pickup-ii/
  */
 public class CherryPickupII {
+    static int rows = 0, cols = 0;
+    static int[] dirs = {-1, 0, 1};
+
     public static void main(String[] args) {
         System.out.println("*************************** Method 1 ********************************");
         System.out.println(cherryPickup(new int[][]{{3, 1, 1}, {2, 5, 1}, {1, 5, 5}, {2, 1, 1}}) + "\t should be [24]");
@@ -14,14 +17,38 @@ public class CherryPickupII {
         System.out.println(cherryPickup(new int[][]{{1, 0, 0, 3}, {0, 0, 0, 3}, {0, 0, 3, 3}, {9, 0, 3, 3}}) + "\t should be [22]");
         System.out.println(cherryPickup(new int[][]{{1, 1}, {1, 1}}) + "\t should be [4]");
 
-        System.out.println("*************************** Method 1 ********************************");
-        System.out.println(cherryPickup_optimal(new int[][]{{3, 1, 1}, {2, 5, 1}, {1, 5, 5}, {2, 1, 1}}) + "\t should be [24]");
-        System.out.println(cherryPickup_optimal(new int[][]{{1, 0, 0, 0, 0, 0, 1}, {2, 0, 0, 0, 0, 3, 0}, {2, 0, 9, 0, 0, 0, 0}, {0, 3, 0, 5, 4, 0, 0}, {1, 0, 2, 3, 0, 0, 6}}) + "\t should be [28]");
-        System.out.println(cherryPickup_optimal(new int[][]{{1, 0, 0, 3}, {0, 0, 0, 3}, {0, 0, 3, 3}, {9, 0, 3, 3}}) + "\t should be [22]");
-        System.out.println(cherryPickup_optimal(new int[][]{{1, 1}, {1, 1}}) + "\t should be [4]");
+        System.out.println("*************************** Method 2 ********************************");
+        System.out.println(cherryPickup_rev1(new int[][]{{3, 1, 1}, {2, 5, 1}, {1, 5, 5}, {2, 1, 1}}) + "\t should be [24]");
+        System.out.println(cherryPickup_rev1(new int[][]{{1, 0, 0, 0, 0, 0, 1}, {2, 0, 0, 0, 0, 3, 0}, {2, 0, 9, 0, 0, 0, 0}, {0, 3, 0, 5, 4, 0, 0}, {1, 0, 2, 3, 0, 0, 6}}) + "\t should be [28]");
+        System.out.println(cherryPickup_rev1(new int[][]{{1, 0, 0, 3}, {0, 0, 0, 3}, {0, 0, 3, 3}, {9, 0, 3, 3}}) + "\t should be [22]");
+        System.out.println(cherryPickup_rev1(new int[][]{{1, 1}, {1, 1}}) + "\t should be [4]");
     }
 
-    private static int cherryPickup_optimal(int[][] grid) {
+    public static int cherryPickup_rev1(int[][] grid) {
+        rows = grid.length;
+        cols = rows > 0 ? grid[0].length : 0;
+        if (cols == 0) return 0;
+        Integer[][][] dp = new Integer[rows][cols][cols];
+        return dfs_rev1(0, 0, cols - 1, grid, dp);
+    }
+
+    private static int dfs_rev1(int row, int r1c, int r2c, int[][] grid, Integer[][][] dp) {
+        if (!inRange(row, r1c) || !inRange(row, r2c)) return 0;
+        if (dp[row][r1c][r2c] != null) return dp[row][r1c][r2c];
+        int cur = r1c == r2c ? grid[row][r1c] : grid[row][r1c] + grid[row][r2c], max = 0;
+        for (int dir : dirs) {
+            for (int dir2 : dirs) {
+                max = Math.max(max, dfs_rev1(row + 1, r1c + dir, r2c + dir2, grid, dp));
+            }
+        }
+        return dp[row][r1c][r2c] = cur + max;
+    }
+
+    private static boolean inRange(int row, int col) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
+    }
+
+    private static int cherryPickup(int[][] grid) {
         int rows = grid.length, cols = rows > 0 ? grid[0].length : 0;
         int op = 0;
         if (cols == 0) return op;
@@ -29,7 +56,6 @@ public class CherryPickupII {
         return dfs(map, 0, 0, 0, cols - 1, rows, cols, grid);
     }
 
-    static int[] dirs = {-1, 0, 1};
 
     private static int dfs(Map<String, Integer> map, int r1r, int r1c, int r2r, int r2c, int rows, int cols, int[][] grid) {
 //        When out of boundary then return 0;
@@ -56,95 +82,7 @@ public class CherryPickupII {
         return sum + max;
     }
 
-    public static int cherryPickup(int[][] grid) {
-        int rows = grid.length, cols = rows > 0 ? grid[0].length : 0;
-        int op = 0;
-        if (cols == 0) return op;
-        Queue<CurrentPositions> queue = new LinkedList<>();
-        int r1r = 0, r1c = 0, r2r = 0, r2c = cols - 1;
-        queue.add(new CurrentPositions(new int[]{r1r, r1c}, new int[]{r2r, r2c}, grid[r1r][r1c] + grid[r2r][r2c]));
-
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            Set<CurrentPositions> visited = new HashSet<>();
-            for (int i = 0; i < size; i++) {
-                CurrentPositions poll = queue.poll();
-                op = Math.max(op, poll.collected);
-                if (!poll.bothAtSamePosition()) {
-                    for (int dir : dirs) {
-                        int r1rN = poll.rob1[0] + 1, r1cN = poll.rob1[1] + dir;
-                        if (inRange(r1rN, r1cN, rows, cols)) {
-                            for (int dir2 : dirs) {
-                                int r2rN = poll.rob2[0] + 1, r2cN = poll.rob2[1] + dir2;
-                                if (inRange(r2rN, r2cN, rows, cols)) {
-                                    CurrentPositions next = new CurrentPositions(new int[]{r1rN, r1cN}, new int[]{r2rN, r2cN}, poll.collected + grid[r1rN][r1cN] + grid[r2rN][r2cN]);
-                                    if (!visited.contains(next)) {
-                                        queue.add(next);
-                                        visited.add(next);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-//        return dfs(new int[]{0, 0}, new int[]{0, cols - 1}, rows, cols, grid, visited, 0);
-        return op;
-    }
-
-    private static int getHash(int[] indxs) {
-        return getHash(indxs[0], indxs[1]);
-    }
-
     private static boolean inRange(int row, int col, int rows, int cols) {
         return row >= 0 && row < rows && col >= 0 && col < cols;
-    }
-
-    private static int getHash(int row, int col) {
-        return row * 1000 + col;
-    }
-
-    static class CurrentPositions {
-        int[] rob1;
-        int[] rob2;
-        int collected;
-
-        public CurrentPositions(int[] rob1, int[] rob2, int collected) {
-            this.rob1 = rob1;
-            this.rob2 = rob2;
-            this.collected = collected;
-        }
-
-        boolean bothAtSamePosition() {
-            return rob1[0] == rob2[0] && rob1[1] == rob2[1];
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            CurrentPositions that = (CurrentPositions) o;
-
-            if (!Arrays.equals(rob1, that.rob1)) return false;
-            return Arrays.equals(rob2, that.rob2);
-        }
-
-        @Override
-        public int hashCode() {
-            int result = Arrays.hashCode(rob1);
-            result = 31 * result + Arrays.hashCode(rob2);
-            return result;
-        }
-
-        @Override
-        public String toString() {
-            return "CurrentPositions{" +
-                    "rob1=" + Arrays.toString(rob1) +
-                    ", rob2=" + Arrays.toString(rob2) +
-                    ", collected=" + collected +
-                    '}';
-        }
     }
 }

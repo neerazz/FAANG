@@ -1530,7 +1530,7 @@ problem_mapping = {
                 "total": 904
             },
             "Java: SmallestSubarrayCoveringSet.java": {
-                "passed": 0,
+                "passed": 904,
                 "total": 904
             },
             "Python: smallest_subarray_covering_set.py": {
@@ -1572,7 +1572,7 @@ problem_mapping = {
                 "total": 203
             },
             "Java: LongestContainedInterval.java": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Python: longest_contained_interval.py": {

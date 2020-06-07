@@ -10,12 +10,55 @@ import java.util.stream.Collectors;
  */
 public class MaximumNumberOfDartsInsideOfACircularDartboard {
     public static void main(String[] args) {
+        System.out.println("******************************* Method 1 ******************************");
         System.out.println(numPoints(new int[][]{{-2, 0}, {2, 0}, {0, 2}, {0, -2}}, 2) + " should be [4]");
         System.out.println(numPoints(new int[][]{{-3, 0}, {3, 0}, {2, 6}, {5, 4}, {0, 9}, {7, 8}}, 5) + " should be [5]");
         System.out.println(numPoints(new int[][]{{-2, 0}, {2, 0}, {0, 2}, {0, -2}}, 1) + " should be [1]");
         System.out.println(numPoints(new int[][]{{1, 2}, {3, 5}, {1, -1}, {2, 3}, {4, 1}, {1, 3}}, 2) + " should be [4]");
         System.out.println(numPoints(new int[][]{{-5, 1}, {-3, -1}, {-1, 2}, {1, 4}, {-3, 0}}, 4) + " should be [5]");
         System.out.println(numPoints(new int[][]{{2, -3}, {-5, 1}, {-3, -2}, {-1, -4}, {-4, -5}, {-2, -2}, {4, 1}}, 3) + " should be [4]");
+
+        System.out.println("******************************* Method 2 ******************************");
+        System.out.println(numPoints_rev1(new int[][]{{-2, 0}, {2, 0}, {0, 2}, {0, -2}}, 2) + " should be [4]");
+        System.out.println(numPoints_rev1(new int[][]{{-3, 0}, {3, 0}, {2, 6}, {5, 4}, {0, 9}, {7, 8}}, 5) + " should be [5]");
+        System.out.println(numPoints_rev1(new int[][]{{-2, 0}, {2, 0}, {0, 2}, {0, -2}}, 1) + " should be [1]");
+        System.out.println(numPoints_rev1(new int[][]{{1, 2}, {3, 5}, {1, -1}, {2, 3}, {4, 1}, {1, 3}}, 2) + " should be [4]");
+        System.out.println(numPoints_rev1(new int[][]{{-5, 1}, {-3, -1}, {-1, 2}, {1, 4}, {-3, 0}}, 4) + " should be [5]");
+        System.out.println(numPoints_rev1(new int[][]{{2, -3}, {-5, 1}, {-3, -2}, {-1, -4}, {-4, -5}, {-2, -2}, {4, 1}}, 3) + " should be [4]");
+    }
+
+    public static int numPoints_rev1(int[][] p, int r) {
+        int len = p.length, max = 1;
+        double[][] points = new double[len][2];
+        for (int i = 0; i < len; i++) {
+            points[i] = new double[]{p[i][0], p[i][1]};
+        }
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j < len; j++) {
+                double[] center = getCenter_rev1(points[i], points[j], r);
+                if (center.length == 2 && !Double.isNaN(center[0]) && !Double.isNaN(center[1])) {
+                    int cur = 2;
+                    for (int k = 0; k < len; k++) {
+                        if (k != i && k != j && inCircle(center, points[k], r)) {
+                            cur++;
+                        }
+                    }
+                    max = Math.max(cur, max);
+                }
+            }
+        }
+        return max;
+    }
+
+    private static double[] getCenter_rev1(double[] p1, double[] p2, int r) {
+        double distance = getDistance(p1, p2);
+        if (distance > 2 * r) {
+            return new double[0];
+        }
+        double[] mid = {(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2};
+        double distanceFromMid = Math.sqrt(Math.pow(r, 2) - (distance / 2) * (distance / 2));
+        double angle = Math.atan2(p1[0] - p2[0], p2[1] - p1[1]);
+        return new double[]{mid[0] + distanceFromMid * Math.cos(angle), mid[1] + distanceFromMid * Math.sin(angle)};
     }
 
     public static int numPoints(int[][] points, int r) {
@@ -26,7 +69,7 @@ public class MaximumNumberOfDartsInsideOfACircularDartboard {
             for (int j = i + 1; j < points.length; j++) {
 //                Find the center of all the points.
 //                double[] center = getCenter(nps.get(i), nps.get(j), (double) r);
-                double[] center = getCenter_2(nps.get(i), nps.get(j), (double) r);
+                double[] center = getCenter_2(nps.get(i), nps.get(j), r);
                 if (center.length == 2 && !Double.isNaN(center[0]) && !Double.isNaN(center[1])) {
 //                    Since the current center already have two points in it, initialize the current value to 2.
                     int cur = 2;
