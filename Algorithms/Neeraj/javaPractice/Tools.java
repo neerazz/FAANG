@@ -9,16 +9,21 @@ import java.util.List;
 public class Tools {
     public static void main(String[] args) {
 
-        System.out.println(getCamelCase("Shuffle the Array"));
-        System.out.println(getCamelCase("The k Strongest Values in an Array"));
-        System.out.println(getCamelCase("Design Browser History"));
-        System.out.println(getCamelCase("Paint House III"));
+        getContest("Find Two Non-overlapping Sub-arrays Each With Target Sum");
+        System.out.println(getCamelCase("Running Sum of 1d Array"));
+        System.out.println(getCamelCase("Least Number of Unique Integers after K Removals"));
+        System.out.println(getCamelCase("Minimum Number of Days to Make m Bouquets"));
+        System.out.println(getCamelCase("Kth Ancestor of a Tree Node"));
 
         System.out.println(getReplaced(
                 "[[1,2],[1,3],[2,4]]",
                 Arrays.asList("[", "{"),
                 Arrays.asList("]", "}")
         ));
+    }
+
+    private static void getContest(String input) {
+        String[] strings = input.split(",");
     }
 
     private static String getCamelCase(String input) {

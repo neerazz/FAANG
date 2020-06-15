@@ -71,6 +71,18 @@ public class SudokuSolver {
                 }));
         System.out.println(sudokuSolve_optimal(new char[][]
                 {
+                        {'1', '2', '.', '4', '5', '6', '7', '8', '9'},
+                        {'.', '.', '3', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'},
+                        {'.', '.', '.', '.', '.', '.', '.', '.', '.'}
+                }));
+        System.out.println(sudokuSolve_optimal(new char[][]
+                {
                         {'.', '8', '9', '.', '4', '.', '6', '.', '5'},
                         {'.', '7', '.', '.', '.', '8', '.', '4', '1'},
                         {'5', '6', '.', '9', '.', '.', '.', '.', '8'},
@@ -110,13 +122,11 @@ public class SudokuSolver {
                 if (isPossible(row, col, i, rows, cols, inner)) {
 //                    If able to place on the board then set the taken flag to true and make a recursive call.
                     rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = true;
-                    board[row][col] = (char) ('0' + i);
                     if (backtrack(board, row, col + 1, rows, cols, inner)) {
                         return true;
                     }
 //                    If it is not possible then after returning from recursion change taken flag to false.
                     rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = false;
-                    board[row][col] = '.';
                 }
             }
             return false;

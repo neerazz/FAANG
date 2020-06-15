@@ -26,6 +26,7 @@ randomSet.getRandom();
  */
 public class InsertDeleteGetRandom {
     public static void main(String[] args) {
+        System.out.println("********************** Solution 1 ***********************************");
         RandomizedSet randomSet = new RandomizedSet();
         // Inserts 1 to the set. Returns true as 1 was inserted successfully.
         System.out.println(randomSet.insert(1) + " -> true.");
@@ -48,6 +49,7 @@ public class InsertDeleteGetRandom {
 // Since 2 is the only number in the set, getRandom always return 2.
         System.out.println(randomSet.getRandom() + " -> 2.");
 
+        System.out.println("********************** Solution 2 ***********************************");
         RandomizedSet_Elegent randomizedSet_elegent = new RandomizedSet_Elegent();
         // Inserts 1 to the set. Returns true as 1 was inserted successfully.
         System.out.println(randomizedSet_elegent.insert(1) + " -> true.");
@@ -69,23 +71,87 @@ public class InsertDeleteGetRandom {
 
 // Since 2 is the only number in the set, getRandom always return 2.
         System.out.println(randomizedSet_elegent.getRandom() + " -> 2.");
+
+        System.out.println("********************** Solution 3 ***********************************");
+        RandomizedSet_Rev randomizedSet_rev = new RandomizedSet_Rev();
+        // Inserts 1 to the set. Returns true as 1 was inserted successfully.
+        System.out.println(randomizedSet_rev.insert(1) + " -> true.");
+
+// Returns false as 2 does not exist in the set.
+        System.out.println(randomizedSet_rev.remove(2) + " -> false.");
+
+// Inserts 2 to the set, returns true. Set now contains [1,2].
+        System.out.println(randomizedSet_rev.insert(2) + " -> true.");
+
+// getRandom should return either 1 or 2 randomly.
+        System.out.println(randomizedSet_rev.getRandom() + " -> [1 or 2]].");
+
+// Removes 1 from the set, returns true. Set now contains [2].
+        System.out.println(randomizedSet_rev.remove(1) + " -> true.");
+
+// 2 was already in the set, so return false.
+        System.out.println(randomizedSet_rev.insert(2) + " -> false.");
+
+// Since 2 is the only number in the set, getRandom always return 2.
+        System.out.println(randomizedSet_rev.getRandom() + " -> 2.");
     }
 }
-class RandomizedSet_Elegent{
-    Map<Integer,Integer> map;
+
+class RandomizedSet_Rev {
+
+    List<Integer> list;
+    Map<Integer, Integer> map;
+    Random random;
+
+    public RandomizedSet_Rev() {
+        list = new ArrayList<>();
+        map = new HashMap<>();
+        random = new Random();
+    }
+
+    public boolean insert(int val) {
+        if (map.containsKey(val)) {
+            return false;
+        }
+        map.put(val, list.size());
+        list.add(val);
+        return true;
+    }
+
+    public boolean remove(int val) {
+        if (map.containsKey(val)) {
+            int index = map.remove(val);
+            int lastIndex = list.size() - 1;
+            int lastVal = list.get(lastIndex);
+            list.set(index, lastVal);
+            map.put(lastVal, index);
+            map.remove(val);
+            list.remove(lastIndex);
+            return true;
+        }
+        return false;
+    }
+
+    public int getRandom() {
+        return list.get(random.nextInt(list.size()));
+    }
+}
+
+class RandomizedSet_Elegent {
+    Map<Integer, Integer> map;
     List<Integer> list;
     Random r;
 
 
     public RandomizedSet_Elegent() {
-        r= new Random();
+        r = new Random();
         map = new HashMap<>();
         list = new ArrayList<>();
     }
 
     public boolean insert(int val) {
-        if(map.containsKey(val)) return false;
-        map.put(val,list.size());
+        if (map.containsKey(val)) return false;
+        map.put(val, list.size());
         list.add(val);
         return true;
     }
@@ -97,11 +163,11 @@ class RandomizedSet_Elegent{
     Otherwise, delete in arraylist take O(n) time
     */
     public boolean remove(int val) {
-        if(!map.containsKey(val)) return false;
+        if (!map.containsKey(val)) return false;
         int idx = map.get(val);
-        int last = list.get( list.size()-1) ;
-        list.set(idx ,last );
-        list.remove(list.size()-1);
+        int last = list.get(list.size() - 1);
+        list.set(idx, last);
+        list.remove(list.size() - 1);
         map.put(last, idx);
         map.remove(val);
         return true;
@@ -111,6 +177,7 @@ class RandomizedSet_Elegent{
         return list.get(r.nextInt(list.size()));
     }
 }
+
 class RandomizedSet {
 
     List<Integer> integers;
