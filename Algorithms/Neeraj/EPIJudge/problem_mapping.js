@@ -1856,7 +1856,7 @@ problem_mapping = {
                 "total": 950
             },
             "Java: BstFromPreorder.java": {
-                "passed": 0,
+                "passed": 950,
                 "total": 950
             },
             "Python: bst_from_preorder.py": {
@@ -1884,7 +1884,7 @@ problem_mapping = {
                 "total": 13
             },
             "Java: ABSqrt2.java": {
-                "passed": 0,
+                "passed": 13,
                 "total": 13
             },
             "Python: a_b_sqrt2.py": {
@@ -1970,7 +1970,7 @@ problem_mapping = {
                 "total": 10
             },
             "Java: Hanoi.java": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Python: hanoi.py": {
@@ -1998,7 +1998,7 @@ problem_mapping = {
                 "total": 10
             },
             "Java: NQueens.java": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Python: n_queens.py": {
@@ -2012,7 +2012,7 @@ problem_mapping = {
                 "total": 8
             },
             "Java: Permutations.java": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             },
             "Python: permutations.py": {
@@ -2026,7 +2026,7 @@ problem_mapping = {
                 "total": 15
             },
             "Java: PowerSet.java": {
-                "passed": 0,
+                "passed": 15,
                 "total": 15
             },
             "Python: power_set.py": {
@@ -2054,7 +2054,7 @@ problem_mapping = {
                 "total": 11
             },
             "Java: EnumerateBalancedParentheses.java": {
-                "passed": 0,
+                "passed": 11,
                 "total": 11
             },
             "Python: enumerate_balanced_parentheses.py": {
@@ -2096,7 +2096,7 @@ problem_mapping = {
                 "total": 400
             },
             "Java: SudokuSolve.java": {
-                "passed": 0,
+                "passed": 400,
                 "total": 400
             },
             "Python: sudoku_solve.py": {

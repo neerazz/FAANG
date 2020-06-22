@@ -1,7 +1,4 @@
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /*
@@ -19,15 +16,33 @@ Your algorithm's time complexity must be better than O(n log n), where n is the 
  */
 public class TopKFrequentElements {
     public static void main(String[] args) {
+        System.out.println("******************************** Solution 1 **************************");
         System.out.println(topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2) + " should be [1,2].");
         System.out.println(topKFrequent(new int[]{1}, 1) + " should be [1].");
         System.out.println(topKFrequent(new int[]{4, 1, -1, 2, -1, 2, 3}, 2) + " should be [-1,2].");
+
+        System.out.println("******************************** Solution 2 **************************");
+        System.out.println(Arrays.toString(topKFrequent_rev(new int[]{1, 1, 1, 2, 2, 3}, 2)) + " should be [1,2].");
+        System.out.println(Arrays.toString(topKFrequent_rev(new int[]{1}, 1)) + " should be [1].");
+        System.out.println(Arrays.toString(topKFrequent_rev(new int[]{4, 1, -1, 2, -1, 2, 3}, 2)) + " should be [-1,2].");
+    }
+
+    public static int[] topKFrequent_rev(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        PriorityQueue<int[]> queue = new PriorityQueue<>((v1, v2) -> v1[1] == v2[1] ? Integer.compare(v1[0], v2[0]) : Integer.compare(v1[1], v2[1]));
+        for (int num : map.keySet()) {
+            queue.add(new int[]{num, map.get(num)});
+            if (queue.size() > k) queue.poll();
+        }
+        return queue.stream().mapToInt(arr -> arr[0]).toArray();
     }
 
     public static List<Integer> topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            int num = nums[i];
+        for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         List<Integer> collect = map.values().stream().sorted(Comparator.reverseOrder()).limit(k).collect(Collectors.toList());

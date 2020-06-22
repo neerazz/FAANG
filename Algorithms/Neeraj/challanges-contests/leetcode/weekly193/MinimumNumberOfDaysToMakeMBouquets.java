@@ -25,7 +25,7 @@ public class MinimumNumberOfDaysToMakeMBouquets {
 
     public static int minDays_optimal(int[] bloomDay, int m, int k) {
         if (bloomDay.length < m * k) return -1;
-        int min = 0, max = 0;
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int i : bloomDay) {
             max = Math.max(max, i);
             min = Math.min(min, i);
@@ -45,8 +45,8 @@ public class MinimumNumberOfDaysToMakeMBouquets {
     }
 
     private static int getPossibleBookies(int[] bloomDay, int day, int k) {
-//        This method is to find the number of bookies that can be formed on a given day.
-        int bookies = 0, flowersCollected = 0;
+//        This method is to find the number of bouquets that can be formed on a given day.
+        int bouquets = 0, flowersCollected = 0;
         for (int value : bloomDay) {
             if (value <= day) {
 //                If the current flower can be taken with in days then increase the flower flowersCollected.
@@ -55,13 +55,13 @@ public class MinimumNumberOfDaysToMakeMBouquets {
 //                If there is a flower in between that takes more number of days then the given day, then resent the counter.
                 flowersCollected = 0;
             }
-//            If the flowersCollected is same as the required flower per bookie, then increase the bookies count;
+//            If the flowersCollected is same as the required flower per bookie, then increase the bouquets count;
             if (flowersCollected == k) {
-                bookies++;
+                bouquets++;
                 flowersCollected = 0;
             }
         }
-        return bookies;
+        return bouquets;
     }
 
     public static int minDays(int[] bloomDay, int m, int k) {

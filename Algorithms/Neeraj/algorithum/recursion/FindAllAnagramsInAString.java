@@ -10,10 +10,40 @@ public class FindAllAnagramsInAString {
         System.out.println(findAnagrams("cbaebabacd", "abc") + " should be [0,6].");
         System.out.println(findAnagrams("abab", "ab") + " should be [0,1,2].");
         System.out.println(findAnagrams("aaaaaaaaaa", "aaaaaaaaaaaaa") + " should be [].");
+
         System.out.println("*********************** Method 2 ***********************");
         System.out.println(findAnagrams_optimal("cbaebabacd", "abc") + " should be [0,6].");
         System.out.println(findAnagrams_optimal("abab", "ab") + " should be [0,1,2].");
-        System.out.println(findAnagrams_optimal("aaaaaaaaaa", "aaaaaaaaaaaaa") + " should be [0,1,2].");
+        System.out.println(findAnagrams_optimal("aaaaaaaaaa", "aaaaaaaaaaaaa") + " should be [].");
+
+        System.out.println("*********************** Method 3 ***********************");
+        System.out.println(findAnagrams_rev1("cbaebabacd", "abc") + " should be [0,6].");
+        System.out.println(findAnagrams_rev1("abab", "ab") + " should be [0,1,2].");
+        System.out.println(findAnagrams_rev1("aaaaaaaaaa", "aaaaaaaaaaaaa") + " should be [].");
+    }
+
+    public static List<Integer> findAnagrams_rev1(String s, String p) {
+        int[] counts = new int[26];
+        for (char c : p.toCharArray()) {
+            counts[c - 'a']++;
+        }
+        List<Integer> op = new ArrayList<>();
+        int p1 = 0, p2 = 0, len = s.length(), found = 0;
+        while (p2 < len) {
+            char p2C = s.charAt(p2);
+            if (counts[p2C - 'a'] > 0) {
+                counts[p2C - 'a']--;
+                p2++;
+            } else if (p2 == p1) {
+                p2++;
+                p1++;
+            } else {
+                counts[s.charAt(p1) - 'a']++;
+                p1++;
+            }
+            if (p2 - p1 == p.length()) op.add(p1);
+        }
+        return op;
     }
 
     public static List<Integer> findAnagrams_optimal(String s, String p) {

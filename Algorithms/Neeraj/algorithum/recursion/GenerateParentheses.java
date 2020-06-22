@@ -79,7 +79,6 @@ public class GenerateParentheses {
             ans.add(cur);
             return;
         }
-
         if (open < max)
             backtrack(ans, cur + "(", open + 1, close, max);
         if (close < open)

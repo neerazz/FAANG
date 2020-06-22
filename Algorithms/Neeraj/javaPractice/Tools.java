@@ -9,11 +9,11 @@ import java.util.List;
 public class Tools {
     public static void main(String[] args) {
 
-        getContest("Find Two Non-overlapping Sub-arrays Each With Target Sum");
-        System.out.println(getCamelCase("Running Sum of 1d Array"));
-        System.out.println(getCamelCase("Least Number of Unique Integers after K Removals"));
-        System.out.println(getCamelCase("Minimum Number of Days to Make m Bouquets"));
-        System.out.println(getCamelCase("Kth Ancestor of a Tree Node"));
+        getContest("");
+        System.out.println(getCamelCase("XOR Operation in an Array"));
+        System.out.println(getCamelCase("Making File Names Unique"));
+        System.out.println(getCamelCase("Avoid Flood in The City"));
+        System.out.println(getCamelCase("Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree"));
 
         System.out.println(getReplaced(
                 "[[1,2],[1,3],[2,4]]",
