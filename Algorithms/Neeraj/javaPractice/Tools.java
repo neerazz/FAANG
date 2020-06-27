@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
 
         getContest("");
-        System.out.println(getCamelCase("XOR Operation in an Array"));
-        System.out.println(getCamelCase("Making File Names Unique"));
-        System.out.println(getCamelCase("Avoid Flood in The City"));
-        System.out.println(getCamelCase("Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree"));
+        System.out.println(getCamelCase("Average Salary Excluding the Minimum and Maximum Salary"));
+        System.out.println(getCamelCase("The kth Factor of n"));
+        System.out.println(getCamelCase("Longest Subarray of 1's After Deleting One Element"));
+        System.out.println(getCamelCase("Parallel Courses II"));
 
         System.out.println(getReplaced(
                 "[[1,2],[1,3],[2,4]]",

@@ -23,6 +23,12 @@
 >   - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#linkedin)
 
 ### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
-> [Neeraj](https://github.com/neerazz/faang-system-design/tree/master/Neeraj)
+> [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
 >
-> [Sachi](https://github.com/neerazz/faang-system-design/tree/master/Sachi)
+> #### General Design Questions:
+>
+>   - [Design Tny URL](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/tiny-url)
+>
+> #### OOPS Design:
+>  - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/call-center/CallCenter.java)
+>  - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/DesignHitCounter.java)
