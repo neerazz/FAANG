@@ -1,3 +1,5 @@
+package y2020.RoundA;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.LinkedList;

@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Created on:  Jun 13, 2020
- * Questions:
+ * Questions: https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
  */
 public class FindTwoNonOverlappingSubArraysEachWithTargetSum {
     public static void main(String[] args) {
