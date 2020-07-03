@@ -21,6 +21,46 @@ public class MinimumNumberOfDaysToMakeMBouquets {
         System.out.println(minDays_optimal(new int[]{1, 10, 3, 10, 2}, 3, 1) + " should be [3]");
         System.out.println(minDays_optimal(new int[]{1, 10, 3, 10, 2}, 3, 2) + " should be [-1]");
         System.out.println(minDays_optimal(new int[]{7, 7, 7, 7, 12, 7, 7}, 2, 3) + " should be [12]");
+
+        System.out.println("************************************** Solution 3 ***********************************");
+        System.out.println(minDays_rev1(new int[]{1, 10, 3, 10, 2}, 3, 1) + " should be [3]");
+        System.out.println(minDays_rev1(new int[]{1, 10, 3, 10, 2}, 3, 2) + " should be [-1]");
+        System.out.println(minDays_rev1(new int[]{1, 10, 2, 9, 3, 8, 4, 7, 5, 6}, 4, 2) + " should be [9]");
+        System.out.println(minDays_rev1(new int[]{1000000000, 100000000}, 1, 1) + " should be [1000000000]");
+        System.out.println(minDays_rev1(new int[]{7, 7, 7, 7, 12, 7, 7}, 2, 3) + " should be [12]");
+    }
+
+    public static int minDays_rev1(int[] bloomDay, int m, int k) {
+        if (bloomDay.length < m * k) return -1;
+        int min = 0, max = 0;
+        for (int day : bloomDay) {
+            min = Math.min(min, day);
+            max = Math.max(max, day);
+        }
+        while (min < max) {
+            int mid = min + (max - min) / 2;
+            if (canMake(bloomDay, m, k, mid)) {
+                max = mid;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return min;
+    }
+
+    private static boolean canMake(int[] days, int m, int k, int day) {
+        int boq = 0, flow = 0;
+        for (int d : days) {
+            if (d > day) {
+                flow = 0;
+            } else {
+                if (++flow == k) {
+                    flow = 0;
+                    boq++;
+                }
+            }
+        }
+        return boq >= m;
     }
 
     public static int minDays_optimal(int[] bloomDay, int m, int k) {

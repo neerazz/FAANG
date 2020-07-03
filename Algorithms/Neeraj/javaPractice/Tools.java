@@ -15,7 +15,7 @@ public class Tools {
                 "Max Value of Equation");
 
         System.out.println(getReplaced(
-                "[[\"MUC\", \"LHR\"], [\"JFK\", \"MUC\"], [\"SFO\", \"SJC\"], [\"LHR\", \"SFO\"]]",
+                "[[1,1,1,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,1],[1,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,1,1,1]]",
                 Arrays.asList("[", "{"),
                 Arrays.asList("]", "}")
         ));
