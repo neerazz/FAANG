@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
-https://leetcode.com/explore/learn/card/introduction-to-data-structure-binary-search-tree/141/basic-operations-in-a-bst/1006/
+https://leetcode.com/problems/delete-node-in-a-bst
 Given a root node reference of a BST and a key, delete the node with the given key in the BST. Return the root node reference (possibly updated) of the BST.
 Basically, the deletion can be divided into two stages:
 Search for a node to remove.
@@ -33,13 +33,55 @@ Another valid answer is [5,2,6,null,4,null,7].
  */
 public class DeleteNodeInABST {
     public static void main(String[] args) {
+        System.out.println("******************************** Solution 1 *****************************");
+        System.out.println(deleteNode(createTreeNode(new Integer[]{3, 1, 4, null, 2}), 3));
         System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 5));
         System.out.println(deleteNode(createTreeNode(new Integer[]{3, 2, 4, 1, null, null, null}), 3));
-        System.out.println(deleteNode(createTreeNode(new Integer[]{3, 1, 4, null, 2}), 3));
         System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 2));
         System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 4));
         System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 6));
         System.out.println(deleteNode(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 3));
+
+        System.out.println("******************************** Solution 2 *****************************");
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{3, 1, 4, null, 2}), 3));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 5));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{3, 2, 4, 1, null, null, null}), 3));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 2));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 4));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 6));
+        System.out.println(deleteNode_rev1(createTreeNode(new Integer[]{5, 3, 6, 2, 4, null, 7}), 3));
+    }
+
+    public static TreeNode deleteNode_rev1(TreeNode root, int key) {
+        if (root == null) return null;
+        if (root.val == key) {
+            if (root.left != null && root.right != null) {
+//                Get the lowest from right;
+                TreeNode lowest = getLowest(root.right);
+//                Delete the lowest number
+                deleteNode_rev1(root, lowest.val);
+//                Assign the lowest value to current node.
+                root.val = lowest.val;
+            } else if (root.left != null) {
+//                If one of the child is not null, then move that child up.
+                root = root.left;
+            } else if (root.right != null) {
+                root = root.right;
+            } else {
+//            If no any child nodes
+                return null;
+            }
+        } else if (root.val < key) {
+            root.right = deleteNode_rev1(root.right, key);
+        } else {
+            root.left = deleteNode_rev1(root.left, key);
+        }
+        return root;
+    }
+
+    private static TreeNode getLowest(TreeNode root) {
+        if (root.left == null) return root;
+        return getLowest(root.left);
     }
 
     public static TreeNode deleteNode(TreeNode root, int key) {
@@ -88,6 +130,7 @@ public class DeleteNodeInABST {
         while (root.left != null) root = root.left;
         return root;
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -121,6 +164,7 @@ public class DeleteNodeInABST {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

@@ -1,5 +1,8 @@
+import java.util.HashSet;
+import java.util.Set;
+
 /*
-https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2804/
+https://leetcode.com/problems/n-queens-ii/
 The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
 Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 Example:
@@ -21,6 +24,32 @@ Explanation: There are two distinct solutions to the 4-queens puzzle as shown be
 public class NQueensII {
     public static void main(String[] args) {
         System.out.println(totalNQueens(4) + " should be [2].");
+    }
+
+    static int count = 0;
+
+    public static int totalNQueens_rev(int n) {
+        Set<Integer> s1 = new HashSet<>(), s2 = new HashSet<>(), s3 = new HashSet<>();
+        dfs(0, n, s1, s2, s3);
+        return count;
+    }
+
+    private static void dfs(int row, int n, Set<Integer> s1, Set<Integer> s2, Set<Integer> s3) {
+        if (row == n) {
+            count++;
+        } else {
+            for (int col = 0; col < n; col++) {
+                if (!s1.contains(row - col) && !s2.contains(row + col) && !s3.contains(col)) {
+                    s1.add(row - col);
+                    s2.add(row + col);
+                    s3.add(col);
+                    dfs(row + 1, n, s1, s2, s3);
+                    s1.remove(row - col);
+                    s2.remove(row + col);
+                    s3.remove(col);
+                }
+            }
+        }
     }
 
     public static int totalNQueens(int n) {

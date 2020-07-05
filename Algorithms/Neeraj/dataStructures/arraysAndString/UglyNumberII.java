@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -15,9 +16,30 @@ n does not exceed 1690.
  */
 public class UglyNumberII {
     public static void main(String[] args) {
+        System.out.println("*********************************** Solution 1 ***********************");
         System.out.println(nthUglyNumber(10) + " should be " + nthUglyNumber_elegant(10));
         System.out.println(nthUglyNumber(103) + " should be " + nthUglyNumber_elegant(103));
         System.out.println(nthUglyNumber(253) + " should be " + nthUglyNumber_elegant(253));
+
+        System.out.println("*********************************** Solution 2 ***********************");
+        System.out.println(nthUglyNumber_rev1(10) + " should be " + nthUglyNumber_elegant(10));
+        System.out.println(nthUglyNumber_rev1(11) + " should be " + nthUglyNumber_elegant(11));
+        System.out.println(nthUglyNumber_rev1(103) + " should be " + nthUglyNumber_elegant(103));
+        System.out.println(nthUglyNumber_rev1(253) + " should be " + nthUglyNumber_elegant(253));
+        System.out.println(nthUglyNumber_rev1(1690) + " should be " + nthUglyNumber_elegant(1690));
+    }
+
+    public static int nthUglyNumber_rev1(int n) {
+        int p1 = 0, p2 = 0, p3 = 0;
+        int[] nums = new int[n];
+        nums[0] = 1;
+        for (int i = 1; i < n; i++) {
+            nums[i] = Math.min(nums[p1] * 2, Math.min(nums[p2] * 3, nums[p3] * 5));
+            if (nums[i] == nums[p1] * 2) p1++;
+            if (nums[i] == nums[p2] * 3) p2++;
+            if (nums[i] == nums[p3] * 5) p3++;
+        }
+        return nums[n - 1];
     }
 
     public static int nthUglyNumber_elegant(int n) {
@@ -56,7 +78,7 @@ public class UglyNumberII {
         boolean ugly = false;
         if (num % 2 == 0) {
             if (values.contains(num / 2)) return true;
-            ugly = ugly || isUgly(num / 2, values);
+            ugly = isUgly(num / 2, values);
         }
         if (num % 3 == 0) {
             if (values.contains(num / 3)) return true;

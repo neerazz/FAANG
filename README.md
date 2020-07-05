@@ -1,10 +1,6 @@
 # FAANG Job Preparation
-> Collection of DataStructures & Algorithm Problems from many competitive programing sites.
->> Like Leetcode, Hackerrank, Hackearth, Pramp, AlgoExpert & EPI
->
-> [Neeraj](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj)
->
-> [Sachi](https://github.com/neerazz/FAANG/tree/master/Algorithms/sachi)
+ Collection of DataStructures & Algorithm Problems from many competitive programing sites.
+> [Leetcode](https://leetcode.com/neerazz90/), [Hackerrank](https://www.hackerrank.com/b_neerajkumarsi1), [Hackearth](https://www.hackerearth.com/@neerajkumarsingh), [Pramp](https://www.pramp.com/dashboard#/), AlgoExpert & [EPI](https://github.com/neerazz/FAANG/blob/master/Algorithms/Resources/Elements%20of%20Programming%20Interviews%20in%20Java.pdf)
 
 ### [DataStructures & Algorithm Problems](https://github.com/neerazz/FAANG/tree/master/Algorithms)
 
@@ -22,18 +18,13 @@
 >   - [Facebook](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#facebook)
 >   - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#linkedin)
 
-### Competitive Programming Contests
-- [Hackerrank](https://github.com/neerazz/competitive-programming-contests/tree/master/hackerrank)
-- [Leetcode](https://github.com/neerazz/competitive-programming-contests/tree/master/leetcode)
-    `This includes Biweekly and Weekly contest.`
-- [Google Kickstart](https://github.com/neerazz/competitive-programming-contests/tree/master/kickstart)
-
-    - [2020](https://github.com/neerazz/competitive-programming-contests/tree/master/kickstart/y2020)
-    
-        - [RoundA](https://github.com/neerazz/competitive-programming-contests/tree/master/kickstart/y2020/RoundA)
-            - [Allocation](https://github.com/neerazz/competitive-programming-contests/blob/master/kickstart/y2020/RoundA/Allocation.java)
-            - [Plates](https://github.com/neerazz/competitive-programming-contests/blob/master/kickstart/y2020/RoundA/Plates.java)
-            - [Workout](https://github.com/neerazz/competitive-programming-contests/blob/master/kickstart/y2020/RoundA/Workout.java)
+### [Competitive Programming Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
+> - [Hackerrank](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/hackerrank)
+> - [Leetcode](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/leetcode)
+>     `Includes both Biweekly and Weekly contest.`
+> - [Google Kickstart](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/kickstart/)
+>     - [2020](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/kickstart/y2020)
+>         - [RoundA](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/kickstart/y2020/RoundA)
             
 ### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
 > [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
