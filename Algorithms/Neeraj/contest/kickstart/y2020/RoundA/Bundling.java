@@ -90,15 +90,22 @@ public class Bundling {
         for (int i = 0; i < tests; i++) {
             int n = sc.nextInt();
             int k = sc.nextInt();
-            PriorityQueue<String> queue = new PriorityQueue<>(comp);
+//            PriorityQueue<String> queue = new PriorityQueue<>(comp);
+            String[] strs = new String[n];
             for (int j = 0; j < n; j++) {
-                queue.add(sc.next());
+//                queue.add(sc.next());
+                strs[i] = sc.next();
             }
-            result[i] = getScore(n, k, queue);
+//            result[i] = getScore(n, k, queue);
+            result[i] = getScore(n, k, strs);
         }
         for (int i = 0; i < tests; i++) {
             System.out.println("Case #" + (i + 1) + ": " + result[i]);
         }
+    }
+
+    private static long getScore(int n, int k, String[] strs) {
+        return 0;
     }
 
     private static long getScore(int n, int k, PriorityQueue<String> queue) {

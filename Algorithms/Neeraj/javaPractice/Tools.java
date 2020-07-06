@@ -9,10 +9,12 @@ import java.util.List;
 public class Tools {
     public static void main(String[] args) {
         System.out.println("Contest Class Names");
-        getContest("Path Crossing3\n" +
-                "Check If Array Pairs Are Divisible by k4\n" +
-                "Number of Subsequences That Satisfy the Given Sum Condition6\n" +
-                "Max Value of Equation");
+        getContest(
+                "Can Make Arithmetic Progression From Sequence3\n" +
+                        "Last Moment Before All Ants Fall Out of a Plank4\n" +
+                        "Count Submatrices With All Ones5\n" +
+                        "Minimum Possible Integer After at Most K Adjacent Swaps On Digits"
+        );
 
         System.out.println(getReplaced(
                 "[[1,1,1,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,1],[1,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,1,1,1]]",

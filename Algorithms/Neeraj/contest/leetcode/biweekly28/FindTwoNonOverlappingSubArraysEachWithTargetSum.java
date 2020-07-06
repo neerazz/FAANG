@@ -37,7 +37,6 @@ public class FindTwoNonOverlappingSubArraysEachWithTargetSum {
             while (sum > target) {
                 sum -= arr[p1++];
             }
-
             if (sum == target) {
 //                Then check if any subarray with target was formed.
                 if (p1 > 0 && best[p1 - 1] != Integer.MAX_VALUE) {
