@@ -38,9 +38,39 @@ public class FlattenAMultilevelDoublyLinkedList {
         eight.child = eleven;
         eight.next = nine;
         nine.next = ten;
-        nine.next = ten;
         eleven.next = twelve;
-        System.out.println(flatten(one));
+//        System.out.println(flatten(one));
+        System.out.println(flatten_rev1(one));
+    }
+
+    public static Node flatten_rev1(Node head) {
+        if (head == null) return null;
+        if (head.child != null) {
+            Node child = flatten_rev1(head.child);
+            Node next = flatten_rev1(head.next);
+            linkNode(head, child);
+            Node childSLast = getLast(child);
+            linkNode(childSLast, next);
+        } else {
+            Node next = flatten_rev1(head.next);
+            linkNode(head, next);
+        }
+        return head;
+    }
+
+    private static Node getLast(Node node) {
+        if (node == null) return null;
+        Node next = getLast(node.next);
+        return next == null ? node : next;
+    }
+
+    private static void linkNode(Node pre, Node next) {
+        pre.next = next;
+        pre.child = null;
+        if (next != null) {
+            next.prev = pre;
+            next.child = null;
+        }
     }
 
     public static Node flatten(Node head) {
@@ -77,6 +107,7 @@ public class FlattenAMultilevelDoublyLinkedList {
         }
         return child;
     }
+
     static class Node {
         public int val;
         public Node prev;

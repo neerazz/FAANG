@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created on:  Jul 03, 2020
@@ -13,9 +10,29 @@ public class PrisonCellsAfterNDays {
         System.out.println(Arrays.toString(prisonAfterNDays(new int[]{0, 1, 0, 1, 1, 0, 0, 1}, 7)) + " should be [0,0,1,1,0,0,0,0].");
         System.out.println(Arrays.toString(prisonAfterNDays(new int[]{1, 0, 0, 1, 0, 0, 1, 0}, 1000000000)) + " should be [0,0,1,1,1,1,1,0].");
 
-//        System.out.println("************************************ Solution 2 *****************************");
-//        System.out.println(Arrays.toString(prisonAfterNDays_rev(new int[]{0, 1, 0, 1, 1, 0, 0, 1}, 7)) + " should be [0,0,1,1,0,0,0,0].");
-//        System.out.println(Arrays.toString(prisonAfterNDays_rev(new int[]{1, 0, 0, 1, 0, 0, 1, 0}, 1000000000)) + " should be [0,0,1,1,1,1,1,0].");
+        System.out.println("************************************ Solution 2 *****************************");
+//        System.out.println(Arrays.toString(prisonAfterNDays_rev1(new int[]{0, 1, 0, 1, 1, 0, 0, 1}, 7)) + " should be [0,0,1,1,0,0,0,0].");
+        System.out.println(Arrays.toString(prisonAfterNDays_rev1(new int[]{1, 0, 0, 1, 0, 0, 1, 0}, 1000000000)) + " should be [0,0,1,1,1,1,1,0].");
+    }
+
+    public static int[] prisonAfterNDays_rev1(int[] cells, int N) {
+        Map<String, Integer> set = new HashMap<>();
+        int len = cells.length;
+        while (N > 0) {
+            set.put(Arrays.toString(cells), N--);
+            int[] temp = new int[len];
+            for (int i = 1; i < len - 1; i++) {
+                temp[i] = cells[i - 1] ^ cells[i + 1];
+            }
+            N--;
+            String tempStr = Arrays.toString(temp);
+            if (set.containsKey(tempStr)) {
+                System.out.println("Found after : " + set.size() + " at " + N + " new n = " + N % set.size());
+                N %= (set.get(tempStr) - N);
+            }
+            cells = temp;
+        }
+        return cells;
     }
 
     public static int[] prisonAfterNDays(int[] cells, int N) {
