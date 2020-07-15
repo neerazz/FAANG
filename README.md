@@ -12,7 +12,7 @@
 
 >   #### Top Questions by Problem category
 >   - [Array, Hash Table, Linked List, Stack, Heap, Graph, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#array-hash-table-linked-list-stack-heap-graph-tree-queue)
->   - [Search](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#search)
+>   - [Binary Search](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#search)
 >   - [Recursion](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#recursion)
 >   - [Backtracking](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#backtracking)
 >   - [Divide and Conquer](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#backtracking)
