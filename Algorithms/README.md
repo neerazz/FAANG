@@ -9,9 +9,13 @@
 
 
 # Top Leetcode Quesitons 
->[Top LeetCode questions by Topics and Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md)
+### [Top LeetCode questions by Topics](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md)
 
->[Top Leetcode questions by frequency](https://github.com/neerazz/FAANG/blob/master/Algorithms/All_Topics_top_leetcode_by_frequency.md)
+
+### [Top LeetCode questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md)
+
+
+### [Top Leetcode questions by frequency](https://github.com/neerazz/FAANG/blob/master/Algorithms/All_Topics_top_leetcode_by_frequency.md)
 
 
 # EPI (Elements of Programming) Question
