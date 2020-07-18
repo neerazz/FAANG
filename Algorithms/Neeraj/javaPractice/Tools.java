@@ -8,13 +8,62 @@ import java.util.List;
  */
 public class Tools {
     public static void main(String[] args) {
-        getContest(
-                "Number of Good Pairs3\n" +
-                        "Number of Substrings With Only 1s4\n" +
-                        "Path with Maximum Probability5\n" +
-                        "Best Position for a Service Centre"
-        );
-
+//        getContest(
+//                "Number of Good Pairs3\n" +
+//                        "Number of Substrings With Only 1s4\n" +
+//                        "Path with Maximum Probability5\n" +
+//                        "Best Position for a Service Centre"
+//        );
+        printCamelCase("Merge k Sorted Lists",
+                "Product of Array Except Self",
+                "Merge Intervals",
+                "Integer to English Words",
+                "Verifying an Alien Dictionary",
+                "Subarray Sum Equals K",
+                "Minimum Remove to Make Valid Parentheses",
+                "Alien Dictionary",
+                "K Closest Points to Origin",
+                "Next Permutation",
+                "Add Strings",
+                "Serialize and Deserialize Binary Tree",
+                "Merge Sorted Array",
+                "Kth Largest Element in an Array",
+                "Binary Tree Right Side View",
+                "Binary Tree Maximum Path Sum",
+                "Valid Palindrome II",
+                "Remove Invalid Parentheses",
+                "Interval List Intersections",
+                "Binary Search Tree Iterator",
+                "Vertical Order Traversal of a Binary Tree",
+                "Lowest Common Ancestor of a Binary Tree",
+                "Add Binary",
+                "Diameter of Binary Tree",
+                "Random Pick with Weight",
+                "Find All Anagrams in a String",
+                "Reorganize String",
+                "Add and Search Word - Data structure design",
+                "Read N Characters Given Read4 II - Call multiple times",
+                "Valid Palindrome",
+                "Exclusive Time of Functions",
+                "Longest Substring with At Most K Distinct Characters",
+                "Task Scheduler",
+                "Sparse Matrix Multiplication",
+                "Continuous Subarray Sum",
+                "Valid Number",
+                "First Bad Version",
+                "Accounts Merge",
+                "Range Sum of BST",
+                "Is Graph Bipartite?",
+                "Expression Add Operators",
+                "Closest Binary Search Tree Value",
+                "Missing Element in Sorted Array",
+                "Maximum Swap",
+                "Group Shifted Strings",
+                "Leftmost Column with at Least a One",
+                "Random Pick Index",
+                "Maximum Sum of 3 Non-Overlapping Subarrays",
+                "Monotonic Array",
+                "Maximum Difference Between Node and Ancestor");
         System.out.println(getReplaced(
                 "[[1,1,1,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,1],[1,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,1,1,1]]",
                 Arrays.asList("[", "{"),
@@ -28,6 +77,10 @@ public class Tools {
         for (int i = 0; i < strings.length; i++) {
             System.out.println(getCamelCase(i != strings.length - 1 ? strings[i].substring(0, strings[i].length() - 1) : strings[i]));
         }
+    }
+
+    private static void printCamelCase(String... input) {
+        Arrays.stream(input).map(Tools::getCamelCase).forEach(System.out::println);
     }
 
     private static String getCamelCase(String input) {

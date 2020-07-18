@@ -16,18 +16,18 @@ public class AlienDictionary {
         if (words.length == 0) return "";
         HashMap<Character, Graph> graphHashMap = new HashMap<>();
         // Create a graph of letters for each word.
-        for (int i = 0; i < words.length; i++) {
-            createGraph(words[i].toCharArray(), graphHashMap);
+        for (String word : words) {
+            createGraph(word.toCharArray(), graphHashMap);
         }
         // Link the existing graph's with other words graph. As soon as the relation is created between two words exit the loop.
         for (int i = 1; i < words.length; i++) {
-            String pre = words[i-1];
+            String pre = words[i - 1];
             String cur = words[i];
-            for(int j =0; j< Math.min(pre.length(),cur.length()) ; j++){
-              char preChar = pre.charAt(j);
-              char curChar = cur.charAt(j);
-              if (preChar != curChar) {
-                graphHashMap.get(preChar).neighbours.add(graphHashMap.get(curChar));
+            for (int j = 0; j < Math.min(pre.length(), cur.length()); j++) {
+                char preChar = pre.charAt(j);
+                char curChar = cur.charAt(j);
+                if (preChar != curChar) {
+                    graphHashMap.get(preChar).neighbours.add(graphHashMap.get(curChar));
                 // Break the loop because the relation between two word graph is done.
                 break;
               }
