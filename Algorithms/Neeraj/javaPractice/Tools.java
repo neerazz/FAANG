@@ -9,10 +9,10 @@ import java.util.List;
 public class Tools {
     public static void main(String[] args) {
 //        getContest(
-//                "Number of Good Pairs3\n" +
-//                        "Number of Substrings With Only 1s4\n" +
-//                        "Path with Maximum Probability5\n" +
-//                        "Best Position for a Service Centre"
+//                "Water Bottles3\n" +
+//                        "Number of Nodes in the Sub-Tree With the Same Label5\n" +
+//                        "Maximum Number of Non-Overlapping Substrings6\n" +
+//                        "Find a Value of a Mysterious Function Closest to Target"
 //        );
         printCamelCase("Merge k Sorted Lists",
                 "Product of Array Except Self",

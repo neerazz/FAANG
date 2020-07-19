@@ -2194,7 +2194,7 @@ problem_mapping = {
                 "total": 5906
             },
             "Java: BinomialCoefficients.java": {
-                "passed": 0,
+                "passed": 5906,
                 "total": 5906
             },
             "Python: binomial_coefficients.py": {
@@ -2208,7 +2208,7 @@ problem_mapping = {
                 "total": 186
             },
             "Java: IsStringInMatrix.java": {
-                "passed": 0,
+                "passed": 186,
                 "total": 186
             },
             "Python: is_string_in_matrix.py": {
@@ -2222,7 +2222,7 @@ problem_mapping = {
                 "total": 100
             },
             "Java: Knapsack.java": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             },
             "Python: knapsack.py": {
@@ -2250,7 +2250,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: MinimumWeightPathInATriangle.java": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Python: minimum_weight_path_in_a_triangle.py": {
@@ -2264,7 +2264,7 @@ problem_mapping = {
                 "total": 162
             },
             "Java: PickingUpCoins.java": {
-                "passed": 0,
+                "passed": 162,
                 "total": 162
             },
             "Python: picking_up_coins.py": {

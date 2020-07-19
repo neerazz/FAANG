@@ -22,19 +22,11 @@ public class AddBinary {
         int carry = 0;
         StringBuilder stringBuilder = new StringBuilder();
         while (i >= 0 || j >= 0) {
-            int aValue = aToChars[i--] == '1' ? 1 : 0;
-            int bValue = bToChars[j--] == '1' ? 1 : 0;
+            int aValue = i >= 0 ? aToChars[i--] - '0' : 0;
+            int bValue = j >= 0 ? bToChars[j--] - '0' : 0;
             int sum = aValue + bValue + carry;
-            if (sum == 2) {
-                stringBuilder.append(0);
-                carry = 1;
-            } else if (sum == 3) {
-                stringBuilder.append(1);
-                carry = 1;
-            } else {
-                stringBuilder.append(sum);
-                carry = 0;
-            }
+            stringBuilder.append(sum % 2);
+            carry = sum / 2;
         }
         if (carry > 0) {
             stringBuilder.append(carry);

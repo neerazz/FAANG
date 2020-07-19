@@ -41,15 +41,11 @@ public class CountSubmatricesWithAllOnes {
                 int maxLen = dp[row][col];
 //                Travel downwards and find the biggest square that can be formed.
                 for (int k = row + 1; k < rows; k++) {
-                    if (dp[k][col] > 0) {
 //                        Get the maximum length of 1's at the given column in the next row.
-                        maxLen = Math.min(maxLen, dp[k][col]);
-//                        Keep adding the max len to the result.
-                        result += maxLen;
-                    } else {
+                    maxLen = Math.min(maxLen, dp[k][col]);
+                    result += maxLen;
 //                        When a row with zero length is found then break.
-                        break;
-                    }
+                    if (maxLen == 0) break;
                 }
             }
         }

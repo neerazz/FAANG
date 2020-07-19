@@ -2,10 +2,59 @@ import java.util.*;
 
 class CourseScheduleII {
     public static void main(String[] args) {
+        System.out.println("************************* Solution 1 ********************************");
         System.out.println(Arrays.toString(findOrder(2, new int[][]{{1, 0}})) + " should be [0,1]");
         System.out.println(Arrays.toString(findOrder(2, new int[][]{{1, 0}, {0, 1}})) + " should be []");
         System.out.println(Arrays.toString(findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})) + " should be [0,1,2,3] or [0,2,1,3]");
         System.out.println(Arrays.toString(findOrder(5, new int[][]{})) + " should be [0,1,2,3,4]");
+        System.out.println("************************* Solution 2 ********************************");
+        System.out.println(Arrays.toString(findOrder_rev(2, new int[][]{{1, 0}})) + " should be [0,1]");
+        System.out.println(Arrays.toString(findOrder_rev(2, new int[][]{{1, 0}, {0, 1}})) + " should be []");
+        System.out.println(Arrays.toString(findOrder_rev(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})) + " should be [0,1,2,3] or [0,2,1,3]");
+        System.out.println(Arrays.toString(findOrder_rev(5, new int[][]{})) + " should be [0,1,2,3,4]");
+    }
+
+    public static int[] findOrder_rev(int numCourses, int[][] prerequisites) {
+        Map<Integer, Course> courses = new HashMap<>();
+        for (int i = 0; i < numCourses; i++) {
+            courses.put(i, new Course(i));
+        }
+        for (int[] req : prerequisites) {
+            Course to = courses.get(req[0]);
+            courses.get(req[1]).dep.add(to);
+            to.indegree++;
+        }
+//        Loop through all the courses and find the one with zeor indegree.
+        Queue<Integer> queue = new LinkedList<>();
+        for (Map.Entry<Integer, Course> entry : courses.entrySet()) {
+            if (entry.getValue().indegree == 0) queue.add(entry.getKey());
+        }
+        int[] op = new int[numCourses];
+        int i = 0;
+//        Loop through all the courses and keep adding the queue values into the op.
+        while (!queue.isEmpty()) {
+            int poll = queue.poll();
+            op[i++] = poll;
+//            Go an unlink all the dependent nodes and if you find any with in bond zero then add it to the list.
+            for (Course dep : courses.get(poll).dep) {
+                dep.indegree--;
+                if (dep.indegree == 0) {
+                    queue.add(dep.val);
+                }
+            }
+        }
+        if (i == numCourses) return op;
+        return new int[0];
+    }
+
+    static class Course {
+        int val;
+        int indegree;
+        Set<Course> dep = new HashSet<>();
+
+        public Course(int val) {
+            this.val = val;
+        }
     }
 
     public static int[] findOrder(int numCourses, int[][] prerequisites) {
@@ -27,7 +76,6 @@ class CourseScheduleII {
                 queue.add(i);
             }
         }
-        System.out.println("queue = " + queue);
         // Then travers through all the elements int the queue.
         int i = 0;
         while (!queue.isEmpty()) {
