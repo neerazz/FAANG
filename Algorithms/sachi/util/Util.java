@@ -4,6 +4,31 @@ import java.util.stream.Collectors;
 public class Util {
 
     static Random random = new Random();
+    static String ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    /**
+     * Generate a random string of specified length
+     *
+     * @param length length of string
+     * @return random string
+     */
+    public static String generateRandomString(int length) {
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            int rand = random.nextInt(ALPHABETS.length());
+            sb.append(ALPHABETS.charAt(rand));
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Generate a random string of random length - Less than 100
+     *
+     * @return random string
+     */
+    public static String generateRandomString() {
+        return generateRandomString(random.nextInt(100));
+    }
 
     /**
      * Generate Random Array between 0 and 100
@@ -229,4 +254,6 @@ public class Util {
         node.right = generateRandomTreeLength(length - 1);
         return node;
     }
+
+
 }
