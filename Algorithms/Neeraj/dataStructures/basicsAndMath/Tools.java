@@ -1,5 +1,3 @@
-package javaPractice;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,12 +6,12 @@ import java.util.List;
  */
 public class Tools {
     public static void main(String[] args) {
-//        getContest(
-//                "Water Bottles3\n" +
-//                        "Number of Nodes in the Sub-Tree With the Same Label5\n" +
-//                        "Maximum Number of Non-Overlapping Substrings6\n" +
-//                        "Find a Value of a Mysterious Function Closest to Target"
-//        );
+        getContest(
+                "Count Odd Numbers in an Interval Range3\n" +
+                        "Number of Sub-arrays With Odd Sum4\n" +
+                        "Number of Good Ways to Split a String5\n" +
+                        "Minimum Number of Increments on Subarrays to Form a Target Array"
+        );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
 //                "Merge k Sorted Lists",

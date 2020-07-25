@@ -1,6 +1,6 @@
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
 
 public class FastReader {
     final private int BUFFER_SIZE = 1 << 16;
@@ -10,6 +10,13 @@ public class FastReader {
 
     public FastReader() {
         din = new DataInputStream(System.in);
+        buffer = new byte[BUFFER_SIZE];
+        bufferPointer = bytesRead = 0;
+    }
+
+    public FastReader(URL url) throws IOException {
+        URLConnection connections = url.openConnection();
+        din = new DataInputStream(connections.getInputStream());
         buffer = new byte[BUFFER_SIZE];
         bufferPointer = bytesRead = 0;
     }

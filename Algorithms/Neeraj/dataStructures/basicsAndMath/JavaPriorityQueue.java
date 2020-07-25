@@ -1,5 +1,3 @@
-package javaPractice;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,7 +29,7 @@ public class JavaPriorityQueue {
 }
 
 class Priorities {
-    private java.util.PriorityQueue<Student> students = new java.util.PriorityQueue<Student>();
+    private final java.util.PriorityQueue<Student> students = new java.util.PriorityQueue<Student>();
 
     public List<Student> getStudents(List<String> events) {
         List<Student> output = new ArrayList<>();

@@ -1,4 +1,4 @@
-package javaPractice;
+
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
 https://www.hackerrank.com/challenges/java-string-tokens/problem?h_r=next-challenge&h_v=zen
  */
 public class JavaStringTokens {
-    private static final Set<String> CS = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(" ", "?", "\'", "!", ",", ".", "_", "@", "")));
+    private static final Set<String> CS = Collections.unmodifiableSet(new HashSet<>(Arrays.asList(" ", "?", "'", "!", ",", ".", "_", "@", "")));
 
     public static void main(String[] args) {
         splitIntoTokens("He is a very very good boy, isn't he?");
