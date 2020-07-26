@@ -330,7 +330,7 @@ problem_mapping = {
                 "total": 2001
             },
             "Java: NextPermutation.java": {
-                "passed": 0,
+                "passed": 2001,
                 "total": 2001
             },
             "Python: next_permutation.py": {
@@ -2264,7 +2264,7 @@ problem_mapping = {
                 "total": 162
             },
             "Java: PickingUpCoins.java": {
-                "passed": 162,
+                "passed": 1,
                 "total": 162
             },
             "Python: picking_up_coins.py": {

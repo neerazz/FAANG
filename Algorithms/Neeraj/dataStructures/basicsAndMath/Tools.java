@@ -6,11 +6,12 @@ import java.util.List;
  */
 public class Tools {
     public static void main(String[] args) {
+        System.out.println("************************* Contest ***********************************");
         getContest(
-                "Count Odd Numbers in an Interval Range3\n" +
-                        "Number of Sub-arrays With Odd Sum4\n" +
-                        "Number of Good Ways to Split a String5\n" +
-                        "Minimum Number of Increments on Subarrays to Form a Target Array"
+                "Shuffle String3\n" +
+                        "Bulb Switcher IV4\n" +
+                        "Number of Good Leaf Nodes Pairs5\n" +
+                        "String Compression II"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
