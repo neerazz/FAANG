@@ -10,8 +10,8 @@ public class ExpressionAddOperators {
 
     public static void main(String[] args) {
         System.out.println("********************************** Solution 1 **********************************");
-//        System.out.println(addOperators("123", 6) + " should be [\"1+2+3\", \"1*2*3\"] ");
-//        System.out.println(addOperators("232", 8) + " should be [\"2*3+2\", \"2+3*2\"] ");
+        System.out.println(addOperators("123", 6) + " should be [\"1+2+3\", \"1*2*3\"] ");
+        System.out.println(addOperators("232", 8) + " should be [\"2*3+2\", \"2+3*2\"] ");
         System.out.println(addOperators("105", 5) + " should be [\"1*0+5\",\"10-5\"] ");
         System.out.println(addOperators("00", 0) + " should be [\"0+0\", \"0-0\", \"0*0\"] ");
         System.out.println(addOperators("3456237490", 9191) + " should be [] ");
@@ -37,7 +37,7 @@ public class ExpressionAddOperators {
      */
     public static List<String> addOperators_rev1(String num, int target) {
         result = new HashSet<>();
-        if (num == null || num.length() == 0) return Collections.emptyList();
+        if (num == null || num.length() == 0 || target == Integer.MIN_VALUE) return new ArrayList<>(result);
         helper(num, target, 0, 0, 0, "");
         return new ArrayList<>(result);
     }
