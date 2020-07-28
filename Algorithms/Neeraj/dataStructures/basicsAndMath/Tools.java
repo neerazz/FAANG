@@ -63,8 +63,9 @@ public class Tools {
 //                "Leftmost Column with at Least a One -> p",
 //                "Random Pick Index",
 //                "Maximum Sum of 3 Non-Overlapping Subarrays",
-                "Monotonic Array",
-                "Maximum Difference Between Node and Ancestor");
+//                "Monotonic Array",
+//                "Maximum Difference Between Node and Ancestor"
+        );
         System.out.println(getReplaced(
                 "[[1,1,1,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,1],[1,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,1,1,1]]",
                 Arrays.asList("[", "{"),

@@ -2462,7 +2462,7 @@ problem_mapping = {
                 "total": 101
             },
             "Java: SearchMaze.java": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Python: search_maze.py": {
@@ -2476,7 +2476,7 @@ problem_mapping = {
                 "total": 50
             },
             "Java: MatrixConnectedRegions.java": {
-                "passed": 0,
+                "passed": 50,
                 "total": 50
             },
             "Python: matrix_connected_regions.py": {
