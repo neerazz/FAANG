@@ -1742,7 +1742,7 @@ problem_mapping = {
                 "total": 105
             },
             "Java: IsArrayDominated.java": {
-                "passed": 0,
+                "passed": 105,
                 "total": 105
             },
             "Python: is_array_dominated.py": {
@@ -2504,7 +2504,7 @@ problem_mapping = {
                 "total": 71
             },
             "Java: DeadlockDetection.java": {
-                "passed": 0,
+                "passed": 71,
                 "total": 71
             },
             "Python: deadlock_detection.py": {
@@ -2518,7 +2518,7 @@ problem_mapping = {
                 "total": 91
             },
             "Java: GraphClone.java": {
-                "passed": 0,
+                "passed": 91,
                 "total": 91
             },
             "Python: graph_clone.py": {
@@ -2532,7 +2532,7 @@ problem_mapping = {
                 "total": 85
             },
             "Java: IsCircuitWirable.java": {
-                "passed": 0,
+                "passed": 85,
                 "total": 85
             },
             "Python: is_circuit_wirable.py": {
@@ -2546,7 +2546,7 @@ problem_mapping = {
                 "total": 48
             },
             "Java: StringTransformability.java": {
-                "passed": 0,
+                "passed": 48,
                 "total": 48
             },
             "Python: string_transformability.py": {
