@@ -2,11 +2,11 @@ import java.util.*;
 
 class WordBreakII {
     public static void main(String[] args) {
-//        System.out.println(wordBreak("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
-//        System.out.println(wordBreak_rev2("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
-//        System.out.println(wordBreak("pineapplepenapple", Arrays.asList("apple", "pen", "applepen", "pine", "pineapple")));
-//        System.out.println(wordBreak_rev2("pineapplepenapple", Arrays.asList("apple", "pen", "applepen", "pine", "pineapple")));
-//        System.out.println(wordBreak("ab", Arrays.asList("a", "b")));
+        System.out.println(wordBreak("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
+        System.out.println(wordBreak_rev2("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
+        System.out.println(wordBreak("pineapplepenapple", Arrays.asList("apple", "pen", "applepen", "pine", "pineapple")));
+        System.out.println(wordBreak_rev2("pineapplepenapple", Arrays.asList("apple", "pen", "applepen", "pine", "pineapple")));
+        System.out.println(wordBreak("ab", Arrays.asList("a", "b")));
         System.out.println(wordBreak_rev2("ab", Arrays.asList("a", "b")));
     }
 
