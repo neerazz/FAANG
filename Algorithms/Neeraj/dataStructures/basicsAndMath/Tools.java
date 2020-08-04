@@ -8,10 +8,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Shuffle String3\n" +
-                        "Bulb Switcher IV4\n" +
-                        "Number of Good Leaf Nodes Pairs5\n" +
-                        "String Compression II"
+                "Count Good Triplets3\n" +
+                        "Find the Winner of an Array Game4\n" +
+                        "Minimum Swaps to Arrange a Binary Grid5\n" +
+                        "Get the Maximum Score"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(

@@ -56,8 +56,7 @@ public class MaximumNumberOfNonOverlappingSubstrings {
 
     private static void getNewRanges(char[] chars, int[] cur, Map<Character, int[]> map) {
         int start = cur[0], end = cur[1];
-        for (int i = start; i < chars.length; i++) {
-            if (end == i) break;
+        for (int i = start; i < end; i++) {
 //            For every item in between the ranges, check if the end needs to be expanded.
             end = Math.max(end, map.get(chars[i])[1]);
             start = Math.min(start, map.get(chars[i])[0]);

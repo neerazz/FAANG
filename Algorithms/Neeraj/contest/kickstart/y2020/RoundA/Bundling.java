@@ -104,8 +104,42 @@ public class Bundling {
         }
     }
 
+    static int op;
+
     private static long getScore(int n, int k, String[] strs) {
-        return 0;
+        op = 0;
+        int perGroup = n / k;
+        Trie trie = new Trie();
+        for (String str : strs) {
+            buildTrie(str, trie);
+        }
+//        Perform a DFS to get the children counts.
+        dfs(trie, perGroup, 0);
+        return op;
+    }
+
+    private static void dfs(Trie trie, int perGroup, int level) {
+
+    }
+
+    private static void buildTrie(String str, Trie trie) {
+        Trie cur = trie;
+        for (char c : str.toCharArray()) {
+            if (cur.dep[c - 'A'] == null) {
+                cur.dep[c - 'A'] = new Trie();
+            }
+            cur = cur.dep[c - 'A'];
+        }
+    }
+
+    static class Trie {
+        int childCount;
+        Trie[] dep;
+
+        public Trie() {
+            this.childCount = 0;
+            this.dep = new Trie[26];
+        }
     }
 
     private static long getScore(int n, int k, PriorityQueue<String> queue) {
