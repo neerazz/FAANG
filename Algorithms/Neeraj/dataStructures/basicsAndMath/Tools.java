@@ -8,10 +8,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Count Good Triplets3\n" +
-                        "Find the Winner of an Array Game4\n" +
-                        "Minimum Swaps to Arrange a Binary Grid5\n" +
-                        "Get the Maximum Score"
+                "Kth Missing Positive Number3\n" +
+                        "Can Convert String in K Moves4\n" +
+                        "Minimum Insertions to Balance a Parentheses String5\n" +
+                        "Find Longest Awesome Substring"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(

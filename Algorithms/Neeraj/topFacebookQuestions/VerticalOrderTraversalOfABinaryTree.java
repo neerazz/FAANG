@@ -7,7 +7,89 @@ import java.util.stream.Collectors;
  */
 public class VerticalOrderTraversalOfABinaryTree {
     public static void main(String[] args) {
+        System.out.println(verticalTraversal_2(createTreeNode(Arrays.asList(3, 9, 20, null, null, 15, 7))));
+        System.out.println(verticalTraversal_2(createTreeNode(Arrays.asList(1, 2, 3, 4, 5, 6, 7))));
+    }
 
+    public static TreeNode createTreeNode(List<Integer> nums) {
+        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
+        int index = 1;
+        TreeNode treeNode = new TreeNode(nums.get(0));
+        treeNodeQueue.add(treeNode);
+
+        while (index < nums.size() && !treeNodeQueue.isEmpty()) {
+            TreeNode peek = treeNodeQueue.poll();
+            if (nums.get(index) != null) {
+                TreeNode left = new TreeNode(nums.get(index++));
+                peek.left = left;
+                treeNodeQueue.add(left);
+            } else index++;
+            if (index < nums.size() && nums.get(index) != null) {
+                TreeNode right = new TreeNode(nums.get(index++));
+                peek.right = right;
+                treeNodeQueue.add(right);
+            } else index++;
+        }
+        return treeNode;
+    }
+
+    public static List<List<Integer>> verticalTraversal_2(TreeNode root) {
+        Map<Integer, List<Cordinates>> map = new HashMap<>();
+        if (root != null) {
+//         0:x, 1:y
+            Queue<int[]> q1 = new LinkedList<>();
+            Queue<TreeNode> q2 = new LinkedList<>();
+            q1.add(new int[]{0, 0});
+            q2.add(root);
+            while (!q1.isEmpty()) {
+                int[] poll = q1.poll();
+                TreeNode poll2 = q2.poll();
+                map.computeIfAbsent(poll[0], val -> new ArrayList<>()).add(new Cordinates(poll[0], poll[1], poll2.val));
+                if (poll2.left != null) {
+                    q2.add(poll2.left);
+                    q1.add(new int[]{poll[0] - 1, poll[1] - 1});
+                }
+                if (poll2.right != null) {
+                    q2.add(poll2.right);
+                    q1.add(new int[]{poll[0] + 1, poll[1] - 1});
+                }
+            }
+        }
+        System.out.println(map);
+        return map.entrySet().stream()
+                .sorted((e1, e2) -> e1.getKey() - e2.getKey())
+                .map(entry -> entry.getValue().stream().sorted().map(c -> c.val).collect(Collectors.toList()))
+                .collect(Collectors.toList());
+    }
+
+    static class Cordinates implements Comparable<Cordinates> {
+        int x;
+        int y;
+        int val;
+
+        public Cordinates(int x, int y, int val) {
+            this.x = x;
+            this.y = y;
+            this.val = val;
+        }
+
+        @Override
+        public String toString() {
+            return "Cordinates{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    ", val=" + val +
+                    '}';
+        }
+
+        @Override
+        public int compareTo(Cordinates o) {
+            if (this.x == o.x) {
+                if (this.y == o.y) return this.val - o.val;
+                return o.y - this.y;
+            }
+            return o.x - this.x;
+        }
     }
 
     public static List<List<Integer>> verticalTraversal(TreeNode root) {
