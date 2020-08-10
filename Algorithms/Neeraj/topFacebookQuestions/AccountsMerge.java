@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created on:  Jul 23, 2020
@@ -7,21 +6,82 @@ import java.util.stream.Collectors;
  */
 public class AccountsMerge {
     public static void main(String[] args) {
+        System.out.println("********************************* Solution 1 ***********************************");
         System.out.println("Actual   : " +
                 accountsMerge(Arrays.asList(
-                Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
-                Arrays.asList("John", "johnnybravo@mail.com"),
-                Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
-                Arrays.asList("Mary", "mary@mail.com")))
-                + "\nExpected : [[\"John\", 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com'],  [\"John\", \"johnnybravo@mail.com\"], [\"Mary\", \"mary@mail.com\"]]");
+                        Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
+                        Arrays.asList("John", "johnnybravo@mail.com"),
+                        Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
+                        Arrays.asList("Mary", "mary@mail.com")))
+                + "\nExpected : [[John, john00@mail.com, john_newyork@mail.com, johnsmith@mail.com], [John, johnnybravo@mail.com], [Mary, mary@mail.com]]");
         System.out.println("Actual   : " +
                 accountsMerge(Arrays.asList(
-                Arrays.asList("David", "David0@m.co", "David1@m.co"),
-                Arrays.asList("David", "David3@m.co", "David4@m.co"),
-                Arrays.asList("David", "David4@m.co", "David5@m.co"),
-                Arrays.asList("David", "David2@m.co", "David3@m.co"),
-                Arrays.asList("David", "David1@m.co", "David2@m.co")))
-                + "\nExpected : [[\"David\",\"David0@m.co\",\"David1@m.co\",\"David2@m.co\",\"David3@m.co\",\"David4@m.co\",\"David5@m.co\"]]");
+                        Arrays.asList("David", "David0@m.co", "David1@m.co"),
+                        Arrays.asList("David", "David3@m.co", "David4@m.co"),
+                        Arrays.asList("David", "David4@m.co", "David5@m.co"),
+                        Arrays.asList("David", "David2@m.co", "David3@m.co"),
+                        Arrays.asList("David", "David1@m.co", "David2@m.co")))
+                + "\nExpected : [[David, David0@m.co, David1@m.co, David2@m.co, David3@m.co, David4@m.co, David5@m.co]]");
+
+        System.out.println("********************************* Solution 2 ***********************************");
+        System.out.println("Actual   : " +
+                accountsMerge_rev2(Arrays.asList(
+                        Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
+                        Arrays.asList("John", "johnnybravo@mail.com"),
+                        Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
+                        Arrays.asList("Mary", "mary@mail.com")))
+                + "\nExpected : [[John, john00@mail.com, john_newyork@mail.com, johnsmith@mail.com], [John, johnnybravo@mail.com], [Mary, mary@mail.com]]");
+        System.out.println("Actual   : " +
+                accountsMerge_rev2(Arrays.asList(
+                        Arrays.asList("David", "David0@m.co", "David1@m.co"),
+                        Arrays.asList("David", "David3@m.co", "David4@m.co"),
+                        Arrays.asList("David", "David4@m.co", "David5@m.co"),
+                        Arrays.asList("David", "David2@m.co", "David3@m.co"),
+                        Arrays.asList("David", "David1@m.co", "David2@m.co")))
+                + "\nExpected : [[David, David0@m.co, David1@m.co, David2@m.co, David3@m.co, David4@m.co, David5@m.co]]");
+    }
+
+    public static List<List<String>> accountsMerge_rev2(List<List<String>> accounts) {
+        Map<String, Integer> emailMap = new HashMap<>();
+        Map<Integer, Set<Integer>> graph = new HashMap<>();
+        Map<Integer, String> nameMap = new HashMap<>();
+        int size = accounts.size();
+        for (int i = 0; i < size; i++) {
+            List<String> emails = accounts.get(i);
+            nameMap.put(i, emails.get(0));
+            for (int j = 1; j < emails.size(); j++) {
+                String email = emails.get(j);
+                if (emailMap.containsKey(email)) {
+                    int pre = emailMap.get(email);
+                    graph.computeIfAbsent(i, val -> new HashSet<>()).add(pre);
+                    graph.computeIfAbsent(pre, val -> new HashSet<>()).add(i);
+                }
+                emailMap.put(email, i);
+            }
+        }
+//        Perform a DFS and get all the linked emails.
+        List<List<String>> op = new ArrayList<>();
+        boolean[] visited = new boolean[size];
+        for (int i = 0; i < size; i++) {
+            if (!visited[i]) {
+                LinkedList<String> values = new LinkedList<>(DFS(accounts, visited, i, graph));
+                Collections.sort(values);
+                values.addFirst(nameMap.get(i));
+                op.add(values);
+            }
+        }
+        return op;
+    }
+
+    private static Set<String> DFS(List<List<String>> accounts, boolean[] visited, int start, Map<Integer, Set<Integer>> graph) {
+        Set<String> cur = new HashSet<>(accounts.get(start).subList(1, accounts.get(start).size()));
+        visited[start] = true;
+        for (int dep : graph.getOrDefault(start, new HashSet<>())) {
+            if (!visited[dep]) {
+                cur.addAll(DFS(accounts, visited, dep, graph));
+            }
+        }
+        return cur;
     }
 
     public static List<List<String>> accountsMerge(List<List<String>> accounts) {
@@ -67,61 +127,5 @@ public class AccountsMerge {
                 dfs(dep, accounts, graph, visited, emails);
             }
         }
-    }
-
-    public static List<List<String>> accountsMerge_wrong(List<List<String>> accounts) {
-        Map<String, Integer> emailMap = new HashMap<>();
-        Map<Integer, String> nameMap = new HashMap<>();
-        List<List<String>> emails = new ArrayList<>();
-        Map<Integer, Set<Integer>> accountsMap = new HashMap<>();
-        for (int i = 0; i < accounts.size(); i++) {
-            List<String> account = accounts.get(i);
-            nameMap.put(i, account.get(0));
-            List<String> curEmails = new ArrayList<>();
-            for (int j = 1; j < account.size(); j++) {
-                String email = account.get(j);
-                if (emailMap.containsKey(email)) {
-                    Integer linked = emailMap.get(email);
-                    accountsMap.computeIfAbsent(i, val -> new HashSet<>()).add(linked);
-                    accountsMap.computeIfAbsent(linked, val -> new HashSet<>()).add(i);
-                } else {
-                    emailMap.put(email, i);
-                }
-                curEmails.add(email);
-            }
-            emails.add(curEmails);
-        }
-        System.out.println(accountsMap);
-//        Relink the accounts.
-        Map<Integer, Integer> reMappingAccounts = new HashMap<>();
-        for (int i = accounts.size() - 1; i >= 0; i--) {
-            if (accountsMap.containsKey(i)) {
-                reLinkAccounts(accountsMap, reMappingAccounts, i);
-            }
-        }
-        Map<Integer, Set<String>> finalMap = new HashMap<>();
-        for (int i = accounts.size() - 1; i >= 0; i--) {
-            finalMap.computeIfAbsent(reMappingAccounts.getOrDefault(i, i), val -> new HashSet<>()).addAll(emails.get(i));
-        }
-        System.out.println(reMappingAccounts);
-        List<List<String>> op = new ArrayList<>();
-        for (Map.Entry<Integer, Set<String>> entry : finalMap.entrySet()) {
-            List<String> current = new ArrayList<>();
-            current.add(nameMap.get(entry.getKey()));
-            current.addAll(entry.getValue().stream().sorted().collect(Collectors.toList()));
-            op.add(current);
-        }
-        return op;
-    }
-
-    private static int reLinkAccounts(Map<Integer, Set<Integer>> accountsMap, Map<Integer, Integer> finalMap, int key) {
-        if (finalMap.containsKey(key)) return finalMap.get(key);
-        int min = key;
-        finalMap.put(key, min);
-        for (Integer dep : accountsMap.getOrDefault(key, Collections.emptySet())) {
-            min = Math.min(reLinkAccounts(accountsMap, finalMap, dep), min);
-        }
-        finalMap.put(key, min);
-        return min;
     }
 }

@@ -8,10 +8,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Kth Missing Positive Number3\n" +
-                        "Can Convert String in K Moves4\n" +
-                        "Minimum Insertions to Balance a Parentheses String5\n" +
-                        "Find Longest Awesome Substring"
+                "Make The String Great3\n" +
+                        "Find Kth Bit in Nth Binary String4\n" +
+                        "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target6\n" +
+                        "Minimum Cost to Cut a Stick"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
