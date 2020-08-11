@@ -1644,7 +1644,7 @@ problem_mapping = {
                 "total": 1001
             },
             "Java: HIndex.java": {
-                "passed": 0,
+                "passed": 1001,
                 "total": 1001
             },
             "Python: h_index.py": {
