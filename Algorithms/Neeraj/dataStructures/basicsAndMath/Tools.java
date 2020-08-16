@@ -8,10 +8,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Make The String Great3\n" +
-                        "Find Kth Bit in Nth Binary String4\n" +
-                        "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target6\n" +
-                        "Minimum Cost to Cut a Stick"
+                "Three Consecutive Odds3\n" +
+                        "Minimum Operations to Make Array Equal4\n" +
+                        "Magnetic Force Between Two Balls5\n" +
+                        "Minimum Number of Days to Eat N Oranges"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(

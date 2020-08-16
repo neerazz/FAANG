@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created on:  Jul 26, 2020
@@ -11,6 +14,49 @@ public class MaximumSumOf3NonOverlappingSubarrays {
 
         System.out.println("******************************** Solution 2 *******************************");
         System.out.println(Arrays.toString(maxSumOfThreeSubarrays_Optimal(new int[]{1, 2, 1, 2, 6, 7, 5, 1}, 2)));
+
+        System.out.println("******************************** Solution 3 *******************************");
+        System.out.println(Arrays.toString(maxSumOfThreeSubarrays_rev1(new int[]{1, 2, 1, 2, 6, 7, 5, 1}, 2)));
+    }
+
+    private static int[] maxSumOfThreeSubarrays_rev1(int[] nums, int k) {
+        List<Long> sums = new ArrayList<>();
+        long sum = 0;
+        for (int i = 0; i < k - 1; i++) sum += nums[i];
+        for (int i = k - 1; i < nums.length; i++) {
+            sum += nums[i];
+            sums.add(sum);
+            sum -= nums[i - k + 1];
+        }
+        List<Integer> left = new ArrayList<>(), right = new ArrayList<>();
+        int max = 0;
+        for (int i = 0; i < sums.size(); i++) {
+            if (sums.get(max) < sums.get(i)) {
+                max = i;
+            }
+            left.add(max);
+        }
+        max = sums.size() - 1;
+        for (int i = sums.size() - 1; i >= 0; i--) {
+            if (sums.get(max) <= sums.get(i)) {
+                max = i;
+            }
+            right.add(max);
+        }
+        Collections.reverse(right);
+//        System.out.println("Left  = " + left);
+//        System.out.println("Sums  = " + sums);
+//        System.out.println("Right = " + right);
+        int[] op = new int[3];
+        long maxSum = 0;
+        for (int mid = k; mid < nums.length - 2 * k + 1; mid++) {
+            sum = sums.get(left.get(mid - k)) + sums.get(mid) + sums.get(right.get(mid + k));
+            if (sum > maxSum) {
+                maxSum = sum;
+                op = new int[]{left.get(mid - k), mid, right.get(mid + k)};
+            }
+        }
+        return op;
     }
 
     public static int[] maxSumOfThreeSubarrays_Optimal(int[] nums, int k) {
@@ -46,9 +92,9 @@ public class MaximumSumOf3NonOverlappingSubarrays {
         }
 
         int[] temp = {0, 0, 0, 0};
-//        System.out.println("left   = " + Arrays.toString(left));
-//        System.out.println("center = " + Arrays.toString(sums));
-//        System.out.println("right  = " + Arrays.toString(right));
+        System.out.println("left   = " + Arrays.toString(left));
+        System.out.println("center = " + Arrays.toString(sums));
+        System.out.println("right  = " + Arrays.toString(right));
 //        Loop the center pointer from through the extra nodes. Range(k, [len-k+1]-k).
 
         for (int i = k; i < len - 2 * k + 1; i++) {

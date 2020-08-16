@@ -2264,7 +2264,7 @@ problem_mapping = {
                 "total": 162
             },
             "Java: PickingUpCoins.java": {
-                "passed": 1,
+                "passed": 162,
                 "total": 162
             },
             "Python: picking_up_coins.py": {
@@ -2590,7 +2590,7 @@ problem_mapping = {
                 "total": 1001
             },
             "Java: FirstMissingPositiveEntry.java": {
-                "passed": 0,
+                "passed": 1001,
                 "total": 1001
             },
             "Python: first_missing_positive_entry.py": {
