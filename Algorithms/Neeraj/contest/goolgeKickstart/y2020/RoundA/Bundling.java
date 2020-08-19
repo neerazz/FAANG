@@ -2,6 +2,7 @@ package y2020.RoundA;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -94,7 +95,7 @@ public class Bundling {
             String[] strs = new String[n];
             for (int j = 0; j < n; j++) {
 //                queue.add(sc.next());
-                strs[i] = sc.next();
+                strs[j] = sc.next();
             }
 //            result[i] = getScore(n, k, queue);
             result[i] = getScore(n, k, strs);
@@ -118,8 +119,14 @@ public class Bundling {
         return op;
     }
 
-    private static void dfs(Trie trie, int perGroup, int level) {
-
+    private static int dfs(Trie trie, int perGroup, int level) {
+        if (trie == null) return 0;
+        int cur = trie.isEnd ? 1 : 0;
+        for (Trie dep : trie.dep) {
+            cur += dfs(dep, perGroup, level + 1);
+        }
+        op += cur / perGroup;
+        return cur % perGroup;
     }
 
     private static void buildTrie(String str, Trie trie) {
@@ -130,15 +137,24 @@ public class Bundling {
             }
             cur = cur.dep[c - 'A'];
         }
+        cur.isEnd = true;
     }
 
     static class Trie {
-        int childCount;
+        boolean isEnd;
         Trie[] dep;
 
         public Trie() {
-            this.childCount = 0;
+            this.isEnd = false;
             this.dep = new Trie[26];
+        }
+
+        @Override
+        public String toString() {
+            return "Trie{" +
+                    "isEnd=" + isEnd +
+                    ", dep=" + Arrays.toString(dep) +
+                    '}';
         }
     }
 
