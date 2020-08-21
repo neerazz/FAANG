@@ -9,9 +9,9 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 public class ReverseLinkedList {
     public static void main(String[] args) {
         System.out.println(reverseList(createListNode(new int[]{1, 2, 3, 4, 5})));
-        System.out.println(reverseList(createListNode(new int[]{4,5,6,7,8})));
+        System.out.println(reverseList(createListNode(new int[]{4, 5, 6, 7, 8})));
         System.out.println(reverseList2(createListNode(new int[]{1, 2, 3, 4, 5})));
-        System.out.println(reverseList2(createListNode(new int[]{4,5,6,7,8})));
+        System.out.println(reverseList2(createListNode(new int[]{4, 5, 6, 7, 8})));
     }
 
     public static ListNode createListNode(int[] nums) {
@@ -23,21 +23,23 @@ public class ReverseLinkedList {
         }
         return output;
     }
+
     /*
         Solution:
         Step 1: Take a temporary node and the output node. Take the first number and set it next to second and set that to output. (From 1->2 to 2->1)
         Step 2: The set the output value current.next. (Current = 3-> 4, after setting the current.next to previous output it becomes 3-> 2->1)
      */
     public static ListNode reverseList(ListNode head) {
-        ListNode current = head, temp = null, output = null;
+        ListNode current = head, next = null, output = null;
         while (current != null) {
-            temp = current.next;
+            next = current.next;
             current.next = output;
             output = current;
-            current = temp;
+            current = next;
         }
         return output;
     }
+
     public static ListNode reverseList2(ListNode head) {
         ListNode output = new ListNode(-1), outputRef = output;
         while (head != null) {
@@ -48,6 +50,7 @@ public class ReverseLinkedList {
         }
         return output.next;
     }
+
     static class ListNode {
         int data;
         ListNode next;
@@ -59,7 +62,7 @@ public class ReverseLinkedList {
 
         @Override
         public String toString() {
-            return "" + data + ":->"+ next;
+            return "" + data + ":->" + next;
         }
     }
 }

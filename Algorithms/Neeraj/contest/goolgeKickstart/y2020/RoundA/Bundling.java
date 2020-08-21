@@ -66,23 +66,6 @@ import java.util.Scanner;
  */
 public class Bundling {
 
-    static Comparator<String> comp = (s1, s2) -> {
-        int l1 = s1.length(), l2 = s2.length();
-        int p1 = 0, p2 = 0;
-        while (p1 < l1 && p2 < l2) {
-            if (s1.charAt(p1) == s2.charAt(p2)) {
-                p1++;
-                p2++;
-            } else if (s1.charAt(p1) > s2.charAt(p2)) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-        if (p1 == l1 && p2 == l2) return 0;
-        else if (p1 == l1) return -1;
-        else return 1;
-    };
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
@@ -107,25 +90,45 @@ public class Bundling {
 
     static int op;
 
+    static Comparator<String> comp = (s1, s2) -> {
+        int l1 = s1.length(), l2 = s2.length();
+        int p1 = 0, p2 = 0;
+        while (p1 < l1 && p2 < l2) {
+            if (s1.charAt(p1) == s2.charAt(p2)) {
+                p1++;
+                p2++;
+            } else if (s1.charAt(p1) > s2.charAt(p2)) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+        if (p1 == l1 && p2 == l2) return 0;
+        else if (p1 == l1) return -1;
+        else return 1;
+    };
+
     private static long getScore(int n, int k, String[] strs) {
         op = 0;
-        int perGroup = n / k;
         Trie trie = new Trie();
         for (String str : strs) {
             buildTrie(str, trie);
         }
 //        Perform a DFS to get the children counts.
-        dfs(trie, perGroup, 0);
+        dfs(trie, k, 0);
         return op;
     }
 
     private static int dfs(Trie trie, int perGroup, int level) {
         if (trie == null) return 0;
-        int cur = trie.isEnd ? 1 : 0;
+        int cur = trie.count;
         for (Trie dep : trie.dep) {
             cur += dfs(dep, perGroup, level + 1);
         }
-        op += cur / perGroup;
+        int canForm = cur / perGroup;
+        if (canForm > 0) {
+            op += canForm * level;
+        }
         return cur % perGroup;
     }
 
@@ -137,25 +140,7 @@ public class Bundling {
             }
             cur = cur.dep[c - 'A'];
         }
-        cur.isEnd = true;
-    }
-
-    static class Trie {
-        boolean isEnd;
-        Trie[] dep;
-
-        public Trie() {
-            this.isEnd = false;
-            this.dep = new Trie[26];
-        }
-
-        @Override
-        public String toString() {
-            return "Trie{" +
-                    "isEnd=" + isEnd +
-                    ", dep=" + Arrays.toString(dep) +
-                    '}';
-        }
+        cur.count++;
     }
 
     private static long getScore(int n, int k, PriorityQueue<String> queue) {
@@ -186,5 +171,22 @@ public class Bundling {
             } else break;
         }
         return sb.toString();
+    }
+
+    static class Trie {
+        int count;
+        Trie[] dep;
+
+        public Trie() {
+            this.dep = new Trie[26];
+        }
+
+        @Override
+        public String toString() {
+            return "Trie{" +
+                    "isEnd=" + count +
+                    ", dep=" + Arrays.toString(dep) +
+                    '}';
+        }
     }
 }

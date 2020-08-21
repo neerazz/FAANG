@@ -9,10 +9,36 @@ import java.util.Set;
  */
 public class FindAllDuplicatesInAnArray {
     public static void main(String[] args) {
+        System.out.println("********************************* Solution 1 ************************************");
         System.out.println(findDuplicates(new int[]{4, 3, 2, 7, 8, 2, 3, 1}) + " = [2,3]");
         System.out.println(findDuplicates(new int[]{4, 9, 2, 7, 8, 2, 9, 1, 8}) + " = [2,9,8]");
         System.out.println(findDuplicates(new int[]{79, 88, 22, 20, 11, 24, 37, 42, 18, 2, 99, 31, 31, 30, 81, 52, 34, 91, 90, 48, 41, 71, 54, 40, 58, 21, 14, 91, 35, 74, 17, 44, 54, 47, 68, 100, 83, 96, 94, 72, 67, 42, 67, 81, 94, 98, 46, 47, 82, 48, 57, 61, 44, 64, 17, 77, 74, 15, 58, 32, 52, 13, 57, 89, 45, 5, 63, 1, 46, 35, 56, 32, 28, 72, 71, 99, 93, 23, 93, 14, 30, 43, 2, 20, 78, 95, 45, 50, 1, 85, 65, 87, 55, 55, 85, 62, 75, 98, 39, 50}) +
                 " = [31,91,54,42,67,81,94,47,48,44,17,74,58,52,57,46,35,32,72,71,99,93,14,30,2,20,45,1,55,85,98,50]");
+        System.out.println("********************************* Solution 2 ************************************");
+        System.out.println(findDuplicates_rev1(new int[]{4, 3, 2, 7, 8, 2, 3, 1}) + " = [2,3]");
+        System.out.println(findDuplicates_rev1(new int[]{4, 9, 2, 7, 8, 2, 9, 1, 8}) + " = [2,9,8]");
+        System.out.println(findDuplicates_rev1(new int[]{79, 88, 22, 20, 11, 24, 37, 42, 18, 2, 99, 31, 31, 30, 81, 52, 34, 91, 90, 48, 41, 71, 54, 40, 58, 21, 14, 91, 35, 74, 17, 44, 54, 47, 68, 100, 83, 96, 94, 72, 67, 42, 67, 81, 94, 98, 46, 47, 82, 48, 57, 61, 44, 64, 17, 77, 74, 15, 58, 32, 52, 13, 57, 89, 45, 5, 63, 1, 46, 35, 56, 32, 28, 72, 71, 99, 93, 23, 93, 14, 30, 43, 2, 20, 78, 95, 45, 50, 1, 85, 65, 87, 55, 55, 85, 62, 75, 98, 39, 50}) +
+                " = [31,91,54,42,67,81,94,47,48,44,17,74,58,52,57,46,35,32,72,71,99,93,14,30,2,20,45,1,55,85,98,50]");
+    }
+
+    public static List<Integer> findDuplicates_rev1(int[] nums) {
+//        Flip the number to negative.
+        List<Integer> op = new ArrayList<>();
+        int p1 = 0, l1 = nums.length, p2 = 0;
+        for (int i = 0; i < l1; i++) {
+            int next = Math.abs(nums[i]) - 1;
+//            If the number at dest is already negative then it is duplicate.
+            if (nums[next] < 0) op.add(next + 1);
+//            Convert the element at current index value to negative.
+            nums[next] *= -1;
+        }
+        return op;
+    }
+
+    private static void swap(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 
     public static List<Integer> findDuplicates(int[] nums) {
