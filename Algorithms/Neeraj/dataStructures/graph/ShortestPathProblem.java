@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created on:  Jul 29, 2020
@@ -7,14 +7,16 @@ import java.util.Arrays;
  */
 public class ShortestPathProblem {
     public static void main(String[] args) throws IOException {
-        FastReader fr = new FastReader("D:\\JavaProjects\\FAANG\\Algorithms\\Neeraj\\dataStructures\\graph\\hugeGraphData.txt");
-//        FastReader fr = new FastReader();
+//        FastReader fr = new FastReader("D:\\JavaProjects\\FAANG\\Algorithms\\Neeraj\\dataStructures\\graph\\hugeGraphData.txt");
+        FastReader fr = new FastReader();
         int v = fr.nextInt(), e = fr.nextInt();
         int[][] edges = new int[e][3];
         for (int i = 0; i < e; i++) {
             edges[i] = new int[]{fr.nextInt(), fr.nextInt(), fr.nextInt()};
         }
         int[] distances = getShortestPathFromAllNodesWithBellmanFord(v, e, edges);
+        System.out.println("Distances from 1: \n\t" + Arrays.toString(distances));
+        distances = getShortestPathFromAllNodesWithDijkstrasAlgorithm(v, e, edges);
         System.out.println("Distances from 1: \n\t" + Arrays.toString(distances));
         int[][] allPathDistances = getDistancesFromAllNodesWithFloydWarshall(v, e, edges);
         System.out.println("Distances between all points:");
@@ -102,6 +104,36 @@ public class ShortestPathProblem {
             }
         }
 
+        return costs;
+    }
+
+    //    Find the distance from 1 to all the indexes.
+    private static int[] getShortestPathFromAllNodesWithDijkstrasAlgorithm(int v, int e, int[][] edges) {
+        int[] costs = new int[v + 1];
+        Arrays.fill(costs, Integer.MAX_VALUE);
+        costs[0] = costs[1] = 0;
+//        Keep all the connected vertices in a map.
+        Map<Integer, Set<int[]>> graph = new HashMap<>();
+        for (int[] edge : edges) {
+            int from = edge[0], to = edge[1], cost = edge[2];
+            graph.computeIfAbsent(from, val -> new HashSet<>()).add(new int[]{to, cost});
+            graph.computeIfAbsent(to, val -> new HashSet<>()).add(new int[]{from, cost});
+        }
+//        0: distance, 1:node
+        PriorityQueue<int[]> queue = new PriorityQueue<>((v1, v2) -> v1[0] == v2[0] ? v1[1] - v2[1] : v1[0] - v2[0]);
+        queue.add(new int[]{0, 1});
+        boolean[] visited = new boolean[v + 1];
+        while (!queue.isEmpty()) {
+            int[] poll = queue.poll();
+            int curNode = poll[1], curDistance = poll[0];
+            if (visited[curNode]) continue;
+            visited[curNode] = true;
+            for (int[] dep : graph.getOrDefault(curNode, new HashSet<>())) {
+                if (costs[dep[0]] > dep[1] + curDistance) {
+                    queue.add(new int[]{costs[dep[0]] = dep[1] + curDistance, dep[0]});
+                }
+            }
+        }
         return costs;
     }
 }

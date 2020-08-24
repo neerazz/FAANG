@@ -8,10 +8,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Three Consecutive Odds3\n" +
-                        "Minimum Operations to Make Array Equal4\n" +
-                        "Magnetic Force Between Two Balls5\n" +
-                        "Minimum Number of Days to Eat N Oranges"
+                "Most Visited Sector in a Circular Track3\n" +
+                        "Maximum Number of Coins You Can Get4\n" +
+                        "Find Latest Group of Size M6\n" +
+                        "Stone Game V"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
@@ -67,11 +67,11 @@ public class Tools {
 //                "Maximum Difference Between Node and Ancestor"
         );
         System.out.println(getReplaced(
-                "[[1,1,1,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,1],[1,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,1,1,1]]",
+                "[[\"a\",\"a\",\"a\",\"a\"],[\"a\",\"b\",\"b\",\"a\"],[\"a\",\"b\",\"b\",\"a\"],[\"a\",\"a\",\"a\",\"a\"]]",
                 Arrays.asList("[", "{"),
+                Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
         ));
-        String[] str = "12.12".split("\\.");
     }
 
     private static void getContest(String input) {

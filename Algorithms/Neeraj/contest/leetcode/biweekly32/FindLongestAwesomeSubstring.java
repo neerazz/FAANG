@@ -79,12 +79,19 @@ public class FindLongestAwesomeSubstring {
     private static boolean isPalindrome(int[] counts, int len) {
 //         If the length is odd then palindrome can have one odd value.
         boolean canHaveOneOdd = len % 2 == 1;
+        int pal = 0;
         for (int count : counts) {
             if (count % 2 == 1) {
-                if (canHaveOneOdd) canHaveOneOdd = false;
-                else return false;
+                if (canHaveOneOdd) {
+                    pal += count;
+                    canHaveOneOdd = false;
+                } else {
+                    pal += count - 1;
+                }
+            } else {
+                pal += count;
             }
         }
-        return true;
+        return pal >= len;
     }
 }
