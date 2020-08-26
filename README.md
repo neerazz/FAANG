@@ -20,7 +20,7 @@
 >   - [Greedy Algorithm](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#greedy-algorithm)
 >   - [Dynamic Programming](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#dynamic-programming)
 >   - [Graph](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#graph)
->   #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic_%26_Company.md#questions-by-companies)
+>   #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md)
 >   - [Google](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#google)
 >   - [Amazon](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#amazon)
 >   - [Facebook](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#facebook)
