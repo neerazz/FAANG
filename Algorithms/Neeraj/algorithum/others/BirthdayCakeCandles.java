@@ -1,4 +1,3 @@
-package algorithms;
 /*
 https://www.hackerrank.com/challenges/birthday-cake-candles/problem
  */

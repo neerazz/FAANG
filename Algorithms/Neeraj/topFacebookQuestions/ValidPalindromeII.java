@@ -11,16 +11,19 @@ public class ValidPalindromeII {
     }
 
     public static boolean validPalindrome(String s) {
-        return helper(s, true);
+        int start = 0, end = s.length() - 1;
+        return helper(s, start, end, true);
     }
 
-    private static boolean helper(String s, boolean canDelete) {
-        int start = 0, end = s.length() - 1, diff = 0;
+    private static boolean helper(String s, int start, int end, boolean canDelete) {
+        if (start > end) return false;
         while (start < end) {
             if (s.charAt(start) != s.charAt(end)) {
-//                You can remove the starting character or the ending character.
-                if (!canDelete) return false;
-                return helper(s.substring(start, end), false) || helper(s.substring(start + 1, end + 1), false);
+                if (canDelete) {
+//                    You can remove the starting character or the ending character.
+                    return helper(s, start, end - 1, false) || helper(s, start + 1, end, false);
+                }
+                return false;
             }
             start++;
             end--;

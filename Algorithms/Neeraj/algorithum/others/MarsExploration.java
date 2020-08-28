@@ -1,4 +1,4 @@
-package algorithms;
+
 /*
 https://www.hackerrank.com/challenges/mars-exploration/problem
  */

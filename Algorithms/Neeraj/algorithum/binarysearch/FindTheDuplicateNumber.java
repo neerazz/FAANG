@@ -19,13 +19,39 @@ public class FindTheDuplicateNumber {
     public static void main(String[] args) {
         System.out.println("Answer is " + findDuplicate(new int[]{1, 3, 4, 2, 2}) + " should be [2].");
         System.out.println("Answer is " + findDuplicate(new int[]{3, 1, 3, 4, 2}) + " should be [3].");
+        System.out.println(findDuplicateApproach3(new int[]{1, 3, 4, 2, 2}) + " should be [2].");
+        System.out.println(findDuplicateApproach3(new int[]{3, 1, 3, 4, 2}) + " should be [3].");
+        System.out.println(findDuplicateApproach3(new int[]{2, 2, 2, 2, 2}) + " should be [2].");
     }
 
     public static int findDuplicate(int[] nums) {
 //        Approach 1: Space = O(N), Time = O(N).
         return findDuplicateApproach1(nums);
-//        Approach 2: Space = O(), Time = O(NLogN).
+//        Approach 2: Space = O(1), Time = O(NLogN).
 //        return findDuplicateApproach2(nums);
+//        Approach 3: Space = O(1), Time = O(N).
+//        return findDuplicateApproach3(nums);
+    }
+
+    private static int findDuplicateApproach3(int[] nums) {
+        int p1 = 0, len = nums.length;
+        while (p1 < len) {
+            int cur = nums[p1];
+            if (cur == p1) {
+                p1++;
+            } else {
+                swap(nums, cur, p1);
+//                After swapping if you get the same number back, then that is dublicate.
+                if (nums[p1] == cur) return cur;
+            }
+        }
+        return -1;
+    }
+
+    private static void swap(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 
     private static int findDuplicateApproach2(int[] nums) {

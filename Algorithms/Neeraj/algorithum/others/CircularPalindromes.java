@@ -1,4 +1,3 @@
-package algorithms;
 
 import java.util.Arrays;
 
@@ -60,7 +59,7 @@ public class CircularPalindromes {
         int index = 0;
         //preprocess the input to convert it into type abc -> $a$b$c$ to handle even length case.
         //Total size will be 2*n + 1 of this new array.
-        char newInput[] = new char[2 * str.length() + 1];
+        char[] newInput = new char[2 * str.length() + 1];
         for (int i = 0; i < newInput.length; i++) {
             if (i % 2 != 0) {
                 newInput[i] = str.charAt(index++);
@@ -70,7 +69,7 @@ public class CircularPalindromes {
         }
 
         //create temporary array for holding largest palindrome at every point. There are 2*n + 1 such points.
-        int T[] = new int[newInput.length];
+        int[] T = new int[newInput.length];
         int start = 0;
         int end = 0;
         //here i is the center.

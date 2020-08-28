@@ -20,6 +20,7 @@ public class ExclusiveTimeOfFunctions {
             if (split[1].equals("start")) {
                 stack.add(new int[]{function, time});
             } else {
+//                Add +1 because, when are calculating the difference between points
                 int val = time - stack.pop()[1] + 1;
 //                 Update the scope of current function.
                 result[function] += val;

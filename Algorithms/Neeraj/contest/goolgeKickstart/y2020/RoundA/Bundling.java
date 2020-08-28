@@ -2,6 +2,7 @@ package y2020.RoundA;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -65,6 +66,30 @@ import java.util.Scanner;
  */
 public class Bundling {
 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
+        int tests = sc.nextInt();
+        long[] result = new long[tests];
+        for (int i = 0; i < tests; i++) {
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+//            PriorityQueue<String> queue = new PriorityQueue<>(comp);
+            String[] strs = new String[n];
+            for (int j = 0; j < n; j++) {
+//                queue.add(sc.next());
+                strs[j] = sc.next();
+            }
+//            result[i] = getScore(n, k, queue);
+            result[i] = getScore(n, k, strs);
+        }
+        for (int i = 0; i < tests; i++) {
+            System.out.println("Case #" + (i + 1) + ": " + result[i]);
+        }
+    }
+
+    static int op;
+
     static Comparator<String> comp = (s1, s2) -> {
         int l1 = s1.length(), l2 = s2.length();
         int p1 = 0, p2 = 0;
@@ -83,29 +108,39 @@ public class Bundling {
         else return 1;
     };
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
-        int tests = sc.nextInt();
-        long[] result = new long[tests];
-        for (int i = 0; i < tests; i++) {
-            int n = sc.nextInt();
-            int k = sc.nextInt();
-//            PriorityQueue<String> queue = new PriorityQueue<>(comp);
-            String[] strs = new String[n];
-            for (int j = 0; j < n; j++) {
-//                queue.add(sc.next());
-                strs[i] = sc.next();
-            }
-//            result[i] = getScore(n, k, queue);
-            result[i] = getScore(n, k, strs);
+    private static long getScore(int n, int k, String[] strs) {
+        op = 0;
+        Trie trie = new Trie();
+        for (String str : strs) {
+            buildTrie(str, trie);
         }
-        for (int i = 0; i < tests; i++) {
-            System.out.println("Case #" + (i + 1) + ": " + result[i]);
-        }
+//        Perform a DFS to get the children counts.
+        dfs(trie, k, 0);
+        return op;
     }
 
-    private static long getScore(int n, int k, String[] strs) {
-        return 0;
+    private static int dfs(Trie trie, int perGroup, int level) {
+        if (trie == null) return 0;
+        int cur = trie.count;
+        for (Trie dep : trie.dep) {
+            cur += dfs(dep, perGroup, level + 1);
+        }
+        int canForm = cur / perGroup;
+        if (canForm > 0) {
+            op += canForm * level;
+        }
+        return cur % perGroup;
+    }
+
+    private static void buildTrie(String str, Trie trie) {
+        Trie cur = trie;
+        for (char c : str.toCharArray()) {
+            if (cur.dep[c - 'A'] == null) {
+                cur.dep[c - 'A'] = new Trie();
+            }
+            cur = cur.dep[c - 'A'];
+        }
+        cur.count++;
     }
 
     private static long getScore(int n, int k, PriorityQueue<String> queue) {
@@ -136,5 +171,22 @@ public class Bundling {
             } else break;
         }
         return sb.toString();
+    }
+
+    static class Trie {
+        int count;
+        Trie[] dep;
+
+        public Trie() {
+            this.dep = new Trie[26];
+        }
+
+        @Override
+        public String toString() {
+            return "Trie{" +
+                    "isEnd=" + count +
+                    ", dep=" + Arrays.toString(dep) +
+                    '}';
+        }
     }
 }

@@ -57,7 +57,7 @@ public class AddAndSearchWordDataStructureDesign {
             return false;
         }
 
-        class Trie {
+        static class Trie {
             Trie[] next;
             boolean end;
 

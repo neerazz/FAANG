@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 class CopyListWithRandomPointer {
     public static void main(String[] args) {
@@ -28,12 +29,10 @@ class CopyListWithRandomPointer {
         Node node = new Node(head.val);
 
         // Save this value in the hash map. This is needed since there might be
-        // loops during traversal due to randomness of random pointers and this would help us avoid
-        // them.
+        // loops during traversal due to randomness of random pointers and this would help us avoid them.
         map.put(head, node);
 
-        // Recursively copy the remaining linked list starting once from the next pointer and then from
-        // the random pointer.
+        // Recursively copy the remaining linked list starting once from the next pointer and then from the random pointer.
         // Thus we have two independent recursive calls.
         // Finally we update the next and random pointers for the new node created.
         node.next = copyRandomList(head.next);

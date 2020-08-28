@@ -1,7 +1,5 @@
-package algorithms;
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 /*
 https://www.hackerrank.com/challenges/jack-goes-to-rapture/forum
