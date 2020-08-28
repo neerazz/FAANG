@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created on:  May 25, 2020
@@ -18,12 +19,18 @@ public class Tools {
 //                "Merge k Sorted Lists",
 //                "Product of Array Except Self",
         );
-        System.out.println(getReplaced(
-                "[[46,89],[50,53],[52,68],[72,45],[77,81]]",
+        getReplaced(
+                Arrays.asList(
+                        "[[46,89],[50,53],[52,68],[72,45],[77,81]]",
+                        "[ [1,4], [2,3], [3,4] ]",
+                        "[[1,2],[2,3],[0,1],[3,4]]",
+                        "[ [1,2] ]",
+                        "[ [3,4], [2,3], [1,2] ]"
+                ),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
-        ));
+        ).forEach(System.out::println);
     }
 
     private static void getContest(String input) {
@@ -55,6 +62,17 @@ public class Tools {
             }
         }
         return sb.toString();
+    }
+
+    private static List<String> getReplaced(List<String> input, List<String>... replaces) {
+        return input.parallelStream().map(val -> getReplaced(val, replaces)).collect(Collectors.toList());
+    }
+
+    private static String getReplaced(String input) {
+        return input
+                .replace("[", "{")
+                .replace("]", "}")
+                .replace("\"", "'");
     }
 
     private static String getReplaced(String input, List<String>... replaces) {
