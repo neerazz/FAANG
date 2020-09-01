@@ -9,10 +9,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Most Visited Sector in a Circular Track3\n" +
-                        "Maximum Number of Coins You Can Get4\n" +
-                        "Find Latest Group of Size M6\n" +
-                        "Stone Game V"
+                "Detect Pattern of Length M Repeated K or More Times3\n" +
+                        "Maximum Length of Subarray With Positive Product4\n" +
+                        "Minimum Number of Days to Disconnect Island6\n" +
+                        "Number of Ways to Reorder Array to Get Same BST"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
