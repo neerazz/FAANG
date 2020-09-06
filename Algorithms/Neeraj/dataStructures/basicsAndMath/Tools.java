@@ -9,10 +9,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Detect Pattern of Length M Repeated K or More Times3\n" +
-                        "Maximum Length of Subarray With Positive Product4\n" +
-                        "Minimum Number of Days to Disconnect Island6\n" +
-                        "Number of Ways to Reorder Array to Get Same BST"
+                "Replace All ?'s to Avoid Consecutive Repeating Characters3\n" +
+                        "Number of Ways Where Square of Number Is Equal to Product of Two Numbers5\n" +
+                        "Minimum Deletion Cost to Avoid Repeating Letters5\n" +
+                        "Remove Max Number of Edges to Keep Graph Fully Traversable"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
