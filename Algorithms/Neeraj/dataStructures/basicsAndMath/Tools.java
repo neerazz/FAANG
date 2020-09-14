@@ -9,10 +9,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Replace All ?'s to Avoid Consecutive Repeating Characters3\n" +
-                        "Number of Ways Where Square of Number Is Equal to Product of Two Numbers5\n" +
-                        "Minimum Deletion Cost to Avoid Repeating Letters5\n" +
-                        "Remove Max Number of Edges to Keep Graph Fully Traversable"
+                "Special Positions in a Binary Matrix3\n" +
+                        "Count Unhappy Friends4\n" +
+                        "Min Cost to Connect All Points5\n" +
+                        "Check If String Is Transformable With Substring Sort Operations"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
@@ -21,9 +21,10 @@ public class Tools {
         );
         getReplaced(
                 Arrays.asList(
-                        "[[1,1,1],[0,1,0],[1,1,1]]",
-                        "[[0,0,0],[0,1,0],[0,0,0]]",
-                        "[[1,1,0,1,1],[1,1,1,1,1],[1,1,0,1,1],[1,1,0,1,1]]"
+                        "[[1,3,2],[2,3,0],[1,0,3],[1,0,2]]\n" +
+                                "[[2,1],[3,0]]",
+                        "[[1, 3, 2], [2, 3, 0], [1, 3, 0], [0, 2, 1]], pairs = [[1, 3], [0, 2]]",
+                        "[[1], [0]], pairs = [[1, 0]]"
                 ),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
