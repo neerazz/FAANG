@@ -52,7 +52,7 @@ public class DiffBetweenTwoStrings {
     }
 
     public static void main(String[] args) {
-//        System.out.println(Arrays.toString(diffBetweenTwoStrings("ABCDEFG", "ABDFFGH")));
+        System.out.println(Arrays.toString(diffBetweenTwoStrings("ABCDEFG", "ABDFFGH")));
         System.out.println(Arrays.toString(diffBetweenTwoStrings("CABAAABBC", "CBBC")));
     }
 }

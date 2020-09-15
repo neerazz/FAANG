@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created on:  Sep 02, 2020
  * Questions: https://www.algoexpert.io/questions/Bubble%20Sort
@@ -5,6 +7,26 @@
 public class DifferentSorting {
     public static void main(String[] args) {
 
+    }
+
+    public static int[] mergeSort(int[] array) {
+        if (array.length == 1) return array;
+//        Split
+        int mid = array.length / 2;
+        int[] left = mergeSort(Arrays.copyOfRange(array, 0, mid));
+        int[] right = mergeSort(Arrays.copyOfRange(array, mid, array.length));
+//        Merge both the array
+        int i = 0, j = 0, l1 = left.length, l2 = right.length, idx = 0;
+        while (i < l1 && j < l2) {
+            if (left[i] <= right[j]) {
+                array[idx++] = left[i++];
+            } else {
+                array[idx++] = right[j++];
+            }
+        }
+        while (i < l1) array[idx++] = left[i++];
+        while (j < l2) array[idx++] = right[j++];
+        return array;
     }
 
     /**
