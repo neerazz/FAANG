@@ -2,6 +2,7 @@ package y2020.RoundE;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -29,37 +30,17 @@ public class LongestArithmetic {
 
     private static int getLongestContinuesSubArray(int len, int[] nums) {
         int max = 0;
+//        Get the difference between the next number.
         for (int i = 0; i < len - 1; i++) {
-            int count = 0, dif = nums[i + 1] - nums[i];
-            for (int j = i + 1; j < len - 1; j++) {
-                if (nums[j + 1] - nums[j] == dif) {
-                    max = Math.max(max, j - i + 2);
-                } else break;
-            }
+            nums[i] = nums[i + 1] - nums[i];
+        }
+        int[] pre = {Integer.MAX_VALUE, -1};
+//        Keep a track of previous number, that way you can calculate the length.
+        System.out.println("nums = " + Arrays.toString(nums));
+        for (int i = 0; i < len - 1; i++) {
+            if (pre[0] != nums[i]) pre = new int[]{nums[i], i};
+            max = Math.max(max, i - pre[1] + 2);
         }
         return max;
-    }
-
-    private static int getLongestContinuesSubArray_wrong(int len, int[] nums) {
-        int max = 0;
-        for (int i = 1; i < len - 1; i++) {
-            int expanded = expand(nums, i);
-            max = Math.max(max, expanded);
-        }
-        return max;
-    }
-
-    private static int expand(int[] nums, int mid) {
-        int left = nums[mid] - nums[mid - 1], right = nums[mid + 1] - nums[mid];
-        if (left != right) return 0;
-//        Move towards the left till teh difference is same.
-        int l = mid, r = mid;
-        while (l > 0 && nums[l] - nums[l - 1] == left) {
-            l--;
-        }
-        while (r < nums.length - 1 && nums[r + 1] - nums[r] == right) {
-            r++;
-        }
-        return r - l + 1;
     }
 }

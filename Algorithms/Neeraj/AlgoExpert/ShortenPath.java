@@ -6,10 +6,10 @@ import java.util.Stack;
  */
 public class ShortenPath {
     public static void main(String[] args) {
-//        System.out.println(shortenPath("/foo/../test/../test/../foo//bar/./baz" + " = /foo/bar/baz"));
-//        System.out.println(shortenPath("foo/bar/baz") + " = foo/bar/baz");
-//        System.out.println(shortenPath("/../../foo/bar/baz") + " = /foo/bar/baz");
-//        System.out.println(shortenPath("../../../this////one/./../../is/../../going/../../to/be/./././../../../just/eight/double/dots/../../../../../../foo") + " = ../../../../../../../../foo");
+        System.out.println(shortenPath("/foo/../test/../test/../foo//bar/./baz" + " = /foo/bar/baz"));
+        System.out.println(shortenPath("foo/bar/baz") + " = foo/bar/baz");
+        System.out.println(shortenPath("/../../foo/bar/baz") + " = /foo/bar/baz");
+        System.out.println(shortenPath("../../../this////one/./../../is/../../going/../../to/be/./././../../../just/eight/double/dots/../../../../../../foo") + " = ../../../../../../../../foo");
         System.out.println(shortenPath("/../../../this////one/./../../is/../../going/../../to/be/./././../../../just/a/forward/slash/../../../../../..") + " = /");
     }
 
