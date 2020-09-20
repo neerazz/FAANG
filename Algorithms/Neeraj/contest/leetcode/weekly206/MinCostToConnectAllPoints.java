@@ -82,7 +82,7 @@ public class MinCostToConnectAllPoints {
         }
     }
 
-    static class Node implements Comparable {
+    static class Node implements Comparable<Node> {
         int x, y, dist;
 
         public Node(int x, int y, int dist) {
@@ -129,9 +129,8 @@ public class MinCostToConnectAllPoints {
         }
 
         @Override
-        public int compareTo(Object o) {
-            Node to = (Node) o;
-            return Integer.compare(this.dist, to.dist);
+        public int compareTo(Node o) {
+            return Integer.compare(this.dist, o.dist);
         }
     }
 }
