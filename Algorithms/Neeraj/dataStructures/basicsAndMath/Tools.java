@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,11 +21,11 @@ public class Tools {
 //                "Product of Array Except Self",
         );
         getReplaced(
-                Arrays.asList(
-                        "[[0,1],[1,0],[0,1],[1,2],[2,0],[3,4]]\n" +
-                                "[[0,0],[1,2],[2,1]]\n" +
-                                "[[0,3],[3,1],[1,2],[2,0]]"
-                ),
+                Collections.singletonList("""
+                                [["a","b"],["b","c"]]
+                                [2.0,3.0]
+                                [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+                        """),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
