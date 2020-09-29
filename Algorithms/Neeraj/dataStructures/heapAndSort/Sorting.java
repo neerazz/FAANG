@@ -1,6 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created on:  Jun 09, 2020
@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
  * 2. Quick Sort
  * 3. Insertion Sort
  * 4. Heap Sort
+ * 5. Bubble Sort
  */
 public class Sorting {
     public static void main(String[] args) {
@@ -24,7 +25,9 @@ public class Sorting {
         System.out.println("Quick Sort:     \t" + Arrays.toString(quickSort(Arrays.copyOf(nums, nums.length))));
         System.out.println("Insertion Sort: \t" + Arrays.toString(insertionSort(Arrays.copyOf(nums, nums.length))));
         System.out.println("Heap Sort:      \t" + Arrays.toString(heapSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Bubble Sort:    \t" + Arrays.toString(bubbleSort(Arrays.copyOf(nums, nums.length))));
     }
+
 
     /**
      * @param arr Input array that will be splitted.
@@ -109,7 +112,74 @@ public class Sorting {
         return arr;
     }
 
+    /**
+     * @implNote This could be implemented in array representation as well as a node Implementation.
+     */
     private static int[] heapSort(int[] arr) {
-        return new int[0];
+        Node node = null;
+//        Build bst Tree.
+        for (int val : arr) {
+            node = add(val, node);
+        }
+        List<Integer> array = new ArrayList<>();
+//        Perform an inorder traversal
+        inOrderTraversal(node, array);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = array.get(i);
+        }
+        return arr;
+    }
+
+    private static void inOrderTraversal(Node node, List<Integer> array) {
+        if (node == null) return;
+        inOrderTraversal(node.left, array);
+        array.add(node.val);
+        inOrderTraversal(node.right, array);
+    }
+
+    private static Node add(int val, Node node) {
+        if (node == null) {
+            return new Node(val);
+        } else if (node.val <= val) {
+            node.right = add(val, node.right);
+        } else {
+            node.left = add(val, node.left);
+        }
+        return node;
+    }
+
+    /**
+     * @implNote At each level loop start from first:
+     * Compare with the one with right, and if right is smaller, then swap the number and keep moving. (At end reduce the end index)
+     */
+    public static int[] bubbleSort(int[] array) {
+        boolean swapped = true;
+        int end = array.length;
+        while (swapped) {
+            swapped = false;
+            for (int i = 1; i < end; i++) {
+                if (array[i - 1] > array[i]) {
+                    swap(array, i - 1, i);
+                    swapped = true;
+                }
+            }
+            end--;
+        }
+        return array;
+    }
+
+    private static void swap(int[] nums, int a, int b) {
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
+    }
+
+    static class Node {
+        int val;
+        Node left, right;
+
+        public Node(int val) {
+            this.val = val;
+        }
     }
 }
