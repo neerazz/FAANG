@@ -1,5 +1,3 @@
-import java.util.*;
-
 class InvertBinaryTree{
   public static void invertBinaryTree(BinaryTree tree) {
     if(tree == null) return;

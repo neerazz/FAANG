@@ -1,6 +1,3 @@
-import java.util.*;
-
-
 class FindClosestValueInBST{
   public static void main(String[] args) {
 

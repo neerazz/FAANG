@@ -2856,7 +2856,7 @@ problem_mapping = {
                 "total": 474
             },
             "Java: BstMerge.java": {
-                "passed": 0,
+                "passed": 474,
                 "total": 474
             },
             "Python: bst_merge.py": {
