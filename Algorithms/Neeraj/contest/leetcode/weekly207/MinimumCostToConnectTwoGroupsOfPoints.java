@@ -20,7 +20,7 @@ public class MinimumCostToConnectTwoGroupsOfPoints {
         System.out.println(connectTwoGroups(getList(new int[][]{{93, 56, 92}, {53, 44, 18}, {86, 44, 69}, {54, 60, 30}})) + " = 172");
     }
 
-    private static List<List<Integer>> getList(int[][] nums) {
+    public static List<List<Integer>> getList(int[][] nums) {
         List<List<Integer>> result = new ArrayList<>();
         for (int[] num : nums) {
             result.add(Arrays.stream(num).boxed().collect(Collectors.toList()));
