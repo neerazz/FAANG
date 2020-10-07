@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /*
 https://leetcode.com/explore/learn/card/recursion-ii/503/recursion-to-iteration/2772/
@@ -18,46 +15,46 @@ For example, given n = 3, a solution set is:
 public class GenerateParentheses {
     static List<String> output;
 
-    public static void main(String[] args) {
-        System.out.println(generateParenthesis(3));
-//        System.out.println(checkIfValidAndGetParenthesis(new problems.LinkedList<>(Arrays.asList('(',')','(',')','(',')'))));
+    public static void main(final String[] args) {
+        System.out.println(GenerateParentheses.generateParenthesis(3));
+        System.out.println(GenerateParentheses.checkIfValidAndGetParenthesis(new LinkedList<>(Arrays.asList('(', ')', '(', ')', '(', ')'))));
     }
 
-    public static List<String> generateParenthesis(int n) {
-        output = new ArrayList<>();
-        backTrace(n, new LinkedList<>(), 0);
-        return output;
+    public static List<String> generateParenthesis(final int n) {
+        GenerateParentheses.output = new ArrayList<>();
+        GenerateParentheses.backTrace(n, new LinkedList<>(), 0);
+        return GenerateParentheses.output;
     }
 
-    private static void backTrace(int n, LinkedList<Character> characters, int currentValue) {
+    private static void backTrace(final int n, final LinkedList<Character> characters, final int currentValue) {
         if (characters.size() == n * 2) {
-            String value = checkIfValidAndGetParenthesis(characters);
-            if (value != null) output.add(value);
+            final String value = GenerateParentheses.checkIfValidAndGetParenthesis(characters);
+            if (value != null) GenerateParentheses.output.add(value);
             return;
         }
         for (int i = currentValue; i < n * 2; i++) {
 //            Try with open brace
             characters.add('(');
-            backTrace(n, characters, i + 1);
+            GenerateParentheses.backTrace(n, characters, i + 1);
             characters.removeLast();
 //            Try with closed brace
             characters.add(')');
-            backTrace(n, characters, i + 1);
+            GenerateParentheses.backTrace(n, characters, i + 1);
             characters.removeLast();
         }
     }
 
-    private static String checkIfValidAndGetParenthesis(LinkedList<Character> characters) {
+    private static String checkIfValidAndGetParenthesis(final LinkedList<Character> characters) {
         if (characters == null || characters.isEmpty()) return null;
-        StringBuilder sb = new StringBuilder();
-        Stack<Character> stack = new Stack<>();
-        for (Character c : characters) {
+        final StringBuilder sb = new StringBuilder();
+        final Stack<Character> stack = new Stack<>();
+        for (final Character c : characters) {
             sb.append(c);
             if (c == '(') {
-                stack.add(c);
+                stack.add('(');
             } else {
                 if (stack.isEmpty()) return null;
-                Character peek = stack.peek();
+                final Character peek = stack.peek();
                 if (peek == '(') {
                     stack.pop();
                 } else {
@@ -68,20 +65,20 @@ public class GenerateParentheses {
         return stack.isEmpty() ? sb.toString() : null;
     }
 
-    public static List<String> generateParenthesis_optimal(int n) {
-        List<String> ans = new ArrayList();
-        backtrack(ans, "", 0, 0, n);
+    public static List<String> generateParenthesis_optimal(final int n) {
+        final List<String> ans = new ArrayList();
+        GenerateParentheses.backtrack(ans, "", 0, 0, n);
         return ans;
     }
 
-    public static void backtrack(List<String> ans, String cur, int open, int close, int max) {
+    public static void backtrack(final List<String> ans, final String cur, final int open, final int close, final int max) {
         if (cur.length() == max * 2) {
             ans.add(cur);
             return;
         }
         if (open < max)
-            backtrack(ans, cur + "(", open + 1, close, max);
+            GenerateParentheses.backtrack(ans, cur + "(", open + 1, close, max);
         if (close < open)
-            backtrack(ans, cur + ")", open, close + 1, max);
+            GenerateParentheses.backtrack(ans, cur + ")", open, close + 1, max);
     }
 }

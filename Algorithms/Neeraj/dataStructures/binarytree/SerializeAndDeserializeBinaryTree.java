@@ -4,8 +4,9 @@ import java.util.*;
 https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/995
  */
 public class SerializeAndDeserializeBinaryTree {
-    public static void main(String[] args) {
-        Codec codec = new Codec();
+    public static void main(final String[] args) {
+        final Codec codec = new Codec();
+        final Codec_Rev codec_rev = new Codec_Rev();
         TraverseATree.TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(1, 2, 3, null, null, 4, 5)));
         System.out.println("============    Sample 1: =============");
         String serialize = codec.serialize(treeNode);
@@ -35,25 +36,89 @@ public class SerializeAndDeserializeBinaryTree {
         System.out.println(deserialize);
     }
 
+    static class Codec_Rev {
+        String n = "null";
+
+        // Encodes a tree to a single string.
+        public String serialize(final TreeNode root) {
+            String op = "";
+            if (root == null) return op;
+            final Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            op += root.val + ",";
+            while (!queue.isEmpty()) {
+                final int size = queue.size();
+                boolean hasValue = false;
+                String level = "";
+                for (int i = 0; i < size; i++) {
+                    final TreeNode poll = queue.poll();
+                    if (poll.left != null) {
+                        level += poll.left + ",";
+                        queue.add(poll.left);
+                        hasValue = true;
+                    } else {
+                        level += this.n + ",";
+                    }
+                    if (poll.right != null) {
+                        level += poll.right + ",";
+                        hasValue = true;
+                        queue.add(poll.right);
+                    } else {
+                        level += this.n + ",";
+                    }
+                }
+                if (hasValue) op += level;
+            }
+            return op;
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(final String data) {
+            if (data.equals("")) return null;
+            int idx = 0;
+            final String[] split = data.split(",");
+            final TreeNode root = new TreeNode(Integer.parseInt(split[idx++]));
+            final Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                final int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    final TreeNode poll = queue.poll();
+                    final String left = split[idx++];
+                    final String right = split[idx++];
+                    if (!left.equals(this.n)) {
+                        poll.left = new TreeNode(Integer.parseInt(left));
+                        queue.add(poll.left);
+                    }
+                    if (!right.equals(this.n)) {
+                        poll.right = new TreeNode(Integer.parseInt(right));
+                        queue.add(poll.right);
+                    }
+                }
+            }
+            return root;
+        }
+    }
+
     static class Codec {
 
         // Encodes a tree to a single string.
-        public String serialize(TraverseATree.TreeNode root) {
+        public String serialize(final TraverseATree.TreeNode root) {
             if (root == null) return "[]";
-            LinkedList<Integer> output = new LinkedList<>();
-            LinkedList<TraverseATree.TreeNode> queue = new LinkedList<>();
+            final LinkedList<Integer> output = new LinkedList<>();
+            final LinkedList<TraverseATree.TreeNode> queue = new LinkedList<>();
             queue.add(root);
             output.add(root.val);
             while (!queue.isEmpty()) {
-                int size = queue.size();
+                final int size = queue.size();
 //            Iterate and add all the level values to the queue.
                 for (int i = 0; i < size; i++) {
-                    TraverseATree.TreeNode poll = queue.poll();
+                    final TraverseATree.TreeNode poll = queue.poll();
                     if (poll != null) {
                         queue.add(poll.left);
                         queue.add(poll.right);
-                        Integer leftValue = poll.left != null ? poll.left.val : null;
-                        Integer rightValue = poll.right != null ? poll.right.val : null;
+                        final Integer leftValue = poll.left != null ? poll.left.val : null;
+                        final Integer rightValue = poll.right != null ? poll.right.val : null;
                         output.add(leftValue);
                         output.add(rightValue);
                     }
@@ -78,23 +143,23 @@ public class SerializeAndDeserializeBinaryTree {
         }
 
         // Decodes your encoded data to tree.
-        public TraverseATree.TreeNode deserialize(String data) {
-            List<Integer> nums = convertStringToList(data);
+        public TraverseATree.TreeNode deserialize(final String data) {
+            final List<Integer> nums = this.convertStringToList(data);
             TraverseATree.TreeNode treeNode = null;
             if (nums.size() > 0) {
-                Queue<TraverseATree.TreeNode> treeNodeQueue = new LinkedList<>();
+                final Queue<TraverseATree.TreeNode> treeNodeQueue = new LinkedList<>();
                 int index = 1;
                 treeNode = new TraverseATree.TreeNode(nums.get(0));
                 treeNodeQueue.add(treeNode);
                 while (index < nums.size() && !treeNodeQueue.isEmpty()) {
-                    TraverseATree.TreeNode peek = treeNodeQueue.poll();
+                    final TraverseATree.TreeNode peek = treeNodeQueue.poll();
                     if (nums.get(index) != null) {
-                        TraverseATree.TreeNode left = new TraverseATree.TreeNode(nums.get(index++));
+                        final TraverseATree.TreeNode left = new TraverseATree.TreeNode(nums.get(index++));
                         peek.left = left;
                         treeNodeQueue.add(left);
                     } else index++;
                     if (index < nums.size() && nums.get(index) != null) {
-                        TraverseATree.TreeNode right = new TraverseATree.TreeNode(nums.get(index++));
+                        final TraverseATree.TreeNode right = new TraverseATree.TreeNode(nums.get(index++));
                         peek.right = right;
                         treeNodeQueue.add(right);
                     } else index++;
@@ -103,13 +168,13 @@ public class SerializeAndDeserializeBinaryTree {
             return treeNode;
         }
 
-        private List<Integer> convertStringToList(String data) {
-            ArrayList<Integer> output = new ArrayList<>();
+        private List<Integer> convertStringToList(final String data) {
+            final ArrayList<Integer> output = new ArrayList<>();
             if (data.isEmpty()) return output;
-            String[] split = data.replace("[", "").replace("]", "").split(",");
-            for (String current : split) {
+            final String[] split = data.replace("[", "").replace("]", "").split(",");
+            for (final String current : split) {
                 if (!current.trim().isEmpty()) {
-                    Integer currentValue = current.trim().equals("null") ? null : Integer.valueOf(current.trim());
+                    final Integer currentValue = current.trim().equals("null") ? null : Integer.valueOf(current.trim());
                     output.add(currentValue);
                 }
             }
