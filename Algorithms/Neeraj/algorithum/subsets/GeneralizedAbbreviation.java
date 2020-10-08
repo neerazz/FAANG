@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created on:  Oct 06, 2020
@@ -10,26 +7,65 @@ import java.util.Set;
 
 public class GeneralizedAbbreviation {
 
-    public static List<String> generateGeneralizedAbbreviation(final String word) {
-        final Set<String> result = new HashSet<String>();
-        GeneralizedAbbreviation.helper(word, 0, result);
+    public static List<String> generateGeneralizedAbbreviation(String word) {
+        List<String> result = new ArrayList<>();
+        Queue<AbbreviateWord> queue = new LinkedList<>();
+//        Initially dont take any word.
+        queue.add(new AbbreviateWord(new StringBuilder(), 0, 0));
+        int len = word.length();
+        while (!queue.isEmpty()) {
+            AbbreviateWord poll = queue.poll();
+            if (poll.start == len) {
+//                Pointer have reached the last word. Append counter to stringbuilder and ad to result.
+                if (poll.count != 0) poll.sb.append(poll.count);
+                result.add(poll.sb.toString());
+            } else {
+//                Increase the index
+//                Add the current char to counter, and carry the counter.
+                queue.add(new AbbreviateWord(new StringBuilder(poll.sb), poll.start + 1, poll.count + 1));
+
+//                Add add the so far counter to the string also add the character to string.
+                if (poll.count != 0) poll.sb.append(poll.count);
+                queue.add(new AbbreviateWord(new StringBuilder(poll.sb.append(word.charAt(poll.start))), poll.start + 1, 0));
+            }
+        }
+        System.out.println(result.size());
+        return result;
+    }
+
+    public static List<String> generateGeneralizedAbbreviation_Wrong(final String word) {
+        final Set<String> result = new HashSet<>();
+        helper(word, "", 0, "", result, word.length());
         System.out.println(result.size());
         return new ArrayList<>(result);
     }
 
-    private static void helper(final String word, final int idx, final Set<String> set) {
-        if (idx == word.length()) {
-            set.add("" + word.length());
+    private static void helper(String word, String prefix, int start, String suffix, Set<String> result, int length) {
+        if (start == word.length()) {
+            result.add("" + word.length());
+            result.add(word);
             return;
         }
-        final int len = word.length();
-        final String prefix = idx == 0 ? "" : "" + idx;
-        for (int i = idx + 1; i <= len; i++) {
-            final String center = word.substring(idx, i);
-            set.add(prefix + center + (i == len ? "" : len - i));
+        for (int i = start; i < length; i++) {
+//            Set the current range with numbers.
+            int curlen = i - start + 1;
+            result.add(prefix + curlen + word.substring(i + 1));
+            helper(word, prefix + curlen, i + 1, suffix, result, length);
+//            Set the current character and the remaining to numbers.
+            result.add(prefix + word.substring(start, i + 1) + (i == length ? "" : length - i));
+            helper(word, prefix + word.substring(start, i + 1), i + 1, suffix, result, length);
         }
-        set.add(word.substring(0, idx) + 1 + word.substring(idx + 1));
-        GeneralizedAbbreviation.helper(word, idx + 1, set);
+    }
+
+    static class AbbreviateWord {
+        StringBuilder sb;
+        int start, count;
+
+        public AbbreviateWord(final StringBuilder sb, final int start, final int count) {
+            this.sb = sb;
+            this.start = start;
+            this.count = count;
+        }
     }
 
     public static void main(final String[] args) {

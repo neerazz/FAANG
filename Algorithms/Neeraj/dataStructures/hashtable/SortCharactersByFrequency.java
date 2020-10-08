@@ -22,7 +22,8 @@ public class SortCharactersByFrequency {
         return map.entrySet()
                 .stream()
                 .sorted((e1, e2) -> Integer.compare(e2.getValue(), e1.getValue()))
-                .map(entry -> String.valueOf(entry.getKey()).repeat(entry.getValue()))
+                .map(entry -> String.valueOf(entry.getKey()))
+//                .map(entry -> String.valueOf(entry.getKey()).repeat(entry.getValue()))
                 .collect(Collectors.joining());
     }
 }

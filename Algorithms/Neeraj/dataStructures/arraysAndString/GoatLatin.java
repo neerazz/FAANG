@@ -19,7 +19,11 @@ public class GoatLatin {
             } else {
                 sb.append(cur.substring(1)).append(cur.charAt(0)).append("ma");
             }
-            sb.append("a".repeat(i)).append(" ");
+            int temp = i;
+            while (temp > 0) {
+                sb.append("a");
+            }
+            sb.append(" ");
         }
 
         return sb.toString().trim();
