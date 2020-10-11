@@ -5,86 +5,122 @@ https://leetcode.com/problems/alien-dictionary/#
  */
 public class AlienDictionary {
     public static void main(String[] args) {
-        System.out.println(alienOrder(new String[]{"wrt", "wrf", "er", "ett", "rftt"}));
-        System.out.println("=========================================================");
-        System.out.println(alienOrder(new String[]{"z", "x"}));
-        System.out.println("=========================================================");
-        System.out.println(alienOrder(new String[]{"z", "x", "z"}));
+        System.out.println("******************************* Solution 1 ****************************");
+//        System.out.println(alienOrder(new String[]{"wrt", "wrf", "er", "ett", "rftt"}));
+//        System.out.println(alienOrder(new String[]{"z", "x"}));
+//        System.out.println(alienOrder(new String[]{"z", "x", "z"}));
+//        System.out.println(alienOrder(new String[]{"za", "zb", "ca", "cb"}));
+        System.out.println(alienOrder(new String[]{"abc", "ab"}));
+
+        System.out.println("******************************* Solution 2 ****************************");
+//        System.out.println(alienOrder_rev1(new String[]{"wrt", "wrf", "er", "ett", "rftt"}));
+//        System.out.println(alienOrder_rev1(new String[]{"z", "x"}));
+//        System.out.println(alienOrder_rev1(new String[]{"z", "x", "z"}));
+//        System.out.println(alienOrder_rev1(new String[]{"za", "zb", "ca", "cb"}));
+        System.out.println(alienOrder_rev1(new String[]{"abc", "ab"}));
     }
 
-    public static String alienOrder(String[] words) {
-        if (words.length == 0) return "";
-        HashMap<Character, Graph> graphHashMap = new HashMap<>();
-        // Create a graph of letters for each word.
+    public static String alienOrder_rev1(String[] words) {
+        Map<Character, List<Character>> graph = new HashMap<>();
+        int[] counts = new int[26];
+//        Build char dependency with in a word.
         for (String word : words) {
-            createGraph(word.toCharArray(), graphHashMap);
+            for (char c : word.toCharArray()) {
+                graph.putIfAbsent(c, new ArrayList<>());
+            }
         }
-        // Link the existing graph's with other words graph. As soon as the relation is created between two words exit the loop.
+//        Build char dependency between other words.
         for (int i = 1; i < words.length; i++) {
-            String pre = words[i - 1];
-            String cur = words[i];
-            for (int j = 0; j < Math.min(pre.length(), cur.length()); j++) {
-                char preChar = pre.charAt(j);
-                char curChar = cur.charAt(j);
-                if (preChar != curChar) {
-                    graphHashMap.get(preChar).neighbours.add(graphHashMap.get(curChar));
-                // Break the loop because the relation between two word graph is done.
+            String word1 = words[i - 1], word2 = words[i];
+            int len1 = word1.length(), len2 = word2.length();
+//            Check that word2 is not a prefix of word1.
+            if (len1 > len2 && word1.startsWith(word2)) return "";
+            int len = Math.min(len1, len2);
+            for (int j = 0; j < len; j++) {
+                char first = word1.charAt(j), second = word2.charAt(j);
+                if (first == second) continue;
+                graph.get(first).add(second);
+                counts[second - 'a']++;
                 break;
-              }
             }
         }
-        HashSet<Character> visited = new HashSet<>();
-        Stack<Character> characterStack = new Stack<>();
-        for (char c : graphHashMap.keySet()) {
-            if (!visited.contains(c)){
-              performTopologicalSort(graphHashMap.get(c), visited, characterStack);
-            }
-        }
-        StringBuilder sb = new StringBuilder();
-        while (!characterStack.isEmpty()) {
-            sb.append(characterStack.pop());
-        }
-        return sb.toString();
-    }
 
-    private static void performTopologicalSort(Graph graph, HashSet<Character> visited, Stack<Character> characterStack) {
-        if (graph == null) return;
-        for (Graph g : graph.neighbours) {
-            if (g != null) {
-                if (!visited.contains(g.aChar)) {
-                    visited.add(g.aChar);
-                    performTopologicalSort(g, visited, characterStack);
-                    characterStack.add(g.aChar);
+        System.out.println("graph = " + graph);
+
+        StringBuilder sb = new StringBuilder();
+        Queue<Character> queue = new LinkedList<>();
+        for (char cur : graph.keySet()) {
+            if (counts[cur - 'a'] == 0) {
+                queue.add(cur);
+            }
+        }
+        while (!queue.isEmpty()) {
+            char poll = queue.poll();
+            sb.append(poll);
+            for (char dep : graph.get(poll)) {
+                counts[dep - 'a']--;
+                if (counts[dep - 'a'] == 0) {
+                    queue.add(dep);
                 }
             }
         }
-        if (!visited.contains(graph.aChar)) {
-            characterStack.add(graph.aChar);
-            visited.add(graph.aChar);
-        }
+        if (sb.length() == graph.size()) return sb.toString();
+        return "";
     }
 
-    private static Graph createGraph(char[] word, HashMap<Character, Graph> graphHashMap) {
-        if (word.length <= 0) return null;
-        int index = 0;
-        Graph graph;
-        char first = word[index++];
-        if (graphHashMap.containsKey(first)) {
-            graph = graphHashMap.get(first);
-        } else {
-            graph = new Graph(first, new HashSet<>());
-            graphHashMap.put(first, graph);
+    public static String alienOrder(String[] words) {
+        // Step 0: Create data structures and find all unique letters.
+        Map<Character, List<Character>> adjList = new HashMap<>();
+        Map<Character, Integer> counts = new HashMap<>();
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                counts.put(c, 0);
+                adjList.put(c, new ArrayList<>());
+            }
         }
-        graph.neighbours.add(createGraph(Arrays.copyOfRange(word, index, word.length), graphHashMap));
-        return graph;
-    }
-    static class Graph {
-        char aChar;
-        HashSet<Graph> neighbours;
 
-        public Graph(char aChar, HashSet<Graph> neighbours) {
-            this.aChar = aChar;
-            this.neighbours = neighbours;
+        // Step 1: Find all edges.
+        for (int i = 0; i < words.length - 1; i++) {
+            String word1 = words[i];
+            String word2 = words[i + 1];
+            // Check that word2 is not a prefix of word1.
+            if (word1.length() > word2.length() && word1.startsWith(word2)) {
+                return "";
+            }
+            // Find the first non match and insert the corresponding relation.
+            for (int j = 0; j < Math.min(word1.length(), word2.length()); j++) {
+                if (word1.charAt(j) != word2.charAt(j)) {
+                    adjList.get(word1.charAt(j)).add(word2.charAt(j));
+                    counts.put(word2.charAt(j), counts.get(word2.charAt(j)) + 1);
+                    break;
+                }
+            }
         }
+
+        System.out.println("adjList = " + adjList);
+
+        // Step 2: Breadth-first search.
+        StringBuilder sb = new StringBuilder();
+        Queue<Character> queue = new LinkedList<>();
+        for (Character c : counts.keySet()) {
+            if (counts.get(c).equals(0)) {
+                queue.add(c);
+            }
+        }
+        while (!queue.isEmpty()) {
+            Character c = queue.remove();
+            sb.append(c);
+            for (Character next : adjList.get(c)) {
+                counts.put(next, counts.get(next) - 1);
+                if (counts.get(next).equals(0)) {
+                    queue.add(next);
+                }
+            }
+        }
+
+        if (sb.length() < counts.size()) {
+            return "";
+        }
+        return sb.toString();
     }
 }

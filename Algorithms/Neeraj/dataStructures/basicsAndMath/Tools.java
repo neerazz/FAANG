@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Special Array With X Elements Greater Than or Equal X3\n" +
-                        "Even Odd Tree4\n" +
-                        "Maximum Number of Visible Points5\n" +
-                        "Minimum One Bit Operations to Make Integers Zero"
+                "Maximum Nesting Depth of the Parentheses3\n" +
+                        "Maximal Network Rank4\n" +
+                        "Split Two Strings to Make Palindrome5\n" +
+                        "Count Subtrees With Max Distance Between Cities"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
@@ -21,7 +21,12 @@ public class Tools {
 //                "Product of Array Except Self",
         );
         getReplaced(
-                Collections.singletonList(""),
+                Arrays.asList(
+                        "[[-2147483646,-2147483645],[2147483646,2147483647]]",
+                        "[[1,2],[3,4],[5,6],[7,8]]",
+                        "[[0,1],[0,3],[1,2],[1,3],[2,3],[2,4]]",
+                        "[[0,1],[1,2],[2,3],[2,4],[5,6],[5,7]]"
+                ),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
