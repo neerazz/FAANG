@@ -26,7 +26,6 @@ public class BestTeamWithNoConflicts {
         for (int i = 0; i < len; i++) {
             Player cur = players.get(i);
             dp[i] = cur.score;
-            int withOutConflictPlayer = 0;
             for (int j = 0; j < i; j++) {
                 Player pre = players.get(j);
                 if (pre.score > cur.score) {
