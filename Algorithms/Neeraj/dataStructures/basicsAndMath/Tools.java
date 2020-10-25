@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Largest Substring Between Two Equal Characters3\n" +
-                        "Lexicographically Smallest String After Applying Operations4\n" +
-                        "Best Team With No Conflicts5\n" +
-                        "Graph Connectivity With Threshold"
+                "Slowest Key3\n" +
+                        "Arithmetic Subarrays4\n" +
+                        "Path With Minimum Effort5\n" +
+                        "Rank Transform of a Matrix"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
@@ -22,10 +22,9 @@ public class Tools {
         );
         getReplaced(
                 Arrays.asList(
-                        "[[3,46,2],[3,27,46],[7,25,50],[32,39,3],[4,42,37],[20,18,48],[13,16,23],[22,36,24],[40,7,26],[16,21,1],[46,33,34],[19,11,19],[31,22,41],[37,29,20],[18,29,28],[36,0,45],[39,22,37],[25,25,45],[0,31,15],[44,45,13],[18,47,23],[47,19,26],[48,18,32]]\n" +
-                                "44",
-                        "[[1,2],[3,4],[5,6],[7,8]]",
-                        "[[0,1],[0,3],[1,2],[1,3],[2,3],[2,4]]",
+                        "[[1,2,1,1,1],[1,2,1,2,1],[1,2,1,2,1],[1,2,1,2,1],[1,1,1,2,1]]",
+                        "[[1,2,3],[3,8,4],[5,3,5]]",
+                        "[[1,2,2],[3,8,2],[5,3,5]]",
                         "[[0,1],[1,2],[2,3],[2,4],[5,6],[5,7]]"
                 ),
                 Arrays.asList("[", "{"),

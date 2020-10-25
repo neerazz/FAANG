@@ -28,7 +28,7 @@ public class AsteroidCollision {
             }
             if (!skip) stack.add(cur);
         }
-        int oplen = stack.size(), idx = oplen;
+        int oplen = stack.size();
         int[] result = new int[oplen];
         while (!stack.isEmpty()) {
             result[--oplen] = stack.pop();
