@@ -11,7 +11,7 @@ import java.io.*;
 public class MaximalNetworkRank {
 
     public static void main(String[] args) {
-//        System.out.println(maximalNetworkRank(4, new int[][]{{0, 1}, {0, 3}, {1, 2}, {1, 3}}));
+        System.out.println(maximalNetworkRank(4, new int[][]{{0, 1}, {0, 3}, {1, 2}, {1, 3}}));
         System.out.println(maximalNetworkRank(2, new int[][]{{1, 0}}));
     }
 
