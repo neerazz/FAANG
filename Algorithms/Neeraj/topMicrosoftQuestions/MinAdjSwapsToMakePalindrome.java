@@ -10,7 +10,6 @@ public class MinAdjSwapsToMakePalindrome {
         System.out.println(String.format("%d expected %d", minSwaps("asflkj"), -1));
         System.out.println(String.format("%d expected %d", minSwaps("aabb"), 2));
         System.out.println(String.format("%d expected %d", minSwaps("ntiin"), 1));
-
     }
 
     private static int minSwaps(String str) {
