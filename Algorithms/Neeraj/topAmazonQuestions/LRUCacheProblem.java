@@ -1,5 +1,3 @@
-package topAmazonQuestions;
-
 import java.util.*;
 
 /*
@@ -42,6 +40,25 @@ public class LRUCacheProblem {
         lruCacheRev.put(3, 2);    // evicts key 2
         System.out.println(lruCacheRev.get(2));       // returns -1 (not found)
         System.out.println(lruCacheRev.get(3));       // returns 3
+
+        System.out.println("************************************ Method 3 ******************************");
+        LRUCache_rev2 lruCacheRev2 = new LRUCache_rev2(2 /* capacity */);
+//        lruCacheRev2.put(1, 1);
+//        lruCacheRev2.put(2, 2);
+//        System.out.println(lruCacheRev2.get(1));       // returns 1
+//        lruCacheRev2.put(3, 3);    // evicts key 2
+//        System.out.println(lruCacheRev2.get(2));       // returns -1 (not found)
+//        lruCacheRev2.put(4, 4);    // evicts key 1
+//        System.out.println(lruCacheRev2.get(1));       // returns -1 (not found)
+//        System.out.println(lruCacheRev2.get(3));       // returns 3
+//        System.out.println(lruCacheRev2.get(4));       // returns 4
+        System.out.println("************************************ Method 3: Ex2 ******************************");
+        lruCacheRev2 = new LRUCache_rev2(1 /* capacity */);
+        lruCacheRev2.put(2, 1);
+        System.out.println(lruCacheRev2.get(2));       // returns 1
+        lruCacheRev2.put(3, 2);    // evicts key 2
+        System.out.println(lruCacheRev2.get(2));       // returns -1 (not found)
+        System.out.println(lruCacheRev2.get(3));       // returns 3
     }
 }
 
@@ -157,4 +174,101 @@ class LRUCache_rev {
             cache.put(key, node);
         }
     }
+}
+
+class LRUCache_rev2 {
+
+    Node head, tail;
+    Map<Integer, Node> map;
+    int max;
+    public LRUCache_rev2(int capacity) {
+        map = new HashMap<>();
+        max = capacity;
+    }
+
+    public int get(int key) {
+        if (map.containsKey(key)) {
+            Node node = map.get(key);
+            deleteAndAddToFirst(node);
+            return node.val;
+        }
+        return -1;
+    }
+
+    public void put(int key, int value) {
+        if (map.containsKey(key)) {
+            Node newNode = map.get(key);
+            newNode.val = value;
+            deleteAndAddToFirst(newNode);
+            map.put(key, newNode);
+        } else {
+            if (map.size() == max) {
+                deleteNode(map.remove(tail.key));
+            }
+            Node newNode = new Node(key);
+            newNode.val = value;
+            addNode(newNode);
+            map.put(key, newNode);
+        }
+    }
+
+    private void addNode(Node node) {
+        if (head == null && tail == null) {
+//             When both the nodes are null
+            head = tail = node;
+            head.next = node;
+            tail.pre = node;
+        } else if (head == tail) {
+//             If only one node is present, then add the new node to start
+            head = node;
+            tail.pre = node;
+            head.next = tail;
+        } else {
+//            Add the node to start
+            node.next = head;
+            head.pre = node;
+            head = node;
+        }
+    }
+
+    private void deleteNode(Node node) {
+        if (head == tail) {
+//             When you have only one node
+            head = tail = null;
+        } else if (head == node) {
+//             When you have to delete the first node.
+            head.next.pre = null;
+            head = head.next;
+        } else if (tail == node) {
+            tail = tail.pre;
+            tail.next = null;
+        } else {
+            node.pre.next = node.next;
+            node.next.pre = node.pre;
+        }
+    }
+
+    private void deleteAndAddToFirst(Node node) {
+        deleteNode(node);
+        addNode(node);
+    }
+
+    class Node {
+        int key, val;
+        Node pre, next;
+
+        Node(int key) {
+            this.key = key;
+            pre = next = null;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "key=" + key +
+                    ", val=" + val +
+                    '}';
+        }
+    }
+
 }
