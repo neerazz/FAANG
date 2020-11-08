@@ -6,8 +6,8 @@
 public class FindCountOfXInSortedArray {
 
     public static void main(String[] args) {
-//        System.out.println(findCountOfXInSortedArray(new int[]{1, 1, 2, 2, 2, 2, 3}, 2));
-//        System.out.println(findCountOfXInSortedArray(new int[]{2, 2, 2, 2}, 2));
+        System.out.println(findCountOfXInSortedArray(new int[]{1, 1, 2, 2, 2, 2, 3}, 2));
+        System.out.println(findCountOfXInSortedArray(new int[]{2, 2, 2, 2}, 2));
         System.out.println(findCountOfXInSortedArray(new int[]{2, 2}, 2));
     }
 

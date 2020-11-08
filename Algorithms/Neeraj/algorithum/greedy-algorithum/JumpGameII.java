@@ -13,6 +13,23 @@ public class JumpGameII {
         System.out.println(jump_rev1(new int[]{2, 1, 1, 1, 1}) + " should be [3]");
     }
 
+//    Time: O(n), space : O(1)
+    public static int jump_rev_2(int[] nums) {
+        int n = nums.length;
+        if (n < 2) return 0;
+        int maxSteps = nums[0], maxPos = nums[0], jump = 1;
+        for (int i = 0; i < n; i++) {
+            if (maxSteps < i) {
+//                 If you cant reach to current point.
+//                 Then take a jump and reach till the max point that can be reached
+                jump++;
+                maxSteps = maxPos;
+            }
+            maxPos = Math.max(maxPos, nums[i] + i);
+        }
+        return jump;
+    }
+
     private static int jump_rev1(int[] nums) {
         int len = nums.length;
         Queue<int[]> queue = new LinkedList<>();
