@@ -30,11 +30,12 @@
 >          Sort all the black numbers, and white number independently.
 >          And replace the actual array with that number in an order.
 >
->   | **1** 	| 2 	| **3** 	| 4 	| **5**
->   |---	|---	|---	|---	|---
-    | 5 	| **4** 	| 3 	| **2** 	| 1 
-    | **4** 	| 3 	| **2** 	| 1 	| **5** 
-    | 9 	| **6** 	| 7 	| **1** 	| 6
+
+| **1** 	| 2 	| **3** 	| 4 	| **5**
+|---	|---	|---	|---	|---
+| 5 	| **4** 	| 3 	| **2** 	| 1 
+| **4** 	| 3 	| **2** 	| 1 	| **5** 
+| 9 	| **6** 	| 7 	| **1** 	| 6
 >
 >    Query: [1,1,3]: <br>
 >      Means for the below sub-array: <br><br>

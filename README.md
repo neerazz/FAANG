@@ -42,6 +42,7 @@
 > #### General Design Questions:
 >
 >   - [Tiny URL](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/tiny-url)
+>   - [Cab Booking Service](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/cab-booking-system#cab-booking-problem)
 >   - [Amazon](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Amazon%20System%20Design.png)
 >   - [Zoom](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Zoom%20System%20Design.png)
 >   - [Google Map](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Google%20Maps%20Design.png)
