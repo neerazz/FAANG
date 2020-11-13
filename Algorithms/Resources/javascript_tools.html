@@ -65,7 +65,7 @@ input.match(regex).forEach(function(str){
 });
 console.log("Converted Input to Camel Case:" + output1);
 $("#output1").html(output1);
-$("#output2").html(input.replace("[", "{").replace("]", "}").replace("\"", "'"));
+$("#output2").html(input.replaceAll("[", "{").replaceAll("]", "}").replaceAll("\"", "'"));
 });
 </script>
 
