@@ -7,8 +7,10 @@ import java.util.Arrays;
 
 public class TripletSumCloseToTarget {
 
-    public static void main(final String[] args) {
-
+    public static void main(String[] args) {
+        System.out.println(TripletSumCloseToTarget.searchTriplet(new int[] { -2, 0, 1, 2 }, 2));
+        System.out.println(TripletSumCloseToTarget.searchTriplet(new int[] { -3, -1, 1, 2 }, 1));
+        System.out.println(TripletSumCloseToTarget.searchTriplet(new int[] { 1, 0, 1, 1 }, 100));
     }
 
     public static int searchTriplet(final int[] arr, final int target) {

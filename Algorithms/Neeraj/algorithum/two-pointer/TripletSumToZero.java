@@ -14,13 +14,13 @@ public class TripletSumToZero {
     }
 
     public static List<List<Integer>> searchTriplets(final int[] arr) {
-        final List<List<Integer>> triplets = new ArrayList<>();
+        List<List<Integer>> triplets = new ArrayList<>();
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 2; i++) {
-            final int target = arr[i] * -1;
+            int target = arr[i] * -1;
             int start = i + 1, end = arr.length - 1;
             while (start < end) {
-                final int sum = arr[start] + arr[end];
+                int sum = arr[start] + arr[end];
                 if (sum == target) {
                     triplets.add(Arrays.asList(arr[i], arr[start++], arr[end--]));
                 } else if (sum < target) {
