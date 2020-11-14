@@ -10,7 +10,7 @@ public class MinimumNumberOfArrowsToBurstBalloons {
 
     public static void main(String[] args) {
 //        System.out.println(findMinArrowShots(new int[][]{{-2147483646, -2147483645}, {2147483646, 2147483647}}));
-        System.out.println(findMinArrowShots(new int[][]{{1,2},{3,4},{5,6},{7,8}}));
+        System.out.println(findMinArrowShots(new int[][]{{1, 2}, {3, 4}, {5, 6}, {7, 8}}));
     }
 
     public static int findMinArrowShots(int[][] points) {

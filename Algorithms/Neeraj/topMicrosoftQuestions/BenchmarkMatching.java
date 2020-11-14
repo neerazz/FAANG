@@ -28,8 +28,9 @@ public class BenchmarkMatching {
         System.out.println("portfolio = " + portfolio);
         System.out.println("benchMark = " + benchMark);
         List<Transaction> transactions = new ArrayList<>();
+//        Loop through all the expected stocks and remove it from portfolio when the matching is done.
         for (Stock expected : benchMark.values()) {
-            Stock actual = portfolio.get(expected.name+expected.assetType);
+            Stock actual = portfolio.remove(expected.name + expected.assetType);
             if (actual == null) {
                 transactions.add(new Transaction("BUY", expected.name, expected.assetType, expected.shares));
             } else if (actual.shares < expected.shares) {
@@ -37,6 +38,10 @@ public class BenchmarkMatching {
             } else if (actual.shares > expected.shares) {
                 transactions.add(new Transaction("SELL", expected.name, expected.assetType, actual.shares - expected.shares));
             }
+        }
+//        Now loop through the remaining portfolio stocks, and sell those as well.
+        for (Stock remaining : portfolio.values()) {
+            transactions.add(new Transaction("SELL", remaining.name, remaining.assetType, remaining.shares));
         }
         return transactions.parallelStream()
                 .map(tran -> String.format("%s,%s,%s,%d", tran.transactionType, tran.name, tran.assetType, tran.shares))

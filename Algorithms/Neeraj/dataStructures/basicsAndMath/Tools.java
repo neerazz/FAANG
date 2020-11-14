@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Check Array Formation Through Concatenation3\n" +
-                        "Count Sorted Vowel Strings4\n" +
-                        "Furthest Building You Can Reach5\n" +
-                        "Kth Smallest Instructions"
+                "Defuse the Bomb3\n" +
+                        "Minimum Deletions to Make String Balanced4\n" +
+                        "Minimum Jumps to Reach Home5\n" +
+                        "Distribute Repeating Integers"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
