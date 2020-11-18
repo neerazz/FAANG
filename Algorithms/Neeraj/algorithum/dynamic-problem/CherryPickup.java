@@ -15,6 +15,7 @@ public class CherryPickup {
         System.out.println(cherryPickup(new int[][]{{1}}) + " should be [1].");
         System.out.println(cherryPickup(new int[][]{{1, 1, 1, 1, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 1}, {1, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 1, 1, 1, 1}}) +
                 " should be [15].");
+        System.out.println("************************* Rev 1 ********************************");
     }
 
     public static int cherryPickup(int[][] grid) {
@@ -22,7 +23,7 @@ public class CherryPickup {
         cols = rows > 0 ? grid[0].length : 0;
         Integer[][][] dp = new Integer[rows][cols][cols];
         helper(grid, dp, 0, 0, 0, 0);
-//        System.out.println(Arrays.deepToString(dp));
+        System.out.println(Arrays.deepToString(dp));
         return Math.max(0, dp[0][0][0] == null ? 0 : dp[0][0][0]);
     }
 

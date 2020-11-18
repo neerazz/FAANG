@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Nov 14, 2020
@@ -12,47 +11,59 @@ public class UnionAndIntersectionOfTwoSortedIntervalLists {
 
     }
 
-    public List<int[]> mergeTwoList(int[][] i1, int[][] i2) {
-        Stack<int[]> merged = new Stack<>();
-        Queue<int[]> interval1 = new LinkedList<>(), interval2 = new LinkedList<>();
-        for (int[] cur : i1) interval1.add(cur);
-        for (int[] cur : i2) interval2.add(cur);
-        while (!interval1.isEmpty() && !interval2.isEmpty()) {
-            int[] p1 = interval1.peek(), p2 = interval2.peek();
-            int[] cur = new int[2];
-            if (hasOverLap(p1, p2)) {
-//                Merge the p1 and p2 intervals.
-                cur = merge(interval1.poll(), interval1.poll());
-            } else if (p1[0] < p2[0]) {
-                cur = interval1.poll();
-            } else {
-                cur = interval2.poll();
+    public int[][] intersectionOfTwoIntervals(int[][] a, int[][] b) {
+        List<int[]> result = new ArrayList<>();
+        int p1 = 0, p2 = 0, l1 = a.length, l2 = b.length;
+        while (p1 < l1 && p2 < l2) {
+            int[] v1 = a[p1], v2 = b[p2];
+            if (hasOverLap(v1, v2)) {
+                result.add(getIntersections(v1, v2));
             }
-//            Check if the current interval has overlap with the previously inserted interval
-            if (hasOverLap(merged.peek(), cur)) {
-                merged.add(merge(merged.pop(), cur));
+            if (v1[1] < v2[1]) {
+                p1++;
             } else {
-                merged.add(cur);
+                p2++;
             }
         }
-        while(!interval1.isEmpty()){
-            if (hasOverLap(merged.peek(), interval1.peek())) {
-                merged.add(merge(merged.pop(), interval1.poll()));
-            } else {
-                merged.add(interval1.poll());
-            }
-        }
-        while(!interval2.isEmpty()){
-            if (hasOverLap(merged.peek(), interval2.peek())) {
-                merged.add(merge(merged.pop(), interval2.poll()));
-            } else {
-                merged.add(interval2.poll());
-            }
-        }
-        return new ArrayList<>(merged);
+        return result.toArray(new int[0][0]);
     }
 
-    private int[] merge(int[] p1, int[] p2) {
+    private int[] getIntersections(int[] i1, int[] i2) {
+        return new int[]{Math.max(i1[0], i2[0]), Math.min(i1[0], i2[1])};
+    }
+
+    public List<int[]> mergeTwoIntervals(int[][] a, int[][] b) {
+        Stack<int[]> merged = new Stack<>();
+        int p1 = 0, p2 = 0, l1 = a.length, l2 = b.length;
+        while (p1 < l1 && p2 < l2) {
+            int[] v1 = a[p1], v2 = b[p2], cur = new int[2];
+            if (hasOverLap(v1, v2)) {
+                cur = getMerged(v1, v2);
+            }
+//            Check if the current interval has overlap with the previously inserted interval
+            if (hasOverLap(merged.peek(), cur)) merged.add(getMerged(merged.pop(), cur));
+            else merged.add(cur);
+            if (v1[1] < v2[1]) p1++;
+            else p2++;
+        }
+        while (p1 < l1) {
+            int[] cur = a[p1++];
+            if (hasOverLap(merged.peek(), cur)) merged.add(getMerged(merged.pop(), cur));
+            else merged.add(cur);
+        }
+        while (p2 < l2) {
+            int[] cur = a[p2++];
+            if (hasOverLap(merged.peek(), cur)) merged.add(getMerged(merged.pop(), cur));
+            else merged.add(cur);
+        }
+        LinkedList<int[]> result = new LinkedList<>();
+        while (!merged.isEmpty()) {
+            result.addFirst(merged.pop());
+        }
+        return result;
+    }
+
+    private int[] getMerged(int[] p1, int[] p2) {
         return new int[]{Math.min(p1[0], p2[0]), Math.max(p1[1], p2[1])};
     }
 

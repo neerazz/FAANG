@@ -1,13 +1,25 @@
-# Online Test:
+## Online Test:
  
  ## Q1:
 >
-> Given a Number n. Return the product - sum of all the digits. <br>
->   Example:
->   124 <br>
->   Product = 1 * 2 * 4  = 8 <br>
->   Sum = 1 + 2 + 4 = 7<br>
->   Result= 8 - 7 = 1
+> Given an integer number n, return the difference between the product of its digits and the sum of its digits. <br>
+>> Example 1:
+>> 
+>> Input: n = 234 <br>
+>> Output: 15  <br>
+>> Explanation:  <br>
+>> Product of digits = 2 * 3 * 4 = 24 <br> 
+>>  Sum of digits = 2 + 3 + 4 = 9  <br>
+>>  Result = 24 - 9 = 15 <br>
+>
+>> Example 2: <br>
+>>  
+>>  Input: n = 4421 <br>
+>>  Output: 21 <br>
+>>  Explanation:  <br>
+>>  Product of digits = 4 * 4 * 2 * 1 = 32 <br> 
+>>  Sum of digits = 4 + 4 + 2 + 1 = 11  <br>
+>>  Result = 32 - 11 = 21 <br>
 
  ## Q2:
 >
@@ -56,3 +68,8 @@
 >     1. [0,i,n]  -> set the value at b[i] = n <br>
 >     2. [1,x]    -> find the number of pairs that can form a[i] + b[j] == x <br>
 >Return the list of values of query 2.
+
+## Phone Interview:
+
+> [Construct Quad Tree](https://leetcode.com/problems/construct-quad-tree/)
+>> The only change was that the val will be intege of each node, rather than boolean.

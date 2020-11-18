@@ -43,15 +43,15 @@ public class LRUCacheProblem {
 
         System.out.println("************************************ Method 3 ******************************");
         LRUCache_rev2 lruCacheRev2 = new LRUCache_rev2(2 /* capacity */);
-//        lruCacheRev2.put(1, 1);
-//        lruCacheRev2.put(2, 2);
-//        System.out.println(lruCacheRev2.get(1));       // returns 1
-//        lruCacheRev2.put(3, 3);    // evicts key 2
-//        System.out.println(lruCacheRev2.get(2));       // returns -1 (not found)
-//        lruCacheRev2.put(4, 4);    // evicts key 1
-//        System.out.println(lruCacheRev2.get(1));       // returns -1 (not found)
-//        System.out.println(lruCacheRev2.get(3));       // returns 3
-//        System.out.println(lruCacheRev2.get(4));       // returns 4
+        lruCacheRev2.put(1, 1);
+        lruCacheRev2.put(2, 2);
+        System.out.println(lruCacheRev2.get(1));       // returns 1
+        lruCacheRev2.put(3, 3);    // evicts key 2
+        System.out.println(lruCacheRev2.get(2));       // returns -1 (not found)
+        lruCacheRev2.put(4, 4);    // evicts key 1
+        System.out.println(lruCacheRev2.get(1));       // returns -1 (not found)
+        System.out.println(lruCacheRev2.get(3));       // returns 3
+        System.out.println(lruCacheRev2.get(4));       // returns 4
         System.out.println("************************************ Method 3: Ex2 ******************************");
         lruCacheRev2 = new LRUCache_rev2(1 /* capacity */);
         lruCacheRev2.put(2, 1);
@@ -240,8 +240,8 @@ class LRUCache_rev2 {
             head.next.pre = null;
             head = head.next;
         } else if (tail == node) {
-            tail = tail.pre;
             tail.next = null;
+            tail = tail.pre;
         } else {
             node.pre.next = node.next;
             node.next.pre = node.pre;
