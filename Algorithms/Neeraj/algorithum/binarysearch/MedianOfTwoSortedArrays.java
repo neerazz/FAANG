@@ -25,7 +25,7 @@ public class MedianOfTwoSortedArrays {
         int alen = A.length, blen = B.length;
         if (alen > blen) return findMedianSortedArrays_revision1(B, A);
         boolean isODD = (alen + blen) % 2 != 0;
-        int astart = 0, bstart = blen, apoint = alen / 2;
+        int apoint = alen / 2;
 //        Start form the start of the first array and loop till the end if the first array
 //        And try to find the possible intersection point, if there is none then exit.
         while (apoint <= alen && apoint >= 0) {

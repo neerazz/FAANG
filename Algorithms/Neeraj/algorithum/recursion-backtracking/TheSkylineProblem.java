@@ -18,8 +18,82 @@ public class TheSkylineProblem {
     public static void main(String[] args) {
         System.out.println(getSkyline(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
         System.out.println(getSkyline_elegant(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
+//        System.out.println(getSkyline_rev(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
         System.out.println(getSkyline(new int[][]{{0, 2, 3}, {2, 5, 3}}));
         System.out.println(getSkyline_elegant(new int[][]{{0, 2, 3}, {2, 5, 3}}));
+        System.out.println(getSkyline_rev(new int[][]{{0, 2, 3}, {2, 5, 3}}));
+        System.out.println(getSkyline(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
+        System.out.println(getSkyline_elegant(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
+        System.out.println(getSkyline_rev(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
+    }
+
+    public static List<List<Integer>> getSkyline_rev(int[][] buildings) {
+        List<Point> list = new ArrayList<>();
+        for (int i = 0; i < buildings.length; i++) {
+            Point start = new Point(i, buildings[i][0], buildings[i][2], 0);
+            Point end = new Point(i, buildings[i][1], buildings[i][2], 1);
+            list.add(start);
+            list.add(end);
+        }
+        Collections.sort(list);
+        List<List<Integer>> result = new ArrayList<>();
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+        int height = 0;
+        pq.add(height);
+        for (Point cur : list) {
+            if (cur.start == 0) {
+                pq.add(cur.height);
+            } else {
+                pq.remove(cur.height);
+            }
+            int curHeight = pq.peek();
+            if (curHeight != height) {
+                height = curHeight;
+                result.add(Arrays.asList(cur.point, height));
+            }
+        }
+        return result;
+    }
+
+    static class Point implements Comparable<Point> {
+        int id, point, height, start;
+
+        //         start: 0 for start, 1 for end
+        public Point(int id, int point, int height, int start) {
+            this.id = id;
+            this.point = point;
+            this.height = height;
+            this.start = start;
+        }
+
+        public int compareTo(Point that) {
+            if (point == that.point) {
+                if (start == that.start) {
+                    if (start == 0) {
+                        return Integer.compare(that.height, height);
+                    } else {
+                        return Integer.compare(height, that.height);
+                    }
+                } else {
+                    return Integer.compare(start, that.start);
+                }
+            }
+            return Integer.compare(point, that.point);
+        }
+//        Sorting: Current point, if same then:
+//          if both are starting then bigger height should be first,
+//          if both are ending then smaller height should be first,
+//          if one start and one end is compared then the starting should be taken
+
+        @Override
+        public String toString() {
+            return "Point{" +
+                    "id=" + id +
+                    ", point=" + point +
+                    ", height=" + height +
+                    ", start=" + start +
+                    '}';
+        }
     }
 
     public static List<List<Integer>> getSkyline_elegant(int[][] buildings) {
