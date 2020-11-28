@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Design an Ordered Stream3\n" +
-                        "Determine if Two Strings Are Close4\n" +
-                        "Minimum Operations to Reduce X to Zero5\n" +
-                        "Maximize Grid Happiness"
+                "Maximum Repeating Substring3\n" +
+                        "Merge In Between Linked Lists4\n" +
+                        "Design Front Middle Back Queue5\n" +
+                        "Minimum Number of Removals to Make Mountain Array"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(

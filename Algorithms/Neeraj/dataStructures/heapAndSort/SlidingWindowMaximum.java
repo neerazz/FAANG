@@ -5,10 +5,30 @@ class SlidingWindowMaximum {
         System.out.println(Arrays.toString(maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol2(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol3(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        System.out.println(Arrays.toString(maxSlidingWindow_sol4(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
 
         System.out.println(Arrays.toString(maxSlidingWindow(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol2(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol3(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
+        System.out.println(Arrays.toString(maxSlidingWindow_sol4(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
+    }
+
+    public static int[] maxSlidingWindow_sol4(int[] nums, int k) {
+        List<Integer> result = new ArrayList<>();
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        int len = nums.length, i = 0, j = 0;
+        while (i < k - 1) {
+            int cur = nums[i++];
+            map.put(cur, map.getOrDefault(cur, 0) + 1);
+        }
+        while (i < len) {
+            int end = nums[i++], start = nums[j++];
+            map.put(end, map.getOrDefault(end, 0) + 1);
+            result.add(map.lastKey());
+            int count = map.remove(start);
+            if (count > 1) map.put(start, count - 1);
+        }
+        return result.stream().mapToInt(val -> val).toArray();
     }
 
     public static int[] maxSlidingWindow_sol3(int[] nums, int k) {
