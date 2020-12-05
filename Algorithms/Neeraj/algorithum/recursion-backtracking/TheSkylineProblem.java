@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 /*
 https://leetcode.com/explore/learn/card/recursion-ii/507/beyond-recursion/3006/
@@ -16,15 +17,90 @@ There must be no consecutive horizontal lines of equal height in the output skyl
  */
 public class TheSkylineProblem {
     public static void main(String[] args) {
+        System.out.println("**********************************************************************");
         System.out.println(getSkyline(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
         System.out.println(getSkyline_elegant(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
-//        System.out.println(getSkyline_rev(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
+        System.out.println(getSkyline_rev(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
+//        System.out.println(getSkyline_rev2(new int[][]{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}}));
+
+        System.out.println("**********************************************************************");
         System.out.println(getSkyline(new int[][]{{0, 2, 3}, {2, 5, 3}}));
         System.out.println(getSkyline_elegant(new int[][]{{0, 2, 3}, {2, 5, 3}}));
         System.out.println(getSkyline_rev(new int[][]{{0, 2, 3}, {2, 5, 3}}));
+//        System.out.println(getSkyline_rev2(new int[][]{{0, 2, 3}, {2, 5, 3}}));
+
+        System.out.println("**********************************************************************");
         System.out.println(getSkyline(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
         System.out.println(getSkyline_elegant(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
         System.out.println(getSkyline_rev(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
+        System.out.println(getSkyline_rev2(new int[][]{{1, 2, 1}, {1, 2, 2}, {1, 2, 3}}));
+
+        System.out.println("**********************************************************************");
+        System.out.println(getSkyline(new int[][]{{2, 4, 7}, {2, 4, 5}, {2, 4, 6}}));
+        System.out.println(getSkyline_elegant(new int[][]{{2, 4, 7}, {2, 4, 5}, {2, 4, 6}}));
+        System.out.println(getSkyline_rev(new int[][]{{2, 4, 7}, {2, 4, 5}, {2, 4, 6}}));
+        System.out.println(getSkyline_rev2(new int[][]{{2, 4, 7}, {2, 4, 5}, {2, 4, 6}}));
+
+        System.out.println("**********************************************************************");
+        System.out.println(getSkyline(new int[][]{{4, 10, 10}, {5, 10, 9}, {6, 10, 8}, {7, 10, 7}, {8, 10, 6}, {9, 10, 5}}));
+        System.out.println(getSkyline_elegant(new int[][]{{4, 10, 10}, {5, 10, 9}, {6, 10, 8}, {7, 10, 7}, {8, 10, 6}, {9, 10, 5}}));
+        System.out.println(getSkyline_rev(new int[][]{{4, 10, 10}, {5, 10, 9}, {6, 10, 8}, {7, 10, 7}, {8, 10, 6}, {9, 10, 5}}));
+        System.out.println(getSkyline_rev2(new int[][]{{4, 10, 10}, {5, 10, 9}, {6, 10, 8}, {7, 10, 7}, {8, 10, 6}, {9, 10, 5}}));
+    }
+
+    public static List<List<Integer>> getSkyline_rev2(int[][] buildings) {
+        List<Building> list = new ArrayList<>();
+        for (int[] building : buildings) {
+            int left = building[0], right = building[1], height = building[2];
+            list.add(new Building(height, left, true));
+            list.add(new Building(height, right, false));
+        }
+        Collections.sort(list);
+        PriorityQueue<Integer> pq = new PriorityQueue<>((v1, v2) -> Integer.compare(v2, v1));
+        int preMax = 0;
+        pq.add(preMax);
+        List<List<Integer>> result = new ArrayList<>();
+        for (Building building : list) {
+            if (building.isStart) {
+                pq.add(building.height);
+            } else {
+                pq.remove(building.height);
+            }
+            int curMax = pq.peek();
+            if (curMax != preMax) {
+                preMax = curMax;
+                result.add(Arrays.asList(building.point, preMax));
+            }
+        }
+        return result;
+    }
+
+    static class Building implements Comparable<Building> {
+        int height, point;
+        boolean isStart;
+
+        Building(int height, int point, boolean isStart) {
+            this.height = height;
+            this.point = point;
+            this.isStart = isStart;
+        }
+
+        @Override
+        public int compareTo(Building that) {
+            if (this.point == that.point) {
+//                 If both of that are starting, then the one with more height comes first
+                if (this.isStart && that.isStart) {
+                    return Integer.compare(that.height, this.height);
+                } else if (!this.isStart && !that.isStart) {
+//                     If both are ending then that one with more height comes first
+                    return Integer.compare(this.height, that.height);
+                } else {
+//                     if one is starting and other is ending, then the one with starting comes first
+                    return this.isStart ? -1 : 1;
+                }
+            }
+            return Integer.compare(this.point, that.point);
+        }
     }
 
     public static List<List<Integer>> getSkyline_rev(int[][] buildings) {
