@@ -6,7 +6,7 @@ import java.io.*;
  * Questions: https://leetcode.com/problems/add-two-numbers/
  */
 
-public class AddTwoNumbers {
+public class AddTwoNumbersLinkedList {
 
     public static void main(String[] args) {
 
