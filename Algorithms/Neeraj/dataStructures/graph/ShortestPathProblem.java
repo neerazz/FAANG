@@ -72,7 +72,7 @@ public class ShortestPathProblem {
         return distances;
     }
 
-    // Find the shortest distance from vertex 1, to all nodes using BellmanFord Algorithum.
+    // Find the shortest distance from vertex 1, to all nodes using BellmanFord Algorithm.
     private static int[] getShortestPathFromAllNodesWithBellmanFord(int v, int e, int[][] edges) {
         int[] costs = new int[v + 1];
         Arrays.fill(costs, Integer.MAX_VALUE);
@@ -103,7 +103,6 @@ public class ShortestPathProblem {
                 System.out.println("It have a negative Path.");
             }
         }
-
         return costs;
     }
 

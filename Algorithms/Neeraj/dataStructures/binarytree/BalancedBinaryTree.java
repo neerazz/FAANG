@@ -27,7 +27,6 @@ Given the following tree [1,2,2,3,3,null,null,4,4]:
 Return false.
  */
 public class BalancedBinaryTree {
-    static boolean isBalanced = true;
 
     public static void main(String[] args) {
         System.out.println(isBalanced(createTreeNode(new Integer[]{3, 9, 20, null, null, 15, 7})));
@@ -67,6 +66,7 @@ public class BalancedBinaryTree {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;
@@ -86,6 +86,25 @@ public class BalancedBinaryTree {
         }
     }
 
+    static int max = 1_000_000;
+
+    public static boolean isBalanced_rev_2(TreeNode root) {
+        if (root == null) return true;
+        int left = getHeight(root.left), right = getHeight(root.right);
+        return isBalanced && Math.abs(left - right) <= 1;
+    }
+
+    private static int getHeight(TreeNode node) {
+        if (node == null) return 0;
+        if (!isBalanced) return max;
+        int left = getHeight(node.left), right = getHeight(node.right);
+        if (left == max || right == max) return max;
+        isBalanced = Math.abs(left - right) <= 1;
+        return Math.max(left, right) + 1;
+    }
+
+    static boolean isBalanced = true;
+
     public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         isBalancedHelper(root, 0);
@@ -97,7 +116,7 @@ public class BalancedBinaryTree {
         int leftCounter = 1, rightCounter = 1;
         if (root.left != null) leftCounter += isBalancedHelper(root.left, height);
         if (root.right != null) rightCounter += isBalancedHelper(root.right, height);
-        isBalanced = isBalanced ? Math.abs(leftCounter - rightCounter) <= 1 : isBalanced;
+        isBalanced = isBalanced && Math.abs(leftCounter - rightCounter) <= 1;
         return height + Math.max(leftCounter, rightCounter);
     }
 }
