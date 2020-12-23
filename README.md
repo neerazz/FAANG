@@ -55,6 +55,8 @@
 > #### OOPS Design:
 >  - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/call-center/CallCenter.java)
 >  - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/DesignHitCounter.java)
+>  > TODO
+>  - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)
 
 ### [Important Links](https://github.com/neerazz/FAANG/blob/master/ImportantLinks.md#hacking-software-engineering-interviews)
 
