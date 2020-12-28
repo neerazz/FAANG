@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Reformat Phone Number3\n" +
-                        "Maximum Erasure Value4\n" +
-                        "Jump Game VI5\n" +
-                        "Checking Existence of Edge Length Limited Paths"
+                "Determine if String Halves Are Alike3\n" +
+                        "Maximum Number of Eaten Apples4\n" +
+                        "Where Will the Ball Fall5\n" +
+                        "Maximum XOR With an Element From Array"
         );
         System.out.println("************************* Top FB Questions ***********************************");
         printCamelCase(
