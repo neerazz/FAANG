@@ -11,6 +11,7 @@ public class ParallelCoursesII {
         System.out.println(minNumberOfSemesters(4, new int[][]{{2, 1}, {3, 1}, {1, 4}}, 2) + " should be [3]");
         System.out.println(minNumberOfSemesters(8, new int[][]{{1, 6}, {2, 7}, {2, 5}, {8, 7}, {3, 4}}, 3) + " should be [3]");
         System.out.println(minNumberOfSemesters(8, new int[][]{{2, 7}, {1, 6}, {2, 8}, {8, 7}, {6, 7}, {5, 4}, {1, 7}, {1, 2}, {1, 4}, {2, 6}}, 3) + " should be [4]");
+        System.out.println(minNumberOfSemesters(12, new int[][]{{1, 2}, {1, 3}, {7, 5}, {7, 6}, {4, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}}, 2) + " should be [6]");
     }
 
     public static int minNumberOfSemesters(int n, int[][] dependencies, int k) {
@@ -29,7 +30,9 @@ public class ParallelCoursesII {
             from.outbounds++;
         }
 
-        PriorityQueue<Course> queue = new PriorityQueue<>((g1, g2) -> Integer.compare(g2.outbounds, g1.outbounds));
+//        PriorityQueue<Course> queue = new PriorityQueue<>((g1, g2) -> Integer.compare(g2.outbounds, g1.outbounds));
+        LinkedList<Course> queue = new LinkedList<>();
+        Comparator<Course> sorting = (g1, g2) -> Integer.compare(g2.outbounds, g1.outbounds);
         for (Course g : map.values()) {
             if (g.inbounds == 0) {
                 queue.add(g);
@@ -37,12 +40,12 @@ public class ParallelCoursesII {
         }
         Set<Integer> visited = new HashSet<>();
         while (!queue.isEmpty()) {
-
 //            We are not processing the top k from the PQ because:
 //              Our PQ is sorted, when a new task is added it gets sorted and can cause change in position of courses that needs to be processed.
 //              So first extract all teh possible k or the queue size of courses that needs to be processed at this level.
             int size = queue.size();
             count++;
+            Collections.sort(queue, sorting);
 //            Take all the courses that can be processed at that level.
             Queue<Course> level = new LinkedList<>();
             for (int i = 0; i < Math.min(size, k); i++) {
