@@ -27,10 +27,8 @@ public class OnlineMedian {
                 if (index < 0) {
 //                    If key is not present, the it returns "(-(insertion point) - 1)".
                     index = (index+1) * -1;
-                    super.add(index, e);
-                } else {
-                    super.add(index, e);
                 }
+                super.add(index, e);
             }
             return true;
         }
