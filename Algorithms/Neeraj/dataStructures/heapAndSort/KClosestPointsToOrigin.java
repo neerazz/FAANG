@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -12,7 +13,7 @@ public class KClosestPointsToOrigin {
 
     //    Time: NLogN
     public static int[][] kClosest_short_Code(int[][] points, int K) {
-        Arrays.sort(points, (o1, o2) -> Integer.compare((o1[0] * o1[0]) + (o1[1] * o1[1]), (o2[0] * o2[0]) + (o2[1] * o2[1])));
+        Arrays.sort(points, Comparator.comparingInt(o -> (o[0] * o[0]) + (o[1] * o[1])));
         return Arrays.copyOfRange(points, 0, K);
     }
 

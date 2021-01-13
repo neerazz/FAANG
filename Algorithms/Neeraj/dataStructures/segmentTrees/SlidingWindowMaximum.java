@@ -6,11 +6,41 @@ class SlidingWindowMaximum {
         System.out.println(Arrays.toString(maxSlidingWindow_sol2(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol3(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol4(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        System.out.println(Arrays.toString(maxSlidingWindow_sol5(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
 
         System.out.println(Arrays.toString(maxSlidingWindow(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol2(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol3(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
         System.out.println(Arrays.toString(maxSlidingWindow_sol4(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
+        System.out.println(Arrays.toString(maxSlidingWindow_sol5(new int[]{9, 10, 9, -7, -4, -8, 2, -6}, 5)));
+    }
+
+    public static int[] maxSlidingWindow_sol5(int[] nums, int k) {
+        int len = nums.length, tree[] = new int[4 * len];
+        buildTree(nums, tree, 0, len - 1, 0);
+        List<Integer> result = new ArrayList<>();
+        for (int i = k - 1; i < len; i++) {
+            result.add(query(tree, i - k + 1, i, 0, len - 1, 0));
+        }
+        return result.stream().mapToInt(val -> val).toArray();
+    }
+
+    private static int query(int[] tree, int qs, int qe, int s, int e, int i) {
+        if (qs > e || qe < s) return Integer.MIN_VALUE;
+        if (qs <= s && qe >= e) {
+            return tree[i];
+        }
+        int m = (s + e) / 2, l = 2 * i + 1, r = 2 * i + 2;
+        return Math.max(query(tree, qs, qe, s, m, l), query(tree, qs, qe, m + 1, e, r));
+    }
+
+    private static int buildTree(int[] nums, int[] tree, int s, int e, int i) {
+        if (s == e) {
+            return tree[i] = nums[s];
+        } else {
+            int m = (s + e) / 2, l = 2 * i + 1, r = 2 * i + 2;
+            return tree[i] = Math.max(buildTree(nums, tree, s, m, l), buildTree(nums, tree, m + 1, e, r));
+        }
     }
 
     public static int[] maxSlidingWindow_sol4(int[] nums, int k) {
