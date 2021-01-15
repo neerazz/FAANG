@@ -9,18 +9,40 @@ import java.io.*;
 public class LRUCacheMisses {
 
     public static void main(String[] args) {
-        System.out.println(lruCacheMisses(6, new String[]{"1", "2", "1", "3", "1", "2"}, 2));
-        System.out.println(lruCacheMisses(10, new String[]{"1", "2", "1", "3", "1", "2", "5", "7", "1", "5", "7", "1"}, 4));
-        System.out.println(lruCacheMisses(10, new String[]{"1", "2", "1", "3", "1", "2", "5", "3", "1", "5", "3", "1"}, 6));
+        System.out.println(lruCacheMisses(6, Arrays.asList("1", "2", "1", "3", "1", "2"), 2));
+        System.out.println(lruCacheMisses(10, Arrays.asList("1", "2", "1", "3", "1", "2", "5", "7", "1", "5", "7", "1"), 4));
+        System.out.println(lruCacheMisses(10, Arrays.asList("1", "2", "1", "3", "1", "2", "5", "3", "1", "5", "3", "1"), 6));
     }
 
-    private static int lruCacheMisses(int num, String[] pages, int maxCacheSize) {
+    private static int lruCacheMisses_int(int num, List<Integer> pages, int maxCacheSize) {
 //        If the max cache size is zero. Then every element will be a new item.
-        if (maxCacheSize == 0) return pages.length;
+        if (maxCacheSize == 0) return pages.size();
+        LinkedHashSet<Integer> cache = new LinkedHashSet<>();
+        int count = 0;
+        for (int page : pages) {
+            if (cache.contains(page)) {
+//                Move the element to the end.
+                cache.remove(page);
+                cache.add(page);
+            } else {
+                if (cache.size() == maxCacheSize) {
+//                    If cache is full, then get the first element and remove from cache
+                    int first = cache.stream().findFirst().get();
+                    cache.remove(first);
+                }
+                cache.add(page);
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static int lruCacheMisses(int num, List<String> pages, int maxCacheSize) {
+//        If the max cache size is zero. Then every element will be a new item.
+        if (maxCacheSize == 0) return pages.size();
         LinkedHashSet<String> cache = new LinkedHashSet<>();
         int count = 0;
-        for (int i = 0; i < num; i++) {
-            String page = pages[i];
+        for (String page : pages) {
             if (cache.contains(page)) {
 //                Move the element to the end.
                 cache.remove(page);
