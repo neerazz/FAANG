@@ -37,7 +37,7 @@ public class MakingFileNamesUnique {
                 n++;
             }
             map.put(name, n);
-//            AMke a recursive call to check if there is any file with name(n), exists, if so update teh values.
+//            Make a recursive call to check if there is any file with name(n), exists, if so update teh values.
             name = getName(map, name + "(" + n + ")");
         } else {
             map.put(name, 1);
