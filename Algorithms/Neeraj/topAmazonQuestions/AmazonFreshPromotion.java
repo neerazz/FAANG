@@ -34,7 +34,8 @@ public class AmazonFreshPromotion {
         while (cartIdx < shoppingCart.length && codeIdx < codeList.length) {
             String cur = shoppingCart[cartIdx];
 //            If the first fruit of the codeList is anything or if it matches the current fruit at the cart idx.
-            if((codeList[codeIdx][0].equals("anything") || codeList[codeIdx][0].equals(cur)) && hasOrder(shoppingCart, cartIdx, codeList[codeIdx])){
+            if((codeList[codeIdx][0].equals("anything") || codeList[codeIdx][0].equals(cur)) &&
+                    hasOrder(shoppingCart, cartIdx, codeList[codeIdx])){
                 cartIdx += codeList[codeIdx++].length;
             }else{
                 cartIdx++;
