@@ -28,13 +28,13 @@ public class CountReviewCombinations {
     private static int ncr(int n, int r) {
         if (n == r) return 1;
         int top = fact(n, r + 1);
-        int bottom = fact(r, 1);
+        int bottom = fact(n-r, 1);
         return top / bottom;
     }
 
     private static int fact(int from, int end) {
         int result = 1;
-        for (int i = from; i <= end; i++) {
+        for (int i = from; i >= end; i--) {
             result *= i;
         }
         return result;
