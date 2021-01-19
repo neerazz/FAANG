@@ -10,10 +10,10 @@ public class OptimizeMemoryUsage {
 
     public static void main(String[] args) {
         optimizeMemoryUsage(new int[]{1, 7, 2, 4, 5, 6}, new int[]{1, 1, 2}, 0).forEach(i -> System.out.println(Arrays.toString(i)));
-//        optimizeMemoryUsage(new int[]{6, 6, 6}, new int[]{1}, 7).forEach(i -> System.out.println(Arrays.toString(i)));
-//        optimizeMemoryUsage(new int[]{1, 1}, new int[]{6, 6, 6, 6, 7}, 7).stream().forEach(i -> System.out.println(Arrays.toString(i)));
-//        optimizeMemoryUsage(new int[]{1, 7, 2, 4, 5, 6}, new int[]{1, 1, 2}, 1).stream().forEach(i -> System.out.println(Arrays.toString(i)));
-//        optimizeMemoryUsage(new int[]{1, 7, 8}, new int[]{3, 1, 2}, 10).stream().forEach(i -> System.out.println(Arrays.toString(i)));
+        optimizeMemoryUsage(new int[]{6, 6, 6}, new int[]{1}, 7).forEach(i -> System.out.println(Arrays.toString(i)));
+        optimizeMemoryUsage(new int[]{1, 1}, new int[]{6, 6, 6, 6, 7}, 7).stream().forEach(i -> System.out.println(Arrays.toString(i)));
+        optimizeMemoryUsage(new int[]{1, 7, 2, 4, 5, 6}, new int[]{1, 1, 2}, 1).stream().forEach(i -> System.out.println(Arrays.toString(i)));
+        optimizeMemoryUsage(new int[]{1, 7, 8}, new int[]{3, 1, 2}, 10).stream().forEach(i -> System.out.println(Arrays.toString(i)));
     }
 
     public static List<int[]> optimizeMemoryUsage(int[] fore, int[] back, int k) {

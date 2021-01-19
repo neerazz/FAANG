@@ -42,7 +42,7 @@ public class ArticulationPointsAndBridges {
         for (int dep = 0; dep < n; dep++) {
             if (edges[cur][dep]) {
                 if (parent != null && parent == dep) continue;
-                if (visited[dep]) lowest[cur] = Math.min(lowest[cur], lowest[dep]);
+                if (visited[dep]) lowest[cur] = Math.min(lowest[cur], discovery[dep]);
                 else {
                     bridgesDFS(n, edges, discovery, lowest, visited, cur, dep, criticalBridge);
                     lowest[cur] = Math.min(lowest[cur], lowest[dep]);
@@ -75,7 +75,7 @@ public class ArticulationPointsAndBridges {
                 if (parent != null && dep == parent) continue;
                 if (visited[dep]) {
 //                    If dependent is visited, then just check for the lowest value.
-                    lowest[cur] = Math.min(lowest[cur], lowest[dep]);
+                    lowest[cur] = Math.min(lowest[cur], discovery[dep]);
                     continue;
                 }
                 articulationPointsDFS(n, edges, discovery, lowest, visited, cur, dep, ap);
