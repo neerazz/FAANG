@@ -17,6 +17,12 @@ public class LargestItemAssociation {
 
         System.out.println(largestItemAssociation(Arrays.asList(
                 new PairString("Item1", "Item2"),
+                new PairString("Item3", "Item4"),
+                new PairString("Item4", "Item5")
+        )));
+
+        System.out.println(largestItemAssociation(Arrays.asList(
+                new PairString("Item1", "Item2"),
                 new PairString("Item2", "Item8"),
                 new PairString("Item2", "Item10"),
                 new PairString("Item10", "Item12"),
@@ -45,17 +51,17 @@ public class LargestItemAssociation {
         return result;
     }
 
-    private static List<String> dfs(String name, Map<String, LinkedHashSet<String>> map, Set<String> visited) {
-        if (!visited.add(name)) return new ArrayList<>();
-        List<String> cur = new ArrayList<>();
+    private static LinkedList<String> dfs(String name, Map<String, LinkedHashSet<String>> map, Set<String> visited) {
+        if (!visited.add(name)) return new LinkedList<>();
+        LinkedList<String> cur = new LinkedList<>();
         for (String dep : map.get(name)) {
-            List<String> next = dfs(dep, map, visited);
+            LinkedList<String> next = dfs(dep, map, visited);
             if (next.size() > cur.size()) {
                 cur = next;
             }
         }
         visited.remove(name);
-        cur.add(0, name);
+        cur.addFirst(name);
         return cur;
     }
 }
