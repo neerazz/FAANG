@@ -1,2 +1,6 @@
 Time Complexity: O(VE) where V is number of Vertices and E is the number of Edges.
 Space Complexity: O(VE) where V is number of Vertices and E is the number of Edges.
+
+1. First I have built a graph data structure using the provided number of nodes and the edges.
+2. Then I traverse the graph using Breadth First Search for all the nodes, to get the unique number of nodes in that particular isolated graph.
+3. Then do the mathematical formula on the returned count to compute the cost.
