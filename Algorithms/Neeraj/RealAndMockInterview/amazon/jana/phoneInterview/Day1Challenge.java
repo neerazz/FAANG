@@ -1,10 +1,12 @@
+package jana.phoneInterview;
+
 import java.util.*;
 
 /**
  * Created on:  Aug 23, 2020
  * Questions:
  */
-public class q1 {
+public class Day1Challenge {
     public static void main(String[] args) {
         System.out.println(getString("aaaaaaaa", 2));
         System.out.println(getString("democracy", 5));
