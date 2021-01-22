@@ -128,3 +128,4 @@ reports/
 
 # Python Files
 Algorithms/Neeraj/venv/*
+/venv/
