@@ -2,8 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
-public class AverageOfArrays {
+public class ArrayAverage {
 
     public static void main(String[] args) {
         List<Integer> input = Arrays.asList(1, 3, 2, 6, -1, 4, 1, 8, 2);
@@ -42,3 +41,5 @@ public class AverageOfArrays {
     }
 
 }
+
+
