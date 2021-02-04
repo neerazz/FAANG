@@ -112,6 +112,15 @@ public class Sorting {
         return arr;
     }
 
+    static class Node {
+        int val;
+        Node left, right;
+
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+
     /**
      * @implNote This could be implemented in array representation as well as a node Implementation.
      */
@@ -174,12 +183,4 @@ public class Sorting {
         nums[b] = temp;
     }
 
-    static class Node {
-        int val;
-        Node left, right;
-
-        public Node(int val) {
-            this.val = val;
-        }
-    }
 }
