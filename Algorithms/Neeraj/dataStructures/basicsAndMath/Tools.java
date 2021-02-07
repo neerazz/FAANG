@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Maximum Number of Balls in a Box3\n" +
-                        "Restore the Array From Adjacent Pairs4\n" +
-                        "Can You Eat Your Favorite Candy on Your Favorite Day?5\n" +
-                        "Palindrome Partitioning IV"
+                "Check if Array Is Sorted and Rotated3\n" +
+                        "Maximum Score From Removing Stones4\n" +
+                        "Largest Merge Of Two Strings5\n" +
+                        "Closest Subsequence Sum"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
