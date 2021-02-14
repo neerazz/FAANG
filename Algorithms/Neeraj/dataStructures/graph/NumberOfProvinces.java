@@ -12,6 +12,28 @@ public class NumberOfProvinces {
 
     }
 
+    public static int findCircleNum_rev1(int[][] isConnected) {
+        int n = isConnected.length, count =0;;
+        boolean[] visited = new boolean[n];
+        for(int i=0; i<n; i++){
+            if(!visited[i]){
+                count++;
+                dfs(i, n, visited, isConnected);
+            }
+        }
+        return count;
+    }
+    private static void dfs(int cur, int n, boolean[] visited, int[][] connected){
+        visited[cur] = true;
+        for(int i=0; i<n; i++){
+            if(i == cur) continue;
+            if(!visited[i] && connected[cur][i] == 1){
+                connected[cur][i] = connected[i][cur] =0;
+                dfs(i, n, visited, connected);
+            }
+        }
+    }
+
     public static int findCircleNum(int[][] grid) {
         int count = 0, rows = grid.length, cols = rows > 0 ? grid[0].length : 0;
         Map<Integer, Set<Integer>> map = new HashMap<>();
