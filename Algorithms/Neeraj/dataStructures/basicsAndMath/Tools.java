@@ -10,19 +10,17 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Minimum Changes To Make Alternating Binary String3\n" +
-                        "Count Number of Homogenous Substrings4\n" +
-                        "Minimum Limit of Balls in a Bag5\n" +
-                        "Minimum Degree of a Connected Trio in a Graph"
+                "Merge Strings Alternately3\n" +
+                        "Minimum Number of Operations to Move All Balls to Each Box4\n" +
+                        "Maximum Score from Performing Multiplication Operations5\n" +
+                        "Maximize Palindrome Length From Subsequences"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
 ////                "Product of Array Except Self",
 //        );
         getReplaced(
-                Arrays.asList(
-                        ""
-                ),
+                Arrays.asList(""),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")

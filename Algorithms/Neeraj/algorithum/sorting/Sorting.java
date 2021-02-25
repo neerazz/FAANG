@@ -10,6 +10,7 @@ import java.util.List;
  * 3. Insertion Sort
  * 4. Heap Sort
  * 5. Bubble Sort
+ * 6. Selection Sort
  */
 public class Sorting {
     public static void main(String[] args) {
@@ -21,13 +22,28 @@ public class Sorting {
     private static void printAllSortResults(int[] nums) {
         System.out.println("*****************************************************");
         System.out.println("Input           \t" + Arrays.toString(nums));
-        System.out.println("Merge Sort:     \t" + Arrays.toString(mergeSort(Arrays.copyOf(nums, nums.length))));
-        System.out.println("Quick Sort:     \t" + Arrays.toString(quickSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Merge     Sort: \t" + Arrays.toString(mergeSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Quick     Sort: \t" + Arrays.toString(quickSort(Arrays.copyOf(nums, nums.length))));
         System.out.println("Insertion Sort: \t" + Arrays.toString(insertionSort(Arrays.copyOf(nums, nums.length))));
-        System.out.println("Heap Sort:      \t" + Arrays.toString(heapSort(Arrays.copyOf(nums, nums.length))));
-        System.out.println("Bubble Sort:    \t" + Arrays.toString(bubbleSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Heap      Sort: \t" + Arrays.toString(heapSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Bubble    Sort: \t" + Arrays.toString(bubbleSort(Arrays.copyOf(nums, nums.length))));
+        System.out.println("Selection Sort: \t" + Arrays.toString(selectionSort(Arrays.copyOf(nums, nums.length))));
     }
 
+    private static int[] selectionSort(int[] array) {
+        int start = 0, len = array.length;
+        while (start < len) {
+            int smallest = Integer.MAX_VALUE, idx = start;
+            for (int i = start; i < len; i++) {
+                if (array[i] < smallest) {
+                    smallest = array[i];
+                    idx = i;
+                }
+            }
+            swap(array, start++, idx);
+        }
+        return array;
+    }
 
     /**
      * @param arr Input array that will be splitted.
