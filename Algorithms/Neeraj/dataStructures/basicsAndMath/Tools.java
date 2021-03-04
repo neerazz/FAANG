@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Merge Strings Alternately3\n" +
-                        "Minimum Number of Operations to Move All Balls to Each Box4\n" +
-                        "Maximum Score from Performing Multiplication Operations5\n" +
-                        "Maximize Palindrome Length From Subsequences"
+                "Count Items Matching a Rule3\n" +
+                        "Closest Dessert Cost4\n" +
+                        "Equal Sum Arrays With Minimum Number of Operations5\n" +
+                        "Car Fleet II"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"

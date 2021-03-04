@@ -95,6 +95,32 @@ public class SudokuSolver {
         helper(board, 0, 0, rows, cols, inner);
     }
 
+    private static boolean solveBoard(List<List<Integer>> board, int row, int col, boolean[][] rows, boolean[][] cols, boolean[][] inner) {
+        if (row == 8 && col == 9) return true;
+        if (col > 8) {
+            row++;
+            col = 0;
+        }
+        if (board.get(row).get(col) != 0) {
+            for (int i = 1; i <= 9; i++) {
+//                Check for all possible number that can be placed at a position.
+                if (!rows[row][i] && !cols[col][i] && !inner[getInner(row, col)][i]) {
+//                    When possible, then block the number to be used further in the recursion.
+                    rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = true;
+                    board.get(row).set(col, i);
+                    if (solveBoard(board, row, col + 1, rows, cols, inner)) {
+                        return true;
+                    }
+                    board.get(row).set(col, 0);
+                    rows[row][i] = cols[col][i] = inner[getInner(row, col)][i] = false;
+                }
+            }
+            return false;
+        } else {
+            return solveBoard(board, row, col + 1, rows, cols, inner);
+        }
+    }
+
     private static boolean helper(char[][] board, int row, int col, boolean[][] rows, boolean[][] cols, boolean[][] inner) {
         if (row == 8 && col == 9) return true;
         if (col > 8) {
