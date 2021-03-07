@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Count Items Matching a Rule3\n" +
-                        "Closest Dessert Cost4\n" +
-                        "Equal Sum Arrays With Minimum Number of Operations5\n" +
-                        "Car Fleet II"
+                "Check if Binary String Has at Most One Segment of Ones3\n" +
+                        "Minimum Elements to Add to Form a Given Sum4\n" +
+                        "Number of Restricted Paths From First to Last Node6\n" +
+                        "Make the XOR of All Segments Equal to Zero"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
