@@ -1,14 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
+import java.io.*;
+
+/**
+ * Created on:  Mar 10, 2021
+ * Questions:
+ */
 
 public class MeetingRoomsII {
+
     public static void main(String[] args) {
         System.out.println(minMeetingRooms(new int[][]{{0, 30}, {5, 10}, {15, 20}}) + " should be [2]");
         System.out.println(minMeetingRooms(new int[][]{{}}) + " should be [0]");
-        System.out.println(minMeetingRooms(new int[][]{{9,10},{4,9},{4,17}}) + " should be [2]");
-        System.out.println(minMeetingRooms(new int[][]{{2,11},{6,16},{11,16}}) + " should be [2]");
-        System.out.println(minMeetingRooms(new int[][]{{1,5},{8,9},{8,9}}) + " should be [2]");
+        System.out.println(minMeetingRooms(new int[][]{{9, 10}, {4, 9}, {4, 17}}) + " should be [2]");
+        System.out.println(minMeetingRooms(new int[][]{{2, 11}, {6, 16}, {11, 16}}) + " should be [2]");
+        System.out.println(minMeetingRooms(new int[][]{{1, 5}, {8, 9}, {8, 9}}) + " should be [2]");
+    }
+
+    public static int minMeetingRooms_rev1(int[][] intervals) {
+        Arrays.sort(intervals, (i1, i2) -> i1[0] == i2[0] ? Integer.compare(i1[1], i2[1]) : Integer.compare(i1[0], i2[0]));
+        PriorityQueue<int[]> pq = new PriorityQueue<>((i1, i2) -> Integer.compare(i1[1], i2[1]));
+        for (int[] cur : intervals) {
+            if (pq.isEmpty() || pq.peek()[1] > cur[0]) {
+                pq.add(cur);
+            } else {
+                int[] pre = pq.poll();
+                pq.add(new int[]{Math.min(cur[0], pre[0]), Math.max(cur[1], pre[1])});
+            }
+        }
+        return pq.size();
     }
 
     public static int minMeetingRooms(int[][] intervals) {
@@ -29,7 +48,7 @@ public class MeetingRoomsII {
                 Meeting pre = queue.peek();
                 if (pre.end > cur.start) {
                     totalRooms++;
-                }else {
+                } else {
                     queue.poll();
                 }
                 queue.add(cur);

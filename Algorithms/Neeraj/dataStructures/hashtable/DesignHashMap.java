@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1140/
 Design a HashMap without using any built-in hash table libraries.

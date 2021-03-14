@@ -18,6 +18,7 @@
 </nav>
 
 <div class="card-group">
+
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Enter input:</h5>
@@ -27,15 +28,21 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Class Name:</h5>
-            <div class="card-subtitle" id="output1"></div>
+            <div class="row">
+                <h5 class="card-title">Class Name:</h5>
+                <button type="button" class="btn btn-outline-info" onclick="classCopy()">Copy</button>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="output1" placeholder="Input"></textarea>
         </div>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Array Input:</h5>
-            <div class="card-subtitle" id="output2"></div>
+            <div class="row">
+                <h5 class="card-title">Array Input:</h5>
+                <button type="button" class="btn btn-outline-info" onclick="arrayInputCopy()">Copy</button>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" id="output2" placeholder="Input"></textarea>
         </div>
     </div>
 </div>
@@ -51,22 +58,55 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
 <script>
 
 var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
 
+function classCopy(){
+    let textarea = document.getElementById("output1");
+    textarea.select();
+    document.execCommand("copy");
+    console.log("Copied : " + $("#output2").val());
+}
+
+function arrayInputCopy(){
+    let textarea = document.getElementById("output2");
+    textarea.select();
+    document.execCommand("copy");
+    console.log("Copied : " + $("#output2").val());
+}
+
 $("#textInput").on('input',function(e){
-var input = e.target.value;
-console.log("Input Changed to " + input);
-let output1 = "";
-input.match(regex).forEach(function(str){
-    let tempStr = str.toLowerCase();
-    output1 += tempStr.substr(0,1).toUpperCase() + tempStr.substr(1);
+	var input = e.target.value;
+	console.log("Input Changed to " + input);
+	let output1 = "";
+	input.match(regex).forEach(function(str){
+		let tempStr = str.toLowerCase();
+		output1 += tempStr.substr(0,1).toUpperCase() + tempStr.substr(1);
+	});
+	console.log("Converted Input to Camel Case:" + output1);
+	$("#output1").val(output1);
+	$("#output2").val(input.replaceAll("[", "{").replaceAll("]", "}").replaceAll("\"", "'"));
 });
-console.log("Converted Input to Camel Case:" + output1);
-$("#output1").html(output1);
-$("#output2").html(input.replaceAll("[", "{").replaceAll("]", "}").replaceAll("\"", "'"));
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 </body>

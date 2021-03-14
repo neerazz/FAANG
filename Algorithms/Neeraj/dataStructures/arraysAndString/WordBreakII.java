@@ -8,6 +8,8 @@ class WordBreakII {
         System.out.println(wordBreak_rev2("pineapplepenapple", Arrays.asList("apple", "pen", "applepen", "pine", "pineapple")));
         System.out.println(wordBreak("ab", Arrays.asList("a", "b")));
         System.out.println(wordBreak_rev2("ab", Arrays.asList("a", "b")));
+        System.out.println(wordBreak("a", Arrays.asList("b")));
+        System.out.println(wordBreak_rev2("a", Arrays.asList("b")));
     }
 
     static Map<String, List<String>> memo_2 = new HashMap<>();

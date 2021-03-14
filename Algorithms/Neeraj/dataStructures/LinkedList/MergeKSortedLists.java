@@ -24,8 +24,8 @@ public class MergeKSortedLists {
         }));
 
         System.out.println(mergeKLists_rev3(new ListNode[]{
-                createListNode(Arrays.asList(-1,-1,-1)),
-                createListNode(Arrays.asList(-2,-2,-1))
+                createListNode(Arrays.asList(-1, -1, -1)),
+                createListNode(Arrays.asList(-2, -2, -1))
         }));
     }
 
@@ -42,8 +42,8 @@ public class MergeKSortedLists {
     }
 
     private static void addAllNodes(ListNode[] lists, PriorityQueue<ListNode> pq) {
-        for(int i=0; i<lists.length; i++){
-            if(lists[i] == null) continue;
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] == null) continue;
             pq.add(lists[i]);
             lists[i] = lists[i].next;
         }

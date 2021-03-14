@@ -12,23 +12,46 @@ public class NumberOfProvinces {
 
     }
 
+    public static int findCircleNum_rev2(int[][] isConnected) {
+        int n = isConnected.length, count = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (isConnected[i][j] == 1) {
+                    count++;
+                    dfs(i, n, isConnected);
+                }
+            }
+        }
+        return count;
+    }
+
+    private static void dfs(int cur, int n, int[][] connected) {
+        for (int i = 0; i < n; i++) {
+            if (connected[cur][i] == 1) {
+                connected[cur][i] = connected[i][cur] = 0;
+                dfs(i, n, connected);
+            }
+        }
+    }
+
     public static int findCircleNum_rev1(int[][] isConnected) {
-        int n = isConnected.length, count =0;;
+        int n = isConnected.length, count = 0;
         boolean[] visited = new boolean[n];
-        for(int i=0; i<n; i++){
-            if(!visited[i]){
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
                 count++;
                 dfs(i, n, visited, isConnected);
             }
         }
         return count;
     }
-    private static void dfs(int cur, int n, boolean[] visited, int[][] connected){
+
+    private static void dfs(int cur, int n, boolean[] visited, int[][] connected) {
         visited[cur] = true;
-        for(int i=0; i<n; i++){
-            if(i == cur) continue;
-            if(!visited[i] && connected[cur][i] == 1){
-                connected[cur][i] = connected[i][cur] =0;
+        for (int i = 0; i < n; i++) {
+            if (i == cur) continue;
+            if (!visited[i] && connected[cur][i] == 1) {
+                connected[cur][i] = connected[i][cur] = 0;
                 dfs(i, n, visited, connected);
             }
         }

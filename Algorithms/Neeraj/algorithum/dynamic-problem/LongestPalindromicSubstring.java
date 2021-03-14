@@ -35,9 +35,9 @@ public class LongestPalindromicSubstring {
         System.out.println(longestPalindrome_expanding_sides("it's highnoon") + " should be [noon]");
 
         System.out.println("******************************* Solution 4 ***************************************");
-//        System.out.println(longestPalindrome_rev1("babad"));
-//        System.out.println(longestPalindrome_rev1("cbbd"));
-//        System.out.println(longestPalindrome_rev1("a"));
+        System.out.println(longestPalindrome_rev1("babad"));
+        System.out.println(longestPalindrome_rev1("cbbd"));
+        System.out.println(longestPalindrome_rev1("a"));
         System.out.println(longestPalindrome_rev1("bb"));
         System.out.println(longestPalindrome_rev1("it's highnoon") + " should be [noon]");
     }

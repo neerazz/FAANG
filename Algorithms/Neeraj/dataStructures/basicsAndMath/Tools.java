@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Check if Binary String Has at Most One Segment of Ones3\n" +
-                        "Minimum Elements to Add to Form a Given Sum4\n" +
-                        "Number of Restricted Paths From First to Last Node6\n" +
-                        "Make the XOR of All Segments Equal to Zero"
+                "Check if One String Swap Can Make Strings Equal3\n" +
+                        "Find Center of Star Graph3\n" +
+                        "Maximum Average Pass Ratio5\n" +
+                        "Maximum Score of a Good Subarray"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"

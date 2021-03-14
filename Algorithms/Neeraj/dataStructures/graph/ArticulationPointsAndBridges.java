@@ -26,16 +26,18 @@ public class ArticulationPointsAndBridges {
         bridges.forEach(System.out::println);
     }
 
-    private static List<String> getBridges(int n, boolean[][] edges) {
+    public static List<String> getBridges(int n, boolean[][] edges) {
         dis = 0;
         int[] discovery = new int[n], lowest = new int[n];
         boolean[] visited = new boolean[n];
         Set<String> criticalBridge = new HashSet<>();
         bridgesDFS(n, edges, discovery, lowest, visited, null, 0, criticalBridge);
+        System.out.println("lowest = " + Arrays.toString(lowest));
+        System.out.println("discovery = " + Arrays.toString(discovery));
         return new ArrayList<>(criticalBridge);
     }
 
-    private static void bridgesDFS(int n, boolean[][] edges, int[] discovery, int[] lowest, boolean[] visited, Integer parent, int cur, Set<String> criticalBridge) {
+    public static void bridgesDFS(int n, boolean[][] edges, int[] discovery, int[] lowest, boolean[] visited, Integer parent, int cur, Set<String> criticalBridge) {
         discovery[cur] = lowest[cur] = dis++;
         visited[cur] = true;
 //        Loop through all the dep nodes
