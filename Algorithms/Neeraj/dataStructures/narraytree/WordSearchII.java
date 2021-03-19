@@ -210,8 +210,7 @@ public class WordSearchII {
         int row = board.length;
         int column = row > 0 ? board[0].length : 0;
         if (words.length == 0 || column == 0) return output;
-        for (int i = 0; i < words.length; i++) {
-            String word = words[i];
+        for (String word : words) {
             if (findWords(board, word, row, column)) output.add(word);
         }
         return output;
