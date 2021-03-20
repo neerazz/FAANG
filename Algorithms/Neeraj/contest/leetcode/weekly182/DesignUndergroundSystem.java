@@ -23,8 +23,8 @@ public class DesignUndergroundSystem {
     }
 
     static class UndergroundSystem {
-        Map<String, int[]> map ;
-        Map<Integer,Action> started;
+        Map<String, int[]> map;
+        Map<Integer, Action> started;
 
         public UndergroundSystem() {
             map = new HashMap<>();
@@ -32,22 +32,22 @@ public class DesignUndergroundSystem {
         }
 
         public void checkIn(int id, String stationName, int t) {
-            started.put(id,new Action(id,t,stationName));
+            started.put(id, new Action(id, t, stationName));
         }
 
         public void checkOut(int id, String stationName, int t) {
             Action action = started.remove(id);
             String travel = action.station + "->" + stationName;
             int[] ints = map.getOrDefault(travel, new int[]{0, 0});
-            ints[0] += t-action.time;
-            ints[1] ++;
-            map.put(travel,ints);
+            ints[0] += t - action.time;
+            ints[1]++;
+            map.put(travel, ints);
         }
 
         public double getAverageTime(String startStation, String endStation) {
             String travel = startStation + "->" + endStation;
             int[] ints = map.get(travel);
-            return (double)ints[0] / ints[1];
+            return (double) ints[0] / ints[1];
 //            double sum =0.0;
 //            List<Integer> integers = map.get(travel);
 //            for(int i: integers){
@@ -57,7 +57,7 @@ public class DesignUndergroundSystem {
         }
     }
 
-    static class Action{
+    static class Action {
         int id;
         int time;
         String station;

@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Check if One String Swap Can Make Strings Equal3\n" +
-                        "Find Center of Star Graph3\n" +
-                        "Maximum Average Pass Ratio5\n" +
-                        "Maximum Score of a Good Subarray"
+                "Second Largest Digit in a String3\n" +
+                        "Design Authentication Manager4\n" +
+                        "Maximum Number of Consecutive Values You Can Make5\n" +
+                        "Maximize Score After N Operations"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
