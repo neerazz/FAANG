@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Second Largest Digit in a String3\n" +
-                        "Design Authentication Manager4\n" +
-                        "Maximum Number of Consecutive Values You Can Make5\n" +
-                        "Maximize Score After N Operations"
+                "Maximum Ascending Subarray Sum3\n" +
+                        "Number of Orders in the Backlog5\n" +
+                        "Maximum Value at a Given Index in a Bounded Array5\n" +
+                        "Count Pairs With XOR in a Range"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
