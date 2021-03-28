@@ -83,7 +83,7 @@
 >       2. Tell me about time when you have worked on something that you didn't know before?
 >   - OOPS Design:
 >
->       1. Design an implement Linux find command as an API.
+>       1. [Design Linux Find Command as an API](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/LinuxFindFilter.java)
 >
 >           - The API will support finding files that has given size requirements, and a file with a certain format like
 >   - Reverse Question:

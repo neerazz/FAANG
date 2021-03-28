@@ -66,6 +66,8 @@ not related to hard core competitive coding.
 > - [Design Parking Lot](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/parkinglot)
 > - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/CallCenter.java)
 > - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/DesignHitCounter.java)
+> - [Design Linux Find Command](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/LinuxFindFilter.java)
+
 >> TODO
 >> - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)
 
