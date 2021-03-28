@@ -25,15 +25,10 @@
 >
 >1.  **Manager & Team Member**: (Good)
 >- LP:
->
 >   1. Why Amazon?
->       - Scale, Similar principles, and Amazon popularity
 >   2. Impactful with great outcome
->       - Prepino
 >   3. Case where you have dive deep to develop\fix issue
->       - DB cache issue
 >   4. Project with tight deadline?
->       - Global search
 >- Algorithm:
 > 
 >   Design an Encoder and Decoder to compress string:
@@ -57,9 +52,7 @@
 >   - LP:
 >
 >       1. Tell me about the time when you went out of the way and did something.
->           - Informed about Pepino
 >       2. A time when you missed a deadline.
->           - Payment feature requirement changed, and we must switch back.
 >   - System Design:
 >
 >       1. Design twitch (implement only live video streaming).
@@ -74,29 +67,25 @@
 >
 >    1. **LP**:
 >
->       1. Leveraged data, to create new feature from customer perspective?
->           - Bulk upload
+>       1. Leveraged data, to create a new feature from customer perspective?
 >       2. Quick decision with a limiter deadline
->           - Bonus job
 >    1. **Algorithm**: Design LRU Cache
 >    2. **Reverse Questions**:
 >
 >       - What is the tech stack that is used in team?
->       - Do you work on both application layer, as well as the operating system layer?
->       - What does the day to day look like?
+>       - Do you work on both application layer, and the operating system layer?
+>       - What does the day-to-day look like?
 >4. **Manger & Team Member:**
 >
 >    - LP:
 >
->       1. Tell me about a time where you have noticed something is not good, and you have worked on changing that.
->           - Payment retry-logic
->       2. Tell me about time where you have worked on something that you didn&#39;t know before?
->           - Cloud migration in AMEX
+>       1. Tell me about a time when you have noticed something is not good, and you have worked on changing that.
+>       2. Tell me about time when you have worked on something that you didn't know before?
 >   - OOPS Design:
 >
 >       1. Design an implement Linux find command as an API.
 >
->           - The API will support finding files that has given size requirements and a file with a certain format like
+>           - The API will support finding files that has given size requirements, and a file with a certain format like
 >   - Reverse Question:
 >
 >       - Tell me about the team, how does the day to responsibilities looks like.
