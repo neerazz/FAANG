@@ -10,15 +10,65 @@ public class StampingTheSequence {
     public static void main(String[] args) {
         System.out.println("********************************* Solution 1 *****************************");
         System.out.println(Arrays.toString(movesToStamp("abc", "ababc")));
+        System.out.println(Arrays.toString(movesToStamp("abca", "aabcaca")));
         System.out.println(Arrays.toString(movesToStamp("e", "eeeeeeeeee")));
         System.out.println(Arrays.toString(movesToStamp("k", "kkkkkkkkkkkkkkk")));
         System.out.println(Arrays.toString(movesToStamp("tkuq", "tkuqtkuqqttkuqq")));
 
         System.out.println("********************************* Solution 2 *****************************");
         System.out.println(Arrays.toString(movesToStamp_optimal("abc", "ababc")));
+        System.out.println(Arrays.toString(movesToStamp_optimal("abca", "aabcaca")));
         System.out.println(Arrays.toString(movesToStamp_optimal("e", "eeeeeeeeee")));
         System.out.println(Arrays.toString(movesToStamp_optimal("k", "kkkkkkkkkkkkkkk")));
         System.out.println(Arrays.toString(movesToStamp_optimal("tkuq", "tkuqtkuqqttkuqq")));
+
+        System.out.println("********************************* Solution 3 *****************************");
+        System.out.println(Arrays.toString(movesToStamp_rev1("abc", "ababc")));
+        System.out.println(Arrays.toString(movesToStamp_rev1("abca", "aabcaca")));
+        System.out.println(Arrays.toString(movesToStamp_rev1("e", "eeeeeeeeee")));
+        System.out.println(Arrays.toString(movesToStamp_rev1("k", "kkkkkkkkkkkkkkk")));
+        System.out.println(Arrays.toString(movesToStamp_rev1("tkuq", "tkuqtkuqqttkuqq")));
+    }
+
+    static List<Integer> result;
+
+    public static int[] movesToStamp_rev1(String stamp, String target) {
+        result = new ArrayList<>();
+        char[] op = new char[target.length()];
+        Arrays.fill(op, '?');
+        helper(stamp, target, op, 0, 0, new LinkedList<>());
+        return result.stream().mapToInt(val -> val).toArray();
+    }
+
+    static boolean helper(String stamp, String target, char[] op, int idx, int steps, LinkedList<Integer> soFar) {
+        int tLen = target.length(), sLen = stamp.length();
+        if (steps >= 10 * tLen) return false;
+        if (idx == tLen) {
+            if (String.valueOf(op).equals(target)) {
+                result = new ArrayList<>(soFar);
+                return true;
+            }
+            return false;
+        } else if (target.charAt(idx) == op[idx]) {
+            return helper(stamp, target, op, idx + 1, steps, soFar);
+        } else {
+//             Find out the char in stap that can match the current target char
+            for (int i = 0; i < sLen && i <= idx && idx + (sLen - i) <= tLen; i++) {
+                if (stamp.charAt(i) == target.charAt(idx)) {
+                    int start = idx - i;
+                    soFar.add(start);
+                    char[] temp = Arrays.copyOf(op, tLen);
+                    for (int k = 0; k < sLen; k++) {
+                        temp[start++] = stamp.charAt(k);
+                    }
+                    if (helper(stamp, target, temp, idx + 1, steps + 1, soFar)) {
+                        return true;
+                    }
+                    soFar.removeLast();
+                }
+            }
+            return false;
+        }
     }
 
     //    https://leetcode.com/problems/stamping-the-sequence/discuss/201546/12ms-Java-Solution-Beats-100
