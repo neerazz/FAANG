@@ -58,7 +58,7 @@
 >       1. Design twitch (implement only live video streaming).
 >
 >           - Streamers who start a stream and share link to viewer.
->           - Viewers should be able to view the videos with \&lt;5s latency.
+>           - Viewers should be able to view the videos with <5s latency.
 >   - Reverse Question:
 >
 >       - Do you see anything in my background that you might be hesitant to move forward?
