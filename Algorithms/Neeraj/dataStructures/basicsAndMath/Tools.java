@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Maximum Ascending Subarray Sum3\n" +
-                        "Number of Orders in the Backlog5\n" +
-                        "Maximum Value at a Given Index in a Bounded Array5\n" +
-                        "Count Pairs With XOR in a Range"
+                "Determine Color of a Chessboard Square3\n" +
+                        "Sentence Similarity III4\n" +
+                        "Count Nice Pairs in an Array5\n" +
+                        "Maximum Number of Groups Getting Fresh Donuts"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
