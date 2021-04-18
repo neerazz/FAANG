@@ -1,5 +1,5 @@
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Determine Color of a Chessboard Square3\n" +
-                        "Sentence Similarity III4\n" +
-                        "Count Nice Pairs in an Array5\n" +
-                        "Maximum Number of Groups Getting Fresh Donuts"
+                "Check if the Sentence Is Pangram3\n" +
+                        "Maximum Ice Cream Bars4\n" +
+                        "Single-Threaded CPU5\n" +
+                        "Find XOR Sum of All Pairs Bitwise AND"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
@@ -27,11 +27,14 @@ public class Tools {
         ).forEach(System.out::println);
     }
 
-    private static void getContest(String input) {
+    private static List<String> getContest(String input) {
         String[] strings = input.split("\n");
+        List<String> names = new ArrayList<>();
         for (int i = 0; i < strings.length; i++) {
-            System.out.println(getCamelCase(i != strings.length - 1 ? strings[i].substring(0, strings[i].length() - 1) : strings[i]));
+            names.add(getCamelCase(i != strings.length - 1 ? strings[i].substring(0, strings[i].length() - 1) : strings[i]));
         }
+        names.forEach(System.out::println);
+        return names;
     }
 
     private static void printCamelCase(String... input) {
