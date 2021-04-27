@@ -26,7 +26,7 @@ import java.io.*;
  * set2: 5,7,9,12
  * <p>
  * when nothing in common: -1
- * when one/both trees are empy: -1
+ * when one/both trees are empty: -1
  * <p>
  * Option 1:
  * n -> number of elements in bst2, m -> number of elements in bst2
@@ -53,7 +53,27 @@ public class FindLargestNumber {
 
     }
 
-    private static int largestInt(Node node1, Node node2) {
+    private static int largestInt_option2(Node node1, Node node2) {
+        if (node1 == null || node2 == null) return -1;
+        return inorder(node1, node2);
+    }
+
+    private static int inorder(Node node1, Node node2) {
+        if (node1 == null) return -1;
+        int right = inorder(node1.right, node2);
+        if (right != -1) return right;
+        if (hasNumber(node1.val, node2)) return node1.val;
+        return inorder(node1.left, node2);
+    }
+
+    private static boolean hasNumber(int val, Node node) {
+        if (node == null) return false;
+        if (node.val == val) return true;
+        if (node.val < val) return hasNumber(val, node.right);
+        return hasNumber(val, node.left);
+    }
+
+    private static int largestInt_option1(Node node1, Node node2) {
         if (node1 == null || node2 == null) return -1;
         LinkedHashSet<Integer> set1 = new LinkedHashSet<>();
         Set<Integer> set2 = new HashSet<>();
