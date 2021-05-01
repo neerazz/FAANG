@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Sum of Digits in Base K3\n" +
-                        "Frequency of the Most Frequent Element4\n" +
-                        "Longest Substring Of All Vowels in Order5\n" +
-                        "Maximum Building Height"
+                "Replace All Digits with Characters3\n" +
+                        "Seat Reservation Manager4\n" +
+                        "Maximum Element After Decreasing and Rearranging5\n" +
+                        "Closest Room"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
