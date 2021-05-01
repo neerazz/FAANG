@@ -2,10 +2,9 @@
 <img height="100" src="https://www.pcr-online.biz/wp-content/uploads/faang-own-logo-660x330.jpg">
 </p>
 
-# Job Preparation
+# Competitive Programming
 
-The repository contains solutions to various coding interview problems extracted from websites
-like [Leetcode](https://leetcode.com/neerazz90/), [Hackerrank](https://www.hackerrank.com/b_neerajkumarsi1)
+The repository contains solutions to various coding Competitive Programming sites like [Leetcode](https://leetcode.com/neerazz90/), [Hackerrank](https://www.hackerrank.com/b_neerajkumarsi1)
 , [Hackearth](https://www.hackerearth.com/@neerajkumarsingh), [Pramp](https://www.pramp.com/dashboard#/), AlgoExpert
 & [EPI](https://github.com/neerazz/FAANG/blob/master/Algorithms/Resources/Elements%20of%20Programming%20Interviews%20in%20Java.pdf)
 . I've tried to provide the detailed solution and the intution through comments.
@@ -16,7 +15,7 @@ not related to hard core competitive coding.
 
 ### [DataStructures & Algorithm Problems](https://github.com/neerazz/FAANG/tree/master/Algorithms)
 
-> #### Top Questions by Problem category
+> #### [Top Questions by Problem category](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
 >   - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
 >   - [Hash Table](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#hash-table)
 >   - [Binary Search](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#binary-search)
@@ -26,7 +25,8 @@ not related to hard core competitive coding.
 >   - [Greedy Algorithm](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#greedy-algorithm)
 >   - [Dynamic Programming](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#dynamic-programming)
 >   - [Graph](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#graph)
->   #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md)
+
+>  #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md)
 >   - [Google](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#google)
 >   - [Amazon](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#amazon)
 >   - [Facebook](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#facebook)
@@ -34,7 +34,7 @@ not related to hard core competitive coding.
 >   - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#microsoft)
 >   - [Uber](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#uber)
 
-### [Competitive Programming Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
+### [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
 
 > - [Hackerrank](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/hackerrank)
 > - [Leetcode](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/leetcode)
@@ -47,9 +47,8 @@ not related to hard core competitive coding.
 ### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
 
 > [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
->
+
 > #### General Design Questions:
->
 >   - [Tiny URL](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/tiny-url)
 >   - [Cab Booking Service](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/cab-booking-system#cab-booking-problem)
 >   - [Amazon](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Amazon%20System%20Design.png)
@@ -60,14 +59,13 @@ not related to hard core competitive coding.
 >   - [Uber](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Uber%20System%20Design.png)
 >   - [Whatsapp](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Whatsapp%20System%20design.png)
 >   - [Netflix](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Video%20Streaming%20Platform.png)
->
+
 > #### OOPS Design:
 > - [Design Library Management System](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/libraryManagment)
 > - [Design Parking Lot](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/parkinglot)
 > - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/CallCenter.java)
 > - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/DesignHitCounter.java)
 > - [Design Linux Find Command](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/LinuxFindFilter.java)
-
 >> TODO
 >> - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)
 
