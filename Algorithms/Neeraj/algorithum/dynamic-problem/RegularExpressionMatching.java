@@ -5,8 +5,51 @@ import java.util.Arrays;
  */
 public class RegularExpressionMatching {
     public static void main(String[] args) {
+        System.out.println("***************************** Solution 1 *************************");
         System.out.println(isMatch("aab", "c*a*b") + " should be [true].");
         System.out.println(isMatch("", "c*") + " should be [true].");
+        System.out.println(isMatch("mississippi", "mis*is*p*.") + " should be [false].");
+        System.out.println(isMatch("ab", ".*c") + " should be [false].");
+
+        System.out.println("***************************** Solution 2 *************************");
+//        System.out.println(isMatch_rev2("aab", "c*a*b") + " should be [true].");
+//        System.out.println(isMatch_rev2("", "c*") + " should be [true].");
+//        System.out.println(isMatch_rev2("mississippi", "mis*is*p*.") + " should be [false].");
+        System.out.println(isMatch_rev2("ab", ".*c") + " should be [false].");
+        System.out.println(isMatch_rev2("aab", "c*a*b") + " should be [true].");
+    }
+
+    public static boolean isMatch_rev2(String s, String p) {
+        if (s.equals(p)) return true;
+        Boolean[][] dp = new Boolean[s.length()][p.length()];
+        return helper(s, p, 0, 0, dp);
+    }
+
+    static boolean helper(String s, String p, int i, int j, Boolean[][] dp) {
+//        Keep track of the the pattern if it has a * in next char, based on that either one index in input or move two index in pattern.
+        boolean nextIsStar = j + 1 < p.length() && p.charAt(j + 1) == '*';
+        if (s.length() == i) {
+//            Pattern also ends
+            if (j == p.length()) return true;
+//            If pattern has * in the next char.
+            if (nextIsStar) return helper(s, p, i, j + 2, dp);
+            return false;
+        }
+//        If pattern is ended and string has chars.
+        if (j >= p.length()) return false;
+        if (dp[i][j] != null) return dp[i][j];
+        boolean firstMath = s.charAt(i) == p.charAt(j) || p.charAt(j) == '.';
+        if (nextIsStar) {
+//            If the next character in pattern is *, then either of the below case is correct.
+//              1. If the current char match, then move to next char in string. (Means more then one char in s string is considered for * in pattern).
+            boolean op1 = firstMath && helper(s, p, i + 1, j, dp);
+//              2. The current char occurrence in pattern is 0 and the next char (*) in pattern needs to be skipped due to preceding element.
+//                  Move the pattern pointer by 2, and keep the input pointer at place.
+            boolean op2 = helper(s, p, i, j + 2, dp);
+            return dp[i][j] = op1 || op2;
+        } else {
+            return dp[i][j] = firstMath && helper(s, p, i + 1, j + 1, dp);
+        }
     }
 
     public static boolean isMatch(String s, String p) {
@@ -30,7 +73,7 @@ public class RegularExpressionMatching {
                 }
             }
         }
-        System.out.println(Arrays.deepToString(dp));
+//        System.out.println(Arrays.deepToString(dp));
         return dp[sLen][pLen];
     }
 }
