@@ -10,10 +10,10 @@ public class Tools {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Maximum Population Year3\n" +
-                        "Maximum Distance Between a Pair of Values4\n" +
-                        "Maximum Subarray Min-Product5\n" +
-                        "Largest Color Value in a Directed Graph"
+                "Sum of All Subset XOR Totals3\n" +
+                        "Minimum Number of Swaps to Make the Binary String Alternating4\n" +
+                        "Finding Pairs With a Certain Sum5\n" +
+                        "Number of Ways to Rearrange Sticks With K Sticks Visible"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
