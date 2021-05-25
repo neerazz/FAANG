@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Nov 13, 2020
@@ -9,10 +8,65 @@ import java.io.*;
 public class SlidingPuzzle {
 
     public static void main(String[] args) {
+        System.out.println("************************** Solution 1 **************************");
         System.out.println(slidingPuzzle(new int[][]{{1, 2, 3}, {4, 0, 5}}));
         System.out.println(slidingPuzzle(new int[][]{{1, 2, 3}, {5, 4, 0}}));
         System.out.println(slidingPuzzle(new int[][]{{4, 1, 2}, {5, 0, 3}}));
         System.out.println(slidingPuzzle(new int[][]{{3, 2, 4}, {1, 5, 0}}));
+
+        System.out.println("************************** Solution 2 ***************************");
+        System.out.println(slidingPuzzle_rev(new int[][]{{1, 2, 3}, {4, 0, 5}}));
+        System.out.println(slidingPuzzle_rev(new int[][]{{1, 2, 3}, {5, 4, 0}}));
+        System.out.println(slidingPuzzle_rev(new int[][]{{4, 1, 2}, {5, 0, 3}}));
+        System.out.println(slidingPuzzle_rev(new int[][]{{3, 2, 4}, {1, 5, 0}}));
+    }
+
+    public static int slidingPuzzle_rev(int[][] board) {
+        Set<String> visited = new HashSet<>();
+        Queue<int[][]> queue = new LinkedList<>();
+        String start = Arrays.deepToString(board);
+        int[][] target = {{1, 2, 3}, {4, 5, 0}};
+        queue.add(board);
+        visited.add(start);
+        int step = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size-- > 0) {
+                int[][] poll = queue.poll();
+                if (Arrays.deepEquals(poll, target)) return step;
+                int[] zeroIdx = getZeroIdx(poll);
+                for (int[] dir : new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}}) {
+                    int nr = zeroIdx[0] + dir[0], nc = zeroIdx[1] + dir[1];
+                    if (nr < 0 || nr >= 2 || nc < 0 || nc >= 3) continue;
+                    int[][] newVal = getMovedArray(poll, zeroIdx[0], zeroIdx[1], nr, nc);
+                    String newString = Arrays.deepToString(newVal);
+                    if (visited.add(newString)) {
+                        queue.add(newVal);
+                    }
+                }
+            }
+            step++;
+        }
+        return -1;
+    }
+
+    static int[][] getMovedArray(int[][] pre, int pr, int pc, int nr, int nc) {
+        int[][] cur = new int[2][3];
+        for (int i = 0; i < 2; i++) {
+            System.arraycopy(pre[i], 0, cur[i], 0, 3);
+        }
+        cur[pr][pc] = pre[nr][nc];
+        cur[nr][nc] = 0;
+        return cur;
+    }
+
+    static int[] getZeroIdx(int[][] nums) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (nums[i][j] == 0) return new int[]{i, j};
+            }
+        }
+        return new int[2];
     }
 
     /**

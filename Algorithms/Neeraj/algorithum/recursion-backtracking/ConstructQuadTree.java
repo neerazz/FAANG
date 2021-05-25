@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Nov 13, 2020
  * Questions: https://leetcode.com/problems/construct-quad-tree/
@@ -10,9 +7,36 @@ public class ConstructQuadTree {
 
     public static void main(String[] args) {
         System.out.println(construct(new int[][]{{0, 1}, {1, 0}}));
+        System.out.println(construct_2(new int[][]{{0, 1}, {1, 0}}));
     }
 
-//    Time: O(N^2)
+    public static Node construct_2(int[][] grid) {
+        int n = grid.length;
+        return helper(grid, 0, 0, n);
+    }
+
+    static Node helper(int[][] grid, int row, int col, int length) {
+        if (length == 1) {
+            return new Node(grid[row][col] == 1, true);
+        }
+        int midRow = row + (length / 2), midCol = col + (length / 2);
+        Node leftTop = helper(grid, row, col, length / 2);
+        Node rightTop = helper(grid, row, midCol, length / 2);
+        Node leftBottom = helper(grid, midRow, col, length / 2);
+        Node rightBottom = helper(grid, midRow, midCol, length / 2);
+        if (isSame(leftTop, rightTop, leftBottom, rightBottom)) {
+            return new Node(leftTop.val, true);
+        } else {
+            return new Node(false, false, leftTop, rightTop, leftBottom, rightBottom);
+        }
+    }
+
+    static boolean isSame(Node n1, Node n2, Node n3, Node n4) {
+        return n1.isLeaf && n2.isLeaf && n3.isLeaf && n4.isLeaf &&
+                n1.val == n2.val && n2.val == n3.val && n3.val == n4.val;
+    }
+
+    //    Time: O(N^2)
     public static Node construct(int[][] grid) {
         int rows = grid.length, cols = grid[0].length;
         return helper(grid, 0, 0, rows - 1, cols - 1);
@@ -67,6 +91,11 @@ public class ConstructQuadTree {
             this.topRight = topRight;
             this.bottomLeft = bottomLeft;
             this.bottomRight = bottomRight;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("[%d,%d]", isLeaf ? 1 : 0, val ? 1 : 0) + (topLeft == null ? "" : "," + topLeft + topRight + bottomLeft + bottomRight);
         }
     }
 }

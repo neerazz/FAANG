@@ -1,4 +1,3 @@
-package challanges;
 
 public class Encrypter {
 

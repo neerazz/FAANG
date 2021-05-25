@@ -14,11 +14,44 @@ nums2 = [3, 4]
 The median is (2 + 3)/2 = 2.5
  */
 public class MedianOfTwoSortedArrays {
+
     public static void main(String[] args) {
-//        System.out.println("Answer is :" + findMedianSortedArrays(new int[]{1, 3}, new int[]{2}) + " should be [2.0].");
-//        System.out.println("Answer is :" + findMedianSortedArrays_revision1(new int[]{1, 3}, new int[]{2}) + " should be [2.0].");
+        System.out.println("Answer is :" + findMedianSortedArrays(new int[]{1, 3}, new int[]{2}) + " should be [2.0].");
+        System.out.println("Answer is :" + findMedianSortedArrays_revision1(new int[]{1, 3}, new int[]{2}) + " should be [2.0].");
+//        System.out.println("Answer is :" + findMedianSortedArrays_revision2(new int[]{1, 3}, new int[]{2}) + " should be [2.0].");
+
         System.out.println("Answer is :" + findMedianSortedArrays(new int[0], new int[]{1}) + " should be [1.0].");
         System.out.println("Answer is :" + findMedianSortedArrays_revision1(new int[0], new int[]{1}) + " should be [1.0].");
+//        System.out.println("Answer is :" + findMedianSortedArrays_revision2(new int[0], new int[]{1}) + " should be [1.0].");
+
+        System.out.println("Answer is :" + findMedianSortedArrays(new int[]{0, 0, 0, 0, 0}, new int[]{-1, 0, 0, 0, 0, 0, 1}) + " should be [0.0].");
+        System.out.println("Answer is :" + findMedianSortedArrays_revision1(new int[]{0, 0, 0, 0, 0}, new int[]{-1, 0, 0, 0, 0, 0, 1}) + " should be [0.0].");
+        System.out.println("Answer is :" + findMedianSortedArrays_revision2(new int[]{0, 0, 0, 0, 0}, new int[]{-1, 0, 0, 0, 0, 0, 1}) + " should be [0.0].");
+    }
+
+    private static double findMedianSortedArrays_revision2(int[] a, int[] b) {
+        int l1 = a.length, l2 = b.length, total = l1 + l2;
+        int max = total / 2;
+        int i = 0, j = 0;
+        int[] vals = {0, 0};
+        while (i < l1 && j < l2 && i + j <= max) {
+            if (a[i] <= b[j]) setVal(vals, a[i++]);
+            else setVal(vals, b[j++]);
+        }
+        while (i < l1 && i + j <= max) setVal(vals, a[i++]);
+        while (j < l2 && i + j <= max) setVal(vals, b[j++]);
+        double median = vals[0];
+        if (total % 2 == 0) {
+            median += vals[1];
+            median /= 2;
+        }
+        return median;
+    }
+
+    private static void setVal(int[] nums, int val) {
+//        Move 1 index out and 0 index to 1.
+        nums[1] = nums[0];
+        nums[0] = val;
     }
 
     private static double findMedianSortedArrays_revision1(int[] A, int[] B) {
@@ -44,7 +77,7 @@ public class MedianOfTwoSortedArrays {
                 } else {
                     leftMax = Math.max(A[apoint - 1], B[bpoint - 1]);
                 }
-                if(isODD) return leftMax;
+                if (isODD) return leftMax;
 //                Get the right side value
                 int rightMin;
                 if (apoint == alen) {
