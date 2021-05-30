@@ -1,11 +1,14 @@
-package amazon;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 public class OptimizingBoxWeights {
 
     public static List<Integer> optimizingBoxWeights(List<Integer> arr) {
-        // WRITE YOUR BRILLIANT CODE HERE
         int target = arr.stream().reduce(0, Integer::sum) / 2;
-        return List.of();
         PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> {
             return b - a;
         });
