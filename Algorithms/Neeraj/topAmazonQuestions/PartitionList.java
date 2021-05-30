@@ -32,6 +32,7 @@ public class PartitionList {
             for (int i = 0; i < times; i++) result.add(weight);
             if (currentSum > targetSum) break;
         }
+        result.sort((v1, v2) -> Integer.compare(v1, v2));
         return result;
     }
 
@@ -39,6 +40,7 @@ public class PartitionList {
         int sum = Arrays.stream(nums).sum(), targetSum = sum / 2;
         int currentSum = 0, idx = nums.length - 1;
         List<Integer> result = new ArrayList<>();
+        Arrays.sort(nums);
         while (currentSum < targetSum) {
             int cur = nums[idx--];
             result.add(cur);
