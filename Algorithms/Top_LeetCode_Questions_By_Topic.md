@@ -181,7 +181,7 @@
 | **#** | **Title** | **Acceptance** | **Difficulty** |
 | --- | --- | --- | --- |
 | 4 | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays) | 29.40% | **Hard** |
-| 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n) | 29.70% | **Medium** |
+#| 50 | [Pow(x, n)](https://leetcode.com/problems/powx-n) | 29.70% | **Medium** |
 | 33 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array) | 34.50% | **Medium** |
 | 315 | [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self) | 41.40% | **Hard** |
 | 167 | [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted) | 53.80% | **Easy** |
