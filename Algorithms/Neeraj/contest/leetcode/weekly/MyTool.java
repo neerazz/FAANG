@@ -1,3 +1,5 @@
+package weekly;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -6,14 +8,14 @@ import java.util.stream.Collectors;
 /**
  * Created on:  May 25, 2020
  */
-public class Tools {
+public class MyTool {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Sum of All Subset XOR Totals3\n" +
-                        "Minimum Number of Swaps to Make the Binary String Alternating4\n" +
-                        "Finding Pairs With a Certain Sum5\n" +
-                        "Number of Ways to Rearrange Sticks With K Sticks Visible"
+                "Check if Word Equals Summation of Two Words3\n" +
+                        "Maximum Value after Insertion4\n" +
+                        "Process Tasks Using Servers5\n" +
+                        "Minimum Skips to Arrive at Meeting On Time"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
@@ -38,7 +40,7 @@ public class Tools {
     }
 
     private static void printCamelCase(String... input) {
-        Arrays.stream(input).map(Tools::getCamelCase).forEach(System.out::println);
+        Arrays.stream(input).map(MyTool::getCamelCase).forEach(System.out::println);
     }
 
     private static String getCamelCase(String input) {
