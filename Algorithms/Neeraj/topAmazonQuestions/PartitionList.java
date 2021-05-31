@@ -13,7 +13,13 @@ public class PartitionList {
     }
 
     /**
-     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be height and box a count is expected to be lighter. So we can sort the
+     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be height and box a count is expected to be lighter.
+     * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
+     * We have taken a map so that we can group all the weights and either take all the weights or take none.
+     * <p>
+     * Time : O(n Log n)
+     * Space: O(n)
+     * Where n = number of weights.
      */
     private static List<Integer> minimalHeaviestSetA(List<Integer> arr) {
         Comparator<Integer> order = (v1, v2) -> Integer.compare(v2, v1);
@@ -32,10 +38,18 @@ public class PartitionList {
             for (int i = 0; i < times; i++) result.add(weight);
             if (currentSum > targetSum) break;
         }
-        result.sort((v1, v2) -> Integer.compare(v1, v2));
+        Collections.sort(result, (v1, v2) -> Integer.compare(v1, v2));
         return result;
     }
 
+    /**
+     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be height and box a count is expected to be lighter.
+     * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
+     * <p>
+     * Time : O(n Log n)
+     * Space: O(n)
+     * Where n = number of weights.
+     */
     public static int[] optimizingBoxWeight(int[] nums) {
         int sum = Arrays.stream(nums).sum(), targetSum = sum / 2;
         int currentSum = 0, idx = nums.length - 1;
