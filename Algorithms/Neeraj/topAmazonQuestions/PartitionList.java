@@ -13,7 +13,7 @@ public class PartitionList {
     }
 
     /**
-     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be height and box a count is expected to be lighter.
+     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be higher than box b, and box a count is expected to be less then the other box.
      * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
      * We have taken a map so that we can group all the weights and either take all the weights or take none.
      * <p>
@@ -43,7 +43,7 @@ public class PartitionList {
     }
 
     /**
-     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be height and box a count is expected to be lighter.
+     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be higher than box b, and box a count is expected to be less then the other box.
      * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
      * <p>
      * Time : O(n Log n)
