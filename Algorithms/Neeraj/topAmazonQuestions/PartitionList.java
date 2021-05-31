@@ -45,6 +45,36 @@ public class PartitionList {
     /**
      * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be higher than box b, and box a count is expected to be less then the other box.
      * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
+     *
+     * <p>
+     * Time : O(n Log n)
+     * Space: O(n)
+     * Where n = number of weights.
+     */
+    public static List<Integer> optimizingBoxWeights(List<Integer> arr) {
+        int target = arr.stream().reduce(0, Integer::sum) / 2;
+        PriorityQueue<Integer> pq = new PriorityQueue<>((v1, v2) -> Integer.compare(v2, v1));
+        pq.addAll(arr);
+        int curSum = 0;
+        List<Integer> res = new ArrayList<>();
+        while (curSum <= target) {
+            int val = pq.poll();
+            curSum += val;
+            res.add(val);
+        }
+//        Once all the weights are collected, to satisfy the (intersections of A and B is null) condition:
+//          All of them same weights should be moved to box a.
+        int lastWeight = res.get(res.size() - 1);
+        while (!pq.isEmpty() && pq.peek() == lastWeight) {
+            res.add(pq.poll());
+        }
+        Collections.reverse(res);
+        return res;
+    }
+
+    /**
+     * @implNote Since we are looking to divide weights into two boxes, and the box A weight is expected to be higher than box b, and box a count is expected to be less then the other box.
+     * So we can sort all the weights and store weights in descending order, so that all the heavy weight items can be placed in box A, and we can exit as soon as the sum of the first box exceeds.
      * <p>
      * Time : O(n Log n)
      * Space: O(n)
