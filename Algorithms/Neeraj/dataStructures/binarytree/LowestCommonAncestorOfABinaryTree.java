@@ -9,12 +9,12 @@ https://leetcode.com/explore/learn/card/data-structure-tree/133/conclusion/932/
  */
 public class LowestCommonAncestorOfABinaryTree {
     public static void main(String[] args) {
-        TraverseATree.TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)));
+        TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4)));
         System.out.println("Answer is: " + lowestCommonAncestor(treeNode, new TreeNode(5), new TreeNode(1)) + " should be [3].");
         System.out.println("Answer is: " + lowestCommonAncestor(treeNode, new TreeNode(5), new TreeNode(4)) + " should be [5].");
     }
 
-    public static TreeNode lowestCommonAncestor(TraverseATree.TreeNode root, TreeNode p, TreeNode q) {
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return null;
         List<Integer> pathToP = new ArrayList<>();
         List<Integer> pathToQ = new ArrayList<>();
@@ -29,7 +29,7 @@ public class LowestCommonAncestorOfABinaryTree {
         return null;
     }
 
-    private static boolean findPath(TraverseATree.TreeNode root, TreeNode p, List<Integer> pathList) {
+    private static boolean findPath(TreeNode root, TreeNode p, List<Integer> pathList) {
         if (root == null) return false;
         if (root.val == p.val) {
             pathList.add(root.val);
@@ -46,10 +46,10 @@ public class LowestCommonAncestorOfABinaryTree {
         return false;
     }
 
-    public TraverseATree.TreeNode lowestCommonAncestor_elegent(TraverseATree.TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor_elegent(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root.val == p.val || root.val == q.val) return root;
-        TraverseATree.TreeNode left = lowestCommonAncestor_elegent(root.left, p, q);
-        TraverseATree.TreeNode right = lowestCommonAncestor_elegent(root.right, p, q);
+        TreeNode left = lowestCommonAncestor_elegent(root.left, p, q);
+        TreeNode right = lowestCommonAncestor_elegent(root.right, p, q);
         if (left != null) {
             if (right != null) return root;
             return left;

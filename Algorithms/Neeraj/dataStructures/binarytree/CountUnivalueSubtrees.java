@@ -21,7 +21,7 @@ public class CountUnivalueSubtrees {
     static int count = 0;
 
     public static void main(String[] args) {
-        TraverseATree.TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(5, 1, 5, 5, 5, null, 5)));
+        TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(5, 1, 5, 5, 5, null, 5)));
         System.out.println("Answer is: " + countUnivalSubtrees(treeNode) + " should be [4].");
         count = 0;
         treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(5, 5, 5, 5, 5, null, 5)));
@@ -34,13 +34,13 @@ public class CountUnivalueSubtrees {
         System.out.println("Answer is: " + countUnivalSubtrees(treeNode) + " should be [8].");
     }
 
-    public static int countUnivalSubtrees(TraverseATree.TreeNode root) {
+    public static int countUnivalSubtrees(TreeNode root) {
         if (root == null) return 0;
         countUnivalSubtreesHelper(root);
         return count;
     }
 
-    private static boolean countUnivalSubtreesHelper(TraverseATree.TreeNode node) {
+    private static boolean countUnivalSubtreesHelper(TreeNode node) {
 //        base case - if the node has no children this is a univalue subtree
         if (node.left == null && node.right == null) {
             count++;

@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created on:  Oct 07, 2020
@@ -64,19 +66,19 @@ public class UniqueTrees {
         System.out.println("Total trees: " + result.size());
         System.out.println("Trees: " + result);
     }
-}
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    TreeNode(int x) {
-        val = x;
-    }
+        TreeNode(int x) {
+            val = x;
+        }
 
-    @Override
-    public String toString() {
-        return String.format("%s <- left:%s: right -> %s", left, val, right);
+        @Override
+        public String toString() {
+            return String.format("%s <- left:%s: right -> %s", left, val, right);
+        }
     }
 }

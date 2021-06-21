@@ -12,10 +12,10 @@ public class MyTool {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Check if Word Equals Summation of Two Words3\n" +
-                        "Maximum Value after Insertion4\n" +
-                        "Process Tasks Using Servers5\n" +
-                        "Minimum Skips to Arrive at Meeting On Time"
+                "Largest Odd Number in String3\n" +
+                        "The Number of Full Rounds You Have Played4\n" +
+                        "Count Sub Islands5\n" +
+                        "Minimum Absolute Difference Queries"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"

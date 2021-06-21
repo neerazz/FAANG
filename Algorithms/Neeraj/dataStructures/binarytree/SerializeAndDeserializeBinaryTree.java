@@ -7,11 +7,11 @@ public class SerializeAndDeserializeBinaryTree {
     public static void main(final String[] args) {
         final Codec codec = new Codec();
         final Codec_Rev codec_rev = new Codec_Rev();
-        TraverseATree.TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(1, 2, 3, null, null, 4, 5)));
+        TreeNode treeNode = TraverseATree.createTreeNode(new ArrayList<>(Arrays.asList(1, 2, 3, null, null, 4, 5)));
         System.out.println("============    Sample 1: =============");
         String serialize = codec.serialize(treeNode);
         System.out.println(serialize);
-        TraverseATree.TreeNode deserialize = codec.deserialize(serialize);
+        TreeNode deserialize = codec.deserialize(serialize);
         System.out.println(deserialize);
 
         System.out.println("============    Sample 2: =============");
@@ -103,17 +103,17 @@ public class SerializeAndDeserializeBinaryTree {
     static class Codec {
 
         // Encodes a tree to a single string.
-        public String serialize(final TraverseATree.TreeNode root) {
+        public String serialize(final TreeNode root) {
             if (root == null) return "[]";
             final LinkedList<Integer> output = new LinkedList<>();
-            final LinkedList<TraverseATree.TreeNode> queue = new LinkedList<>();
+            final LinkedList<TreeNode> queue = new LinkedList<>();
             queue.add(root);
             output.add(root.val);
             while (!queue.isEmpty()) {
                 final int size = queue.size();
 //            Iterate and add all the level values to the queue.
                 for (int i = 0; i < size; i++) {
-                    final TraverseATree.TreeNode poll = queue.poll();
+                    final TreeNode poll = queue.poll();
                     if (poll != null) {
                         queue.add(poll.left);
                         queue.add(poll.right);
@@ -143,23 +143,23 @@ public class SerializeAndDeserializeBinaryTree {
         }
 
         // Decodes your encoded data to tree.
-        public TraverseATree.TreeNode deserialize(final String data) {
+        public TreeNode deserialize(final String data) {
             final List<Integer> nums = this.convertStringToList(data);
-            TraverseATree.TreeNode treeNode = null;
+            TreeNode treeNode = null;
             if (nums.size() > 0) {
-                final Queue<TraverseATree.TreeNode> treeNodeQueue = new LinkedList<>();
+                final Queue<TreeNode> treeNodeQueue = new LinkedList<>();
                 int index = 1;
-                treeNode = new TraverseATree.TreeNode(nums.get(0));
+                treeNode = new TreeNode(nums.get(0));
                 treeNodeQueue.add(treeNode);
                 while (index < nums.size() && !treeNodeQueue.isEmpty()) {
-                    final TraverseATree.TreeNode peek = treeNodeQueue.poll();
+                    final TreeNode peek = treeNodeQueue.poll();
                     if (nums.get(index) != null) {
-                        final TraverseATree.TreeNode left = new TraverseATree.TreeNode(nums.get(index++));
+                        final TreeNode left = new TreeNode(nums.get(index++));
                         peek.left = left;
                         treeNodeQueue.add(left);
                     } else index++;
                     if (index < nums.size() && nums.get(index) != null) {
-                        final TraverseATree.TreeNode right = new TraverseATree.TreeNode(nums.get(index++));
+                        final TreeNode right = new TreeNode(nums.get(index++));
                         peek.right = right;
                         treeNodeQueue.add(right);
                     } else index++;

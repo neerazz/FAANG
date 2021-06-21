@@ -34,8 +34,6 @@ public class UnionFindImpl {
 
     static class UnionFindWithPathCompressionAndComponentsAndSize {
 
-        //    Number of elements in this union.
-        int count;
         //    Number of connected components in this graph.
         int numberOfComponents;
 
@@ -44,9 +42,46 @@ public class UnionFindImpl {
         int[] parent, size;
 
         public UnionFindWithPathCompressionAndComponentsAndSize(int count) {
-            this.count = numberOfComponents = count;
+            this.numberOfComponents = count;
             parent = new int[count];
             size = new int[count];
+        }
+
+        public boolean union(int a, int b) {
+            int pa = find(a);
+            int pb = find(b);
+//            If both the nodes has same parent or are in the same group.
+            if (pa == pb) return false;
+            // Merge smaller component/set into the larger one.
+            if (size[a] < size[b]) {
+                size[b] += size[a];
+                parent[a] = b;
+            } else {
+                size[a] += size[b];
+                parent[b] = a;
+            }
+            // Since the roots found are different we know that the
+            // number of components/sets has decreased by one
+            numberOfComponents--;
+            return true;
+        }
+
+        private int find(int node) {
+            int currentParent = node;
+            while (parent[currentParent] != currentParent) {
+//            Loop till you reach the node which is pointed to self.
+                currentParent = parent[currentParent];
+            }
+//             Compress the path leading back to the currentParent. So that next time when the parent is you don't have to traverse back to the top node.
+//              Doing this operation is called "path compression" and is what gives us amortized time complexity.
+            while (node != currentParent) {
+//                Take the parent of teh current node, and set the parent to the new parent value.
+                int next = parent[node];
+                parent[node] = currentParent;
+//                And traverse one level up, so that the parent of current node also can be replaced.
+                node = next;
+            }
+            return currentParent;
         }
     }
 }
