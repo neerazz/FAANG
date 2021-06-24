@@ -17,13 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BoundaryOfBinaryTree {
 
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(TreeNode input, List<Integer> expected) {
-        assertEquals(expected, boundaryOfBinaryTree(input));
-    }
-
     static Stream<Arguments> inputOutputValues() {
 //        Expected, actual
         return Stream.of(
@@ -33,6 +26,12 @@ public class BoundaryOfBinaryTree {
                 Arguments.of(BinaryTree.createTreeNode(1, 2, 3, 4, 5, 6, null, null, null, 7, 8, 9, 10), Arrays.asList(1, 2, 4, 7, 8, 9, 10, 6, 3)),
                 Arguments.of(BinaryTree.createTreeNode(1, 2, 7, 3, 5, null, 6, 4), Arrays.asList(1, 2, 3, 4, 5, 6, 7))
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource("inputOutputValues")
+    void runTest(TreeNode input, List<Integer> expected) {
+        assertEquals(expected, boundaryOfBinaryTree(input));
     }
 
     public static List<Integer> boundaryOfBinaryTree(TreeNode root) {

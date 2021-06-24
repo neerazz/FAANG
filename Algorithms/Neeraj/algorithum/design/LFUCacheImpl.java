@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created on:  Mar 11, 2021
@@ -30,6 +33,68 @@ public class LFUCacheImpl {
         lfu = new LFUCache(0);
         lfu.put(0, 0);
         System.out.println(lfu.get(0) + " = -1");
+    }
+
+    static class LFUCache_2 {
+        static class Node {
+            int key, val, occ;
+
+            public Node(int key, int val) {
+                this.key = key;
+                this.val = val;
+                occ = 1;
+            }
+        }
+
+        int limit, minOcc;
+        Map<Integer, Node> cache = new HashMap<>();
+        Map<Integer, LinkedHashSet<Integer>> occurrences = new HashMap<>();
+
+        public LFUCache_2(int capacity) {
+            this.limit = capacity;
+            minOcc = -1;
+        }
+
+        public int get(int key) {
+            Node node = cache.get(key);
+            if (node != null) {
+                updateNode(node);
+                return node.val;
+            }
+            return -1;
+        }
+
+        private void updateNode(Node node) {
+            int preOcc = node.occ++;
+            occurrences.get(preOcc).remove(node.key);
+//            If the pre-occurrences is the min occurrence and there are no any nodes with that occurrences, then increase the minOccurance.
+            if (occurrences.get(preOcc).isEmpty()) {
+                if (minOcc == preOcc) minOcc++;
+                occurrences.remove(preOcc);
+            }
+            occurrences.computeIfAbsent(node.occ, val -> new LinkedHashSet<>()).add(node.key);
+        }
+
+        public void put(int key, int value) {
+            if (limit <= 0) return;
+            if (cache.containsKey(key)) {
+                Node node = cache.get(key);
+                node.val = value;
+                updateNode(node);
+            } else {
+                if (cache.size() == limit) {
+                    LinkedHashSet<Integer> keySet = occurrences.get(minOcc);
+                    Integer removeKey = keySet.iterator().next();
+                    keySet.remove(removeKey);
+                    if (keySet.isEmpty()) occurrences.remove(minOcc);
+                    cache.remove(removeKey);
+                }
+                Node node = new Node(key, value);
+                cache.put(key, node);
+                occurrences.computeIfAbsent(node.occ, val -> new LinkedHashSet<>()).add(node.key);
+                minOcc = 1;
+            }
+        }
     }
 
     static class LFUCache {

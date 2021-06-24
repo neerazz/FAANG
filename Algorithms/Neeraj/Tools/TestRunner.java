@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
@@ -10,6 +9,8 @@ import java.util.Collection;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Created on:  Jun 21, 2021
  * Ref: https://www.baeldung.com/parameterized-tests-junit-5
@@ -20,6 +21,11 @@ public class TestRunner {
     public static <I, O> void runTest(Function<I, O> function, I input, O output) {
         JUnitCore junit = new JUnitCore();
         junit.run(TestRunner.class);
+    }
+
+    public static <I, O> DynamicTest equals(Function<I, O> function, I input, O output) {
+        return DynamicTest.dynamicTest("Test",
+                () -> assertEquals(output, function.apply(input)));
     }
 
     @TestFactory
@@ -40,7 +46,7 @@ public class TestRunner {
 
     @Test
     public <I, O> void test(Function<I, O> function, I input, O output) {
-        Assertions.assertEquals(function.apply(input), output);
+        assertEquals(function.apply(input), output);
     }
 
     static class TestCase<I, O> {
@@ -56,7 +62,7 @@ public class TestRunner {
 
         @Test
         public void test() {
-            Assertions.assertEquals(function.apply(input), output);
+            assertEquals(function.apply(input), output);
         }
     }
 }
