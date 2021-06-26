@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -7,7 +8,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.function.BiFunction;
 import java.util.stream.Stream;
 
@@ -41,6 +44,30 @@ public class IP4ValidationWithCIDR {
                 Arguments.of("10.1.1.5/24", "10.1.12.1", false),
                 Arguments.of("10.1.1.5/24", "10.1.2.243", false)
         );
+    }
+
+    @Test
+    public void run() {
+        Random ran = new Random();
+        int max = 10;
+        int[] nums = new int[max];
+        for (int i = 0; i < max; i++) {
+            nums[i] = ran.nextInt(1000);
+        }
+        assertEquals(test1(nums), true);
+    }
+
+    private boolean test1(int[] nums) {
+        System.out.println("Before = " + Arrays.toString(nums));
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                int tem = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = tem;
+            }
+        }
+        System.out.println("After = " + Arrays.toString(nums));
+        return true;
     }
 
     static BiFunction<String, String, Object> function = IP4ValidationWithCIDR::isValidIPV4;
