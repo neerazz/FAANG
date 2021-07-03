@@ -47,7 +47,7 @@ import java.util.List;
  */
 @SuppressWarnings("serial") // use default serial UID
 public class JsonArray extends JsonValue implements Iterable<JsonValue> {
-  private final List<JsonValue> values;
+  private List<JsonValue> values;
 
   /**
    * Creates a new empty JsonArray.
@@ -435,7 +435,7 @@ public class JsonArray extends JsonValue implements Iterable<JsonValue> {
    * @return an iterator over the values of this array
    */
   public Iterator<JsonValue> iterator() {
-    final Iterator<JsonValue> iterator = values.iterator();
+    Iterator<JsonValue> iterator = values.iterator();
     return new Iterator<JsonValue>() {
       public boolean hasNext() { return iterator.hasNext(); }
 

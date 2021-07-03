@@ -7,7 +7,7 @@ import java.util.Scanner;
 https://www.hackerrank.com/challenges/java-primality-test/problem
  */
 public class JavaPrimalityTest {
-    private static final Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         String n = scanner.nextLine();

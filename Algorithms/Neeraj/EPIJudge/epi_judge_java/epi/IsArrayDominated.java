@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
 class Team {
-    private final List<Player> players;
+    private List<Player> players;
 
     public Team(List<Integer> height) {
         players =

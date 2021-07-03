@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RefuelingSchedule {
 
-    private static final int MPG = 20;
+    private static int MPG = 20;
 
     // gallons[i] is the amount of gas in city i, and distances[i] is the distance
     // city i to the next city.
@@ -17,7 +17,7 @@ public class RefuelingSchedule {
                                     List<Integer> distances) {
         int remainingGallons = 0;
         CityAndRemainingGas min = new CityAndRemainingGas(0, 0);
-        final int numCities = gallons.size();
+        int numCities = gallons.size();
         for (int i = 1; i < numCities; ++i) {
             remainingGallons += gallons.get(i - 1) - distances.get(i - 1) / MPG;
             if (remainingGallons < min.remainingGallons) {
@@ -33,7 +33,7 @@ public class RefuelingSchedule {
                                             List<Integer> distances)
             throws Exception {
         int result = executor.run(() -> findAmpleCity(gallons, distances));
-        final int numCities = gallons.size();
+        int numCities = gallons.size();
         int tank = 0;
         for (int i = 0; i < numCities; ++i) {
             int city = (result + i) % numCities;

@@ -5,16 +5,16 @@
 
 public class SquaringASortedArray {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
     }
 
-    public static int[] makeSquares_rev1(final int[] arr) {
+    public static int[] makeSquares_rev1(int[] arr) {
         int start = 0, end = arr.length - 1, idx = arr.length - 1;
-        final int[] result = new int[arr.length];
+        int[] result = new int[arr.length];
         while (idx >= 0) {
-            final int v1 = arr[start] * arr[start];
-            final int v2 = arr[end] * arr[end];
+            int v1 = arr[start] * arr[start];
+            int v2 = arr[end] * arr[end];
             if (v1 < v2) {
                 result[idx--] = v1;
                 start++;
@@ -26,7 +26,7 @@ public class SquaringASortedArray {
         return result;
     }
 
-    public static int[] makeSquares(final int[] arr) {
+    public static int[] makeSquares(int[] arr) {
         int negidx = 0, posIdx = arr.length + 1;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 0) {
@@ -36,12 +36,12 @@ public class SquaringASortedArray {
             }
         }
 
-        final int[] result = new int[arr.length];
+        int[] result = new int[arr.length];
         int idx = 0;
         while (idx < arr.length) {
             if (negidx >= 0 && posIdx < arr.length) {
-                final int neg = arr[negidx] * arr[negidx];
-                final int pos = arr[posIdx] * arr[posIdx];
+                int neg = arr[negidx] * arr[negidx];
+                int pos = arr[posIdx] * arr[posIdx];
                 if (neg < pos) {
                     result[idx++] = neg;
                     negidx--;

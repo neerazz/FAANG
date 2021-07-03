@@ -56,7 +56,7 @@ public class PivotList {
       throws Exception {
     List<Integer> original = linkedToList(l);
 
-    final ListNode<Integer> finalL = l;
+    ListNode<Integer> finalL = l;
     l = executor.run(() -> listPivoting(finalL, x));
 
     List<Integer> pivoted = linkedToList(l);

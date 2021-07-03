@@ -11,23 +11,23 @@ public class TestTimer {
   public TestTimer() {}
 
   public TestTimer(long durationSeconds) {
-    final long SECOND_TO_MICRO = 1000000;
+    long SECOND_TO_MICRO = 1000000;
     this.durationUs = durationSeconds * SECOND_TO_MICRO;
   }
 
   public void start() { start = System.nanoTime(); }
 
   public void stop() {
-    final double NANO_TO_MICRO = 0.001;
+    double NANO_TO_MICRO = 0.001;
     durationUs += (long)((System.nanoTime() - start) * NANO_TO_MICRO);
   }
 
   public long getMicroseconds() { return durationUs; }
 
   public static String durationToString(long dur) {
-    final long MILLI_TO_MICRO = 1000;
-    final long SECOND_TO_MICRO = MILLI_TO_MICRO * 1000;
-    final String DURATION_FORMAT = "%4d";
+    long MILLI_TO_MICRO = 1000;
+    long SECOND_TO_MICRO = MILLI_TO_MICRO * 1000;
+    String DURATION_FORMAT = "%4d";
 
     if (dur == 0) {
       return "  <1 us";

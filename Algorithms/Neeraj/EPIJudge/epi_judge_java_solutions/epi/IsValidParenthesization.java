@@ -13,7 +13,7 @@ public class IsValidParenthesization {
   public static boolean isWellFormed(String s) {
 
     Deque<Character> leftChars = new ArrayDeque<>();
-    final Map<Character, Character> LOOKUP =
+    Map<Character, Character> LOOKUP =
         Map.of('(', ')', '{', '}', '[', ']');
     for (int i = 0; i < s.length(); ++i) {
       if (LOOKUP.get(s.charAt(i)) != null) {

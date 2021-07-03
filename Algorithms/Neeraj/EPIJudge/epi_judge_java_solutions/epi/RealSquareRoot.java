@@ -34,7 +34,7 @@ public class RealSquareRoot {
     private enum Ordering {SMALLER, EQUAL, LARGER}
 
     private static Ordering compare(double a, double b) {
-        final double EPSILON = 0.000001;
+        double EPSILON = 0.000001;
         // Uses normalization for precision problem.
         double diff = (a - b) / Math.max(Math.abs(a), Math.abs(b));
         return diff < -EPSILON

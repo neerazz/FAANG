@@ -13,8 +13,8 @@ import java.util.concurrent.Callable;
 public class RandomSequenceChecker {
   private static int computeDeviationMultiplier(double allowedFalseNegative,
                                                 int numRvs) {
-    final double individualRvError = allowedFalseNegative / numRvs;
-    final double[] ERROR_BOUNDS = {1 - 0.682689492137086, 1 - 0.954499736103642,
+    double individualRvError = allowedFalseNegative / numRvs;
+    double[] ERROR_BOUNDS = {1 - 0.682689492137086, 1 - 0.954499736103642,
                                    1 - 0.997300203936740, 1 - 0.999936657516334,
                                    1 - 0.999999426696856, 1 - 0.999999998026825,
                                    1 - 0.999999999997440};
@@ -29,11 +29,11 @@ public class RandomSequenceChecker {
 
   private static boolean checkFrequencies(List<Integer> seq, int n,
                                           double falseNegativeTolerance) {
-    final double avg = (double)seq.size() / n;
-    final int kIndiv = computeDeviationMultiplier(falseNegativeTolerance, n);
-    final double p = 1.0 / n;
-    final double sigmaIndiv = Math.sqrt(seq.size() * p * (1.0 - p));
-    final double kSigmaIndiv = kIndiv * sigmaIndiv;
+    double avg = (double)seq.size() / n;
+    int kIndiv = computeDeviationMultiplier(falseNegativeTolerance, n);
+    double p = 1.0 / n;
+    double sigmaIndiv = Math.sqrt(seq.size() * p * (1.0 - p));
+    double kSigmaIndiv = kIndiv * sigmaIndiv;
     // To make our testing meaningful "sufficiently large", we need to have
     // enough testing data.
     if (seq.size() * p < 50 || seq.size() * (1 - p) < 50) {
@@ -74,10 +74,10 @@ public class RandomSequenceChecker {
   }
 
   private static boolean checkBirthdaySpacings(List<Integer> seq, int n) {
-    final int expectedAvgRepetitionLength =
+    int expectedAvgRepetitionLength =
         (int)Math.ceil(Math.sqrt(Math.log(2.0) * 2.0 * n));
-    final int numberOfSubarrays = seq.size() - expectedAvgRepetitionLength + 1;
-    final int MIN_NUMBER_SUBARRAYS = 1000;
+    int numberOfSubarrays = seq.size() - expectedAvgRepetitionLength + 1;
+    int MIN_NUMBER_SUBARRAYS = 1000;
     if (numberOfSubarrays < MIN_NUMBER_SUBARRAYS) {
       return true; // Not enough subarrays for birthday spacing check
     }
@@ -90,7 +90,7 @@ public class RandomSequenceChecker {
           (seqWindow.size() < expectedAvgRepetitionLength) ? 1 : 0;
     }
 
-    final double COUNT_TOLERANCE = 0.4;
+    double COUNT_TOLERANCE = 0.4;
     return COUNT_TOLERANCE * numberOfSubarrays <=
         numberOfSubarraysWithRepetitions;
   }
@@ -136,7 +136,7 @@ public class RandomSequenceChecker {
 
   public static void runFuncWithRetries(Callable<Boolean> func)
       throws Exception {
-    final int NUM_RUNS = 5;
+    int NUM_RUNS = 5;
     for (int i = 0; i < NUM_RUNS; i++) {
       if (func.call()) {
         return;

@@ -29,7 +29,7 @@ public class NonuniformRandomNumber {
 
     Random r = new Random();
     // Get a random number in [0.0,1.0).
-    final double uniform01 = r.nextDouble();
+    double uniform01 = r.nextDouble();
     // Find the index of the interval that uniform01 lies in.
     int it = Collections.binarySearch(prefixSumOfProbabilities, uniform01);
     if (it < 0) {
@@ -42,7 +42,7 @@ public class NonuniformRandomNumber {
       //
       // Therefore, if the return value is negative, by taking its absolute
       // value minus 1, we get the desired index.
-      final int intervalIdx = Math.abs(it) - 1;
+      int intervalIdx = Math.abs(it) - 1;
       return values.get(intervalIdx);
     } else {
       // We have it >= 0, i.e., uniform01 equals an entry
@@ -58,7 +58,7 @@ public class NonuniformRandomNumber {
   private static boolean nonuniformRandomNumberGenerationRunner(
       TimedExecutor executor, List<Integer> values, List<Double> probabilities)
       throws Exception {
-    final int N = 1000000;
+    int N = 1000000;
     List<Integer> results = new ArrayList<>(N);
 
     executor.run(() -> {
@@ -72,12 +72,12 @@ public class NonuniformRandomNumber {
       counts.put(result, counts.getOrDefault(result, 0) + 1);
     }
     for (int i = 0; i < values.size(); ++i) {
-      final int v = values.get(i);
-      final double p = probabilities.get(i);
+      int v = values.get(i);
+      double p = probabilities.get(i);
       if (N * p < 50 || N * (1.0 - p) < 50) {
         continue;
       }
-      final double sigma = Math.sqrt(N * p * (1.0 - p));
+      double sigma = Math.sqrt(N * p * (1.0 - p));
       if (Math.abs(counts.get(v) - (p * N)) > 5 * sigma) {
         return false;
       }

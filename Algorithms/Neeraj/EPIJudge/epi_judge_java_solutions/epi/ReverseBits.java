@@ -22,8 +22,8 @@ public class ReverseBits {
   @EpiTest(testDataFile = "reverse_bits.tsv")
   public static long reverseBits(long x) {
 
-    final int MASK_SIZE = 16;
-    final int BIT_MASK = 0xFFFF;
+    int MASK_SIZE = 16;
+    int BIT_MASK = 0xFFFF;
     return precomputedReverse[(int)(x & BIT_MASK)] << (3 * MASK_SIZE) |
         precomputedReverse[(int)((x >>> MASK_SIZE) & BIT_MASK)]
             << (2 * MASK_SIZE) |

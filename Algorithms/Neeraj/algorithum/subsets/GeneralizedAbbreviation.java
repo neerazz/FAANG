@@ -33,8 +33,8 @@ public class GeneralizedAbbreviation {
         return result;
     }
 
-    public static List<String> generateGeneralizedAbbreviation_Wrong(final String word) {
-        final Set<String> result = new HashSet<>();
+    public static List<String> generateGeneralizedAbbreviation_Wrong(String word) {
+        Set<String> result = new HashSet<>();
         helper(word, "", 0, "", result, word.length());
         System.out.println(result.size());
         return new ArrayList<>(result);
@@ -61,14 +61,14 @@ public class GeneralizedAbbreviation {
         StringBuilder sb;
         int start, count;
 
-        public AbbreviateWord(final StringBuilder sb, final int start, final int count) {
+        public AbbreviateWord(StringBuilder sb, int start, int count) {
             this.sb = sb;
             this.start = start;
             this.count = count;
         }
     }
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         List<String> result = generateGeneralizedAbbreviation("BAT");
         System.out.println("Generalized abbreviation are: " + result);
 

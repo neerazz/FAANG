@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 05, 2020
  * Questions: https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
@@ -11,6 +8,7 @@ public class SmallestSubarrayWithAGivenSum {
     public static void main(String[] args) {
 
     }
+    
     public static int findMinSubArray(int S, int[] arr) {
         int sum = 0, len = arr.length, min = len +1, p1 =0, p2 =0;
         while(p2 < len){

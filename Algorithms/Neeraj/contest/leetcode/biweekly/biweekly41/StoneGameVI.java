@@ -103,17 +103,17 @@ public class StoneGameVI {
         Set<Integer> taken;
         int player;
 
-        public Combination(final Set<Integer> taken, final int player) {
+        public Combination(Set<Integer> taken, int player) {
             this.taken = taken;
             this.player = player;
         }
 
         @Override
-        public boolean equals(final Object o) {
+        public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || this.getClass() != o.getClass()) return false;
 
-            final Combination that = (Combination) o;
+            Combination that = (Combination) o;
 
             if (this.player != that.player) return false;
             return this.taken != null ? this.taken.equals(that.taken) : that.taken == null;

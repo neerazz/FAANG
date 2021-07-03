@@ -3,15 +3,7 @@ package epi.test_framework;
 
 import epi.TreeLike;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.IdentityHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Queue;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTreeUtils {
   public static class TreePath {
@@ -183,8 +175,8 @@ public class BinaryTreeUtils {
   }
 
   private static class TwoNodes<T> {
-    public final TreeLike<T, ?> node1;
-    public final TreeLike<T, ?> node2;
+    public TreeLike<T, ?> node1;
+    public TreeLike<T, ?> node2;
 
     public TwoNodes(TreeLike<T, ?> node1, TreeLike<T, ?> node2) {
       this.node1 = node1;
@@ -217,7 +209,7 @@ public class BinaryTreeUtils {
   }
 
   private static class TwoNodesAndPath<T> extends TwoNodes<T> {
-    public final TreePath path;
+    public TreePath path;
 
     public TwoNodesAndPath(TreeLike<T, ?> tree1, TreeLike<T, ?> tree2,
                            TreePath path) {
@@ -256,9 +248,9 @@ public class BinaryTreeUtils {
   }
 
   private static class TreePathIntRange<T> {
-    public final TreeLike<T, ?> tree;
-    public final TreePath path;
-    public final IntRange range;
+    public TreeLike<T, ?> tree;
+    public TreePath path;
+    public IntRange range;
 
     public TreePathIntRange(TreeLike<T, ?> tree, TreePath path,
                             IntRange range) {
@@ -337,8 +329,8 @@ public class BinaryTreeUtils {
   }
 
   private static class TreeInteger<T> {
-    public final TreeLike<T, ?> tree;
-    public final Integer height;
+    public TreeLike<T, ?> tree;
+    public Integer height;
 
     public TreeInteger(TreeLike<T, ?> tree, Integer height) {
       this.tree = tree;

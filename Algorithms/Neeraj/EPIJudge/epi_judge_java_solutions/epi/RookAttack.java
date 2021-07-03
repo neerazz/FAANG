@@ -32,7 +32,7 @@ public class RookAttack {
 
     for (int j = 1; j < n; ++j) {
       if (A.get(0).get(j) == 0) {
-        final int idx = j;
+        int idx = j;
         A.stream().forEach(row -> row.set(idx, 0));
       }
     }

@@ -28,25 +28,25 @@ import java.io.Writer;
  ******************************************************************************/
 
 public class JsonWriter {
-  private static final int CONTROL_CHARACTERS_END = 0x001f;
+  private static int CONTROL_CHARACTERS_END = 0x001f;
 
-  private static final char[] QUOT_CHARS = {'\\', '"'};
-  private static final char[] BS_CHARS = {'\\', '\\'};
-  private static final char[] LF_CHARS = {'\\', 'n'};
-  private static final char[] CR_CHARS = {'\\', 'r'};
-  private static final char[] TAB_CHARS = {'\\', 't'};
+  private static char[] QUOT_CHARS = {'\\', '"'};
+  private static char[] BS_CHARS = {'\\', '\\'};
+  private static char[] LF_CHARS = {'\\', 'n'};
+  private static char[] CR_CHARS = {'\\', 'r'};
+  private static char[] TAB_CHARS = {'\\', 't'};
   // In JavaScript, U+2028 and U+2029 characters count as line endings and must
   // be encoded.
   // http://stackoverflow.com/questions/2965293/javascript-parse-error-on-u2028-unicode-character
-  private static final char[] UNICODE_2028_CHARS = {'\\', 'u', '2',
+  private static char[] UNICODE_2028_CHARS = {'\\', 'u', '2',
                                                     '0',  '2', '8'};
-  private static final char[] UNICODE_2029_CHARS = {'\\', 'u', '2',
+  private static char[] UNICODE_2029_CHARS = {'\\', 'u', '2',
                                                     '0',  '2', '9'};
-  private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
+  private static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
                                             '6', '7', '8', '9', 'a', 'b',
                                             'c', 'd', 'e', 'f'};
 
-  protected final Writer writer;
+  protected Writer writer;
 
   JsonWriter(Writer writer) { this.writer = writer; }
 

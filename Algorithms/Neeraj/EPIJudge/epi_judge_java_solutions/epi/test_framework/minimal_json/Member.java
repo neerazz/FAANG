@@ -5,8 +5,8 @@ package epi.test_framework.minimal_json;
  * Represents a member of a JSON object, a pair of a name and a value.
  */
 public class Member {
-  private final String name;
-  private final JsonValue value;
+  private String name;
+  private JsonValue value;
 
   Member(String name, JsonValue value) {
     this.name = name;

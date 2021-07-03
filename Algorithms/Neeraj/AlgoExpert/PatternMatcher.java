@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Feb 02, 2021
  * Questions: https://www.algoexpert.io/questions/Pattern%20Matcher
@@ -9,7 +6,7 @@ import java.io.*;
  * <p>
  * A string S0 is said to match a pattern if replacing all "x"s in the pattern with some non-empty substring S1 of S0 and replacing all "y"s in the pattern with some non-empty substring S2 of S0 yields the same string S0.
  * <p>
- * If the input string doesn't match the input pattern, the function should return an empty array; otherwise, it should return an array holding the strings S1 and S2 that represent "x" and "y" in the normal string, in that order. If the pattern doesn't contain any "x"s or "y"s, the respective letter should be represented by an empty string in the final array that you return.
+ * If the input string doesn't match the input pattern, the function should return an empty array; otherwise, it should return an array holding the strings S1 and S2 that represent "x" and "y" in the normal string, in that order. If the pattern doesn't contain any "x"s or "y"s, the respective letter should be represented by an empty string in the array that you return.
  * <p>
  * You can assume that there will never be more than one pair of strings S1 and S2 that appropriately represent "x" and "y" in the normal string.
  * <p>

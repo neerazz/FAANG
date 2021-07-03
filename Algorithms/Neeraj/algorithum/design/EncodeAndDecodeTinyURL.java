@@ -12,8 +12,8 @@ public class EncodeAndDecodeTinyURL {
 
 class Codec {
 
-    private static final String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    private static final String PREFIX = "http://tinyurl.com/";
+    private static String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    private static String PREFIX = "http://tinyurl.com/";
     Map<String, String> urlMap = new HashMap<>();
 
     // Encodes a URL to a shortened URL.

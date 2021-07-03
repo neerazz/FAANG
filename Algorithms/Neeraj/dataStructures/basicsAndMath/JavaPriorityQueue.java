@@ -6,8 +6,8 @@ import java.util.Scanner;
 https://www.hackerrank.com/challenges/java-priority-queue/problem
  */
 public class JavaPriorityQueue {
-    private final static Scanner scan = new Scanner(System.in);
-    private final static Priorities priorities = new Priorities();
+    private static Scanner scan = new Scanner(System.in);
+    private static Priorities priorities = new Priorities();
 
     public static void main(String[] args) {
         int totalEvents = Integer.parseInt(scan.nextLine());
@@ -29,7 +29,7 @@ public class JavaPriorityQueue {
 }
 
 class Priorities {
-    private final java.util.PriorityQueue<Student> students = new java.util.PriorityQueue<Student>();
+    private java.util.PriorityQueue<Student> students = new java.util.PriorityQueue<Student>();
 
     public List<Student> getStudents(List<String> events) {
         List<Student> output = new ArrayList<>();

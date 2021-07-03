@@ -10,14 +10,14 @@ import java.util.Set;
 
 public class SubsetWithDuplicates {
 
-    public static List<List<Integer>> findSubsets(final int[] nums) {
-        final Set<List<Integer>> subsets = new HashSet<>();
+    public static List<List<Integer>> findSubsets(int[] nums) {
+        Set<List<Integer>> subsets = new HashSet<>();
         subsets.add(new ArrayList<>());
-        for (final int num : nums) {
-            final int size = subsets.size();
-            final Set<List<Integer>> temp = new HashSet<>();
-            for (final List<Integer> level : subsets) {
-                final List<Integer> list = new ArrayList<>(level);
+        for (int num : nums) {
+            int size = subsets.size();
+            Set<List<Integer>> temp = new HashSet<>();
+            for (List<Integer> level : subsets) {
+                List<Integer> list = new ArrayList<>(level);
                 list.add(num);
                 temp.add(list);
             }
@@ -26,7 +26,7 @@ public class SubsetWithDuplicates {
         return new ArrayList<>(subsets);
     }
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         List<List<Integer>> result = findSubsets(new int[]{1, 3, 3});
         System.out.println("Here is the list of subsets: " + result);
 

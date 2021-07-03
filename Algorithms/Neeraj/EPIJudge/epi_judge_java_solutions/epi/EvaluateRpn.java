@@ -14,8 +14,8 @@ public class EvaluateRpn {
   public static int eval(String expression) {
 
     Deque<Integer> intermediateResults = new ArrayDeque<>();
-    final String DELIMITER = ",";
-    final Map<String, ToIntBiFunction<Integer, Integer>> OPERATORS = Map.of(
+    String DELIMITER = ",";
+    Map<String, ToIntBiFunction<Integer, Integer>> OPERATORS = Map.of(
         "+",
         (y, x)
             -> x + y,

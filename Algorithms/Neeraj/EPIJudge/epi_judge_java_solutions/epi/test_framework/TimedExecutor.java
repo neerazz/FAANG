@@ -32,8 +32,8 @@ public class TimedExecutor {
       return timedCall(func);
     } else {
       try {
-        final ExecutorService executor = Executors.newSingleThreadExecutor();
-        final Future<ReturnType> future =
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future<ReturnType> future =
             executor.submit(() -> { return timedCall(func); });
 
         // This does not cancel the already-scheduled task.

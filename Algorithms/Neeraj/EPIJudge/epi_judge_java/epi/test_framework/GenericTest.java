@@ -1,11 +1,7 @@
 
 package epi.test_framework;
 
-import epi.test_framework.minimal_json.Json;
-import epi.test_framework.minimal_json.JsonObject;
-import epi.test_framework.minimal_json.JsonValue;
-import epi.test_framework.minimal_json.Member;
-import epi.test_framework.minimal_json.WriterConfig;
+import epi.test_framework.minimal_json.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -84,7 +80,7 @@ public class GenericTest {
 
     int testNr = 0;
     int testsPassed = 0;
-    final int totalTests = testData.size() - 1;
+    int totalTests = testData.size() - 1;
     List<List<Integer>> metrics = new ArrayList<>();
     List<Long> durations = new ArrayList<>();
     TestResult result = TestResult.FAILED;
@@ -94,7 +90,7 @@ public class GenericTest {
 
       // Since the last field of testData is testExplanation, which is not
       // used for running test, we extract that here.
-      final String testExplanation = testCase.get(testCase.size() - 1);
+      String testExplanation = testCase.get(testCase.size() - 1);
       testCase = testCase.subList(0, testCase.size() - 1);
 
       TestOutput testOutput = new TestOutput(null, null);
@@ -141,7 +137,7 @@ public class GenericTest {
         TestUtilsConsole.printFailedTest(handler.paramNames(), testCase,
                                          testFailure);
 
-        final int testsNotPassed = testNr - testsPassed;
+        int testsNotPassed = testNr - testsPassed;
         if (testsNotPassed >= config.numFailedTestsBeforeStop) {
           break;
         }
@@ -172,8 +168,8 @@ public class GenericTest {
     Path problemMappingFilePath =
         Paths.get(TestUtils.getFilePathInJudgeDir("problem_mapping.js"));
     JsonValue chapterToProblemToLanguageSolutionMapping = null;
-    final String JS_BEGIN_PATTERN = "problem_mapping = ";
-    final String JS_END_PATTERN = ";";
+    String JS_BEGIN_PATTERN = "problem_mapping = ";
+    String JS_END_PATTERN = ";";
     try {
       String jsFileStr = new String(Files.readAllBytes(problemMappingFilePath));
       jsFileStr =

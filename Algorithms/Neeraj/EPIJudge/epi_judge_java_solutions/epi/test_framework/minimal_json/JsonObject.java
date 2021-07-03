@@ -61,8 +61,8 @@ import java.util.List;
  */
 @SuppressWarnings("serial") // use default serial UID
 public class JsonObject extends JsonValue implements Iterable<Member> {
-  private final List<String> names;
-  private final List<JsonValue> values;
+  private List<String> names;
+  private List<JsonValue> values;
   private transient HashIndexTable table;
 
   /**
@@ -815,8 +815,8 @@ public class JsonObject extends JsonValue implements Iterable<Member> {
    * @return an iterator over the members of this object
    */
   public Iterator<Member> iterator() {
-    final Iterator<String> namesIterator = names.iterator();
-    final Iterator<JsonValue> valuesIterator = values.iterator();
+    Iterator<String> namesIterator = names.iterator();
+    Iterator<JsonValue> valuesIterator = values.iterator();
     return new Iterator<Member>() {
       public boolean hasNext() { return namesIterator.hasNext(); }
 
@@ -905,7 +905,7 @@ public class JsonObject extends JsonValue implements Iterable<Member> {
   }
 
   static class HashIndexTable {
-    private final byte[] hashTable = new byte[32]; // must be a power of two
+    private byte[] hashTable = new byte[32]; // must be a power of two
 
     public HashIndexTable() {}
 

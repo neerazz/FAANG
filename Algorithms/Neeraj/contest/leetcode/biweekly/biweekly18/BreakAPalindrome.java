@@ -2,7 +2,7 @@ package biweekly.biweekly18;
 
 /*
 Given a palindromic string palindrome, replace exactly one character by any lowercase English letter so that the string becomes the lexicographically smallest possible string that isn't a palindrome.
-After doing so, return the final string.  If there is no way to do so, return the empty string.
+After doing so, return the string.  If there is no way to do so, return the empty string.
 Example 1:
 Input: palindrome = "abccba"
 Output: "aaccba"

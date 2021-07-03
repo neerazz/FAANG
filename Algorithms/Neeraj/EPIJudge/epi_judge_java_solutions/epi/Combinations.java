@@ -30,7 +30,7 @@ public class Combinations {
 
     // Generate remaining combinations over {offset, ..., n - 1} of size
     // numRemaining.
-    final int numRemaining = k - partialCombination.size();
+    int numRemaining = k - partialCombination.size();
     for (int i = offset; i <= n && numRemaining <= n - i + 1; ++i) {
       partialCombination.add(i);
       directedCombinations(n, k, i + 1, partialCombination, result);

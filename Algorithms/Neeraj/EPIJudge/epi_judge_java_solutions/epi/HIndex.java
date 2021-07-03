@@ -12,7 +12,7 @@ public class HIndex {
   public static int hIndex(List<Integer> citations) {
 
     Collections.sort(citations);
-    final int n = citations.size();
+    int n = citations.size();
     for (int i = 0; i < n; ++i) {
       if (citations.get(i) >= n - i) {
         return n - i;

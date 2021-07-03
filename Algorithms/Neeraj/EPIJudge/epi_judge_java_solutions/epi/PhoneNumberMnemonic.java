@@ -21,7 +21,7 @@ public class PhoneNumberMnemonic {
   }
 
   // The mapping from digit to corresponding characters.
-  private static final String[] MAPPING = {"0",   "1",   "ABC",  "DEF", "GHI",
+  private static String[] MAPPING = {"0",   "1",   "ABC",  "DEF", "GHI",
                                            "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
   private static void phoneMnemonicHelper(String phoneNumber, int digit,

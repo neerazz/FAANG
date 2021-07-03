@@ -162,16 +162,16 @@ public class TravelingSalesManProblem {
         int node;
         Set<Integer> set;
 
-        public Index(final int node, final Set<Integer> set) {
+        public Index(int node, Set<Integer> set) {
             this.node = node;
             this.set = set;
         }
 
         @Override
-        public boolean equals(final Object o) {
+        public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || this.getClass() != o.getClass()) return false;
-            final Index index = (Index) o;
+            Index index = (Index) o;
             return this.node == index.node &&
                     this.set.equals(index.set);
         }

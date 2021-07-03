@@ -12,10 +12,10 @@ public class MyTool {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Remove One Element to Make the Array Strictly Increasing3\n" +
-                        "Remove All Occurrences of a Substring4\n" +
-                        "Maximum Alternating Subsequence Sum5\n" +
-                        "Design Movie Rental System"
+                "Maximum Product Difference Between Two Pairs3\n" +
+                        "Cyclically Rotating a Grid4\n" +
+                        "Number of Wonderful Substrings5\n" +
+                        "Count Ways to Build Rooms in an Ant Colony"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
@@ -27,6 +27,10 @@ public class MyTool {
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
         ).forEach(System.out::println);
+    }
+
+    static int getMax(int[] counts){
+        return Arrays.stream(counts).max().getAsInt();
     }
 
     private static List<String> getContest(String input) {

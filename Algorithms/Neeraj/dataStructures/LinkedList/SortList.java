@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Oct 13, 2020
@@ -31,7 +31,7 @@ public class SortList {
             slow = slow.next;
             fast = fast.next.next;
         }
-        final ListNode right = slow.next;
+        ListNode right = slow.next;
         slow.next = null;
 //         Make a recursive call, to further split.
         ListNode left1 = sortList(left), right1 = sortList(right);

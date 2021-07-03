@@ -46,7 +46,7 @@ public class SortedListToBst {
         inputList.next.prev = inputList;
       }
     }
-    final DoublyListNode<Integer> finalList = inputList;
+    DoublyListNode<Integer> finalList = inputList;
     inputList = executor.run(() -> buildBSTFromSortedList(finalList, l.size()));
 
     Iterator<Integer> current = l.iterator();

@@ -10,25 +10,25 @@ import java.util.List;
 
 public class QuadrupleSumToTarget {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
     }
 
-    public static List<List<Integer>> searchQuadruplets(final int[] arr, final int target) {
-        final List<List<Integer>> quadruplets = new ArrayList<>();
+    public static List<List<Integer>> searchQuadruplets(int[] arr, int target) {
+        List<List<Integer>> quadruplets = new ArrayList<>();
         if (arr.length < 4) return quadruplets;
         Arrays.sort(arr);
         QuadrupleSumToTarget.helper(arr, 0, target, 4, new LinkedList<>(), quadruplets);
         return quadruplets;
     }
 
-    private static void helper(final int[] arr, int start, final int target, final int nums, final LinkedList<Integer> soFar, final List<List<Integer>> op) {
+    private static void helper(int[] arr, int start, int target, int nums, LinkedList<Integer> soFar, List<List<Integer>> op) {
         if (nums == 2) {
             int end = arr.length - 1;
             while (start < end) {
-                final int sum = arr[start] + arr[end];
+                int sum = arr[start] + arr[end];
                 if (sum == target) {
-                    final List<Integer> temp = new ArrayList<>(soFar);
+                    List<Integer> temp = new ArrayList<>(soFar);
                     temp.add(arr[start++]);
                     temp.add(arr[end--]);
                     op.add(temp);

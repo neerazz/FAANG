@@ -8,7 +8,7 @@ import java.util.Stack;
 public class QueueUsingTwoStacks {
     public static void main(String[] args) {
         MyQueueUsingStack myQueueUsingStack = new MyQueueUsingStack();
-        final Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int tests = scanner.nextInt();
         for (int i = 0; i < tests; i++) {
             int q = scanner.nextInt();

@@ -13,7 +13,7 @@ public class LruCache {
 
     LinkedHashMap<Integer, Integer> isbnToPrice;
 
-    LruCache(final int capacity) {
+    LruCache(int capacity) {
 
         this.isbnToPrice =
                 new LinkedHashMap<Integer, Integer>(capacity, 1.0f, true) {

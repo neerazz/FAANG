@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 public class RemoveDuplicates {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
     }
 
-    public static int remove(final int[] arr) {
+    public static int remove(int[] arr) {
         int nonDublicateIdx = 0;
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] == arr[i + 1]) continue;

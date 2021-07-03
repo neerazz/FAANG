@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Oct 05, 2020
@@ -10,6 +9,22 @@ public class StringAnagrams {
 
     public static void main(String[] args) {
 
+    }
+
+    public static List<Integer> findStringAnagrams_2(String str, String pattern) {
+        List<Integer> resultIndices = new ArrayList<Integer>();
+        int p1 = 0, p2 = 0, len = str.length(), reqLen = pattern.length();
+        int[] required = new int[26], window = new int[26];
+        for (char c : pattern.toCharArray()) required[c - 'a']++;
+        while (p2 < len) {
+            window[str.charAt(p2) - 'a']++;
+            if (p2 - p1 + 1 == reqLen) {
+                if (Arrays.equals(required, window)) resultIndices.add(p1);
+                window[str.charAt(p1++) - 'a']--;
+            }
+            p2++;
+        }
+        return resultIndices;
     }
 
     public static List<Integer> findStringAnagrams(String str, String pattern) {

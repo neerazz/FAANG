@@ -61,7 +61,7 @@ public class W3MakeHeap {
 
 // Java implementation of Min Heap
 class MinHeap {
-    private static final int FRONT = 1;
+    private static int FRONT = 1;
     private int[] Heap;
     private int size;
     private int maxsize;

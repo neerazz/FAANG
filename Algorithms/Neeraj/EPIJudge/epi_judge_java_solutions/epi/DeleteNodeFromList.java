@@ -27,7 +27,7 @@ public class DeleteNodeFromList {
       nodeToDelete = nodeToDelete.next;
     }
 
-    final ListNode<Integer> finalNodeToDelete = nodeToDelete;
+    ListNode<Integer> finalNodeToDelete = nodeToDelete;
     executor.run(() -> deletionFromList(finalNodeToDelete));
 
     return head;

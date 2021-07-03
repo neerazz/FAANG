@@ -14,8 +14,8 @@ import java.io.Writer;
  * ensure that the wrapped writer is open.
  */
 class WritingBuffer extends Writer {
-  private final Writer writer;
-  private final char[] buffer;
+  private Writer writer;
+  private char[] buffer;
   private int fill = 0;
 
   WritingBuffer(Writer writer) { this(writer, 16); }

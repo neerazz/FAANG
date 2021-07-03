@@ -15,7 +15,7 @@ import java.util.Arrays;
  * </pre>
  */
 class PrettyPrint extends WriterConfig {
-  private final char[] indentChars;
+  private char[] indentChars;
 
   protected PrettyPrint(char[] indentChars) { this.indentChars = indentChars; }
 
@@ -59,7 +59,7 @@ class PrettyPrint extends WriterConfig {
   }
 
   private static class PrettyPrintWriter extends JsonWriter {
-    private final char[] indentChars;
+    private char[] indentChars;
     private int indent;
 
     private PrettyPrintWriter(Writer writer, char[] indentChars) {

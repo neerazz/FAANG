@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 import java.util.stream.Collectors;
 
 /**
@@ -96,7 +95,7 @@ public class AnalyzeUserWebsiteVisitPattern {
             }
         }
         System.out.println("counts = " + counts);
-        final int finalMax = max;
+        int finalMax = max;
         String mostVisited = counts.entrySet().stream().filter(entry -> entry.getValue() == finalMax).map(entry -> entry.getKey()).sorted().findFirst().get();
         String[] splits = mostVisited.split(",");
         List<String> result = new ArrayList<>();
@@ -111,7 +110,7 @@ public class AnalyzeUserWebsiteVisitPattern {
         String site;
         int time;
 
-        public Analyze(final String user, final String site, final int time) {
+        public Analyze(String user, String site, int time) {
             this.user = user;
             this.site = site;
             this.time = time;

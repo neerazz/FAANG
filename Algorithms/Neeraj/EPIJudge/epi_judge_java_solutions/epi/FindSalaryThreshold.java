@@ -15,8 +15,8 @@ public class FindSalaryThreshold {
     Collections.sort(currentSalaries);
     double unadjustedSalarySum = 0;
     for (int i = 0; i < currentSalaries.size(); ++i) {
-      final int adjustedPeople = currentSalaries.size() - i;
-      final double adjustedSalarySum = currentSalaries.get(i) * adjustedPeople;
+      int adjustedPeople = currentSalaries.size() - i;
+      double adjustedSalarySum = currentSalaries.get(i) * adjustedPeople;
       if (unadjustedSalarySum + adjustedSalarySum >= targetPayroll) {
         return (targetPayroll - unadjustedSalarySum) / adjustedPeople;
       }

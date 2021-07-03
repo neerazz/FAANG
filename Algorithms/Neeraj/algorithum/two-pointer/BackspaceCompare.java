@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class BackspaceCompare {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
     }
 
@@ -17,9 +17,9 @@ public class BackspaceCompare {
         return str1.equals(str2);
     }
 
-    private static String resolveString(final String str) {
-        final Stack<Character> stack = new Stack<>();
-        for (final char c : str.toCharArray()) {
+    private static String resolveString(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
             if (c == '#') {
                 if (stack.isEmpty()) continue;
                 stack.pop();
@@ -27,7 +27,7 @@ public class BackspaceCompare {
                 stack.add(c);
             }
         }
-        final StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         while (!stack.isEmpty()) {
             sb.append(stack.pop());
         }

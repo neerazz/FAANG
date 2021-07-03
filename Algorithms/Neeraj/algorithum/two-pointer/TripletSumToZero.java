@@ -9,11 +9,11 @@ import java.util.List;
 
 public class TripletSumToZero {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
 
     }
 
-    public static List<List<Integer>> searchTriplets(final int[] arr) {
+    public static List<List<Integer>> searchTriplets(int[] arr) {
         List<List<Integer>> triplets = new ArrayList<>();
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 2; i++) {

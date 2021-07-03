@@ -11,7 +11,7 @@ public class RandomPickWithBlacklist {
     }
 
     static class Solution {
-        private final int allowedNumber;
+        private int allowedNumber;
         Map<Integer, Integer> map = new HashMap<>();
         Random ran = new Random();
 

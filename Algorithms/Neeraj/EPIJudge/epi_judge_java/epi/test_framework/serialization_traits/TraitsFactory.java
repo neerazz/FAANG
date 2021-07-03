@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class TraitsFactory {
-  private static final Map<Type, SerializationTrait> PRIMITIVE_TYPES_MAPPING;
+  private static Map<Type, SerializationTrait> PRIMITIVE_TYPES_MAPPING;
 
   static {
     PRIMITIVE_TYPES_MAPPING = new HashMap<>() {

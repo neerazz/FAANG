@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
 
 public class Hanoi {
 
-  private static final int NUM_PEGS = 3;
+  private static int NUM_PEGS = 3;
 
   public static List<List<Integer>> computeTowerHanoi(int numRings) {
 

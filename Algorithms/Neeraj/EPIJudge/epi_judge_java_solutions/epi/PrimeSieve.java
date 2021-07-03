@@ -16,7 +16,7 @@ public class PrimeSieve {
     if (n < 2) {
       return Collections.emptyList();
     }
-    final int size = (int)Math.floor(0.5 * (n - 3)) + 1;
+    int size = (int)Math.floor(0.5 * (n - 3)) + 1;
     List<Integer> primes = new ArrayList<>();
     primes.add(2);
     // isPrime.get(i) represents whether (2i + 3) is prime or not.

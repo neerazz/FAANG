@@ -9,7 +9,7 @@ public class MatrixRotation {
 
   public static void rotateMatrix(List<List<Integer>> squareMatrix) {
 
-    final int matrixSize = squareMatrix.size() - 1;
+    int matrixSize = squareMatrix.size() - 1;
     for (int i = 0; i < (squareMatrix.size() / 2); ++i) {
       for (int j = i; j < matrixSize - i; ++j) {
         // Perform a 4-way exchange.

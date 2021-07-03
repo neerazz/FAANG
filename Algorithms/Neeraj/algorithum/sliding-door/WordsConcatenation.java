@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created on:  Oct 05, 2020
@@ -7,27 +10,31 @@ import java.util.*;
 
 public class WordsConcatenation {
 
-    public static void main(final String[] args) {
-        System.out.println(WordsConcatenation.findWordConcatenation("catfoxcat", new String[]{"cat", "fox"}));
-        System.out.println(WordsConcatenation.findWordConcatenation("catcatfoxfox", new String[]{"cat", "fox"}));
+    public static void main(String[] args) {
+        System.out.println("****************************** Solution 1 ******************************");
+        System.out.println(findWordConcatenation_naive("catfoxcat", new String[]{"cat", "fox"}));
+        System.out.println(findWordConcatenation_naive("catcatfoxfox", new String[]{"cat", "fox"}));
+        System.out.println("****************************** Solution 2 ******************************");
+        System.out.println(findWordConcatenation("catfoxcat", new String[]{"cat", "fox"}));
+        System.out.println(findWordConcatenation("catcatfoxfox", new String[]{"cat", "fox"}));
     }
 
-    public static List<Integer> findWordConcatenation_correct(final String str, final String[] words) {
-        final Map<String, Integer> wordMap = new HashMap<>();
-        for (final String word : words) {
+    public static List<Integer> findWordConcatenation(String str, String[] words) {
+        Map<String, Integer> wordMap = new HashMap<>();
+        for (String word : words) {
             wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
         }
-        final List<Integer> resultIndices = new ArrayList<>();
-        final int wordsCount = words.length;
-        final int wordLen = words[0].length();
+        List<Integer> resultIndices = new ArrayList<>();
+        int wordsCount = words.length;
+        int wordLen = words[0].length();
 
 //        Loop from starting till the point where there are wordsCount * wordLen chars left.
         for (int i = 0; i <= str.length() - wordsCount * wordLen; i++) {
-            final Map<String, Integer> window = new HashMap<>();
+            Map<String, Integer> window = new HashMap<>();
 //            Find occurrence of each word.
             for (int j = 0; j < wordsCount; j++) {
-                final int wordIdx = i + j * wordLen;
-                final String word = str.substring(wordIdx, wordIdx + wordLen);
+                int wordIdx = i + j * wordLen;
+                String word = str.substring(wordIdx, wordIdx + wordLen);
 //                If the word is not present then break.
                 if (!wordMap.containsKey(word)) break;
 
@@ -35,72 +42,44 @@ public class WordsConcatenation {
 
 //                If the the word is present more number of times then in the word len then break. It is not correct possibility.
                 if (window.get(word) > wordMap.get(word)) break;
-//                THen you have found all teh words
+//                Then you have found all the words
                 if (j == wordsCount - 1) resultIndices.add(i);
             }
         }
         return resultIndices;
     }
 
-    private static void getIdxs(final String str, final String cur, final Map<Integer, Set<String>> idxs) {
-        int start = 0;
-        int p1 = 0;
-        final int len = str.length();
-        int p2 = 0;
-        while (p1 < len) {
-            if (str.charAt(p1) == cur.charAt(p2)) {
-                if (p2 == cur.length() - 1) {
-                    idxs.computeIfAbsent(start, val -> new HashSet<>()).add(cur);
-                    p1++;
-                    start = p1;
-                    p2 = 0;
-                } else {
-                    p2++;
-                    p1++;
+    public static List<Integer> findWordConcatenation_naive(String str, String[] words) {
+        List<Integer> resultIndices = new ArrayList<>();
+        int wordsLen = words.length, wordLen = words[0].length(), len = str.length();
+        boolean[] taken = new boolean[wordsLen];
+        for (int i = 0; i < len; i++) {
+            String cur = str.substring(i);
+            for (int j = 0; j < wordsLen; j++) {
+                if (cur.startsWith(words[j])) {
+                    taken[j] = true;
+                    helper(str, i + wordLen, words, taken, 1, resultIndices, i);
+                    taken[j] = false;
                 }
-            } else {
-                p1 = start + 1;
-                p2 = 0;
             }
-        }
-    }
-
-    public static List<Integer> findWordConcatenation(final String str, final String[] words) {
-        final List<Integer> resultIndices = new ArrayList<Integer>();
-        final Map<Character, Integer> wordMap = new HashMap<>();
-        int wordLength = 0;
-        for (final String word : words) {
-            for (final char c : word.toCharArray()) {
-                wordMap.put(c, wordMap.getOrDefault(c, 0) + 1);
-                wordLength++;
-            }
-        }
-        final Map<Character, Integer> window = new HashMap<>();
-        final int len = str.length();
-        int found = 0;
-        int p1 = 0;
-        int p2 = 0;
-        while (p2 < len) {
-            final char right = str.charAt(p2);
-            if (wordMap.containsKey(right)) {
-                window.put(right, window.getOrDefault(right, 0) + 1);
-                if (wordMap.get(right) == window.get(right)) found++;
-                while (p2 - p1 + 1 > wordLength) {
-                    final char left = str.charAt(p1++);
-                    if (!wordMap.containsKey(left)) continue;
-                    final int count = window.remove(left);
-                    if (count > 1) window.put(left, count - 1);
-                    if (count == wordMap.get(left)) found--;
-                }
-                if (found == wordMap.size()) {
-                    resultIndices.add(p1);
-                }
-            } else {
-                window.clear();
-                p1 = p2 + 1;
-            }
-            p2++;
         }
         return resultIndices;
+    }
+
+    private static void helper(String str, int start, String[] words, boolean[] taken, int foundSoFar, List<Integer> resultIndices, int starting) {
+        if (foundSoFar == words.length) {
+            resultIndices.add(starting);
+            return;
+        }
+        if (str.length() <= start) return;
+        String cur = str.substring(start);
+        for (int j = 0; j < words.length; j++) {
+            if (taken[j]) continue;
+            if (cur.startsWith(words[j])) {
+                taken[j] = true;
+                helper(str, start + words[0].length(), words, taken, foundSoFar + 1, resultIndices, starting);
+                taken[j] = false;
+            }
+        }
     }
 }

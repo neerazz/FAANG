@@ -25,7 +25,7 @@ public class DeleteFromList {
       nodeToDelete = nodeToDelete.next;
     }
 
-    final ListNode<Integer> finalPrev = prev;
+    ListNode<Integer> finalPrev = prev;
 
     executor.run(() -> deleteList(finalPrev));
 

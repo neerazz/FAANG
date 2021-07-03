@@ -12,7 +12,7 @@ public class IntAsArrayMultiply {
   @EpiTest(testDataFile = "int_as_array_multiply.tsv")
   public static List<Integer> multiply(List<Integer> num1, List<Integer> num2) {
 
-    final int sign = num1.get(0) < 0 ^ num2.get(0) < 0 ? -1 : 1;
+    int sign = num1.get(0) < 0 ^ num2.get(0) < 0 ? -1 : 1;
     num1.set(0, Math.abs(num1.get(0)));
     num2.set(0, Math.abs(num2.get(0)));
 

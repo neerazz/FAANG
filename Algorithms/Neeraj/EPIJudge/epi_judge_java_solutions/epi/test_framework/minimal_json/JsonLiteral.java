@@ -28,10 +28,10 @@ import java.io.IOException;
 
 @SuppressWarnings("serial") // use default serial UID
 class JsonLiteral extends JsonValue {
-  private final String value;
-  private final boolean isNull;
-  private final boolean isTrue;
-  private final boolean isFalse;
+  private String value;
+  private boolean isNull;
+  private boolean isTrue;
+  private boolean isFalse;
 
   JsonLiteral(String value) {
     this.value = value;

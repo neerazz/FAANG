@@ -28,7 +28,7 @@ import java.io.IOException;
 
 @SuppressWarnings("serial") // use default serial UID
 class JsonString extends JsonValue {
-  private final String string;
+  private String string;
 
   JsonString(String string) {
     if (string == null) {

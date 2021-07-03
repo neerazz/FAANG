@@ -20,23 +20,23 @@ Output:
 public class Permutations {
     static List<List<Integer>> output;
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         System.out.println(Permutations.permute(new int[]{1, 2, 3}));
         System.out.println(Permutations.permute_elegant(new int[]{1, 2, 3}));
     }
 
-    public static List<List<Integer>> permute(final int[] nums) {
+    public static List<List<Integer>> permute(int[] nums) {
         Permutations.output = new ArrayList<>();
         Permutations.backTrack(nums, 0, new LinkedList<>());
         return Permutations.output;
     }
 
-    private static void backTrack(final int[] nums, final int index, final LinkedList<Integer> integers) {
+    private static void backTrack(int[] nums, int index, LinkedList<Integer> integers) {
         if (integers.size() == nums.length) {
             Permutations.output.add(new LinkedList<>(integers));
         }
         for (int i = 0; i < nums.length; i++) {
-            final int temp = nums[i];
+            int temp = nums[i];
             if (!integers.contains(temp)) {
                 integers.add(temp);
                 Permutations.backTrack(nums, index + 1, integers);
@@ -45,22 +45,22 @@ public class Permutations {
         }
     }
 
-    static void swap(final int[] nums, final int i, final int j) {
-        final int tmp = nums[i];
+    static void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
     }
 
-    static void permute(final int[] nums, final int len) {
+    static void permute(int[] nums, int len) {
         if (len <= 1) {
-            final ArrayList<Integer> x = new ArrayList(nums.length);
-            for (final int y : nums) {
+            ArrayList<Integer> x = new ArrayList(nums.length);
+            for (int y : nums) {
                 x.add(y);
             }
             Permutations.output.add(x);
             return;
         }
-        final int j = len - 1;
+        int j = len - 1;
         for (int i = 0; i < j; i++) {
             Permutations.swap(nums, i, j);
             Permutations.permute(nums, j);
@@ -69,7 +69,7 @@ public class Permutations {
         Permutations.permute(nums, j);
     }
 
-    public static List<List<Integer>> permute_elegant(final int[] nums) {
+    public static List<List<Integer>> permute_elegant(int[] nums) {
         Permutations.output = new ArrayList<List<Integer>>();
         Permutations.permute(nums, nums.length);
         return Permutations.output;

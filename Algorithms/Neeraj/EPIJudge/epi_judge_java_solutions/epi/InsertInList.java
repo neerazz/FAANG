@@ -25,7 +25,7 @@ public class InsertInList {
     }
     ListNode<Integer> newNode = new ListNode<Integer>(newNodeData, null);
 
-    final ListNode<Integer> finalNode = node;
+    ListNode<Integer> finalNode = node;
     executor.run(() -> insertAfter(finalNode, newNode));
 
     return l;

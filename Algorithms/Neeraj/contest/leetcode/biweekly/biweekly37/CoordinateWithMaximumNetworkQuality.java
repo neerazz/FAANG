@@ -1,6 +1,6 @@
 package biweekly.biweekly37;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * Created on:  Oct 17, 2020
@@ -36,7 +36,7 @@ public class CoordinateWithMaximumNetworkQuality {
             }
             System.out.println(String.format("Factor at %d : %s is : %s", i, Arrays.toString(Arrays.copyOf(towers[i], 2)), String.valueOf(curFactor)));
         }
-        System.out.println("Final factor = " + factor);
+        System.out.println("factor = " + factor);
         return result;
     }
 

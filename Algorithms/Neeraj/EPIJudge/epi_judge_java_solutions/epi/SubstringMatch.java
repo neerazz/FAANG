@@ -14,7 +14,7 @@ public class SubstringMatch {
       return -1; // s is not a substring of t.
     }
 
-    final int BASE = 26;
+    int BASE = 26;
     int tHash = 0, sHash = 0; // Hash codes for the substring of t and s.
     int powerS = 1;           // BASE^|s-1|.
     for (int i = 0; i < s.length(); i++) {

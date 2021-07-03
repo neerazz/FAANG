@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -54,7 +56,7 @@ public class BenchmarkMatching {
         String assetType;
         int shares;
 
-        public Transaction(final String transactionType, final String name, final String assetType, final int shares) {
+        public Transaction(String transactionType, String name, String assetType, int shares) {
             this.transactionType = transactionType;
             this.name = name;
             this.assetType = assetType;

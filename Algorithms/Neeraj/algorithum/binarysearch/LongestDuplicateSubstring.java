@@ -29,8 +29,8 @@ public class LongestDuplicateSubstring {
         return op;
     }
 
-    //    static final long CONST = 256;
-//    static final long MAX = (1 << 31) -1;
+    //    static long CONST = 256;
+//    static long MAX = (1 << 31) -1;
 //    static Set<Long> set;
 //    private static String getDuplicate_rollingHash(String input, int len) {
 //        long cur = 1;

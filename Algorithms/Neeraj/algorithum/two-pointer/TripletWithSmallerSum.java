@@ -14,18 +14,18 @@ import java.util.Arrays;
 
 public class TripletWithSmallerSum {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         System.out.println(TripletWithSmallerSum.searchTriplets(new int[]{-1, 0, 2, 3}, 3));
         System.out.println(TripletWithSmallerSum.searchTriplets(new int[]{-1, 4, 2, 1, 3}, 5));
     }
 
-    public static int searchTriplets(final int[] arr, final int target) {
+    public static int searchTriplets(int[] arr, int target) {
         int count = 0;
         Arrays.sort(arr);
         for (int i = 0; i < arr.length - 2; i++) {
             int start = i + 1, end = arr.length - 1;
             while (start < end) {
-                final int sum = arr[i] + arr[start] + arr[end];
+                int sum = arr[i] + arr[start] + arr[end];
                 if (sum < target) {
                     count += end - start;
                     start++;

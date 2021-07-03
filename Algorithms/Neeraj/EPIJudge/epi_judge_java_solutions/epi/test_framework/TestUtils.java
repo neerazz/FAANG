@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 public class TestUtils {
   public static List<List<String>> splitTsvFile(Path tsvFile) {
-    final String FIELD_DELIM = "\t";
+    String FIELD_DELIM = "\t";
 
     Stream<String> inputData = null;
     try {
@@ -33,8 +33,8 @@ public class TestUtils {
   }
 
   public static String getDefaultTestDataDirPath() {
-    final int MAX_SEARCH_DEPTH = 4;
-    final String DIR_NAME = "test_data";
+    int MAX_SEARCH_DEPTH = 4;
+    String DIR_NAME = "test_data";
 
     Path path = Paths.get("EPIJudge").toAbsolutePath();
     for (int i = 0; i < MAX_SEARCH_DEPTH; i++) {
@@ -64,7 +64,7 @@ public class TestUtils {
    * This method removes all such comments.
    */
   public static String filterBracketComments(String s) {
-    final String BRACKET_ENCLOSED_COMMENT = "(\\[[^\\]]*\\])";
+    String BRACKET_ENCLOSED_COMMENT = "(\\[[^\\]]*\\])";
     return s.replaceAll(BRACKET_ENCLOSED_COMMENT, "").replaceAll(" ", "");
   }
 

@@ -32,7 +32,7 @@ public class OnlineSampling {
       ++numSeenSoFar;
       // Generate a random number in [0, numSeenSoFar], and if this number is in
       // [0, k - 1], we replace that element from the sample with x.
-      final int idxToReplace = randIdxGen.nextInt(numSeenSoFar);
+      int idxToReplace = randIdxGen.nextInt(numSeenSoFar);
       if (idxToReplace < k) {
         runningSample.set(idxToReplace, x);
       }

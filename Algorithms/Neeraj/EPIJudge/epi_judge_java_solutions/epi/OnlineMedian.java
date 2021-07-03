@@ -11,7 +11,7 @@ import java.util.PriorityQueue;
 
 public class OnlineMedian {
 
-  private static final int DEFAULT_INITIAL_CAPACITY = 16;
+  private static int DEFAULT_INITIAL_CAPACITY = 16;
 
   public static List<Double> onlineMedian(Iterator<Integer> sequence) {
 

@@ -59,7 +59,7 @@ public class SearchFrequentItems {
       }
     }
 
-    final double threshold = (double)n / k;
+    double threshold = (double)n / k;
     // Selects the word which occurs > n / k times.
     return table.entrySet()
         .stream()

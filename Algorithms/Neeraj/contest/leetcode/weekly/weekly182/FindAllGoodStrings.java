@@ -25,7 +25,7 @@ public class FindAllGoodStrings {
     }
 
     static class Solution_Copied {
-        final int MOD = 1_000_000_000 + 7;
+        int MOD = 1_000_000_000 + 7;
         String[][] cache;
         Map<String, Integer> memo = new HashMap<>();
 

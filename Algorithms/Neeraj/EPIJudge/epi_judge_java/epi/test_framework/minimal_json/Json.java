@@ -34,7 +34,7 @@ import java.io.Reader;
  * JsonArray array = Json.array(names);
  * </pre>
  */
-public final class Json {
+public class Json {
   private Json() {
     // not meant to be instantiated
   }
@@ -42,17 +42,17 @@ public final class Json {
   /**
    * Represents the JSON literal <code>null</code>.
    */
-  public static final JsonValue NULL = new JsonLiteral("null");
+  public static JsonValue NULL = new JsonLiteral("null");
 
   /**
    * Represents the JSON literal <code>true</code>.
    */
-  public static final JsonValue TRUE = new JsonLiteral("true");
+  public static JsonValue TRUE = new JsonLiteral("true");
 
   /**
    * Represents the JSON literal <code>false</code>.
    */
-  public static final JsonValue FALSE = new JsonLiteral("false");
+  public static JsonValue FALSE = new JsonLiteral("false");
 
   /**
    * Returns a JsonValue instance that represents the given <code>int</code>

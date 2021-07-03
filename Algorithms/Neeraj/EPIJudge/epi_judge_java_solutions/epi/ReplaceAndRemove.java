@@ -25,7 +25,7 @@ public class ReplaceAndRemove {
     // Backward iteration: replace "a"s with "dd"s starting from the end.
     int curIdx = writeIdx - 1;
     writeIdx = writeIdx + aCount - 1;
-    final int finalSize = writeIdx + 1;
+    int finalSize = writeIdx + 1;
     while (curIdx >= 0) {
       if (s[curIdx] == 'a') {
         s[writeIdx--] = 'd';

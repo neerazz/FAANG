@@ -12,7 +12,7 @@ public class AbsentValueArray {
 
   public static int findMissingElement(Iterable<Integer> stream) {
 
-    final int NUM_BUCKET = 1 << 16;
+    int NUM_BUCKET = 1 << 16;
     int[] counter = new int[NUM_BUCKET];
     Iterator<Integer> s = stream.iterator();
     while (s.hasNext()) {
@@ -21,7 +21,7 @@ public class AbsentValueArray {
     }
 
     // Look for a bucket that contains less than (1 << 16) elements.
-    final int BUCKET_CAPACITY = 1 << 16;
+    int BUCKET_CAPACITY = 1 << 16;
     int candidateBucket = 0;
     for (int i = 0; i < NUM_BUCKET; ++i) {
       if (counter[i] < BUCKET_CAPACITY) {

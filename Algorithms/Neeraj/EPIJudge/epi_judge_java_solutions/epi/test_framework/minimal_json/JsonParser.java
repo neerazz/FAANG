@@ -10,11 +10,11 @@ import java.io.StringReader;
  * handler.
  */
 public class JsonParser {
-  private static final int MAX_NESTING_LEVEL = 1000;
-  private static final int MIN_BUFFER_SIZE = 10;
-  private static final int DEFAULT_BUFFER_SIZE = 1024;
+  private static int MAX_NESTING_LEVEL = 1000;
+  private static int MIN_BUFFER_SIZE = 10;
+  private static int DEFAULT_BUFFER_SIZE = 1024;
 
-  private final JsonHandler<Object, Object> handler;
+  private JsonHandler<Object, Object> handler;
   private Reader reader;
   private char[] buffer;
   private int bufferOffset;

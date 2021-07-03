@@ -7,7 +7,7 @@ package epi.test_framework.minimal_json;
  */
 @SuppressWarnings("serial") // use default serial UID
 public class ParseException extends RuntimeException {
-  private final Location location;
+  private Location location;
 
   ParseException(String message, Location location) {
     super(message + " at " + location);

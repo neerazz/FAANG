@@ -1,5 +1,3 @@
-import java.util.*;
-
 class MaximumPathSum{
   public static void main(String[] args) {
     BinaryTree one = new BinaryTree(1);
@@ -35,7 +33,7 @@ class MaximumPathSum{
     int maxSumAtCurrent = Math.max(childMaxValue+tree.value , tree.value);
     // Maximum sum at current would be maximum of (left sum max+ right sum max + cur node & maxPathAtCurrent)
     int maxPathAtCurrent  = Math.max(left[0]+right[0]+tree.value , maxSumAtCurrent);
-    // Final max would be maximum of (left path, right path, maximum at Current)
+    // max would be maximum of (left path, right path, maximum at Current)
     int finalMaxPathAtCurrent = Math.max(Math.max(left[1],right[1]),maxPathAtCurrent);
     return new int[]{maxSumAtCurrent,finalMaxPathAtCurrent};
   }

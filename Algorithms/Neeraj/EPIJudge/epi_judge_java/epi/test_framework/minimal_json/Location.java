@@ -8,17 +8,17 @@ class Location {
   /**
    * The absolute character index, starting at 0.
    */
-  public final int offset;
+  public int offset;
 
   /**
    * The line number, starting at 1.
    */
-  public final int line;
+  public int line;
 
   /**
    * The column number, starting at 1.
    */
-  public final int column;
+  public int column;
 
   Location(int offset, int line, int column) {
     this.offset = offset;

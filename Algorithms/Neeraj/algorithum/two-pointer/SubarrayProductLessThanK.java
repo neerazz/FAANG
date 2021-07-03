@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created on:  Oct 06, 2020
@@ -24,11 +23,39 @@ import java.util.stream.Collectors;
 
 public class SubarrayProductLessThanK {
 
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
+        System.out.println("****************************** Solution 1 ********************************");
         System.out.println(SubarrayProductLessThanK.findSubarrays(new int[]{2, 5, 3, 10}, 30));
         System.out.println(SubarrayProductLessThanK.findSubarrays(new int[]{8, 2, 6, 5}, 50));
+
+        System.out.println("****************************** Solution 2 ********************************");
         System.out.println(SubarrayProductLessThanK.findSubarrays_rev1(new int[]{2, 5, 3, 10}, 30));
         System.out.println(SubarrayProductLessThanK.findSubarrays_rev1(new int[]{8, 2, 6, 5}, 50));
+
+        System.out.println("****************************** Solution 3 ********************************");
+        System.out.println(SubarrayProductLessThanK.findSubarrays_rev2(new int[]{2, 5, 3, 10}, 30));
+        System.out.println(SubarrayProductLessThanK.findSubarrays_rev2(new int[]{8, 2, 6, 5}, 50));
+    }
+
+    public static List<List<Integer>> findSubarrays_rev2(int[] arr, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        int p1 = 0, p2 = 0, len = arr.length;
+        double product = 1;
+        while (p2 < len) {
+            product *= arr[p2];
+//            Shrink if the product is great then or equal to target.
+            while (p1 <= p2 && product >= target) {
+                product /= arr[p1++];
+            }
+//            Loop through the window and collect the List.
+            List<Integer> level = new ArrayList<>();
+            for (int i = p2; i >= p1; i--) {
+                level.add(arr[i]);
+                result.add(new ArrayList<>(level));
+            }
+            p2++;
+        }
+        return result;
     }
 
     public static List<List<Integer>> findSubarrays_rev1(int[] arr, int target) {
@@ -50,8 +77,8 @@ public class SubarrayProductLessThanK {
         return result;
     }
 
-    public static List<List<Integer>> findSubarrays(final int[] arr, final int target) {
-        final List<List<Integer>> subarrays = new ArrayList<>();
+    public static List<List<Integer>> findSubarrays(int[] arr, int target) {
+        List<List<Integer>> subarrays = new ArrayList<>();
         int p1 = 0;
         long product = 1;
         for (int p2 = 0; p2 < arr.length; p2++) {

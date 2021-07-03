@@ -15,7 +15,7 @@ public class CircularQueue {
   public static class Queue {
 
     private int head = 0, tail = 0, numQueueElements = 0;
-    private static final int SCALE_FACTOR = 2;
+    private static int SCALE_FACTOR = 2;
     private Integer[] entries;
 
     public Queue(int capacity) { entries = new Integer[capacity]; }

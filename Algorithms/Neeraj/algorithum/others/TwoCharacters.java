@@ -1,6 +1,5 @@
-
-
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /*
 https://www.hackerrank.com/challenges/two-characters/problem
@@ -11,9 +10,9 @@ Sample Output
 Solution:
 First of all identify all the distinct characters in string. To do this, we have removed duplicates from original string using a set.
 Now iterate over distinct characters in pairs, use the string having no duplicates which we generated in above step.
-Form the potential final string having this pair of characters. To do this, iterate over original string and check for occurrences of these two characters and add them to potential string.
+Form the potential string having this pair of characters. To do this, iterate over original string and check for occurrences of these two characters and add them to potential string.
 Now check the validity of potential string for alternate characters
-If potential string is valud, keep count of max length of such strings to get the final answer.
+If potential string is valud, keep count of max length of such strings to get the answer.
  */
 public class TwoCharacters {
     public static void main(String[] args) {

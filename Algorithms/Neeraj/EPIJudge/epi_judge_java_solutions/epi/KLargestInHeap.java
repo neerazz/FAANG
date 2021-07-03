@@ -22,7 +22,7 @@ public class KLargestInHeap {
     }
   }
 
-  private static final int DEFAULT_INITIAL_CAPACITY = 16;
+  private static int DEFAULT_INITIAL_CAPACITY = 16;
 
   @EpiTest(testDataFile = "k_largest_in_heap.tsv")
 

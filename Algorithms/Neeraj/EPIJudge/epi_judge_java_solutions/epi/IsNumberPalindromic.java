@@ -12,7 +12,7 @@ public class IsNumberPalindromic {
       return x == 0;
     }
 
-    final int numDigits = (int)(Math.floor(Math.log10(x))) + 1;
+    int numDigits = (int)(Math.floor(Math.log10(x))) + 1;
     int msdMask = (int)Math.pow(10, numDigits - 1);
     for (int i = 0; i < (numDigits / 2); ++i) {
       if (x / msdMask != x % 10) {

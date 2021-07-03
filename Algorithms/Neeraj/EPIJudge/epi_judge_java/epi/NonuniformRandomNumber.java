@@ -1,8 +1,8 @@
 package epi;
+
 import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 import epi.test_framework.RandomSequenceChecker;
-import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class NonuniformRandomNumber {
   private static boolean nonuniformRandomNumberGenerationRunner(
       TimedExecutor executor, List<Integer> values, List<Double> probabilities)
       throws Exception {
-    final int N = 1000000;
+    int N = 1000000;
     List<Integer> results = new ArrayList<>(N);
 
     executor.run(() -> {
@@ -34,12 +34,12 @@ public class NonuniformRandomNumber {
       counts.put(result, counts.getOrDefault(result, 0) + 1);
     }
     for (int i = 0; i < values.size(); ++i) {
-      final int v = values.get(i);
-      final double p = probabilities.get(i);
+      int v = values.get(i);
+      double p = probabilities.get(i);
       if (N * p < 50 || N * (1.0 - p) < 50) {
         continue;
       }
-      final double sigma = Math.sqrt(N * p * (1.0 - p));
+      double sigma = Math.sqrt(N * p * (1.0 - p));
       if (Math.abs(counts.get(v) - (p * N)) > 5 * sigma) {
         return false;
       }

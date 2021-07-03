@@ -1,11 +1,7 @@
 
 package epi.test_framework.minimal_json;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
 
 /**
  * Represents a JSON value. This can be a JSON <strong>object</strong>, an
@@ -57,19 +53,19 @@ public abstract class JsonValue implements Serializable {
    * Represents the JSON literal <code>true</code>.
    * @deprecated Use <code>Json.TRUE</code> instead
    */
-  @Deprecated public static final JsonValue TRUE = new JsonLiteral("true");
+  @Deprecated public static JsonValue TRUE = new JsonLiteral("true");
 
   /**
    * Represents the JSON literal <code>false</code>.
    * @deprecated Use <code>Json.FALSE</code> instead
    */
-  @Deprecated public static final JsonValue FALSE = new JsonLiteral("false");
+  @Deprecated public static JsonValue FALSE = new JsonLiteral("false");
 
   /**
    * Represents the JSON literal <code>null</code>.
    * @deprecated Use <code>Json.NULL</code> instead
    */
-  @Deprecated public static final JsonValue NULL = new JsonLiteral("null");
+  @Deprecated public static JsonValue NULL = new JsonLiteral("null");
 
   JsonValue() {}
 

@@ -25,7 +25,7 @@ public class LruCache {
     Map<Integer, Node> cache;
     int maxSize;
 
-    LruCache(final int capacity) {
+    LruCache(int capacity) {
         cache = new HashMap<>();
         head = tail = null;
         maxSize = capacity;

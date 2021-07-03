@@ -77,8 +77,8 @@ public class DoListsOverlap {
       it = it.next;
     }
 
-    final ListNode<Integer> finalL0 = l0;
-    final ListNode<Integer> finalL1 = l1;
+    ListNode<Integer> finalL0 = l0;
+    ListNode<Integer> finalL1 = l1;
     ListNode<Integer> result =
         executor.run(() -> overlappingLists(finalL0, finalL1));
 

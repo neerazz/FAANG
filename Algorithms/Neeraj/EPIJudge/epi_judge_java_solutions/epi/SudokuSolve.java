@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class SudokuSolve {
 
-  private static final int EMPTY_ENTRY = 0;
+  private static int EMPTY_ENTRY = 0;
 
   public static boolean solveSudoku(List<List<Integer>> partialAssignment) {
 
