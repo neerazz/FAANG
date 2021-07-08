@@ -9,8 +9,8 @@ public class DutchFlag {
 
     public static void main(String[] args) {
         int[] arr = {1, 0, 2, 1, 0};
-//        sort(arr);
-//        System.out.println(Arrays.toString(arr));
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
         arr = new int[]{2, 2, 0, 1, 2, 0};
         DutchFlag.sort(arr);
         System.out.println(Arrays.toString(arr));
@@ -23,9 +23,9 @@ public class DutchFlag {
             if (cur == 1) {
                 i++;
             } else if (cur == 0) {
-                DutchFlag.swap(arr, i++, zero++);
+                swap(arr, i++, zero++);
             } else {
-                DutchFlag.swap(arr, i, two--);
+                swap(arr, i, two--);
             }
 //            System.out.println(Arrays.toString(arr));
         }

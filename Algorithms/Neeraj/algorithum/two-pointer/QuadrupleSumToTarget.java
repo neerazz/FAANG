@@ -18,7 +18,7 @@ public class QuadrupleSumToTarget {
         List<List<Integer>> quadruplets = new ArrayList<>();
         if (arr.length < 4) return quadruplets;
         Arrays.sort(arr);
-        QuadrupleSumToTarget.helper(arr, 0, target, 4, new LinkedList<>(), quadruplets);
+        helper(arr, 0, target, 4, new LinkedList<>(), quadruplets);
         return quadruplets;
     }
 

@@ -9,6 +9,22 @@ public class ShortestWindowSort {
 
     }
 
+    public static int sort_2(int[] arr) {
+        int len = arr.length;
+        int left = 0, right = len - 1;
+        while (left + 1 < len && arr[left] <= arr[left + 1]) left++;
+        while (right - 1 >= 0 && arr[right - 1] <= arr[right]) right--;
+        if (left == len || right == 0) return 0;
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for (int i = Math.min(left, right); i <= Math.max(left, right); i++) {
+            max = Math.max(max, arr[i]);
+            min = Math.min(min, arr[i]);
+        }
+        while (left >= 0 && arr[left] > min) left--;
+        while (right < len && arr[right] < max) right++;
+        return right - left - 1;
+    }
+
     public static int sort(int[] arr) {
         int len = arr.length;
         int left = 0, right = len - 1;
