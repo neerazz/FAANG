@@ -14,8 +14,10 @@ public class NestedAnagrams {
     }
 
     static boolean nestedAnagrams(String s, String t) {
-        Map<String, Integer> map1 = buildMap(s);
-        Map<String, Integer> map2 = buildMap(t);
+//        Map<String, Integer> map1 = buildMap(s);
+//        Map<String, Integer> map2 = buildMap(t);
+        Map<String, Integer> map1 = buildMap_2(s);
+        Map<String, Integer> map2 = buildMap_2(t);
         for (String word : map2.keySet()) {
 //            The word in map2 should be present in map1.
             if (!map1.containsKey(word)) return false;
@@ -29,6 +31,16 @@ public class NestedAnagrams {
         }
 //        If all the words in t, are present in s and vice-Versa then the map1 should be empty.
         return map1.isEmpty();
+    }
+
+    private static Map<String, Integer> buildMap_2(String str) {
+        Map<String, Integer> map = new HashMap<>();
+        String[] strings = str.split(" ");
+        for (String word : strings) {
+            String sorted = sort(word);
+            map.put(sorted, map.getOrDefault(sorted, 0) + 1);
+        }
+        return map;
     }
 
     private static Map<String, Integer> buildMap(String str) {
