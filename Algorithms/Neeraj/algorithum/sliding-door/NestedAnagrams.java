@@ -35,8 +35,8 @@ public class NestedAnagrams {
 
     private static Map<String, Integer> buildMap_2(String str) {
         Map<String, Integer> map = new HashMap<>();
-        String[] strings = str.split(" ");
-        for (String word : strings) {
+        String[] split = str.split(" ");
+        for (String word : split) {
             String sorted = sort(word);
             map.put(sorted, map.getOrDefault(sorted, 0) + 1);
         }
