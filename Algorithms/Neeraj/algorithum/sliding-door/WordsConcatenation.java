@@ -17,6 +17,36 @@ public class WordsConcatenation {
         System.out.println("****************************** Solution 2 ******************************");
         System.out.println(findWordConcatenation("catfoxcat", new String[]{"cat", "fox"}));
         System.out.println(findWordConcatenation("catcatfoxfox", new String[]{"cat", "fox"}));
+        System.out.println("****************************** Solution 2 ******************************");
+        System.out.println(findWordConcatenation_2("catfoxcat", new String[]{"cat", "fox"}));
+        System.out.println(findWordConcatenation_2("catcatfoxfox", new String[]{"cat", "fox"}));
+    }
+
+    public static List<Integer> findWordConcatenation_2(String str, String[] words) {
+        List<Integer> resultIndices = new ArrayList<>();
+        int wordLen = words[0].length(), wordCount = words.length;
+        Map<String, Integer> required = new HashMap<>();
+        for (String word : words) {
+            required.put(word, required.getOrDefault(word, 0) + 1);
+        }
+        for (int i = 0; i + wordLen * wordCount <= str.length(); i++) {
+            Map<String, Integer> window = new HashMap<>();
+            int matched = 0;
+            for (int j = 0; j < wordCount; j++) {
+                int start = i + j * wordLen;
+                String cur = str.substring(start, start + wordLen);
+                if (required.containsKey(cur)) {
+                    int occ = window.getOrDefault(cur, 0);
+                    window.put(cur, occ + 1);
+                    if (window.get(cur).equals(required.get(cur))) matched++;
+                    if (window.get(cur) > required.get(cur)) break;
+                } else {
+                    break;
+                }
+            }
+            if (matched == required.size()) resultIndices.add(i);
+        }
+        return resultIndices;
     }
 
     public static List<Integer> findWordConcatenation(String str, String[] words) {

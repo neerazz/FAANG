@@ -12,17 +12,17 @@ public class MyTool {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Maximum Product Difference Between Two Pairs3\n" +
-                        "Cyclically Rotating a Grid4\n" +
-                        "Number of Wonderful Substrings5\n" +
-                        "Count Ways to Build Rooms in an Ant Colony"
+                "Count Square Sum Triples3\n" +
+                        "Nearest Exit from Entrance in Maze4\n" +
+                        "Sum Game5\n" +
+                        "Minimum Cost to Reach Destination in Time"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
 ////                "Product of Array Except Self",
 //        );
         getReplaced(
-                Arrays.asList(""),
+                Arrays.asList("[[\"+\",\"+\",\"+\"],[\".\",\".\",\".\"],[\"+\",\"+\",\"+\"]]"),
                 Arrays.asList("[", "{"),
                 Arrays.asList("\"", "'"),
                 Arrays.asList("]", "}")
