@@ -1,15 +1,7 @@
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 21, 2021
@@ -25,36 +17,6 @@ public class RemoveComments {
         System.out.println(removeComments(new String[]{"a/*comment", "line", "more_comment*/b"}).stream().map(str -> "\"" + str + "\"").collect(Collectors.toList()));
         System.out.println(removeComments(new String[]{"int a, b /* start", "line2", "*/", "//", "a//", "//"}).stream().map(str -> "\"" + str + "\"").collect(Collectors.toList()));
         System.out.println(removeComments(new String[]{"/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"}).stream().map(str -> "\"" + str + "\"").collect(Collectors.toList()));
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of(new String[]{"class test{", "public: ", "   int x = 1;", "   /*double y = 1;*/", "   char c;", "};"},
-                        Arrays.asList("class test{", "public: ", "   int x = 1;", "   ", "   char c;", "};")),
-                Arguments.of(new String[]{"struct Node{", "    /*/ declare members;/**/", "    int size;", "    /**/int val;", "};"},
-                        Arrays.asList("struct Node{", "    ", "    int size;", "    int val;", "};")),
-                Arguments.of(new String[]{"a/*comment", "line", "more_comment*/b"},
-                        Arrays.asList("ab")),
-                Arguments.of(new String[]{"int a, b /* start", "line2", "*/", "//", "a//", "//"},
-                        Arrays.asList("int a, b ", "a")),
-                Arguments.of(new String[]{"a/*/b//*c", "blank", "d/*/e*//f"},
-                        Arrays.asList("ae*")),
-                Arguments.of(new String[]{"/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"},
-                        Arrays.asList("int main()", "{ ", "  ", "int a, b, c;", "a = b + c;", "}"))
-        );
-    }
-
-    static Function<String[], Object> function = RemoveComments::removeComments_3;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(String[] input, Object expected) {
-        Object output = function.apply(input);
-        System.out.println("Input    :" + Arrays.toString(input));
-        System.out.println("Actual   :" + output);
-        System.out.println("Expected :" + expected);
-        assertEquals(expected, output);
     }
 
     private static List<String> removeComments_3(String[] source) {

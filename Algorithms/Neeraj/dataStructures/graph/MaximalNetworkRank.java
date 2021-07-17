@@ -1,11 +1,4 @@
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.function.BiFunction;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 23, 2021
@@ -16,24 +9,6 @@ public class MaximalNetworkRank {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of(2, new int[][]{{1, 0}}, 1),
-                Arguments.of(4, new int[][]{{0, 1}, {0, 3}, {1, 2}, {1, 3}}, 4),
-                Arguments.of(8, new int[][]{{0, 1}, {1, 2}, {2, 3}, {2, 4}, {5, 6}, {5, 7}}, 5),
-                Arguments.of(5, new int[][]{{0, 1}, {0, 3}, {1, 2}, {1, 3}, {2, 3}, {2, 4}}, 5)
-        );
-    }
-
-    static BiFunction<Integer, int[][], Integer> function = MaximalNetworkRank::maximalNetworkRank;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(Integer input1, int[][] input2, Integer expected) {
-        assertEquals(expected, function.apply(input1, input2));
     }
 
     public static int maximalNetworkRank(int n, int[][] roads) {
