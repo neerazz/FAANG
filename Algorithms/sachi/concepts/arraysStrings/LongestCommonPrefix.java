@@ -1,3 +1,5 @@
+package concepts.arraysStrings;
+
 import java.util.Scanner;
 
 //TODO: Can you check binary solution - It might be faster.

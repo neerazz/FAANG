@@ -1,3 +1,5 @@
+package topQuestions.amazon;
+
 import java.util.Deque;
 import java.util.LinkedList;
 

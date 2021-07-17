@@ -1,3 +1,5 @@
+package randomQuestions;
+
 class SortedArray_E {
     public static void main(String[] args) {
         System.out.println(removeDuplicates(new int[]{0, 1, 1, 2, 2}));

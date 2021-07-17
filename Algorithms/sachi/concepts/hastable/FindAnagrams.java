@@ -1,3 +1,5 @@
+package concepts.hastable;
+
 import java.util.*;
 
 public class FindAnagrams {

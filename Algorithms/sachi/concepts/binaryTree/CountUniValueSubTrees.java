@@ -1,4 +1,4 @@
-/*
+package concepts.binaryTree;/*
 Count Univalue Subtrees
 Solution
 Given a binary tree, count the number of uni-value subtrees.
@@ -16,6 +16,8 @@ Input:  root = [5,1,5,5,5,null,5]
 
 Output: 4
  */
+
+import util.TreeNode;
 
 public class CountUniValueSubTrees {
     private static int count = 0;

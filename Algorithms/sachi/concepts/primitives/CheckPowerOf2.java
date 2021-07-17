@@ -1,3 +1,5 @@
+package concepts.primitives;
+
 /*Check if a number is Power of 2
 SOL:  
 x & x-1 -> Removes LSB (Least Significant bit from the number)

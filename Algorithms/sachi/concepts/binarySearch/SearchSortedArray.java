@@ -1,3 +1,5 @@
+package concepts.binarySearch;
+
 public class SearchSortedArray {
 
     public static void main(String[] args) {

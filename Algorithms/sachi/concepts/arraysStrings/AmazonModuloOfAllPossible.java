@@ -1,3 +1,7 @@
+package concepts.arraysStrings;
+
+import util.Util;
+
 public class AmazonModuloOfAllPossible {
     public static void main(String[] args) {
         /*

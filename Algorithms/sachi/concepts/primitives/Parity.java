@@ -1,3 +1,5 @@
+package concepts.primitives;
+
 /**
  * Check Parity of a number -
  * If the number of 1's are odd - Parity is 1

@@ -1,3 +1,5 @@
+package concepts.binarySearch;
+
 public class FirstBadVersion {
 
     public static boolean isBadVersion(int n) {

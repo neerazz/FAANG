@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 import java.util.HashMap;
 
 public class BusientTime {

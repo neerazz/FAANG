@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 import java.util.Arrays;
 
 class AwardCuts {

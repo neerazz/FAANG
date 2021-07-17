@@ -1,3 +1,5 @@
+package concepts.hastable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

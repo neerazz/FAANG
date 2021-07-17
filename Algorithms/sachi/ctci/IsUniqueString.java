@@ -1,3 +1,7 @@
+package ctci;
+
+import util.Util;
+
 import java.util.Arrays;
 
 /**

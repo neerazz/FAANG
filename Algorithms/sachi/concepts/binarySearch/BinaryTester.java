@@ -1,4 +1,6 @@
-import epi.test_framework.RandomSequenceChecker;
+package concepts.binarySearch;
+
+import util.Util;
 
 import java.util.Arrays;
 import java.util.Random;

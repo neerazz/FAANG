@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 public class Toeplitz {
 
     static boolean isToeplitzCool(int[][] arr) {

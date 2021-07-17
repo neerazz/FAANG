@@ -1,3 +1,5 @@
+package concepts.arraysStrings;
+
 import java.util.Scanner;
 
 public class AddBinary {

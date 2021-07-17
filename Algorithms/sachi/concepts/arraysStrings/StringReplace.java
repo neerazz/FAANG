@@ -1,3 +1,5 @@
+package concepts.arraysStrings;
+
 public class StringReplace {
     public static void main(String[] args) {
         System.out.println(replace("Thisisatemple is", "is"));

@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 public class ArrayIndexEquality {
 
     static int indexEqualsValueSearch(int[] arr) {

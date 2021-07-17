@@ -1,3 +1,5 @@
+package concepts.primitives;
+
 import java.util.Scanner;
 
 //EPI Problem - Count the number of 1's in a integer

@@ -1,3 +1,5 @@
+package concepts.arraysStrings;
+
 public class BasicStringClass {
 
     public static void main(String[] args) {

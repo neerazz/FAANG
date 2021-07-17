@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 public class Decode {
 
     static int decodeVariations(String S) {

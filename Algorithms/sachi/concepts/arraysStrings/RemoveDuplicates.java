@@ -1,3 +1,5 @@
+package concepts.arraysStrings;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

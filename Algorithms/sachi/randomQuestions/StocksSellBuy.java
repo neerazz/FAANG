@@ -1,3 +1,5 @@
+package randomQuestions;
+
 import java.util.Scanner;
 
 //TODO: Come and solve this question again

@@ -1,3 +1,5 @@
+package concepts.binarySearch;
+
 public class BinarySearch {
 
     /**

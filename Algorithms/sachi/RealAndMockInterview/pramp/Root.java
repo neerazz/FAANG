@@ -1,6 +1,4 @@
-import epi.NonuniformRandomNumber;
-import epi.RangeLookupInBst;
-
+package RealAndMockInterview.pramp;
 import java.util.Random;
 
 public class Root {

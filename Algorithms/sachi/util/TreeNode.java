@@ -1,9 +1,11 @@
-public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+package util;
 
-    TreeNode(int x) {
+public class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+
+    public TreeNode(int x) {
         val = x;
     }
 }

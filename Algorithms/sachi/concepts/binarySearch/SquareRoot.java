@@ -1,3 +1,5 @@
+package concepts.binarySearch;
+
 class SquareRoot {
     public static void main(String[] args) {
 

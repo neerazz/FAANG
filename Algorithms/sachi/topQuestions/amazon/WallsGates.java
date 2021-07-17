@@ -1,3 +1,5 @@
+package topQuestions.amazon;
+
 import java.util.LinkedList;
 import java.util.Queue;
 

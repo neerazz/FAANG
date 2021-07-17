@@ -1,3 +1,5 @@
+package concepts.binarySearch;
+
 import java.sql.SQLOutput;
 
 public class GuessNumber {

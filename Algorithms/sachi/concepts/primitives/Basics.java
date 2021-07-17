@@ -1,3 +1,5 @@
+package concepts.primitives;
+
 import java.util.Random;
 
 public class Basics {

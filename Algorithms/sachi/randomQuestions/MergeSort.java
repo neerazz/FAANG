@@ -1,3 +1,5 @@
+package randomQuestions;
+
 import java.util.Arrays;
 
 public class MergeSort {

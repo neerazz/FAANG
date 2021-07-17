@@ -1,6 +1,8 @@
-/*
+package concepts.arraysStrings;/*
 Move all even elements to first and odd elements to end
 */
+
+import util.Util;
 
 public class MoveEvenToFront {
     public static void main(String[] args) {

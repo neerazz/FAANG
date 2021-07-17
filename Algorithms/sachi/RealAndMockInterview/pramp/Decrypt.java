@@ -1,3 +1,5 @@
+package RealAndMockInterview.pramp;
+
 public class Decrypt {
 
     static String decrypt(String word) {

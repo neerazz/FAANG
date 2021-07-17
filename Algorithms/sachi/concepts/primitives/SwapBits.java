@@ -1,4 +1,4 @@
-/* Given a number - Convert into Binary and swap i th and jth node. 
+package concepts.primitives;/* Given a number - Convert into Binary and swap i th and jth node.
 
 Sol:
 Hint: Swap when they are only different
