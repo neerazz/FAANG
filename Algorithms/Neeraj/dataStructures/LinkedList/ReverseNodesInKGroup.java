@@ -8,13 +8,14 @@ class ReverseNodesInKGroup {
         ListNode f = new ListNode(4);
         ListNode fi = new ListNode(5);
         one.next = t;
-        System.out.println(reverseKGroup(one, 2));
         t.next = th;
         th.next = f;
         f.next = fi;
+        System.out.println("Before : " + one);
         System.out.println(reverseKGroup(one, 2));
         System.out.println(reverseKGroup(one, 3));
-//        System.out.println(reverseKGroup_rev2(createListNode(new int[]{1, 2, 3, 4, 5}), 2));
+        System.out.println("*****************************Solution 2 ********************");
+        System.out.println(reverseKGroup_rev2(createListNode(new int[]{1, 2, 3, 4, 5}), 2));
         System.out.println(reverseKGroup_rev2(createListNode(new int[]{1, 2, 3, 4, 5}), 3));
         System.out.println(reverseKGroup_rev2(createListNode(new int[]{1, 2, 3, 4, 5, 6}), 3));
         System.out.println(reverseKGroup_rev2(createListNode(new int[]{1, 2, 3, 4, 5, 6}), 6));
@@ -66,7 +67,7 @@ class ReverseNodesInKGroup {
     }
 
     public static ListNode reverseKGroup_rev2(ListNode head, int k) {
-        System.out.println("head = " + head + ", k = " + k);
+//        System.out.println("head = " + head + ", k = " + k);
         int count = 0;
         ListNode p = head;
 //        Check if k nodes exists

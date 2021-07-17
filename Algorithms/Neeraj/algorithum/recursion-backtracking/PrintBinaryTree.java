@@ -39,4 +39,14 @@ public class PrintBinaryTree {
         int left = getHeight(root.left), right = getHeight(root.right);
         return Math.max(left, right) + 1;
     }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

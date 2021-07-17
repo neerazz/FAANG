@@ -1,12 +1,4 @@
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.PriorityQueue;
-import java.util.function.BiFunction;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 21, 2021
@@ -17,23 +9,6 @@ public class MinimumDeletionCostToAvoidRepeatingLetters {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of("abaac", new int[]{1, 2, 3, 4, 5}, 3),
-                Arguments.of("abc", new int[]{1, 2, 3}, 0),
-                Arguments.of("aabaa", new int[]{1, 2, 3, 4, 1}, 2)
-        );
-    }
-
-    static BiFunction<String, int[], Object> function = MinimumDeletionCostToAvoidRepeatingLetters::minCost_2;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(String input1, int[] input2, Object expected) {
-        assertEquals(expected, function.apply(input1, input2));
     }
 
     public static int minCost_3(String s, int[] cost) {

@@ -25,4 +25,13 @@ public class CountGoodNodesInBinaryTree {
         helper(root.left, curMax);
         helper(root.right, curMax);
     }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

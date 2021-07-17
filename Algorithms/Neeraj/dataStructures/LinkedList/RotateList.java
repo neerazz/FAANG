@@ -34,9 +34,50 @@ public class RotateList {
         System.out.println("===================================================");
         listNode = RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5});
         System.out.println(rotateRight(listNode, 10));
+
+        System.out.println("===================================================");
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 0));
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 1));
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 2));
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 3));
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 4));
+        System.out.println(rotateRight_rev1(RemoveNthNodeFromEndOfList.createListNode(new int[]{1, 2, 3, 4, 5}), 20));
     }
 
-//  Run time: O(N), Space: O(1)
+    public static ListNode rotateRight_rev1(ListNode head, int k) {
+        if (head == null) return head;
+        int len = len(head);
+        k = k % len;
+        if (k < 1) return head;
+        ListNode p1pre = null, p1 = head, p2pre = null, p2 = head;
+//        Advance p2 pointer by k;
+        for (int i = 0; i < k; i++) {
+            p2pre = p2;
+            p2 = p2.next;
+        }
+//        Now move both the pointer so that p2 reaches the end.
+        while (p2 != null) {
+            p1pre = p1;
+            p1 = p1.next;
+            p2pre = p2;
+            p2 = p2.next;
+        }
+        p2pre.next = head;
+        p1pre.next = null;
+        return p1;
+    }
+
+    private static int len(ListNode head) {
+        int len = 0;
+        ListNode cur = head;
+        while (cur != null) {
+            len++;
+            cur = cur.next;
+        }
+        return len;
+    }
+
+    //  Run time: O(N), Space: O(1)
     public static ListNode rotateRight_elegent(ListNode head, int k) {
         ListNode headRef = head, pointer1 = head, pointer2 = head, lengthPointer = head;
 //        Find teh length.
@@ -45,7 +86,7 @@ public class RotateList {
             length++;
             lengthPointer = lengthPointer.next;
         }
-        if(length==0||length==1) return head;
+        if (length == 0 || length == 1) return head;
         int rotate = k % length;
         if (rotate == 0) return head;
 //        Forward the second pointer to n distance.
@@ -54,7 +95,7 @@ public class RotateList {
         }
 
 //        Move both pointer by one. When the second pointer next value is null. Then link the second pointer next to head.
-        while (pointer2.next != null){
+        while (pointer2.next != null) {
             pointer1 = pointer1.next;
             pointer2 = pointer2.next;
         }
@@ -63,7 +104,7 @@ public class RotateList {
         pointer2.next = head;
         return output;
     }
-    
+
     public static ListNode rotateRight(ListNode head, int k) {
         if (head == null) return null;
         ListNode headcount = head;

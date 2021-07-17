@@ -1,13 +1,5 @@
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 21, 2021
@@ -18,21 +10,6 @@ public class FindTheCelebrity {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of(3, -1)
-        );
-    }
-
-    static Function<Integer, Integer> function = FindTheCelebrity::findCelebrity_rev2;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(Integer input, Integer expected) {
-        assertEquals(expected, function.apply(input));
     }
 
     public static int findCelebrity_rev2(int n) {

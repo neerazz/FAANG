@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created on:  Nov 23, 2020
@@ -55,5 +55,14 @@ public class HouseRobberIII {
         values.put(node, result);
         parents.put(node, parent);
         return result;
+    }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

@@ -1,14 +1,6 @@
 package weekly.weekly247;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.Arrays;
-import java.util.function.BiFunction;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created on:  Jun 26, 2021
@@ -21,35 +13,6 @@ public class CyclicallyRotatingAGrid {
         System.out.println(Arrays.deepToString(rotateGrid(new int[][]{{40, 10}, {30, 20}}, 1)));
         System.out.println(Arrays.deepToString(rotateGrid(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}, 2)));
         System.out.println(Arrays.deepToString(rotateGrid(new int[][]{{10, 1, 4, 8}, {6, 6, 3, 10}, {7, 4, 7, 10}, {1, 10, 6, 1}, {2, 1, 1, 10}, {3, 8, 9, 2}, {7, 1, 10, 10}, {7, 1, 4, 9}, {2, 2, 4, 2}, {10, 7, 5, 10}}, 1)));
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-//                Arguments.of(
-//                        new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}, 2,
-//                        new int[][]{{3, 4, 8, 12}, {2, 11, 10, 16}, {1, 7, 6, 15}, {5, 9, 13, 14}}),
-                Arguments.of(
-                        new int[][]{{4, 5, 8, 9, 4, 2, 4, 7, 2, 4}, {7, 1, 9, 6, 6, 1, 4, 5, 7, 7}, {7, 1, 5, 1, 1, 7, 10, 1, 3, 1}, {7, 2, 2, 5, 2, 6, 6, 4, 7, 7}, {1, 2, 3, 8, 4, 7, 6, 9, 6, 2}, {5, 10, 3, 4, 7, 2, 7, 5, 3, 10}}, 4,
-                        new int[][]{{4, 2, 4, 7, 2, 4, 7, 1, 7, 2}, {9, 1, 4, 5, 7, 3, 7, 6, 9, 10}, {8, 6, 10, 1, 4, 6, 6, 2, 6, 3}, {5, 6, 7, 1, 1, 5, 2, 5, 7, 5}, {4, 9, 1, 1, 2, 2, 3, 8, 4, 7}, {7, 7, 7, 1, 5, 10, 3, 4, 7, 2}}),
-                Arguments.of(
-                        new int[][]{{10, 1, 4, 8}, {6, 6, 3, 10}, {7, 4, 7, 10}, {1, 10, 6, 1}, {2, 1, 1, 10}, {3, 8, 9, 2}, {7, 1, 10, 10}, {7, 1, 4, 9}, {2, 2, 4, 2}, {10, 7, 5, 10}}, 1,
-                        new int[][]{{1, 4, 8, 10}, {10, 3, 7, 10}, {6, 6, 6, 1}, {7, 4, 1, 10}, {1, 10, 9, 2}, {2, 1, 10, 10}, {3, 8, 4, 9}, {7, 1, 4, 2}, {7, 1, 2, 10}, {2, 10, 7, 5}}
-                )
-        );
-    }
-
-    static BiFunction<int[][], Integer, int[][]> function = CyclicallyRotatingAGrid::rotateGrid;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(int[][] input1, int input2, int[][] expected) {
-        int[][] result = function.apply(input1, input2);
-        if(!Arrays.deepEquals(expected, result)){
-            System.out.println("Actual   = " + Arrays.deepToString(result));
-            System.out.println("Expected = " + Arrays.deepToString(expected));
-        }
-        assertTrue(Arrays.deepEquals(expected, result));
     }
 
     public static int[][] rotateGrid(int[][] grid, int k) {

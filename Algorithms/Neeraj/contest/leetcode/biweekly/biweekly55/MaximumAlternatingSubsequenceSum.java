@@ -1,14 +1,6 @@
 package biweekly.biweekly55;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.Arrays;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 26, 2021
@@ -19,26 +11,6 @@ public class MaximumAlternatingSubsequenceSum {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of(new int[]{4, 2, 5, 3}, 7),
-                Arguments.of(new int[]{6, 2, 1, 2, 4, 5}, 10),
-                Arguments.of(new int[]{4, 9, 7, 4, 8}, 13),
-                Arguments.of(new int[]{19, 9, 1, 6, 14, 11, 9, 5, 7, 11}, 38),
-                Arguments.of(new int[]{5, 6, 7, 8}, 8)
-        );
-    }
-
-    static Function<int[], Long> function = MaximumAlternatingSubsequenceSum::maxAlternatingSum;
-//    static Function<int[], Long> function = MaximumAlternatingSubsequenceSum::maxAlternatingSum_2;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(int[] input, long expected) {
-        assertEquals(expected, function.apply(input));
     }
 
     public static long maxAlternatingSum_2(int[] nums) {

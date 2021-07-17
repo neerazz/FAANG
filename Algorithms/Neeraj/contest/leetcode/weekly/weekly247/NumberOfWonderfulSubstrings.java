@@ -1,14 +1,6 @@
 package weekly.weekly247;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.Arrays;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created on:  Jun 26, 2021
@@ -19,24 +11,6 @@ public class NumberOfWonderfulSubstrings {
 
     public static void main(String[] args) {
 
-    }
-
-    static Stream<Arguments> inputOutputValues() {
-//        Expected Value, Actual Value
-        return Stream.of(
-                Arguments.of("aba", 4),
-                Arguments.of("aabb", 9),
-                Arguments.of("he", 2),
-                Arguments.of("ehaehcjjaafjdceac", 29)
-        );
-    }
-
-    static Function<String, Long> function = NumberOfWonderfulSubstrings::wonderfulSubstrings;
-
-    @ParameterizedTest
-    @MethodSource("inputOutputValues")
-    void runTest(String input, long expected) {
-        assertEquals(expected, function.apply(input));
     }
 
     public static long wonderfulSubstrings(String word) {

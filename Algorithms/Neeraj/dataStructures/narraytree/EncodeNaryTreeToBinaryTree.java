@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class EncodeNaryTreeToBinaryTree {
         Codec codec = new Codec();
 //        codec.decodeHelper(codec.encode(root));
     }
+
     static class Node {
         Integer val;
         List<Node> children;
@@ -28,37 +30,38 @@ public class EncodeNaryTreeToBinaryTree {
         public Node() {
         }
     }
+
+    static class Codec {
+
+        // Encodes an n-ary tree to a binary tree.
+        public TreeNode encode(Node root) {
+            if (root == null)
+                return null;
+            TreeNode treeNode = new TreeNode(root.val);
+            if (root.children == null || root.children.isEmpty())
+                return treeNode;
+            TreeNode node = encode(root.children.get(0));
+            treeNode.right = node;
+            for (int i = 1; i < root.children.size(); i++) {
+                node.left = encode(root.children.get(i));
+                node = node.left;
+            }
+            return treeNode;
+        }
+
+        // Decodes your binary tree to an n-ary tree.
+        public Node decodeHelper(TreeNode root) {
+            return root == null ? null : decodeHelper(root, new ArrayList<Node>());
+        }
+
+        private Node decodeHelper(TreeNode root, List<Node> children) {
+            Node node = new Node(root.val, new ArrayList<Node>());
+            children.add(node);
+            if (root.right != null)
+                decodeHelper(root.right, node.children);
+            if (root.left != null)
+                decodeHelper(root.left, children);
+            return node;
+        }
+    }
 }
-//class Codec {
-//
-//    // Encodes an n-ary tree to a binary tree.
-//    public TraverseATree.TreeNode encode(Node root) {
-//        if (root == null)
-//            return null;
-//        TraverseATree.TreeNode treeNode = new TreeNode(root.val);
-//        if (root.children == null || root.children.isEmpty())
-//            return treeNode;
-//        TraverseATree.TreeNode node = encode(root.children.get(0));
-//        treeNode.right = node;
-//        for (int i = 1; i < root.children.size(); i++) {
-//            node.left = encode(root.children.get(i));
-//            node = node.left;
-//        }
-//        return treeNode;
-//    }
-//
-//    // Decodes your binary tree to an n-ary tree.
-//    public Node decodeHelper(TraverseATree.TreeNode root) {
-//        return root == null ? null : decodeHelper(root, new ArrayList<Node>());
-//    }
-//
-//    private Node decodeHelper(TraverseATree.TreeNode root, List<Node> children) {
-//        Node node = new Node(root.val, new ArrayList<Node>());
-//        children.add(node);
-//        if (root.right != null)
-//            decodeHelper(root.right, node.children);
-//        if (root.left != null)
-//            decodeHelper(root.left, children);
-//        return node;
-//    }
-//}
