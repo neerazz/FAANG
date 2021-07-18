@@ -16,6 +16,4 @@ public class MaximumSubarray {
         }
         return max;
     }
-
-
 }
