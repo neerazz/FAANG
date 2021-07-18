@@ -12,10 +12,10 @@ public class MyTool {
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Count Square Sum Triples3\n" +
-                        "Nearest Exit from Entrance in Maze4\n" +
-                        "Sum Game5\n" +
-                        "Minimum Cost to Reach Destination in Time"
+                "Concatenation of Array3\n" +
+                        "Unique Length-3 Palindromic Subsequences4\n" +
+                        "Painting a Grid With Three Different Colors6\n" +
+                        "Merge BSTs to Create Single BST"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"

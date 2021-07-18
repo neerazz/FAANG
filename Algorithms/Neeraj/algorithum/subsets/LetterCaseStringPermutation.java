@@ -7,6 +7,30 @@ import java.util.*;
 
 public class LetterCaseStringPermutation {
 
+    public static List<String> findLetterCaseStringPermutations_dp(String str) {
+        Map<Integer, List<String>> dp = new HashMap<>();
+        return dp(str, 0, str.length(), dp);
+    }
+
+    static List<String> dp(String str, int start, int end, Map<Integer, List<String>> dp) {
+        if (start == end) return Arrays.asList("");
+        if (dp.containsKey(start)) return dp.get(start);
+        List<String> result = new ArrayList<>();
+        char curChar = str.charAt(start);
+        List<String> next = dp(str, start + 1, end, dp);
+        boolean isChar = Character.isLetter(curChar);
+        for (String nextStr : next) {
+            if (isChar) {
+                result.add(Character.toLowerCase(curChar) + nextStr);
+                result.add(Character.toUpperCase(curChar) + nextStr);
+            } else {
+                result.add(curChar + nextStr);
+            }
+        }
+        dp.put(start, result);
+        return result;
+    }
+
     public static List<String> findLetterCaseStringPermutations(String str) {
         int level = 0;
         int len = str.length();

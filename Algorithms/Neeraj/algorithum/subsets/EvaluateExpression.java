@@ -17,9 +17,9 @@ public class EvaluateExpression {
                 if (!Character.isDigit(cur)) {
                     List<Integer> left = diffWaysToEvaluateExpression(input.substring(0, i));
                     List<Integer> right = diffWaysToEvaluateExpression(input.substring(i + 1));
-                    for (int leftNUm : left) {
-                        for (int rightNum : right) {
-                            result.add(getValue(leftNUm, rightNum, cur));
+                    for (int l : left) {
+                        for (int r : right) {
+                            result.add(getValue(l, r, cur));
                         }
                     }
                 }

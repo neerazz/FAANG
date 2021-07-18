@@ -29,32 +29,26 @@ public class GeneralizedAbbreviation {
                 queue.add(new AbbreviateWord(new StringBuilder(poll.sb.append(word.charAt(poll.start))), poll.start + 1, 0));
             }
         }
-        System.out.println(result.size());
         return result;
     }
 
-    public static List<String> generateGeneralizedAbbreviation_Wrong(String word) {
-        Set<String> result = new HashSet<>();
-        helper(word, "", 0, "", result, word.length());
-        System.out.println(result.size());
-        return new ArrayList<>(result);
+    public static List<String> generateGeneralizedAbbreviation_recursion(String word) {
+        List<String> result = new ArrayList<String>();
+        helper(word, 0, "", 0, result);
+        return result;
     }
 
-    private static void helper(String word, String prefix, int start, String suffix, Set<String> result, int length) {
-        if (start == word.length()) {
-            result.add("" + word.length());
-            result.add(word);
-            return;
+    static void helper(String word, int i, String pre, int preCount, List<String> result) {
+        if (i == word.length()) {
+            result.add(getString(pre, preCount));
+        } else {
+            helper(word, i + 1, pre, preCount + 1, result);
+            helper(word, i + 1, getString(pre, preCount) + word.charAt(i), 0, result);
         }
-        for (int i = start; i < length; i++) {
-//            Set the current range with numbers.
-            int curlen = i - start + 1;
-            result.add(prefix + curlen + word.substring(i + 1));
-            helper(word, prefix + curlen, i + 1, suffix, result, length);
-//            Set the current character and the remaining to numbers.
-            result.add(prefix + word.substring(start, i + 1) + (i == length ? "" : length - i));
-            helper(word, prefix + word.substring(start, i + 1), i + 1, suffix, result, length);
-        }
+    }
+
+    static String getString(String str, int count) {
+        return str + (count == 0 ? "" : count);
     }
 
     static class AbbreviateWord {
@@ -69,10 +63,12 @@ public class GeneralizedAbbreviation {
     }
 
     public static void main(String[] args) {
-        List<String> result = generateGeneralizedAbbreviation("BAT");
-        System.out.println("Generalized abbreviation are: " + result);
+        System.out.println("****************************** Solution 1 *************************************");
+        System.out.println(generateGeneralizedAbbreviation("BAT"));
+        System.out.println(generateGeneralizedAbbreviation("code"));
 
-        result = generateGeneralizedAbbreviation("code");
-        System.out.println("Generalized abbreviation are: " + result);
+        System.out.println("****************************** Solution 2 *************************************");
+        System.out.println(generateGeneralizedAbbreviation_recursion("BAT"));
+        System.out.println(generateGeneralizedAbbreviation_recursion("code"));
     }
 }

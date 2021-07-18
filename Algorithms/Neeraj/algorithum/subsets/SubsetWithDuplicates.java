@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created on:  Oct 06, 2020
@@ -10,27 +7,64 @@ import java.util.Set;
 
 public class SubsetWithDuplicates {
 
-    public static List<List<Integer>> findSubsets(int[] nums) {
+    public static List<List<Integer>> findSubsets_unique(int[] nums) {
+        List<List<Integer>> subsets = new ArrayList<>();
+        subsets.add(new ArrayList<>());
+        for (int num : nums) {
+            List<List<Integer>> cur = new ArrayList<>();
+            for (List<Integer> pre : subsets) {
+                List<Integer> temp = new ArrayList<>(pre);
+                temp.add(num);
+                cur.add(temp);
+            }
+            subsets.addAll(cur);
+        }
+        return subsets;
+    }
+
+    public static List<List<Integer>> findSubsets_duplicate_rev2(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> subsets = new ArrayList<>();
+        subsets.add(new ArrayList<>());
+        int pre = Integer.MIN_VALUE, preIdx = 0;
+        for (int cur : nums) {
+            List<List<Integer>> curLevel = new ArrayList<>();
+            int start = cur == pre ? preIdx : 0, end = subsets.size();
+            for (int i = start; i < end; i++) {
+                List<Integer> temp = new ArrayList<>(subsets.get(i));
+                temp.add(cur);
+                curLevel.add(temp);
+            }
+            subsets.addAll(curLevel);
+            pre = cur;
+            preIdx++;
+        }
+        return subsets;
+    }
+
+    public static List<List<Integer>> findSubsets_duplicate(int[] nums) {
         Set<List<Integer>> subsets = new HashSet<>();
         subsets.add(new ArrayList<>());
         for (int num : nums) {
-            int size = subsets.size();
-            Set<List<Integer>> temp = new HashSet<>();
-            for (List<Integer> level : subsets) {
-                List<Integer> list = new ArrayList<>(level);
-                list.add(num);
-                temp.add(list);
+            Set<List<Integer>> cur = new HashSet<>();
+            for (List<Integer> pre : subsets) {
+                List<Integer> temp = new ArrayList<>(pre);
+                temp.add(num);
+                cur.add(temp);
             }
-            subsets.addAll(temp);
+            subsets.addAll(cur);
         }
         return new ArrayList<>(subsets);
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> result = findSubsets(new int[]{1, 3, 3});
-        System.out.println("Here is the list of subsets: " + result);
-
-        result = findSubsets(new int[]{1, 5, 3, 3});
-        System.out.println("Here is the list of subsets: " + result);
+        System.out.println(findSubsets_unique(new int[]{1, 2, 3}));
+        System.out.println(findSubsets_unique(new int[]{1, 2, 3, 4, 5}));
+        System.out.println("********************************* Solution 1 ******************************");
+        System.out.println(findSubsets_duplicate(new int[]{1, 3, 3}));
+        System.out.println(findSubsets_duplicate(new int[]{1, 5, 3, 3}));
+        System.out.println("********************************* Solution 2 ******************************");
+        System.out.println(findSubsets_duplicate_rev2(new int[]{1, 3, 3}));
+        System.out.println(findSubsets_duplicate_rev2(new int[]{1, 5, 3, 3}));
     }
 }

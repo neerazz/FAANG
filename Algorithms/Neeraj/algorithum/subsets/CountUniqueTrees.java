@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 07, 2020
  * Questions: https://www.educative.io/courses/grokking-the-coding-interview/gx6BMKoWqR9
@@ -23,12 +20,14 @@ public class CountUniqueTrees {
     }
 
     public static void main(String[] args) {
-        CountUniqueTrees ct = new CountUniqueTrees();
-        int count = ct.countTrees(134);
-        System.out.print("Total trees: " + count);
+        countTrees(3);
+        countTrees(56);
+        countTrees(99);
+        countTrees(134);
+        countTrees(170);
     }
 
-    public int countTrees(int n) {
+    public static int countTrees(int n) {
         int[] dp = new int[n + 1];
         if (n >= 1) dp[0] = 1;
         if (n >= 2) dp[1] = 1;
@@ -39,7 +38,8 @@ public class CountUniqueTrees {
         }
         Integer[][] dp2 = new Integer[n + 1][n + 1];
         helper(1, n, dp2);
-        System.out.println("Dp        version : " + dp[n] + "\nRecursive version : " + dp2[1][n]);
+        System.out.println("Dp        version : " + dp[n]);
+        System.out.println("Recursive version : " + dp2[1][n]);
         return dp[n];
     }
 }

@@ -27,18 +27,6 @@ public class UniqueTrees {
                 List<TreeNode> right = helper(i + 1, e, map);
                 if (left.isEmpty() && right.isEmpty()) {
                     cur.add(new TreeNode(s));
-                } else if (left.isEmpty()) {
-                    for (TreeNode r : right) {
-                        TreeNode temp = new TreeNode(i);
-                        temp.right = r;
-                        cur.add(temp);
-                    }
-                } else if (right.isEmpty()) {
-                    for (TreeNode l : left) {
-                        TreeNode temp = new TreeNode(i);
-                        temp.left = l;
-                        cur.add(temp);
-                    }
                 } else {
                     for (TreeNode l : left) {
                         for (TreeNode r : right) {
@@ -62,9 +50,9 @@ public class UniqueTrees {
         result = findUniqueTrees(3);
         System.out.println("Total trees: " + result.size());
         System.out.println("Trees: " + result);
-        result = findUniqueTrees(15);
-        System.out.println("Total trees: " + result.size());
-        System.out.println("Trees: " + result);
+//        result = findUniqueTrees(15);
+//        System.out.println("Total trees: " + result.size());
+//        System.out.println("Trees: " + result);
     }
 
     static class TreeNode {
