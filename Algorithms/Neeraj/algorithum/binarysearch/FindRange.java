@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+
 
 /**
  * Created on:  Oct 08, 2020
@@ -7,6 +6,30 @@ import java.io.*;
  */
 
 public class FindRange {
+
+    public static int[] findRange_rev2(int[] arr, int key) {
+        int left = -1, right = -1;
+        left = getBoundary(arr, key, true);
+        if (left != -1) right = getBoundary(arr, key, false);
+        return new int[]{left, right};
+    }
+
+    static int getBoundary(int[] nums, int key, boolean leftBoundary) {
+        int idx = -1, start = 0, end = nums.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == key) {
+                idx = mid;
+                if (leftBoundary) end = mid - 1;
+                else start = mid + 1;
+            } else if (nums[mid] < key) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return idx;
+    }
 
     public static int[] findRange(int[] arr, int key) {
         int[] result = new int[]{-1, -1};
@@ -22,8 +45,7 @@ public class FindRange {
                         return result;
                     }
                     start = mid + 1;
-                }
-                else if (arr[mid] < key) start = mid + 1;
+                } else if (arr[mid] < key) start = mid + 1;
                 else end = mid;
             }
         }

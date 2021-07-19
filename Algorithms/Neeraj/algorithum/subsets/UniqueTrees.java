@@ -50,9 +50,9 @@ public class UniqueTrees {
         result = findUniqueTrees(3);
         System.out.println("Total trees: " + result.size());
         System.out.println("Trees: " + result);
-//        result = findUniqueTrees(15);
-//        System.out.println("Total trees: " + result.size());
-//        System.out.println("Trees: " + result);
+        result = findUniqueTrees(15);
+        System.out.println("Total trees: " + result.size());
+        System.out.println("Trees: " + result);
     }
 
     static class TreeNode {
