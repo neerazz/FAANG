@@ -43,6 +43,17 @@ public class Util {
         return generateRandomArray(size);
     }
 
+    public static int generateRandomNumber() {
+        Random rand = new Random();
+        return rand.nextInt(100);
+    }
+
+    public static int generateRandomNumber(int bound) {
+        Random rand = new Random();
+        return rand.nextInt(bound);
+    }
+
+
     /**
      * Generate Random Array of Size
      *
@@ -53,9 +64,9 @@ public class Util {
         Random random = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = random.nextInt(10000);
+            arr[i] = random.nextInt(1000);
         }
-        print(arr);
+        //print(arr);
         return arr;
     }
 
@@ -66,8 +77,44 @@ public class Util {
      */
     public static void print(int[] array) {
         System.out.println("\n---------- PRINTING Array-------------");
-        Arrays.stream(array).forEach(e -> System.out.print(e + " "));
-        System.out.println("\n---------- FINISHED Printing Array-------------");
+        System.out.print("[");
+        Arrays.stream(array).forEach(e -> System.out.print(e + ","));
+        System.out.print("]");
+        System.out.println("\n--------------------------------------");
+    }
+
+    /**
+     * Print an Array
+     *
+     * @param array array
+     */
+    public static void print(int[] array, String message) {
+        System.out.println("\n----------" + message + "-------------");
+        System.out.print("[");
+        Arrays.stream(array).forEach(e -> System.out.print(e + ","));
+        System.out.print("]");
+        System.out.println("\n--------------------------------------");
+    }
+
+    /**
+     * Print an Array
+     *
+     * @param array array
+     */
+    public static void print(double[] array) {
+        System.out.println("\n---------- PRINTING Array-------------");
+        System.out.print("[");
+        Arrays.stream(array).forEach(e -> System.out.print(e + ","));
+        System.out.print("]");
+        System.out.println("\n--------------------------------------");
+    }
+
+    public static void print(double[] array, String message) {
+        System.out.println("\n----------" + message + "-------------");
+        System.out.print("[");
+        Arrays.stream(array).forEach(e -> System.out.print(e + ","));
+        System.out.print("]");
+        System.out.println("\n-------------------------------------");
     }
 
     /**
