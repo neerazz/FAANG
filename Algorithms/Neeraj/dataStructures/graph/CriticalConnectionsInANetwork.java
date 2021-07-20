@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 import java.util.stream.Collectors;
 
 /**
@@ -11,7 +10,7 @@ public class CriticalConnectionsInANetwork {
 
     public static void main(String[] args) {
         System.out.println(criticalConnections(10, buildList(new int[][]{{1, 0}, {2, 0}, {3, 0}, {4, 1}, {5, 3}, {6, 1}, {7, 2}, {8, 1}, {9, 6}, {9, 3}, {3, 2}, {4, 2}, {7, 4}, {6, 2}, {8, 3}, {4, 0}, {8, 6}, {6, 5}, {6, 3}, {7, 5}, {8, 0}, {8, 5}, {5, 4}, {2, 1}, {9, 5}, {9, 7}, {9, 4}, {4, 3}})));
-        System.out.println(ArticulationPointsAndBridges.getBridges(10, buildboolean(10, new int[][]{{1, 0}, {2, 0}, {3, 0}, {4, 1}, {5, 3}, {6, 1}, {7, 2}, {8, 1}, {9, 6}, {9, 3}, {3, 2}, {4, 2}, {7, 4}, {6, 2}, {8, 3}, {4, 0}, {8, 6}, {6, 5}, {6, 3}, {7, 5}, {8, 0}, {8, 5}, {5, 4}, {2, 1}, {9, 5}, {9, 7}, {9, 4}, {4, 3}})));
+        System.out.println(CriticalConnectionPointsAndBridge.getCriticalBridge(10, buildboolean(10, new int[][]{{1, 0}, {2, 0}, {3, 0}, {4, 1}, {5, 3}, {6, 1}, {7, 2}, {8, 1}, {9, 6}, {9, 3}, {3, 2}, {4, 2}, {7, 4}, {6, 2}, {8, 3}, {4, 0}, {8, 6}, {6, 5}, {6, 3}, {7, 5}, {8, 0}, {8, 5}, {5, 4}, {2, 1}, {9, 5}, {9, 7}, {9, 4}, {4, 3}})));
     }
 
     private static boolean[][] buildboolean(int n, int[][] cons) {

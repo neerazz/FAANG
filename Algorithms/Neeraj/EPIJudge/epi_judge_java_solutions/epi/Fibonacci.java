@@ -8,24 +8,25 @@ import java.util.Map;
 
 public class Fibonacci {
 
-  private static Map<Integer, Integer> cache = new HashMap<>();
+    private static Map<Integer, Integer> cache = new HashMap<>();
 
-  @EpiTest(testDataFile = "fibonacci.tsv")
+    @EpiTest(testDataFile = "fibonacci.tsv")
 
-  public static int fibonacci(int n) {
+    public static int fibonacci(int n) {
 
-    if (n <= 1) {
-      return n;
+        if (n <= 1) {
+            return n;
+        }
+        cache.putIfAbsent(n, fibonacci(n - 2) + fibonacci(n - 1));
+        return cache.get(n);
     }
-    cache.putIfAbsent(n, fibonacci(n - 2) + fibonacci(n - 1));
-    return cache.get(n);
-  }
 
-  public static void main(String[] args) {
-    System.exit(
-        GenericTest
-            .runFromAnnotations(args, "Fibonacci.java",
-                                new Object() {}.getClass().getEnclosingClass())
-            .ordinal());
-  }
+    public static void main(String[] args) {
+        System.exit(
+                GenericTest
+                        .runFromAnnotations(args, "Fibonacci.java",
+                                new Object() {
+                                }.getClass().getEnclosingClass())
+                        .ordinal());
+    }
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created on:  May 31, 2021
  * Questions: https://www.youtube.com/watch?v=KbFlZYCpONw&t=0s
@@ -14,21 +16,27 @@ public class UnionFindImpl {
         //    parent[i] will have the parent of node i (In case of single component parent[i] = i).
         int[] parent;
 
+        public UnionFind(int n) {
+            parent = new int[n];
+            Arrays.fill(parent, -1);
+        }
+
         public boolean union(int a, int b) {
             int pa = find(a);
             int pb = find(b);
-            if (pa == pb) {
 //                If parent of both the nodes are same then, no need to union them. Both of them belongs to same component.
-                return false;
-            }
+//                  Return False indicates that node a, b were already merged.
+            if (pa == pb) return false;
+
 //            Move all the b node parents to a node parents.
             parent[pb] = pa;
+//                  Return true indicates that node a, b were merged as part of this union.
             return true;
         }
 
         private int find(int node) {
-            int par = parent[node] == node ? node : find(parent[node]);
-            return parent[node] = par;
+            if (parent[node] == -1) return parent[node] = node;
+            return parent[node] = find(parent[node]);
         }
     }
 
