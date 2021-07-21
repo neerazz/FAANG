@@ -1,7 +1,6 @@
 package grokking.slidingwindow;
 
 import util.Util;
-
 import java.util.HashMap;
 import java.util.Map;
 

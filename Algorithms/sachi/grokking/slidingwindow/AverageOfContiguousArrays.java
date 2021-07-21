@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 
 
-public class AverageOfContigousArrays {
+public class AverageOfContiguousArrays {
 
     public static void main(String[] args) {
         int[] input = new int[]{3, 1, 8, 9, 0, 2};

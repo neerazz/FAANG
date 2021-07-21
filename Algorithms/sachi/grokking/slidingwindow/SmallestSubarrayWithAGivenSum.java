@@ -7,10 +7,12 @@ package grokking.slidingwindow;
  * Input: [2, 1, 5, 2, 3, 2], S=7
  * Output: 2
  * Explanation: The smallest subarray with a sum greater than or equal to '7' is [5, 2].
+ *
  * <p>
  * Input: [2, 1, 5, 2, 8], S=7
  * Output: 1
  * Explanation: The smallest subarray with a sum greater than or equal to '7' is [8].
+ *
  * <p>
  * Input: [3, 4, 1, 1, 6], S=8
  * Output: 3
@@ -23,27 +25,43 @@ public class SmallestSubarrayWithAGivenSum {
     public static void main(String[] args) {
         int[] input = new int[]{2, 1, 5, 2, 3, 2};
         int s = 7;
-        System.out.println(findMinSubArray(input, s));
+        System.out.println(minSubArrayLen(input, s));
 
         input = new int[]{2, 1, 5, 2, 8};
-        System.out.println(findMinSubArray(input, 7));
+        System.out.println(minSubArrayLen(input, 7));
 
         input = new int[]{3, 4, 1, 1, 6};
-        System.out.println(findMinSubArray(input, 8));
+        System.out.println(minSubArrayLen(input, 8));
     }
 
 
-    public static int findMinSubArray(int[] arr, int s) {
-        return -1;
+    public static int minSubArrayLen(int[] arr, int s) {
+        int start = 0, end = 0, sol = Integer.MAX_VALUE, sum = 0;
+        while (end < arr.length) {
+            sum += arr[end++];
+            while (sum >= s) {
+                sol = Math.min(sol, end - start);
+                sum -= arr[start++];
+            }
+        }
+        return sol != Integer.MAX_VALUE ? sol : 0;
     }
-    //Input: [2, 1, 5, 2, 3, 2], S=7
-    //start end sol sum
-    //0     0   ++  2
-    //0     1       3
-    //0     2       8
-    //1     2   3   6
-    //1     3   3   8
-    //2     4   3   7
-    //
+
+    public static int findMinSubArraySolution(int[] arr, int S) {
+        int windowSum = 0, minLength = Integer.MAX_VALUE;
+        int windowStart = 0;
+        for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+            windowSum += arr[windowEnd]; // add the next element
+            // shrink the window as small as possible until the 'windowSum' is smaller than 'S'
+            while (windowSum >= S) {
+                minLength = Math.min(minLength, windowEnd - windowStart + 1);
+                windowSum -= arr[windowStart]; // subtract the element going out
+                windowStart++; // slide the window ahead
+            }
+        }
+
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
+    }
+
 
 }

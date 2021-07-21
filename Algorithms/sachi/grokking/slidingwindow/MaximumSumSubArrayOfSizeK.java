@@ -14,7 +14,7 @@ import util.Util;
  * Explanation: Subarray with maximum sum is [3, 4].
  */
 
-public class MaximumSumSubarrayOfSizeK {
+public class MaximumSumSubArrayOfSizeK {
     public static void main(String[] args) {
         int[] arr = new int[]{2, 1, 5, 1, 3, 2};
         int k = 3;

@@ -50,7 +50,7 @@ public class Util {
 
     public static int generateRandomNumber(int bound) {
         Random rand = new Random();
-        return rand.nextInt(bound);
+        return rand.nextInt(bound-1);
     }
 
 
