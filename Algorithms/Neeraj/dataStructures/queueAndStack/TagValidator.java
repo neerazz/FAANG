@@ -6,8 +6,9 @@ import java.util.Stack;
  */
 public class TagValidator {
     public static void main(String[] args) {
-
+        System.out.println("*********************************** Solution 1 **********************************");
         System.out.println(isValid("<A><A></A></A>") + " true");
+        System.out.println(isValid("<A></A>") + " true");
         System.out.println(isValid("<DIV>This is the first line <![CDATA[<div>]]></DIV>") + " true");
         System.out.println(isValid("<DIV>>>  ![cdata[]] <![CDATA[<div>]>]]>]]>>]</DIV>") + " true");
         System.out.println(isValid("<TRUE><![CDATA[wahaha]]]><![CDATA[]> wahaha]]></TRUE>") + " true");
@@ -20,6 +21,68 @@ public class TagValidator {
         System.out.println(isValid("<DIV> closed tags with invalid tag name  <b>123</b> </DIV>") + " false");
         System.out.println(isValid("<DIV> unmatched tags with invalid tag name  </1234567890> and <CDATA[[]]>  </DIV>") + " false");
         System.out.println(isValid("<DIV>  unmatched start tag <B>  and unmatched end tag </C>  </DIV>") + " false");
+
+        System.out.println("*********************************** Solution 2 **********************************");
+        System.out.println(isValid_rev1("<A><A></A></A>") + " true");
+        System.out.println(isValid_rev1("<A></A>") + " true");
+        System.out.println(isValid_rev1("<DIV>This is the first line <![CDATA[<div>]]></DIV>") + " true");
+        System.out.println(isValid_rev1("<DIV>>>  ![cdata[]] <![CDATA[<div>]>]]>]]>>]</DIV>") + " true");
+        System.out.println(isValid_rev1("<TRUE><![CDATA[wahaha]]]><![CDATA[]> wahaha]]></TRUE>") + " true");
+        System.out.println(isValid_rev1("123456") + " false");
+        System.out.println(isValid_rev1("<A>  <B> </A>   </B>") + " false");
+        System.out.println(isValid_rev1("<A></A><B></B>") + " false");
+        System.out.println(isValid_rev1("<![CDATA[wahaha]]]><![CDATA[]> wahaha]]>") + " false");
+        System.out.println(isValid_rev1("<DIV>  div tag is not closed  <DIV>") + " false");
+        System.out.println(isValid_rev1("<DIV>  unmatched <  </DIV>") + " false");
+        System.out.println(isValid_rev1("<DIV> closed tags with invalid tag name  <b>123</b> </DIV>") + " false");
+        System.out.println(isValid_rev1("<DIV> unmatched tags with invalid tag name  </1234567890> and <CDATA[[]]>  </DIV>") + " false");
+        System.out.println(isValid_rev1("<DIV>  unmatched start tag <B>  and unmatched end tag </C>  </DIV>") + " false");
+    }
+
+    public static boolean isValid_rev1(String code) {
+        int len = code.length(), i = 0, tagsCount = 0, content = 0;
+        Stack<String> stack = new Stack<>();
+        while (i < len) {
+            char cur = code.charAt(i);
+            if (cur == '<') {
+                if (i + 1 >= len) return false;
+                if (code.charAt(i + 1) == '/') {
+//                     Start of ending tag.
+                    int idx = code.indexOf(">", i + 2);
+                    if (idx == -1) return false;
+                    String tagName = code.substring(i + 2, idx);
+                    if (stack.isEmpty() || !stack.pop().equals(tagName)) return false;
+                    if (tagName.length() > 9 || tagName.length() < 1 || !tagName.toUpperCase().equals(tagName))
+                        return false;
+                    content += stack.isEmpty() ? 0 : 1;
+                    i = idx + 1;
+                } else if (code.substring(i).startsWith("<![CDATA[")) {
+//                     This is cdata, It should always be followed with a tag.
+                    if (stack.isEmpty()) return false;
+                    int idx = code.indexOf("]]>", i);
+                    if (idx == -1) return false;
+                    content++;
+                    i = idx + 3;
+                } else if (Character.isUpperCase(code.charAt(i + 1))) {
+//                     This is start of tag
+                    int idx = code.indexOf(">", i + 1);
+                    if (idx == -1) return false;
+                    String tagName = code.substring(i + 1, idx);
+                    if (tagName.length() > 9 || tagName.length() < 1 || !tagName.toUpperCase().equals(tagName))
+                        return false;
+                    stack.add(tagName);
+                    tagsCount++;
+                    i = idx + 1;
+                } else {
+//                    Having a random < is not allowed.
+                    return false;
+                }
+            } else {
+                content++;
+                i++;
+            }
+        }
+        return stack.isEmpty() && tagsCount > 0 && content > 0;
     }
 
     public static boolean isValid(String code) {
