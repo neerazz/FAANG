@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+
 
 /**
  * Created on:  Mar 16, 2021
@@ -10,6 +9,37 @@ public class DesignTicTacToe {
 
     public static void main(String[] args) {
 
+    }
+
+    static class TicTacToe_1 {
+        int[] rows, cols;
+        int currentPlayer, winner, n, diagonal, reverseDiaognal;
+
+        public TicTacToe_1(int n) {
+            rows = new int[n];
+            cols = new int[n];
+            this.n = n;
+        }
+
+        public int move(int row, int col, int player) {
+            if (row < 0 || row >= n || col < 0 || col >= n) {
+                throw new RuntimeException("Invalid Row and Col entered.");
+            } else {
+                int score = player == 0 ? -1 : 1;
+                rows[row] += score;
+                cols[col] += score;
+                if (row == col) diagonal += score;
+                if (row + col == n - 1) reverseDiaognal += score;
+                checkWinner(row, col, player);
+                return winner;
+            }
+        }
+
+        private void checkWinner(int row, int col, int player) {
+            if (n == Math.abs(rows[row]) || n == Math.abs(cols[col]) || n == Math.abs(reverseDiaognal) || n == Math.abs(diagonal)) {
+                winner = player;
+            }
+        }
     }
 
     static class TicTacToe {

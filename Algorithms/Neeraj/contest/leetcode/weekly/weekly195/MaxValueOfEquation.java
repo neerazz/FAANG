@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Created on:  Jun 27, 2020
  * Questions:
- * Max Value of Equation
  * https://leetcode.com/problems/max-value-of-equation
  */
 public class MaxValueOfEquation {
