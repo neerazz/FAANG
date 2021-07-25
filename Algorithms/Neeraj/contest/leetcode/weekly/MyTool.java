@@ -9,13 +9,14 @@ import java.util.stream.Collectors;
  * Created on:  May 25, 2020
  */
 public class MyTool {
+
     public static void main(String[] args) {
         System.out.println("************************* Contest ***********************************");
         getContest(
-                "Concatenation of Array3\n" +
-                        "Unique Length-3 Palindromic Subsequences4\n" +
-                        "Painting a Grid With Three Different Colors6\n" +
-                        "Merge BSTs to Create Single BST"
+                "Sum of Digits of String After Convert3\n" +
+                        "Largest Number After Mutating Substring4\n" +
+                        "Maximum Compatibility Score Sum5\n" +
+                        "Delete Duplicate Folders in System"
         );
 //        printCamelCase(
 //                "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold"
