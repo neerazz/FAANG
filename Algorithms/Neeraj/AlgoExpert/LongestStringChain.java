@@ -3,6 +3,7 @@ import java.util.*;
 /**
  * Created on:  Aug 29, 2020
  * Questions: https://www.algoexpert.io/questions/Longest%20String%20Chain
+ * https://leetcode.com/problems/longest-string-chain/
  */
 public class LongestStringChain {
     public static void main(String[] args) {
@@ -17,6 +18,34 @@ public class LongestStringChain {
                 "g",
                 "1a2345",
                 "12a345")));
+    }
+
+    public static int longestStrChain(String[] words) {
+        Map<String, Integer> dp = new HashMap<>();
+        Arrays.sort(words, (w1, w2) -> Integer.compare(w2.length(), w1.length()));
+        Set<String> set = new HashSet<>();
+        for (String word : words) {
+            set.add(word);
+        }
+        int max = 0;
+        for (String word : words) {
+            int count = getCount(word, set, dp);
+            max = Math.max(max, count);
+        }
+        return max;
+    }
+
+    private static int getCount(String word, Set<String> set, Map<String, Integer> dp) {
+        if (!set.contains(word)) return 0;
+        if (dp.containsKey(word)) return dp.get(word);
+        int count = 1;
+        for (int i = 0; i < word.length(); i++) {
+            String str = word.substring(0, i) + word.substring(i + 1);
+            int next = getCount(str, set, dp);
+            count = Math.max(count, next + 1);
+        }
+        dp.put(word, count);
+        return count;
     }
 
     public static List<String> longestStringChain(List<String> strings) {
@@ -34,7 +63,7 @@ public class LongestStringChain {
                 result.addAll(entry.getValue());
             }
         }
-        System.out.println("memo = " + memo);
+//        System.out.println("memo = " + memo);
         return result;
     }
 

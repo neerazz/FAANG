@@ -10,21 +10,21 @@ public class NumberOfSubArraysWithOddSum {
     }
 
     public static int numOfSubarrays_optimal(int[] arr) {
-//            even + even = even, odd + odd = even
-//            even + odd = odd, odd + even = odd
         int cur = 0;
-        int res = 0;
+        long res = 0;
         int[] count = {1, 0};
         int mod = 1_000_000_007;
         for (int num : arr) {
 //            Check if the sum of previous values and current value is odd or even.
             cur ^= num & 1;
 //            Number sub array at each element will the amount of opposite counts.
-            res = (res + count[1 - cur]) % mod;
-//            At each level increment the occurance count.
+//            even + odd = odd, odd + even = odd
+            res += count[1 - cur];
+            res %= mod;
+//            At each level increment the occurrence count.
             count[cur]++;
         }
-        return res;
+        return (int) (res % mod);
     }
 
     public static int numOfSubarrays(int[] ar) {
