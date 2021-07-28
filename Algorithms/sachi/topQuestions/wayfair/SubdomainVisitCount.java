@@ -12,36 +12,24 @@ public class SubdomainVisitCount {
         System.out.println(sol);
     }
 
-    //Input:
-    // 9001 discuss.leetcode.com
-    //Output:
-    //["9001 discuss.leetcode.com", "9001 leetcode.com", "9001 com"]
     public static List<String> subdomainVisits(String[] cpdomains) {
         Map<String, Integer> map = new HashMap<>();
-        for (String cpdomain : cpdomains) {
-            String[] s1 = cpdomain.split(" ");
-            int count = Integer.parseInt(s1[0]);
-            String domain = s1[1];
-            String[] s2 = domain.split("\\.");
-            String prev = "";
-            for (int i = s2.length - 1; i >= 0; i--) {
-                String subdomain;
-                if (prev.equals("")) {
-                    subdomain = s2[i];
-                } else {
-                    subdomain = s2[i] + "." + prev;
-                }
-                map.put(subdomain, map.getOrDefault(subdomain, 0) + count);
-                prev = subdomain;
+        for (String domain : cpdomains) {
+            String[] sub = domain.split(" ");
+            int count = Integer.parseInt(sub[0]);
+            String[] subsub = sub[1].split("\\.");
+            String curr = "";
+            for (int i = subsub.length - 1; i >= 0; i--) {
+                curr = subsub[i] + curr;
+                map.put(curr, map.getOrDefault(curr, 0) + count);
+                curr = "." + curr;
             }
         }
         List<String> sol = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
-            StringBuilder sb = new StringBuilder();
-            sb.append(value).append(" ").append(key);
-            sol.add(sb.toString());
+            sol.add(value + " " + key);
         }
         return sol;
     }
