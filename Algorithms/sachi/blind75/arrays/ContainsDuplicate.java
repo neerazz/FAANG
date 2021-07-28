@@ -1,4 +1,4 @@
-package algo.blind75.arrays;
+package blind75.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;

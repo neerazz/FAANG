@@ -1,4 +1,4 @@
-package algo.grokking.twopointer;
+package grokking.twopointer;
 
 public class RemoveKeyFromUnsortedArray {
 

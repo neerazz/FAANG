@@ -1,4 +1,4 @@
-package algo.blind75.arrays;
+package blind75.arrays;
 
 /*
 https://leetcode.com/problems/maximum-subarray/

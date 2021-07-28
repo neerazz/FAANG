@@ -1,4 +1,4 @@
-package algo.grokking.twopointer;
+package grokking.twopointer;
 
 /*
 Given an array with positive numbers and a target number, find all of its contiguous subarrays whose
