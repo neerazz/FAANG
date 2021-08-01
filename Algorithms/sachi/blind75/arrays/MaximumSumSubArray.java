@@ -14,7 +14,7 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 Input: nums = [5,4,-1,7,8]
 Output: 23
  */
-public class MaximumSubArray {
+public class MaximumSumSubArray {
 
     public static void main(String[] args) {
         int[] input = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
