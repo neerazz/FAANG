@@ -1,4 +1,4 @@
-/*
+package algorithm_toolbox;/*
 The goal of this code problem is to implement an algorithm for the fractional knapsack problem
 
 Input Format: The first line of the input contains the number 𝑛 of items and the capacity 𝑊 of a knapsack. 

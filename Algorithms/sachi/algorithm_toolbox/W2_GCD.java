@@ -1,3 +1,5 @@
+package algorithm_toolbox;
+
 import java.util.Scanner;
 
 //Given two integers 𝑎 and 𝑏, find their greatest common divisor.

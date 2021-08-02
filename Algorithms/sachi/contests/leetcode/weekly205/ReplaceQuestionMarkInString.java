@@ -1,3 +1,5 @@
+package contests.leetcode.weekly205;
+
 import java.util.HashMap;
 import java.util.Map;
 

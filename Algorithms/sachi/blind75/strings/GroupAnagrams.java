@@ -30,12 +30,13 @@ Output: [["a"]]
 public class GroupAnagrams {
 
     public static void main(String[] args) {
-
+        String[] input = new String[]{"eat","tea","tan","ate","nat","bat"};
+        System.out.println(groupAnagrams(input));
     }
 
     //Insight - Sort the arrays and use the sorted String as a key.
     //There is no String sort function in Java
-    public List<List<String>> groupAnagrams(String[] strs) {
+    public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
             char[] c = str.toCharArray();
@@ -69,7 +70,6 @@ public class GroupAnagrams {
         for (Character c : s.toCharArray()) {
             carr[c - 'a']++;
         }
-
         for (int i = 0; i < carr.length; i++) {
             if (carr[i] != 0) {
                 char c = (char) ('a' + i);
@@ -78,5 +78,4 @@ public class GroupAnagrams {
         }
         return sb.toString();
     }
-
 }

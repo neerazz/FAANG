@@ -25,7 +25,7 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 public class LongestRepeatingCharacterReplacement {
 
     public static void main(String[] args) {
-
+        //TODO: Implement this
     }
 
     //Insight: Your window will be invalid. But we only shrink everytime there is no valid input.

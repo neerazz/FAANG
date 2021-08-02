@@ -1,3 +1,5 @@
+package algo_standford;
+
 import java.util.Scanner;
 
 public class Fibonaci {

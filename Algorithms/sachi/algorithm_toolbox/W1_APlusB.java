@@ -1,3 +1,5 @@
+package algorithm_toolbox;
+
 import java.util.Scanner;
 
 class W1_APlusB {

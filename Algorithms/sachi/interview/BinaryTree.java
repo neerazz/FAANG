@@ -1,8 +1,10 @@
 package interview;
 
 import util.TreeNode;
-import java.util.ArrayList;
-import java.util.List;
+import util.Util;
+
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class BinaryTree {
 
@@ -53,6 +55,29 @@ public class BinaryTree {
         helperPostOrder(node.left, sol);
         helperPostOrder(node.right, sol);
         sol.add(node.val);
+    }
+
+    /**
+     * Level Traversal - Use Queue - Instantiate as ArrayDeque()
+     * Get Queue Size and do all operations till the size is greater than zero.
+     */
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> sol = new ArrayList<>();
+        if (root == null) return sol;
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int levels = queue.size();
+            while (levels-- > 0) {
+                TreeNode innerNode = queue.poll();
+                list.add(innerNode.val);
+                if (innerNode.left != null) queue.add(innerNode.left);
+                if (innerNode.right != null) queue.add(innerNode.right);
+            }
+            sol.add(list);
+        }
+        return sol;
     }
 
 

@@ -189,6 +189,42 @@ public class Util {
     }
 
     /**
+     *
+     * @param integers
+     * @return
+     */
+    public static TreeNode createTree(Integer[] integers) {
+        if (integers.length == 0) return null;
+        int index = 0;
+        TreeNode treeNode = new TreeNode(integers[index++]);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(treeNode);
+        while (index < integers.length) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+//                Create left and right child.
+                TreeNode currentHead = queue.poll();
+//                Create left Child.
+                Integer left = integers[index++];
+                if (left != null) {
+                    TreeNode currentTree = new TreeNode(left);
+                    currentHead.left = currentTree;
+                    queue.add(currentTree);
+                }
+                if (index == integers.length) break;
+//                Create Right Child.
+                Integer right = integers[index++];
+                if (right != null) {
+                    TreeNode currentTree = new TreeNode(right);
+                    currentHead.right = currentTree;
+                    queue.add(currentTree);
+                }
+            }
+        }
+        return treeNode;
+    }
+
+    /**
      * Convert an Array into Tree
      *
      * @param arr Input array

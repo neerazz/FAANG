@@ -1,3 +1,5 @@
+package algorithm_toolbox;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 

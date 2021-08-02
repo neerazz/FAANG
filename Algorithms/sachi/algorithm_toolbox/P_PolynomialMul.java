@@ -1,3 +1,4 @@
+package algorithm_toolbox;
 import java.util.Arrays;
 import java.util.Scanner;
 
