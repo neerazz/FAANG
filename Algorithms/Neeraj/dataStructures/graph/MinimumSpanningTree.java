@@ -16,11 +16,11 @@ public class MinimumSpanningTree {
         for (int i = 0; i < edges; i++) {
             connections[i] = new int[]{fr.nextInt(), fr.nextInt(), fr.nextInt()};
         }
-        System.out.println(getMiniMumSpanningTreeCostUsingPrimsAlgorithum(connections, nodes));
-        System.out.println(getMiniMumSpanningTreePathUsingPrimsAlgorithum(connections, nodes));
+        System.out.println(getMiniMumSpanningTreeCostUsingPrimsAlgorithm(connections, nodes));
+        System.out.println(getMiniMumSpanningTreePathUsingPrimsAlgorithm(connections, nodes));
     }
 
-    private static long getMiniMumSpanningTreeCostUsingPrimsAlgorithum(int[][] connections, int n) {
+    private static long getMiniMumSpanningTreeCostUsingPrimsAlgorithm(int[][] connections, int n) {
         Map<Integer, Set<Integer>> graph = new HashMap<>();
         int[][] costs = new int[n + 1][n + 1];
         for (int i = 1; i <= n; i++) {
@@ -60,7 +60,7 @@ public class MinimumSpanningTree {
      * @param connections array of connections Ex: [ start, end, 0]
      * @return [a, b, c, d]
      */
-    private static List<String> getMiniMumSpanningTreePathUsingPrimsAlgorithum(int[][] connections, int n) {
+    private static List<String> getMiniMumSpanningTreePathUsingPrimsAlgorithm(int[][] connections, int n) {
         Map<Integer, Set<Integer>> graph = new HashMap<>();
         int[][] costs = new int[n + 1][n + 1];
         for (int i = 1; i <= n; i++) {
