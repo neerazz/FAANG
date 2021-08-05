@@ -36,13 +36,13 @@ not related to hard core competitive coding.
 
 ### [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
 
-> - [Hackerrank](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/hackerrank)
-> - [Leetcode](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/leetcode)
+> - [Hackerrank](https://github.com/neerazz/CodingContests/tree/main/hackerrank)
+> - [Leetcode](https://github.com/neerazz/CodingContests/tree/main/leetcode)
 >   - `Includes both Biweekly and Weekly contest.`
-> - [Google Kickstart](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/goolgeKickstart)
->   - [2020](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/goolgeKickstart/y2020)
->   - [2021](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/goolgeKickstart/y2021)
-> - [CodeForces](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest/codeforces)
+> - [Google Kickstart](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart)
+>   - [2020](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2020)
+>   - [2021](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2021)
+> - [CodeForces](https://github.com/neerazz/CodingContests/tree/main/codeforces)
 
 ### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
 
