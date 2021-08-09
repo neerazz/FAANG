@@ -24,7 +24,8 @@ public class LinkedListCycleStart {
 
     private static ListNode getStart(ListNode head, int len) {
         ListNode p1 = head, p2 = head;
-//        Advance p1 pointer to len, so that p1 travels the cycle length. And by the time it completes travelling the list, both p1 and p2 will be at the start of the cycle.
+//        Advance p1 pointer to len, so that p1 travels the cycle length.
+//        And by the time it completes travelling the list, both p1 and p2 will be at the start of the cycle.
         while (len-- > 0) {
             p1 = p1.next;
         }
