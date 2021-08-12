@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Set;
 
 interface Robot {
     // returns true if next cell is open and robot moves into the cell.
@@ -17,33 +18,18 @@ interface Robot {
 
 /*
 https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2794/
-Given a robot cleaner in a room modeled as a grid.
-Each cell in the grid can be empty or blocked.
-The robot cleaner with 4 given APIs can move forward, turn left or turn right. Each turn it made is 90 degrees.
-When it tries to move into a blocked cell, its bumper sensor detects the obstacle and it stays on the current cell.
-Design an algorithm to clean the entire room using only the 4 given APIs shown below.
-interface Robot {
-  // returns true if next cell is open and robot moves into the cell.
-  // returns false if next cell is obstacle and robot stays on the current cell.
-  boolean move();
-  // Robot will stay on the same cell after calling turnLeft/turnRight.
-  // Each turn will be 90 degrees.
-  void turnLeft();
-  void turnRight();
-  // Clean the current cell.
-  void clean();
-}
+
 Example:
 Input:
-room = [
-  [1,1,1,1,1,0,1,1],
-  [1,1,1,1,1,0,1,1],
-  [1,0,1,1,1,1,1,1],
-  [0,0,0,1,0,0,0,0],
-  [1,1,1,1,1,1,1,1]
-],
-row = 1,
-col = 3
+    room = [
+              [1,1,1,1,1,0,1,1],
+              [1,1,1,1,1,0,1,1],
+              [1,0,1,1,1,1,1,1],
+              [0,0,0,1,0,0,0,0],
+              [1,1,1,1,1,1,1,1]
+            ],
+    row = 1,
+    col = 3
 Explanation:
 All grids in the room are marked by either 0 or 1.
 0 means the cell is blocked, while 1 means the cell is accessible.
@@ -57,71 +43,70 @@ All accessible cells are connected, which means the all cells marked as 1 will b
 Assume all four edges of the grid are all surrounded by wall.
  */
 public class RobotRoomCleaner {
+    // going clockwise : 0: 'up', 1: 'right', 2: 'down', 3: 'left'
+    int[][] directions = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    Set<Pair<Integer, Integer>> visited = new HashSet();
+    Robot robot;
+
     public static void main(String[] args) {
-        /*
-        Time to write down the algorithm for the backtrack function backtrack(cell = (0, 0), direction = 0).
-Mark the cell as visited and clean it up.
-Explore 4 directions : up, right, down, and left (the order is important since the idea is always to turn right) :
-Check the next cell in the chosen direction :
-If it's not visited yet and there is no obtacles :
-Move forward.
-Explore next cells backtrack(new_cell, new_direction).
-Backtrack, i.e. go back to the previous cell.
-Turn right because now there is an obstacle (or a virtual obstacle) just in front.
-         */
+
     }
 
-    public static void backtrack(Robot robot, int row, int col, HashSet<String> visited, int dir) {
-        String currentHash = row + "->" + col;
-        if (visited.contains(currentHash)) return;
-        robot.clean();
-        visited.add(currentHash);
-        for (int n = 0; n < 4; n++) {
-            // the robot will check all four directions, we use right turn
-            if (robot.move()) {
-                // Find the (row , col) for the next cell based on current direction
-                int x = row, y = col;
-                switch (dir) {
-                    case 0:
-                        // go up, reduce i
-                        x = row - 1;
-                        break;
-                    case 90:
-                        // go right
-                        y = col + 1;
-                        break;
-                    case 180:
-                        // go down
-                        x = row + 1;
-                        break;
-                    case 270:
-                        // go left
-                        y = col - 1;
-                        break;
-                    default:
-                        break;
-                }
-                backtrack(robot, x, y, visited, dir);
-                // go back to the starting position
-                robot.turnLeft();
-                robot.turnLeft();
-                robot.move();
-                robot.turnRight();
-                robot.turnRight();
+    public void goBack() {
+        robot.turnRight();
+        robot.turnRight();
+        robot.move();
+        robot.turnRight();
+        robot.turnRight();
+    }
 
+    public void backtrack(int row, int col, int d) {
+        visited.add(new Pair(row, col));
+        robot.clean();
+        // going clockwise : 0: 'up', 1: 'right', 2: 'down', 3: 'left'
+        for (int i = 0; i < 4; ++i) {
+            int newD = (d + i) % 4;
+            int newRow = row + directions[newD][0];
+            int newCol = col + directions[newD][1];
+
+            if (!visited.contains(new Pair(newRow, newCol)) && robot.move()) {
+                backtrack(newRow, newCol, newD);
+                goBack();
             }
-            // turn to next direction
+            // turn the robot following chosen direction : clockwise
             robot.turnRight();
-            dir += 90;
-            dir %= 360;
         }
     }
 
     public void cleanRoom(Robot robot) {
-        // A number can be added to each visited cell
-        // use string to identify the class
-        HashSet<String> visited = new HashSet<>();
-        int dir = 0;   // 0: up, 90: right, 180: down, 270: left
-        backtrack(robot, 0, 0, visited, dir);
+        this.robot = robot;
+        backtrack(0, 0, 0);
+    }
+
+    static class Pair<T, U> {
+        T key;
+        U val;
+        public Pair(final T key, final U val) {
+            this.key = key;
+            this.val = val;
+        }
+
+        @Override
+        public boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || this.getClass() != o.getClass()) return false;
+
+            final Pair<?, ?> pair = (Pair<?, ?>) o;
+
+            if (!this.key.equals(pair.key)) return false;
+            return this.val.equals(pair.val);
+        }
+
+        @Override
+        public int hashCode() {
+            int result = this.key.hashCode();
+            result = 31 * result + this.val.hashCode();
+            return result;
+        }
     }
 }
