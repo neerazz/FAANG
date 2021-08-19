@@ -16,6 +16,35 @@ public class ConvertBinarySearchTreeToSortedDoublyLinkedList {
         System.out.println(treeToDoublyList(createTree(new Integer[]{4, 2, 5, 1, 3, null, null})));
     }
 
+    public static Node treeToDoublyList_recursive1(Node root) {
+        if(root == null) return null;
+        Node node = helper(root);
+        Node head = node, tail = node;
+        while(tail.right != null) tail = tail.right;
+        tail.right = head;
+        head.left = tail;
+        return node;
+    }
+    static Node helper(Node root){
+        if(root == null) return null;
+        Node left = helper(root.left);
+        Node right = helper(root.right);
+        Node node = new Node(root.val);
+        if(left != null){
+            Node ref = left;
+            while(ref.right != null) ref = ref.right;
+            ref.right = node;
+            node.left = ref;
+            node.right = right;
+            if(right != null) right.left = node;
+            return left;
+        }else{
+            node.right = right;
+            if(right != null) right.left = node;
+            return node;
+        }
+    }
+
     public static Node treeToDoublyList_recursive(Node root) {
         if (root == null) return null;
         Node first = null, last = null;
@@ -115,6 +144,10 @@ public class ConvertBinarySearchTreeToSortedDoublyLinkedList {
         public Node right;
 
         public Node() {
+        }
+
+        public Node(final int val) {
+            this.val = val;
         }
 
         public Node(int _val, Node _left, Node _right) {
