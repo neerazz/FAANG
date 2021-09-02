@@ -17,6 +17,27 @@ public class SearchInsertPosition {
         System.out.println(searchInsert_optimal(new int[]{1, 3, 5, 6}, 2) + " should be [1].");
         System.out.println(searchInsert_optimal(new int[]{1, 3, 5, 6}, 7) + " should be [4].");
         System.out.println(searchInsert_optimal(new int[]{1, 3, 5, 6}, 0) + " should be [0].");
+
+        System.out.println("************************** Method 3 ****************************");
+        System.out.println(searchInsert_rev1(new int[]{1, 3, 5, 6}, 5) + " should be [2].");
+        System.out.println(searchInsert_rev1(new int[]{1, 3, 5, 6}, 2) + " should be [1].");
+        System.out.println(searchInsert_rev1(new int[]{1, 3, 5, 6}, 7) + " should be [4].");
+        System.out.println(searchInsert_rev1(new int[]{1, 3, 5, 6}, 0) + " should be [0].");
+    }
+
+    public static int searchInsert_rev1(int[] nums, int target) {
+        int start = 0, end = nums.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return start;
     }
 
     public static int searchInsert_optimal(int[] nums, int target) {
