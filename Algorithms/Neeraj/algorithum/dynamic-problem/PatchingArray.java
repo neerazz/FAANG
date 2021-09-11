@@ -19,7 +19,7 @@ public class PatchingArray {
         for(int num: nums){
             while(num > covered+1){
 //                If you reached a number which is greater than covered, then find out how many patching is required till that number.
-                System.out.println("Pathching " + (covered +1));
+                System.out.println("Patching " + (covered +1));
                 covered += covered+1;
                 count++;
 //                keep checking that if you have reached the number, if so yuo cna exit the current count.
