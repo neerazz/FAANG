@@ -1,5 +1,3 @@
-
-
 /**
  * Created on:  Oct 08, 2020
  * Questions: https://www.educative.io/courses/grokking-the-coding-interview/g2w6QPBA2Nk

@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 
 class UniquePaths {
     public static void main(String[] args) {

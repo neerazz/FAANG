@@ -48,7 +48,8 @@
 - Longest Consecutive Sequence - https://leetcode.com/problems/longest-consecutive-sequence/
 - Alien Dictionary (Leetcode Premium) - https://leetcode.com/problems/alien-dictionary/
 - Graph Valid Tree (Leetcode Premium) - https://leetcode.com/problems/graph-valid-tree/
-- Number of Connected Components in an Undirected Graph (Leetcode Premium) - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+- Number of Connected Components in an Undirected Graph (Leetcode Premium)
+  - https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
 ---
 
@@ -84,7 +85,8 @@
 
 ## String
 
-- Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters/
+- Longest Substring Without Repeating Characters
+  - https://leetcode.com/problems/longest-substring-without-repeating-characters/
 - Longest Repeating Character Replacement - https://leetcode.com/problems/longest-repeating-character-replacement/
 - Minimum Window Substring - https://leetcode.com/problems/minimum-window-substring/
 - Valid Anagram - https://leetcode.com/problems/valid-anagram/
@@ -106,7 +108,8 @@
 - Binary Tree Level Order Traversal - https://leetcode.com/problems/binary-tree-level-order-traversal/
 - Serialize and Deserialize Binary Tree - https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
 - Subtree of Another Tree - https://leetcode.com/problems/subtree-of-another-tree/
-- Construct Binary Tree from Preorder and Inorder Traversal - https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+- Construct Binary Tree from Preorder and Inorder Traversal
+  - https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 - Validate Binary Search Tree - https://leetcode.com/problems/validate-binary-search-tree/
 - Kth Smallest Element in a BST - https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 - Lowest Common Ancestor of BST - https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/

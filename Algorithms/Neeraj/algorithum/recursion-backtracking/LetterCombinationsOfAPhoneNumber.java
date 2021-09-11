@@ -12,20 +12,9 @@ Although the above answer is in lexicographical order, your answer could be in a
  */
 public class LetterCombinationsOfAPhoneNumber {
 
-    public static void main(String[] args) {
-        System.out.println("****************  Method 1 ********************");
-        System.out.println(letterCombinations("23"));
-        System.out.println(letterCombinations(""));
-        System.out.println("****************  Method 2 ********************");
-        System.out.println(letterCombinations_rev("23"));
-        System.out.println(letterCombinations_rev(""));
-        System.out.println("****************  Method 3 ********************");
-        System.out.println(letterCombinations_memo("23"));
-        System.out.println(letterCombinations_memo(""));
-    }
-
     static Map<Character, List<Character>> map;
     static List<String> output;
+    static Map<String, List<String>> memo = new HashMap<>();
 
     static {
         map = new HashMap<>();
@@ -39,23 +28,35 @@ public class LetterCombinationsOfAPhoneNumber {
         map.put('9', Arrays.asList('w', 'x', 'y', 'z'));
     }
 
-    static Map<String, List<String>> memo = new HashMap<>();
+    public static void main(String[] args) {
+        System.out.println("****************  Method 1 ********************");
+        System.out.println(letterCombinations("23"));
+        System.out.println(letterCombinations(""));
+        System.out.println("****************  Method 2 ********************");
+        System.out.println(letterCombinations_rev("23"));
+        System.out.println(letterCombinations_rev(""));
+        System.out.println("****************  Method 3 ********************");
+        System.out.println(letterCombinations_memo("23"));
+        System.out.println(letterCombinations_memo(""));
+    }
+
     public static List<String> letterCombinations_memo(String digits) {
         if (digits == null || digits.length() == 0) {
             return Collections.emptyList();
-        }else{
+        } else {
             return helper_memo(digits);
         }
     }
+
     public static List<String> helper_memo(String digits) {
         if (digits.length() == 0) {
             return Collections.singletonList("");
-        } else if(memo.containsKey(digits)){
+        } else if (memo.containsKey(digits)) {
             return memo.get(digits);
         } else {
             List<String> op = new ArrayList<>();
-            for(char c: map.get(digits.charAt(0))){
-                for(String letters: helper_memo(digits.substring(1))){
+            for (char c : map.get(digits.charAt(0))) {
+                for (String letters : helper_memo(digits.substring(1))) {
                     op.add(c + letters);
                 }
             }

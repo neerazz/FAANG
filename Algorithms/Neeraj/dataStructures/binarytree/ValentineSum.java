@@ -15,107 +15,106 @@ import java.util.Queue;
 
 
 class ValentineSum {
-    static class Node{
-        int data;
-        Node left;
-        Node right;
-        Node(int data){
-            this.data = data;
-            left=null;
-            right=null;
-        }
-    }
-    static Node buildTree(String str){
-        
-        if(str.length()==0 || str.charAt(0)=='N'){
+    static Node buildTree(String str) {
+
+        if (str.length() == 0 || str.charAt(0) == 'N') {
             return null;
         }
-        
+
         String ip[] = str.split(" ");
         Node root = new Node(Integer.parseInt(ip[0]));
-        
-        Queue<Node> queue = new LinkedList<>(); 
-        
+
+        Queue<Node> queue = new LinkedList<>();
+
         queue.add(root);
-        
+
         int i = 1;
-        while(queue.size()>0 && i < ip.length) {
+        while (queue.size() > 0 && i < ip.length) {
             Node currNode = queue.peek();
             queue.remove();
-                
+
             String currVal = ip[i];
-            if(!currVal.equals("N")) {
+            if (!currVal.equals("N")) {
                 currNode.left = new Node(Integer.parseInt(currVal));
                 queue.add(currNode.left);
             }
-                
+
             i++;
-            if(i >= ip.length)
+            if (i >= ip.length)
                 break;
-                
+
             currVal = ip[i];
-                
-            if(!currVal.equals("N")) {
+
+            if (!currVal.equals("N")) {
                 currNode.right = new Node(Integer.parseInt(currVal));
                 queue.add(currNode.right);
             }
             i++;
         }
-        
+
         return root;
     }
-    
-	public static void main (String[] args) throws IOException{
+
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine().trim();
         Node root = buildTree(line);
-            
+
         line = br.readLine().trim();
         String target_k[] = line.split(" ");
         int target = Integer.parseInt(target_k[0]);
         int k = Integer.parseInt(target_k[1]);
-            
+
         Solution x = new Solution();
-        System.out.println( x.sum_at_distK(root, target, k) );
+        System.out.println(x.sum_at_distK(root, target, k));
     }
-    static class Solution{
+
+    static class Node {
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
+
+    static class Solution {
         static int sum;
-        static void add_subtree(Node n, int dist)
-        {
-            if ( (n==null) || (dist<0) ) return;
+
+        static void add_subtree(Node n, int dist) {
+            if ((n == null) || (dist < 0)) return;
             sum += n.data;
-            add_subtree(n.left, dist-1);
-            add_subtree(n.right, dist-1);
+            add_subtree(n.left, dist - 1);
+            add_subtree(n.right, dist - 1);
         }
 
-        static int traverse(Node n, int target, int k)
-        {
-            if (n==null) return -1;
-            if (n.data==target)
-            {
+        static int traverse(Node n, int target, int k) {
+            if (n == null) return -1;
+            if (n.data == target) {
                 add_subtree(n, k);
-                return k-1;
+                return k - 1;
             }
 
             int dist = traverse(n.left, target, k);
-            if (-1 < dist)
-            {
+            if (-1 < dist) {
                 sum += n.data;
-                add_subtree(n.right, dist-1);
-                return dist-1;
+                add_subtree(n.right, dist - 1);
+                return dist - 1;
             }
 
             dist = traverse(n.right, target, k);
-            if (-1 < dist)
-            {
+            if (-1 < dist) {
                 sum += n.data;
-                add_subtree(n.left, dist-1);
-                return dist-1;
+                add_subtree(n.left, dist - 1);
+                return dist - 1;
             }
             return -1;
         }
-        static int sum_at_distK(Node root, int target, int k)
-        {
+
+        static int sum_at_distK(Node root, int target, int k) {
             sum = 0;
             traverse(root, target, k);
             return sum;

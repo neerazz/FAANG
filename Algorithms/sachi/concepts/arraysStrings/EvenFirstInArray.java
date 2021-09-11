@@ -23,9 +23,9 @@ public class EvenFirstInArray {
         System.out.println("Even first array second attempt optimized is " + Arrays.toString(evenOptimized2(arr)));
     }
 
-    private static int[] evenNaive1(int[] arr){
+    private static int[] evenNaive1(int[] arr) {
         int[] sol = new int[arr.length];
-        int i=0, j=arr.length-1;
+        int i = 0, j = arr.length - 1;
         for (int value : arr) {
             if (value % 2 == 0) {
                 sol[i++] = value;
@@ -36,12 +36,12 @@ public class EvenFirstInArray {
         return sol;
     }
 
-    private static int[] evenOptimized2(int[] arr){
-        int i = 0, j= arr.length-1;
-        while(i < j){
-            if(arr[i] %2 == 0){
+    private static int[] evenOptimized2(int[] arr) {
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            if (arr[i] % 2 == 0) {
                 i++;
-            }else{
+            } else {
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;

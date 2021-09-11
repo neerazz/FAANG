@@ -12,6 +12,10 @@ Output: [5,4,3,2,1]
  */
 public class ReverseLinkedList {
 
+    public static void main(String[] args) {
+
+    }
+
     //Insight - use three things
     //prev , curr, next
     //Reversed will be in prev
@@ -27,9 +31,5 @@ public class ReverseLinkedList {
             curr = next;
         }
         return prev;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

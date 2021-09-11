@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created on:  Jan 19, 2021
@@ -8,11 +8,11 @@ import java.io.*;
 
 public class MoveObstacle {
 
+    static int[][] dirs = {{1, 0}, {0, -1}, {0, 1}, {0, -1}};
+
     public static void main(String[] args) {
         System.out.println(getDistance(3, 3, new int[][]{{1, 0, 0}, {1, 0, 0}, {1, 9, 1}}));
     }
-
-    static int[][] dirs = {{1, 0}, {0, -1}, {0, 1}, {0, -1}};
 
     private static int getDistance(int rows, int cols, int[][] grid) {
         if ((rows == 0 && cols == 0) || grid[0][0] == 9) return 0;

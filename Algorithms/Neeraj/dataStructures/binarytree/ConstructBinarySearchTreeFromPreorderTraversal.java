@@ -26,7 +26,7 @@ public class ConstructBinarySearchTreeFromPreorderTraversal {
     }
 
     private static TreeNode helper(int[] preorder, int start, int end) {
-        if(start > end) return null;
+        if (start > end) return null;
         if (start == end) return new TreeNode(preorder[start]);
         int first = preorder[start];
         int newStart = start + 1, mid = newStart;

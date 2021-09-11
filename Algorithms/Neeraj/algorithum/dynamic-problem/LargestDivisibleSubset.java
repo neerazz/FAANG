@@ -37,7 +37,7 @@ public class LargestDivisibleSubset {
                 }
             }
             level.add(nums[i - 1]);
-            if(level.size() > result.size()){
+            if (level.size() > result.size()) {
                 result = level;
             }
             dp[i] = level;

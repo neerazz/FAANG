@@ -55,16 +55,6 @@ public class BoundaryOfBinaryTree {
         }
     }
 
-    static class Node {
-        TreeNode tree;
-        boolean isLeft;
-
-        Node(TreeNode tree, boolean isLeft) {
-            this.tree = tree;
-            this.isLeft = isLeft;
-        }
-    }
-
     public static List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) return result;
@@ -104,5 +94,15 @@ public class BoundaryOfBinaryTree {
 
     private static boolean isLeaf(TreeNode node) {
         return node.left == null && node.right == null;
+    }
+
+    static class Node {
+        TreeNode tree;
+        boolean isLeft;
+
+        Node(TreeNode tree, boolean isLeft) {
+            this.tree = tree;
+            this.isLeft = isLeft;
+        }
     }
 }

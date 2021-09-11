@@ -23,19 +23,6 @@ public class IP4ValidationWithCIDR {
         System.out.println(isValidIPV4("10.1.1.5/24", "10.1.1.100"));
     }
 
-    private boolean test1(int[] nums) {
-        System.out.println("Before = " + Arrays.toString(nums));
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] > nums[i + 1]) {
-                int tem = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = tem;
-            }
-        }
-        System.out.println("After = " + Arrays.toString(nums));
-        return true;
-    }
-
     public static boolean isValidIPV4(String cidr, String ipAddress) {
         InetAddress[] ranges = null;
         try {
@@ -111,5 +98,18 @@ public class IP4ValidationWithCIDR {
             ret[i] = newArr.get(i);
         }
         return ret;
+    }
+
+    private boolean test1(int[] nums) {
+        System.out.println("Before = " + Arrays.toString(nums));
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                int tem = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = tem;
+            }
+        }
+        System.out.println("After = " + Arrays.toString(nums));
+        return true;
     }
 }

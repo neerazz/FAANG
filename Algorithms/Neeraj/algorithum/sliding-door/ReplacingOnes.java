@@ -10,14 +10,14 @@ public class ReplacingOnes {
     }
 
     public static int findLength(int[] arr, int k) {
-        int[] counts = {0,0};
-        int len = arr.length, i=0, j=0, max = 0;
-        while(j< len){
+        int[] counts = {0, 0};
+        int len = arr.length, i = 0, j = 0, max = 0;
+        while (j < len) {
             counts[arr[j]]++;
-            while(i <= j && counts[0] > k){
+            while (i <= j && counts[0] > k) {
                 counts[arr[i++]]--;
             }
-            max = Math.max(max, j-i+1);
+            max = Math.max(max, j - i + 1);
             j++;
         }
         return max;

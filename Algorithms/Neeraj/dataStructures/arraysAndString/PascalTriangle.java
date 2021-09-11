@@ -24,17 +24,17 @@ public class PascalTriangle {
     }
 
     public static List<Integer> getRow(int rowIndex) {
-        if (rowIndex == 0){
+        if (rowIndex == 0) {
             return Collections.singletonList(1);
         }
-        if (rowIndex == 1){
-            return Arrays.asList(1,1);
+        if (rowIndex == 1) {
+            return Arrays.asList(1, 1);
         }
         List<Integer> integers = getRow(rowIndex - 1);
         List<Integer> newList = new ArrayList<>();
         newList.add(1);
-        for (int i = 0; i < integers.size()-1; i++) {
-            newList.add(integers.get(i) + integers.get(i+1));
+        for (int i = 0; i < integers.size() - 1; i++) {
+            newList.add(integers.get(i) + integers.get(i + 1));
         }
         newList.add(1);
         return newList;

@@ -53,6 +53,7 @@ public class NaryTreePreorderTraversal {
         }
         return output;
     }
+
     static class Node {
         public int val;
         public List<Node> children;

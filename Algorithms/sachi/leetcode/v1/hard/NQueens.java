@@ -7,6 +7,12 @@ public class NQueens {
 
     int sol = 0;
 
+    public static void main(String[] args) {
+        NQueens nQueens = new NQueens();
+        int sol = nQueens.totalNQueens(5);
+        System.out.println(sol);
+    }
+
     public int totalNQueens(int n) {
         int row = 0;
         Set<Integer> hills = new HashSet<>();
@@ -42,13 +48,6 @@ public class NQueens {
 
     public boolean canPlaceQueen(int row, int col, Set<Integer> cols, Set<Integer> hills, Set<Integer> dales) {
         return !hills.contains(row + col) && !dales.contains(row - col) && !cols.contains(col);
-    }
-
-
-    public static void main(String[] args) {
-        NQueens nQueens = new NQueens();
-        int sol = nQueens.totalNQueens(5);
-        System.out.println(sol);
     }
 
 }

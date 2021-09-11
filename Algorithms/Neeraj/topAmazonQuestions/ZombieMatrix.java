@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Created on:  Jan 16, 2021
@@ -7,6 +9,8 @@ import java.io.*;
  */
 
 public class ZombieMatrix {
+
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static void main(String[] args) {
         System.out.println(humanDays(new int[][]{{0, 1, 1, 0, 1}, {0, 1, 0, 1, 0}, {0, 0, 0, 0, 1}, {0, 1, 0, 0, 0}}));
@@ -38,14 +42,12 @@ public class ZombieMatrix {
                     queue.add(poll);
                 }
             }
-            for(int[] ele: change){
+            for (int[] ele : change) {
                 matrix[ele[0]][ele[1]] = 1;
             }
         }
         return days;
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     private static boolean canBeInfected(int[][] matrix, int row, int col, int rows, int cols) {
         for (int[] dir : dirs) {

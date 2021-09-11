@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 
 public class CriticalConnectionsInANetwork {
 
+    static int discovery;
+
     public static void main(String[] args) {
         System.out.println(criticalConnections(10, buildList(new int[][]{{1, 0}, {2, 0}, {3, 0}, {4, 1}, {5, 3}, {6, 1}, {7, 2}, {8, 1}, {9, 6}, {9, 3}, {3, 2}, {4, 2}, {7, 4}, {6, 2}, {8, 3}, {4, 0}, {8, 6}, {6, 5}, {6, 3}, {7, 5}, {8, 0}, {8, 5}, {5, 4}, {2, 1}, {9, 5}, {9, 7}, {9, 4}, {4, 3}})));
         System.out.println(CriticalConnectionPointsAndBridge.getCriticalBridge(10, buildboolean(10, new int[][]{{1, 0}, {2, 0}, {3, 0}, {4, 1}, {5, 3}, {6, 1}, {7, 2}, {8, 1}, {9, 6}, {9, 3}, {3, 2}, {4, 2}, {7, 4}, {6, 2}, {8, 3}, {4, 0}, {8, 6}, {6, 5}, {6, 3}, {7, 5}, {8, 0}, {8, 5}, {5, 4}, {2, 1}, {9, 5}, {9, 7}, {9, 4}, {4, 3}})));
@@ -24,8 +26,6 @@ public class CriticalConnectionsInANetwork {
     private static List<List<Integer>> buildList(int[][] cons) {
         return Arrays.stream(cons).map(con -> Arrays.asList(con[0], con[1])).collect(Collectors.toList());
     }
-
-    static int discovery;
 
     public static List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
         discovery = 0;

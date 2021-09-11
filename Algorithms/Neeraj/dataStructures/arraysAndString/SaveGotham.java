@@ -22,36 +22,32 @@ import java.io.InputStreamReader;
 
 
 class Array {
-    
+
     // Driver code
-	public static void main (String[] args) throws IOException
-    {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String line = br.readLine();
-		String[] element = line.trim().split("\\s+");
-		int sizeOfArray = Integer.parseInt(element[0]);
-		     
-		int arr [] = new int[sizeOfArray];
-		    
-		line = br.readLine();
-		String[] elements = line.trim().split("\\s+");
-		for(int i = 0;i<sizeOfArray;i++){
-		    arr[i] = Integer.parseInt(elements[i]);
-		}
-		Solution obj = new Solution();
-		int ans = obj.save_gotham(arr, sizeOfArray);
-		System.out.println(ans);
-	}
-    static class Solution{
-        public static int save_gotham (int arr[], int n)
-        {
-            int ans = 0 ;
-            for(int i = 0 ; i < arr.length ; i ++)
-            {
-                for(int j = i+1 ; j < arr.length ; j ++)
-                {
-                    if(arr[i]<arr[j])
-                    {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        String[] element = line.trim().split("\\s+");
+        int sizeOfArray = Integer.parseInt(element[0]);
+
+        int arr[] = new int[sizeOfArray];
+
+        line = br.readLine();
+        String[] elements = line.trim().split("\\s+");
+        for (int i = 0; i < sizeOfArray; i++) {
+            arr[i] = Integer.parseInt(elements[i]);
+        }
+        Solution obj = new Solution();
+        int ans = obj.save_gotham(arr, sizeOfArray);
+        System.out.println(ans);
+    }
+
+    static class Solution {
+        public static int save_gotham(int arr[], int n) {
+            int ans = 0;
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[i] < arr[j]) {
                         ans += arr[j];
                         break;
                     }

@@ -35,10 +35,10 @@ class TextJustification {
     public static List<String> fullJustify_rev3(String[] words, int max) {
         List<Line> lines = new ArrayList<>();
         Line pre = new Line();
-        for(String word: words){
-            if(pre.canAdd(word, max)){
+        for (String word : words) {
+            if (pre.canAdd(word, max)) {
                 pre.add(word);
-            }else{
+            } else {
                 lines.add(pre);
                 pre = new Line();
                 pre.add(word);
@@ -47,13 +47,13 @@ class TextJustification {
         lines.add(pre);
         List<String> result = new ArrayList<>();
         int len = lines.size();
-        for(int i=0; i<len;  i++){
+        for (int i = 0; i < len; i++) {
             StringBuilder sb = new StringBuilder();
-            if(i < len-1){
+            if (i < len - 1) {
                 buildString(lines.get(i), max, sb);
-            }else{
-                for(String word: lines.get(i).words){
-                    if(sb.length() > 0) sb.append(" ");
+            } else {
+                for (String word : lines.get(i).words) {
+                    if (sb.length() > 0) sb.append(" ");
                     sb.append(word);
                 }
                 int rem = max - sb.length();
@@ -64,15 +64,15 @@ class TextJustification {
         return result;
     }
 
-    static void buildString(Line line, int max, StringBuilder sb){
+    static void buildString(Line line, int max, StringBuilder sb) {
 //         0: spaces between each word, 1: un divided spaces, 2: gaps
         int[] spaces = line.spaces(max);
         int len = line.words.size();
-        for(int i=0; i<len; i++){
+        for (int i = 0; i < len; i++) {
             sb.append(line.words.get(i));
-            if(i == len-1) continue;
+            if (i == len - 1) continue;
             int empty = spaces[0];
-            if(spaces[1] > 0){
+            if (spaces[1] > 0) {
                 empty++;
                 spaces[1]--;
             }
@@ -80,31 +80,11 @@ class TextJustification {
         }
         sb.append(empty(max - sb.length()));
     }
-    static String empty(int count){
+
+    static String empty(int count) {
         char[] chars = new char[count];
         Arrays.fill(chars, ' ');
         return String.valueOf(chars);
-    }
-    static class Line{
-        int chars, spaces;
-        List<String> words = new ArrayList<>();
-
-        boolean canAdd(String word, int max){
-            int curLen = chars + spaces + (chars > 0 ? 1 : 0);
-            return curLen + word.length() <= max;
-        }
-
-        void add(String word){
-            if(chars > 0) spaces++;
-            chars += word.length();
-            words.add(word);
-        }
-        int[] spaces(int max){
-            int blank = max - chars;
-            int gaps = words.size()-1;
-            if(gaps == 0) gaps = 1;
-            return new int[]{blank/gaps, blank%gaps};
-        }
     }
 
     public static List<String> fullJustify_rev2(String[] words, int maxWidth) {
@@ -270,5 +250,28 @@ class TextJustification {
             sb.append(words.get(size - 1));
         }
         return sb.toString();
+    }
+
+    static class Line {
+        int chars, spaces;
+        List<String> words = new ArrayList<>();
+
+        boolean canAdd(String word, int max) {
+            int curLen = chars + spaces + (chars > 0 ? 1 : 0);
+            return curLen + word.length() <= max;
+        }
+
+        void add(String word) {
+            if (chars > 0) spaces++;
+            chars += word.length();
+            words.add(word);
+        }
+
+        int[] spaces(int max) {
+            int blank = max - chars;
+            int gaps = words.size() - 1;
+            if (gaps == 0) gaps = 1;
+            return new int[]{blank / gaps, blank % gaps};
+        }
     }
 }

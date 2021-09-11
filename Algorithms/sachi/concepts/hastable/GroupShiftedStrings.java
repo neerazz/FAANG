@@ -35,7 +35,7 @@ public class GroupShiftedStrings {
         sb.append(str.length());
         for (int i = 0; i < str.length() - 1; i++) {
             int val = str.charAt(i + 1) - str.charAt(i);
-            val = val < 0 ? 26+val : val;
+            val = val < 0 ? 26 + val : val;
             sb.append(val);
         }
         return sb.toString();

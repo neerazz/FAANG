@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created on:  Feb 24, 2021
@@ -147,6 +146,11 @@ public class CalenderMatching {
         int endHour, endMin;
         String start, end;
 
+        Meeting(String start, String end) {
+            setStarting(start);
+            setEnding(end);
+        }
+
         public void setStarting(String start) {
             this.start = start;
             String[] starts = start.split(":");
@@ -159,11 +163,6 @@ public class CalenderMatching {
             String[] ends = end.split(":");
             endHour = Integer.parseInt(ends[0]);
             endMin = Integer.parseInt(ends[1]);
-        }
-
-        Meeting(String start, String end) {
-            setStarting(start);
-            setEnding(end);
         }
 
         //        Return the ones that should be started first.

@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Nov 16, 2020
  * Questions: https://leetcode.com/problems/longest-mountain-in-array/

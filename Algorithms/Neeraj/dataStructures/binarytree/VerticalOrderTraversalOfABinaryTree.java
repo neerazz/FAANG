@@ -5,13 +5,13 @@ import java.util.stream.Collectors;
  * Crated on:  Apr 04, 2020
  */
 public class VerticalOrderTraversalOfABinaryTree {
-    public static void main(String[] args) {
-
-    }
-
     static TreeMap<Integer, List<int[]>> map;
     static Comparator<int[]> sort = (v1, v2) -> v1[0] == v2[0] ?
             Integer.compare(v1[1], v2[1]) : Integer.compare(v2[0], v1[0]);
+
+    public static void main(String[] args) {
+
+    }
 
     public static List<List<Integer>> verticalTraversal_rev2(TreeNode root) {
         map = new TreeMap<>();

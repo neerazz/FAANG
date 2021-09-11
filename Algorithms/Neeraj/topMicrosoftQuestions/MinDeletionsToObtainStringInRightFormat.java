@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 31, 2020
  * Questions: https://leetcode.com/discuss/interview-question/786237/
@@ -20,7 +17,7 @@ public class MinDeletionsToObtainStringInRightFormat {
             if (c == 'A') a++;
         }
 //        Initialize try deleting a's or b's, Take min as we need minimum value.
-        int deletions = Math.min(a, len-a), b = 0;
+        int deletions = Math.min(a, len - a), b = 0;
         for (char c : s.toCharArray()) {
             if (c == 'B') {
                 deletions = Math.min(deletions, a + b);

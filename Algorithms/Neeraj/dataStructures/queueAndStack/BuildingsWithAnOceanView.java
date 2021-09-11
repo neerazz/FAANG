@@ -13,14 +13,14 @@ public class BuildingsWithAnOceanView {
 //         0: heigth, 1: idx
         Stack<int[]> stack = new Stack<>();
         int len = heights.length;
-        for(int i=len-1; i>=0; i--){
-            if(stack.isEmpty() || stack.peek()[0] < heights[i]){
+        for (int i = len - 1; i >= 0; i--) {
+            if (stack.isEmpty() || stack.peek()[0] < heights[i]) {
                 stack.add(new int[]{heights[i], i});
             }
         }
         int[] result = new int[stack.size()];
-        int i=0;
-        while(!stack.isEmpty()){
+        int i = 0;
+        while (!stack.isEmpty()) {
             result[i++] = stack.pop()[1];
         }
         return result;

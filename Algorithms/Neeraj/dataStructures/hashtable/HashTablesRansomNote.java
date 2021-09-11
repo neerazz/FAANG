@@ -10,19 +10,19 @@ public class HashTablesRansomNote {
     }
 
     static void checkMagazine(String[] magazine, String[] note) {
-        HashMap<String,Integer> map = new HashMap<>();
+        HashMap<String, Integer> map = new HashMap<>();
         for (String s : magazine) {
-            map.put(s,map.getOrDefault(s,0)+1);
+            map.put(s, map.getOrDefault(s, 0) + 1);
         }
         for (String s : note) {
-            if (map.containsKey(s)){
+            if (map.containsKey(s)) {
 //                If the key is present more than once then reduce the count, or else remove teh key from map.
-                if (map.get(s) > 1){
-                    map.put(s,map.get(s)-1);
-                }else {
+                if (map.get(s) > 1) {
+                    map.put(s, map.get(s) - 1);
+                } else {
                     map.remove(s);
                 }
-            }else {
+            } else {
                 System.out.println("No");
                 return;
             }

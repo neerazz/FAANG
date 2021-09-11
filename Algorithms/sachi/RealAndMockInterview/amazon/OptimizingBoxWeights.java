@@ -1,11 +1,6 @@
 package RealAndMockInterview.amazon;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class OptimizingBoxWeights {
@@ -26,9 +21,11 @@ public class OptimizingBoxWeights {
         Collections.reverse(res);
         return res;
     }
+
     public static List<String> splitWords(String s) {
         return s.isEmpty() ? List.of() : Arrays.asList(s.split(" "));
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Integer> arr = splitWords(scanner.nextLine()).stream().map(Integer::parseInt).collect(Collectors.toList());

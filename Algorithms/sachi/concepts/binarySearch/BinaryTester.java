@@ -71,14 +71,15 @@ public class BinaryTester {
             //Find Actual
             int actual = binarySearch.closestValue(arr, target);
             //Check
-            if (!twoPossiblities &&  expected != actual) {
+            if (!twoPossiblities && expected != actual) {
                 System.out.println("Failed for Input -> \n" + Arrays.toString(arr));
                 System.out.println("Target: " + target + " Expected: " + expected + " Actual: " + actual);
                 break;
-            } else  if(actual != small || actual != large){
+            } else if (actual != small || actual != large) {
                 System.out.println("Failed for Input -> \n" + Arrays.toString(arr));
                 System.out.println("Target: " + target + " Expected: " + expected + " Actual: " + actual);
-                break;            }
+                break;
+            }
         }
     }
 

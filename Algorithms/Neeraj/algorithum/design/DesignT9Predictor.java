@@ -8,7 +8,7 @@ import java.util.Set;
  */
 public class DesignT9Predictor {
     public static void main(String[] args) {
-        T9Predictor t9Predictor = new T9Predictor(new String[]{"mane", "name", "oboe", "ocndabc","oandab","mcoefg","nazzz","abcdef","adb"});
+        T9Predictor t9Predictor = new T9Predictor(new String[]{"mane", "name", "oboe", "ocndabc", "oandab", "mcoefg", "nazzz", "abcdef", "adb"});
         System.out.println(t9Predictor.words("6263"));
         System.out.println(t9Predictor.words("626"));
         System.out.println(t9Predictor.words("62"));

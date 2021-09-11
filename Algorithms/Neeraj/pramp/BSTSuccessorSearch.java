@@ -49,7 +49,7 @@ public class BSTSuccessorSearch {
     }
 
     static class BinarySearchTree {
-        
+
         Node root;
 
         Node findInOrderSuccessor(Node inputNode) {

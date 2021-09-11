@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Jan 16, 2021
@@ -10,10 +10,10 @@ public class SecretFruitList {
 
     public static void main(String[] args) {
         System.out.println(matchSecretLists(Arrays.asList(
-                Arrays.asList("apple", "apple")),
+                        Arrays.asList("apple", "apple")),
                 Arrays.asList("apple", "apple")));
         System.out.println(matchSecretLists(Arrays.asList(
-                Arrays.asList("anything")),
+                        Arrays.asList("anything")),
                 Arrays.asList("apple", "apple", "apple", "banana")));
     }
 

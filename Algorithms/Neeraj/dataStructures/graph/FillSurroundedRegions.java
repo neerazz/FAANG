@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Questions: Let A be a 2D array whose entries are either W or B.
@@ -6,6 +7,7 @@ import java.util.*;
  */
 public class FillSurroundedRegions {
     static int rows, cols;
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static void main(String[] args) {
         char[][] board = {
@@ -55,8 +57,6 @@ public class FillSurroundedRegions {
             dfs(board, row + dir[0], col + dir[1], visited);
         }
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static void fillSurroundedRegions(List<List<Character>> board) {
         int rows = board.size(), cols = rows > 0 ? board.get(0).size() : 0;

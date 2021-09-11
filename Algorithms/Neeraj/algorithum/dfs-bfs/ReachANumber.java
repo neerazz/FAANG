@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created on:  Dec 28, 2020
@@ -16,10 +16,10 @@ public class ReachANumber {
     public static int reachNumber(int target) {
         int k = 0;
         target = Math.abs(target);
-        while(target > 0){
+        while (target > 0) {
             target -= ++k;
         }
-        return target %2==0 ? k : k+1 + k%2;
+        return target % 2 == 0 ? k : k + 1 + k % 2;
     }
 
     public static int reachNumber_bruteForce(int target) {

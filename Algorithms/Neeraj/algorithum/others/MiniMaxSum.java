@@ -1,5 +1,3 @@
-
-
 /*
 https://www.hackerrank.com/challenges/mini-max-sum/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
  */
@@ -21,8 +19,8 @@ public class MiniMaxSum {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            min = Math.min(min, sum-arr[i]);
-            max = Math.max(max, sum-arr[i]);
+            min = Math.min(min, sum - arr[i]);
+            max = Math.max(max, sum - arr[i]);
         }
         System.out.println(min + " " + max);
     }

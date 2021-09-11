@@ -1,4 +1,3 @@
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,16 +19,16 @@ public class Pangrams {
     }
 
     static String pangrams(String s) {
-        if (s == null || s.length() < 26){
+        if (s == null || s.length() < 26) {
             return "not pangram";
         }
         Set<Character> characters = new HashSet<>();
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
-            if (Character.isAlphabetic(cur)){
-                if (Character.isUpperCase(cur)){
+            if (Character.isAlphabetic(cur)) {
+                if (Character.isUpperCase(cur)) {
                     characters.add(Character.toLowerCase(cur));
-                }else {
+                } else {
                     characters.add(cur);
                 }
             }

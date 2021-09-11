@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class RomanToInteger {
 
+    public static void main(String[] args) {
+        RomanToInteger romanToInteger = new RomanToInteger();
+        System.out.println(romanToInteger.romanToInt("LVIII"));
+    }
+
     public int romanToInt(String s) {
 
         int sol = 0;
@@ -39,11 +44,6 @@ public class RomanToInteger {
             }
         }
         return sol;
-    }
-
-    public static void main(String[] args) {
-        RomanToInteger romanToInteger = new RomanToInteger();
-        System.out.println(romanToInteger.romanToInt("LVIII"));
     }
 
 }

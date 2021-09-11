@@ -2,9 +2,6 @@
     Created on:  May 03, 2020
  */
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Questions: https://leetcode.com/problems/ransom-note/
  */

@@ -7,6 +7,8 @@ import java.util.Map;
  * Ref: https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
  */
 public class ArithmeticSlicesIiSubsequence {
+    static int total;
+
     public static void main(String[] args) {
 
     }
@@ -15,31 +17,30 @@ public class ArithmeticSlicesIiSubsequence {
         Map<String, Integer> dp = new HashMap<>();
         int len = nums.length;
         int total = 0;
-        for(int i=0; i<len; i++){
-            for(int j=i+1; j<len; j++){
-                total += helper(nums, j+1, nums[j], (long)nums[j] - nums[i], dp);
+        for (int i = 0; i < len; i++) {
+            for (int j = i + 1; j < len; j++) {
+                total += helper(nums, j + 1, nums[j], (long) nums[j] - nums[i], dp);
             }
         }
         return total;
     }
 
-    static int helper(int[] nums, int start, int pre, long diff, Map<String, Integer> dp){
+    static int helper(int[] nums, int start, int pre, long diff, Map<String, Integer> dp) {
         int len = nums.length;
-        if(start >= len) return 0;
+        if (start >= len) return 0;
         String key = start + " " + diff;
-        if(dp.containsKey(key)) return dp.get(key);
-        int cur =0;
+        if (dp.containsKey(key)) return dp.get(key);
+        int cur = 0;
         long expected = pre + diff;
-        for(int i=start; i<len; i++){
-            if(nums[i] == expected){
-                cur += helper(nums, i+1, nums[i], diff, dp)+1;
+        for (int i = start; i < len; i++) {
+            if (nums[i] == expected) {
+                cur += helper(nums, i + 1, nums[i], diff, dp) + 1;
             }
         }
         dp.put(key, cur);
         return cur;
     }
 
-    static int total;
     public static int numberOfArithmeticSlices_naive(int[] nums) {
         total = 0;
         int len = nums.length;

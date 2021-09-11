@@ -7,6 +7,13 @@ import java.util.Map;
 
 public class PartitionLabels {
 
+    public static void main(String[] args) {
+        PartitionLabels partitionLabels = new PartitionLabels();
+        //System.out.println(partitionLabels.partitionLabels("ababcbacadefegdehijhklij").toString());
+        //System.out.println(partitionLabels.partitionLabels("eccbbbbdec").toString());
+        System.out.println(partitionLabels.partitionLabels("caedbdedda").toString());
+    }
+
     public List<Integer> partitionLabels(String S) {
         List<Integer> sol = new ArrayList<>();
         if (S == null || S.length() == 0) return sol;
@@ -60,13 +67,6 @@ public class PartitionLabels {
             this.end = end;
         }
 
-    }
-
-    public static void main(String[] args) {
-        PartitionLabels partitionLabels = new PartitionLabels();
-        //System.out.println(partitionLabels.partitionLabels("ababcbacadefegdehijhklij").toString());
-        //System.out.println(partitionLabels.partitionLabels("eccbbbbdec").toString());
-        System.out.println(partitionLabels.partitionLabels("caedbdedda").toString());
     }
 
 }

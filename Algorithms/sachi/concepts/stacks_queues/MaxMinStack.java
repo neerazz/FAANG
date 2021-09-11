@@ -11,18 +11,6 @@ public class MaxMinStack {
 
     public class myStack {
 
-        public class MyPersonalStackClass {
-            private Integer val;
-            private Integer min;
-            private Integer max;
-
-            public MyPersonalStackClass(Integer val, Integer min, Integer max) {
-                this.val = val;
-                this.min = min;
-                this.max = max;
-            }
-        }
-
         Deque<MyPersonalStackClass> stack = new LinkedList<>();
 
         public void push(Integer x) {
@@ -55,6 +43,18 @@ public class MaxMinStack {
                 return stack.peek().max;
             } else {
                 return null;
+            }
+        }
+
+        public class MyPersonalStackClass {
+            private Integer val;
+            private Integer min;
+            private Integer max;
+
+            public MyPersonalStackClass(Integer val, Integer min, Integer max) {
+                this.val = val;
+                this.min = min;
+                this.max = max;
             }
         }
 

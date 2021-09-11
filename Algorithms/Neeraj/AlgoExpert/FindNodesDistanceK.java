@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Feb 25, 2021
@@ -30,16 +29,6 @@ public class FindNodesDistanceK {
 
     public static void main(String[] args) {
 
-    }
-
-    static class BinaryTree {
-        public int value;
-        public BinaryTree left = null;
-        public BinaryTree right = null;
-
-        public BinaryTree(int value) {
-            this.value = value;
-        }
     }
 
     public static List<Integer> findNodesDistanceK(BinaryTree tree, int target, int k) {
@@ -77,5 +66,15 @@ public class FindNodesDistanceK {
         map.put(node, parent);
         buildParent(node.left, node, map);
         buildParent(node.right, node, map);
+    }
+
+    static class BinaryTree {
+        public int value;
+        public BinaryTree left = null;
+        public BinaryTree right = null;
+
+        public BinaryTree(int value) {
+            this.value = value;
+        }
     }
 }

@@ -2,6 +2,12 @@ package leetcode.v1.medium;
 
 public class Atoi {
 
+    public static void main(String[] args) {
+        Atoi atoi = new Atoi();
+        int i = atoi.myAtoi("-91283472332");
+        System.out.println(i);
+    }
+
     public int myAtoi(String str) {
         long sol = 0;
         int sign = 0; //1 positive, -1 negative, 0 unset
@@ -30,12 +36,6 @@ public class Atoi {
         }
         sol = sign == 0 ? sol : sign * sol;
         return (int) sol;
-    }
-
-    public static void main(String[] args) {
-        Atoi atoi = new Atoi();
-        int i = atoi.myAtoi("-91283472332");
-        System.out.println(i);
     }
 
 }

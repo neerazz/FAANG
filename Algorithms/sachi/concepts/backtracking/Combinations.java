@@ -9,6 +9,11 @@ public class Combinations {
     int n;
     int k;
 
+    public static void main(String[] args) {
+        Combinations combinations = new Combinations();
+        System.out.println(combinations.combine(4, 2).toString());
+    }
+
     public void backtrack(int counter, LinkedList<Integer> curr) {
         if (curr.size() == k)
             output.add(new LinkedList<>(curr));
@@ -28,11 +33,6 @@ public class Combinations {
         this.k = k;
         backtrack(1, new LinkedList<>());
         return output;
-    }
-
-    public static void main(String[] args) {
-        Combinations combinations = new Combinations();
-        System.out.println(combinations.combine(4, 2).toString());
     }
 
 }

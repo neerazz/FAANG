@@ -74,34 +74,6 @@ public class TheSkylineProblem {
         return result;
     }
 
-    static class Building implements Comparable<Building> {
-        int height, point;
-        boolean isStart;
-
-        Building(int height, int point, boolean isStart) {
-            this.height = height;
-            this.point = point;
-            this.isStart = isStart;
-        }
-
-        @Override
-        public int compareTo(Building that) {
-            if (this.point == that.point) {
-//                 If both of that are starting, then the one with more height comes first
-                if (this.isStart && that.isStart) {
-                    return Integer.compare(that.height, this.height);
-                } else if (!this.isStart && !that.isStart) {
-//                     If both are ending then that one with more height comes first
-                    return Integer.compare(this.height, that.height);
-                } else {
-//                     if one is starting and other is ending, then the one with starting comes first
-                    return this.isStart ? -1 : 1;
-                }
-            }
-            return Integer.compare(this.point, that.point);
-        }
-    }
-
     public static List<List<Integer>> getSkyline_rev(int[][] buildings) {
         List<Point> list = new ArrayList<>();
         for (int i = 0; i < buildings.length; i++) {
@@ -128,47 +100,6 @@ public class TheSkylineProblem {
             }
         }
         return result;
-    }
-
-    static class Point implements Comparable<Point> {
-        int id, point, height, start;
-
-        //         start: 0 for start, 1 for end
-        public Point(int id, int point, int height, int start) {
-            this.id = id;
-            this.point = point;
-            this.height = height;
-            this.start = start;
-        }
-
-        public int compareTo(Point that) {
-            if (point == that.point) {
-                if (start == that.start) {
-                    if (start == 0) {
-                        return Integer.compare(that.height, height);
-                    } else {
-                        return Integer.compare(height, that.height);
-                    }
-                } else {
-                    return Integer.compare(start, that.start);
-                }
-            }
-            return Integer.compare(point, that.point);
-        }
-//        Sorting: Current point, if same then:
-//          if both are starting then bigger height should be first,
-//          if both are ending then smaller height should be first,
-//          if one start and one end is compared then the starting should be taken
-
-        @Override
-        public String toString() {
-            return "Point{" +
-                    "id=" + id +
-                    ", point=" + point +
-                    ", height=" + height +
-                    ", start=" + start +
-                    '}';
-        }
     }
 
     public static List<List<Integer>> getSkyline_elegant(int[][] buildings) {
@@ -236,6 +167,75 @@ public class TheSkylineProblem {
             }
         }
         return maxHeight;
+    }
+
+    static class Building implements Comparable<Building> {
+        int height, point;
+        boolean isStart;
+
+        Building(int height, int point, boolean isStart) {
+            this.height = height;
+            this.point = point;
+            this.isStart = isStart;
+        }
+
+        @Override
+        public int compareTo(Building that) {
+            if (this.point == that.point) {
+//                 If both of that are starting, then the one with more height comes first
+                if (this.isStart && that.isStart) {
+                    return Integer.compare(that.height, this.height);
+                } else if (!this.isStart && !that.isStart) {
+//                     If both are ending then that one with more height comes first
+                    return Integer.compare(this.height, that.height);
+                } else {
+//                     if one is starting and other is ending, then the one with starting comes first
+                    return this.isStart ? -1 : 1;
+                }
+            }
+            return Integer.compare(this.point, that.point);
+        }
+    }
+
+    static class Point implements Comparable<Point> {
+        int id, point, height, start;
+
+        //         start: 0 for start, 1 for end
+        public Point(int id, int point, int height, int start) {
+            this.id = id;
+            this.point = point;
+            this.height = height;
+            this.start = start;
+        }
+
+        public int compareTo(Point that) {
+            if (point == that.point) {
+                if (start == that.start) {
+                    if (start == 0) {
+                        return Integer.compare(that.height, height);
+                    } else {
+                        return Integer.compare(height, that.height);
+                    }
+                } else {
+                    return Integer.compare(start, that.start);
+                }
+            }
+            return Integer.compare(point, that.point);
+        }
+//        Sorting: Current point, if same then:
+//          if both are starting then bigger height should be first,
+//          if both are ending then smaller height should be first,
+//          if one start and one end is compared then the starting should be taken
+
+        @Override
+        public String toString() {
+            return "Point{" +
+                    "id=" + id +
+                    ", point=" + point +
+                    ", height=" + height +
+                    ", start=" + start +
+                    '}';
+        }
     }
 }
 

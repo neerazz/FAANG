@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /*
 https://leetcode.com/explore/learn/card/trie/149/practical-application-ii/1056/
@@ -127,14 +130,6 @@ public class WordSearchII {
         }
     }
 
-    static class Trie {
-        Trie[] child = new Trie[26];
-        boolean isEnd = false;
-
-        public Trie() {
-        }
-    }
-
     public static List<String> findWords_Rev1(char[][] board, String[] words) {
         rows = board.length;
         cols = board[0].length;
@@ -242,5 +237,13 @@ public class WordSearchII {
                     findWords(board, words, i, j - 1, row, column, index + 1, integers);
         }
         return false;
+    }
+
+    static class Trie {
+        Trie[] child = new Trie[26];
+        boolean isEnd = false;
+
+        public Trie() {
+        }
     }
 }

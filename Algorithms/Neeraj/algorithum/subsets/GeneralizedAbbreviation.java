@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Created on:  Oct 06, 2020
@@ -51,6 +54,16 @@ public class GeneralizedAbbreviation {
         return str + (count == 0 ? "" : count);
     }
 
+    public static void main(String[] args) {
+        System.out.println("****************************** Solution 1 *************************************");
+        System.out.println(generateGeneralizedAbbreviation("BAT"));
+        System.out.println(generateGeneralizedAbbreviation("code"));
+
+        System.out.println("****************************** Solution 2 *************************************");
+        System.out.println(generateGeneralizedAbbreviation_recursion("BAT"));
+        System.out.println(generateGeneralizedAbbreviation_recursion("code"));
+    }
+
     static class AbbreviateWord {
         StringBuilder sb;
         int start, count;
@@ -60,15 +73,5 @@ public class GeneralizedAbbreviation {
             this.start = start;
             this.count = count;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("****************************** Solution 1 *************************************");
-        System.out.println(generateGeneralizedAbbreviation("BAT"));
-        System.out.println(generateGeneralizedAbbreviation("code"));
-
-        System.out.println("****************************** Solution 2 *************************************");
-        System.out.println(generateGeneralizedAbbreviation_recursion("BAT"));
-        System.out.println(generateGeneralizedAbbreviation_recursion("code"));
     }
 }

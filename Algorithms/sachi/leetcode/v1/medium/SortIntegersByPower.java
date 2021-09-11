@@ -1,14 +1,11 @@
 package leetcode.v1.medium;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class SortIntegersByPower {
 
     static Map<Integer, Integer> map = new HashMap<>();
+    private static Map<Integer, Integer> cache = new HashMap<>();
 
     public static void main(String[] args) {
 
@@ -22,7 +19,6 @@ public class SortIntegersByPower {
         end = System.currentTimeMillis();
         System.out.println("Cool Sol: " + String.valueOf(end - start));
     }
-
 
     public static int getKth(int lo, int hi, int k) {
         Integer[] arr = new Integer[hi - lo + 1];
@@ -51,8 +47,6 @@ public class SortIntegersByPower {
         map.put(x, ++v);
         return v;
     }
-
-    private static Map<Integer, Integer> cache = new HashMap<>();
 
     public static int getCoolKth(int lo, int hi, int k) {
         cache.put(1, 0);

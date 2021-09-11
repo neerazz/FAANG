@@ -55,6 +55,7 @@ public class MaximumDepthOfNaryTree {
         }
         return height;
     }
+
     static class Node {
         Integer val;
         List<Node> children;

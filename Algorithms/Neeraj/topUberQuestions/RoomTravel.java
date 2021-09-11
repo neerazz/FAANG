@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Nov 07, 2020
  * Questions: https://app.codesignal.com/arcade/intro/level-2/xskq4ZxLyqQMCLshr
@@ -30,19 +27,19 @@ public class RoomTravel {
     static int matrixElementsSum(int[][] matrix) {
         int rows = matrix.length, cols = rows > 0 ? matrix[0].length : 0;
         boolean[][] dont = new boolean[rows][cols];
-        for(int r=0; r<rows; r++){
-            for(int c=0; c<cols; c++){
-                if(matrix[r][c] == 0 || (r>0 && dont[r-1][c])){
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (matrix[r][c] == 0 || (r > 0 && dont[r - 1][c])) {
                     dont[r][c] = true;
                 }
             }
         }
         // System.out.println(Arrays.deepToString(dont));
-        int sum =0;
-        for(int r=0; r<rows; r++){
-            for(int c=0; c<cols; c++){
-                if(matrix[r][c] != 0 && !dont[r][c]){
-                    sum += dfs(matrix, r,c,rows, cols, dont);
+        int sum = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (matrix[r][c] != 0 && !dont[r][c]) {
+                    sum += dfs(matrix, r, c, rows, cols, dont);
                 }
             }
         }

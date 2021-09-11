@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Created on:  Sep 10, 2021
  * Ref: https://leetcode.com/problems/majority-element/

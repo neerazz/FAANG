@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Dec 08, 2020
  * Questions: https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/

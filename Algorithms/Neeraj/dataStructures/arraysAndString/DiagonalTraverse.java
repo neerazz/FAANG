@@ -48,12 +48,12 @@ public class DiagonalTraverse {
     }
 
     public static int[] findDiagonalOrder(int[][] matrix) {
-        if (matrix == null || matrix.length <= 0){
+        if (matrix == null || matrix.length <= 0) {
             return new int[0];
         }
         int rows = matrix.length;
         int cols = matrix[0].length;
-        int[] result = new int[rows*cols];
+        int[] result = new int[rows * cols];
         int resultIndex = 0;
         ArrayList<Integer> digits = new ArrayList<>();
 
@@ -72,7 +72,7 @@ public class DiagonalTraverse {
 //                All even diagonal should travel up.
                 Collections.reverse(digits);
             }
-            for (int num : digits){
+            for (int num : digits) {
                 result[resultIndex++] = num;
             }
             digits.clear();

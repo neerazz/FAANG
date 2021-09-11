@@ -2,11 +2,6 @@
     Created on:  May 07, 2020
  */
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeSet;
-
 /**
  * Questions: https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/can-you-solve-it/
  */

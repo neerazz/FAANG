@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 19, 2020
  * Questions: https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/

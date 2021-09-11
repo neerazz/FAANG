@@ -92,6 +92,7 @@ public class SerializeAndDeserializeNaryTree {
             return nodes;
         }
     }
+
     static class Node {
         Integer val;
         List<Node> children;

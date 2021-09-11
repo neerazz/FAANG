@@ -7,6 +7,8 @@ import java.util.Arrays;
 
 public class TheMazeII {
 
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
     public static void main(String[] args) {
 
     }
@@ -18,8 +20,6 @@ public class TheMazeII {
         helper(start, maze, distance);
         return distance[dest[0]][dest[1]] == Integer.MAX_VALUE ? -1 : distance[dest[0]][dest[0]];
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     private static void helper(int[] cur, int[][] maze, int[][] dists) {
         for (int[] dir : dirs) {

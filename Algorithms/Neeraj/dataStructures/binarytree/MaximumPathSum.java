@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class MaximumPathSum {
     static int maxSum;
 

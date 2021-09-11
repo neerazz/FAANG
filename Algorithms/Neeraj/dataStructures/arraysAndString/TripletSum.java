@@ -11,47 +11,44 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-class TripletSum
-{
-    public static void main (String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+class TripletSum {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	    String inputLine[] = br.readLine().trim().split(" ");
-	    int n = Integer.parseInt(inputLine[0]);
-	    int X = Integer.parseInt(inputLine[1]);
-	    int A[] = new int[n];
-	    inputLine = br.readLine().trim().split(" ");
-	    for(int i=0; i<n; i++){
-	        A[i] = Integer.parseInt(inputLine[i]);
-	    }
-	    Solution ob=new Solution();
-	    boolean ans = ob.find3Numbers(A, n, X);
-	    System.out.println(ans?1:0);
-	}
-    static class Solution
-    {
+        String inputLine[] = br.readLine().trim().split(" ");
+        int n = Integer.parseInt(inputLine[0]);
+        int X = Integer.parseInt(inputLine[1]);
+        int A[] = new int[n];
+        inputLine = br.readLine().trim().split(" ");
+        for (int i = 0; i < n; i++) {
+            A[i] = Integer.parseInt(inputLine[i]);
+        }
+        Solution ob = new Solution();
+        boolean ans = ob.find3Numbers(A, n, X);
+        System.out.println(ans ? 1 : 0);
+    }
+
+    static class Solution {
         public static boolean find3Numbers(int arr[], int n, int sum) {
-            for(int i=0;i<n-1;i++){
-                for(int j=i+1;j<n;j++){
-                    if(arr[i]>arr[j]){
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    if (arr[i] > arr[j]) {
                         int temp = arr[i];
                         arr[i] = arr[j];
                         arr[j] = temp;
                     }
                 }
             }
-            for(int i=0;i<n-1;i++){
-                int low = i+1;
-                int high = n-1;
+            for (int i = 0; i < n - 1; i++) {
+                int low = i + 1;
+                int high = n - 1;
                 int count = 0;
-                while(low<high){
-                    if(arr[low]+arr[high]+arr[i] == sum){
+                while (low < high) {
+                    if (arr[low] + arr[high] + arr[i] == sum) {
                         return true;
-                    }
-                    else if(arr[low]+arr[high]+arr[i] > sum){
+                    } else if (arr[low] + arr[high] + arr[i] > sum) {
                         high--;
-                    }
-                    else{
+                    } else {
                         low++;
                     }
                 }

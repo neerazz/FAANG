@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Jan 17, 2021
@@ -9,12 +8,12 @@ import java.io.*;
 
 public class FindCriticalNodes {
 
+    static int dis;
+
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(findCriticalNodes(7, new int[][]{{0, 1}, {0, 2}, {1, 3}, {2, 3}, {2, 5}, {5, 6}, {3, 4}})) + " = [2,3,5]");
         System.out.println(Arrays.toString(findCriticalNodes(5, new int[][]{{0, 1}, {1, 2}, {3, 1}, {4, 1}, {4, 3}, {2, 0}})) + " = [1]");
     }
-
-    static int dis;
 
     public static int[] findCriticalNodes(int n, int[][] cons) {
         dis = 0;

@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Jan 16, 2021
@@ -7,6 +9,9 @@ import java.util.*;
 
 public class HighestTenure {
 
+
+    private static double maxAvg;
+    private static Team maxTeam;
 
     public static void main(String[] args) {
         Team president = new Team(20);
@@ -17,9 +22,6 @@ public class HighestTenure {
         president.reporties.addAll(Arrays.asList(t1, t2));
         System.out.println(highestTenure(president));
     }
-
-    private static double maxAvg;
-    private static Team maxTeam;
 
     private static Team highestTenure(Team head) {
         maxAvg = 0;

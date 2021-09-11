@@ -47,16 +47,6 @@ class CourseScheduleII {
         return new int[0];
     }
 
-    static class Course {
-        int val;
-        int indegree;
-        Set<Course> dep = new HashSet<>();
-
-        public Course(int val) {
-            this.val = val;
-        }
-    }
-
     public static int[] findOrder(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         int[] indegree = new int[numCourses];
@@ -139,6 +129,16 @@ class CourseScheduleII {
             }
         }
         stack.add(course.val);
+    }
+
+    static class Course {
+        int val;
+        int indegree;
+        Set<Course> dep = new HashSet<>();
+
+        public Course(int val) {
+            this.val = val;
+        }
     }
 
     static class Graph {

@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 13, 2021
  * Questions: https://leetcode.com/discuss/general-discussion/680341/Divisibility-of-Strings

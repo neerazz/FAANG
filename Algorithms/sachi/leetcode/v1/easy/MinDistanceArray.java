@@ -6,8 +6,8 @@ public class MinDistanceArray {
 
 
     public static void main(String[] args) {
-        int[] arr1 = {1,4,2,3};
-        int[] arr2 = {-4,-3,6,10,20,30};
+        int[] arr1 = {1, 4, 2, 3};
+        int[] arr2 = {-4, -3, 6, 10, 20, 30};
         int d = 3;
         System.out.println(findTheDistanceValue(arr1, arr2, d));
     }

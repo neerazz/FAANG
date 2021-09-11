@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created on:  Jan 18, 2021
@@ -11,19 +10,20 @@ public class MaxNumberOfKSumPairs {
     public static void main(String[] args) {
 
     }
+
     public static int maxOperations(int[] nums, int k) {
         Arrays.sort(nums);
-        int start =0, end = nums.length-1;
-        int count =0;
-        while(start < end){
+        int start = 0, end = nums.length - 1;
+        int count = 0;
+        while (start < end) {
             int sum = nums[start] + nums[end];
-            if(sum == k){
+            if (sum == k) {
                 start++;
                 end--;
                 count++;
-            }else if(sum < k){
+            } else if (sum < k) {
                 start++;
-            }else{
+            } else {
                 end--;
             }
         }

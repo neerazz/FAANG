@@ -1,5 +1,3 @@
-
-
 /**
  * Created on:  Jul 16, 2021
  * Ref: https://www.facebookrecruiting.com/portal/coding_practice_question/?problem_id=951929261870357

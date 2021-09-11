@@ -78,7 +78,7 @@ public class Basics {
         System.out.println("rand.nextDouble()=" + rand.nextDouble());
         System.out.println("rand.nextBoolean()=" + rand.nextBoolean());
 
-        char[] C = new char[]{'a' ,'b'};
-        int[] a = new int[] {12,15};
+        char[] C = new char[]{'a', 'b'};
+        int[] a = new int[]{12, 15};
     }
 }

@@ -1,10 +1,12 @@
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * Created on:  Sep 09, 2021
  * Ref: https://leetcode.com/problems/largest-plus-sign/
  */
 public class LargestPlusSign {
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
     public static void main(String[] args) {
 
     }
@@ -26,8 +28,6 @@ public class LargestPlusSign {
         }
         return max;
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     static int dfs(int[][] grid, int row, int col, int n) {
         if (grid[row][col] == 0) return 0;

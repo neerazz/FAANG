@@ -1,4 +1,4 @@
-##Leet Code [Explore](https://leetcode.com/explore/learn/)
+## Leet Code [Explore](https://leetcode.com/explore/learn/)
 
 | **#** | **Title** | **Acceptance** | **Difficulty** |
 | --- | --- | --- | --- |

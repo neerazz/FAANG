@@ -1,6 +1,8 @@
 import java.util.*;
 
 class ThreeSum {
+    static List<Integer[]> output;
+
     public static void main(String[] args) {
         System.out.println("*****************    Method 1 *****************");
         threeNumberSum(new int[]{12, 3, 1, 2, -6, 5, -8, 6}, 0).forEach(array -> System.out.println(Arrays.toString(array)));
@@ -11,8 +13,6 @@ class ThreeSum {
         System.out.println("**********************************");
         threeNumberSum_method2(new int[]{12, 3, 1, 2, -6, 5, 0, -8, -1, 6}, 0).forEach(array -> System.out.println(Arrays.toString(array)));
     }
-
-    static List<Integer[]> output;
 
     public static List<Integer[]> threeNumberSum_method2(int[] array, int targetSum) {
         output = new ArrayList<>();
@@ -27,7 +27,7 @@ class ThreeSum {
             List<Integer[]> result = new ArrayList<>();
             if (getTwoSum(array, start, targetSum, result)) {
                 for (Integer[] val : result) {
-                    Integer[] temp = Arrays.copyOf(vals,size);
+                    Integer[] temp = Arrays.copyOf(vals, size);
                     temp[size - 2] = val[0];
                     temp[size - 1] = val[1];
                     output.add(temp);
@@ -37,8 +37,8 @@ class ThreeSum {
         }
         for (int i = start; i < size; i++) {
             int cur = array[i];
-            Integer[] temp = Arrays.copyOf(vals,size);
-            temp[size-n] = cur;
+            Integer[] temp = Arrays.copyOf(vals, size);
+            temp[size - n] = cur;
             nSumHelper(array, i + 1, n - 1, targetSum - cur, temp);
         }
     }

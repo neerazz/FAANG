@@ -1,13 +1,6 @@
 package topQuestions.amazon;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.*;
 
 // "static void main" must be defined in a public class.
 public class TopWords {

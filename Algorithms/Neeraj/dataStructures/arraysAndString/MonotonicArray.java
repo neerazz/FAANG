@@ -18,7 +18,7 @@ public class MonotonicArray {
         System.out.println(isMonotonic_elegent(new int[]{-1, -5, -10, -1100, -1100, -1101, -1102, -9001}));
     }
 
-//    Time: N, Space: 1
+    //    Time: N, Space: 1
     public static boolean isMonotonic_elegent(int[] array) {
         if (array.length < 2) return true;
         boolean nonIncreasing = true, nonDecreasing = true;
@@ -32,16 +32,17 @@ public class MonotonicArray {
         }
         return true;
     }
+
     public static boolean isMonotonic(int[] A) {
         int len = A.length;
-        if(len ==0) return true;
+        if (len == 0) return true;
         boolean[] increasing = new boolean[len], decreasing = new boolean[len];
         increasing[0] = decreasing[0] = true;
-        for(int i =1; i < len ; i++){
-            int pre = A[i-1], cur = A[i];
-            if(pre >= cur) decreasing[i] = decreasing[i-1];
-            if(pre <= cur) increasing[i] = increasing[i-1];
+        for (int i = 1; i < len; i++) {
+            int pre = A[i - 1], cur = A[i];
+            if (pre >= cur) decreasing[i] = decreasing[i - 1];
+            if (pre <= cur) increasing[i] = increasing[i - 1];
         }
-        return increasing[len-1] || decreasing[len-1];
+        return increasing[len - 1] || decreasing[len - 1];
     }
 }

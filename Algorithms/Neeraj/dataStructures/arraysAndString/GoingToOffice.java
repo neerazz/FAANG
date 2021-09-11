@@ -17,18 +17,18 @@ public class GoingToOffice {
         double classic_per_minute = sr.nextInt();
         double classic_per_kms = sr.nextInt();
 
-        double onlinePrice =0.0;
-        if(kms <= online_base_kms){
+        double onlinePrice = 0.0;
+        if (kms <= online_base_kms) {
             onlinePrice += online_base_price;
-        }else{
+        } else {
             onlinePrice += online_base_price + ((kms - online_base_kms) * online_rem_price);
         }
 
-        double classicPrice = classic_base + Math.ceil((kms/classic_speed) * classic_per_minute) + (kms * classic_per_kms);
+        double classicPrice = classic_base + Math.ceil((kms / classic_speed) * classic_per_minute) + (kms * classic_per_kms);
 
-        if(onlinePrice <= classicPrice){
+        if (onlinePrice <= classicPrice) {
             System.out.println("Online Taxi");
-        }else{
+        } else {
             System.out.println("Classic Taxi");
         }
     }

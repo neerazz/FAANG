@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 16, 2021
  * Questions: https://aonecode.com/amazon-online-assessment-load-balancer

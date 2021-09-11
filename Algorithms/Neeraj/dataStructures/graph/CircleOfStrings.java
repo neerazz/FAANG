@@ -26,6 +26,16 @@ public class CircleOfStrings {
     }
 
     static class Solution {
+        private static void dfs(int node, HashMap<Integer, ArrayList<Integer>> graph, boolean[] hasAlpha, boolean[] visited) {
+
+            visited[node] = true;
+
+            for (Integer nbr : graph.get(node)) {
+                if (hasAlpha[nbr] && !visited[nbr]) dfs(nbr, graph, hasAlpha, visited);
+            }
+
+        }
+
         int isCircle(int N, String arr[]) {
 
             boolean[] hasAlpha = new boolean[26];
@@ -60,16 +70,6 @@ public class CircleOfStrings {
                 if (hasAlpha[i] && !visited[i]) return 0;
             }
             return 1;
-        }
-
-        private static void dfs(int node, HashMap<Integer, ArrayList<Integer>> graph, boolean[] hasAlpha, boolean[] visited) {
-
-            visited[node] = true;
-
-            for (Integer nbr : graph.get(node)) {
-                if (hasAlpha[nbr] && !visited[nbr]) dfs(nbr, graph, hasAlpha, visited);
-            }
-
         }
     }
 }

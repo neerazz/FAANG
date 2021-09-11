@@ -54,6 +54,7 @@ public class NaryTreePostorderTraversal {
         output.add(root.val);
         return output;
     }
+
     static class Node {
         Integer val;
         List<Node> children;

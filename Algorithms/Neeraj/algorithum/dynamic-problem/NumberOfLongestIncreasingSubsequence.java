@@ -1,5 +1,4 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created on:  Oct 30, 2020
@@ -10,7 +9,7 @@ public class NumberOfLongestIncreasingSubsequence {
 
     public static void main(String[] args) {
         System.out.println(findNumberOfLIS(new int[]{1, 2, 4, 3, 5, 4, 7, 2}));
-        System.out.println(findNumberOfLIS(new int[]{2,2,2,2,2}));
+        System.out.println(findNumberOfLIS(new int[]{2, 2, 2, 2, 2}));
     }
 
     public static int findNumberOfLIS(int[] nums) {

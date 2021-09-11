@@ -16,33 +16,32 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-class CardRotation
-{
-    public static void main(String args[])throws IOException
-    {
-        
+class CardRotation {
+    public static void main(String args[]) throws IOException {
+
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         String input_line[] = read.readLine().trim().split("\\s+");
-        int  N = Integer.parseInt(input_line[0]);
+        int N = Integer.parseInt(input_line[0]);
         Solution obj = new Solution();
         ArrayList<Integer> ans = new ArrayList<Integer>();
         ans = obj.rotation(N);
-        for(int i: ans)
+        for (int i : ans)
             System.out.print(i + " ");
         System.out.println();
     }
-    static class Solution{
 
-        ArrayList<Integer> rotation(int n){
+    static class Solution {
+
+        ArrayList<Integer> rotation(int n) {
             int[] res = new int[n];
 
             int j = 0;
-            for(int i = 1; i <= n; i++){
-                int count =- 1;
-                while(true){
-                    if(res[j%n] == 0) count++;
-                    if(count == i){
-                        res[j%n] = i;
+            for (int i = 1; i <= n; i++) {
+                int count = -1;
+                while (true) {
+                    if (res[j % n] == 0) count++;
+                    if (count == i) {
+                        res[j % n] = i;
                         break;
                     }
                     j++;
@@ -50,7 +49,7 @@ class CardRotation
             }
 
             ArrayList<Integer> ans = new ArrayList<>();
-            for(int i = 0; i < n; i++){
+            for (int i = 0; i < n; i++) {
                 ans.add(res[i]);
             }
 

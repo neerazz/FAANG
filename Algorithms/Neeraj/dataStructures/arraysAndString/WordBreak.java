@@ -1,6 +1,8 @@
 import java.util.*;
 
 class WordBreak {
+    Map<String, Boolean> memo = new HashMap<>();
+
     public static void main(String[] args) {
         System.out.println(wordBreak("bb", new ArrayList<>(Arrays.asList(
                 "a", "b", "bbb", "bbbb"
@@ -8,27 +10,6 @@ class WordBreak {
         System.out.println(wordBreak("cbca", new ArrayList<>(Arrays.asList(
                 "bc", "ca"
         ))));
-    }
-
-    public boolean wordBreak_rev1(String s, List<String> wordDict) {
-        HashSet<String> set = new HashSet<>(wordDict);
-        return helper_2(s,set);
-    }
-    Map<String, Boolean> memo = new HashMap<>();
-    private boolean helper_2(String s, Set<String> set){
-        if(s.length() == 0 || set.contains(s)) return true;
-        if(memo.containsKey(s)) return memo.get(s);
-        String cur = "";
-        boolean op = false;
-        for(int i =0; i< s.length(); i++){
-            cur += s.charAt(i);
-            if(set.contains(cur) && helper_2(s.substring(i+1), set)){
-                op = true;
-                break;
-            }
-        }
-        memo.put(s,op);
-        return op;
     }
 
     public static boolean wordBreak(String s, List<String> wordDict) {
@@ -47,5 +28,26 @@ class WordBreak {
             }
         }
         return memo[start] = false;
+    }
+
+    public boolean wordBreak_rev1(String s, List<String> wordDict) {
+        HashSet<String> set = new HashSet<>(wordDict);
+        return helper_2(s, set);
+    }
+
+    private boolean helper_2(String s, Set<String> set) {
+        if (s.length() == 0 || set.contains(s)) return true;
+        if (memo.containsKey(s)) return memo.get(s);
+        String cur = "";
+        boolean op = false;
+        for (int i = 0; i < s.length(); i++) {
+            cur += s.charAt(i);
+            if (set.contains(cur) && helper_2(s.substring(i + 1), set)) {
+                op = true;
+                break;
+            }
+        }
+        memo.put(s, op);
+        return op;
     }
 }

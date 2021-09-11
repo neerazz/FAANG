@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created on:  May 25, 2020
  * Questions: https://leetcode.com/problems/uncrossed-lines/

@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class PrisonCellsAfterNDays {
 
+    public static void main(String[] args) {
+        PrisonCellsAfterNDays prisonCellsAfterNDays = new PrisonCellsAfterNDays();
+        System.out.println(Arrays.toString(prisonCellsAfterNDays.prisonAfterNDays(new int[]{0, 1, 0, 1, 1, 0, 0, 1}, 7)));
+    }
+
     public int[] prisonAfterNDays(int[] cells, int N) {
         for (int i = 0; i < N; i++) {
             int prev = 0;
@@ -19,11 +24,6 @@ public class PrisonCellsAfterNDays {
             }
         }
         return cells;
-    }
-
-    public static void main(String[] args) {
-        PrisonCellsAfterNDays prisonCellsAfterNDays = new PrisonCellsAfterNDays();
-        System.out.println(Arrays.toString(prisonCellsAfterNDays.prisonAfterNDays(new int[]{0, 1, 0, 1, 1, 0, 0, 1}, 7)));
     }
 
 }

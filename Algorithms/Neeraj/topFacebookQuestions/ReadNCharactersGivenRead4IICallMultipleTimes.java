@@ -4,13 +4,18 @@
  */
 public class ReadNCharactersGivenRead4IICallMultipleTimes {
 
+    public char[] buf4 = new char[4];
+    private int buf4Pointer = 0;
+    private int buf4Counter = 0;
+
     public static void main(String[] args) {
 
     }
 
-    private int buf4Pointer = 0;
-    private int buf4Counter = 0;
-    public char[] buf4 = new char[4];
+    private static int read4(char[] buf4) {
+//        This api is provided, this return the number of characters that was read.
+        return 0;
+    }
 
     public int read(char[] buf, int n) {
         int cur = 0;
@@ -29,10 +34,5 @@ public class ReadNCharactersGivenRead4IICallMultipleTimes {
             if (buf4Pointer >= buf4Counter) buf4Pointer = 0;
         }
         return cur;
-    }
-
-    private static int read4(char[] buf4) {
-//        This api is provided, this return the number of characters that was read.
-        return 0;
     }
 }

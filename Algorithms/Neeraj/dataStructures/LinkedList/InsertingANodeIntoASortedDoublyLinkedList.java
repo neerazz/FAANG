@@ -15,7 +15,7 @@ public class InsertingANodeIntoASortedDoublyLinkedList {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String first = null;                // Reading input from STDIN
-        while((first = br.readLine()) != null){
+        while ((first = br.readLine()) != null) {
             String[] vals = first.split("\\s+");
             System.out.println(new BigInteger(vals[0]).add(new BigInteger(vals[1])));
         }
@@ -32,13 +32,13 @@ public class InsertingANodeIntoASortedDoublyLinkedList {
 
     static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
         DoublyLinkedListNode newNode = new DoublyLinkedListNode(data);
-        if(head == null) return newNode;
-        if(data < head.data){
+        if (head == null) return newNode;
+        if (data < head.data) {
             newNode.next = head;
             head.prev = newNode;
             return newNode;
-        }else{
-            DoublyLinkedListNode rec = sortedInsert(head.next,data);
+        } else {
+            DoublyLinkedListNode rec = sortedInsert(head.next, data);
             head.next = rec;
             rec.prev = head;
             return head;

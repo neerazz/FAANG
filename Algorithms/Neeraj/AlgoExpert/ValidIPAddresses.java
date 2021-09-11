@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created on:  Feb 18, 2021
@@ -10,12 +12,6 @@ public class ValidIPAddresses {
 
     public static void main(String[] args) {
 
-    }
-
-    public ArrayList<String> validIPAddresses(String str) {
-        if (str == null || str.length() < 4 || str.length() > 12) return new ArrayList<>();
-        Map<String, ArrayList<String>> memo = new HashMap<>();
-        return helper(str, 0, 4, memo);
     }
 
     private static ArrayList<String> helper(String str, int start, int k, Map<String, ArrayList<String>> memo) {
@@ -43,5 +39,11 @@ public class ValidIPAddresses {
         }
         memo.put(key, cur);
         return cur;
+    }
+
+    public ArrayList<String> validIPAddresses(String str) {
+        if (str == null || str.length() < 4 || str.length() > 12) return new ArrayList<>();
+        Map<String, ArrayList<String>> memo = new HashMap<>();
+        return helper(str, 0, 4, memo);
     }
 }

@@ -36,7 +36,7 @@ public class MaximumSlidingWindow {
 
     public static void main(String[] args) {
         //int[] sol = maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3);
-        int[] sol = maxSlidingWindow(new int[]{7,2,4}, 2);
+        int[] sol = maxSlidingWindow(new int[]{7, 2, 4}, 2);
         Util.print(sol);
     }
 }

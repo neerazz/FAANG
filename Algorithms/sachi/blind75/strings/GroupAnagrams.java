@@ -1,7 +1,6 @@
 package blind75.strings;
 
 import java.util.*;
-import java.util.List;
 
 
 /*
@@ -30,7 +29,7 @@ Output: [["a"]]
 public class GroupAnagrams {
 
     public static void main(String[] args) {
-        String[] input = new String[]{"eat","tea","tan","ate","nat","bat"};
+        String[] input = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
         System.out.println(groupAnagrams(input));
     }
 

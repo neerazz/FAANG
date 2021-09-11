@@ -1,6 +1,9 @@
 import java.util.*;
 
 class WordBreakII {
+    static Map<String, List<String>> memo_2 = new HashMap<>();
+    static Map<Integer, List<String>> memo;
+
     public static void main(String[] args) {
         System.out.println(wordBreak("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
         System.out.println(wordBreak_rev2("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog")));
@@ -11,8 +14,6 @@ class WordBreakII {
         System.out.println(wordBreak("a", Arrays.asList("b")));
         System.out.println(wordBreak_rev2("a", Arrays.asList("b")));
     }
-
-    static Map<String, List<String>> memo_2 = new HashMap<>();
 
     public static List<String> wordBreak_rev2(String s, List<String> wordDict) {
         return helper_2(s, new HashSet<>(wordDict));
@@ -37,8 +38,6 @@ class WordBreakII {
         memo_2.put(s, op);
         return op;
     }
-
-    static Map<Integer, List<String>> memo;
 
     public static List<String> wordBreak(String s, List<String> wordDict) {
         memo = new HashMap<>();

@@ -26,13 +26,13 @@ public class RotateArray {
         System.out.println("Answer is:" + Arrays.toString(nums) + " should be [5,6,7,1,2,3,4]");
     }
 
-//    Self solved. Time: O(N), space: O(K)
+    //    Self solved. Time: O(N), space: O(K)
     public static void rotate_elegent(int[] nums, int k) {
         int size = nums.length, noOfRotations = k % size;
         int[] newarray = new int[noOfRotations];
-        System.arraycopy(nums,size-noOfRotations,newarray,0,noOfRotations);
-        int start = size-noOfRotations-1;
-        for (int i = size-1; i >= noOfRotations; i--) {
+        System.arraycopy(nums, size - noOfRotations, newarray, 0, noOfRotations);
+        int start = size - noOfRotations - 1;
+        for (int i = size - 1; i >= noOfRotations; i--) {
             nums[i] = nums[start--];
         }
         System.arraycopy(newarray, 0, nums, 0, noOfRotations);

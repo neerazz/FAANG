@@ -9,11 +9,11 @@ public class BirthdayParty {
     public static void main(String[] args) {
         FastReader fr = new FastReader();
         int t = fr.nextInt();
-        for(int i=0; i<t; i++){
+        for (int i = 0; i < t; i++) {
             int n = fr.nextInt(), m = fr.nextInt();
-            if(m%n ==0){
+            if (m % n == 0) {
                 System.out.println("Yes");
-            }else{
+            } else {
                 System.out.println("No");
             }
         }

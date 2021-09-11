@@ -2,8 +2,6 @@
     Created on:  May 08, 2020
  */
 
-import java.util.Arrays;
-
 /**
  * Questions: https://leetcode.com/problems/check-if-it-is-a-straight-line/
  */

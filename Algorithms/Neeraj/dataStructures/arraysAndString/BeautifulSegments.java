@@ -47,7 +47,7 @@ public class BeautifulSegments {
     }
 
     private static boolean isBeautiful(int[] nums, int len) {
-        int mid1 = len / 2, mid2 = len/2, diff = 1;
+        int mid1 = len / 2, mid2 = len / 2, diff = 1;
         while (mid1 - diff >= 0) {
             if (nums[mid1 - 1] <= nums[mid1] && nums[mid2] > nums[mid2 + 1]) {
                 mid1--;

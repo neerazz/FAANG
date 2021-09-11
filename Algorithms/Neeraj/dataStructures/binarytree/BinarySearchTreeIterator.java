@@ -26,6 +26,7 @@ public class BinarySearchTreeIterator {
     public static void main(String[] args) {
         BSTIterator bstIterator = new BSTIterator(createTreeNode(new Integer[]{7, 3, 15, null, null, 9, 20}));
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -59,6 +60,7 @@ public class BinarySearchTreeIterator {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;
@@ -77,6 +79,7 @@ public class BinarySearchTreeIterator {
                     '}';
         }
     }
+
     static class BSTIterator {
 
         List<Integer> inorderList = new ArrayList<>();

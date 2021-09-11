@@ -2,12 +2,16 @@
     Created on:  Apr 28, 2020
  */
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Questions: https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/maahismathi/
  */
 public class Maahismathi {
+    static Map<Integer, Integer> memo = new HashMap<>();
+
     public static void main(String[] args) throws Exception {
 //        FastReader sr = new FastReader("C:\\Users\\bnira\\Downloads\\501534587c-In000.txt.clean.txt");
         FastReader sr = new FastReader();
@@ -27,7 +31,6 @@ public class Maahismathi {
         }
     }
 
-    static Map<Integer, Integer> memo = new HashMap<>();
     private static int getValue(int query, int[] golds) {
         if (memo.containsKey(query)) return memo.get(query);
         int len = golds.length, paidIdx = 0, paidAmt = 0;

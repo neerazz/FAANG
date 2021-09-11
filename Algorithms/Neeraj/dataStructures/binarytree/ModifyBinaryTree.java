@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Created on:  Sep 10, 2021
  * Ref: https://www.techiedelight.com/update-every-key-bst-contain-sum-greater-keys/
@@ -28,11 +26,11 @@ import java.util.*;
  * 38    33 24   10
  */
 public class ModifyBinaryTree {
+    static int sum = 0;
+
     public static void main(String[] args) {
 
     }
-
-    static int sum = 0;
 
     public static Node modify(Node root) {
         if (root == null) return null;

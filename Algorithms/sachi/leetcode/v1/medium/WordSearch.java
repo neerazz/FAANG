@@ -2,6 +2,17 @@ package leetcode.v1.medium;
 
 public class WordSearch {
 
+    public static void main(String[] args) {
+        char[][] matrix = {
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}
+        };
+        String word = "SEE";
+        WordSearch wordSearch = new WordSearch();
+        System.out.println(wordSearch.exist(matrix, word));
+    }
+
     public boolean exist(char[][] board, String word) {
 
         if (word == null || word.length() == 0) return false;
@@ -38,17 +49,6 @@ public class WordSearch {
         } else {
             return false;
         }
-    }
-
-    public static void main(String[] args) {
-        char[][] matrix = {
-                {'A', 'B', 'C', 'E'},
-                {'S', 'F', 'C', 'S'},
-                {'A', 'D', 'E', 'E'}
-        };
-        String word = "SEE";
-        WordSearch wordSearch = new WordSearch();
-        System.out.println(wordSearch.exist(matrix, word));
     }
 
 

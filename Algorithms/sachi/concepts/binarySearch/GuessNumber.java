@@ -1,7 +1,5 @@
 package concepts.binarySearch;
 
-import java.sql.SQLOutput;
-
 public class GuessNumber {
     static long guessed = 9999999999L;
 

@@ -1,12 +1,13 @@
 package leetcode.v1.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ThreeSumLC {
+
+    public static void main(String[] args) {
+        ThreeSumLC threeSumLC = new ThreeSumLC();
+        System.out.println(threeSumLC.threeSum(new int[]{3, 0, -2, -1, 1, 2}));
+    }
 
     public List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> sol = new HashSet<>();
@@ -28,10 +29,5 @@ public class ThreeSumLC {
             }
         }
         return new ArrayList<>(sol);
-    }
-
-    public static void main(String[] args) {
-        ThreeSumLC threeSumLC = new ThreeSumLC();
-        System.out.println(threeSumLC.threeSum(new int[]{3, 0, -2, -1, 1, 2}));
     }
 }

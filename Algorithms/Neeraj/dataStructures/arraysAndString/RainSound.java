@@ -2,9 +2,6 @@
     Created on:  Apr 25, 2020
  */
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Questions: https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/rain-41f57695/
  */

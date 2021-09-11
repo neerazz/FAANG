@@ -2,9 +2,6 @@
     Created on:  May 07, 2020
  */
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 /**
  * Questions: https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/charges-repel/
  */

@@ -5,22 +5,22 @@
  */
 public class ValidateIPAddress {
     static boolean validateIP(String ip) {
-        String[] strs = ip.split("\\.",-1);
-        if(strs.length != 4) return false;
-        for(String str: strs){
-            if(!isValid(str)){
+        String[] strs = ip.split("\\.", -1);
+        if (strs.length != 4) return false;
+        for (String str : strs) {
+            if (!isValid(str)) {
                 return false;
             }
         }
         return true;
     }
 
-    private static boolean isValid(String str){
-        try{
+    private static boolean isValid(String str) {
+        try {
             int n = Integer.parseInt(str);
-            if(n == 0) return str.length() == 1;
+            if (n == 0) return str.length() == 1;
             return n > 0 && n < 256;
-        }catch(Exception e){
+        } catch (Exception e) {
             return false;
         }
     }

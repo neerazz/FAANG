@@ -8,6 +8,8 @@ import java.util.List;
 public class MaxProductTree {
 
 
+    static List<Long> sumList = new ArrayList<>();
+    static int MOD = 1000000007;
 
     public static void main(String[] args) {
 
@@ -27,10 +29,6 @@ public class MaxProductTree {
 
         System.out.println(maxProduct(root));
     }
-
-    static List<Long> sumList = new ArrayList<>();
-    static int MOD = 1000000007;
-
 
     public static int maxProduct(TreeNode root) {
 

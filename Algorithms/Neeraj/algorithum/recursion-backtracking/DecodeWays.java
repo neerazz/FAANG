@@ -15,6 +15,8 @@ import java.util.Map;
  * Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
  */
 public class DecodeWays {
+    static Map<String, Integer> memo = new HashMap<>();
+
     public static void main(String[] args) {
         System.out.println("*************************** Method 1 *******************************");
         System.out.println(numDecodings("12") + " should be [2]");
@@ -41,8 +43,6 @@ public class DecodeWays {
         memo.put(s, op);
         return op;
     }
-
-    static Map<String, Integer> memo = new HashMap<>();
 
     public static int numDecodings(String s) {
         if (s.length() == 1) {

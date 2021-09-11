@@ -16,6 +16,16 @@ class MinStack {
         minStack = new LinkedList<>();
     }
 
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(0);
+        minStack.push(1);
+        minStack.push(0);
+        minStack.getMin();  // --> Returns -3.
+        minStack.pop();
+        minStack.getMin();   //--> Returns -2.
+    }
+
     public void push(int x) {
         myStack.push(x);
         if (minStack.isEmpty()) {
@@ -38,16 +48,6 @@ class MinStack {
 
     public int getMin() {
         return minStack.peek();
-    }
-
-    public static void main(String[] args) {
-        MinStack minStack = new MinStack();
-        minStack.push(0);
-        minStack.push(1);
-        minStack.push(0);
-        minStack.getMin();  // --> Returns -3.
-        minStack.pop();
-        minStack.getMin();   //--> Returns -2.
     }
 }
 

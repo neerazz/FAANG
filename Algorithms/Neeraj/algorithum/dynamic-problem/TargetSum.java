@@ -3,11 +3,12 @@
  * Questions: https://leetcode.com/problems/target-sum/
  */
 public class TargetSum {
+    static int numberOfWays = 0;
+
     public static void main(String[] args) {
 
     }
 
-    static int numberOfWays = 0;
     public static int findTargetSumWays_rev(int[] nums, int S) {
         if (nums.length == 0) return 0;
         if (nums.length == 1) {

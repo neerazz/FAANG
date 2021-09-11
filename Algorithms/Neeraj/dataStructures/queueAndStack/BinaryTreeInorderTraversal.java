@@ -53,6 +53,7 @@ public class BinaryTreeInorderTraversal {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

@@ -38,15 +38,15 @@ public class IntervalListIntersections {
         while (p1 < A.length && p2 < B.length) {
             int row = Math.max(A[p1][0], B[p2][0]);
             int col = Math.min(A[p1][1], B[p2][1]);
-            if(col >= row){
-                op.add(new int[]{row,col});
+            if (col >= row) {
+                op.add(new int[]{row, col});
             }
 //            Pointer needs to be increased for teh interval that is ending first.
-            if(A[p1][1] > B[p2][1]){
+            if (A[p1][1] > B[p2][1]) {
                 p2++;
-            }else if(A[p1][1] < B[p2][1]){
+            } else if (A[p1][1] < B[p2][1]) {
                 p1++;
-            }else{
+            } else {
                 p1++;
                 p2++;
             }

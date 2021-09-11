@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on:  Jan 15, 2021
@@ -11,7 +12,7 @@ public class SquaredShortestDistance {
         System.out.println(closestPoint(new int[]{0, 1, 2}, new int[]{0, 1, 4}));
     }
 
-//    https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/
+    //    https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/
     private static int closestPoint(int[] xs, int[] ys) {
         List<Pair> pairs = new ArrayList<>();
         for (int i = 0; i < xs.length; i++) {

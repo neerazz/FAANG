@@ -85,6 +85,7 @@ public class ClosestBinarySearchTreeValue {
         if (val2 == null) return val1;
         return Math.abs(val1 - target) > Math.abs(val2 - target) ? val2 : val1;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

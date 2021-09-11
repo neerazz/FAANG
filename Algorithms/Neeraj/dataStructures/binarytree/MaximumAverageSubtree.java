@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 12, 2021
  * Questions: https://leetcode.com/problems/maximum-average-subtree/
@@ -8,11 +5,11 @@ import java.io.*;
 
 public class MaximumAverageSubtree {
 
+    static double max;
+
     public static void main(String[] args) {
 
     }
-
-    static double max;
 
     public static double maximumAverageSubtree(TreeNode root) {
         max = 0;

@@ -1,4 +1,4 @@
-#[Wayfair Top LeetCode](https://leetcode.com/company/wayfair/)
+# [Wayfair Top LeetCode](https://leetcode.com/company/wayfair/)
 
 [Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count)
 

@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * Created on:  Mar 06, 2021
@@ -18,6 +18,33 @@ public class SlidingWindowMedian {
                 result[i++] = median.getMedian();
                 median.remove(nums[p1++]);
             }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("**************************** Solution 1 ********************************");
+        System.out.println("Sliding window medians are: " + Arrays.toString(findSlidingWindowMedian(new int[]{1, 2, -1, 3, 5}, 2)));
+        System.out.println("Sliding window medians are: " + Arrays.toString(findSlidingWindowMedian(new int[]{1, 2, -1, 3, 5}, 3)));
+
+        System.out.println("**************************** Solution 2 ********************************");
+        System.out.println("Sliding window medians are: " + Arrays.toString(medianSlidingWindow(new int[]{1, 2, -1, 3, 5}, 2)));
+        System.out.println("Sliding window medians are: " + Arrays.toString(medianSlidingWindow(new int[]{1, 2, -1, 3, 5}, 3)));
+    }
+
+    public static double[] medianSlidingWindow(int[] nums, int k) {
+        int len = nums.length, j = 0;
+        boolean isEven = k % 2 == 0;
+        double[] result = new double[len - k + 1];
+        for (int i = 0; i < len && j < result.length; i++) {
+            int[] sub = Arrays.copyOfRange(nums, i, i + k);
+            Arrays.sort(sub);
+            double sum = sub[k / 2];
+            if (isEven) {
+                sum += sub[(k - 1) / 2];
+                sum /= 2;
+            }
+            result[j++] = sum;
         }
         return result;
     }
@@ -62,32 +89,5 @@ public class SlidingWindowMedian {
             sync();
             count--;
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("**************************** Solution 1 ********************************");
-        System.out.println("Sliding window medians are: " + Arrays.toString(findSlidingWindowMedian(new int[]{1, 2, -1, 3, 5}, 2)));
-        System.out.println("Sliding window medians are: " + Arrays.toString(findSlidingWindowMedian(new int[]{1, 2, -1, 3, 5}, 3)));
-
-        System.out.println("**************************** Solution 2 ********************************");
-        System.out.println("Sliding window medians are: " + Arrays.toString(medianSlidingWindow(new int[]{1, 2, -1, 3, 5}, 2)));
-        System.out.println("Sliding window medians are: " + Arrays.toString(medianSlidingWindow(new int[]{1, 2, -1, 3, 5}, 3)));
-    }
-
-    public static double[] medianSlidingWindow(int[] nums, int k) {
-        int len = nums.length, j = 0;
-        boolean isEven = k % 2 == 0;
-        double[] result = new double[len - k + 1];
-        for (int i = 0; i < len && j < result.length; i++) {
-            int[] sub = Arrays.copyOfRange(nums, i, i + k);
-            Arrays.sort(sub);
-            double sum = sub[k / 2];
-            if (isEven) {
-                sum += sub[(k - 1) / 2];
-                sum /= 2;
-            }
-            result[j++] = sum;
-        }
-        return result;
     }
 }

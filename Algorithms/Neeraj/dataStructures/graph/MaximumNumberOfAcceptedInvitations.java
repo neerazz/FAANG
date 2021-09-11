@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created on:  Apr 07, 2021
@@ -7,14 +10,14 @@ import java.util.*;
 
 public class MaximumNumberOfAcceptedInvitations {
 
-    public static void main(String[] args) {
-//        System.out.println(maximumInvitations(new int[][]{{1,1,1},{1,0,1},{0,0,1}}) + " = 3");
-        System.out.println(maximumInvitations(new int[][]{{1,0,1,0},{1,0,0,0},{0,0,1,0},{1,1,1,0}}) + " = 3");
-    }
-
     static int result;
 
-//    https://brilliant.org/wiki/hungarian-matching/
+    public static void main(String[] args) {
+//        System.out.println(maximumInvitations(new int[][]{{1,1,1},{1,0,1},{0,0,1}}) + " = 3");
+        System.out.println(maximumInvitations(new int[][]{{1, 0, 1, 0}, {1, 0, 0, 0}, {0, 0, 1, 0}, {1, 1, 1, 0}}) + " = 3");
+    }
+
+    //    https://brilliant.org/wiki/hungarian-matching/
     public static int maximumInvitations(int[][] grid) {
         result = 0;
         Map<Integer, Set<Integer>> map = new HashMap<>();
@@ -41,9 +44,9 @@ public class MaximumNumberOfAcceptedInvitations {
     }
 
     static void dfs(Map<Integer, Set<Integer>> map, int boy, int boys, boolean[] visited, int total) {
-        if (boy == boys){
+        if (boy == boys) {
             result = Math.max(total, result);
-        }else{
+        } else {
             boolean foundAPair = false;
             for (int girl : map.get(boy)) {
                 if (!visited[girl]) {

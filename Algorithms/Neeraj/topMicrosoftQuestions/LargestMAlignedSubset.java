@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 30, 2020
  * Questions: https://leetcode.com/discuss/interview-question/525894/Microsoft-or-OA-2020-or-m-aligned-subset

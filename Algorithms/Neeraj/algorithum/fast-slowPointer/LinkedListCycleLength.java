@@ -9,15 +9,6 @@ public class LinkedListCycleLength {
 
     }
 
-    static class ListNode {
-        int value;
-        ListNode next;
-
-        public ListNode(int value) {
-            this.value = value;
-        }
-    }
-
     public static int findCycleLength(ListNode head) {
         ListNode slow = new ListNode(-1), fast = new ListNode(-1);
         slow.next = head;
@@ -38,5 +29,14 @@ public class LinkedListCycleLength {
             cur = cur.next;
         }
         return len;
+    }
+
+    static class ListNode {
+        int value;
+        ListNode next;
+
+        public ListNode(int value) {
+            this.value = value;
+        }
     }
 }

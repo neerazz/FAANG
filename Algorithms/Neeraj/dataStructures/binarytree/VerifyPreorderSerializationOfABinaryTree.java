@@ -1,16 +1,14 @@
-import java.util.*;
-
 /**
  * Created on:  Aug 26, 2021
  * Ref: https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
  */
 public class VerifyPreorderSerializationOfABinaryTree {
+    static int p, len;
+    static boolean outOfIndex;
+
     public static void main(String[] args) {
 
     }
-
-    static int p, len;
-    static boolean outOfIndex;
 
     public static boolean isValidSerialization(String preorder) {
         String[] split = preorder.split(",");

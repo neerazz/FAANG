@@ -39,6 +39,7 @@ public class InorderSuccessorInBST {
         integers.add(root.val);
         if (root.right != null) inorderSuccessorHelper(root.right, p, integers);
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -72,6 +73,7 @@ public class InorderSuccessorInBST {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

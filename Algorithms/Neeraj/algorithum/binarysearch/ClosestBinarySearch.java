@@ -3,6 +3,10 @@ import java.util.Random;
 import java.util.TreeSet;
 
 public class ClosestBinarySearch {
+    static int closestHighest;
+    static int closestSmallest;
+    static int closest;
+
     public static void main(String[] args) {
         System.out.println("************************ Closest Value ************************");
         System.out.println(findClosestValueInBst(new int[]{1, 3, 5, 7, 9, 12, 16, 19}, 10) + " should be [9]");
@@ -33,7 +37,6 @@ public class ClosestBinarySearch {
         System.out.println("-------------------  End Random Testing  -----------------------");
     }
 
-    static int closestHighest;
     private static int findHighestClosestValue(int[] arr, int target) {
         closestHighest = Integer.MAX_VALUE;
         closestHighestHelper(arr, 0, arr.length - 1, target);
@@ -63,7 +66,6 @@ public class ClosestBinarySearch {
         }
     }
 
-    static int closestSmallest;
     private static int findLowestClosestValue(int[] arr, int target) {
         closestSmallest = Integer.MIN_VALUE;
         closestSmallestHelper(arr, 0, arr.length - 1, target);
@@ -92,9 +94,6 @@ public class ClosestBinarySearch {
             closestSmallestHelper(arr, start, mid - 1, target);
         }
     }
-
-
-    static int closest;
 
     public static int findClosestValueInBst(int[] arr, int target) {
         closest = Integer.MAX_VALUE;
@@ -151,8 +150,8 @@ public class ClosestBinarySearch {
             for (int i : input) {
                 set.add(i);
             }
-            int randomIDX = random.nextInt(input.length > 0 ? input.length-1 : 0);
-            int randomValue = input[randomIDX] +10;
+            int randomIDX = random.nextInt(input.length > 0 ? input.length - 1 : 0);
+            int randomValue = input[randomIDX] + 10;
             Integer ceiling = set.ceiling(randomValue);
             int closestValueInBst = ClosestBinarySearch.findHighestClosestValue(input, randomValue);
             if (ceiling != null && closestValueInBst == ceiling) {
@@ -179,8 +178,8 @@ public class ClosestBinarySearch {
             for (int i : input) {
                 set.add(i);
             }
-            int randomIDX = random.nextInt(input.length > 0 ? input.length-1 : 0);
-            int randomValue = input[randomIDX] +10;
+            int randomIDX = random.nextInt(input.length > 0 ? input.length - 1 : 0);
+            int randomValue = input[randomIDX] + 10;
             Integer floor = set.floor(randomValue);
             int closestValueInBst = ClosestBinarySearch.findLowestClosestValue(input, randomValue);
             if (floor != null && closestValueInBst == floor) {
@@ -207,8 +206,8 @@ public class ClosestBinarySearch {
             for (int i : input) {
                 set.add(i);
             }
-            int randomIDX = random.nextInt(input.length > 0 ? input.length-1 : 0);
-            int randomValue = input[randomIDX] +10;
+            int randomIDX = random.nextInt(input.length > 0 ? input.length - 1 : 0);
+            int randomValue = input[randomIDX] + 10;
             Integer ceiling = set.ceiling(randomValue);
             Integer floor = set.floor(randomValue);
             int closestValueInBst = ClosestBinarySearch.findClosestValueInBst(input, randomValue);

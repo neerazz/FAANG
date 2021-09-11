@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on:  Mar 29, 2021
@@ -7,11 +8,11 @@ import java.util.*;
 
 public class FlipBinaryTreeToMatchPreorderTraversal {
 
+    int index;
+
     public static void main(String[] args) {
 
     }
-
-    int index;
 
     public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) {
         List<Integer> flipped = new ArrayList<>();

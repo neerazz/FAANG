@@ -8,7 +8,7 @@
 public class FindTheMissingNumber {
     public static void main(String[] args) {
         System.out.println(getMissingNo(new int[]{1, 2, 3, 5}));
-        System.out.println(getMissingNo(new int[]{1,2,3,4,5,6,7,8,10}));
+        System.out.println(getMissingNo(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 10}));
     }
 
     static int getMissingNo(int[] nums) {

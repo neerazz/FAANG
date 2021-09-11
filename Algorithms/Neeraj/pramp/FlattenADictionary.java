@@ -32,28 +32,30 @@ Important: when you concatenate keys, make sure to add the dot character between
  */
 public class FlattenADictionary {
     static HashMap<String, String> op;
+
     static HashMap<String, String> flattenDictionary(HashMap<String, Object> dict) {
         op = new HashMap<>();
-        flattenDictionary_helper("",dict);
+        flattenDictionary_helper("", dict);
         return op;
     }
 
     static void flattenDictionary_helper(String key, Map<String, Object> dict) {
-        if(dict.size() == 0){
+        if (dict.size() == 0) {
             return;
         }
         Set<String> set = dict.keySet();
-        for(String s : set){
-            String curKey = s.length() == 0 ? key : (key.length() ==0 ? s : key + "." + s);
+        for (String s : set) {
+            String curKey = s.length() == 0 ? key : (key.length() == 0 ? s : key + "." + s);
             Object val = dict.get(s);
-            if(val instanceof Map){
-                flattenDictionary_helper(curKey,(Map<String, Object>)val);
-            }else{
+            if (val instanceof Map) {
+                flattenDictionary_helper(curKey, (Map<String, Object>) val);
+            } else {
                 op.put(curKey, val.toString());
             }
         }
         return;
     }
+
     public static void main(String[] args) {
 
     }

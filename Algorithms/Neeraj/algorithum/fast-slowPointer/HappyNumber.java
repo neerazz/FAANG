@@ -7,6 +7,8 @@ import java.util.HashSet;
 
 public class HappyNumber {
 
+    static HashSet<Integer> set = new HashSet<>();
+
     public static void main(String[] args) {
         System.out.println("******************** Revision 1 **************************");
         System.out.println(isHappy_rev(19) + " should be [true].");
@@ -43,9 +45,6 @@ public class HappyNumber {
         }
         return num;
     }
-
-
-    static HashSet<Integer> set = new HashSet<>();
 
     public static boolean isHappy(int n) {
         if (n == 1) return true;

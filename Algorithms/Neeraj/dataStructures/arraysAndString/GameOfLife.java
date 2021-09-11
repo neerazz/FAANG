@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on:  Dec 30, 2020
@@ -7,6 +7,8 @@ import java.io.*;
  */
 
 public class GameOfLife {
+
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
     public static void main(String[] args) {
 
@@ -29,8 +31,6 @@ public class GameOfLife {
             board[val[0]][val[1]] ^= 1;
         }
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
     private static int getLiveNeighbours(int[][] board, int row, int col, int rows, int cols) {
         int count = 0;

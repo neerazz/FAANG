@@ -21,7 +21,7 @@ public class ChargedUpArray {
 
     static int solve(long[] A, int N) {
 //        long pos = ((N - 1) * (N) / 2) + 1;
-        long pos = (long) Math.pow(2, N-1);
+        long pos = (long) Math.pow(2, N - 1);
         long op = 0;
         for (long val : A) {
             if (val >= pos) {

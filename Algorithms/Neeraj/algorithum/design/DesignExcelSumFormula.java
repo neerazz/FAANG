@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Aug 11, 2021
@@ -20,7 +21,7 @@ public class DesignExcelSumFormula {
         System.out.println(excel.get(2, 'B')); // return 4
     }
 
-//    https://leetcode.com/problems/design-excel-sum-formula/discuss/1363834/Java-two-matrices-solution%3A-98-faster-and-90-less-memory
+    //    https://leetcode.com/problems/design-excel-sum-formula/discuss/1363834/Java-two-matrices-solution%3A-98-faster-and-90-less-memory
     static class Excel {
         int[][] matrix;
         List<String>[][] labelsMatrix;

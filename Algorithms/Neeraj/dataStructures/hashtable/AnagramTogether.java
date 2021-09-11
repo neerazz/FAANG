@@ -18,44 +18,43 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class AnagramTogether {
-    public static void main (String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	    int n= Integer.parseInt(br.readLine().trim());
-	    String x = br.readLine().trim();
-	    String string_list[] = x.split(" ",n);
-	        
-	    Solution ob = new  Solution();
-	        
-	    List <List<String>> ans = ob.Anagrams(string_list);
-	        
-	    Collections.sort(ans, new Comparator<List<String>>(){
-        public int compare(List<String> l1, List<String> l2) {
-            String s1 =  l1.get(0);
-            String s2 = l2.get(0);
-                    
-            return s1.compareTo(s2);
+        int n = Integer.parseInt(br.readLine().trim());
+        String x = br.readLine().trim();
+        String string_list[] = x.split(" ", n);
+
+        Solution ob = new Solution();
+
+        List<List<String>> ans = ob.Anagrams(string_list);
+
+        Collections.sort(ans, new Comparator<List<String>>() {
+            public int compare(List<String> l1, List<String> l2) {
+                String s1 = l1.get(0);
+                String s2 = l2.get(0);
+
+                return s1.compareTo(s2);
             }
         });
-	        
-	    for(int i=0;i<ans.size();i++)
-	    {
-	        for(int j=0;j<ans.get(i).size();j++)
-	        {
-	            System.out.print(ans.get(i).get(j) + " ");
-	        }
-	        System.out.println();
-	    }
-	}
+
+        for (int i = 0; i < ans.size(); i++) {
+            for (int j = 0; j < ans.get(i).size(); j++) {
+                System.out.print(ans.get(i).get(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+
     static class Solution {
         public List<List<String>> Anagrams(String[] string_list) {
             List<List<String>> res = new ArrayList<>();
-            HashMap<String,List<String>> hm = new HashMap<>();
-            for(String s : string_list){
+            HashMap<String, List<String>> hm = new HashMap<>();
+            for (String s : string_list) {
                 char c[] = s.toCharArray();
                 Arrays.sort(c);
                 String str = new String(c);
-                if(!hm.containsKey(str)){
-                    hm.put(str,new ArrayList<>());
+                if (!hm.containsKey(str)) {
+                    hm.put(str, new ArrayList<>());
                 }
                 hm.get(str).add(s);
 

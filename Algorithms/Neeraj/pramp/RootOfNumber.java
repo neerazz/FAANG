@@ -10,11 +10,11 @@ public class RootOfNumber {
         while (start < end) {
             double mid = start + (end - start) / 2;
             double midPow = Math.pow(mid, n);
-            if(Math.abs(midPow-x) < 0.001){
+            if (Math.abs(midPow - x) < 0.001) {
                 return mid;
-            }else if(midPow > x){
+            } else if (midPow > x) {
                 end = mid;
-            }else{
+            } else {
                 start = mid;
             }
         }

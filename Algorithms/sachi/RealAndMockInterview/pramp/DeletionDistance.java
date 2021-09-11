@@ -1,11 +1,9 @@
 package RealAndMockInterview.pramp;
 
-import java.util.Arrays;
-
 public class DeletionDistance {
 
     static int deletionDistance(String str1, String str2) {
-        if(str1 == null || str2 == null) return 0;
+        if (str1 == null || str2 == null) return 0;
         int[][] dp = new int[str1.length() + 1][str2.length() + 1];
 
         for (int i = 1; i < dp.length; i++) {

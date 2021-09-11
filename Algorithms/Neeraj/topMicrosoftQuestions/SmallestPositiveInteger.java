@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 30, 2020
  * Questions: https://app.codility.com/c/run/demoSR6XM4-PGA/

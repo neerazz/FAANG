@@ -11,12 +11,12 @@ import java.util.List;
  */
 public class DynamicArray {
     public static void main(String[] args) {
-        System.out.println(dynamicArray(2,Arrays.asList(
-                Arrays.asList(1,0,5),
-                Arrays.asList(1,1,7),
-                Arrays.asList(1,0,3),
-                Arrays.asList(2,1,0),
-                Arrays.asList(2,1,1))));
+        System.out.println(dynamicArray(2, Arrays.asList(
+                Arrays.asList(1, 0, 5),
+                Arrays.asList(1, 1, 7),
+                Arrays.asList(1, 0, 3),
+                Arrays.asList(2, 1, 0),
+                Arrays.asList(2, 1, 1))));
     }
 
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {

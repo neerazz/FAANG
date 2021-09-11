@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created on:  Feb 20, 2021
@@ -7,11 +7,6 @@ import java.io.*;
  */
 
 public class RomanToInteger {
-
-    public static void main(String[] args) {
-        System.out.println(romanToInt("LVIII"));
-        System.out.println(romanToInt("MCMXCIV"));
-    }
 
     static Map<String, Integer> map = new HashMap<>();
 
@@ -29,6 +24,11 @@ public class RomanToInteger {
         map.put("XC", 90);
         map.put("CD", 400);
         map.put("CM", 900);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(romanToInt("LVIII"));
+        System.out.println(romanToInt("MCMXCIV"));
     }
 
     public static int romanToInt(String s) {

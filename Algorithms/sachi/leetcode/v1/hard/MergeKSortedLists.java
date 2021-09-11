@@ -3,11 +3,36 @@ package leetcode.v1.hard;
 import util.ListNode;
 import util.Util;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class MergeKSortedLists {
+
+    public static ListNode mergeKLists(ListNode[] lists) {
+        ListNode dummy = new ListNode(-1);
+        ListNode prev = dummy;
+        Queue<ListNode> pq = new PriorityQueue<>((l1, l2) -> l1.val - l2.val);
+        pq.add(lists[0]);
+        while (!pq.isEmpty()) {
+            for (int i = 1; i < lists.length; i++) {
+                ListNode node = lists[i];
+                pq.add(node);
+                node = node.next;
+            }
+            prev.next = pq.poll();
+            prev = prev.next;
+        }
+        return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode node0 = Util.createLinkedListFromArray(new int[]{-1, 100, 105, 144, 145});
+        ListNode node1 = Util.createLinkedListFromArray(new int[]{3, 9, 10, 13});
+        ListNode node2 = Util.createLinkedListFromArray(new int[]{1, 15, 18, 23});
+
+        ListNode sol = mergeKLists(new ListNode[]{node0, node1, node2});
+        Util.print(sol);
+    }
 
     /**
      * Definition for singly-linked list.
@@ -27,24 +52,6 @@ public class MergeKSortedLists {
         return sol;
     }
 
-    public static ListNode mergeKLists(ListNode[] lists) {
-        ListNode dummy = new ListNode(-1);
-        ListNode prev = dummy;
-        Queue<ListNode> pq = new PriorityQueue<> ((l1, l2) -> l1.val - l2.val);
-        pq.add(lists[0]);
-        while (!pq.isEmpty()) {
-            for (int i = 1; i < lists.length; i++) {
-                ListNode node = lists[i];
-                pq.add(node);
-                node = node.next;
-            }
-            prev.next = pq.poll();
-            prev = prev.next;
-        }
-        return dummy.next;
-    }
-
-
     public ListNode merge2Lists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(-1);
         ListNode sol = dummy;
@@ -62,15 +69,6 @@ public class MergeKSortedLists {
         }
         sol.next = (l1 != null) ? l1 : l2;
         return dummy.next;
-    }
-
-    public static void main(String[] args) {
-        ListNode node0 = Util.createLinkedListFromArray(new int[]{-1, 100, 105, 144, 145});
-        ListNode node1 = Util.createLinkedListFromArray(new int[]{3, 9, 10, 13});
-        ListNode node2 = Util.createLinkedListFromArray(new int[]{1, 15, 18, 23});
-
-        ListNode sol = mergeKLists(new ListNode[]{node0, node1, node2});
-        Util.print(sol);
     }
 
 }

@@ -11,11 +11,11 @@ import java.util.List;
  * Questions:
  */
 public class NSum {
+    static List<Integer[]> op;
+
     public static void main(String[] args) {
         threeNumberSum(new int[]{12, 3, 1, 2, -6, 5, -8, 6}, 0).forEach(arr -> System.out.println(Arrays.toString(arr)));
     }
-
-    static List<Integer[]> op;
 
     public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
         op = new ArrayList<>();

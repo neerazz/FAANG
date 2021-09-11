@@ -7,8 +7,8 @@
  */
 public class BinomialCoefficient {
     public static void main(String[] args) {
-        System.out.println(binomialCoeff(4,2) + " should be [6].");
-        System.out.println(binomialCoeff(5,2) + " should be [10].");
+        System.out.println(binomialCoeff(4, 2) + " should be [6].");
+        System.out.println(binomialCoeff(5, 2) + " should be [10].");
     }
 
     private static int binomialCoeff(int n, int k) {

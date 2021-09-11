@@ -19,7 +19,7 @@ public class FlipStringToMonotoneIncreasing {
 //            Ones before the point.
             int onesBefore = dp[i];
 //            Zeros after this point= total chars after this point - total number of ones after the point.
-            int zerosAfter = (len-i) - (dp[len]-dp[i]);
+            int zerosAfter = (len - i) - (dp[len] - dp[i]);
             min = Math.min(min, onesBefore + zerosAfter);
         }
         return min;

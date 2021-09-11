@@ -50,13 +50,13 @@ public class Pow {
             isNegative = true;
         }
         double result = x;
-       while (pow > 1) {
+        while (pow > 1) {
             if (pow % 2 == 1) {
                 result *= result * x;
             } else {
                 result *= result;
             }
-           pow = pow / 2;
+            pow = pow / 2;
         }
         return isNegative && result > 0 ? 1 / result : result;
     }

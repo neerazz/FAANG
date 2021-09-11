@@ -34,6 +34,7 @@ public class LowestCommonAncestorOfABinarySearchTree {
         if (left != null) return left;
         return right;
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -67,6 +68,7 @@ public class LowestCommonAncestorOfABinarySearchTree {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

@@ -11,6 +11,17 @@ class MedianOfAStream {
     PriorityQueue<Integer> right = new PriorityQueue<>();
     int count = 0;
 
+    public static void main(String[] args) {
+        MedianOfAStream medianOfAStream = new MedianOfAStream();
+        medianOfAStream.insertNum(3);
+        medianOfAStream.insertNum(1);
+        System.out.println("The median is: " + medianOfAStream.findMedian());
+        medianOfAStream.insertNum(5);
+        System.out.println("The median is: " + medianOfAStream.findMedian());
+        medianOfAStream.insertNum(4);
+        System.out.println("The median is: " + medianOfAStream.findMedian());
+    }
+
     public void insertNum(int num) {
         left.add(num);
         right.add(left.poll());
@@ -29,16 +40,5 @@ class MedianOfAStream {
             median = left.peek();
         }
         return median;
-    }
-
-    public static void main(String[] args) {
-        MedianOfAStream medianOfAStream = new MedianOfAStream();
-        medianOfAStream.insertNum(3);
-        medianOfAStream.insertNum(1);
-        System.out.println("The median is: " + medianOfAStream.findMedian());
-        medianOfAStream.insertNum(5);
-        System.out.println("The median is: " + medianOfAStream.findMedian());
-        medianOfAStream.insertNum(4);
-        System.out.println("The median is: " + medianOfAStream.findMedian());
     }
 }

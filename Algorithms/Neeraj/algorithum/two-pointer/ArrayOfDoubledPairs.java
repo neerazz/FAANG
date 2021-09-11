@@ -10,6 +10,7 @@ public class ArrayOfDoubledPairs {
     public static void main(String[] args) {
 
     }
+
     /*
     r = 2 * l
     nums[2*i+1] = 2 * nums[2*i]
@@ -24,17 +25,17 @@ public class ArrayOfDoubledPairs {
     public boolean canReorderDoubled(int[] arr) {
         Map<Long, Integer> map = new HashMap<>();
         Arrays.sort(arr);
-        for(int cur: arr){
-            long left = cur /2, right = cur *2;
-            if(left * 2 == cur && map.getOrDefault(left, 0) > 0){
+        for (int cur : arr) {
+            long left = cur / 2, right = cur * 2;
+            if (left * 2 == cur && map.getOrDefault(left, 0) > 0) {
                 int count = map.remove(left);
-                if(count > 1) map.put(left, count-1);
-            }else if(map.getOrDefault(right, 0) > 0){
+                if (count > 1) map.put(left, count - 1);
+            } else if (map.getOrDefault(right, 0) > 0) {
                 int count = map.remove(right);
-                if(count > 1) map.put(right, count-1);
-            }else{
+                if (count > 1) map.put(right, count - 1);
+            } else {
                 long curLong = cur;
-                map.put(curLong, map.getOrDefault(curLong, 0)+1);
+                map.put(curLong, map.getOrDefault(curLong, 0) + 1);
             }
         }
         // System.out.println(map);

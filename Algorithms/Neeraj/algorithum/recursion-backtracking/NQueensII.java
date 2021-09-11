@@ -22,11 +22,11 @@ Explanation: There are two distinct solutions to the 4-queens puzzle as shown be
 ]
  */
 public class NQueensII {
+    static int count = 0;
+
     public static void main(String[] args) {
         System.out.println(totalNQueens(4) + " should be [2].");
     }
-
-    static int count = 0;
 
     public static int totalNQueens_rev(int n) {
         Set<Integer> s1 = new HashSet<>(), s2 = new HashSet<>(), s3 = new HashSet<>();

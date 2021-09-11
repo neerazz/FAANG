@@ -3,7 +3,6 @@
  */
 
 import java.util.*;
-import java.util.stream.IntStream;
 
 /**
  * Questions: https://leetcode.com/contest/weekly-contest-186/problems/diagonal-traverse-ii/
@@ -34,7 +33,7 @@ public class DiagonalTraverseII {
             }
         }
         List<Integer> opList = new ArrayList<>();
-        for(int i =0; i<=max; i++){
+        for (int i = 0; i <= max; i++) {
             opList.addAll(map.get(i));
         }
         return opList.stream().mapToInt(Integer::intValue).toArray();

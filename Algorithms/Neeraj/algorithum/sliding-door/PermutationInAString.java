@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 05, 2020
  * Questions: https://www.educative.io/courses/grokking-the-coding-interview/N8vB7OVYo2D

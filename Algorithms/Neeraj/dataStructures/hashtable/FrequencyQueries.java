@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.*;
@@ -46,36 +44,36 @@ public class FrequencyQueries {
             int operation = query.get(0);
             int element = query.get(1);
             if (operation == 1) {
-                if(operationMap.containsKey(element)){
+                if (operationMap.containsKey(element)) {
 //                    Get the count of element from the operation map
                     Integer count = operationMap.get(element);
 //                    Remove the element from frequency map from count and set it back tot eh incremented count+1.
                     frequencyMap.get(count).remove(element);
-                    frequencyMap.putIfAbsent(count+1, new HashSet<>());
-                    frequencyMap.get(count+1).add(element);
+                    frequencyMap.putIfAbsent(count + 1, new HashSet<>());
+                    frequencyMap.get(count + 1).add(element);
 //                    Increase the count of the element
-                    operationMap.put(element,count+1);
-                }else{
+                    operationMap.put(element, count + 1);
+                } else {
 //                    Add the element to operation map, with count 1.
-                    operationMap.put(element,1);
+                    operationMap.put(element, 1);
 //                    Add the element into the frequency map under 1 count.
                     frequencyMap.putIfAbsent(1, new HashSet<>());
                     frequencyMap.get(1).add(element);
                 }
             } else if (operation == 2) {
-                if(operationMap.containsKey(element)){
+                if (operationMap.containsKey(element)) {
 //                    Reduce the count from operation map.
                     Integer count = operationMap.get(element);
-                    if(count ==1){
+                    if (count == 1) {
                         operationMap.remove(element);
                         frequencyMap.get(count).remove(element);
-                    }else{
-                        operationMap.put(element,count-1);
+                    } else {
+                        operationMap.put(element, count - 1);
 //                    Also reduce the element counter from frequency.
 //                    To reduce the element counter, remove the element from frequency with current counter and set it back to the counter-1;
                         frequencyMap.get(count).remove(element);
-                        frequencyMap.putIfAbsent(count-1, new HashSet<>());
-                        frequencyMap.get(count-1).add(element);
+                        frequencyMap.putIfAbsent(count - 1, new HashSet<>());
+                        frequencyMap.get(count - 1).add(element);
                     }
                 }
             } else if (operation == 3) {

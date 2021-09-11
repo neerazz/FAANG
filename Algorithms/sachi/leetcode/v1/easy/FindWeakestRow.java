@@ -7,6 +7,8 @@ import java.util.Arrays;
 public class FindWeakestRow {
 
 
+    static int[] countArray;
+
     public static void main(String[] args) {
         int[][] mat =
                 {
@@ -18,8 +20,6 @@ public class FindWeakestRow {
                 };
         Util.print(kWeakestRows(mat, 3));
     }
-
-    static int[] countArray;
 
     public static int[] kWeakestRows(int[][] mat, int k) {
 

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -65,6 +63,7 @@ public class SymmetricTree {
         }
         return false;
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;

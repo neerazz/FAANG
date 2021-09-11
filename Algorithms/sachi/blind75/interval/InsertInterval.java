@@ -35,19 +35,6 @@ Output: [[1,7]]
  */
 public class InsertInterval {
 
-    public static class Interval {
-        public int start;
-        public int end;
-
-        Interval(int start, int end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        Interval() {
-        }
-    }
-
     //First compare -> End of Full -> Start of new
     //When overlapping Start of Full -> End of new
     public static List<Interval> insert(List<Interval> intervals, Interval newInterval) {
@@ -110,14 +97,24 @@ public class InsertInterval {
         return list.toArray(new int[list.size()][2]);
     }
 
-
-
-
     public static void main(String[] args) {
         int[][] input = new int[][]{{1, 3}, {6, 9}};
         int[] newInterval = new int[]{2, 5};
         int[][] sol = insert(input, newInterval);
         Util.print(sol);
+    }
+
+    public static class Interval {
+        public int start;
+        public int end;
+
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        Interval() {
+        }
     }
 
 }

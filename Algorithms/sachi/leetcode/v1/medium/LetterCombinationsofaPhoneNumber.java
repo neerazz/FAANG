@@ -1,14 +1,14 @@
 package leetcode.v1.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LetterCombinationsofaPhoneNumber {
 
     Map<Character, List<String>> map = new HashMap<>();
+
+    public static void main(String[] args) {
+
+    }
 
     public List<String> letterCombinations(String digits) {
 
@@ -39,10 +39,6 @@ public class LetterCombinationsofaPhoneNumber {
             generate(sol, input, n + 1, sb); //n = 1, 2
             sb.deleteCharAt(sb.length() - 1); //a
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 
 

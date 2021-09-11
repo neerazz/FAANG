@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 01, 2021
  * Questions: https://leetcode.com/problems/check-array-formation-through-concatenation/
@@ -11,6 +8,7 @@ public class CheckArrayFormationThroughConcatenation {
     public static void main(String[] args) {
 
     }
+
     public boolean canFormArray(int[] arr, int[][] pieces) {
         int p1 = 0, len = arr.length;
         while (p1 < len) {

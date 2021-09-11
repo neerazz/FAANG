@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created on:  Nov 04, 2020
@@ -22,18 +24,6 @@ import java.io.*;
 
 public class ValidDirection {
 
-    public static void main(String[] args) {
-        System.out.println(isValid(Arrays.asList(
-                Arrays.asList("A", "N", "B"),
-                Arrays.asList("B", "NE", "C"),
-                Arrays.asList("C", "N", "A")
-        )));
-        System.out.println(isValid(Arrays.asList(
-                Arrays.asList("A", "NW", "B"),
-                Arrays.asList("A", "N", "B")
-        )));
-    }
-
     static Map<String, int[]> dirs = new HashMap<>();
 
     static {
@@ -45,6 +35,18 @@ public class ValidDirection {
         dirs.put("SE", new int[]{-1, 1});
         dirs.put("SW", new int[]{-1, -1});
         dirs.put("NW", new int[]{-1, 1});
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isValid(Arrays.asList(
+                Arrays.asList("A", "N", "B"),
+                Arrays.asList("B", "NE", "C"),
+                Arrays.asList("C", "N", "A")
+        )));
+        System.out.println(isValid(Arrays.asList(
+                Arrays.asList("A", "NW", "B"),
+                Arrays.asList("A", "N", "B")
+        )));
     }
 
     private static boolean isValid(List<List<String>> list) {

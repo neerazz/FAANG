@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 31, 2020
  * Questions: https://leetcode.com/discuss/interview-question/398037/
@@ -13,6 +10,7 @@ public class LongestSemiAlternatingSubstring {
         System.out.println(getLongestSemiAlternatingSubString("babba") + " should be 5");
         System.out.println(getLongestSemiAlternatingSubString("abaaaa") + " should be 4");
     }
+
     /*
               i
             baaabbabbb

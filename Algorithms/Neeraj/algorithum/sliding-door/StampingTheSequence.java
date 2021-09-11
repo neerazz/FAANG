@@ -7,6 +7,8 @@ import java.util.*;
 
 public class StampingTheSequence {
 
+    static List<Integer> result;
+
     public static void main(String[] args) {
         System.out.println("********************************* Solution 1 *****************************");
         System.out.println(Arrays.toString(movesToStamp("abc", "ababc")));
@@ -29,8 +31,6 @@ public class StampingTheSequence {
         System.out.println(Arrays.toString(movesToStamp_rev1("k", "kkkkkkkkkkkkkkk")));
         System.out.println(Arrays.toString(movesToStamp_rev1("tkuq", "tkuqtkuqqttkuqq")));
     }
-
-    static List<Integer> result;
 
     public static int[] movesToStamp_rev1(String stamp, String target) {
         result = new ArrayList<>();

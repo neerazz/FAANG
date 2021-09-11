@@ -33,7 +33,7 @@ Right sum = nums[1] + nums[2] = 1 + -1 = 0
 public class FindPivotIndex {
 
     public static void main(String[] args) {
-        int[] input1 = new int[]{-1,-1,-1,-1,-1,-1};
+        int[] input1 = new int[]{-1, -1, -1, -1, -1, -1};
         System.out.println(pivotIndex(input1));
     }
 

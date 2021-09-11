@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Mar 09, 2021
  * Questions: https://leetcode.com/problems/partition-array-for-maximum-sum/

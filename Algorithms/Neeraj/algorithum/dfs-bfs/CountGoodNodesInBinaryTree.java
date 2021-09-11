@@ -5,11 +5,11 @@
 
 public class CountGoodNodesInBinaryTree {
 
+    static int count;
+
     public static void main(String[] args) {
 
     }
-
-    static int count;
 
     public int goodNodes(TreeNode root) {
         if (root == null) return 0;
@@ -25,6 +25,7 @@ public class CountGoodNodesInBinaryTree {
         helper(root.left, curMax);
         helper(root.right, curMax);
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

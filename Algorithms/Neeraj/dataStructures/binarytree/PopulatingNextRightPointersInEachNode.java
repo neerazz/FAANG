@@ -60,6 +60,7 @@ public class PopulatingNextRightPointersInEachNode {
         }
         return treeNode;
     }
+
     static class Node {
         public int val;
         public Node left;

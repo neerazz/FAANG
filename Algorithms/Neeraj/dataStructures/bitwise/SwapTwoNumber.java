@@ -13,6 +13,6 @@ public class SwapTwoNumber {
     }
 
     private static int[] swap(int a, int b) {
-        return new int[]{(a ^b)^a, (a^b) ^ b};
+        return new int[]{(a ^ b) ^ a, (a ^ b) ^ b};
     }
 }

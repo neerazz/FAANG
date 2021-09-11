@@ -18,21 +18,21 @@ public class BullsAndCows {
       c =1
 */
     public static String getHint(String s, String g) {
-        int bulls = 0, cows =0, len = s.length();
+        int bulls = 0, cows = 0, len = s.length();
         int[] counts = new int[10];
-        for(char c: s.toCharArray()){
-            counts[c-'0']++;
+        for (char c : s.toCharArray()) {
+            counts[c - '0']++;
         }
-        for(int i=0; i<len; i++){
-            int a = s.charAt(i)-'0', b = g.charAt(i)-'0';
-            if(a == b){
-                if(counts[a] == 0){
+        for (int i = 0; i < len; i++) {
+            int a = s.charAt(i) - '0', b = g.charAt(i) - '0';
+            if (a == b) {
+                if (counts[a] == 0) {
                     cows--;
-                }else{
+                } else {
                     counts[a]--;
                 }
                 bulls++;
-            }else if(counts[b] > 0){
+            } else if (counts[b] > 0) {
                 counts[b]--;
                 cows++;
             }

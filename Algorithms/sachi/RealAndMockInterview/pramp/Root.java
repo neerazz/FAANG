@@ -1,4 +1,5 @@
 package RealAndMockInterview.pramp;
+
 import java.util.Random;
 
 public class Root {

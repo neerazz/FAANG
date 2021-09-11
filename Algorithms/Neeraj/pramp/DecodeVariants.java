@@ -1,16 +1,17 @@
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
 public class DecodeVariants {
 
+    static HashSet<String> possibilities;
+    static Map<String, Integer> map = new HashMap<>();
+
     public static void main(String[] args) {
         System.out.println(decodeVariations("1262"));
         System.out.println(decodeVariations("0"));
     }
 
-    static HashSet<String> possibilities;
     static int decodeVariations_1(String S) {
         if (S == null || S.length() < 1) return 0;
         // Keep all the charecter's and the int mapping in a map.
@@ -24,13 +25,12 @@ public class DecodeVariants {
         return possibilities.size();
     }
 
-    static Map<String, Integer> map = new HashMap<>();
     static int decodeVariations(String s) {
-        if(s.length()>0 && s.charAt(0)=='0') return 0;
-        if(s.length() <= 1) return 1;
-        if(map.containsKey(s)) return map.get(s);
+        if (s.length() > 0 && s.charAt(0) == '0') return 0;
+        if (s.length() <= 1) return 1;
+        if (map.containsKey(s)) return map.get(s);
         int result = 0;
-        if(Integer.parseInt(s.substring(0,2)) <=26 ) {
+        if (Integer.parseInt(s.substring(0, 2)) <= 26) {
             result = decodeVariations(s.substring(1)) + decodeVariations(s.substring(2));
         } else {
             result = decodeVariations(s.substring(1));

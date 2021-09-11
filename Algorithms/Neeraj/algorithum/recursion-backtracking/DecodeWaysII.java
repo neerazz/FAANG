@@ -14,13 +14,13 @@ import java.util.Map;
  * Output: 9 + 9 = 18
  */
 public class DecodeWaysII {
+    static Map<String, Integer> memo = new HashMap<>();
+    static int mod = (int) 1e9 + 7;
+
     public static void main(String[] args) {
         System.out.println(numDecodings("*"));
         System.out.println(numDecodings("1*"));
     }
-
-    static Map<String, Integer> memo = new HashMap<>();
-    static int mod = (int) 1e9 + 7;
 
     public static int numDecodings(String s) {
         if (s.length() == 1) {

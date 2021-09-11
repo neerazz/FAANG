@@ -36,20 +36,9 @@ public class LFUCacheImpl {
     }
 
     static class LFUCache_2 {
-        static class Node {
-            int key, val, occ;
-
-            public Node(int key, int val) {
-                this.key = key;
-                this.val = val;
-                occ = 1;
-            }
-        }
-
         int limit, minOcc;
         Map<Integer, Node> cache = new HashMap<>();
         Map<Integer, LinkedHashSet<Integer>> occurrences = new HashMap<>();
-
         public LFUCache_2(int capacity) {
             this.limit = capacity;
             minOcc = -1;
@@ -93,6 +82,16 @@ public class LFUCacheImpl {
                 cache.put(key, node);
                 occurrences.computeIfAbsent(node.occ, val -> new LinkedHashSet<>()).add(node.key);
                 minOcc = 1;
+            }
+        }
+
+        static class Node {
+            int key, val, occ;
+
+            public Node(int key, int val) {
+                this.key = key;
+                this.val = val;
+                occ = 1;
             }
         }
     }

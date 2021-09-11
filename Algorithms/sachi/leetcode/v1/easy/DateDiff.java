@@ -1,12 +1,6 @@
 package leetcode.v1.easy;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-
 public class DateDiff {
 
     public int daysBetweenDates(String date1, String date2) {

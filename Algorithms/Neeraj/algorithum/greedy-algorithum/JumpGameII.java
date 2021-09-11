@@ -13,7 +13,7 @@ public class JumpGameII {
         System.out.println(jump_rev1(new int[]{2, 1, 1, 1, 1}) + " should be [3]");
     }
 
-//    Time: O(n), space : O(1)
+    //    Time: O(n), space : O(1)
     public static int jump_rev_2(int[] nums) {
         int n = nums.length;
         if (n < 2) return 0;

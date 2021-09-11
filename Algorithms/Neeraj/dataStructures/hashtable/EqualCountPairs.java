@@ -18,33 +18,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
 // Driver Code
 
-class EqualCountPairs
-{
-    public static void main(String args[])throws IOException
-    {
+class EqualCountPairs {
+    public static void main(String args[]) throws IOException {
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-    
-        int N=Integer.parseInt(read.readLine());
+
+        int N = Integer.parseInt(read.readLine());
         String input[] = read.readLine().trim().split("\\s+");
-        int[]A=new int[N];
-        for(int i = 0; i < N; i++)
-            A[i]=Integer.parseInt(input[i]);
+        int[] A = new int[N];
+        for (int i = 0; i < N; i++)
+            A[i] = Integer.parseInt(input[i]);
         Solution ob = new Solution();
         System.out.println(ob.equalCount(N, A));
     }
-    static class Solution{
-        public long equalCount(int N, int[]A){
-            long ans=0;
-            HashMap<Integer,Long>mp=new HashMap<>();
-            for(int i=0;i<N;i++)
-                mp.put(A[i],mp.getOrDefault(A[i],0l)+1l);
-            for(Map.Entry<Integer,Long>e:mp.entrySet())
-            {
-                long val=e.getValue();
-                ans+=(val*(val-1))/2;
+
+    static class Solution {
+        public long equalCount(int N, int[] A) {
+            long ans = 0;
+            HashMap<Integer, Long> mp = new HashMap<>();
+            for (int i = 0; i < N; i++)
+                mp.put(A[i], mp.getOrDefault(A[i], 0l) + 1l);
+            for (Map.Entry<Integer, Long> e : mp.entrySet()) {
+                long val = e.getValue();
+                ans += (val * (val - 1)) / 2;
             }
             return ans;
         }

@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on:  Oct 31, 2020
@@ -13,7 +14,7 @@ public class MaximumLengthOfAConcatenatedStringWithUniqueCharacters {
 
     }
 
-//    Time 2 ^n
+    //    Time 2 ^n
     public static int maxLength(List<String> arr) {
         max = 0;
         List<String> words = new ArrayList<>();

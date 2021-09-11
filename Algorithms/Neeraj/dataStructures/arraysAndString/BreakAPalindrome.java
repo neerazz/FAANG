@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 12, 2021
  * Questions: https://leetcode.com/problems/break-a-palindrome/

@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Dec 29, 2020
  * Questions: https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
@@ -8,11 +5,11 @@ import java.io.*;
 
 public class PseudoPalindromicPathsInABinaryTree {
 
+    static int result;
+
     public static void main(String[] args) {
 
     }
-
-    static int result;
 
     public static int pseudoPalindromicPaths(TreeNode root) {
         int[] counts = new int[10];

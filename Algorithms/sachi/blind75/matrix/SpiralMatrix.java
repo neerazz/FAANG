@@ -1,8 +1,10 @@
 package blind75.matrix;
 
+import util.Util;
+
 import java.util.ArrayList;
 import java.util.List;
-import util.Util;
+
 /*
 https://leetcode.com/problems/spiral-matrix/
 F
@@ -15,7 +17,7 @@ Output: [1,2,3,6,9,8,7,4,5]
 public class SpiralMatrix {
 
     public static void main(String[] args) {
-        int[][] matrix = new int[][] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
+        int[][] matrix = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
         Util.print(matrix);
         System.out.println(spiralOrder(matrix));
     }

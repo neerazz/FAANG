@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Feb 27, 2021
  * Questions: https://www.algoexpert.io/assessments/Inverted%20Bisection

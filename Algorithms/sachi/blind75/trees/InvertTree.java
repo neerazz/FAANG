@@ -29,7 +29,7 @@ public class InvertTree {
     }
 
     public static void main(String[] args) {
-        Integer[] input = new Integer[] { 4, 2, 7, 1, 3, 6, 9 };
+        Integer[] input = new Integer[]{4, 2, 7, 1, 3, 6, 9};
         TreeNode root = Util.createTree(input);
         TreeNode sol = invertTree(root);
         Util.print(sol);

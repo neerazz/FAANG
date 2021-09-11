@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 15, 2021
  * Questions: https://aonecode.com/aplusplus/interviewctrl/getInterview/8960002076

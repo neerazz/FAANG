@@ -7,13 +7,13 @@ import java.util.*;
 
 public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
 
+    static int remove;
+
     public static void main(String[] args) {
         System.out.println(maxNumEdgesToRemove(4, new int[][]{{3, 1, 2}, {3, 2, 3}, {1, 1, 3}, {1, 2, 4}, {1, 1, 2}, {2, 3, 4}}) + " = 2");
         System.out.println(maxNumEdgesToRemove(4, new int[][]{{3, 1, 2}, {3, 2, 3}, {1, 1, 4}, {2, 1, 4}}) + " = 0");
         System.out.println(maxNumEdgesToRemove(4, new int[][]{{3, 2, 3}, {1, 1, 2}, {2, 3, 4}}) + " = -1");
     }
-
-    static int remove;
 
     public static int maxNumEdgesToRemove(int n, int[][] edges) {
         remove = 0;

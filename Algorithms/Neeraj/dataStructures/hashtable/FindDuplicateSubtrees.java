@@ -54,6 +54,7 @@ public class FindDuplicateSubtrees {
             treeNodeHashSet.add(node);
         return serial;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

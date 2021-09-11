@@ -1,15 +1,26 @@
 package concepts.hastable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class GroupAnagrams {
 
     public static void main(String[] args) {
         System.out.println(countSort("puli"));
+    }
+
+    public static String countSort(String str) {
+        StringBuilder sorted = new StringBuilder();
+        int[] counts = new int[26];
+        for (Character c : str.toCharArray()) {
+            counts[c - 'a']++;
+        }
+        for (int i = 0; i < counts.length; i++) {
+            while (counts[i] > 0) {
+                sorted.append((char) ('a' + i));
+                counts[i]--;
+            }
+        }
+        return sorted.toString();
     }
 
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -29,21 +40,6 @@ public class GroupAnagrams {
             map.put(sorted, list);
         }
         return new ArrayList<>(map.values());
-    }
-
-    public static String countSort(String str) {
-        StringBuilder sorted = new StringBuilder();
-        int[] counts = new int[26];
-        for (Character c : str.toCharArray()) {
-            counts[c - 'a']++;
-        }
-        for (int i = 0; i < counts.length; i++) {
-            while (counts[i] > 0) {
-                sorted.append((char) ('a' + i));
-                counts[i]--;
-            }
-        }
-        return sorted.toString();
     }
 
     public List<List<String>> groupAnagrams2(String[] strs) {

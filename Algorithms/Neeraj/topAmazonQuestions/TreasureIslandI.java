@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created on:  Jan 19, 2021
@@ -28,7 +28,7 @@ import java.io.*;
 public class TreasureIslandI {
 
     public static void main(String[] args) {
-        System.out.println(findDistance(new char[][]{ {'O', 'O', 'O', 'O'}, {'D', 'O', 'D', 'O'}, {'O', 'O', 'O', 'O'}, {'X', 'D', 'D', 'O'}, }));
+        System.out.println(findDistance(new char[][]{{'O', 'O', 'O', 'O'}, {'D', 'O', 'D', 'O'}, {'O', 'O', 'O', 'O'}, {'X', 'D', 'D', 'O'},}));
     }
 
     private static int findDistance(char[][] grid) {

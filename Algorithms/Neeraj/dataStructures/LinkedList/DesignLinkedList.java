@@ -125,6 +125,17 @@ class MyLinkedList {
         } else return;
     }
 
+    // Do not edit the class below.
+    static class DoubleNode {
+        public int value;
+        public DoubleNode prev;
+        public DoubleNode next;
+
+        public DoubleNode(int value) {
+            this.value = value;
+        }
+    }
+
     class Node {
         int val;
         Node next;
@@ -133,18 +144,19 @@ class MyLinkedList {
             val = v;
         }
     }
+
     class DoublyLinkedList {
         public DoubleNode head;
         public DoubleNode tail;
 
         public void setHead(DoubleNode node) {
-            if(head == null){
+            if (head == null) {
                 head = node;
                 tail = node;
-            }else if(head == tail){
+            } else if (head == tail) {
                 // There is only one value in the node.
 
-            }else{
+            } else {
                 head.prev = node;
                 node.next = head;
                 head = node;
@@ -152,15 +164,15 @@ class MyLinkedList {
         }
 
         public void setTail(DoubleNode node) {
-            if(tail == null){
+            if (tail == null) {
                 head = node;
                 tail = node;
-            }else if(head == tail){
+            } else if (head == tail) {
                 // There is only one value in the node.
                 head.next = node;
                 node.prev = head;
                 tail = node;
-            }else{
+            } else {
                 // There are multiple values in teh node.
                 tail.next = node;
                 node.prev = tail;
@@ -172,7 +184,7 @@ class MyLinkedList {
             // Write your code here.
         }
 
-        private Node getNode(){
+        private Node getNode() {
             return null;
         }
 
@@ -195,17 +207,6 @@ class MyLinkedList {
         public boolean containsNodeWithValue(int value) {
             // Write your code here.
             return false;
-        }
-    }
-
-    // Do not edit the class below.
-    static class DoubleNode {
-        public int value;
-        public DoubleNode prev;
-        public DoubleNode next;
-
-        public DoubleNode(int value) {
-            this.value = value;
         }
     }
 }

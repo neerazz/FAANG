@@ -6,7 +6,7 @@ import java.util.Arrays;
  */
 public class VerifyingAnAlienDictionary {
     public static void main(String[] args) {
-        System.out.println(isAlienSorted(new String[]{"hello","leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
+        System.out.println(isAlienSorted(new String[]{"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
         System.out.println(isAlienSorted(new String[]{"word", "world", "row"}, "worldabcefghijkmnpqstuvxyz"));
     }
 

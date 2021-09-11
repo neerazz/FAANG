@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Mar 02, 2021
  * Questions: https://leetcode.com/problems/integer-break/

@@ -9,6 +9,8 @@ import java.util.Queue;
 
 public class PathWithMinimumEffort {
 
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
     public static void main(String[] args) {
         System.out.println("************************************ Solution 1 **************************************");
         System.out.println(minimumEffortPath(new int[][]{{1, 2, 2}, {3, 8, 2}, {5, 3, 5}}) + " = 2");
@@ -19,9 +21,7 @@ public class PathWithMinimumEffort {
         System.out.println(minimumEffortPath(new int[][]{{1, 2, 1, 1, 1}, {1, 2, 1, 2, 1}, {1, 2, 1, 2, 1}, {1, 2, 1, 2, 1}, {1, 1, 1, 2, 1}}) + " = 0");
     }
 
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-
-//    TC: O(n*m*log(n*m))
+    //    TC: O(n*m*log(n*m))
     public static int minimumEffortPath_sorted(int[][] heights) {
         int rows = heights.length, cols = rows > 0 ? heights[0].length : 0;
         Integer[][] dp = new Integer[rows][cols];

@@ -1,7 +1,6 @@
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Mar 25, 2021
@@ -9,6 +8,8 @@ import java.io.*;
  */
 
 public class PacificAtlanticWaterFlow {
+
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static void main(String[] args) {
         System.out.println("*********************************** Solution 1 *********************************");
@@ -37,8 +38,6 @@ public class PacificAtlanticWaterFlow {
                 {8, 0, 14, 0, 13, 17, 11, 0, 16, 13, 15, 17, 4, 8, 3},
                 {18, 15, 8, 11, 18, 3, 10, 18, 3, 3, 15, 9, 11, 15, 15}}));
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static List<List<Integer>> pacificAtlantic(int[][] matrix) {
         int rows = matrix.length, cols = rows > 0 ? matrix[0].length : 0;

@@ -14,6 +14,8 @@ s = "3[a2[c]]", return "accaccacc".
 s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
  */
 public class DecodeString {
+    static Map<String, String> map = new HashMap<>();
+
     public static void main(String[] args) {
 //        System.out.println("Answer is: \t" + decodeString("3[a]2[bc]") + "\nshould be \taaabcbc.");
         System.out.println("Answer is: \t" + decodeString("3[a2[c]]") + "\nshould be \taccaccacc.");
@@ -22,7 +24,6 @@ public class DecodeString {
         System.out.println("Answer is: \t" + decodeString("3[z]2[2[y]pq4[2[jk]e1[f]]]ef") + "\nshould be \tzzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef.");
     }
 
-    static Map<String, String> map = new HashMap<>();
     public static String decodeString(String s) {
         if (map.containsKey(s)) return map.get(s);
         char[] arr = s.toCharArray();
@@ -44,7 +45,7 @@ public class DecodeString {
                 sb.append(arr[i]);
             }
         }
-        map.put(s,sb.toString());
+        map.put(s, sb.toString());
         return sb.toString();
     }
 

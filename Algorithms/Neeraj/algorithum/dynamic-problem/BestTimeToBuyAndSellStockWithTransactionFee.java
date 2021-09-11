@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Mar 16, 2021
  * Questions: https://leetcode.com/explore/challenge/card/march-leetcoding-challenge-2021/590/week-3-march-15th-march-21st/3674/
@@ -13,9 +10,9 @@ public class BestTimeToBuyAndSellStockWithTransactionFee {
     }
 
     /**
-     *           1 ,3 ,2 ,8 ,4 ,9  fee = 2
-     *      cash 0  0  0  5
-     *      hold -1-1 -1
+     * 1 ,3 ,2 ,8 ,4 ,9  fee = 2
+     * cash 0  0  0  5
+     * hold -1-1 -1
      */
     public static int maxProfit(int[] prices, int fee) {
         int cash = 0, hold = -prices[0];

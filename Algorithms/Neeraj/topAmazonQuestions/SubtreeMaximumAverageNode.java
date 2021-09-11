@@ -1,5 +1,6 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created on:  Jan 19, 2021
@@ -7,6 +8,9 @@ import java.io.*;
  */
 
 public class SubtreeMaximumAverageNode {
+
+    static MAryTreeNode maxNode;
+    static double maxAvg;
 
     public static void main(String[] args) {
         MAryTreeNode zero = new MAryTreeNode(0);
@@ -31,9 +35,6 @@ public class SubtreeMaximumAverageNode {
         ));
         System.out.println(subtreeMaxAvg(zero));
     }
-
-    static MAryTreeNode maxNode;
-    static double maxAvg;
 
     public static MAryTreeNode subtreeMaxAvg(MAryTreeNode root) {
         maxNode = null;

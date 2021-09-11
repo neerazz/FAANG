@@ -86,6 +86,7 @@ public class RobotRoomCleaner {
     static class Pair<T, U> {
         T key;
         U val;
+
         public Pair(final T key, final U val) {
             this.key = key;
             this.val = val;

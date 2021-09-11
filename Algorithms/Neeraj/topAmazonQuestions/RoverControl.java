@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Jan 12, 2021
  * Questions: https://leetcode.com/discuss/interview-question/985703/Amazon-or-OA-or-Rover-Control
@@ -8,11 +5,11 @@ import java.io.*;
 
 public class RoverControl {
 
+    static int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
     public static void main(String[] args) {
         System.out.println(roverMove(4, new String[]{"RIGHT", "UP", "DOWN", "LEFT", "DOWN", "DOWN"}));
     }
-
-    static int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     private static int roverMove(int n, String[] directions) {
         int row = 0, col = 0;

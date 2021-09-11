@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * Created on:  Feb 08, 2021
@@ -8,12 +10,12 @@ import java.io.*;
 
 public class NumberOfDistinctIslands {
 
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    static char[] chars = {'D', 'U', 'R', 'L'};
+
     public static void main(String[] args) {
 
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-    static char[] chars = {'D', 'U', 'R', 'L'};
 
     public static int numDistinctIslands(int[][] grid) {
         int rows = grid.length, cols = rows > 0 ? grid[0].length : 0;

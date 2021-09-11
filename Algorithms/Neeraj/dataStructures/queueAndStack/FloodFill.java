@@ -24,6 +24,8 @@ The value of each color in image[i][j] and newColor will be an integer in [0, 65
 
  */
 public class FloodFill {
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
     public static void main(String[] args) {
         System.out.println(Arrays.deepToString(floodFill(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2)));
         System.out.println(Arrays.deepToString(floodFill_bfs(new int[][]{{1, 1, 1}, {1, 1, 0}, {1, 0, 1}}, 1, 1, 2)));
@@ -44,8 +46,6 @@ public class FloodFill {
             dfs(image, sr + dir[0], sc + dir[1], rows, cols, newColour, startColour);
         }
     }
-
-    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
     public static int[][] floodFill_bfs(int[][] image, int sr, int sc, int newColor) {
         int rows = image.length, cols = image[0].length;

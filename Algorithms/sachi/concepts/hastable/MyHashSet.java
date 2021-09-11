@@ -15,6 +15,18 @@ class MyHashSet {
         myData = new ArrayList<>();
     }
 
+    public static void main(String[] args) {
+        MyHashSet hashSet = new MyHashSet();
+        hashSet.add(1);
+        hashSet.add(2);
+        hashSet.contains(1);    // returns true
+        hashSet.contains(3);    // returns false (not found)
+        hashSet.add(2);
+        hashSet.contains(2);    // returns true
+        hashSet.remove(2);
+        hashSet.contains(2);    // returns false (already removed)
+    }
+
     public void add(int key) {
         int position = getHash(key);
         myData.set(position, key);
@@ -35,18 +47,6 @@ class MyHashSet {
 
     public int getHash(int key) {
         return ((key * 31) + key) / 11;
-    }
-
-    public static void main(String[] args) {
-        MyHashSet hashSet = new MyHashSet();
-        hashSet.add(1);
-        hashSet.add(2);
-        hashSet.contains(1);    // returns true
-        hashSet.contains(3);    // returns false (not found)
-        hashSet.add(2);
-        hashSet.contains(2);    // returns true
-        hashSet.remove(2);
-        hashSet.contains(2);    // returns false (already removed)
     }
 }
 

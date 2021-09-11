@@ -29,6 +29,7 @@ public class ConvertSortedArrayToBinarySearchTree {
         treeNode.right = sortedArrayToBST(Arrays.copyOfRange(nums, mid + 1, nums.length));
         return treeNode;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Nov 05, 2020
  * Questions: https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/

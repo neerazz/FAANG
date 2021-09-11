@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * Created on:  Nov 07, 2020
@@ -33,7 +33,7 @@ public class CountNumberWithCondition {
                 start = mid;
             }
         }
-        if(nums[start] < tar) return start;
+        if (nums[start] < tar) return start;
         return nums[end] < tar ? end : -1;
     }
 

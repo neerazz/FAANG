@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Feb 01, 2021
@@ -7,6 +6,8 @@ import java.io.*;
  */
 
 public class BoggleBoard {
+
+    static int[][] dirs = {{0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}, {1, 0}, {1, 1}};
 
     public static void main(String[] args) {
         System.out.println(boggleBoard(
@@ -48,8 +49,6 @@ public class BoggleBoard {
         }
         return new ArrayList<>(result);
     }
-
-    static int[][] dirs = {{0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}, {1, 0}, {1, 1}};
 
     private static void dfs(char[][] board, int row, int col, int rows, int cols, Trie trie, boolean[][] visited, Set<String> result) {
         if (row < 0 || row >= rows || col < 0 || col >= cols || visited[row][col] || trie.cur != board[row][col])

@@ -18,7 +18,6 @@ with the number of occurrence being 4, 3, 2 and 1 respectively.
 
 */
 
-import java.util.PriorityQueue;
 import java.util.*;
 
 class TopKFrequentWords {

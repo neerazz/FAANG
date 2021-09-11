@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Stack;
 
 /**
  * Created on:  Jan 20, 2021
@@ -60,11 +60,12 @@ public class DesignAnExpressionTreeWithEvaluateFunction {
     }
 
 }
-abstract class ArithmeticNode {
-    public abstract int evaluate();
 
+abstract class ArithmeticNode {
     ArithmeticNode left, right;
     int val;
+
+    public abstract int evaluate();
 }
 
 class MyNode extends ArithmeticNode {
@@ -86,11 +87,11 @@ class TreeBuilder {
         for (String cur : postfix) {
             ArithmeticNode arithmeticNode = new MyNode();
             if (isSymbol(cur)) {
-                ArithmeticNode v2 = stack.pop(),  v1 = stack.pop();
+                ArithmeticNode v2 = stack.pop(), v1 = stack.pop();
                 arithmeticNode.left = v1;
                 arithmeticNode.right = v2;
                 arithmeticNode.val = getVal(v1.val, cur, v2.val);
-            }else{
+            } else {
                 arithmeticNode.val = Integer.parseInt(cur);
             }
             stack.add(arithmeticNode);

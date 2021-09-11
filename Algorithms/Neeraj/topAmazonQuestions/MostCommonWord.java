@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Jan 12, 2021
@@ -27,7 +26,7 @@ public class MostCommonWord {
                 if (sb.length() == 0) continue;
                 String word = sb.toString();
                 sb = new StringBuilder();
-                if(set.contains(word)) continue;
+                if (set.contains(word)) continue;
                 int count = map.getOrDefault(word, 0);
                 map.put(word, count + 1);
                 if (count + 1 > max) {

@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 Given a string, find the length of the longest substring without repeating characters.
 
@@ -30,22 +32,22 @@ public class LongestSubstringWithoutRepeating {
 
     public static int lengthOfLongestSubstring2(String s) {
         Set<Character> set = new HashSet<>();
-        int max = Integer.MIN_VALUE, p1 =0;
-        for(int i =0; i<s.length() ; i++){
+        int max = Integer.MIN_VALUE, p1 = 0;
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(set.contains(c)){
+            if (set.contains(c)) {
 //                 Then keep removing from the queue till you encounter the current char.
-                while(p1 <= i){
-                  char p1Char =s.charAt(p1++);
-                    if(p1Char == c){
+                while (p1 <= i) {
+                    char p1Char = s.charAt(p1++);
+                    if (p1Char == c) {
                         break;
-                    }else{
-                      set.remove(p1Char);
+                    } else {
+                        set.remove(p1Char);
                     }
                 }
             }
             set.add(c);
-            max = Math.max(max,set.size());
+            max = Math.max(max, set.size());
             // System.out.println(set);
         }
         return max;

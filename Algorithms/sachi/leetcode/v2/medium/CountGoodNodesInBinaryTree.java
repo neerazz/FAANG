@@ -26,7 +26,7 @@ public class CountGoodNodesInBinaryTree {
         goodNodes(root, Integer.MIN_VALUE);
         return sol;
     }
-    
+
     public void goodNodes(TreeNode node, int maxVal) {
         if (node == null) return;
         if (node.val >= maxVal) sol++;

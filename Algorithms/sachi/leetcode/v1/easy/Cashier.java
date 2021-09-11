@@ -22,6 +22,13 @@ class Cashier {
         }
     }
 
+    public static void main(String[] args) {
+        Cashier cashier = new Cashier(3, 50, new int[]{1, 2, 3, 4, 5, 6, 7}, new int[]{100, 200, 300, 400, 300, 200, 100});
+        System.out.println(cashier.getBill(new int[]{1, 2}, new int[]{1, 2}));
+        System.out.println(cashier.getBill(new int[]{3, 7}, new int[]{10, 10}));
+        System.out.println(cashier.getBill(new int[]{1, 2, 3, 4, 5, 6, 7}, new int[]{1, 1, 1, 1, 1, 1, 1}));
+    }
+
     public double getBill(int[] product, int[] amount) {
         if (n == ++counter) {
             //Apply discount
@@ -40,13 +47,6 @@ class Cashier {
             p += priceMap.get(product[i]) * qty[i];
         }
         return p;
-    }
-
-    public static void main(String[] args) {
-        Cashier cashier = new Cashier(3, 50, new int[]{1, 2, 3, 4, 5, 6, 7}, new int[]{100, 200, 300, 400, 300, 200, 100});
-        System.out.println(cashier.getBill(new int[]{1, 2}, new int[]{1, 2}));
-        System.out.println(cashier.getBill(new int[]{3, 7}, new int[]{10, 10}));
-        System.out.println(cashier.getBill(new int[]{1, 2, 3, 4, 5, 6, 7}, new int[]{1, 1, 1, 1, 1, 1, 1}));
     }
 
 }

@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Jan 16, 2021
@@ -47,6 +46,6 @@ public class OptimizeMemoryUsage {
                 }
             }
         }
-        return pairs.getOrDefault(max, Arrays.asList(new int[]{-1,-1}));
+        return pairs.getOrDefault(max, Arrays.asList(new int[]{-1, -1}));
     }
 }

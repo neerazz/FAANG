@@ -1,5 +1,6 @@
-import java.util.*;
-import java.io.*;
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * Created on:  Jan 19, 2021
@@ -17,7 +18,7 @@ public class MinCostToRepairEdges {
     }
 
     public static int minCostToRepairEdges(int n, int[][] edges, int[][] edgesToRepair) {
-        if(edges == null || edgesToRepair == null) return -1;
+        if (edges == null || edgesToRepair == null) return -1;
         if (n == 0) return 0;
         Set<Integer>[] graph = new HashSet[n + 1];
         int[][] costs = new int[n + 1][n + 1];

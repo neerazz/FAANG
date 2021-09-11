@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Mar 18, 2021
  * Questions: https://leetcode.com/problems/wiggle-subsequence/

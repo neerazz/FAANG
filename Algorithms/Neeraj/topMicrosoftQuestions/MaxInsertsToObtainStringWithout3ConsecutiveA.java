@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 31, 2020
  * Questions: https://leetcode.com/discuss/interview-question/398056/
@@ -24,8 +21,8 @@ public class MaxInsertsToObtainStringWithout3ConsecutiveA {
             if (count > 3) return -1;
         }
 //        Insert towards the end.
-        if(s.charAt(len-1) != 'a') inserts +=2;
-        else inserts += 2- count;
+        if (s.charAt(len - 1) != 'a') inserts += 2;
+        else inserts += 2 - count;
         return inserts;
     }
 }

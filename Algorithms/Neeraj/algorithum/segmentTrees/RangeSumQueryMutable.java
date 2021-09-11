@@ -1,10 +1,7 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Oct 07, 2020
  * Questions: https://leetcode.com/problems/range-sum-query-mutable/
- *
+ * <p>
  * https://www.youtube.com/watch?v=ZBHKZF5w4YU
  */
 

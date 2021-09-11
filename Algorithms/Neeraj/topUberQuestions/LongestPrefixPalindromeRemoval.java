@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Nov 04, 2020
  * Questions: https://leetcode.com/discuss/interview-question/916880/Uber-OA-or-Oct-2020

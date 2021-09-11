@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 https://leetcode.com/explore/learn/card/trie/147/basic-operations/1047/
@@ -50,19 +51,6 @@ public class ImplementTrie {
 }
 
 class Trie_Revision {
-    class TrieNode {
-        char c;
-        TrieNode[] child = new TrieNode[26];
-        boolean isEnd = false;
-
-        public TrieNode() {
-        }
-
-        public TrieNode(char c) {
-            this.c = c;
-        }
-    }
-
     TrieNode[] nodes;
 
     /**
@@ -123,6 +111,19 @@ class Trie_Revision {
      */
     public boolean startsWith(String prefix) {
         return search(this.nodes, prefix) != null;
+    }
+
+    class TrieNode {
+        char c;
+        TrieNode[] child = new TrieNode[26];
+        boolean isEnd = false;
+
+        public TrieNode() {
+        }
+
+        public TrieNode(char c) {
+            this.c = c;
+        }
     }
 }
 

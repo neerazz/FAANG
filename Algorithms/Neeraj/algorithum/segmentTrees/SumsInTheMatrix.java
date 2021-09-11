@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Feb 18, 2021
@@ -31,7 +30,7 @@ public class SumsInTheMatrix {
         return getOption2(sums, queries);
     }
 
-//     Time: Per query: O(Log(n+m))
+    //     Time: Per query: O(Log(n+m))
     private static List<Integer> getOption2(Map<Integer, Integer> sums, int[][] queries) {
         TreeSet<Integer> sortedSums = new TreeSet<>(sums.keySet());
         Map<Integer, Integer> preSumMap = new HashMap<>();
@@ -51,7 +50,7 @@ public class SumsInTheMatrix {
         return result;
     }
 
-//     Time: Per query: O(R-L)
+    //     Time: Per query: O(R-L)
     private static List<Integer> getOption1(Map<Integer, Integer> sums, int[][] queries) {
         List<Integer> result = new ArrayList<>();
         for (int[] query : queries) {

@@ -2,11 +2,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 class CopyListWithRandomPointer {
+    static Map<Node, Node> map = new HashMap<>();
+
     public static void main(String[] args) {
 
     }
-
-    static Map<Node, Node> map = new HashMap<>();
 
     public static Node copyRandomList(Node head) {
 //        if (head == null) return null;

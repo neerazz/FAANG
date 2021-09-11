@@ -3,7 +3,7 @@ package concepts.binarySearch;
 public class SearchSortedArray {
 
     public static void main(String[] args) {
-        System.out.println(search(new int[]{1,3,5},0));
+        System.out.println(search(new int[]{1, 3, 5}, 0));
     }
 
     public static int search(int[] nums, int target) {
@@ -25,17 +25,17 @@ public class SearchSortedArray {
                 end = mid - 1;
             }
         }
-        if(shiftIndex == 0){
+        if (shiftIndex == 0) {
             //Search whole array
-            return binSearch(nums, 0, nums.length-1, target);
-        }else if (target == nums[shiftIndex]) {
+            return binSearch(nums, 0, nums.length - 1, target);
+        } else if (target == nums[shiftIndex]) {
             return shiftIndex;
         } else if (target >= nums[0]) {
             //Search left
-            return binSearch(nums, 0, shiftIndex-1, target);
+            return binSearch(nums, 0, shiftIndex - 1, target);
         } else {
             //Search right
-            return binSearch(nums, shiftIndex, nums.length-1, target);
+            return binSearch(nums, shiftIndex, nums.length - 1, target);
         }
 
     }

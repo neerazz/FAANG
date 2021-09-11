@@ -47,6 +47,7 @@ public class KthLargestElementInAStream {
         System.out.println(kthLargest.add(4) + " should be 3");
         System.out.println(kthLargest.add(4) + " should be 4");
     }
+
     static class KthLargest {
         int k;
         TreeNode root;

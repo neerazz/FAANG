@@ -56,6 +56,7 @@ public class HouseRobberIII {
         parents.put(node, parent);
         return result;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

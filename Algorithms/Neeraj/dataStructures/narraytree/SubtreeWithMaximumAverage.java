@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on:  Jan 12, 2021
@@ -7,6 +7,9 @@ import java.io.*;
  */
 
 public class SubtreeWithMaximumAverage {
+
+    static double max;
+    static Node result;
 
     public static void main(String[] args) {
         Node n20 = new Node(20);
@@ -26,9 +29,6 @@ public class SubtreeWithMaximumAverage {
         n18.dep.add(n8);
         System.out.println(getMaxAverageSubTree(n20));
     }
-
-    static double max;
-    static Node result;
 
     private static Node getMaxAverageSubTree(Node root) {
         max = 0;

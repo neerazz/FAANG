@@ -30,6 +30,7 @@ public class SearchInABinarySearchTree {
         if (root.val > val) return searchBST(root.left, val);
         return searchBST(root.right, val);
     }
+
     public static TreeNode createTreeNode(Integer[] integers) {
         Queue<TreeNode> nodes = new LinkedList<>();
         TreeNode head = null;
@@ -63,6 +64,7 @@ public class SearchInABinarySearchTree {
         }
         return head;
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

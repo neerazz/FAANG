@@ -99,6 +99,7 @@ public class SameTree {
         }
         return pQueue.isEmpty() && qQueue.isEmpty();
     }
+
     static class TreeNode {
         int val;
         TreeNode left;

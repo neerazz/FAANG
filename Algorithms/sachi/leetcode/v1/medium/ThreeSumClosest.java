@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class ThreeSumClosest {
 
+    public static void main(String[] args) {
+        ThreeSumClosest threeSumClosest = new ThreeSumClosest();
+        System.out.println(threeSumClosest.threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
+    }
+
     public int threeSumClosest(int[] nums, int target) {
         int sol = Integer.MAX_VALUE;
         Arrays.sort(nums);
@@ -23,11 +28,6 @@ public class ThreeSumClosest {
             }
         }
         return sol;
-    }
-
-    public static void main(String[] args) {
-        ThreeSumClosest threeSumClosest = new ThreeSumClosest();
-        System.out.println(threeSumClosest.threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
     }
 
 }

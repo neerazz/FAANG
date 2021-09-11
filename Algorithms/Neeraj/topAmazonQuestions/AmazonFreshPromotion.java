@@ -34,10 +34,10 @@ public class AmazonFreshPromotion {
         while (cartIdx < shoppingCart.length && codeIdx < codeList.length) {
             String cur = shoppingCart[cartIdx];
 //            If the first fruit of the codeList is anything or if it matches the current fruit at the cart idx.
-            if((codeList[codeIdx][0].equals("anything") || codeList[codeIdx][0].equals(cur)) &&
-                    hasOrder(shoppingCart, cartIdx, codeList[codeIdx])){
+            if ((codeList[codeIdx][0].equals("anything") || codeList[codeIdx][0].equals(cur)) &&
+                    hasOrder(shoppingCart, cartIdx, codeList[codeIdx])) {
                 cartIdx += codeList[codeIdx++].length;
-            }else{
+            } else {
                 cartIdx++;
             }
         }
@@ -48,9 +48,9 @@ public class AmazonFreshPromotion {
     private static boolean hasOrder(String[] shoppingCart, int idx, String[] order) {
 //        Loop through the codeList to check if the fruits are in order.
         for (String s : order) {
-            if (idx < shoppingCart.length && (s.equals("anything") || shoppingCart[idx].equals(s))){
+            if (idx < shoppingCart.length && (s.equals("anything") || shoppingCart[idx].equals(s))) {
                 idx++;
-            }else{
+            } else {
                 return false;
             }
         }

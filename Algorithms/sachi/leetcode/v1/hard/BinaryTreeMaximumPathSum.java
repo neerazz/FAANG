@@ -6,6 +6,16 @@ public class BinaryTreeMaximumPathSum {
 
     int max = Integer.MIN_VALUE;
 
+    public static void main(String[] args) {
+
+        TreeNode node = new TreeNode(1);
+        node.left = new TreeNode(2);
+        //node.right = new TreeNode(3);
+
+        BinaryTreeMaximumPathSum binaryTreeMaximumPathSum = new BinaryTreeMaximumPathSum();
+        System.out.print(binaryTreeMaximumPathSum.maxPathSum(node));
+    }
+
     public int maxPathSum(TreeNode root) {
         if (root == null) return 0;
         int dfsMax = dfs(root);
@@ -32,15 +42,5 @@ public class BinaryTreeMaximumPathSum {
         //Excluding node max
         int runningMax = (int) Math.max(lMax, rMax);
         return Math.max(runningMax, node.val);
-    }
-
-    public static void main(String[] args) {
-
-        TreeNode node = new TreeNode(1);
-        node.left = new TreeNode(2);
-        //node.right = new TreeNode(3);
-
-        BinaryTreeMaximumPathSum binaryTreeMaximumPathSum = new BinaryTreeMaximumPathSum();
-        System.out.print(binaryTreeMaximumPathSum.maxPathSum(node));
     }
 }

@@ -32,13 +32,13 @@ public class ZeroOneMatrix {
 //        int[][] matrix = new int[][]{{0,0,0},{0,1,0},{0,0,0}};
 //        Arrays.stream(updateMatrix(matrix)).forEach(a -> System.out.println(Arrays.toString(a)));
         System.out.println("========================================");
-        int[][] matrix2 = new int[][]{{0,0,0},{0,1,0},{1,1,1}};
+        int[][] matrix2 = new int[][]{{0, 0, 0}, {0, 1, 0}, {1, 1, 1}};
         Arrays.stream(updateMatrix(matrix2)).forEach(a -> System.out.println(Arrays.toString(a)));
         System.out.println("========================================");
-        int[][] matrix3 = new int[][]{{0,1,0,1,1},{1,1,0,0,1},{0,0,0,1,0},{1,0,1,1,1},{1,0,0,0,1}};
+        int[][] matrix3 = new int[][]{{0, 1, 0, 1, 1}, {1, 1, 0, 0, 1}, {0, 0, 0, 1, 0}, {1, 0, 1, 1, 1}, {1, 0, 0, 0, 1}};
         Arrays.stream(updateMatrix(matrix3)).forEach(a -> System.out.println(Arrays.toString(a)));
         System.out.println("========================================");
-        int[][] matrix4 = new int[][]{{1,0,1,1,0,0,1,0,0,1},{0,1,1,0,1,0,1,0,1,1},{0,0,1,0,1,0,0,1,0,0},{1,0,1,0,1,1,1,1,1,1},{0,1,0,1,1,0,0,0,0,1},{0,0,1,0,1,1,1,0,1,0},{0,1,0,1,0,1,0,0,1,1},{1,0,0,0,1,1,1,1,0,1},{1,1,1,1,1,1,1,0,1,0},{1,1,1,1,0,1,0,0,1,1}};
+        int[][] matrix4 = new int[][]{{1, 0, 1, 1, 0, 0, 1, 0, 0, 1}, {0, 1, 1, 0, 1, 0, 1, 0, 1, 1}, {0, 0, 1, 0, 1, 0, 0, 1, 0, 0}, {1, 0, 1, 0, 1, 1, 1, 1, 1, 1}, {0, 1, 0, 1, 1, 0, 0, 0, 0, 1}, {0, 0, 1, 0, 1, 1, 1, 0, 1, 0}, {0, 1, 0, 1, 0, 1, 0, 0, 1, 1}, {1, 0, 0, 0, 1, 1, 1, 1, 0, 1}, {1, 1, 1, 1, 1, 1, 1, 0, 1, 0}, {1, 1, 1, 1, 0, 1, 0, 0, 1, 1}};
         Arrays.stream(updateMatrix(matrix4)).forEach(a -> System.out.println(Arrays.toString(a)));
         System.out.println("========================================");
         int[][] matrix5 = new int[][]{{0, 0, 1, 0, 1, 1, 1, 0, 1, 1}, {1, 1, 1, 1, 0, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 1, 0, 0, 0, 1, 1}, {1, 0, 1, 0, 1, 1, 1, 0, 1, 1}, {0, 0, 1, 1, 1, 0, 1, 1, 1, 1}, {1, 0, 1, 1, 1, 1, 1, 1, 1, 1}, {1, 1, 1, 1, 0, 1, 0, 1, 0, 1}, {0, 1, 0, 0, 0, 1, 0, 0, 1, 1}, {1, 1, 1, 0, 1, 1, 0, 1, 0, 1}, {1, 0, 1, 1, 1, 0, 1, 1, 1, 0}};
@@ -51,7 +51,7 @@ public class ZeroOneMatrix {
         int[][] res = new int[rows][columns];
         Queue<Position> q = new LinkedList<Position>();
 
-        for (int r = 0; r < rows; r++){
+        for (int r = 0; r < rows; r++) {
             for (int c = 0; c < columns; c++) {
                 if (matrix[r][c] == 0) {
                     res[r][c] = 0;

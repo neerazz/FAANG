@@ -21,7 +21,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 }
             } else {
                 map.put(c, p2);
-                max = Math.max(max, p2 - p1+1);
+                max = Math.max(max, p2 - p1 + 1);
                 p2++;
             }
         }

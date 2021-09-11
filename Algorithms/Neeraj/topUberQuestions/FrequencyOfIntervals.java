@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created on:  Nov 14, 2020
@@ -22,7 +24,7 @@ public class FrequencyOfIntervals {
             max = Math.max(max, range[1]);
         }
 //        Create an array of max length to draw the frequency graph
-        int[] freq = new int[max+1];
+        int[] freq = new int[max + 1];
         int cur = 0;
         for (int i = 0; i <= max; i++) {
             cur += map.getOrDefault(i, 0);

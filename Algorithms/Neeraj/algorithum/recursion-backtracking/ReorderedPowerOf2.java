@@ -1,6 +1,3 @@
-import java.util.*;
-import java.io.*;
-
 /**
  * Created on:  Mar 21, 2021
  * Questions: https://leetcode.com/problems/reordered-power-of-2/

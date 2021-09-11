@@ -74,7 +74,7 @@ public class RangeMinimumQuery {
         private void updateSTree(int idx, int start, int end, int sIdx, int to) {
             if (start == end) {
                 tree[sIdx] = to;
-            }else{
+            } else {
 //            If the index is in the left side.
                 int mid = (start + end) / 2;
                 int left = 2 * idx + 1, right = 2 * idx + 2;
@@ -103,6 +103,7 @@ public class RangeMinimumQuery {
         }
     }
 }
+
 class FastReader {
     private int BUFFER_SIZE = 1 << 16;
     private DataInputStream din;

@@ -1,10 +1,11 @@
 package blind75.trees;
 
+import util.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
-import util.TreeNode;
 
 /*
 https://leetcode.com/problems/binary-tree-level-order-traversal/

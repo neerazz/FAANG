@@ -38,10 +38,10 @@ public class FindCountOfXInSortedArray {
                 start = mid;
             }
         }
-        if(left){
+        if (left) {
             if (nums[start] == target) return start;
             return nums[end] == target ? end : -1;
-        }else{
+        } else {
             if (nums[end] == target) return end;
             return nums[start] == target ? start : -1;
         }

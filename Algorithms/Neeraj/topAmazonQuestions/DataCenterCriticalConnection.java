@@ -1,5 +1,4 @@
 import java.util.*;
-import java.io.*;
 
 /**
  * Created on:  Jan 19, 2021
@@ -8,11 +7,11 @@ import java.io.*;
 
 public class DataCenterCriticalConnection {
 
+    static int time;
+
     public static void main(String[] args) {
         System.out.println(findCriticalConn(4, 4, new int[][]{{1, 2}, {1, 3}, {3, 2}, {3, 4}}) + " = [[3,4]]");
     }
-
-    static int time;
 
     public static List<List<Integer>> findCriticalConn(int n, int connectionsNum, int[][] connections) {
         time = 0;

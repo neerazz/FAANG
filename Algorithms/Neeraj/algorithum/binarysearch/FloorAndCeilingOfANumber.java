@@ -1,5 +1,3 @@
-
-
 /**
  * Created on:  Oct 08, 2020
  * Questions: https://www.educative.io/courses/grokking-the-coding-interview/qA5wW7R8ox7
@@ -23,14 +21,14 @@ public class FloorAndCeilingOfANumber {
     }
 
     public static int searchCeilingOfANumber(int[] arr, int key) {
-        int start =0, end = arr.length-1;
-        while(start < end){
-            int mid = start + (end - start) /2;
-            if(arr[mid] == key) return mid;
-            if(arr[mid] < key) start = mid+1;
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (arr[mid] == key) return mid;
+            if (arr[mid] < key) start = mid + 1;
             else end = mid;
         }
-        if(arr[start] >= key) return start;
+        if (arr[start] >= key) return start;
         return arr[end] >= key ? end : -1;
     }
 

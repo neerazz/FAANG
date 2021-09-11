@@ -1,5 +1,7 @@
-import java.util.*;
-import java.io.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created on:  Jan 14, 2021
@@ -8,12 +10,12 @@ import java.io.*;
 
 public class ShoppingPatterns {
 
+    static int min;
+
     public static void main(String[] args) {
         System.out.println(getMinScore(6, 6, new int[]{1, 2, 2, 3, 4, 5}, new int[]{2, 4, 5, 5, 5, 6}) + " = 3");
         System.out.println(getMinScore(5, 6, new int[]{1, 1, 2, 2, 3, 4}, new int[]{2, 3, 3, 4, 4, 5}) + " = 2");
     }
-
-    static int min;
 
     private static int getMinScore(int nodes, int edges, int[] from, int[] to) {
         min = Integer.MAX_VALUE;

@@ -1,11 +1,6 @@
 package leetcode.v1.hard;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class FreqStack {
 
@@ -17,6 +12,20 @@ public class FreqStack {
     public FreqStack() {
         map = new HashMap<>();
         position = 0;
+    }
+
+    public static void main(String[] args) {
+        FreqStack freqStack = new FreqStack();
+        freqStack.push(5);
+        freqStack.push(7);
+        freqStack.push(5);
+        freqStack.push(7);
+        freqStack.push(4);
+        freqStack.push(5);
+        System.out.println(freqStack.pop());
+        System.out.println(freqStack.pop());
+        System.out.println(freqStack.pop());
+        System.out.println(freqStack.pop());
     }
 
     public void push(int x) {
@@ -72,19 +81,5 @@ public class FreqStack {
                 return this.count - other.count;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        FreqStack freqStack = new FreqStack();
-        freqStack.push(5);
-        freqStack.push(7);
-        freqStack.push(5);
-        freqStack.push(7);
-        freqStack.push(4);
-        freqStack.push(5);
-        System.out.println(freqStack.pop());
-        System.out.println(freqStack.pop());
-        System.out.println(freqStack.pop());
-        System.out.println(freqStack.pop());
     }
 }

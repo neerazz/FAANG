@@ -1,5 +1,3 @@
-
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,9 +6,9 @@ https://www.hackerrank.com/challenges/strong-password/problem
  */
 public class StrongPassword {
     public static void main(String[] args) {
-        System.out.println(minimumNumber(3,"Abl") + " should return [3]");
-        System.out.println(minimumNumber(11,"#HackerRank") + " should return [1]");
-        System.out.println(minimumNumber(4,"4700") + " should return [3]");
+        System.out.println(minimumNumber(3, "Abl") + " should return [3]");
+        System.out.println(minimumNumber(11, "#HackerRank") + " should return [1]");
+        System.out.println(minimumNumber(4, "4700") + " should return [3]");
     }
 
     static int minimumNumber(int n, String password) {
@@ -33,6 +31,6 @@ public class StrongPassword {
         if (!matcherSpecial.find()) {
             count++;
         }
-        return Math.max(6-n, count);
+        return Math.max(6 - n, count);
     }
 }

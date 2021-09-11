@@ -30,8 +30,8 @@ public class OptimizeWaterDistributionInAVillage {
             if (visited[cur]) continue;
             visited[cur] = true;
             total += cost;
-            for(int[] deps: map.getOrDefault(cur, new ArrayList<>())){
-                if(!visited[deps[0]]){
+            for (int[] deps : map.getOrDefault(cur, new ArrayList<>())) {
+                if (!visited[deps[0]]) {
                     pq.add(deps);
                 }
             }

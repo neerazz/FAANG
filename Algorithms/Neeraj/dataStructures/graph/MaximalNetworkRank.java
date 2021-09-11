@@ -1,5 +1,3 @@
-
-
 /**
  * Created on:  Jun 23, 2021
  * Ref: https://leetcode.com/problems/maximal-network-rank/

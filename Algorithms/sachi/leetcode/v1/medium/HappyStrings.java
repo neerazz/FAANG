@@ -1,15 +1,17 @@
 package leetcode.v1.medium;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class HappyStrings {
 
 
     static List<String> list = new ArrayList<>();
+
+    public static void main(String[] args) {
+        HappyStrings happyStrings = new HappyStrings();
+        happyStrings.getHappyString(3, 2);
+        System.out.println(list.toString());
+    }
 
     public String getHappyString(int n, int k) {
 
@@ -36,12 +38,6 @@ public class HappyStrings {
             generateString(n, sb.append(c), pq, input, k);
             sb.deleteCharAt(sb.length() - 1);
         }
-    }
-
-    public static void main(String[] args) {
-        HappyStrings happyStrings = new HappyStrings();
-        happyStrings.getHappyString(3, 2);
-        System.out.println(list.toString());
     }
 
 }
