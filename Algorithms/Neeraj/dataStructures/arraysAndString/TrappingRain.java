@@ -7,9 +7,9 @@ INPUT: N=6
 OUTPUT: 10
 */
 
-import java.io.*;
-import java.util.*;
-import java.lang.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 //Driver code
 class TrappingRain {
@@ -32,32 +32,27 @@ class TrappingRain {
 		//calling trappingWater() function
 		System.out.println(obj.trappingWater(arr, n));
 	}
-}
+    static class Solution{
 
-// } Driver Code Ends
+        static int trappingWater(int arr[], int n) {
 
-
-
-class Solution{
-
-    static int trappingWater(int arr[], int n) { 
-        
-        int[] lmax = new int[n];
-        int[] rmax = new int[n];
-        lmax[0] = arr[0];
-        rmax[n-1] = arr[n-1];
-        for ( int i=1; i<n; i++ ) {
-            lmax[i] = Math.max(lmax[i-1], arr[i]);
-            rmax[n-i-1] = Math.max(rmax[n-i], arr[n-1-i]);
-        }
-        int sum = 0;
-        for ( int i=0; i<n; i++ ) {
-            if ( Math.min(lmax[i], rmax[i])>arr[i] ) {
-                sum += Math.min(lmax[i], rmax[i]) - arr[i];
+            int[] lmax = new int[n];
+            int[] rmax = new int[n];
+            lmax[0] = arr[0];
+            rmax[n-1] = arr[n-1];
+            for ( int i=1; i<n; i++ ) {
+                lmax[i] = Math.max(lmax[i-1], arr[i]);
+                rmax[n-i-1] = Math.max(rmax[n-i], arr[n-1-i]);
             }
+            int sum = 0;
+            for ( int i=0; i<n; i++ ) {
+                if ( Math.min(lmax[i], rmax[i])>arr[i] ) {
+                    sum += Math.min(lmax[i], rmax[i]) - arr[i];
+                }
+            }
+            return sum;
         }
-        return sum;
-    } 
+    }
 }
 
 

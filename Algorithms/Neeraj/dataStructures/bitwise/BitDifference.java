@@ -6,8 +6,7 @@ INPUT: N = 2, arr[] = {1, 2}
 OUTPUT: 4
 */
 
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 class BitDifference
 {
@@ -22,22 +21,23 @@ class BitDifference
             Solution obj = new Solution();
             System.out.println(obj.sumBitDiff(arr,n));
         }
-}
-
-class Solution
-{
-    public static long sumBitDiff(int arr[], int n) 
-    { 
-        long ans = 0; 
-
-        for (int i = 0; i < 32; i++)
+        static class Solution
         {
-            int count = 0;
-            for (int j = 0; j < n; j++)
-                if ( (arr[j] & (1 << i)) != 0)
-                    count++;
+            public static long sumBitDiff(int arr[], int n)
+            {
+                long ans = 0;
+
+                for (int i = 0; i < 32; i++)
+                {
+                    int count = 0;
+                    for (int j = 0; j < n; j++)
+                        if ( (arr[j] & (1 << i)) != 0)
+                            count++;
                     ans += (count * (n - count) * 2);
+                }
+                return ans;
+            }
         }
-        return ans; 
-    } 
 }
+
+

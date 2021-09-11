@@ -7,9 +7,9 @@ INPUT:  n=3 m=3
 OUTPUT: 3
 */
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 //Driver code
 class XTotalShapes
 {
@@ -30,41 +30,43 @@ class XTotalShapes
         int ans = obj.xShape(grid);
         System.out.println(ans);
     }
-}
 
-class Solution
-{
-    //Function to find the number of 'X' total shapes.
-    public boolean val(char[][] grid,boolean[][] vis,int r,int c)
+    static class Solution
     {
-        return (r>=0&&r<grid.length&&c>=0&&c<grid[0].length&&!vis[r][c]&&grid[r][c]=='X');
-    }
-    public int xShape(char[][] grid)
-    {
-        boolean[][] vis=new boolean[grid.length][grid[0].length];
-        int res=0;
-        for(int i=0;i<grid.length;i++)
+        //Function to find the number of 'X' total shapes.
+        public boolean val(char[][] grid,boolean[][] vis,int r,int c)
         {
-            for(int j=0;j<grid[0].length;j++)
+            return (r>=0&&r<grid.length&&c>=0&&c<grid[0].length&&!vis[r][c]&&grid[r][c]=='X');
+        }
+        public int xShape(char[][] grid)
+        {
+            boolean[][] vis=new boolean[grid.length][grid[0].length];
+            int res=0;
+            for(int i=0;i<grid.length;i++)
             {
-                if(grid[i][j]=='X'&&!vis[i][j])
+                for(int j=0;j<grid[0].length;j++)
                 {
-                    dfs(grid,vis,i,j);
-                    res+=1;
+                    if(grid[i][j]=='X'&&!vis[i][j])
+                    {
+                        dfs(grid,vis,i,j);
+                        res+=1;
+                    }
                 }
             }
+            return res;
         }
-        return res;
-    }
-    public void dfs(char[][] grid,boolean[][] vis,int i,int j)
-    {
-        int r[]={1,0,0,-1};
-        int c[]={0,1,-1,0};
-        vis[i][j]=true;
-        for(int a=0;a<4;a++)
+        public void dfs(char[][] grid,boolean[][] vis,int i,int j)
         {
-            if(val(grid,vis,i+r[a],j+c[a]))
-            dfs(grid,vis,i+r[a],j+c[a]);
+            int r[]={1,0,0,-1};
+            int c[]={0,1,-1,0};
+            vis[i][j]=true;
+            for(int a=0;a<4;a++)
+            {
+                if(val(grid,vis,i+r[a],j+c[a]))
+                    dfs(grid,vis,i+r[a],j+c[a]);
+            }
         }
     }
 }
+
+

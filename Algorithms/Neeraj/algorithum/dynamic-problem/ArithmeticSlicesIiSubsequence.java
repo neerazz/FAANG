@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created on:  Sep 10, 2021
@@ -12,11 +14,10 @@ public class ArithmeticSlicesIiSubsequence {
     public static int numberOfArithmeticSlices(int[] nums) {
         Map<String, Integer> dp = new HashMap<>();
         int len = nums.length;
-        Arrays.sort(nums);
         int total = 0;
         for(int i=0; i<len; i++){
             for(int j=i+1; j<len; j++){
-                total += helper(nums, j+1, nums[j], nums[j]-nums[i], dp);
+                total += helper(nums, j+1, nums[j], (long)nums[j] - nums[i], dp);
             }
         }
         return total;
@@ -31,8 +32,8 @@ public class ArithmeticSlicesIiSubsequence {
         long expected = pre + diff;
         for(int i=start; i<len; i++){
             if(nums[i] == expected){
-                cur += helper(nums, i+1, nums[i], diff, dp) +1;
-            }else if(nums[i] > expected) break;
+                cur += helper(nums, i+1, nums[i], diff, dp)+1;
+            }
         }
         dp.put(key, cur);
         return cur;

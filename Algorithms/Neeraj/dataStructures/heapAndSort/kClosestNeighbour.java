@@ -7,9 +7,8 @@ INPUT:N = 5, X = 0, K = 4
 OUTPUT: -21 -12 4 20
 */
 
-import java.io.*;
-import java.util.*; 
-import java.lang.*;
+import java.io.IOException;
+import java.util.*;
 
 class Info
 {
@@ -44,44 +43,45 @@ class Compare implements Comparator<Info>
 		}
 	}
 }
-class Solution 
-{ 
-	public ArrayList<Integer> Kclosest(int arr[], int n, int x, int k) 
-	{ 
-	    ArrayList<Integer> result= new ArrayList<Integer>();
-		PriorityQueue<Info> pq = new PriorityQueue<Info>(k, new Compare());
 
-		for (int i = 0; i < k; i++)
-		{
-			Info obj = new Info(Math.abs(arr[i] - x) , arr[i]);
-			pq.add(obj);
-		}
-
-		for (int i = k; i < n; i++)
-		{
-			int diff = Math.abs(arr[i] - x);
-			if (pq.peek().distance < diff)
-				continue;
-
-			if (diff == pq.peek().distance && pq.peek().houseno < arr[i])
-				continue;
-
-			pq.remove();
-			Info obj = new Info(Math.abs(arr[i] - x) , arr[i]);
-			pq.add(obj);
-		}
-		while (0 < pq.size())
-		{
-			result.add(pq.peek().houseno);
-			pq.remove();
-		}
-		Collections.sort(result);
-		return result;
-	}
-}
 
 // Driver Code
 class kClosestNeighbour{
+	static class Solution
+	{
+		public ArrayList<Integer> Kclosest(int arr[], int n, int x, int k)
+		{
+			ArrayList<Integer> result= new ArrayList<Integer>();
+			PriorityQueue<Info> pq = new PriorityQueue<Info>(k, new Compare());
+
+			for (int i = 0; i < k; i++)
+			{
+				Info obj = new Info(Math.abs(arr[i] - x) , arr[i]);
+				pq.add(obj);
+			}
+
+			for (int i = k; i < n; i++)
+			{
+				int diff = Math.abs(arr[i] - x);
+				if (pq.peek().distance < diff)
+					continue;
+
+				if (diff == pq.peek().distance && pq.peek().houseno < arr[i])
+					continue;
+
+				pq.remove();
+				Info obj = new Info(Math.abs(arr[i] - x) , arr[i]);
+				pq.add(obj);
+			}
+			while (0 < pq.size())
+			{
+				result.add(pq.peek().houseno);
+				pq.remove();
+			}
+			Collections.sort(result);
+			return result;
+		}
+	}
     public static void main(String args[]) throws IOException { 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

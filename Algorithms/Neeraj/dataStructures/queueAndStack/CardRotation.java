@@ -11,8 +11,10 @@ INPUT: 4
 OUTPUT: 2 1 4 3
 */
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 class CardRotation
 {
@@ -29,31 +31,31 @@ class CardRotation
             System.out.print(i + " ");
         System.out.println();
     }
-}
+    static class Solution{
 
-class Solution{
-    
-    ArrayList<Integer> rotation(int n){
-        int[] res = new int[n];
-        
-        int j = 0;
-        for(int i = 1; i <= n; i++){
-            int count =- 1;
-            while(true){
-                if(res[j%n] == 0) count++;
-                if(count == i){
-                    res[j%n] = i;
-                    break;
+        ArrayList<Integer> rotation(int n){
+            int[] res = new int[n];
+
+            int j = 0;
+            for(int i = 1; i <= n; i++){
+                int count =- 1;
+                while(true){
+                    if(res[j%n] == 0) count++;
+                    if(count == i){
+                        res[j%n] = i;
+                        break;
+                    }
+                    j++;
                 }
-                j++;
             }
+
+            ArrayList<Integer> ans = new ArrayList<>();
+            for(int i = 0; i < n; i++){
+                ans.add(res[i]);
+            }
+
+            return ans;
         }
-        
-        ArrayList<Integer> ans = new ArrayList<>();
-        for(int i = 0; i < n; i++){
-            ans.add(res[i]);
-        }
-        
-        return ans;
     }
 }
+

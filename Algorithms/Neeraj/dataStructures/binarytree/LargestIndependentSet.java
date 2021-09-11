@@ -9,10 +9,11 @@ OUTPUT: 5
 
 /*package whatever //do not write package name here */
 
-import java.util.LinkedList; 
-import java.util.Queue; 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 
 class Node{
     int data;
@@ -102,22 +103,24 @@ class LargestIndependentSet {
         Solution ob = new Solution();
         System.out.println(ob.LISS(root));
     }
-}
 
-class Solution {
-    public int LISS(Node node){
-        if(node==null){
-            return 0;
+    static class Solution {
+        public int LISS(Node node){
+            if(node==null){
+                return 0;
+            }
+            int se = LISS(node.left)+LISS(node.right);
+
+            int si = 1;
+            if(node.left!=null){
+                si+=LISS(node.left.left)+LISS(node.left.right);
+            }
+            if(node.right!=null){
+                si+=LISS(node.right.left)+LISS(node.right.right);
+            }
+            return Math.max(se,si);
         }
-        int se = LISS(node.left)+LISS(node.right);
-        
-        int si = 1;
-        if(node.left!=null){
-        si+=LISS(node.left.left)+LISS(node.left.right);
-        }
-        if(node.right!=null){
-            si+=LISS(node.right.left)+LISS(node.right.right);
-        }
-        return Math.max(se,si);
     }
 }
+
+

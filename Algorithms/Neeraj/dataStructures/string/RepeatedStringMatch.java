@@ -7,39 +7,35 @@ OUTPUT: 3
 */
 
 
-import java.io.*;
-import java.util.*; 
+import java.io.IOException;
+import java.util.Scanner;
 
-class RepeatedStringMatch{
-    public static void main(String args[]) throws IOException { 
+class RepeatedStringMatch {
+    public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
         String A = sc.nextLine();
         String B = sc.nextLine();
         Solution ob = new Solution();
-        System.out.println(ob.repeatedStringMatch(A,B));
-    } 
-} 
-        
-class Solution 
-{ 
-	static int repeatedStringMatch(String A, String B) 
-	{ 
-        // Your code goes here
-        String o = A;
-        int a= B.length()/A.length();
-        int c=1;
-        
-        for(int i=0; i<a+2;i++)
-        {
-            if(A.contains(B))
-            {
-                return c;
+        System.out.println(ob.repeatedStringMatch(A, B));
+    }
+
+    static class Solution {
+        static int repeatedStringMatch(String A, String B) {
+            // Your code goes here
+            String o = A;
+            int a = B.length() / A.length();
+            int c = 1;
+
+            for (int i = 0; i < a + 2; i++) {
+                if (A.contains(B)) {
+                    return c;
+                } else {
+                    A += o;
+                    c++;
+                }
             }
-            else{
-                A+=o;
-                c++;
-            }
+            return -1;
         }
-        return -1;
-	} 
+    }
 } 
+        

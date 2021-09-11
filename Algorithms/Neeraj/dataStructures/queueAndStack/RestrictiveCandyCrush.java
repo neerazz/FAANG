@@ -8,36 +8,38 @@ INPUT: k=2
 OUTPUT: gksforgks
 */
 
-import java.util.*;
-import java.math.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.Stack;
+import java.util.StringTokenizer;
 
-class FastReader{ 
-	BufferedReader br; 
-	StringTokenizer st; 
 
-	public FastReader(){ 
-		br = new BufferedReader(new InputStreamReader(System.in)); 
-	} 
+class RestrictiveCandyCrush {
 
-	String next(){ 
-		while (st == null || !st.hasMoreElements()){ 
-			try{ st = new StringTokenizer(br.readLine()); } catch (IOException  e){ e.printStackTrace(); } 
-		} 
-		return st.nextToken(); 
-	} 
+    static class FastReader{
+        BufferedReader br;
+        StringTokenizer st;
 
-	String nextLine(){ 
-		String str = ""; 
-		try{ str = br.readLine(); } catch (IOException e) { e.printStackTrace(); } 
-		return str; 
-	} 
-} 
+        public FastReader(){
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-class RestrictiveCandyCrush
-{
-    public static void main(String args[])
-    {
+        String next(){
+            while (st == null || !st.hasMoreElements()){
+                try{ st = new StringTokenizer(br.readLine()); } catch (IOException  e){ e.printStackTrace(); }
+            }
+            return st.nextToken();
+        }
+
+        String nextLine(){
+            String str = "";
+            try{ str = br.readLine(); } catch (IOException e) { e.printStackTrace(); }
+            return str;
+        }
+    }
+    public static void main(String args[]) {
         FastReader sc = new FastReader();
         PrintWriter out = new PrintWriter(System.out);
         int k = Integer.parseInt(sc.next());
@@ -46,57 +48,55 @@ class RestrictiveCandyCrush
         out.println(T.reduced_String(k, s));
         out.flush();
     }
-}
 
-class Solution
-{
-    static class Node{
-    char value;
-    int count;
-    public Node(char value,int count){
-        this.value=value;
-        this.count=count;
-    }
-}
+    static class Solution {
+        static class Node {
+            char value;
+            int count;
 
-    public static String reduced_String(int k, String s)
-    {
-        if(k==1){
-            return "";
-        }
-        
-        Stack<Node> stack=new Stack<>();
-        int n=s.length();
-        for(int i=0;i<n;i++){
-            char ch=s.charAt(i);
-            if(stack.isEmpty()){
-                stack.push(new Node(ch,1));
+            public Node(char value, int count) {
+                this.value = value;
+                this.count = count;
             }
-            else{
-                Node prev=stack.peek();
-                if(prev.value==ch){
-                    stack.pop();
-                    Node newNode=new Node(ch,prev.count+1);
-                    if(newNode.count<k){
-                        stack.push(newNode);
+        }
+
+        public static String reduced_String(int k, String s) {
+            if (k == 1) {
+                return "";
+            }
+
+            Stack<Node> stack = new Stack<>();
+            int n = s.length();
+            for (int i = 0; i < n; i++) {
+                char ch = s.charAt(i);
+                if (stack.isEmpty()) {
+                    stack.push(new Node(ch, 1));
+                } else {
+                    Node prev = stack.peek();
+                    if (prev.value == ch) {
+                        stack.pop();
+                        Node newNode = new Node(ch, prev.count + 1);
+                        if (newNode.count < k) {
+                            stack.push(newNode);
+                        }
+                    } else {
+                        stack.push(new Node(ch, 1));
                     }
                 }
-                else{
-                    stack.push(new Node(ch,1));
+            }
+            StringBuilder sb = new StringBuilder();
+            while (!stack.isEmpty()) {
+                Node cur = stack.pop();
+                char ch = cur.value;
+                int count = cur.count;
+                while (count-- > 0) {
+                    sb.insert(0, ch);
                 }
             }
+
+            return sb.toString();
+
         }
-        StringBuilder sb=new StringBuilder();
-        while(!stack.isEmpty()){
-            Node cur=stack.pop();
-            char ch=cur.value;
-            int count=cur.count;
-            while(count-->0){
-                sb.insert(0,ch);
-            }
-        }
-        
-        return sb.toString();
-        
     }
 }
+

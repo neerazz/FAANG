@@ -16,8 +16,9 @@ OUTPUT: 41265
 
 /*package whatever //do not write package name here */
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 class Array {
@@ -41,23 +42,22 @@ class Array {
 		int ans = obj.save_gotham(arr, sizeOfArray);
 		System.out.println(ans);
 	}
-}
-
-class Solution{
-    public static int save_gotham (int arr[], int n) 
-    {     
-        int ans = 0 ;
-        for(int i = 0 ; i < arr.length ; i ++)
+    static class Solution{
+        public static int save_gotham (int arr[], int n)
         {
-            for(int j = i+1 ; j < arr.length ; j ++)
+            int ans = 0 ;
+            for(int i = 0 ; i < arr.length ; i ++)
             {
-                if(arr[i]<arr[j])
+                for(int j = i+1 ; j < arr.length ; j ++)
                 {
-                    ans += arr[j];
-                    break;
+                    if(arr[i]<arr[j])
+                    {
+                        ans += arr[j];
+                        break;
+                    }
                 }
             }
-        }        
-        return ans;
+            return ans;
+        }
     }
 }

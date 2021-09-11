@@ -13,7 +13,8 @@ OUTPUT: 3 2 1
 */
 
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
 class GetMinimumElement
 {
@@ -42,48 +43,49 @@ class GetMinimumElement
         }
         System.out.println();		
 	}
+	static class Solution
+	{
+		int minEle;
+		Stack<Integer> s=new Stack<>();
+
+		int getMin()
+		{
+			if(s.isEmpty()) return -1;
+			return minEle;
+		}
+
+		int pop()
+		{
+			if(!s.isEmpty()){
+				int temp = s.pop();
+				if(temp>=minEle){
+					return temp;
+				} else{
+					int tem = minEle;
+					minEle = minEle-temp;
+					return tem;
+				}
+			}
+			return -1;
+		}
+
+		void push(int x)
+		{
+			if(s.isEmpty()){
+				s.push(x);
+				minEle=x;
+			}else{
+				if(x>=minEle){
+					s.push(x);
+				}else{
+					int temp = x-minEle;
+					s.push(temp);
+					minEle=x;
+				}
+			}
+		}
+	}
 }
 
-class Solution
-{
-    int minEle;
-    Stack<Integer> s=new Stack<>();
 
-    int getMin()
-    {
-	    if(s.isEmpty()) return -1;
-	    return minEle;
-    }
-    
-    int pop()
-    {
-	    if(!s.isEmpty()){
-	        int temp = s.pop();
-	        if(temp>=minEle){
-	            return temp;
-	        } else{
-	            int tem = minEle;
-	            minEle = minEle-temp;
-	            return tem;
-	        }
-	    }
-	    return -1;
-    }
-
-    void push(int x)
-    {
-	    if(s.isEmpty()){
-	        s.push(x);
-	        minEle=x;
-	    }else{
-	        if(x>=minEle){
-	            s.push(x);
-	        }else{
-	            int temp = x-minEle;
-	            s.push(temp);
-	            minEle=x;
-	        }
-	    }
-    }	
-}
 

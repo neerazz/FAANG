@@ -11,24 +11,13 @@ INPUT: list={"pqr","PQr","Pqr"}
 OUTPUT: No
 */
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-class Solution{
-    public String uniqueList(ArrayList<String>list){      
-        HashSet<String> h= new HashSet<String>();
-        for(String s:list)
-        {
-            h.add(s.toLowerCase());
-        }
 
-        int duplicates = list.size() - h.size();
-        if(2*h.size()<list.size()){
-            return "No";
-        }
-        return "Yes";
-    }
-}
 //Driver code
 class UniqueList
 {
@@ -41,5 +30,20 @@ class UniqueList
             list.add(input[i]);
         Solution ob = new Solution();
         System.out.println(ob.uniqueList(list));
+    }
+    static class Solution{
+        public String uniqueList(ArrayList<String>list){
+            HashSet<String> h= new HashSet<String>();
+            for(String s:list)
+            {
+                h.add(s.toLowerCase());
+            }
+
+            int duplicates = list.size() - h.size();
+            if(2*h.size()<list.size()){
+                return "No";
+            }
+            return "Yes";
+        }
     }
 }

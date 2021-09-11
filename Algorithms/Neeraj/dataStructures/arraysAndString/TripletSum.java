@@ -7,9 +7,9 @@ INPUT: n = 6, X = 13
 OUTPUT: 1
 */
 
-import java.util.*;
-import java.io.*;
-import java.lang.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 class TripletSum
 {
@@ -28,36 +28,35 @@ class TripletSum
 	    boolean ans = ob.find3Numbers(A, n, X);
 	    System.out.println(ans?1:0);
 	}
-}
-
-class Solution
-{
-    public static boolean find3Numbers(int arr[], int n, int sum) { 
-       for(int i=0;i<n-1;i++){
-           for(int j=i+1;j<n;j++){
-               if(arr[i]>arr[j]){
-                   int temp = arr[i];
-                   arr[i] = arr[j];
-                   arr[j] = temp;
-               }
-           }
-       }
-       for(int i=0;i<n-1;i++){
-        int low = i+1;
-        int high = n-1;
-        int count = 0;
-        while(low<high){
-            if(arr[low]+arr[high]+arr[i] == sum){
-                return true;
+    static class Solution
+    {
+        public static boolean find3Numbers(int arr[], int n, int sum) {
+            for(int i=0;i<n-1;i++){
+                for(int j=i+1;j<n;j++){
+                    if(arr[i]>arr[j]){
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
             }
-            else if(arr[low]+arr[high]+arr[i] > sum){
-                high--;
+            for(int i=0;i<n-1;i++){
+                int low = i+1;
+                int high = n-1;
+                int count = 0;
+                while(low<high){
+                    if(arr[low]+arr[high]+arr[i] == sum){
+                        return true;
+                    }
+                    else if(arr[low]+arr[high]+arr[i] > sum){
+                        high--;
+                    }
+                    else{
+                        low++;
+                    }
+                }
             }
-            else{
-                low++;
-            }
+            return false;
         }
-       }
-    return false;
     }
 }

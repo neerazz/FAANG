@@ -5,21 +5,24 @@ INPUT: N = 5
        arr[] = 40 30 35 80 100
 OUTPUT: 35 30 100 80 40
 */
-import java.util.*;
-import java.io.*;
 
-class Node { 
-	int data; 
-	Node left, right; 
-	Node(int d) { 
-		data = d; 
-		left = right = null; 
-	} 
-} 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 class PreOrderToPostOrder {
-	
-    public static void main(String[] args) throws IOException{
+
+	static class Node {
+		int data;
+		Node left, right;
+		Node(int d) {
+			data = d;
+			left = right = null;
+		}
+	}
+
+	public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    String[] inputline = br.readLine().trim().split(" ");
         int n = Integer.parseInt(inputline[0]);

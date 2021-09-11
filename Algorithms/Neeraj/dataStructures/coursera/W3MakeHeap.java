@@ -6,6 +6,31 @@ import java.util.*;
  */
 public class W3MakeHeap {
 
+    static class Node implements Comparable {
+        Integer value;
+        Node left;
+        Node right;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            Node n = (Node) o;
+            return n.value.compareTo(this.value);
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    ", left=" + left +
+                    ", right =" + right +
+                    '}';
+        }
+    }
+
     public static void main(String[] args) throws IOException {
 //        new BuildHeap().solve();
         FastScanner scanner = new FastScanner();
@@ -176,30 +201,6 @@ class MinHeap {
     }
 }
 
-class Node implements Comparable {
-    Integer value;
-    Node left;
-    Node right;
-
-    public Node(int value) {
-        this.value = value;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        Node n = (Node) o;
-        return n.value.compareTo(this.value);
-    }
-
-    @Override
-    public String toString() {
-        return "Node{" +
-                "value=" + value +
-                ", left=" + left +
-                ", right =" + right +
-                '}';
-    }
-}
 
 class BuildHeap {
     private int[] data;
