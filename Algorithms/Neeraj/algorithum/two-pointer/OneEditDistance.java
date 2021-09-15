@@ -21,7 +21,6 @@ public class OneEditDistance {
             char c1 = s.charAt(i1), c2 = t.charAt(i2);
             if (c1 != c2) {
                 if (ignore) {
-                    ignore = false;
                     return isOneEditDistance(s, i1 + 1, t, i2 + 1, false) ||
                             isOneEditDistance(s, i1 + 1, t, i2, false) ||
                             isOneEditDistance(s, i1, t, i2 + 1, false);

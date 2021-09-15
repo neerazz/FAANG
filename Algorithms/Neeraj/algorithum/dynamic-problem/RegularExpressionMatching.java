@@ -10,11 +10,45 @@ public class RegularExpressionMatching {
         System.out.println(isMatch("ab", ".*c") + " should be [false].");
 
         System.out.println("***************************** Solution 2 *************************");
-//        System.out.println(isMatch_rev2("aab", "c*a*b") + " should be [true].");
-//        System.out.println(isMatch_rev2("", "c*") + " should be [true].");
-//        System.out.println(isMatch_rev2("mississippi", "mis*is*p*.") + " should be [false].");
+        System.out.println(isMatch_rev2("aab", "c*a*b") + " should be [true].");
+        System.out.println(isMatch_rev2("", "c*") + " should be [true].");
+        System.out.println(isMatch_rev2("mississippi", "mis*is*p*.") + " should be [false].");
         System.out.println(isMatch_rev2("ab", ".*c") + " should be [false].");
         System.out.println(isMatch_rev2("aab", "c*a*b") + " should be [true].");
+
+        System.out.println("***************************** Solution 3 *************************");
+        System.out.println(isMatch_rev3("aab", "c*a*b") + " should be [true].");
+        System.out.println(isMatch_rev3("", "c*") + " should be [true].");
+        System.out.println(isMatch_rev3("mississippi", "mis*is*p*.") + " should be [false].");
+        System.out.println(isMatch_rev3("ab", ".*c") + " should be [false].");
+        System.out.println(isMatch_rev3("aab", "c*a*b") + " should be [true].");
+    }
+
+    public static boolean isMatch_rev3(String s, String p) {
+        int l1 = s.length(), l2 = p.length();
+        Boolean[][] dp = new Boolean[l1][l2];
+        return helper(s, 0, l1, p, 0, l2, dp);
+    }
+
+    private static boolean helper(String s, int p1, int l1, String p, int p2, int l2, Boolean[][] dp) {
+//        System.out.println("s = " + s + ", p1 = " + p1 + ", l1 = " + l1 + ", p = " + p + ", p2 = " + p2 + ", l2 = " + l2);
+        boolean nextIsStar = p2 + 1 < p.length() && p.charAt(p2 + 1) == '*';
+        if (p1 == l1 && p2 == l2) return true;
+//        If you have reached the last char, in string and pattern still has *'s then skip the stars.
+        if (p1 == l1 && nextIsStar) return helper(s, p1, l1, p, p2 + 2, l2, dp);
+        if (p1 == l1 || p2 == l2) return false;
+        if (dp[p1][p2] != null) return dp[p1][p2];
+        boolean firstMath = s.charAt(p1) == p.charAt(p2) || p.charAt(p2) == '.';
+        dp[p1][p2] = false;
+        if (nextIsStar) {
+//            Option 1: Match * with no any chars
+            boolean op1 = helper(s, p1, l1, p, p2 + 2, l2, dp);
+//            Option 2: If first chars matches then
+            boolean op2 = firstMath && helper(s, p1 + 1, l1, p, p2, l2, dp);
+            return dp[p1][p2] = op1 || op2;
+        } else {
+            return dp[p1][p2] = firstMath && helper(s, p1 + 1, l1, p, p2 + 1, l2, dp);
+        }
     }
 
     public static boolean isMatch_rev2(String s, String p) {
@@ -24,7 +58,7 @@ public class RegularExpressionMatching {
     }
 
     static boolean helper(String s, String p, int i, int j, Boolean[][] dp) {
-//        Keep track of the the pattern if it has a * in next char, based on that either one index in input or move two index in pattern.
+//        Keep track of the pattern if it has a * in next char, based on that either one index in input or move two index in pattern.
         boolean nextIsStar = j + 1 < p.length() && p.charAt(j + 1) == '*';
         if (s.length() == i) {
 //            Pattern also ends
@@ -39,7 +73,7 @@ public class RegularExpressionMatching {
         boolean firstMath = s.charAt(i) == p.charAt(j) || p.charAt(j) == '.';
         if (nextIsStar) {
 //            If the next character in pattern is *, then either of the below case is correct.
-//              1. If the current char match, then move to next char in string. (Means more then one char in s string is considered for * in pattern).
+//              1. If the current char match, then move to next char in string. (Means more than one char in s string is considered for * in pattern).
             boolean op1 = firstMath && helper(s, p, i + 1, j, dp);
 //              2. The current char occurrence in pattern is 0 and the next char (*) in pattern needs to be skipped due to preceding element.
 //                  Move the pattern pointer by 2, and keep the input pointer at place.
