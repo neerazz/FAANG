@@ -29,6 +29,36 @@ public class ExpressionAddOperators {
         System.out.println(addOperators_rev1("2147483648", -2147483648) + " should be [] ");
     }
 
+    public static List<String> addOperators_rev2(String num, int target) {
+        List<String> result = new ArrayList<>();
+        if (num == null || num.length() == 0 || target == Integer.MIN_VALUE) {
+            return result;
+        }
+        helper(num, 0, 0, 0, "", target, result);
+        return result;
+    }
+
+    static void helper(String num, int idx, int sum, int pre, String soFar, int target, List<String> result) {
+        if (idx == num.length()) {
+            if (sum == target) {
+                result.add(soFar);
+            }
+        } else {
+            int cur = 0;
+            for (int i = idx; i < num.length(); i++) {
+                cur = 10 * cur + (num.charAt(i) - '0');
+                if (idx == 0) {
+                    helper(num, i + 1, sum + cur, cur, soFar + cur, target, result);
+                } else {
+                    helper(num, i + 1, sum + cur, cur, soFar + "+" + cur, target, result);
+                    helper(num, i + 1, sum - cur, -cur, soFar + "-" + cur, target, result);
+                    helper(num, i + 1, sum - pre + pre * cur, pre * cur, soFar + "*" + cur, target, result);
+                }
+                if (cur == 0) break;
+            }
+        }
+    }
+
     /**
      * @implNote Start with first number and make recursive call with each number in string, try all the below combinations:
      * <p>
@@ -40,7 +70,8 @@ public class ExpressionAddOperators {
      */
     public static List<String> addOperators_rev1(String num, int target) {
         result = new HashSet<>();
-        if (num == null || num.length() == 0 || target == Integer.MIN_VALUE) return new ArrayList<>(result);
+        if (num == null || num.length() == 0 || target == Integer.MIN_VALUE || target == Integer.MAX_VALUE)
+            return new ArrayList<>(result);
         helper(num, target, 0, 0, 0, "");
         return new ArrayList<>(result);
     }
@@ -52,7 +83,7 @@ public class ExpressionAddOperators {
             }
         } else {
             int cur = 0;
-//             Loop from start till end by selecting all possibel combinations.
+//             Loop from start till end by selecting all possible combinations.
             for (int i = idx; i < num.length(); i++) {
                 cur = cur * 10 + (num.charAt(i) - '0');
                 if (num.charAt(idx) == '0' && i - idx > 0) continue;

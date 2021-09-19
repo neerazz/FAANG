@@ -4,7 +4,8 @@ import java.util.Map;
 
 /**
  * Created on:  Sep 14, 2021
- * Ref: https://leetcode.com/discuss/interview-experience/1461079/google-swe-l3l4-dublin-ireland-reject
+ * Ref: https://leetcode.com/contest/biweekly-contest-61/problems/find-original-array-from-doubled-array/
+ * https://leetcode.com/discuss/interview-experience/1461079/google-swe-l3l4-dublin-ireland-reject
  * <p>
  * Given an array generate its double-shuffle i.e. double every array element and append it's double to the same array. Now shuffle this array randomly.
  * For e.g. if the array is [1, 3, 2] then it's double is [1, 3, 2, 2, 6, 4]. Finally, shuffle this array randomly which can be [3, 4, 2, 1, 2, 6]
@@ -14,11 +15,13 @@ public class DoubleShuffle {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(getOriginal(new int[]{3, 4, 2, 1, 2, 6})));
+        System.out.println(Arrays.toString(getOriginal(new int[]{4, 4, 16, 20, 8, 8, 2, 10})));
     }
 
     public static int[] getOriginal(int[] nums) {
-        Arrays.sort(nums);
         int len = nums.length;
+        if (len % 2 == 1) return new int[0];
+        Arrays.sort(nums);
         int[] result = new int[len / 2];
         int i = 0;
         Map<Integer, Integer> map = new HashMap<>();
@@ -32,6 +35,6 @@ public class DoubleShuffle {
                 map.put(num, map.getOrDefault(num, 0) + 1);
             }
         }
-        return result;
+        return i == result.length ? result : new int[0];
     }
 }
