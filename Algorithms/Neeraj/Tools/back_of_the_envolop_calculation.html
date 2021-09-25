@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,43 +10,14 @@
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
 
-    <title>Converter For Java</title>
+    <title>Size Estimates</title>
 </head>
+
 <body>
 
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Tools:</a>
+    <a class="navbar-brand" href="#">Size Estimates</a>
 </nav>
-
-<div class="card-group">
-
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Enter input:</h5>
-            <textarea aria-label="With textarea" class="form-control" id="textInput" placeholder="Input"></textarea>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <h5 class="card-title">Class Name:</h5>
-                <button class="btn btn-outline-info" onclick="classCopy()" type="button">Copy</button>
-            </div>
-            <textarea aria-label="With textarea" class="form-control" id="output1" placeholder="Input"></textarea>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <h5 class="card-title">Array Input:</h5>
-                <button class="btn btn-outline-info" onclick="arrayInputCopy()" type="button">Copy</button>
-            </div>
-            <textarea aria-label="With textarea" class="form-control" id="output2" placeholder="Input"></textarea>
-        </div>
-    </div>
-</div>
 
 <div class="card-group">
     <div class="card text-dark bg-light mb-3">
@@ -101,54 +73,18 @@
     </div>
 </div>
 
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script crossorigin="anonymous"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+<script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
 <script crossorigin="anonymous"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 
-var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
-
-function classCopy(){
-    let textarea = document.getElementById("output1");
-    textarea.select();
-    document.execCommand("copy");
-    console.log("Copied : " + $("#output2").val());
-}
-
-function arrayInputCopy(){
-    let textarea = document.getElementById("output2");
-    textarea.select();
-    document.execCommand("copy");
-    console.log("Copied : " + $("#output2").val());
-}
-
-$("#textInput").on('input',function(e){
-	var input = e.target.value;
-	console.log("Input Changed to " + input);
-	let output1 = "";
-	input.match(regex).forEach(function(str){
-		let tempStr = str.toLowerCase();
-		output1 += tempStr.substr(0,1).toUpperCase() + tempStr.substr(1);
-	});
-	console.log("Converted Input to Camel Case:" + output1);
-	$("#output1").val(output1);
-	$("#output2").val(input.replaceAll("[", "{").replaceAll("]", "}").replaceAll("\"", "'"));
-});
-
-
-
-$("#calls-per-day").on('input', function (e) {
+        $("#calls-per-day").on('input', function (e) {
             var calls_per_day = get_calls_perDay();
             console.log("calls_per_day is : " + calls_per_day);
             var rps = get_rps(calls_per_day);
@@ -253,18 +189,8 @@ $("#calls-per-day").on('input', function (e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 </body>
+
 </html>
