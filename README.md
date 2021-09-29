@@ -70,6 +70,7 @@ not related to hard core competitive coding.
 > - [Design Linux Find Command](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/LinuxFindFilter.java)
 > - [Design ATM](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/atm)
 > - [Design Movie Ticket System](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/movieTicketSystem)
+> - [Design Pharmacy Shop](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/pharmacyshop)
 >
 >> TODO
 >> - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)
