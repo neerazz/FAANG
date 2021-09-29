@@ -77,8 +77,14 @@
         </ul>
     </div>
     <div class="card text-dark bg-light mb-3">
-        <img class="img-fluid rounded mx-auto d-block"
-             src="https://www.dnsstuff.com/wp-content/uploads/2020/12/image-11.png">
+        <div class="card-body">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://www.dnsstuff.com/wp-content/uploads/2020/12/image-11.png">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://miro.medium.com/max/700/1*5S80KcgolUfNWIha_2fI9w.png">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://miro.medium.com/max/700/1*d5xp3raYfHbcsYdsW-u0sw.png">
+        </div>
     </div>
     <div class="card text-white bg-success mb-3">
         <div class="card-body">
@@ -196,7 +202,7 @@ $("#calls-per-day").on('input', function (e) {
 
         function get_rps(calls_per_day) {
             var rps = (calls_per_day) / (24 * 60 * 60)
-            console.log("Calculated RPS " + rps);
+            console.log("Calculated RPS = " + rps + " for Calls/day = " + calls_per_day);
             return rps;
         };
 
@@ -250,19 +256,6 @@ $("#calls-per-day").on('input', function (e) {
             var res = regex.exec(text);
             return res[1] * Math.pow(1024, powers[res[2].toLowerCase()]);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 

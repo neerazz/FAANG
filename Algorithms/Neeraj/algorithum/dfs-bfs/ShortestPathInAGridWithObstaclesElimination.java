@@ -13,11 +13,40 @@ public class ShortestPathInAGridWithObstaclesElimination {
                 1));
     }
 
+    static int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+    public static int shortestPath_rev1(int[][] grid, int k) {
+        int rows = grid.length, cols = rows > 0 ? grid[0].length : 0;
+        boolean[][][] visited = new boolean[rows][cols][k + 1];
+        int level = 0;
+//         0: row, 1: col, 2: abs
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{0, 0, 0});
+        visited[0][0][0] = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                int[] poll = queue.poll();
+                int row = poll[0], col = poll[1], rem = poll[2];
+                if (grid[row][col] == 1) rem++;
+                if (rem > k) continue;
+                if (row == rows - 1 && col == cols - 1) return level;
+                for (int[] dir : dirs) {
+                    int nr = row + dir[0], nc = col + dir[1];
+                    if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || visited[nr][nc][rem]) continue;
+                    visited[nr][nc][rem] = true;
+                    queue.add(new int[]{nr, nc, rem});
+                }
+            }
+            level++;
+        }
+        return -1;
+    }
+
     public static int shortestPath(int[][] grid, int k) {
         int rows = grid.length, cols = grid[0].length;
         int[][] obs = new int[rows][cols];
         for (int[] row : obs) Arrays.fill(row, -1);
-        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         Queue<int[]> queue = new LinkedList<>();
         //0 - x, 1- y, 2- total steps so far taken, 3- Remaining obs power.
         queue.offer(new int[]{0, 0, 0, k});

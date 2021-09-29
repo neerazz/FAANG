@@ -49,25 +49,37 @@
         </ul>
     </div>
     <div class="card text-dark bg-light mb-3">
-        <img class="img-fluid rounded mx-auto d-block"
-             src="https://www.dnsstuff.com/wp-content/uploads/2020/12/image-11.png">
+        <div class="card-body">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://www.dnsstuff.com/wp-content/uploads/2020/12/image-11.png">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://miro.medium.com/max/700/1*5S80KcgolUfNWIha_2fI9w.png">
+            <img class="img-fluid rounded mx-auto d-block"
+                 src="https://miro.medium.com/max/700/1*d5xp3raYfHbcsYdsW-u0sw.png">
+        </div>
     </div>
     <div class="card text-white bg-success mb-3">
         <div class="card-body">
             <p class="fst-italic">Request per Second:
-                <input class="fst-italic" disabled id="rps" type="text"></input>
+                <input class="fst-italic" disabled id="rps" type="text"/>
             </p>
+            <!--            <p class="fst-italic">Total Cores:-->
+            <!--                <input class="fst-italic" disabled id="cores" type="text"/>-->
+            <!--            </p>-->
+            <!--            <p class="fst-italic">Total RAM:-->
+            <!--                <input class="fst-italic" disabled id="ram" type="text"/>-->
+            <!--            </p>-->
             <p class="fst-italic">Bandwidth:
                 <input class="fst-italic" disabled id="bandwidth" type="text"> Mbps</input>
             </p>
             <p class="fst-italic">Storage per day:
-                <input class="fst-italic" disabled id="per-day" type="text"></input>
+                <input class="fst-italic" disabled id="per-day" type="text"/>
             </p>
             <p class="fst-italic">Storage per year:
-                <input class="fst-italic" disabled id="per-year" type="text"></input>
+                <input class="fst-italic" disabled id="per-year" type="text"/>
             </p>
             <p class="fst-italic">Storage for 5 years:
-                <input class="fst-italic" disabled id="per-5-year" type="text"></input>
+                <input class="fst-italic" disabled id="per-5-year" type="text"/>
             </p>
         </div>
     </div>
@@ -104,6 +116,33 @@
             set_storage_for_5_year(get_storage_in_years(calls_per_day, size, 5));
         });
 
+<!--        $("#latency").on('input', function (e) {-->
+<!--            var latency = get_latency_in_seconds();-->
+<!--            var size = get_size_per_object();-->
+<!--            var rps = get_rps(get_calls_perDay())-->
+<!--            var cores = getCores(latency , rps);-->
+<!--            set_cores(cores);-->
+<!--            var ram = getRam(rps, latency, size);-->
+<!--            set_ram(ram);-->
+<!--        });-->
+
+        function getRam(rps, latency, size){
+            var ram = rps * latency * size;
+            console.log("Calculated RAM:  " + ram);
+            return ram;
+        }
+        function getCores(latency , rps){
+            var cores = rps * latency;
+            console.log("Calculated Cores:  " + cores);
+            return cores;
+        }
+
+        function get_latency_in_seconds() {
+            var latency = $('#latency').val();
+            console.log("Latency in Milli Seconds " + latency);
+            return latency / 1000;
+        }
+
         function get_calls_perDay() {
             var str = $('#calls-per-day').val();
             var val = unhumanize_number(str);
@@ -132,13 +171,24 @@
 
         function get_rps(calls_per_day) {
             var rps = (calls_per_day) / (24 * 60 * 60)
-            console.log("Calculated RPS " + rps);
+            console.log("Calculated RPS = " + rps + " for Calls/day = " + calls_per_day);
             return rps;
         };
 
         function set_rps(rps) {
             console.log("Setting up RPS:  " + rps);
             $("#rps").val(rps);
+        };
+
+        function set_cores(cores) {
+            console.log("Setting up cores:  " + cores);
+            $("#cores").val(cores);
+        };
+
+        function set_ram(ram) {
+            var readable = bytesToSize(ram)
+            console.log("Setting up ram:  " + ram + " to readable: " + readable);
+            $("#ram").val(readable);
         };
 
         function set_bandwidth(bandwidth) {
@@ -151,6 +201,7 @@
             console.log("Setting 1 Years Storage to " + readable);
             $("#per-day").val(readable);
         };
+
         function set_storage_per_year(size) {
             var readable = bytesToSize(size);
             console.log("Setting 1 Years Storage to " + readable);
