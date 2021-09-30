@@ -123,8 +123,10 @@ class RandomizedSet_Rev {
             int index = map.remove(val);
             int lastIndex = list.size() - 1;
             int lastVal = list.get(lastIndex);
-            list.set(index, lastVal);
-            map.put(lastVal, index);
+            if (index < lastIndex) {
+                list.set(index, lastVal);
+                map.put(lastVal, index);
+            }
             map.remove(val);
             list.remove(lastIndex);
             return true;
