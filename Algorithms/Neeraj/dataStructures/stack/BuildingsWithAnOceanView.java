@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -7,6 +8,23 @@ import java.util.Stack;
 public class BuildingsWithAnOceanView {
     public static void main(String[] args) {
 
+    }
+
+    public static int[] findBuildings_rev2(int[] heights) {
+        int max = 0;
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = heights.length - 1; i >= 0; i--) {
+            if (heights[i] > max) {
+                list.addFirst(i);
+                max = heights[i];
+            }
+        }
+        int[] result = new int[list.size()];
+        int i = 0;
+        while (!list.isEmpty()) {
+            result[i++] = list.removeFirst();
+        }
+        return result;
     }
 
     public int[] findBuildings(int[] heights) {

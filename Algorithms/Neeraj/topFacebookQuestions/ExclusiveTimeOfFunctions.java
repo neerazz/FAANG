@@ -10,10 +10,34 @@ public class ExclusiveTimeOfFunctions {
 
     }
 
+    public static int[] exclusiveTime_rev2(int n, List<String> logs) {
+        Stack<int[]> stack = new Stack<>();
+        int[] times = new int[n];
+        for (String log : logs) {
+            String[] split = log.split(":");
+            int id = Integer.parseInt(split[0]), time = Integer.parseInt(split[2]);
+            if (split[1].equals("start")) {
+                if (stack.isEmpty()) {
+                    stack.add(new int[]{id, time});
+                } else {
+                    int[] peek = stack.peek();
+                    times[peek[0]] += time - peek[1];
+                }
+                stack.add(new int[]{id, time});
+            } else if (split[1].equals("end")) {
+                int[] pop = stack.pop();
+                times[pop[0]] += time - pop[1] + 1;
+                if (!stack.isEmpty()) {
+                    stack.peek()[1] = time + 1;
+                }
+            }
+        }
+        return times;
+    }
+
     public static int[] exclusiveTime(int n, List<String> logs) {
         int[] result = new int[n];
         Stack<int[]> stack = new Stack<>();
-        int cur = 0;
         for (String log : logs) {
             String[] split = log.split(":");
             int function = Integer.parseInt(split[0]), time = Integer.parseInt(split[2]);

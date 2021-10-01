@@ -10,6 +10,33 @@ public class MinimumCostForTickets {
         System.out.println(mincostTickets(new int[]{1, 4, 6, 7, 8, 20}, new int[]{2, 7, 15}) + " = 11");
     }
 
+    public static int mincostTickets_rev2(int[] days, int[] costs) {
+        Integer[] dp = new Integer[366];
+        return helper(days, 0, costs, dp);
+    }
+
+    static int helper(int[] days, int start, int[] costs, Integer[] dp) {
+        if (start == days.length) return 0;
+        if (dp[start] != null) return dp[start];
+        int min = Integer.MAX_VALUE / 10;
+        for (int i = start; i < days.length; i++) {
+            int day = days[i] - days[start] + 1;
+            if (day > 30) break;
+            int cost = cost(costs, day);
+            int next = helper(days, i + 1, costs, dp);
+            min = Math.min(min, next + cost);
+        }
+        return dp[start] = min;
+    }
+
+    static int cost(int[] costs, int day) {
+        int val = Integer.MAX_VALUE;
+        if (day <= 1) val = Math.min(val, costs[0]);
+        if (day <= 7) val = Math.min(val, costs[1]);
+        if (day <= 30) val = Math.min(val, costs[2]);
+        return val;
+    }
+
     public static int mincostTickets(int[] days, int[] costs) {
         Integer[] dp = new Integer[366];
         Set<Integer> set = new HashSet<>();

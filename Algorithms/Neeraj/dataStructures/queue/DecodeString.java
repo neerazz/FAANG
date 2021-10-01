@@ -17,7 +17,7 @@ public class DecodeString {
     static Map<String, String> map = new HashMap<>();
 
     public static void main(String[] args) {
-//        System.out.println("Answer is: \t" + decodeString("3[a]2[bc]") + "\nshould be \taaabcbc.");
+        System.out.println("Answer is: \t" + decodeString("3[a]2[bc]") + "\nshould be \taaabcbc.");
         System.out.println("Answer is: \t" + decodeString("3[a2[c]]") + "\nshould be \taccaccacc.");
         System.out.println("Answer is: \t" + decodeString("2[abc]3[cd]ef") + "\nshould be \tabcabccdcdcdef.");
         System.out.println("Answer is: \t" + decodeString("3[a]2[b4[F]c]") + "\nshould be \taaabFFFFcbFFFFc.");

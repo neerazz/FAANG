@@ -32,7 +32,9 @@ public class DotProductOfTwoSparseVectors {
         public int dotProduct(SparseVector vec) {
             int product = 0;
             for (int idx : idxs) {
-                product += get(idx) * vec.get(idx);
+                if (vec.idxs.contains(idx)) {
+                    product += get(idx) * vec.get(idx);
+                }
             }
             return product;
         }

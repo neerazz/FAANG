@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /*
-https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1371/
+https://leetcode.com/problems/perfect-squares/
 Example 1:
 Input: n = 12
 Output: 3
@@ -20,27 +22,26 @@ public class PerfectSquares {
     public static int numSquares(int n) {
         if (n < 1) return 0;
         if (n == 1) return 1;
-        ArrayList<Integer> squares = new ArrayList<>();
+        List<Integer> squares = new ArrayList<>();
         for (int i = 1; i * i <= n; i++) {
             squares.add(i * i);
         }
-        int[][] finalValues = new int[squares.size() + 1][n + 1];
+//        d[i] = Numbers required to make i with valid squares.
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+//        Base case, you need 0 numbers to make a number 0.
+        dp[0] = 0;
 
-//        Set the values of top most column to the i'th value.
-        for (int i = 0; i <= n; i++) finalValues[0][i] = i;
-
-        for (int i = 1; i <= squares.size(); i++) {
-            Integer rowValue = squares.get(i - 1);
-            for (int j = 1; j <= n; j++) {
-                if (j < rowValue) {
-                    finalValues[i][j] = finalValues[i - 1][j];
-                } else {
-                    finalValues[i][j] = Math.min(finalValues[i][j - rowValue] + 1, finalValues[i - 1][j]);
-                }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j < squares.size(); j++) {
+                int curSquare = squares.get(j);
+//                If current square cannot be used to make number i, then break;
+                if (i < curSquare) break;
+//                Check if you can use this square to make the smallest i.
+                dp[i] = Math.min(dp[i], dp[i - curSquare] + 1);
             }
         }
-//        Arrays.stream(finalValues).forEach(a -> System.out.println(Arrays.toString(a)));
-        return finalValues[squares.size()][n];
+        return dp[n];
     }
 
     public int numSquares_optimal(int n) {
