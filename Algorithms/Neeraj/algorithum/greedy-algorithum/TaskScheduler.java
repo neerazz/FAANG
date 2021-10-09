@@ -13,6 +13,50 @@ public class TaskScheduler {
                 , 8) + " should be [1000]");
     }
 
+    public static int leastInterval_rev2(char[] tasks, int n) {
+        Map<Character, Task> map = new HashMap<>();
+        for (char c : tasks) {
+            Task task = map.getOrDefault(c, new Task(c, 1));
+            task.count++;
+            map.put(c, task);
+        }
+        PriorityQueue<Task> pq = new PriorityQueue<>((t1, t2) -> t1.count == t2.count ? Integer.compare(t1.start, t2.start) : Integer.compare(t2.count, t1.count));
+        PriorityQueue<Task> pending = new PriorityQueue<>((t1, t2) -> Integer.compare(t1.start, t2.start));
+        pq.addAll(map.values());
+        int time = 1;
+        while (!pq.isEmpty() || !pending.isEmpty()) {
+//             check for pending tasks.
+            while (!pending.isEmpty() && pending.peek().start < time) {
+                pq.add(pending.poll());
+            }
+            if (!pq.isEmpty()) {
+                Task poll = pq.poll();
+                int end = Math.max(time + 1, poll.start + 1);
+                if (poll.count > 1) {
+                    poll.count--;
+                    poll.start = Math.max(time + 1, time + n);
+                    pending.add(poll);
+                }
+                time = end;
+            } else {
+                // time = pending.peek().start;
+                time++;
+            }
+        }
+        return time - 1;
+    }
+
+    static class Task {
+        char task;
+        int count;
+        int start;
+
+        Task(char c, int start) {
+            task = c;
+            this.start = start;
+        }
+    }
+
     public static int leastInterval_rev1(char[] tasks, int n) {
         int[] count = new int[26];
         for (char task : tasks) {

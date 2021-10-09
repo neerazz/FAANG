@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,6 +15,39 @@ class WordSearch {
                 {'a', 'b'},
                 {'c', 'd'}
         }, "cdba"));
+    }
+
+    public static boolean exist_rev1(char[][] board, String word) {
+        int rows = board.length, cols = rows > 0 ? board[0].length : 0;
+        boolean[][] visited = new boolean[rows][cols];
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (board[row][col] == word.charAt(0) &&
+                        hasWord(board, row, col, rows, cols, word, 0, visited)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    static int[][] dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+
+    static boolean hasWord(char[][] board, int row, int col, int rows, int cols, String word, int idx, boolean[][] visited) {
+        System.out.println("row = " + row + ", col = " + col + ", idx = " + idx + ", visited = " + Arrays.deepToString(visited));
+        if (idx >= word.length()) return true;
+        if (!inRange(row, col, rows, cols) || board[row][col] != word.charAt(idx) || visited[row][col]) return false;
+        visited[row][col] = true;
+        for (int[] dir : dirs) {
+            int nr = row + dir[0], nc = col + dir[1];
+            if (hasWord(board, nr, nc, rows, cols, word, idx + 1, visited)) return true;
+        }
+        visited[row][col] = false;
+        return false;
+    }
+
+    static boolean inRange(int row, int col, int rows, int cols) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
     }
 
     public static boolean exist(char[][] board, String word) {

@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class PairWithGivenDifference {
 
     static int[][] findPairsWithGivenDifference(int[] arr, int k) {
         Set<Integer> set = new HashSet<>();

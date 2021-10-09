@@ -10,8 +10,18 @@ OUTPUT:1
 
 import java.util.Scanner;
 
-class Solution {
-    static int maxCandy(int height[], int n) {
+public class CandiesDam {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int height[] = new int[n];
+        for (int i = 0; i < n; ++i) {
+            height[i] = sc.nextInt();
+        }
+        System.out.println(maxCandy(height, n));
+    }
+
+    public static int maxCandy(int height[], int n) {
         int max = 0;
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
@@ -20,21 +30,6 @@ class Solution {
             }
         }
         return max;
-    }
-}
-
-// Driver Code 
-class CandiesDam {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int height[] = new int[n];
-        for (int i = 0; i < n; ++i) {
-            height[i] = sc.nextInt();
-        }
-
-        Solution ob = new Solution();
-        System.out.println(ob.maxCandy(height, n));
     }
 } 
 
