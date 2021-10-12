@@ -23,7 +23,7 @@ public class OptimalAccountBalancing {
     }
 
     static int helper(int[] amounts, int end) {
-//        Once all the amounts are settled then there is no need to make any tranactions.
+//        Once all the amounts are settled then there is no need to make any transactions.
         if (amounts[end] == 0) return 0;
 //        By default, assume that the settlement can't be done
         int cur = Integer.MAX_VALUE;

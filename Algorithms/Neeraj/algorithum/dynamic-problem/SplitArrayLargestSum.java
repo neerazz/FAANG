@@ -5,6 +5,32 @@ class SplitArrayLargestSum {
 
     }
 
+    public static int splitArray_rev1(int[] nums, int m) {
+        int len = nums.length;
+        Integer[][] dp = new Integer[len][m + 1];
+        if (m > len) return -1;
+        return helper(nums, 0, m, dp);
+    }
+
+    static int helper(int[] nums, int start, int m, Integer[][] dp) {
+        int len = nums.length;
+        if (start == len) {
+            return m == 0 ? 0 : Integer.MAX_VALUE;
+        }
+        if (m <= 0) return Integer.MAX_VALUE;
+        if (dp[start][m] != null) return dp[start][m];
+        long cur = Integer.MAX_VALUE;
+        long sum = 0;
+        for (int i = start; i < len; i++) {
+            sum += nums[i];
+            int next = helper(nums, i + 1, m - 1, dp);
+            if (next == Integer.MAX_VALUE) continue;
+            long curMax = Math.max(sum, next);
+            cur = Math.min(cur, curMax);
+        }
+        return dp[start][m] = (int) cur;
+    }
+
     public int splitArray(int[] nums, int m) {
         if (nums == null || nums.length == 0) return 0;
         int len = nums.length;

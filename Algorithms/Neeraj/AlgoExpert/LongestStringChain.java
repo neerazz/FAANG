@@ -24,9 +24,7 @@ public class LongestStringChain {
         Map<String, Integer> dp = new HashMap<>();
         Arrays.sort(words, (w1, w2) -> Integer.compare(w2.length(), w1.length()));
         Set<String> set = new HashSet<>();
-        for (String word : words) {
-            set.add(word);
-        }
+        Collections.addAll(set, words);
         int max = 0;
         for (String word : words) {
             int count = getCount(word, set, dp);
