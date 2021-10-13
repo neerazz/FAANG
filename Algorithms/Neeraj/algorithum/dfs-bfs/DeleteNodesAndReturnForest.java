@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created on:  Aug 06, 2021
@@ -10,6 +7,46 @@ import java.util.Set;
 public class DeleteNodesAndReturnForest {
     public static void main(String[] args) {
 
+    }
+
+    static LinkedHashMap<Integer, TreeNode> parents = new LinkedHashMap<>();
+    static Map<Integer, TreeNode> map = new HashMap<>();
+    static Set<Integer> visited = new HashSet<>();
+
+    public static List<TreeNode> delNodes_rev1(TreeNode root, int[] to_delete) {
+        dfs(root, null);
+        for (int del : to_delete) {
+            TreeNode parent = parents.get(del);
+            TreeNode cur = map.get(del);
+            if (parent != null) {
+                if (parent.left == cur) parent.left = null;
+                else parent.right = null;
+            }
+            visited.add(del);
+        }
+        List<TreeNode> result = new ArrayList<>();
+        for (int key : parents.keySet()) {
+            if (visited.contains(key)) continue;
+            TreeNode cur = map.get(key);
+            result.add(cur);
+            explore(cur);
+        }
+        return result;
+    }
+
+    static void explore(TreeNode root) {
+        if (root == null) return;
+        visited.add(root.val);
+        explore(root.left);
+        explore(root.right);
+    }
+
+    static void dfs(TreeNode root, TreeNode parent) {
+        if (root == null) return;
+        parents.put(root.val, parent);
+        map.put(root.val, root);
+        dfs(root.left, root);
+        dfs(root.right, root);
     }
 
     public static List<TreeNode> delNodes(TreeNode root, int[] to_delete) {

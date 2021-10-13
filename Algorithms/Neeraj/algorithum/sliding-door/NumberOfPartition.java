@@ -17,6 +17,7 @@ public class NumberOfPartition {
         for (int i = 0; i < len; i++) {
             sum += nums[i];
             preSum[i] = sum;
+//            Collect all the number and the corresponding start position.
             map.computeIfAbsent(nums[i], val -> new Stack<>()).add(i);
         }
         int count = 0, rightSum = nums[len - 1];
@@ -29,11 +30,14 @@ public class NumberOfPartition {
                 count++;
             } else {
                 int diff = leftSum - rightSum;
-//                Find if the difference element in the left side of sub sequence then you can bring it to zero. Resulting in leftSum and Right sum matches.
-//                Find if the negative difference on the right sides so that you can bring it to zero. Resulting in leftSum and Right sum matches.
+//                leftSum and Right sum matches, in below two cases:
+//                  Find if the difference element on the left side of subsequence then you can bring it to zero.
+//                  Find if the negative difference on the right sides so that you can bring it to zero.
+//                      Ex: diff = 2, and if there is any number on teh right with -2, Then you can make it 0.
                 if (hasValueInLeft(map, i, diff) || rightValues.contains(diff * -1)) count++;
             }
             rightSum += nums[i];
+            rightValues.add(nums[i]);
         }
         return count;
     }
@@ -42,7 +46,8 @@ public class NumberOfPartition {
         Stack<Integer> idxs = map.get(num);
 //        There are no any number in the map.
         if (idxs == null) return false;
-//        If there is a number in the map but, it at the index greater then the current idx. Then remove all those indexes.
+//        If there is a number in the map but, it at the index greater than the current idx.
+//          Then remove all those indexes.
         while (!idxs.isEmpty() && idxs.peek() > idx) idxs.pop();
         return !idxs.isEmpty();
     }

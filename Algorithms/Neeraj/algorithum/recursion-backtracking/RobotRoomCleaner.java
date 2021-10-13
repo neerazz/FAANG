@@ -52,6 +52,41 @@ public class RobotRoomCleaner {
 
     }
 
+    static int[][] dirs = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+
+    public static void cleanRoom_rev1(Robot robot) {
+        Set<Integer> visited = new HashSet<>();
+        // start with the initial directions.
+        dfs(robot, 0, 0, 0, visited);
+    }
+
+    static void dfs(Robot robot, int row, int col, int dir, Set<Integer> visited) {
+        robot.clean();
+        for (int i = 0; i < 4; i++) {
+            int ndir = (dir + i) % 4;
+            int nr = row + dirs[ndir][0], nc = col + dirs[ndir][1];
+            int key = key(nr, nc);
+            if (!visited.contains(key) && robot.move()) {
+                visited.add(key);
+                dfs(robot, nr, nc, ndir, visited);
+                back(robot);
+            }
+            robot.turnLeft();
+        }
+    }
+
+    static void back(Robot robot) {
+        robot.turnRight();
+        robot.turnRight();
+        robot.move();
+        robot.turnRight();
+        robot.turnRight();
+    }
+
+    static int key(int row, int col) {
+        return row * 1_0000 + col;
+    }
+
     public void goBack() {
         robot.turnRight();
         robot.turnRight();

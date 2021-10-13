@@ -18,7 +18,6 @@ public class KokoEatingBananas {
         while (start < end) {
             int mid = start + (end - start) / 2;
             boolean canEatAll = canEatAll(piles, mid, H, total);
-//            System.out.println("start = " + start + " mid = " + mid + " end = " + end + " canEatAll=" + canEatAll);
             if (canEatAll) {
                 end = mid;
             } else {
