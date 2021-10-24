@@ -13,7 +13,16 @@ These questions are classical problems that are most frequently asked by the tec
 not related to hard core competitive coding.
 `All the code provided inside the repository is purely original and completely my own.`
 
-### [DataStructures & Algorithm Problems](https://github.com/neerazz/FAANG/tree/master/Algorithms)
+## [Complexities](https://www.bigocheatsheet.com/)
+
+| Type | Notation | Time Complexities Resources | Space Complexities Resources |
+|-----------|:--------:|------------------------------------------------------------------------------------------------------|------------------------------|
+| Constant | O(1) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+| Linear | O(n) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+| Logarithm | O(Log n) | https://www.interviewcake.com/article/python/logarithms? https://www.youtube.com/watch?v=M4ubFru2O80 |  |
+| Quadratic | O(n*n) | https://www.interviewcake.com/article/python/big-o-notation-time-and-space-complexity? |  |
+
+## [DataStructures & Algorithm Problems](https://github.com/neerazz/FAANG/tree/master/Algorithms)
 
 > #### [Top Questions by Problem category](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
 >   - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
@@ -34,7 +43,7 @@ not related to hard core competitive coding.
 >   - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#microsoft)
 >   - [Uber](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#uber)
 
-### [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
+## [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
 
 > - [Hackerrank](https://github.com/neerazz/CodingContests/tree/main/hackerrank)
 > - [Leetcode](https://github.com/neerazz/CodingContests/tree/main/leetcode)
@@ -44,7 +53,7 @@ not related to hard core competitive coding.
 >   - [2021](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2021)
 > - [CodeForces](https://github.com/neerazz/CodingContests/tree/main/codeforces)
 
-### [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
+## [System Design](https://github.com/neerazz/faang-system-design#tips-for-system-design)
 
 > [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
 
@@ -61,7 +70,7 @@ not related to hard core competitive coding.
 >   - [Netflix](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Video%20Streaming%20Platform.png)
 >
 
-### OOPS Design:
+## OOPS Design:
 
 > - [Design Library Management System](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/libraryManagment)
 > - [Design Parking Lot](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/parkinglot)
@@ -75,15 +84,15 @@ not related to hard core competitive coding.
 >> TODO
 >> - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)
 
-### [Important Links](https://github.com/neerazz/FAANG/blob/master/ImportantLinks.md#hacking-software-engineering-interviews)
+## [Important Links](https://github.com/neerazz/FAANG/blob/master/ImportantLinks.md#hacking-software-engineering-interviews)
 
-### How to contribute?
+## How to contribute?
 
 1. Fork the repository
 2. Do the desired changes (add/delete/modify)
 3. Make a pull request
 
-### When to contribute?
+## When to contribute?
 
 1. If there is no solution to a problem.
 2. If your solution is asymptotically faster than the one in the main branch.
