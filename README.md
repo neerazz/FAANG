@@ -6,7 +6,7 @@
 
 The repository contains solutions to various coding Competitive Programming sites like [Leetcode](https://leetcode.com/neerazz90/), [Hackerrank](https://www.hackerrank.com/b_neerajkumarsi1)
 , [Hackearth](https://www.hackerearth.com/@neerajkumarsingh), [Pramp](https://www.pramp.com/dashboard#/), AlgoExpert
-& [EPI](https://github.com/neerazz/FAANG/blob/master/Algorithms/Resources/Elements%20of%20Programming%20Interviews%20in%20Java.pdf)
+& [EPI](https://github.com/neerazz/FAANG/blob/master/Resources/Elements%20of%20Programming%20Interviews%20in%20Java.pdf)
 . I've tried to provide the detailed solution and the intution through comments.
 
 These questions are classical problems that are most frequently asked by the tech giants in technical interviews and are
@@ -15,24 +15,24 @@ not related to hard core competitive coding.
 
 ### [DataStructures & Algorithm Problems](https://github.com/neerazz/FAANG/tree/master/Algorithms)
 
-> #### [Top Questions by Problem category](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
->   - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
->   - [Hash Table](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#hash-table)
->   - [Binary Search](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#binary-search)
->   - [Recursion](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#recursion)
->   - [Backtracking](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#backtracking)
->   - [Divide and Conquer](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#divide-and-conquer)
->   - [Greedy Algorithm](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#greedy-algorithm)
->   - [Dynamic Programming](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#dynamic-programming)
->   - [Graph](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Topic.md#graph)
+> #### [Top Questions by Problem category](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
+>   - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
+>   - [Hash Table](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#hash-table)
+>   - [Binary Search](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#binary-search)
+>   - [Recursion](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#recursion)
+>   - [Backtracking](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#backtracking)
+>   - [Divide and Conquer](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#divide-and-conquer)
+>   - [Greedy Algorithm](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#greedy-algorithm)
+>   - [Dynamic Programming](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#dynamic-programming)
+>   - [Graph](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#graph)
 
->  #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md)
->   - [Google](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#google)
->   - [Amazon](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#amazon)
->   - [Facebook](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#facebook)
->   - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#linkedin)
->   - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#microsoft)
->   - [Uber](https://github.com/neerazz/FAANG/blob/master/Algorithms/Top_LeetCode_Questions_By_Company.md#uber)
+>  #### [Questions by Companies](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md)
+>   - [Google](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#google)
+>   - [Amazon](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#amazon)
+>   - [Facebook](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#facebook)
+>   - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#linkedin)
+>   - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#microsoft)
+>   - [Uber](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#uber)
 
 ### [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
 
