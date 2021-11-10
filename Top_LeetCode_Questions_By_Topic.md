@@ -474,6 +474,9 @@
 | 174 | [Dungeon Game](https://leetcode.com/problems/dungeon-game) | 32.10% | **Hard** |
 | 1227 | [Airplane Seat Assignment Probability](https://leetcode.com/problems/airplane-seat-assignment-probability) | 60.50% | **Medium** |
 | 714 | [Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee) | 54.30% | **Medium** |
+| 123 | [Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) | 42.2% | **Hard** |
+| 188 | [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | 31.9% | **Hard** |
+
 | 943 | [Find the Shortest Superstring](https://leetcode.com/problems/find-the-shortest-superstring) | 42.70% | **Hard** |
 | 304 | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable) | 38.10% | **Medium** |
 | 403 | [Frog Jump](https://leetcode.com/problems/frog-jump) | 39.50% | **Hard** |
