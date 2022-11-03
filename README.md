@@ -27,6 +27,7 @@ not related to hard core competitive coding.
   - [Elements of Programming Interviews in Java (Beginner & Intermediate)](https://github.com/neerazz/DS-Algo-SD-Resources/blob/master/Elements%20of%20Programming%20Interviews%20in%20Java.pdf)
   - [Grokking the Coding Interview (Beginner & Intermediate)](https://github.com/neerazz/DS-Algo-SD-Resources/tree/master/Grokking%20the%20Coding%20Interview%20-%20Patterns%20for%20Coding%20Questions)
   - [Cracking the Coding Interview (Beginner & Intermediate)](https://github.com/neerazz/DS-Algo-SD-Resources/blob/master/Cracking%20the%20Coding%20Interview%2C%206th%20Edition%20189%20Programming%20Questions%20and%20Solutions.pdf)
+  - [Data Structures and Algorithms Tutorial](https://www.scaler.com/topics/data-structures/)
   - [Coursera](https://github.com/neerazz/DS-Algo-SD-Resources/tree/master/Coursera)
     - [Data Structures (Intermediate)](https://github.com/neerazz/DS-Algo-SD-Resources/tree/master/Coursera/Data%20Structures)
     - [AlgorithmicToolbox (Advanced)](https://github.com/neerazz/DS-Algo-SD-Resources/tree/master/Coursera/AlgorithmicToolbox)
