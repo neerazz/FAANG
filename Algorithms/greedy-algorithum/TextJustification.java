@@ -30,6 +30,78 @@ class TextJustification {
         System.out.println(fullJustify_rev3(new String[]{"What", "must", "be", "acknowledgment", "shall", "be"}, 16));
         System.out.println(fullJustify_rev3(new String[]{"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20));
         System.out.println(fullJustify_rev3(new String[]{"Science", "is", "what", "w", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20));
+
+        System.out.println("********************************** Solution 5 **********************************");
+        System.out.println(fullJustify_rev4(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
+        System.out.println(fullJustify_rev4(new String[]{"What", "must", "be", "acknowledgment", "shall", "be"}, 16));
+        System.out.println(fullJustify_rev4(new String[]{"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20));
+        System.out.println(fullJustify_rev4(new String[]{"Science", "is", "what", "w", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"}, 20));
+
+    }
+
+    public static List<String> fullJustify_rev4(String[] words, int max) {
+        int len = words.length;
+        List<TextRow> rows = new ArrayList<>();
+        int i = 0;
+        while (i < len) {
+            TextRow curRow = new TextRow(max);
+            while (i < len && curRow.canInsert(words[i])) {
+                curRow.insert(words[i++]);
+            }
+            rows.add(curRow);
+        }
+        List<String> result = new ArrayList<>();
+        for (int j = 0; j < rows.size(); j++) {
+            TextRow row = rows.get(j);
+            if (j == rows.size() - 1) {
+                String curRow = String.join(" ", row.words);
+                result.add(curRow + " ".repeat(max - curRow.length()));
+            } else {
+                result.add(row.flat());
+            }
+        }
+        return result;
+    }
+
+    static class TextRow {
+        List<String> words;
+        int chars, spaces, max;
+
+        TextRow(int max) {
+            words = new ArrayList<>();
+            this.max = max;
+        }
+
+        boolean canInsert(String word) {
+            int curLen = chars + spaces + (chars > 0 ? 1 : 0);
+            return curLen + word.length() <= max;
+        }
+
+        void insert(String word) {
+            words.add(word);
+            spaces += chars > 0 ? 1 : 0;
+            chars += word.length();
+        }
+
+        String flat() {
+            int wordsCount = words.size();
+            int spaces = max - chars;
+            if (wordsCount == 1) {
+                return words.get(0) + " ".repeat(spaces);
+            }
+            int split = wordsCount - 1;
+            int each = spaces / split, rem = spaces % split;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < wordsCount - 1; i++) {
+                sb.append(words.get(i));
+                sb.append(" ".repeat(each));
+                if (rem-- > 0) {
+                    sb.append(" ");
+                }
+            }
+            sb.append(words.get(wordsCount - 1));
+            return sb.toString();
+        }
     }
 
     public static List<String> fullJustify_rev3(String[] words, int max) {

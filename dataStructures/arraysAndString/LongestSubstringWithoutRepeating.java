@@ -28,27 +28,20 @@ public class LongestSubstringWithoutRepeating {
         System.out.println(lengthOfLongestSubstring2("dvdf") + " should be [2]");
         System.out.println(lengthOfLongestSubstring("pwwkew") + " should be [3]");
         System.out.println(lengthOfLongestSubstring2("pwwkew") + " should be [3]");
+        System.out.println(lengthOfLongestSubstring2("") + " should be [3]");
     }
 
     public static int lengthOfLongestSubstring2(String s) {
         Set<Character> set = new HashSet<>();
-        int max = Integer.MIN_VALUE, p1 = 0;
+        int max = 0, p1 = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (set.contains(c)) {
+            while (p1 <= i && set.contains(c)) {
 //                 Then keep removing from the queue till you encounter the current char.
-                while (p1 <= i) {
-                    char p1Char = s.charAt(p1++);
-                    if (p1Char == c) {
-                        break;
-                    } else {
-                        set.remove(p1Char);
-                    }
-                }
+                set.remove(s.charAt(p1++));
             }
             set.add(c);
             max = Math.max(max, set.size());
-            // System.out.println(set);
         }
         return max;
     }
@@ -60,25 +53,24 @@ public class LongestSubstringWithoutRepeating {
 
         char[] chars = input.toCharArray();
         int max = 0, current = max;
-        String subString = null;
+        StringBuilder subString = null;
 
-        for (int i = 0; i < chars.length; i++) {
-            char currentChar = chars[i];
+        for (char currentChar : chars) {
             String currentCharString = String.valueOf(currentChar);
 
             if (subString != null) {
-                int index = subString.lastIndexOf(currentChar);
+                int index = subString.toString().lastIndexOf(currentChar);
                 if (index >= 0) {
 //                    max = current > max ? current : max;
 //                    current = current-(index +1);
-                    subString = subString.substring(index + 1) + currentCharString;
+                    subString = new StringBuilder(subString.substring(index + 1) + currentCharString);
                     current = subString.length();
                 } else {
-                    subString = subString + currentCharString;
+                    subString.append(currentCharString);
                     current++;
                 }
             } else {
-                subString = currentCharString;
+                subString = new StringBuilder(currentCharString);
                 current++;
             }
             max = Math.max(current, max);

@@ -23,6 +23,7 @@ public class Permutations {
     public static void main(String[] args) {
         System.out.println(permute(new int[]{1, 2, 3}));
         System.out.println(permute_elegant(new int[]{1, 2, 3}));
+        System.out.println(permute_elegant_2(new int[]{1, 2, 3}));
     }
 
     public static List<List<Integer>> permute(int[] nums) {
@@ -73,5 +74,29 @@ public class Permutations {
         output = new ArrayList<>();
         permute(nums, nums.length);
         return output;
+    }
+
+    public static List<List<Integer>> permute_elegant_2(int[] nums) {
+        int len = nums.length;
+        boolean[] taken = new boolean[len];
+        List<List<Integer>> output = new ArrayList<>();
+        backtrack(nums, taken, output, new LinkedList<>());
+        return output;
+    }
+
+    private static void backtrack(int[] nums, boolean[] taken, List<List<Integer>> output, LinkedList<Integer> current) {
+        if (current.size() == nums.length) {
+            output.add(new ArrayList<>(current));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                if (!taken[i]) {
+                    taken[i] = true;
+                    current.add(nums[i]);
+                    backtrack(nums, taken, output, current);
+                    taken[i] = false;
+                    current.removeLast();
+                }
+            }
+        }
     }
 }
