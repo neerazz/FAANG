@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score with Gemini PRO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-4">ATS Score Analysis with Gemini PRO</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-key"></i> Enter API Key
+                </div>
+                <div class="card-body">
+                    <input type="text" class="form-control" id="apiKey" placeholder="Enter your Gemini PRO API key">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-alt"></i> Enter Resume
+                </div>
+                <div class="card-body">
+                    <textarea class="form-control" id="resume" rows="10"
+                              placeholder="Paste the resume text here"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-alt"></i> Enter Job Description
+                </div>
+                <div class="card-body">
+                    <textarea class="form-control" id="jobDescription" rows="10"
+                              placeholder="Paste the job description text here"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary btn-block" id="generateResponse">Generate Response</button>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-comment-dots"></i> Prompt Response
+                </div>
+                <div class="card-body" id="response">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+<script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+</script>
+
+<script type="module">
+    import {GoogleGenerativeAI} from "@google/generative-ai";
+
+    const generateResponseButton = document.getElementById("generateResponse");
+    const responseElement = document.getElementById("response");
+
+    const loadingIcon = document.createElement("i"); // Create a loading icon element
+    loadingIcon.classList.add("fas", "fa-spinner", "fa-spin");
+
+    window.addEventListener('load', () => {
+        retriveLocalStrorageValues();
+    });
+
+    generateResponseButton.addEventListener("click", async () => {
+
+        // Get the original values for preservation
+        const originalResumeText = document.getElementById("resume").value;
+        const originalJobDescriptionText = document.getElementById("jobDescription").value;
+        const API_KEY = document.getElementById("apiKey").value;
+
+        try{
+
+            setLocalStorage(API_KEY,originalResumeText ,originalJobDescriptionText);
+            // Disable the button and show the loading icon
+            generateResponseButton.disabled = true;
+            generateResponseButton.appendChild(loadingIcon);
+
+            const resumeText = document.getElementById("resume").value;
+            const jobDescriptionText = document.getElementById("jobDescription").value;
+            const promptPrefix = "Hey, Act Like, a skilled or very experience ATS (Application Tracking System)\n" +
+                "with a deep understanding of tech field, software engineering, data science, data analyst\n" +
+                "and big data engineer. Your task is to evaluate the resume based on the given job description.\n" +
+                "You must consider the job market is very competitive and you should provide. \n" +
+                "Give your best assistance for improving the resumes.\n" +
+                "\n" +
+                "Assign the percentage Matching based on the below Job Description and the missing keywords with high accuracy.\n" +
+                "\n" +
+                "--------------\n" +
+                "Resume:" +
+                "\n";
+
+            const promptPrefix2 = "--------------\n" +
+                "Job description:" +
+                "\n";
+
+            const promptPrefix3 = "--------------\n" +
+                "I dont want the complete Updated resume. I am looking for the things that I have to change. " +
+                "Give it in below format, Dont include the new Company name, and there benefits that they are giving." +
+                "Focus Primarily on the Essential Duties or Responsibilities and the Qualifications. Understand the requirement first very carefully." +
+                "Only then start Generating the response in Below format" +
+                "JD Match (In %): ?\n" +
+                "MissingKeywords (as list):?\n" +
+                "And Updated resume, I dont want the complete Updated resume. I am looking for teh things that I have to chage. Give it in below format:\n" +
+                "Profile Summary/ Work Experience changes:\n" +
+                "From:\n" +
+                "------ So and so -----\n" +
+                "\n" +
+                "To:\n" +
+                "\n" +
+                "--- So and so ---" +
+                "\n";
+
+
+            // Access your API key (see "Set up your API key" above)
+            const genAI = new GoogleGenerativeAI(API_KEY);
+
+            const model = genAI.getGenerativeModel({model: "gemini-pro"});
+
+            const finalPrompt = promptPrefix + resumeText + promptPrefix2 + jobDescriptionText + promptPrefix3;
+
+            const result = await model.generateContent(finalPrompt);
+            const response = await result.response;
+            const text = response.text();
+            console.log(text);
+            console.log("\n\n");
+            const formattedResponse = formatMarkdown(text);
+            responseElement.innerHTML = formattedResponse;
+            console.log(formattedResponse);
+
+            // After the API call, restore the original values
+            document.getElementById("resume").value = originalResumeText;
+            document.getElementById("jobDescription").value = originalJobDescriptionText;
+            document.getElementById("apiKey").value = API_KEY;
+
+        }catch (error){
+            responseElement.innerHTML = error;
+        }finally {
+
+            // Re-enable the button and remove the loading icon
+            generateResponseButton.disabled = false;
+            generateResponseButton.removeChild(loadingIcon);
+        }
+
+        retriveLocalStrorageValues();
+
+    });
+
+    function setLocalStorage(API_KEY, resumeText, jobDescriptionText){
+        localStorage.setItem('apiKey', API_KEY);
+        localStorage.setItem('resume', resumeText);
+        localStorage.setItem('jobDescription', jobDescriptionText);
+    }
+
+    function retriveLocalStrorageValues(){
+        // Retrieve values from local storage on page load (if they exist)
+        const storedAPIKey = localStorage.getItem('apiKey');
+        const storedResumeText = localStorage.getItem('resume');
+        const storedJobDescriptionText = localStorage.getItem('jobDescription');
+
+        if (storedAPIKey) {
+            document.getElementById("apiKey").value = storedAPIKey;
+        }
+        if (storedResumeText) {
+            document.getElementById("resume").value = storedResumeText;
+        }
+        if (storedJobDescriptionText) {
+            document.getElementById("jobDescription").value = storedJobDescriptionText;
+        }
+    }
+
+    function formatMarkdown(markdownText) {
+        console.log("Before Converting : \n");
+        console.log(markdownText)
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(markdownText);
+        console.log("After Converting : \n");
+        console.log(html);
+        return html;
+    }
+
+</script>
+
+
+
+
+</body>
+</html>
