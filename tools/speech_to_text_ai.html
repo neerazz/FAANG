@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Prompt Chat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+
+<style>
+    /* ... existing styles ... */
+
+    /* New styles for the chat history table */
+    #chat-history {
+        max-height: 70vh; /* 70% of the viewport height */
+        overflow-y: auto;
+    }
+
+    .chat-table {
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .chat-table th, .chat-table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .chat-table th {
+        background-color: #f2f2f2;
+    }
+
+    .chat-table td {
+        word-wrap: break-word;
+    }
+
+    /* Adjust the size of the recording card */
+    .recording-card {
+        max-height: 25%;
+    }
+
+    .response-container {
+        border: 1px solid #ddd; /* Light grey border */
+        padding: 10px;
+        height: 100px; /* Fixed height, or you can make it auto */
+        overflow-y: auto; /* Allows scrolling if content is too long */
+        background-color: #f9f9f9; /* Light background color */
+        margin-top: 5px;
+    }
+</style>
+
+<body>
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-key"></i> Enter API Key
+                    </div>
+                    <div class="card-body">
+                        <label for="geminiApiKey"></label><input type="text" class="form-control" id="geminiApiKey" placeholder="Enter your Gemini PRO API key">
+                        <label for="chatGpTApiKey"></label><input type="text" class="form-control" id="chatGpTApiKey" placeholder="Enter your ChatGPT API key">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 recording-card">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-primary" id="start-recording">Start Recording</button>
+                        <button class="btn btn-success" id="generate-response">Generate Response</button>
+                        <button class="btn btn-secondary" id="clear-Text">Clear Text</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Recorded Text Section -->
+                            <div class="col-md-4">
+                                <label for="recorded-text">Recorded Text:</label>
+                                <textarea class="form-control" id="recorded-text" rows="3"></textarea>
+                            </div>
+                            <!-- Gemini AI Response Section -->
+                            <div class="col-md-4">
+                                <label>Gemini AI Response:</label>
+                                <div id="gemini-response" class="response-container"></div>
+                            </div>
+                            <!-- ChatGPT Response Section -->
+                            <div class="col-md-4">
+                                <label>ChatGPT Response:</label>
+                                <div id="chatgpt-response" class="response-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 chart-card">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Chat</h3>
+                        <button class="btn btn-success" id="clear-chat">Clear All</button>
+                    </div>
+                    <div class="card-body overflow-auto" id="chat-history">
+                        <table class="chat-table">
+                            <thead>
+                            <tr>
+                                <th>Input Question</th>
+                                <th>Gemini AI Response</th>
+                                <th>Chat GPT Response</th>
+                            </tr>
+                            </thead>
+                            <tbody id="chat-history-body">
+                            <!-- Chat messages will be appended here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/speech-recognition@0.12.0/dist/speech-recognition.min.js"></script>
+<script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+
+<script type="module">
+
+    import {GoogleGenerativeAI} from "@google/generative-ai";
+
+    window.addEventListener('load', () => {
+        retriveLocalStrorageValues();
+        loadChatHistory();
+    });
+
+    const startRecordingButton = document.getElementById('start-recording');
+    const clearChatHistory = document.getElementById('clear-chat');
+    const clearRecordedTextButton = document.getElementById('clear-Text');
+    const generateResponseButton = document.getElementById('generate-response');
+    const chatHistory = document.getElementById('chat-history');
+    const recordedText = document.getElementById('recorded-text');
+    let CHATGPT_API_KEY = document.getElementById("chatGpTApiKey").value;
+    let GEMINI_API_KEY = document.getElementById("geminiApiKey").value;
+    const loadingIcon = document.createElement("i"); // Create a loading icon element
+    loadingIcon.classList.add("fas", "fa-spinner", "fa-spin");
+
+
+    let isRecording = false;
+    let recognition;
+    let counter = 0;
+    let previousText = "";
+
+
+    startRecordingButton.addEventListener('click', toggleRecording); // Use click event for simplicity
+    clearRecordedTextButton.addEventListener('click', clearRecordedText); // Use click event for simplicity
+    generateResponseButton.addEventListener('click', generateResponse); // Use click event for simplicity
+    clearChatHistory.addEventListener("click", clearChatHistry);
+
+
+    function toggleRecording() {
+        if (!isRecording) {
+            startSpeechRecognition();
+        } else {
+            stopSpeechRecognition();
+        }
+    }
+
+    function clearRecordedText(){
+        // Clear the recorded text before starting
+        recordedText.value = '';
+        previousText = "";
+    }
+
+    function startSpeechRecognition() {
+        // Check for browser compatibility
+        if ('SpeechRecognition' in window) {
+            console.log('SpeechRecognition API supported');
+        } else {
+            console.error('SpeechRecognition API not supported');
+            // Handle lack of support gracefully
+        }
+
+        recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+        if (!recognition) {
+            console.error("Speech Recognition not supported in this browser.");
+            return;
+        }
+        recognition.continuous = true; // Enable continuous recognition
+        recognition.interimResults = true; // Get interim results for real-time updates
+
+        recognition.addEventListener('result', handleSpeechResult);
+        recognition.addEventListener('end', handleSpeechEnd);
+        recognition.addEventListener('error', handleSpeechError);
+
+        recognition.start();
+
+        console.log('Speech recognition started');
+        startRecordingButton.textContent = 'Stop Recording';
+        isRecording = true;
+    }
+
+    function stopSpeechRecognition() {
+        recognition.stop();
+        console.log('Speech recognition stopped');
+        startRecordingButton.textContent = 'Start Recording';
+        isRecording = false;
+    }
+
+    function handleSpeechResult(event) {
+        let newTranscript = "";
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            newTranscript += event.results[i][0].transcript;
+        }
+
+        // Check for overlap with existing text
+        const currentText = recordedText.value;
+        if(previousText.length <= newTranscript.length){
+            const trimmedText = removePrevious(currentText, previousText);
+            recordedText.value = trimmedText + newTranscript;
+        }else{
+            recordedText.value += newTranscript;
+        }
+        previousText = newTranscript;
+
+        console.log("Current : '" + currentText + "'");
+        console.log("Appended: '" + recordedText.value + "'");
+        // You might want to enable the "Generate Response" button here or perform other actions
+        enableButtonIfText();
+    }
+
+    function removePrevious(longString, subString){
+        return longString.substring(0, longString.length - subString.length);
+    }
+
+    function appendWithOverlapCheck(str1, str2) {
+        console.log("_______________________________")
+        console.log("Input 1: " + str1);
+        console.log("Input 2: " + str2);
+        // Convert both strings to lowercase for case-insensitive comparison
+        const lowerStr1 = str1.trim().toLowerCase();
+        const lowerStr2 = str2.trim().toLowerCase();
+        var finalString;
+
+        const overlapLength = findOverlap(lowerStr1, lowerStr2);
+
+        if (overlapLength > 0) {
+            // Remove overlap from the second string
+            // Check for trailing punctuation in str1 and add a period if missing
+            finalString=  lowerStr1 + " " + lowerStr2.substring(overlapLength);
+        } else {
+            // No overlap, add a period to str1 and concatenate
+            finalString = lowerStr1 + " " + lowerStr2;
+        }
+        console.log("Final  : " + finalString);
+        console.log("_______________________________")
+        return finalString;
+    }
+
+
+    // Helper function to find overlap between strings
+    function findOverlap(str1, str2) {
+        // Normalize strings for case-insensitive comparison
+        const normalizedStr1 = str1.toLowerCase();
+        const normalizedStr2 = str2.toLowerCase();
+
+        // Find the maximum possible overlap length
+        const maxOverlapLength = Math.min(str1.length, str2.length);
+
+        for (let i = maxOverlapLength-1; i >=0; i--) {
+            // Check if the end of str1 overlaps with the start of str2
+            if (normalizedStr1.endsWith(normalizedStr2.substring(0, i + 1))) {
+                return i+1;
+            }
+        }
+    }
+
+    function handleSpeechEnd() {
+        console.log('Speech recognition ended');
+    }
+
+    function handleSpeechError(event) {
+        console.error('Speech recognition error:', event.error);
+        // Handle errors gracefully, e.g., display an error message to the user
+    }
+
+    async function generateResponse() {
+        CHATGPT_API_KEY = document.getElementById("chatGpTApiKey").value;
+        GEMINI_API_KEY = document.getElementById("geminiApiKey").value;
+        setLocalStorage(GEMINI_API_KEY, CHATGPT_API_KEY);
+        // Disable the button and show the loading icon
+        generateResponseButton.disabled = true;
+        generateResponseButton.appendChild(loadingIcon);
+        const recordedTextValue = recordedText.value;
+        console.log("Prompting with he Text: " + recordedTextValue)
+        const helperPrompt = "Provide a brief and clear explanation for: \n." +
+            "I want you to assume that you are sitting in a real interview as a Senior Software engineer " +
+            "role who has very good experience in Java, python, and frameworks like Spring, Spring boot and Hibernate Kafka  e.t.c." +
+            "Also you know Distributed systems and Design Patterns, Data Structures and Algorithms very well." +
+            "So the answer should be consie and to the point and " +
+            "Please provide specific examples from your experience to support your response." +
+            "Also Dont give long answers, limit yours answers to 5 to 6 lines. \n";
+
+
+        const promises = [
+            await getGoogleAIResponse(helperPrompt, recordedTextValue),
+            await getChatGPTResponse(helperPrompt, recordedTextValue)
+        ];
+
+        const responses = await Promise.all(promises);
+
+        const [geminiAIResponse, chatGPTAIResponse] = responses;
+
+        appendChatMessage(recordedTextValue, geminiAIResponse, chatGPTAIResponse);
+        savetoLocal(recordedTextValue, geminiAIResponse, chatGPTAIResponse);
+
+        generateResponseButton.disabled = false;
+        generateResponseButton.removeChild(loadingIcon);
+    }
+
+    async function getGoogleAIResponse(context, prompt, aiModel = "gemini-pro") {
+
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+
+        const finalPrompt = context + " \n" + prompt;
+
+        const model = genAI.getGenerativeModel({model: aiModel});
+        const result = await model.generateContent(finalPrompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log("------------------------- Original Response ----------------");
+        console.log(text);
+        console.log("\n\n");
+        console.log("------------------------- Formatted Response ----------------");
+        const formattedResponse = formatMarkdown(text);
+        console.log(formattedResponse);
+        updateGeminiResponse(formattedResponse);
+        return formattedResponse;
+    }
+
+    async function getChatGPTResponse(context, finalPrompt) {
+        const apiUrl = 'https://api.openai.com/v1/chat/completions';
+
+        const payload = {
+            model: 'gpt-3.5-turbo-0613', // Or any other desired ChatGPT model
+            messages: [{
+                role: 'system',
+                content: context },
+                { role: 'user', content: finalPrompt }],
+            max_tokens: 150, // Adjust as needed for desired response length
+            temperature: 0.7, // Adjust for creativity and coherence
+        };
+
+        try {
+            console.log(`Using API Key: ${CHATGPT_API_KEY}`);
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${CHATGPT_API_KEY}`,
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+            if (!data.choices || data.choices.length === 0 || !data.choices[0].message) {
+                console.error('Unexpected response format:', data);
+                return 'Error: Unexpected response format from ChatGPT.';
+            }
+            const chatGPTResponse = data.choices[0].message.content;
+            console.log('------------------------- Original ChatGPT Response ----------------');
+            console.log(chatGPTResponse);
+            console.log("\n\n");
+            console.log('------------------------- Formatted Response ----------------');
+            const formattedResponse = formatMarkdown(chatGPTResponse); // Assuming you have a formatMarkdown function
+            console.log(formattedResponse);
+            updateChatGptResponse(formattedResponse);
+            return formattedResponse;
+        } catch (error) {
+            console.error('Error fetching ChatGPT response:', error);
+            return 'Error: Could not retrieve response from ChatGPT.';
+        }
+    }
+
+    function updateGeminiResponse(response) {
+        const geminiResponseElement = document.getElementById('gemini-response');
+        geminiResponseElement.innerHTML = response;
+    }
+
+    function updateChatGptResponse(response) {
+        const chatGptResponseElement = document.getElementById('chatgpt-response');
+        chatGptResponseElement.innerHTML = response;
+    }
+
+    function formatMarkdown(markdownText) {
+        const converter = new showdown.Converter();
+        const html = converter.makeHtml(markdownText);
+        return html;
+    }
+
+    function savetoLocal(inputPrompt, geminiAIResponse, chatGPTAIResponse){
+        localStorage.setItem('prompt'+counter, inputPrompt);
+        localStorage.setItem('geminiAIResponse'+counter, geminiAIResponse);
+        localStorage.setItem('chatGPTAIResponse'+counter, chatGPTAIResponse);
+        counter++;
+    }
+
+    function enableButtonIfText() {
+        console.log("Checking to Enable the Generate Response Button.")
+        generateResponseButton.disabled = !recordedText.value.trim();
+    }
+
+    function loadChatHistory() {
+        let counter = localStorage.getItem('counter');
+        if (counter) {
+            for (let i = 1; i <= counter; i++) {
+                const prompt = localStorage.getItem('prompt' + i);
+                const response = localStorage.getItem('response' + i);
+                appendChatMessage(prompt, response);
+            }
+        }
+    }
+
+    function appendChatMessage(prompt, geminiAIResponse, chatGPTAIResponse) {
+        const row = document.createElement('tr');
+
+        const promptCell = document.createElement('td');
+        promptCell.textContent = prompt;
+
+        const geminiCell = document.createElement('td');
+        geminiCell.innerHTML = geminiAIResponse; // Assuming HTML formatted response
+
+        const chatGptCell = document.createElement('td');
+        chatGptCell.innerHTML = chatGPTAIResponse; // Assuming HTML formatted response
+
+        row.appendChild(promptCell);
+        row.appendChild(geminiCell);
+        row.appendChild(chatGptCell);
+
+        document.getElementById('chat-history-body').appendChild(row);
+
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    function setLocalStorage(GEMINI_API_KEY, CHATGPT_API_KEY){
+        localStorage.setItem('geminiApiKey', GEMINI_API_KEY);
+        localStorage.setItem('chatGpTApiKey', CHATGPT_API_KEY);
+    }
+
+    function retriveLocalStrorageValues(){
+        // Retrieve values from local storage on page load (if they exist)
+        const geminiApiKey = localStorage.getItem('geminiApiKey');
+        if (geminiApiKey) {
+            document.getElementById("geminiApiKey").value = geminiApiKey;
+        }
+
+        const chatGpTApiKey = localStorage.getItem('chatGpTApiKey');
+        if (chatGpTApiKey) {
+            document.getElementById("chatGpTApiKey").value = chatGpTApiKey;
+        }
+    }
+
+    function clearChatHistry(){
+        // Clear the chat history element's content
+        chatHistory.textContent = "";
+    }
+
+</script>
+</body>
+</html>
