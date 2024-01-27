@@ -95,6 +95,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <div class="col-md-4">
+                            <label for="recorded-text">Context:</label>
+                            <textarea class="form-control" id="context" rows="3"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -308,13 +314,19 @@
         generateResponseButton.appendChild(loadingIcon);
         const recordedTextValue = recordedText.value;
         console.log("Prompting with he Text: " + recordedTextValue)
-        const helperPrompt = "Provide a brief and clear explanation for: \n." +
-            "I want you to assume that you are sitting in a real interview as a Senior Software engineer " +
-            "role who has very good experience in Java, python, and frameworks like Spring, Spring boot and Hibernate Kafka  e.t.c." +
-            "Also you know Distributed systems and Design Patterns, Data Structures and Algorithms very well." +
-            "So the answer should be consie and to the point and " +
+        const helperPrompt = "" +
+            "Act as a Senior Software engineer who is very well worsted with programing languages like Java and Python, " +
+            "also who knows almost all the concepts of Distributed systems and Design Patterns, Data Structures and Algorithms very well." +
+            "I am also very versed with Spring frameworks, like Spring boot, Spring Cloud, Spring Security." +
+            "" +
+            "I want you to assume that you are sitting in a real interview, and interviewer is asking you the questions." +
+            "Answer should be precise and to the point. Dont Give lot of explanation at the same time dont give less explanation.  limit yours answers to 5 to 6 lines. \n" +
+            "" +
+            "" +
             "Please provide specific examples from your experience to support your response." +
-            "Also Dont give long answers, limit yours answers to 5 to 6 lines. \n";
+            "" +
+            "" +
+            "";
 
 
         const promises = [
