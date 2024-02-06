@@ -10,7 +10,7 @@ class GroupAnagrams {
         for (String word : words) {
             char[] chars = word.toCharArray();
             Arrays.sort(chars);
-            String sorted = new StringBuilder().append(chars).toString();
+            String sorted = String.valueOf(chars);
             List<String> values = map.getOrDefault(sorted, new ArrayList<>());
             values.add(word);
             map.put(sorted, values);
