@@ -111,6 +111,7 @@
 
 ## Companies and Jobs' List
 
+* [Pipeline Careers](http://pipeline.careers/)
 * [BreakoutList](https://breakoutlist.com)
 * [LinkedIn Jobs](https://www.linkedin.com/jobs/)
 * [Angel: Jobs](https://angel.co/jobs)
