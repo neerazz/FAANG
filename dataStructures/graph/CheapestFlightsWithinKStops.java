@@ -34,6 +34,36 @@ public class CheapestFlightsWithinKStops {
                 13, 4, 13) + " should be [47]");
     }
 
+    public static int findCheapestPrice_rev2(int n, int[][] flights, int src, int dst, int k) {
+        Map<Integer, List<int[]>> cons = new HashMap<>();
+        for (int[] flight : flights) {
+            int from = flight[0], to = flight[1], cost = flight[2];
+            cons.computeIfAbsent(from, key -> new ArrayList<>()).add(new int[]{to, cost});
+        }
+        int[] distances = new int[n];
+        Arrays.fill(distances, Integer.MAX_VALUE);
+        distances[src] = 0;
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{src, 0});
+        int stops = 0;
+        while (!q.isEmpty() && stops <= k) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                int[] poll = q.poll();
+                int cur = poll[0], curCost = poll[1];
+                for (int[] con : cons.getOrDefault(cur, new ArrayList<>())) {
+                    int nextCost = curCost + con[1];
+                    if (nextCost < distances[con[0]]) {
+                        distances[con[0]] = nextCost;
+                        q.add(new int[]{con[0], nextCost});
+                    }
+                }
+            }
+            stops++;
+        }
+        return distances[dst] == Integer.MAX_VALUE ? -1 : distances[dst];
+    }
+
     public static int findCheapestPrice_rev1(int n, int[][] flights, int src, int dst, int K) {
         map = new HashMap<>();
         price = new HashMap<>();
