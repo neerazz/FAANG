@@ -1,60 +1,56 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <title>Advanced Java Converter & Calculator</title>
-
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <title>Interview Toolkit - System Design Enhanced</title>
     <style>
-        body {
-            padding-top: 56px; /* Adjust for fixed-top navbar */
-        }
-        .card {
-            height: 100%;
-        }
-        .card-body {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-control[disabled] {
-            background-color: #e9ecef;
-            opacity: 1;
-            font-weight: bold;
-        }
-        .output-group p {
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .output-group input {
-            max-width: 150px;
-            text-align: right;
-        }
-        .btn-copy .bi-clipboard-check-fill { display: none; }
-        .btn-copy.copied .bi-clipboard { display: none; }
-        .btn-copy.copied .bi-clipboard-check-fill { display: inline-block; }
+        body{padding-top:56px}
+        .card{height:100%}
+        .form-control[readonly]{background:#e9ecef}
+        .output-value{max-width:120px;text-align:right;font-weight:bold;font-size:.8rem}
+        .tooltip-trigger{cursor:help;color:var(--bs-secondary-color)}
+        .btn-copy .bi-clipboard-check-fill{display:none}.btn-copy.copied .bi-clipboard{display:none}.btn-copy.copied .bi-clipboard-check-fill{display:inline-block}
+        textarea{font-family:monospace}
+        .metric-row{display:flex;align-items:center;margin-bottom:8px}
+        .metric-label{flex:1;font-size:.85rem}
+        .metric-value{margin-left:auto}
+        .input-horizontal{display:flex;gap:15px;flex-wrap:wrap;align-items:center}
+        .input-group-horizontal{display:flex;align-items:center;gap:8px}
+        .section-header{background:var(--bs-gray-100);padding:8px 12px;margin:-12px -12px 12px;font-weight:600;font-size:.9rem}
+        .card-compact .card-body{padding:12px}
+        .input-label{font-size:.8rem;min-width:80px}
 
-        /* Style for the tooltip trigger icon */
-        .tooltip-trigger {
-            cursor: help;
-            color: var(--bs-secondary-color);
+        /* Architecture visualization styles */
+        .arch-box {
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .arch-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .flow-arrow {
+            animation: flow 2s infinite;
+        }
+        @keyframes flow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        #architecture-diagram {
+            background: linear-gradient(135deg, var(--bs-gray-100) 0%, var(--bs-gray-200) 100%);
+        }
+        [data-bs-theme="dark"] #architecture-diagram {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
         }
     </style>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">🛠️ Advanced Tools</a>
+        <a class="navbar-brand" href="#">System Design Toolkit</a>
         <div class="form-check form-switch ms-auto">
             <input class="form-check-input" type="checkbox" role="switch" id="theme-switcher">
             <label class="form-check-label text-light" for="theme-switcher"><i class="bi bi-moon-stars-fill"></i></label>
@@ -62,286 +58,758 @@
     </div>
 </nav>
 
-<div class="container my-4">
-
-    <!-- LeetCode & Java Array Generator Section -->
-    <h2 class="mb-3">LeetCode & Java Array Generator</h2>
-    <div class="row g-3">
-        <div class="col-12">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Input</h5>
-                    <textarea class="form-control" id="masterInput" rows="3" placeholder="Paste a LeetCode URL or a string with arrays..."></textarea>
+<div class="container-fluid my-3">
+    <!-- LeetCode Helper - Compact -->
+    <div class="card card-compact shadow-sm mb-3">
+        <div class="card-body">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <input id="masterInput" class="form-control form-control-sm" placeholder="LeetCode URL or array string…">
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-7">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h5 class="card-title mb-0">Generated Java Class</h5>
-                        <button class="btn btn-outline-primary btn-sm btn-copy" data-copy-target="#javaClassOutput">
-                            <i class="bi bi-clipboard"></i> Copy
-                        </button>
+                <div class="col-md-4">
+                    <div class="input-group input-group-sm">
+                        <input id="javaClassNameOutput" class="form-control" placeholder="Java Class Name" readonly>
+                        <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaClassNameOutput"><i class="bi bi-clipboard"></i></button>
                     </div>
-                    <textarea class="form-control flex-grow-1 font-monospace" id="javaClassOutput" rows="12" readonly aria-label="Generated Java Class Output"></textarea>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h5 class="card-title mb-0">Formatted Java Array</h5>
-                        <button class="btn btn-outline-primary btn-sm btn-copy" data-copy-target="#javaArrayOutput">
-                            <i class="bi bi-clipboard"></i> Copy
-                        </button>
+                <div class="col-md-4">
+                    <div class="input-group input-group-sm">
+                        <input id="javaArrayOutput" class="form-control" placeholder="Formatted Java Array" readonly>
+                        <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaArrayOutput"><i class="bi bi-clipboard"></i></button>
                     </div>
-                    <textarea class="form-control flex-grow-1 font-monospace" id="javaArrayOutput" rows="12" readonly aria-label="Formatted Java Array Output"></textarea>
                 </div>
             </div>
         </div>
     </div>
 
-    <hr class="my-5">
+    <!-- System Design Calculator - Enhanced -->
+    <h5 class="mb-3">System Design Comprehensive Calculator</h5>
 
-    <!-- System Design Calculator Section -->
-    <h2 class="mb-3">System Design Calculator 📈</h2>
-    <div class="row g-3">
-        <div class="col-lg-4">
-            <div class="card shadow-sm">
-                <div class="card-header fw-bold">Inputs</div>
+    <!-- Inputs Section -->
+    <div class="card card-compact shadow-sm mb-3">
+        <div class="card-body">
+            <div class="section-header">Basic Inputs</div>
+            <div class="input-horizontal">
+                <div class="input-group-horizontal">
+                    <span class="input-label">Calls/day: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical values:</b><br>• Small app: 1-10M<br>• Medium: 100M-1B<br>• Large: 1B-100B<br>• Twitter: ~500B<br>• Facebook: ~2T"></i></span>
+                    <input type="text" id="calls-per-day" class="form-control form-control-sm" style="width:100px" placeholder="100m">
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Read/Write: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical ratios:</b><br>• Social media: 95/5<br>• E-commerce: 80/20<br>• Analytics: 99/1<br>• Banking: 50/50<br>• IoT data: 10/90"></i></span>
+                    <input type="number" id="read-ratio" class="form-control form-control-sm" style="width:50px" value="80" min="0" max="100">
+                    <span class="text-muted small">/</span>
+                    <input type="number" id="write-ratio" class="form-control form-control-sm" style="width:50px" value="20" readonly>
+                    <span class="text-muted small">%</span>
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Cache Hit: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical hit rates:</b><br>• Good: 85-95%<br>• Excellent: 95-99%<br>• CDN: 90-95%<br>• DB query cache: 70-85%"></i></span>
+                    <input type="number" id="cache-hit" class="form-control form-control-sm" style="width:60px" value="90" min="0" max="100">
+                    <span class="text-muted small">%</span>
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Obj Size: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Common sizes:</b><br>• Tweet: 300B<br>• User profile: 1-10KB<br>• Image thumb: 50KB<br>• HD image: 2MB<br>• Video: 10-100MB"></i></span>
+                    <input type="text" id="obj-size" class="form-control form-control-sm" style="width:80px" placeholder="10kb">
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Replicas: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="Standard: 3 (master + 2 replicas)<br>Critical data: 5+<br>Geo-distributed: 3-5 per region"></i></span>
+                    <input type="number" id="replicas" class="form-control form-control-sm" style="width:60px" value="3" min="1">
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Retention: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="Typical retention:<br>• Logs: 30-90 days<br>• Analytics: 1-2 years<br>• User data: 5+ years<br>• Compliance: 7-10 years"></i></span>
+                    <input type="number" id="retention-years" class="form-control form-control-sm" style="width:60px" value="5" min="1">
+                    <span class="text-muted small">years</span>
+                </div>
+            </div>
+
+            <div class="section-header mt-3">Advanced Inputs</div>
+            <div class="input-horizontal">
+                <div class="input-group-horizontal">
+                    <span class="input-label">Latency P99: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Target latencies:</b><br>• Cache read: 1-5ms<br>• DB read: 10-50ms<br>• DB write: 20-100ms<br>• API response: 50-200ms<br>• User acceptable: <1s"></i></span>
+                    <input type="number" id="latency-p99" class="form-control form-control-sm" style="width:80px" value="100" placeholder="ms">
+                    <span class="text-muted small">ms</span>
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Availability: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>SLA targets:</b><br>• Basic: 99% (3.65 days/yr)<br>• Standard: 99.9% (8.77 hrs/yr)<br>• High: 99.99% (52.6 min/yr)<br>• Critical: 99.999% (5.26 min/yr)"></i></span>
+                    <input type="number" id="availability" class="form-control form-control-sm" style="width:80px" value="99.9" step="0.1">
+                    <span class="text-muted small">%</span>
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Regions: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Regional: 1<br>• Multi-region: 2-3<br>• Global: 5+<br>Consider latency and compliance requirements"></i></span>
+                    <input type="number" id="regions" class="form-control form-control-sm" style="width:60px" value="3" min="1">
+                </div>
+                <div class="input-group-horizontal">
+                    <span class="input-label">Peak Factor: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Normal: 2-3x<br>• E-commerce: 5-10x (sales)<br>• Sports/News: 10-20x<br>• Viral events: 100x+"></i></span>
+                    <input type="number" id="peak-factor" class="form-control form-control-sm" style="width:60px" value="4" min="1">
+                </div>
+                <button id="reset-btn" class="btn btn-danger btn-sm">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="row g-2">
+        <!-- Traffic Metrics -->
+        <div class="col-lg-3">
+            <div class="card card-compact shadow-sm">
                 <div class="card-body">
-                    <div class="mb-3">
-                        <label for="calls-per-day" class="form-label">Calls per day
-                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
-                               data-bs-toggle="tooltip"
-                               data-bs-placement="right"
-                               title="Helps estimate load. A small blog might have 1k calls, a popular service 1m (1 million), and a global platform 1b (1 billion)."></i>
-                        </label>
-                        <input type="text" class="form-control" id="calls-per-day" placeholder="e.g., 1m, 50k, 1b">
+                    <div class="section-header">Traffic & Load</div>
+                    <div class="metric-row">
+                        <span class="metric-label">Total QPS:</span>
+                        <input id="total-qps" class="form-control form-control-sm output-value" readonly>
                     </div>
-                    <div class="mb-3">
-                        <label for="size-per-object" class="form-label">Size Per Object
-                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
-                               data-bs-toggle="tooltip"
-                               data-bs-placement="right"
-                               title="Size of a single data object. A user profile JSON might be 2kb. A small image thumbnail could be 30kb. A product data object with descriptions could be 5kb."></i>
-                        </label>
-                        <input type="text" class="form-control" id="size-per-object" placeholder="e.g., 10kb, 2mb">
+                    <div class="metric-row">
+                        <span class="metric-label">Read QPS:</span>
+                        <input id="read-qps" class="form-control form-control-sm output-value" readonly>
                     </div>
-                    <div class="mb-3">
-                        <label for="latency" class="form-label">API Latency
-                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
-                               data-bs-toggle="tooltip"
-                               data-bs-placement="right"
-                               data-bs-html="true"
-                               title="<strong>Typical Latency Numbers:</strong><br> - Cache Hit (e.g. Redis): &lt;10 ms<br> - Cache Miss (DB Read): 10-200 ms<br> - DB Write/Update: 50-500 ms<br> - SSD Read: ~150 µs<br> - Cross-Datacenter: 100-1000+ ms"></i>
-                        </label>
-                        <input type="text" class="form-control" id="latency" placeholder="e.g., 100ms">
+                    <div class="metric-row">
+                        <span class="metric-label">Write QPS:</span>
+                        <input id="write-qps" class="form-control form-control-sm output-value" readonly>
                     </div>
-                    <button id="reset-button" class="btn btn-danger mt-auto">Reset</button>
+                    <div class="metric-row">
+                        <span class="metric-label">Peak QPS:</span>
+                        <input id="peak-qps" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">RPM:</span>
+                        <input id="rpm" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Daily Requests:</span>
+                        <input id="daily-requests" class="form-control form-control-sm output-value" readonly>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card bg-success text-white shadow-sm">
-                <div class="card-header fw-bold">Calculated Results</div>
-                <div class="card-body output-group">
-                    <p>Request per Second (RPS): <input type="text" class="form-control form-control-sm" id="rps" disabled></p>
-                    <p>Required Bandwidth: <input type="text" class="form-control form-control-sm" id="bandwidth" disabled></p>
-                    <p>Storage (1 Day): <input type="text" class="form-control form-control-sm" id="storage-day" disabled></p>
-                    <p>Storage (1 Year): <input type="text" class="form-control form-control-sm" id="storage-year" disabled></p>
-                    <p>Storage (5 Years): <input type="text" class="form-control form-control-sm" id="storage-5-year" disabled></p>
+
+        <!-- Backend & Cache -->
+        <div class="col-lg-3">
+            <div class="card card-compact shadow-sm">
+                <div class="card-body">
+                    <div class="section-header">Backend & Cache</div>
+                    <div class="metric-row">
+                        <span class="metric-label">Cache QPS:</span>
+                        <input id="cache-qps" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Cache Misses/s:</span>
+                        <input id="cache-misses" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">DB Read QPS:</span>
+                        <input id="db-read-qps" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">DB Write QPS:</span>
+                        <input id="db-write-qps" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Cache Memory:</span>
+                        <input id="cache-memory" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">DB Shards:</span>
+                        <input id="db-shards" class="form-control form-control-sm output-value" readonly>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card shadow-sm">
-                <div class="card-header fw-bold">Common Latency Numbers</div>
-                <div class="card-body p-2">
-                    <img class="img-fluid rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*5S80KcgolUfNWIha_2fI9w.png" alt="Latency numbers chart">
+
+        <!-- Network & Storage -->
+        <div class="col-lg-3">
+            <div class="card card-compact shadow-sm">
+                <div class="card-body">
+                    <div class="section-header">Network & Storage</div>
+                    <div class="metric-row">
+                        <span class="metric-label">Ingress BW:</span>
+                        <input id="ingress-bw" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Egress BW:</span>
+                        <input id="egress-bw" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Peak BW:</span>
+                        <input id="peak-bw" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Daily Storage:</span>
+                        <input id="daily-storage" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Total Storage:</span>
+                        <input id="total-storage" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">With Replicas:</span>
+                        <input id="storage-replicated" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infrastructure & Latency -->
+        <div class="col-lg-3">
+            <div class="card card-compact shadow-sm">
+                <div class="card-body">
+                    <div class="section-header">Infrastructure</div>
+                    <div class="metric-row">
+                        <span class="metric-label">API Servers:</span>
+                        <input id="api-servers" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Cache Nodes:</span>
+                        <input id="cache-nodes" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">DB Instances:</span>
+                        <input id="db-instances" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Queue Workers:</span>
+                        <input id="queue-workers" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Downtime/year:</span>
+                        <input id="downtime" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                    <div class="metric-row">
+                        <span class="metric-label">Est. Cost/mo:</span>
+                        <input id="est-cost" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latency Breakdown -->
+    <div class="card card-compact shadow-sm mt-2">
+        <div class="card-body">
+            <div class="section-header">Estimated Latencies (P99)</div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="metric-row">
+                        <span class="metric-label">Cache Read:</span>
+                        <input id="cache-read-latency" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="metric-row">
+                        <span class="metric-label">DB Read:</span>
+                        <input id="db-read-latency" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="metric-row">
+                        <span class="metric-label">DB Write:</span>
+                        <input id="db-write-latency" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="metric-row">
+                        <span class="metric-label">API Total:</span>
+                        <input id="api-total-latency" class="form-control form-control-sm output-value" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Architecture Visualization -->
+    <div class="card card-compact shadow-sm mt-2">
+        <div class="card-body">
+            <div class="section-header">System Architecture Visualization</div>
+            <div id="architecture-diagram" style="min-height: 300px; border-radius: 8px; padding: 20px; position: relative;">
+                <!-- Client Layer -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div class="arch-box" style="display: inline-block; background: #007bff; color: white; padding: 10px 20px; border-radius: 8px;">
+                        <i class="bi bi-people-fill"></i> Users
+                        <div style="font-size: 0.8rem; margin-top: 5px;">
+                            <span id="viz-users">0</span> req/day
+                        </div>
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <i class="bi bi-arrow-down flow-arrow" style="font-size: 24px; color: #007bff;"></i>
+                        <span style="font-size: 0.8rem; color: #666;"><span id="viz-total-qps">0</span> QPS</span>
+                    </div>
+                </div>
+
+                <!-- CDN/Load Balancer -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div class="arch-box" style="display: inline-block; background: #6c757d; color: white; padding: 10px 20px; border-radius: 8px; width: 200px;">
+                        <i class="bi bi-globe"></i> CDN / Load Balancer
+                        <div style="font-size: 0.8rem; margin-top: 5px;">
+                            <span id="viz-regions">0</span> regions
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Layer -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                        <div id="api-servers-viz" style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
+                            <!-- API servers will be added dynamically -->
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #666;">
+                        <i class="bi bi-server"></i> <span id="viz-api-count">0</span> API Servers
+                    </div>
+                </div>
+
+                <!-- Cache & DB Layer -->
+                <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <!-- Cache -->
+                    <div style="text-align: center;">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #28a745;"></i>
+                            <span style="font-size: 0.8rem; color: #666;"><span id="viz-cache-qps">0</span> QPS</span>
+                        </div>
+                        <div class="arch-box" style="background: #28a745; color: white; padding: 15px 25px; border-radius: 8px;">
+                            <i class="bi bi-lightning-fill"></i> Cache Layer
+                            <div style="font-size: 0.8rem; margin-top: 5px;">
+                                <span id="viz-cache-nodes">0</span> nodes<br>
+                                <span id="viz-cache-mem">0</span> memory<br>
+                                <span id="viz-cache-hit">0</span>% hit rate
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div style="text-align: center;">
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px; justify-content: center;">
+                            <div>
+                                <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #dc3545;"></i>
+                                <span style="font-size: 0.8rem; color: #666;">R: <span id="viz-db-read-qps">0</span></span>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #ffc107;"></i>
+                                <span style="font-size: 0.8rem; color: #666;">W: <span id="viz-db-write-qps">0</span></span>
+                            </div>
+                        </div>
+                        <div class="arch-box" style="background: #343a40; color: white; padding: 15px 25px; border-radius: 8px;">
+                            <i class="bi bi-database-fill"></i> Database
+                            <div style="font-size: 0.8rem; margin-top: 5px;">
+                                <span id="viz-db-instances">0</span> instances<br>
+                                <span id="viz-db-shards">0</span> shards
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storage Layer -->
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div class="arch-box" style="display: inline-block; background: #6f42c1; color: white; padding: 15px 25px; border-radius: 8px;">
+                        <i class="bi bi-hdd-stack-fill"></i> Storage Layer
+                        <div style="font-size: 0.8rem; margin-top: 5px;">
+                            <span id="viz-storage">0</span> total<br>
+                            <span id="viz-storage-daily">0</span>/day growth
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Info -->
+                <div style="display: flex; justify-content: space-around; background: rgba(0,0,0,0.05); padding: 15px; border-radius: 8px;">
+                    <div style="text-align: center;">
+                        <i class="bi bi-arrow-up-circle" style="color: #007bff; font-size: 20px;"></i>
+                        <div style="font-size: 0.8rem;">
+                            <strong>Ingress</strong><br>
+                            <span id="viz-ingress">0</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="bi bi-arrow-down-circle" style="color: #28a745; font-size: 20px;"></i>
+                        <div style="font-size: 0.8rem;">
+                            <strong>Egress</strong><br>
+                            <span id="viz-egress">0</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="bi bi-speedometer2" style="color: #dc3545; font-size: 20px;"></i>
+                        <div style="font-size: 0.8rem;">
+                            <strong>Peak BW</strong><br>
+                            <span id="viz-peak-bw">0</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="bi bi-clock-history" style="color: #ffc107; font-size: 20px;"></i>
+                        <div style="font-size: 0.8rem;">
+                            <strong>Latency P99</strong><br>
+                            <span id="viz-latency">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Reference -->
+    <div class="card card-compact shadow-sm mt-3">
+        <div class="card-body">
+            <div class="section-header">Quick Reference</div>
+            <div class="row small">
+                <div class="col-md-3">
+                    <strong>Latency Numbers:</strong><br>
+                    L1 cache: 0.5ns<br>
+                    L2 cache: 7ns<br>
+                    RAM: 100ns<br>
+                    SSD: 150μs<br>
+                    HDD: 10ms<br>
+                    Network (DC): 0.5ms<br>
+                    Network (Internet): 150ms
+                </div>
+                <div class="col-md-3">
+                    <strong>Availability:</strong><br>
+                    99% → 3.65 days/year<br>
+                    99.9% → 8.77 hours/year<br>
+                    99.99% → 52.6 min/year<br>
+                    99.999% → 5.26 min/year<br>
+                    <strong>Powers of 2:</strong><br>
+                    2^10 = 1K, 2^20 = 1M<br>
+                    2^30 = 1B, 2^40 = 1T
+                </div>
+                <div class="col-md-3">
+                    <strong>Common Capacities:</strong><br>
+                    Redis: ~100K QPS<br>
+                    Postgres: ~10K QPS<br>
+                    Kafka: ~1M msg/s<br>
+                    API Server: ~1K QPS<br>
+                    CDN BW: ~10 Gbps<br>
+                    Load Balancer: ~65K QPS
+                </div>
+                <div class="col-md-3">
+                    <strong>Storage Costs (approx):</strong><br>
+                    S3: $0.023/GB/mo<br>
+                    EBS SSD: $0.10/GB/mo<br>
+                    RDS: $0.115/GB/mo<br>
+                    <strong>Compute:</strong><br>
+                    t3.medium: ~$30/mo<br>
+                    m5.large: ~$70/mo<br>
+                    Cache: ~$0.10/GB/hr
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Bootstrap JS Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    (function() {
-        'use strict';
+    (function(){
+        // Initialize tooltips
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el=>new bootstrap.Tooltip(el));
 
-        // --- THEME SWITCHER ---
-        const themeSwitcher = document.getElementById('theme-switcher');
-        const sunIcon = '<i class="bi bi-sun-fill"></i>';
-        const moonIcon = '<i class="bi bi-moon-stars-fill"></i>';
-        const switcherLabel = document.querySelector('label[for="theme-switcher"]');
-
-        themeSwitcher.addEventListener('change', () => {
-            const theme = themeSwitcher.checked ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-bs-theme', theme);
-            switcherLabel.innerHTML = themeSwitcher.checked ? sunIcon : moonIcon;
+        // Theme toggle
+        const ts=document.getElementById('theme-switcher');
+        const lbl=document.querySelector('label[for="theme-switcher"]');
+        ts.addEventListener('change',()=>{
+            const dark=ts.checked;
+            document.documentElement.setAttribute('data-bs-theme',dark?'dark':'light');
+            lbl.innerHTML=dark?'<i class="bi bi-sun-fill"></i>':'<i class="bi bi-moon-stars-fill"></i>';
         });
 
-        // --- TOOLTIP INITIALIZATION ---
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        // LeetCode helper
+        const inp=document.getElementById('masterInput');
+        const clsOut=document.getElementById('javaClassNameOutput');
+        const arrOut=document.getElementById('javaArrayOutput');
 
-        // --- GENERATOR SECTION ---
-        const masterInput = document.getElementById('masterInput');
-        const javaClassOutput = document.getElementById('javaClassOutput');
-        const javaArrayOutput = document.getElementById('javaArrayOutput');
-
-        const generateJavaClass = (url) => {
+        function generateClassNameFromUrl(url) {
             try {
-                // Basic check if it looks like a URL
+                // Check if the input is a valid URL starting with http
                 if (!url.startsWith('http')) {
-                    javaClassOutput.value = 'Input is not a valid URL.';
+                    clsOut.value = '';
                     return;
                 }
                 const urlObject = new URL(url);
-                const pathParts = urlObject.pathname.split('/').filter(part => part);
+                const pathParts = urlObject.pathname.split('/').filter(Boolean);
 
+                // Check if it's a LeetCode problem URL
                 if (pathParts[0] !== 'problems' || pathParts.length < 2) {
-                    javaClassOutput.value = 'Not a valid LeetCode problem URL.';
+                    clsOut.value = '';
                     return;
                 }
 
                 const problemSlug = pathParts[1];
-                const className = 'LC_' + problemSlug
+                clsOut.value = 'LC_' + problemSlug
                     .split('-')
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                     .join('');
-
-                const today = new Date();
-                const dateString = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
-
-                const template = `import java.util.*;
-
-/**
- * @author bnira
- * @since ${dateString}
- *
- * <h3>${className.replace('LC_', '')}</h3>
- * <p>
- * <b>LeetCode Link:</b> <a href="${url}" target="_blank">${url}</a>
- * </p>
- */
-public class ${className} {
-
-     public static void main(String[] args) {
-        ${className} solution = new ${className}();
-
-        // Add your test cases here
-    }
-
-    // Add your solution method here
-}
-`;
-                javaClassOutput.value = template;
             } catch (error) {
-                javaClassOutput.value = 'Not a valid LeetCode problem URL.';
+                // Clear output if URL is invalid or any other error occurs
+                clsOut.value = '';
             }
-        };
+        }
 
-        const generateJavaArray = (text) => {
-            javaArrayOutput.value = text.replaceAll('[', '{').replaceAll(']', '}').replaceAll('"', "'");
-        };
+        function genArray(txt){
+            arrOut.value=txt.replaceAll('[','{').replaceAll(']','}').replaceAll('"','\'');
+        }
 
-        masterInput.addEventListener('input', (e) => {
-            const inputText = e.target.value.trim();
-            if (inputText) {
-                generateJavaClass(inputText);
-                generateJavaArray(inputText);
-            } else {
-                javaClassOutput.value = '';
-                javaArrayOutput.value = '';
-            }
+        inp.addEventListener('input',e=>{
+            const t=e.target.value.trim();
+            generateClassNameFromUrl(t);
+            genArray(t);
         });
 
-        // --- CLIPBOARD API ---
-        document.querySelectorAll('.btn-copy').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetSelector = button.dataset.copyTarget;
-                const textToCopy = document.querySelector(targetSelector).value;
-                if (!textToCopy) return;
-
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    const originalContent = button.innerHTML;
-                    button.innerHTML = '<i class="bi bi-clipboard-check-fill"></i> Copied!';
-                    button.classList.add('btn-success');
-
-                    setTimeout(() => {
-                        button.innerHTML = originalContent;
-                        button.classList.remove('btn-success');
-                    }, 2000);
-                }).catch(err => console.error('Failed to copy: ', err));
+        // Copy buttons
+        document.querySelectorAll('.btn-copy').forEach(btn=>btn.addEventListener('click',()=>{
+            const tgt=document.querySelector(btn.dataset.copyTarget).value;
+            if(!tgt)return;
+            navigator.clipboard.writeText(tgt).then(()=>{
+                btn.classList.add('copied');
+                btn.innerHTML='<i class="bi bi-clipboard-check-fill"></i>';
+                setTimeout(()=>{
+                    btn.classList.remove('copied');
+                    btn.innerHTML='<i class="bi bi-clipboard"></i>';
+                },1500);
             });
+        }));
+
+        // Read/Write percentage sync
+        const readInput = document.getElementById('read-ratio');
+        const writeInput = document.getElementById('write-ratio');
+
+        readInput.addEventListener('input', () => {
+            const readVal = parseFloat(readInput.value) || 0;
+            writeInput.value = (100 - readVal).toFixed(0);
+            calculate();
         });
 
-        // --- SYSTEM DESIGN CALCULATOR ---
-        const calculatorInputs = document.querySelectorAll('#calls-per-day, #size-per-object');
-
-        const unhumanizeNumber = (str) => {
-            if (!str) return 0;
-            const s = str.toLowerCase();
-            const value = parseFloat(s);
-            if (s.endsWith('k')) return value * 1000;
-            if (s.endsWith('m')) return value * 1_000_000;
-            if (s.endsWith('b')) return value * 1_000_000_000;
-            return isNaN(value) ? 0 : value;
+        // Numeric helpers
+        const num=v=>{
+            if(!v) return 0;
+            v=v.toString().toLowerCase();
+            if(v.endsWith('k'))return parseFloat(v)*1e3;
+            if(v.endsWith('m'))return parseFloat(v)*1e6;
+            if(v.endsWith('b'))return parseFloat(v)*1e9;
+            if(v.endsWith('t'))return parseFloat(v)*1e12;
+            return parseFloat(v)||0;
         };
 
-        const unhumanizeSize = (str) => {
-            if (!str) return 0;
-            const s = str.toLowerCase().replace('b', '');
-            const value = parseFloat(s);
-            const powers = { 'k': 1, 'm': 2, 'g': 3, 't': 4, 'p': 5 };
-            const unit = s.replace(String(value), '').trim();
-            if (powers[unit]) {
-                return value * Math.pow(1024, powers[unit]);
+        const size=v=>{
+            if(!v) return 0;
+            v=v.toString().toLowerCase();
+            const n=parseFloat(v)||0;
+            if(v.includes('kb'))return n*1024;
+            if(v.includes('mb'))return n*1048576;
+            if(v.includes('gb'))return n*1073741824;
+            if(v.includes('tb'))return n*1099511627776;
+            return n;
+        };
+
+        const bytes=b=>{
+            if(!b)return'0 B';
+            const u=['B','KB','MB','GB','TB','PB'];
+            const i=Math.floor(Math.log(b)/Math.log(1024));
+            return`${(b/Math.pow(1024,i)).toFixed(2)} ${u[i]}`;
+        };
+
+        const bw=b=>`${(b*8/1e6).toFixed(2)} Mbps`;
+
+        const fmt=n=>{
+            if(n>=1e9)return`${(n/1e9).toFixed(2)}B`;
+            if(n>=1e6)return`${(n/1e6).toFixed(2)}M`;
+            if(n>=1e3)return`${(n/1e3).toFixed(2)}K`;
+            return n.toFixed(2);
+        };
+
+        const id=x=>document.getElementById(x);
+
+        function calculate(){
+            // Inputs
+            const calls=num(id('calls-per-day').value);
+            const objSize=size(id('obj-size').value);
+            const readPct=(+id('read-ratio').value||0)/100;
+            const cachePct=(+id('cache-hit').value||0)/100;
+            const rep=(+id('replicas').value)||1;
+            const retentionYears=(+id('retention-years').value)||5;
+            const peakFactor=(+id('peak-factor').value)||4;
+            const regions=(+id('regions').value)||1;
+            const availability=(+id('availability').value)||99.9;
+            const targetLatency=(+id('latency-p99').value)||100;
+
+            // Traffic calculations
+            const totalQps=calls/86400;
+            const readQps=totalQps*readPct;
+            const writeQps=totalQps*(1-readPct);
+            const rpm=totalQps*60;
+            const peakQps=totalQps*peakFactor;
+
+            // Backend calculations
+            const cacheQps=readQps*cachePct;
+            const cacheMisses=readQps*(1-cachePct);
+            const dbReadQps=cacheMisses;
+            const dbWriteQps=writeQps;
+
+            // Network calculations
+            const ingress=writeQps*objSize;
+            const egress=readQps*objSize;
+            const peakBw=Math.max(ingress,egress)*peakFactor;
+
+            // Storage calculations
+            const dailyStorage=writeQps*objSize*86400;
+            const totalStorage=dailyStorage*365*retentionYears;
+            const storageReplicated=totalStorage*rep;
+
+            // Infrastructure estimations
+            const apiServersPerRegion=Math.ceil(peakQps/1000);
+            const apiServers=apiServersPerRegion*regions;
+            const cacheNodes=Math.ceil(cacheQps/100000)*regions;
+            const dbShards=Math.ceil(totalStorage/1e12);
+            const dbInstances=dbShards*rep;
+            const queueWorkers=Math.ceil(writeQps/500)*regions;
+
+            // Cache memory (assuming 10% of active data in cache)
+            const cacheMemory=totalStorage*0.1/regions;
+
+            // Availability calculations
+            const downtimeMinutes=(100-availability)*365*24*60/100;
+            let downtimeStr;
+            if(downtimeMinutes>=1440){
+                downtimeStr=`${(downtimeMinutes/1440).toFixed(1)} days`;
+            }else if(downtimeMinutes>=60){
+                downtimeStr=`${(downtimeMinutes/60).toFixed(1)} hrs`;
+            }else{
+                downtimeStr=`${downtimeMinutes.toFixed(1)} min`;
             }
-            return isNaN(value) ? 0 : value;
-        };
 
-        const formatBytes = (bytes) => {
-            if (bytes === 0 || !isFinite(bytes)) return '0 Bytes';
-            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(1024));
-            return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(2))} ${sizes[i]}`;
-        };
+            // Latency estimations (in ms)
+            const cacheReadLatency = 1 + Math.random() * 2; // 1-3ms
+            const dbReadLatency = 20 + Math.random() * 30; // 20-50ms
+            const dbWriteLatency = 30 + Math.random() * 40; // 30-70ms
+            const apiTotalLatency = Math.max(
+                cacheReadLatency * cachePct + dbReadLatency * (1 - cachePct),
+                targetLatency * 0.8
+            );
 
-        const calculateAll = () => {
-            const callsPerDay = unhumanizeNumber(document.getElementById('calls-per-day').value);
-            const sizePerObject = unhumanizeSize(document.getElementById('size-per-object').value);
+            // Cost estimation (very rough)
+            const serverCost=apiServers*70;
+            const cacheCost=cacheNodes*200;
+            const dbCost=dbInstances*500;
+            const storageCost=(storageReplicated/1e9)*0.023;
+            const bwCost=(egress*86400*30/1e9)*0.09;
+            const totalCost=serverCost+cacheCost+dbCost+storageCost+bwCost;
 
-            const rps = callsPerDay > 0 ? (callsPerDay / (24 * 60 * 60)) : 0;
-            document.getElementById('rps').value = rps.toFixed(2);
+            // Update outputs
+            id('total-qps').value=fmt(totalQps);
+            id('read-qps').value=fmt(readQps);
+            id('write-qps').value=fmt(writeQps);
+            id('peak-qps').value=fmt(peakQps);
+            id('rpm').value=fmt(rpm);
+            id('daily-requests').value=fmt(calls);
 
-            const bandwidth = (rps * sizePerObject * 8) / 1_000_000;
-            document.getElementById('bandwidth').value = `${bandwidth.toFixed(2)} Mbps`;
+            id('cache-qps').value=fmt(cacheQps);
+            id('cache-misses').value=fmt(cacheMisses);
+            id('db-read-qps').value=fmt(dbReadQps);
+            id('db-write-qps').value=fmt(dbWriteQps);
+            id('cache-memory').value=bytes(cacheMemory);
+            id('db-shards').value=dbShards;
 
-            const dailyStorage = callsPerDay * sizePerObject;
-            document.getElementById('storage-day').value = formatBytes(dailyStorage);
-            document.getElementById('storage-year').value = formatBytes(dailyStorage * 365);
-            document.getElementById('storage-5-year').value = formatBytes(dailyStorage * 365 * 5);
-        };
+            id('ingress-bw').value=bw(ingress);
+            id('egress-bw').value=bw(egress);
+            id('peak-bw').value=bw(peakBw);
+            id('daily-storage').value=bytes(dailyStorage);
+            id('total-storage').value=bytes(totalStorage);
+            id('storage-replicated').value=bytes(storageReplicated);
 
-        calculatorInputs.forEach(input => input.addEventListener('input', calculateAll));
+            id('api-servers').value=apiServers;
+            id('cache-nodes').value=cacheNodes;
+            id('db-instances').value=dbInstances;
+            id('queue-workers').value=queueWorkers;
+            id('downtime').value=downtimeStr;
+            id('est-cost').value=`${fmt(totalCost)}`;
 
-        document.getElementById('reset-button').addEventListener('click', () => {
-            document.getElementById('calls-per-day').value = '';
-            document.getElementById('size-per-object').value = '';
-            document.getElementById('latency').value = '';
-            calculateAll();
+            // Latency outputs
+            id('cache-read-latency').value=`${cacheReadLatency.toFixed(1)} ms`;
+            id('db-read-latency').value=`${dbReadLatency.toFixed(1)} ms`;
+            id('db-write-latency').value=`${dbWriteLatency.toFixed(1)} ms`;
+            id('api-total-latency').value=`${apiTotalLatency.toFixed(1)} ms`;
+
+            // Update visualization
+            updateVisualization({
+                users: calls,
+                totalQps: totalQps,
+                regions: regions,
+                apiServers: apiServers,
+                cacheNodes: cacheNodes,
+                cacheMemory: cacheMemory,
+                cacheHit: cachePct * 100,
+                cacheQps: cacheQps,
+                dbReadQps: dbReadQps,
+                dbWriteQps: dbWriteQps,
+                dbInstances: dbInstances,
+                dbShards: dbShards,
+                storage: totalStorage,
+                dailyStorage: dailyStorage,
+                ingress: ingress,
+                egress: egress,
+                peakBw: peakBw,
+                latency: apiTotalLatency
+            });
+        }
+
+        function updateVisualization(data) {
+            // Update text values
+            id('viz-users').textContent = fmt(data.users);
+            id('viz-total-qps').textContent = fmt(data.totalQps);
+            id('viz-regions').textContent = data.regions;
+            id('viz-api-count').textContent = data.apiServers;
+            id('viz-cache-nodes').textContent = data.cacheNodes;
+            id('viz-cache-mem').textContent = bytes(data.cacheMemory);
+            id('viz-cache-hit').textContent = data.cacheHit.toFixed(0);
+            id('viz-cache-qps').textContent = fmt(data.cacheQps);
+            id('viz-db-read-qps').textContent = fmt(data.dbReadQps);
+            id('viz-db-write-qps').textContent = fmt(data.dbWriteQps);
+            id('viz-db-instances').textContent = data.dbInstances;
+            id('viz-db-shards').textContent = data.dbShards;
+            id('viz-storage').textContent = bytes(data.storage);
+            id('viz-storage-daily').textContent = bytes(data.dailyStorage);
+            id('viz-ingress').textContent = bw(data.ingress);
+            id('viz-egress').textContent = bw(data.egress);
+            id('viz-peak-bw').textContent = bw(data.peakBw);
+            id('viz-latency').textContent = `${data.latency.toFixed(1)} ms`;
+
+            // Update API server visualization
+            const apiViz = id('api-servers-viz');
+            apiViz.innerHTML = '';
+            const maxServers = Math.min(data.apiServers, 12); // Show max 12 servers
+            for (let i = 0; i < maxServers; i++) {
+                const server = document.createElement('div');
+                server.className = 'arch-box';
+                server.style.cssText = 'width: 40px; height: 40px; background: #17a2b8; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white;';
+                server.innerHTML = '<i class="bi bi-server"></i>';
+                apiViz.appendChild(server);
+            }
+            if (data.apiServers > maxServers) {
+                const more = document.createElement('div');
+                more.style.cssText = 'width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold;';
+                more.textContent = `+${data.apiServers - maxServers}`;
+                apiViz.appendChild(more);
+            }
+        }
+
+        // Attach listeners
+        ['calls-per-day','obj-size','read-ratio','cache-hit','replicas','retention-years',
+            'latency-p99','availability','regions','peak-factor'].forEach(idStr=>{
+            const el=document.getElementById(idStr);
+            if(el) el.addEventListener('input',calculate);
         });
 
-        calculateAll();
+        document.getElementById('reset-btn').addEventListener('click',()=>{
+            id('calls-per-day').value='';
+            id('obj-size').value='';
+            id('read-ratio').value=80;
+            id('write-ratio').value=20;
+            id('cache-hit').value=90;
+            id('replicas').value=3;
+            id('retention-years').value=5;
+            id('latency-p99').value=100;
+            id('availability').value=99.9;
+            id('regions').value=3;
+            id('peak-factor').value=4;
+            calculate();
+        });
+
+        // Initial calculation
+        id('write-ratio').value = 20; // Set initial write ratio
+        calculate();
     })();
 </script>
-
 </body>
 </html>
