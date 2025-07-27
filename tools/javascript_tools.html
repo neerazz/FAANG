@@ -1,262 +1,346 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <title>Converter For Java</title>
+    <title>Advanced Java Converter & Calculator</title>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 56px; /* Adjust for fixed-top navbar */
+        }
+        .card {
+            height: 100%;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-control[disabled] {
+            background-color: #e9ecef;
+            opacity: 1;
+            font-weight: bold;
+        }
+        .output-group p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .output-group input {
+            max-width: 150px;
+            text-align: right;
+        }
+        .btn-copy .bi-clipboard-check-fill { display: none; }
+        .btn-copy.copied .bi-clipboard { display: none; }
+        .btn-copy.copied .bi-clipboard-check-fill { display: inline-block; }
+
+        /* Style for the tooltip trigger icon */
+        .tooltip-trigger {
+            cursor: help;
+            color: var(--bs-secondary-color);
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Tools:</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">🛠️ Advanced Tools</a>
+        <div class="form-check form-switch ms-auto">
+            <input class="form-check-input" type="checkbox" role="switch" id="theme-switcher">
+            <label class="form-check-label text-light" for="theme-switcher"><i class="bi bi-moon-stars-fill"></i></label>
+        </div>
+    </div>
 </nav>
 
-<div class="card-group">
+<div class="container my-4">
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Enter input:</h5>
-            <textarea aria-label="With textarea" class="form-control" id="textInput" placeholder="Input"></textarea>
+    <!-- LeetCode & Java Array Generator Section -->
+    <h2 class="mb-3">LeetCode & Java Array Generator</h2>
+    <div class="row g-3">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Input</h5>
+                    <textarea class="form-control" id="masterInput" rows="3" placeholder="Paste a LeetCode URL or a string with arrays..."></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="card-title mb-0">Generated Java Class</h5>
+                        <button class="btn btn-outline-primary btn-sm btn-copy" data-copy-target="#javaClassOutput">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                    <textarea class="form-control flex-grow-1 font-monospace" id="javaClassOutput" rows="12" readonly aria-label="Generated Java Class Output"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="card-title mb-0">Formatted Java Array</h5>
+                        <button class="btn btn-outline-primary btn-sm btn-copy" data-copy-target="#javaArrayOutput">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                    <textarea class="form-control flex-grow-1 font-monospace" id="javaArrayOutput" rows="12" readonly aria-label="Formatted Java Array Output"></textarea>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <h5 class="card-title">Class Name:</h5>
-                <button class="btn btn-outline-info" onclick="classCopy()" type="button">Copy</button>
-            </div>
-            <textarea aria-label="With textarea" class="form-control" id="output1" placeholder="Input"></textarea>
-        </div>
-    </div>
+    <hr class="my-5">
 
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <h5 class="card-title">Array Input:</h5>
-                <button class="btn btn-outline-info" onclick="arrayInputCopy()" type="button">Copy</button>
+    <!-- System Design Calculator Section -->
+    <h2 class="mb-3">System Design Calculator 📈</h2>
+    <div class="row g-3">
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header fw-bold">Inputs</div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="calls-per-day" class="form-label">Calls per day
+                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
+                               data-bs-toggle="tooltip"
+                               data-bs-placement="right"
+                               title="Helps estimate load. A small blog might have 1k calls, a popular service 1m (1 million), and a global platform 1b (1 billion)."></i>
+                        </label>
+                        <input type="text" class="form-control" id="calls-per-day" placeholder="e.g., 1m, 50k, 1b">
+                    </div>
+                    <div class="mb-3">
+                        <label for="size-per-object" class="form-label">Size Per Object
+                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
+                               data-bs-toggle="tooltip"
+                               data-bs-placement="right"
+                               title="Size of a single data object. A user profile JSON might be 2kb. A small image thumbnail could be 30kb. A product data object with descriptions could be 5kb."></i>
+                        </label>
+                        <input type="text" class="form-control" id="size-per-object" placeholder="e.g., 10kb, 2mb">
+                    </div>
+                    <div class="mb-3">
+                        <label for="latency" class="form-label">API Latency
+                            <i class="bi bi-question-circle ms-1 tooltip-trigger"
+                               data-bs-toggle="tooltip"
+                               data-bs-placement="right"
+                               data-bs-html="true"
+                               title="<strong>Typical Latency Numbers:</strong><br> - Cache Hit (e.g. Redis): &lt;10 ms<br> - Cache Miss (DB Read): 10-200 ms<br> - DB Write/Update: 50-500 ms<br> - SSD Read: ~150 µs<br> - Cross-Datacenter: 100-1000+ ms"></i>
+                        </label>
+                        <input type="text" class="form-control" id="latency" placeholder="e.g., 100ms">
+                    </div>
+                    <button id="reset-button" class="btn btn-danger mt-auto">Reset</button>
+                </div>
             </div>
-            <textarea aria-label="With textarea" class="form-control" id="output2" placeholder="Input"></textarea>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-success text-white shadow-sm">
+                <div class="card-header fw-bold">Calculated Results</div>
+                <div class="card-body output-group">
+                    <p>Request per Second (RPS): <input type="text" class="form-control form-control-sm" id="rps" disabled></p>
+                    <p>Required Bandwidth: <input type="text" class="form-control form-control-sm" id="bandwidth" disabled></p>
+                    <p>Storage (1 Day): <input type="text" class="form-control form-control-sm" id="storage-day" disabled></p>
+                    <p>Storage (1 Year): <input type="text" class="form-control form-control-sm" id="storage-year" disabled></p>
+                    <p>Storage (5 Years): <input type="text" class="form-control form-control-sm" id="storage-5-year" disabled></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header fw-bold">Common Latency Numbers</div>
+                <div class="card-body p-2">
+                    <img class="img-fluid rounded" src="https://miro.medium.com/v2/resize:fit:1400/1*5S80KcgolUfNWIha_2fI9w.png" alt="Latency numbers chart">
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="card-group">
-    <div class="card text-dark bg-light mb-3">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Calls per day:</span>
-                    <input aria-describedby="basic-addon3" class="form-control" id="calls-per-day"
-                           placeholder="Ex: 1m, 1b, 50k"
-                           type="text">
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Size Per Object:</span>
-                    <input aria-describedby="basic-addon3" class="form-control" id="size-per-object"
-                           placeholder="In KB. Ex: 10 for 10kb. 1000"
-                           type="text">
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Latency:</span>
-                    <input aria-describedby="basic-addon3" class="form-control" id="latency"
-                           placeholder="In milli seconds."
-                           type="text">
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="card text-dark bg-light mb-3">
-        <div class="card-body">
-            <img class="img-fluid rounded mx-auto d-block"
-                 src="https://www.dnsstuff.com/wp-content/uploads/2020/12/image-11.png">
-            <img class="img-fluid rounded mx-auto d-block"
-                 src="https://miro.medium.com/max/700/1*5S80KcgolUfNWIha_2fI9w.png">
-            <img class="img-fluid rounded mx-auto d-block"
-                 src="https://miro.medium.com/max/700/1*d5xp3raYfHbcsYdsW-u0sw.png">
-        </div>
-    </div>
-    <div class="card text-white bg-success mb-3">
-        <div class="card-body">
-            <p class="fst-italic">Request per Second:
-                <input class="fst-italic" disabled id="rps" type="text"></input>
-            </p>
-            <p class="fst-italic">Bandwidth:
-                <input class="fst-italic" disabled id="bandwidth" type="text"> Mbps</input>
-            </p>
-            <p class="fst-italic">Storage per day:
-                <input class="fst-italic" disabled id="per-day" type="text"></input>
-            </p>
-            <p class="fst-italic">Storage per year:
-                <input class="fst-italic" disabled id="per-year" type="text"></input>
-            </p>
-            <p class="fst-italic">Storage for 5 years:
-                <input class="fst-italic" disabled id="per-5-year" type="text"></input>
-            </p>
-        </div>
-    </div>
-</div>
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script crossorigin="anonymous"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script crossorigin="anonymous"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script>
+    (function() {
+        'use strict';
 
-var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
+        // --- THEME SWITCHER ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const sunIcon = '<i class="bi bi-sun-fill"></i>';
+        const moonIcon = '<i class="bi bi-moon-stars-fill"></i>';
+        const switcherLabel = document.querySelector('label[for="theme-switcher"]');
 
-function classCopy(){
-    let textarea = document.getElementById("output1");
-    textarea.select();
-    document.execCommand("copy");
-    console.log("Copied : " + $("#output2").val());
-}
-
-function arrayInputCopy(){
-    let textarea = document.getElementById("output2");
-    textarea.select();
-    document.execCommand("copy");
-    console.log("Copied : " + $("#output2").val());
-}
-
-$("#textInput").on('input',function(e){
-	var input = e.target.value;
-	console.log("Input Changed to " + input);
-	let output1 = "";
-	input.match(regex).forEach(function(str){
-		let tempStr = str.toLowerCase();
-		output1 += tempStr.substr(0,1).toUpperCase() + tempStr.substr(1);
-	});
-	console.log("Converted Input to Camel Case:" + output1);
-	$("#output1").val(output1);
-	$("#output2").val(input.replaceAll("[", "{").replaceAll("]", "}").replaceAll("\"", "'"));
-});
-
-
-
-$("#calls-per-day").on('input', function (e) {
-            var calls_per_day = get_calls_perDay();
-            console.log("calls_per_day is : " + calls_per_day);
-            var rps = get_rps(calls_per_day);
-            set_rps(rps);
+        themeSwitcher.addEventListener('change', () => {
+            const theme = themeSwitcher.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            switcherLabel.innerHTML = themeSwitcher.checked ? sunIcon : moonIcon;
         });
 
-        $("#size-per-object").on('input', function (e) {
-            var size = get_size_per_object();
-            console.log("Size Per entity is : " + size);
-            var calls_per_day = get_calls_perDay();
-            var rps = get_rps(calls_per_day)
-            var bandwidth = get_bandwidth(rps, size);
-            set_bandwidth(bandwidth);
-            set_rps(rps);
-            set_storage_per_day(get_storage_in_years(calls_per_day, size, 1 / 365));
-            set_storage_per_year(get_storage_in_years(calls_per_day, size, 1));
-            set_storage_for_5_year(get_storage_in_years(calls_per_day, size, 5));
+        // --- TOOLTIP INITIALIZATION ---
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // --- GENERATOR SECTION ---
+        const masterInput = document.getElementById('masterInput');
+        const javaClassOutput = document.getElementById('javaClassOutput');
+        const javaArrayOutput = document.getElementById('javaArrayOutput');
+
+        const generateJavaClass = (url) => {
+            try {
+                // Basic check if it looks like a URL
+                if (!url.startsWith('http')) {
+                    javaClassOutput.value = 'Input is not a valid URL.';
+                    return;
+                }
+                const urlObject = new URL(url);
+                const pathParts = urlObject.pathname.split('/').filter(part => part);
+
+                if (pathParts[0] !== 'problems' || pathParts.length < 2) {
+                    javaClassOutput.value = 'Not a valid LeetCode problem URL.';
+                    return;
+                }
+
+                const problemSlug = pathParts[1];
+                const className = 'LC_' + problemSlug
+                    .split('-')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join('');
+
+                const today = new Date();
+                const dateString = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+                const template = `import java.util.*;
+
+/**
+ * @author bnira
+ * @since ${dateString}
+ *
+ * <h3>${className.replace('LC_', '')}</h3>
+ * <p>
+ * <b>LeetCode Link:</b> <a href="${url}" target="_blank">${url}</a>
+ * </p>
+ */
+public class ${className} {
+
+     public static void main(String[] args) {
+        ${className} solution = new ${className}();
+
+        // Add your test cases here
+    }
+
+    // Add your solution method here
+}
+`;
+                javaClassOutput.value = template;
+            } catch (error) {
+                javaClassOutput.value = 'Not a valid LeetCode problem URL.';
+            }
+        };
+
+        const generateJavaArray = (text) => {
+            javaArrayOutput.value = text.replaceAll('[', '{').replaceAll(']', '}').replaceAll('"', "'");
+        };
+
+        masterInput.addEventListener('input', (e) => {
+            const inputText = e.target.value.trim();
+            if (inputText) {
+                generateJavaClass(inputText);
+                generateJavaArray(inputText);
+            } else {
+                javaClassOutput.value = '';
+                javaArrayOutput.value = '';
+            }
         });
 
-        function get_calls_perDay() {
-            var str = $('#calls-per-day').val();
-            var val = unhumanize_number(str);
-            console.log("Converted " + str + " to " + val + ".");
-            return val;
-        }
+        // --- CLIPBOARD API ---
+        document.querySelectorAll('.btn-copy').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetSelector = button.dataset.copyTarget;
+                const textToCopy = document.querySelector(targetSelector).value;
+                if (!textToCopy) return;
 
-        function get_size_per_object(){
-            var str = $('#size-per-object').val();
-            var val = unhumanize_memory(str);
-            console.log("Converted " + str + " to " + val + ".");
-            return val;
-        }
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalContent = button.innerHTML;
+                    button.innerHTML = '<i class="bi bi-clipboard-check-fill"></i> Copied!';
+                    button.classList.add('btn-success');
 
-        function get_storage_in_years(calls_per_day, size, years) {
-            var total = calls_per_day * size * 365 * years;
-            console.log("Memory for " + years + " years is : " + total);
-            return total;
-        }
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        button.classList.remove('btn-success');
+                    }, 2000);
+                }).catch(err => console.error('Failed to copy: ', err));
+            });
+        });
 
-        function get_bandwidth(rps, size) {
-            var bandwidth = rps * size * 8 * (1 / 1000000);
-            console.log("Calculated Bandwidth:  " + bandwidth);
-            return bandwidth;
+        // --- SYSTEM DESIGN CALCULATOR ---
+        const calculatorInputs = document.querySelectorAll('#calls-per-day, #size-per-object');
+
+        const unhumanizeNumber = (str) => {
+            if (!str) return 0;
+            const s = str.toLowerCase();
+            const value = parseFloat(s);
+            if (s.endsWith('k')) return value * 1000;
+            if (s.endsWith('m')) return value * 1_000_000;
+            if (s.endsWith('b')) return value * 1_000_000_000;
+            return isNaN(value) ? 0 : value;
         };
 
-        function get_rps(calls_per_day) {
-            var rps = (calls_per_day) / (24 * 60 * 60)
-            console.log("Calculated RPS = " + rps + " for Calls/day = " + calls_per_day);
-            return rps;
+        const unhumanizeSize = (str) => {
+            if (!str) return 0;
+            const s = str.toLowerCase().replace('b', '');
+            const value = parseFloat(s);
+            const powers = { 'k': 1, 'm': 2, 'g': 3, 't': 4, 'p': 5 };
+            const unit = s.replace(String(value), '').trim();
+            if (powers[unit]) {
+                return value * Math.pow(1024, powers[unit]);
+            }
+            return isNaN(value) ? 0 : value;
         };
 
-        function set_rps(rps) {
-            console.log("Setting up RPS:  " + rps);
-            $("#rps").val(rps);
+        const formatBytes = (bytes) => {
+            if (bytes === 0 || !isFinite(bytes)) return '0 Bytes';
+            const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(2))} ${sizes[i]}`;
         };
 
-        function set_bandwidth(bandwidth) {
-            console.log("Setting up Bandwidth:  " + bandwidth);
-            $("#bandwidth").val(bandwidth);
+        const calculateAll = () => {
+            const callsPerDay = unhumanizeNumber(document.getElementById('calls-per-day').value);
+            const sizePerObject = unhumanizeSize(document.getElementById('size-per-object').value);
+
+            const rps = callsPerDay > 0 ? (callsPerDay / (24 * 60 * 60)) : 0;
+            document.getElementById('rps').value = rps.toFixed(2);
+
+            const bandwidth = (rps * sizePerObject * 8) / 1_000_000;
+            document.getElementById('bandwidth').value = `${bandwidth.toFixed(2)} Mbps`;
+
+            const dailyStorage = callsPerDay * sizePerObject;
+            document.getElementById('storage-day').value = formatBytes(dailyStorage);
+            document.getElementById('storage-year').value = formatBytes(dailyStorage * 365);
+            document.getElementById('storage-5-year').value = formatBytes(dailyStorage * 365 * 5);
         };
 
-        function set_storage_per_day(size) {
-            var readable = bytesToSize(size);
-            console.log("Setting 1 Years Storage to " + readable);
-            $("#per-day").val(readable);
-        };
-        function set_storage_per_year(size) {
-            var readable = bytesToSize(size);
-            console.log("Setting 1 Years Storage to " + readable);
-            $("#per-year").val(readable);
-        };
+        calculatorInputs.forEach(input => input.addEventListener('input', calculateAll));
 
-        function set_storage_for_5_year(size) {
-            var readable = bytesToSize(size);
-            console.log("Setting 5 Years Storage to " + readable);
-            $("#per-5-year").val(readable);
-        };
+        document.getElementById('reset-button').addEventListener('click', () => {
+            document.getElementById('calls-per-day').value = '';
+            document.getElementById('size-per-object').value = '';
+            document.getElementById('latency').value = '';
+            calculateAll();
+        });
 
-        function bytesToSize(bytes) {
-            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PetByte', 'Exabyte'];
-            if (bytes == 0) return '0 Byte';
-            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
-        }
-
-        function unhumanize_number(val) {
-            multiplier = val.substr(-1).toLowerCase();
-            if (multiplier == "k" || multiplier == "K")
-                return parseFloat(val) * 1000;
-            else if (multiplier == "m" || multiplier == "M")
-                return parseFloat(val) * 1000000;
-            else if (multiplier == "b" || multiplier == "B")
-                return parseFloat(val) * 1000000;
-        }
-
-        function unhumanize_memory(text) {
-            var powers = { 'k': 1, 'm': 2, 'g': 3, 't': 4 };
-            var regex = /(\d+(?:\.\d+)?)\s?(k|m|g|t)?b?/i;
-            var res = regex.exec(text);
-            return res[1] * Math.pow(1024, powers[res[2].toLowerCase()]);
-        }
-
+        calculateAll();
+    })();
 </script>
 
 </body>
