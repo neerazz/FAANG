@@ -5,52 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <title>Interview Toolkit - System Design Enhanced</title>
+    <title>Senior Engineer Interview Toolkit</title>
     <style>
-        body{padding-top:56px}
+        body{padding-top:50px}
+        .navbar{height:50px}
         .card{height:100%}
-        .form-control[readonly]{background:#e9ecef}
-        .output-value{max-width:120px;text-align:right;font-weight:bold;font-size:.8rem}
+        .form-control[readonly]{background:#e9ecef;font-size:0.75rem}
+        .output-value{max-width:100px;text-align:right;font-weight:bold;font-size:.75rem}
         .tooltip-trigger{cursor:help;color:var(--bs-secondary-color)}
         .btn-copy .bi-clipboard-check-fill{display:none}.btn-copy.copied .bi-clipboard{display:none}.btn-copy.copied .bi-clipboard-check-fill{display:inline-block}
         textarea{font-family:monospace}
-        .metric-row{display:flex;align-items:center;margin-bottom:8px}
-        .metric-label{flex:1;font-size:.85rem}
-        .metric-value{margin-left:auto}
-        .input-horizontal{display:flex;gap:15px;flex-wrap:wrap;align-items:center}
-        .input-group-horizontal{display:flex;align-items:center;gap:8px}
-        .section-header{background:var(--bs-gray-100);padding:8px 12px;margin:-12px -12px 12px;font-weight:600;font-size:.9rem}
-        .card-compact .card-body{padding:12px}
-        .input-label{font-size:.8rem;min-width:80px}
+        .metric-row{display:flex;align-items:center;margin-bottom:6px}
+        .metric-label{flex:1;font-size:.75rem}
+        .input-horizontal{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+        .input-group-horizontal{display:flex;align-items:center;gap:5px}
+        .section-header{background:var(--bs-primary-bg-subtle);padding:6px 10px;margin:-10px -10px 10px;font-weight:600;font-size:.85rem;border-radius:4px}
+        .card-compact .card-body{padding:10px}
+        .input-label{font-size:.75rem;min-width:70px}
+        .form-control-sm{padding:0.15rem 0.5rem;font-size:.75rem}
+        .btn-sm{padding:0.15rem 0.5rem;font-size:.75rem}
 
         /* Architecture visualization styles */
-        .arch-box {
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .arch-node {
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 0.7rem;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 80px;
         }
-        .arch-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .arch-node:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
-        .flow-arrow {
-            animation: flow 2s infinite;
+        .flow-line {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
         }
-        @keyframes flow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+        .flow-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            z-index: -1;
+        }
+        .flow-label {
+            background: var(--bs-body-bg);
+            padding: 2px 6px;
+            font-size: 0.65rem;
+            border-radius: 3px;
         }
         #architecture-diagram {
-            background: linear-gradient(135deg, var(--bs-gray-100) 0%, var(--bs-gray-200) 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: auto;
+            overflow-y: hidden;
         }
         [data-bs-theme="dark"] #architecture-diagram {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
         }
+
+        .nav-tabs .nav-link {
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+            font-size: 0.7rem;
+        }
+
+        .decision-item {
+            background: var(--bs-secondary-bg);
+            padding: 6px 10px;
+            border-radius: 4px;
+            border-left: 3px solid var(--bs-primary);
+        }
+
+        .compact-row {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .compact-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        h6 {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .tab-content {
+            padding-top: 15px;
+        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">System Design Toolkit</a>
+        <a class="navbar-brand" href="#" style="font-size:0.95rem;">Principal Engineer Toolkit</a>
         <div class="form-check form-switch ms-auto">
             <input class="form-check-input" type="checkbox" role="switch" id="theme-switcher">
             <label class="form-check-label text-light" for="theme-switcher"><i class="bi bi-moon-stars-fill"></i></label>
@@ -58,432 +121,458 @@
     </div>
 </nav>
 
-<div class="container-fluid my-3">
-    <!-- LeetCode Helper - Compact -->
-    <div class="card card-compact shadow-sm mb-3">
-        <div class="card-body">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <input id="masterInput" class="form-control form-control-sm" placeholder="LeetCode URL or array string…">
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group input-group-sm">
-                        <input id="javaClassNameOutput" class="form-control" placeholder="Java Class Name" readonly>
-                        <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaClassNameOutput"><i class="bi bi-clipboard"></i></button>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="input-group input-group-sm">
-                        <input id="javaArrayOutput" class="form-control" placeholder="Formatted Java Array" readonly>
-                        <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaArrayOutput"><i class="bi bi-clipboard"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container-fluid my-2">
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="system-tab" data-bs-toggle="tab" data-bs-target="#system-content" type="button">
+                <i class="bi bi-diagram-3"></i> System Design
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="leetcode-tab" data-bs-toggle="tab" data-bs-target="#leetcode-content" type="button">
+                <i class="bi bi-code-slash"></i> LeetCode
+            </button>
+        </li>
+    </ul>
 
-    <!-- System Design Calculator - Enhanced -->
-    <h5 class="mb-3">System Design Comprehensive Calculator</h5>
-
-    <!-- Inputs Section -->
-    <div class="card card-compact shadow-sm mb-3">
-        <div class="card-body">
-            <div class="section-header">Basic Inputs</div>
-            <div class="input-horizontal">
-                <div class="input-group-horizontal">
-                    <span class="input-label">Calls/day: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical values:</b><br>• Small app: 1-10M<br>• Medium: 100M-1B<br>• Large: 1B-100B<br>• Twitter: ~500B<br>• Facebook: ~2T"></i></span>
-                    <input type="text" id="calls-per-day" class="form-control form-control-sm" style="width:100px" placeholder="100m">
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Read/Write: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical ratios:</b><br>• Social media: 95/5<br>• E-commerce: 80/20<br>• Analytics: 99/1<br>• Banking: 50/50<br>• IoT data: 10/90"></i></span>
-                    <input type="number" id="read-ratio" class="form-control form-control-sm" style="width:50px" value="80" min="0" max="100">
-                    <span class="text-muted small">/</span>
-                    <input type="number" id="write-ratio" class="form-control form-control-sm" style="width:50px" value="20" readonly>
-                    <span class="text-muted small">%</span>
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Cache Hit: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Typical hit rates:</b><br>• Good: 85-95%<br>• Excellent: 95-99%<br>• CDN: 90-95%<br>• DB query cache: 70-85%"></i></span>
-                    <input type="number" id="cache-hit" class="form-control form-control-sm" style="width:60px" value="90" min="0" max="100">
-                    <span class="text-muted small">%</span>
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Obj Size: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Common sizes:</b><br>• Tweet: 300B<br>• User profile: 1-10KB<br>• Image thumb: 50KB<br>• HD image: 2MB<br>• Video: 10-100MB"></i></span>
-                    <input type="text" id="obj-size" class="form-control form-control-sm" style="width:80px" placeholder="10kb">
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Replicas: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="Standard: 3 (master + 2 replicas)<br>Critical data: 5+<br>Geo-distributed: 3-5 per region"></i></span>
-                    <input type="number" id="replicas" class="form-control form-control-sm" style="width:60px" value="3" min="1">
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Retention: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="Typical retention:<br>• Logs: 30-90 days<br>• Analytics: 1-2 years<br>• User data: 5+ years<br>• Compliance: 7-10 years"></i></span>
-                    <input type="number" id="retention-years" class="form-control form-control-sm" style="width:60px" value="5" min="1">
-                    <span class="text-muted small">years</span>
-                </div>
-            </div>
-
-            <div class="section-header mt-3">Advanced Inputs</div>
-            <div class="input-horizontal">
-                <div class="input-group-horizontal">
-                    <span class="input-label">Latency P99: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Target latencies:</b><br>• Cache read: 1-5ms<br>• DB read: 10-50ms<br>• DB write: 20-100ms<br>• API response: 50-200ms<br>• User acceptable: <1s"></i></span>
-                    <input type="number" id="latency-p99" class="form-control form-control-sm" style="width:80px" value="100" placeholder="ms">
-                    <span class="text-muted small">ms</span>
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Availability: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>SLA targets:</b><br>• Basic: 99% (3.65 days/yr)<br>• Standard: 99.9% (8.77 hrs/yr)<br>• High: 99.99% (52.6 min/yr)<br>• Critical: 99.999% (5.26 min/yr)"></i></span>
-                    <input type="number" id="availability" class="form-control form-control-sm" style="width:80px" value="99.9" step="0.1">
-                    <span class="text-muted small">%</span>
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Regions: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Regional: 1<br>• Multi-region: 2-3<br>• Global: 5+<br>Consider latency and compliance requirements"></i></span>
-                    <input type="number" id="regions" class="form-control form-control-sm" style="width:60px" value="3" min="1">
-                </div>
-                <div class="input-group-horizontal">
-                    <span class="input-label">Peak Factor: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Normal: 2-3x<br>• E-commerce: 5-10x (sales)<br>• Sports/News: 10-20x<br>• Viral events: 100x+"></i></span>
-                    <input type="number" id="peak-factor" class="form-control form-control-sm" style="width:60px" value="4" min="1">
-                </div>
-                <button id="reset-btn" class="btn btn-danger btn-sm">Reset</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Results Grid -->
-    <div class="row g-2">
-        <!-- Traffic Metrics -->
-        <div class="col-lg-3">
-            <div class="card card-compact shadow-sm">
+    <div class="tab-content" id="mainTabContent">
+        <!-- System Design Tab -->
+        <div class="tab-pane fade show active" id="system-content" role="tabpanel">
+            <!-- Inputs Section -->
+            <div class="card card-compact shadow-sm mb-2">
                 <div class="card-body">
-                    <div class="section-header">Traffic & Load</div>
-                    <div class="metric-row">
-                        <span class="metric-label">Total QPS:</span>
-                        <input id="total-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Read QPS:</span>
-                        <input id="read-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Write QPS:</span>
-                        <input id="write-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Peak QPS:</span>
-                        <input id="peak-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">RPM:</span>
-                        <input id="rpm" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Daily Requests:</span>
-                        <input id="daily-requests" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Backend & Cache -->
-        <div class="col-lg-3">
-            <div class="card card-compact shadow-sm">
-                <div class="card-body">
-                    <div class="section-header">Backend & Cache</div>
-                    <div class="metric-row">
-                        <span class="metric-label">Cache QPS:</span>
-                        <input id="cache-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Cache Misses/s:</span>
-                        <input id="cache-misses" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">DB Read QPS:</span>
-                        <input id="db-read-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">DB Write QPS:</span>
-                        <input id="db-write-qps" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Cache Memory:</span>
-                        <input id="cache-memory" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">DB Shards:</span>
-                        <input id="db-shards" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Network & Storage -->
-        <div class="col-lg-3">
-            <div class="card card-compact shadow-sm">
-                <div class="card-body">
-                    <div class="section-header">Network & Storage</div>
-                    <div class="metric-row">
-                        <span class="metric-label">Ingress BW:</span>
-                        <input id="ingress-bw" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Egress BW:</span>
-                        <input id="egress-bw" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Peak BW:</span>
-                        <input id="peak-bw" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Daily Storage:</span>
-                        <input id="daily-storage" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Total Storage:</span>
-                        <input id="total-storage" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">With Replicas:</span>
-                        <input id="storage-replicated" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Infrastructure & Latency -->
-        <div class="col-lg-3">
-            <div class="card card-compact shadow-sm">
-                <div class="card-body">
-                    <div class="section-header">Infrastructure</div>
-                    <div class="metric-row">
-                        <span class="metric-label">API Servers:</span>
-                        <input id="api-servers" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Cache Nodes:</span>
-                        <input id="cache-nodes" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">DB Instances:</span>
-                        <input id="db-instances" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Queue Workers:</span>
-                        <input id="queue-workers" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Downtime/year:</span>
-                        <input id="downtime" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                    <div class="metric-row">
-                        <span class="metric-label">Est. Cost/mo:</span>
-                        <input id="est-cost" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Latency Breakdown -->
-    <div class="card card-compact shadow-sm mt-2">
-        <div class="card-body">
-            <div class="section-header">Estimated Latencies (P99)</div>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="metric-row">
-                        <span class="metric-label">Cache Read:</span>
-                        <input id="cache-read-latency" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="metric-row">
-                        <span class="metric-label">DB Read:</span>
-                        <input id="db-read-latency" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="metric-row">
-                        <span class="metric-label">DB Write:</span>
-                        <input id="db-write-latency" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="metric-row">
-                        <span class="metric-label">API Total:</span>
-                        <input id="api-total-latency" class="form-control form-control-sm output-value" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- System Architecture Visualization -->
-    <div class="card card-compact shadow-sm mt-2">
-        <div class="card-body">
-            <div class="section-header">System Architecture Visualization</div>
-            <div id="architecture-diagram" style="min-height: 300px; border-radius: 8px; padding: 20px; position: relative;">
-                <!-- Client Layer -->
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <div class="arch-box" style="display: inline-block; background: #007bff; color: white; padding: 10px 20px; border-radius: 8px;">
-                        <i class="bi bi-people-fill"></i> Users
-                        <div style="font-size: 0.8rem; margin-top: 5px;">
-                            <span id="viz-users">0</span> req/day
+                    <div class="section-header">System Parameters</div>
+                    <div class="compact-row">
+                        <div class="compact-col">
+                            <h6>Traffic & Scale</h6>
+                            <div class="input-horizontal">
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Calls/day: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Scale:</b><br>• Small: 1-10M<br>• Medium: 100M-1B<br>• Large: 1B-100B<br>• Twitter: ~500B<br>• Google: ~8T"></i></span>
+                                    <input type="text" id="calls-per-day" class="form-control form-control-sm" style="width:80px" placeholder="100m">
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">R/W: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Patterns:</b><br>• Social: 95/5<br>• E-comm: 80/20<br>• Analytics: 99/1<br>• Banking: 50/50<br>• IoT: 10/90"></i></span>
+                                    <input type="number" id="read-ratio" class="form-control form-control-sm" style="width:45px" value="80" min="0" max="100">
+                                    <span class="text-muted small">/</span>
+                                    <input type="number" id="write-ratio" class="form-control form-control-sm" style="width:45px" value="20" readonly>
+                                    <span class="text-muted small">%</span>
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Peak: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Normal: 2-3x<br>• Sales: 5-10x<br>• News: 10-20x<br>• Viral: 100x+"></i></span>
+                                    <input type="number" id="peak-factor" class="form-control form-control-sm" style="width:50px" value="4" min="1">
+                                    <span class="text-muted small">x</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div style="margin: 10px 0;">
-                        <i class="bi bi-arrow-down flow-arrow" style="font-size: 24px; color: #007bff;"></i>
-                        <span style="font-size: 0.8rem; color: #666;"><span id="viz-total-qps">0</span> QPS</span>
-                    </div>
-                </div>
 
-                <!-- CDN/Load Balancer -->
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <div class="arch-box" style="display: inline-block; background: #6c757d; color: white; padding: 10px 20px; border-radius: 8px; width: 200px;">
-                        <i class="bi bi-globe"></i> CDN / Load Balancer
-                        <div style="font-size: 0.8rem; margin-top: 5px;">
-                            <span id="viz-regions">0</span> regions
+                        <div class="compact-col">
+                            <h6>Data & Storage</h6>
+                            <div class="input-horizontal">
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Size: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Examples:</b><br>• Tweet: 300B<br>• User: 1-10KB<br>• Image: 50KB-2MB<br>• Video: 10-100MB"></i></span>
+                                    <input type="text" id="obj-size" class="form-control form-control-sm" style="width:60px" placeholder="10kb">
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Cache: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Good: 85-95%<br>• Great: 95-99%<br>• CDN: 90-95%"></i></span>
+                                    <input type="number" id="cache-hit" class="form-control form-control-sm" style="width:50px" value="90" min="0" max="100">
+                                    <span class="text-muted small">%</span>
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Retention: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Logs: 30-90d<br>• Analytics: 1-2y<br>• User data: 5y+<br>• Compliance: 7-10y"></i></span>
+                                    <input type="number" id="retention-years" class="form-control form-control-sm" style="width:45px" value="5" min="1">
+                                    <span class="text-muted small">yr</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- API Layer -->
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                        <div id="api-servers-viz" style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
-                            <!-- API servers will be added dynamically -->
-                        </div>
-                    </div>
-                    <div style="margin-top: 10px; font-size: 0.8rem; color: #666;">
-                        <i class="bi bi-server"></i> <span id="viz-api-count">0</span> API Servers
-                    </div>
-                </div>
-
-                <!-- Cache & DB Layer -->
-                <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap;">
-                    <!-- Cache -->
-                    <div style="text-align: center;">
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #28a745;"></i>
-                            <span style="font-size: 0.8rem; color: #666;"><span id="viz-cache-qps">0</span> QPS</span>
-                        </div>
-                        <div class="arch-box" style="background: #28a745; color: white; padding: 15px 25px; border-radius: 8px;">
-                            <i class="bi bi-lightning-fill"></i> Cache Layer
-                            <div style="font-size: 0.8rem; margin-top: 5px;">
-                                <span id="viz-cache-nodes">0</span> nodes<br>
-                                <span id="viz-cache-mem">0</span> memory<br>
-                                <span id="viz-cache-hit">0</span>% hit rate
+                        <div class="compact-col">
+                            <h6>Reliability & Performance</h6>
+                            <div class="input-horizontal">
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">SLA: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Availability:</b><br>• 99%: 3.65d/yr<br>• 99.9%: 8.77h/yr<br>• 99.99%: 52.6m/yr<br>• 99.999%: 5.26m/yr"></i></span>
+                                    <input type="number" id="availability" class="form-control form-control-sm" style="width:60px" value="99.9" step="0.1">
+                                    <span class="text-muted small">%</span>
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">P99: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Latencies:</b><br>• Cache: 1-5ms<br>• DB read: 10-50ms<br>• DB write: 20-100ms<br>• API: 50-200ms"></i></span>
+                                    <input type="number" id="latency-p99" class="form-control form-control-sm" style="width:55px" value="100">
+                                    <span class="text-muted small">ms</span>
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Replicas: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Standard: 3<br>• Critical: 5+<br>• Geo: 3-5/region"></i></span>
+                                    <input type="number" id="replicas" class="form-control form-control-sm" style="width:45px" value="3" min="1">
+                                </div>
+                                <div class="input-group-horizontal">
+                                    <span class="input-label">Regions: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" title="• Local: 1<br>• National: 2-3<br>• Global: 5+"></i></span>
+                                    <input type="number" id="regions" class="form-control form-control-sm" style="width:45px" value="3" min="1">
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button id="reset-btn" class="btn btn-danger btn-sm mt-2">Reset</button>
+                </div>
+            </div>
 
-                    <!-- Database -->
-                    <div style="text-align: center;">
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px; justify-content: center;">
-                            <div>
-                                <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #dc3545;"></i>
-                                <span style="font-size: 0.8rem; color: #666;">R: <span id="viz-db-read-qps">0</span></span>
+            <!-- Horizontal Architecture Visualization -->
+            <div class="card card-compact shadow-sm mb-2">
+                <div class="card-body">
+                    <div class="section-header">System Architecture Flow</div>
+                    <div id="architecture-diagram" style="min-height: 220px; border-radius: 6px; padding: 20px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; height: 180px;">
+                            <!-- Users -->
+                            <div class="arch-node" style="background: #007bff; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
+                                <i class="bi bi-people-fill" style="font-size: 1.2rem;"></i><br>
+                                <strong>Users</strong><br>
+                                <div style="font-size: 0.8rem; margin-top: 5px;">
+                                    <span id="viz-users">0</span>/day<br>
+                                    <span id="viz-total-qps">0</span> QPS
+                                </div>
                             </div>
-                            <div>
-                                <i class="bi bi-arrow-down flow-arrow" style="font-size: 20px; color: #ffc107;"></i>
-                                <span style="font-size: 0.8rem; color: #666;">W: <span id="viz-db-write-qps">0</span></span>
+
+                            <div class="flow-line" style="min-width: 50px;">
+                                <span class="flow-label" style="font-size: 1.2rem;">→</span>
+                            </div>
+
+                            <!-- CDN/LB -->
+                            <div class="arch-node" style="background: #6c757d; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
+                                <i class="bi bi-globe" style="font-size: 1.2rem;"></i><br>
+                                <strong>CDN/LB</strong><br>
+                                <div style="font-size: 0.8rem; margin-top: 5px;">
+                                    <span id="viz-regions">0</span> regions
+                                </div>
+                            </div>
+
+                            <div class="flow-line" style="min-width: 50px;">
+                                <span class="flow-label" style="font-size: 1.2rem;">→</span>
+                            </div>
+
+                            <!-- API -->
+                            <div class="arch-node" style="background: #17a2b8; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
+                                <i class="bi bi-server" style="font-size: 1.2rem;"></i><br>
+                                <strong>API Layer</strong><br>
+                                <div style="font-size: 0.8rem; margin-top: 5px;">
+                                    <span id="viz-api-count">0</span> servers
+                                </div>
+                            </div>
+
+                            <div class="flow-line" style="min-width: 60px;">
+                                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                                    <span class="flow-label" style="color:#28a745; font-size: 0.8rem;">Cache: <span id="viz-cache-qps">0</span></span>
+                                    <span style="font-size: 1.2rem;">→</span>
+                                    <span class="flow-label" style="color:#dc3545; font-size: 0.8rem;">DB: <span id="viz-db-total-qps">0</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Cache/DB -->
+                            <div style="display:flex;flex-direction:column;gap:15px;">
+                                <div class="arch-node" style="background: #28a745; color: white; padding: 12px 18px; min-width: 120px; font-size: 0.85rem;">
+                                    <i class="bi bi-lightning-fill" style="font-size: 1.1rem;"></i> <strong>Cache</strong><br>
+                                    <div style="font-size: 0.75rem; margin-top: 5px;">
+                                        <span id="viz-cache-nodes">0</span> nodes<br>
+                                        <span id="viz-cache-hit">0</span>% hit rate
+                                    </div>
+                                </div>
+                                <div class="arch-node" style="background: #343a40; color: white; padding: 12px 18px; min-width: 120px; font-size: 0.85rem;">
+                                    <i class="bi bi-database-fill" style="font-size: 1.1rem;"></i> <strong>Database</strong><br>
+                                    <div style="font-size: 0.75rem; margin-top: 5px;">
+                                        R:<span id="viz-db-read-qps">0</span> W:<span id="viz-db-write-qps">0</span><br>
+                                        <span id="viz-db-shards">0</span> shards
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flow-line" style="min-width: 50px;">
+                                <span class="flow-label" style="font-size: 1.2rem;">→</span>
+                            </div>
+
+                            <!-- Storage -->
+                            <div class="arch-node" style="background: #6f42c1; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
+                                <i class="bi bi-hdd-stack-fill" style="font-size: 1.2rem;"></i><br>
+                                <strong>Storage</strong><br>
+                                <div style="font-size: 0.8rem; margin-top: 5px;">
+                                    <span id="viz-storage">0</span><br>
+                                    +<span id="viz-storage-daily">0</span>/day
+                                </div>
                             </div>
                         </div>
-                        <div class="arch-box" style="background: #343a40; color: white; padding: 15px 25px; border-radius: 8px;">
-                            <i class="bi bi-database-fill"></i> Database
-                            <div style="font-size: 0.8rem; margin-top: 5px;">
-                                <span id="viz-db-instances">0</span> instances<br>
-                                <span id="viz-db-shards">0</span> shards
+
+                        <!-- Network Bar -->
+                        <div style="display: flex; justify-content: space-around; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 4px; margin-top: 15px;">
+                            <div style="text-align: center;">
+                                <i class="bi bi-arrow-up-circle tooltip-trigger" style="color: #007bff; font-size: 1.1rem;" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Ingress Bandwidth</b><br>Write QPS × Object size<br>Incoming data rate"></i>
+                                <span style="font-size: 0.8rem; display: block; margin-top: 5px;">Ingress: <span id="viz-ingress">0</span></span>
+                            </div>
+                            <div style="text-align: center;">
+                                <i class="bi bi-arrow-down-circle tooltip-trigger" style="color: #28a745; font-size: 1.1rem;" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Egress Bandwidth</b><br>Read QPS × Object size<br>Outgoing data rate"></i>
+                                <span style="font-size: 0.8rem; display: block; margin-top: 5px;">Egress: <span id="viz-egress">0</span></span>
+                            </div>
+                            <div style="text-align: center;">
+                                <i class="bi bi-speedometer2 tooltip-trigger" style="color: #dc3545; font-size: 1.1rem;" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Peak Bandwidth</b><br>Max(In,Out) × Peak factor<br>Network capacity needed"></i>
+                                <span style="font-size: 0.8rem; display: block; margin-top: 5px;">Peak BW: <span id="viz-peak-bw">0</span></span>
+                            </div>
+                            <div style="text-align: center;">
+                                <i class="bi bi-cash-coin tooltip-trigger" style="color: #ffc107; font-size: 1.1rem;" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Monthly Cost Estimate</b><br>Compute + Storage + Network<br>Very rough approximation"></i>
+                                <span style="font-size: 0.8rem; display: block; margin-top: 5px;">Est. Cost: <span id="est-cost">$0</span>/mo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="row g-2 mb-2">
+                <div class="col-md-3">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Traffic Metrics</div>
+                            <div class="metric-row">
+                                <span class="metric-label">Total QPS: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Queries Per Second</b><br>= Daily calls ÷ 86,400<br>Total load on your system"></i></span>
+                                <input id="total-qps" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Read/Write: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>QPS breakdown</b><br>Read QPS = Total × Read%<br>Write QPS = Total × Write%"></i></span>
+                                <input id="read-write-qps" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Peak QPS: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Peak traffic</b><br>= Total QPS × Peak Factor<br>Size infrastructure for this"></i></span>
+                                <input id="peak-qps" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">RPM: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Requests Per Minute</b><br>= QPS × 60<br>Used for rate limiting"></i></span>
+                                <input id="rpm" class="form-control form-control-sm output-value" readonly>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Storage Layer -->
-                <div style="text-align: center; margin-bottom: 20px;">
-                    <div class="arch-box" style="display: inline-block; background: #6f42c1; color: white; padding: 15px 25px; border-radius: 8px;">
-                        <i class="bi bi-hdd-stack-fill"></i> Storage Layer
-                        <div style="font-size: 0.8rem; margin-top: 5px;">
-                            <span id="viz-storage">0</span> total<br>
-                            <span id="viz-storage-daily">0</span>/day growth
+                <div class="col-md-3">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Storage</div>
+                            <div class="metric-row">
+                                <span class="metric-label">Daily: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Daily data growth</b><br>= Write QPS × Object size × 86,400<br>New data per day"></i></span>
+                                <input id="daily-storage" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Total: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Total storage needed</b><br>= Daily × 365 × Retention years<br>Without replication"></i></span>
+                                <input id="total-storage" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">w/ Replicas: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Actual storage cost</b><br>= Total × Replica count<br>Include all copies"></i></span>
+                                <input id="storage-replicated" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Cache Mem: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Cache memory needed</b><br>= 10% of total data ÷ regions<br>Hot data in memory"></i></span>
+                                <input id="cache-memory" class="form-control form-control-sm output-value" readonly>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Network Info -->
-                <div style="display: flex; justify-content: space-around; background: rgba(0,0,0,0.05); padding: 15px; border-radius: 8px;">
-                    <div style="text-align: center;">
-                        <i class="bi bi-arrow-up-circle" style="color: #007bff; font-size: 20px;"></i>
-                        <div style="font-size: 0.8rem;">
-                            <strong>Ingress</strong><br>
-                            <span id="viz-ingress">0</span>
+                <div class="col-md-3">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Infrastructure</div>
+                            <div class="metric-row">
+                                <span class="metric-label">API Servers: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>API server count</b><br>= Peak QPS ÷ 1000 × regions<br>Each handles ~1K QPS"></i></span>
+                                <input id="api-servers" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Cache Nodes: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Redis/Memcached nodes</b><br>= Cache QPS ÷ 100K × regions<br>Each handles ~100K QPS"></i></span>
+                                <input id="cache-nodes" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">DB Instances: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Database instances</b><br>= Shards × Replica count<br><br><b>For event-driven (>1K writes/s + >80% reads):</b><br>• Write cluster: Write QPS ÷ 5K<br>• Read replicas: Read QPS ÷ 10K<br>• Shows as: Total (WriteW+ReadR)"></i></span>
+                                <input id="db-instances" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Downtime/yr: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Expected downtime</b><br>Based on SLA percentage<br>Plan maintenance windows"></i></span>
+                                <input id="downtime" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">Queue Depth: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Message queue capacity</b><br>= Write QPS × 60 × retention minutes<br>Assumes 5 min retention for processing<br>Important for Kafka partition sizing"></i></span>
+                                <input id="queue-depth" class="form-control form-control-sm output-value" readonly>
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="bi bi-arrow-down-circle" style="color: #28a745; font-size: 20px;"></i>
-                        <div style="font-size: 0.8rem;">
-                            <strong>Egress</strong><br>
-                            <span id="viz-egress">0</span>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Latencies (P99)</div>
+                            <div class="metric-row">
+                                <span class="metric-label">Cache Read: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Redis/Memcached read</b><br>Typically 1-3ms<br>Network + deserialization"></i></span>
+                                <input id="cache-read-latency" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">DB Read: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Database read latency</b><br>20-50ms for indexed queries<br>Includes network + query time"></i></span>
+                                <input id="db-read-latency" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">DB Write: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Database write latency</b><br>30-70ms with replication<br>Includes commit + replication lag"></i></span>
+                                <input id="db-write-latency" class="form-control form-control-sm output-value" readonly>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">API Total: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>End-to-end latency</b><br>Weighted by cache hit rate<br>Should meet P99 target"></i></span>
+                                <input id="api-total-latency" class="form-control form-control-sm output-value" readonly>
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="bi bi-speedometer2" style="color: #dc3545; font-size: 20px;"></i>
-                        <div style="font-size: 0.8rem;">
-                            <strong>Peak BW</strong><br>
-                            <span id="viz-peak-bw">0</span>
+                </div>
+            </div>
+
+            <!-- Principal Engineer Considerations -->
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Architecture Decisions <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Smart recommendations based on your inputs:</b><br>• Updates automatically as you change parameters<br>• Based on industry best practices<br>• Consider your specific constraints<br>• Use as discussion starting points"></i></div>
+                            <div class="decision-grid">
+                                <div class="decision-item">
+                                    <strong>Architecture: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Architecture patterns:</b><br>• Monolithic: <100 QPS, simple<br>• Microservices: >1K QPS, complex<br>• Event-driven: High write, async<br>• CQRS: Read/write separation"></i></strong><br>
+                                    <span id="arch-pattern" style="color: var(--bs-primary);">Microservices</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>DB Choice: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Database selection criteria:</b><br>• PostgreSQL: <10K writes/s, ACID<br>• Cassandra: >10K writes/s, AP<br>• DynamoDB: Serverless, auto-scale<br>• MongoDB: Document, flexible"></i></strong><br>
+                                    <span id="db-recommendation" style="color: var(--bs-success);">PostgreSQL</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>Cache Strategy: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Caching patterns:</b><br>• Write-through: Consistency<br>• Write-behind: Performance<br>• Cache-aside: Simple<br>• Refresh-ahead: Proactive"></i></strong><br>
+                                    <span id="cache-strategy" style="color: var(--bs-success);">Write-through</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>Consistency: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>CAP theorem trade-offs:</b><br>• Strong (CP): Banking<br>• Eventual (AP): Social<br>• Bounded: E-commerce<br>Consider SLA needs"></i></strong><br>
+                                    <span id="consistency-model" style="color: var(--bs-warning);">Eventual (AP)</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>Queue: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Message systems:</b><br>• Kafka: >1K/s, replay<br>• RabbitMQ: <1K/s, routing<br>• SQS: Serverless<br>• Redis: Fast, volatile"></i></strong><br>
+                                    <span id="queue-recommendation" style="color: var(--bs-info);">Kafka</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>API: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>API patterns:</b><br>• REST: Simple, cache<br>• GraphQL: Flexible<br>• gRPC: Performance<br>• WebSocket: Real-time"></i></strong><br>
+                                    <span id="api-pattern" style="color: var(--bs-info);">REST</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>Deploy: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Deploy strategies:</b><br>• Blue-Green: Safe<br>• Canary: Progressive<br>• Rolling: Resource-efficient<br>• Feature flags: Control"></i></strong><br>
+                                    <span id="deploy-strategy" style="color: var(--bs-primary);">Canary</span>
+                                </div>
+                                <div class="decision-item">
+                                    <strong>Scaling: <i class="bi bi-question-circle tooltip-trigger" data-bs-toggle="tooltip" data-bs-html="true" title="<b>Scaling strategies:</b><br>• Horizontal: Stateless<br>• Vertical: Simple<br>• Auto-scaling: Dynamic<br>• Sharding: Data partition"></i></strong><br>
+                                    <span id="scaling-strategy" style="color: var(--bs-success);">Horizontal</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align: center;">
-                        <i class="bi bi-clock-history" style="color: #ffc107; font-size: 20px;"></i>
-                        <div style="font-size: 0.8rem;">
-                            <strong>Latency P99</strong><br>
-                            <span id="viz-latency">0</span>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-compact shadow-sm">
+                        <div class="card-body">
+                            <div class="section-header">Quick Reference</div>
+                            <div style="font-size: 0.7rem;">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Latency Numbers:</strong><br>
+                                        L1 cache: 0.5ns<br>
+                                        RAM: 100ns<br>
+                                        SSD: 150μs<br>
+                                        Network DC: 0.5ms<br>
+                                        HDD: 10ms<br>
+                                        Internet: 150ms<br>
+                                        <strong class="mt-1">CAP Theorem:</strong><br>
+                                        CP: HBase, MongoDB<br>
+                                        AP: Cassandra, DynamoDB<br>
+                                        CA: Traditional RDBMS
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>System Capacities:</strong><br>
+                                        Redis: ~100K QPS<br>
+                                        Postgres: ~10K QPS<br>
+                                        Kafka: ~1M msg/s<br>
+                                        LB: ~65K QPS<br>
+                                        CDN: ~10 Gbps<br>
+                                        <strong class="mt-1">Data Sizes:</strong><br>
+                                        int: 4B, long: 8B<br>
+                                        UUID: 16B, IPv4: 4B<br>
+                                        timestamp: 8B<br>
+                                        2^10=1K, 2^20=1M<br>
+                                        2^30=1B, 2^40=1T
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Quick Reference -->
-    <div class="card card-compact shadow-sm mt-3">
-        <div class="card-body">
-            <div class="section-header">Quick Reference</div>
-            <div class="row small">
-                <div class="col-md-3">
-                    <strong>Latency Numbers:</strong><br>
-                    L1 cache: 0.5ns<br>
-                    L2 cache: 7ns<br>
-                    RAM: 100ns<br>
-                    SSD: 150μs<br>
-                    HDD: 10ms<br>
-                    Network (DC): 0.5ms<br>
-                    Network (Internet): 150ms
-                </div>
-                <div class="col-md-3">
-                    <strong>Availability:</strong><br>
-                    99% → 3.65 days/year<br>
-                    99.9% → 8.77 hours/year<br>
-                    99.99% → 52.6 min/year<br>
-                    99.999% → 5.26 min/year<br>
-                    <strong>Powers of 2:</strong><br>
-                    2^10 = 1K, 2^20 = 1M<br>
-                    2^30 = 1B, 2^40 = 1T
-                </div>
-                <div class="col-md-3">
-                    <strong>Common Capacities:</strong><br>
-                    Redis: ~100K QPS<br>
-                    Postgres: ~10K QPS<br>
-                    Kafka: ~1M msg/s<br>
-                    API Server: ~1K QPS<br>
-                    CDN BW: ~10 Gbps<br>
-                    Load Balancer: ~65K QPS
-                </div>
-                <div class="col-md-3">
-                    <strong>Storage Costs (approx):</strong><br>
-                    S3: $0.023/GB/mo<br>
-                    EBS SSD: $0.10/GB/mo<br>
-                    RDS: $0.115/GB/mo<br>
-                    <strong>Compute:</strong><br>
-                    t3.medium: ~$30/mo<br>
-                    m5.large: ~$70/mo<br>
-                    Cache: ~$0.10/GB/hr
+        <!-- LeetCode Tab -->
+        <div class="tab-pane fade" id="leetcode-content" role="tabpanel">
+            <div class="card card-compact shadow-sm">
+                <div class="card-body">
+                    <div class="section-header">LeetCode Helper</div>
+                    <div class="row align-items-center g-2">
+                        <div class="col-md-4">
+                            <label class="form-label small mb-1">Input (URL or Array):</label>
+                            <input id="masterInput" class="form-control form-control-sm" placeholder="Paste LeetCode URL or array...">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small mb-1">Java Class:</label>
+                            <div class="input-group input-group-sm">
+                                <input id="javaClassOutput" class="form-control" readonly>
+                                <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaClassOutput"><i class="bi bi-clipboard"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small mb-1">Java Array:</label>
+                            <div class="input-group input-group-sm">
+                                <input id="javaArrayOutput" class="form-control" readonly>
+                                <button class="btn btn-outline-primary btn-copy" data-copy-target="#javaArrayOutput"><i class="bi bi-clipboard"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-header mt-3">Common Patterns & Complexities</div>
+                    <div class="row" style="font-size: 0.75rem;">
+                        <div class="col-md-4">
+                            <strong>Arrays & Strings:</strong><br>
+                            • Two Pointers: O(n)<br>
+                            • Sliding Window: O(n)<br>
+                            • Prefix Sum: O(n) space<br>
+                            • Binary Search: O(log n)<br>
+                            <strong class="mt-2 d-block">Trees & Graphs:</strong><br>
+                            • DFS/BFS: O(V+E)<br>
+                            • Tree traversal: O(n)<br>
+                            • Dijkstra: O(E log V)<br>
+                            • Union Find: O(α(n))
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Dynamic Programming:</strong><br>
+                            • 1D DP: O(n) space<br>
+                            • 2D DP: O(n²) space<br>
+                            • State compression<br>
+                            • Rolling array opt<br>
+                            <strong class="mt-2 d-block">Data Structures:</strong><br>
+                            • HashMap: O(1) avg<br>
+                            • TreeMap: O(log n)<br>
+                            • Heap: O(log n)<br>
+                            • Trie: O(m) insert
+                        </div>
+                        <div class="col-md-4">
+                            <strong>Key Algorithms:</strong><br>
+                            • QuickSort: O(n log n)<br>
+                            • MergeSort: O(n log n)<br>
+                            • HeapSort: O(n log n)<br>
+                            • Counting: O(n+k)<br>
+                            <strong class="mt-2 d-block">Tips:</strong><br>
+                            • Check constraints first<br>
+                            • Consider edge cases<br>
+                            • Space-time tradeoffs<br>
+                            • Test with examples
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -492,9 +581,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    (function(){
+    document.addEventListener('DOMContentLoaded', function() {
         // Initialize tooltips
-        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el=>new bootstrap.Tooltip(el));
+        function initTooltips() {
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+                const existingTooltip = bootstrap.Tooltip.getInstance(el);
+                if (existingTooltip) {
+                    existingTooltip.dispose();
+                }
+                new bootstrap.Tooltip(el);
+            });
+        }
+        initTooltips();
+
+        // Reinitialize tooltips on tab change
+        document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
+            tab.addEventListener('shown.bs.tab', () => {
+                setTimeout(initTooltips, 100);
+            });
+        });
 
         // Theme toggle
         const ts=document.getElementById('theme-switcher');
@@ -507,34 +612,18 @@
 
         // LeetCode helper
         const inp=document.getElementById('masterInput');
-        const clsOut=document.getElementById('javaClassNameOutput');
+        const clsOut=document.getElementById('javaClassOutput');
         const arrOut=document.getElementById('javaArrayOutput');
 
-        function generateClassNameFromUrl(url) {
-            try {
-                // Check if the input is a valid URL starting with http
-                if (!url.startsWith('http')) {
-                    clsOut.value = '';
-                    return;
-                }
-                const urlObject = new URL(url);
-                const pathParts = urlObject.pathname.split('/').filter(Boolean);
-
-                // Check if it's a LeetCode problem URL
-                if (pathParts[0] !== 'problems' || pathParts.length < 2) {
-                    clsOut.value = '';
-                    return;
-                }
-
-                const problemSlug = pathParts[1];
-                clsOut.value = 'LC_' + problemSlug
-                    .split('-')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join('');
-            } catch (error) {
-                // Clear output if URL is invalid or any other error occurs
-                clsOut.value = '';
-            }
+        function genClass(url){
+            try{
+                if(!url.startsWith('http')){clsOut.value='';return;}
+                const parts=new URL(url).pathname.split('/').filter(Boolean);
+                if(parts[0]!=='problems'){clsOut.value='';return;}
+                const slug=parts[1];
+                const name='LC_'+slug.split('-').map(w=>w[0].toUpperCase()+w.slice(1)).join('');
+                clsOut.value=`class ${name} {}`;
+            }catch{clsOut.value='';}
         }
 
         function genArray(txt){
@@ -543,7 +632,7 @@
 
         inp.addEventListener('input',e=>{
             const t=e.target.value.trim();
-            generateClassNameFromUrl(t);
+            genClass(t);
             genArray(t);
         });
 
@@ -611,6 +700,87 @@
 
         const id=x=>document.getElementById(x);
 
+        function updateArchitectureDecisions(totalQps, readPct, writeQps, storageSize) {
+            // Architecture pattern
+            if (totalQps < 100) {
+                id('arch-pattern').textContent = 'Monolithic';
+                id('arch-pattern').style.color = 'var(--bs-success)';
+            } else if (writeQps > 1000 && readPct > 0.8) {
+                id('arch-pattern').textContent = 'Event-driven + CQRS';
+                id('arch-pattern').style.color = 'var(--bs-warning)';
+            } else if (totalQps > 1000) {
+                id('arch-pattern').textContent = 'Microservices';
+                id('arch-pattern').style.color = 'var(--bs-primary)';
+            } else {
+                id('arch-pattern').textContent = 'Service-oriented';
+                id('arch-pattern').style.color = 'var(--bs-info)';
+            }
+
+            // DB recommendation
+            if (writeQps > 10000 || storageSize > 1e12) {
+                id('db-recommendation').textContent = 'Cassandra/DynamoDB';
+                id('db-recommendation').style.color = 'var(--bs-warning)';
+            } else if (readPct > 0.95) {
+                id('db-recommendation').textContent = 'MongoDB + Redis';
+                id('db-recommendation').style.color = 'var(--bs-info)';
+            } else {
+                id('db-recommendation').textContent = 'PostgreSQL';
+                id('db-recommendation').style.color = 'var(--bs-success)';
+            }
+
+            // Cache strategy
+            if (readPct > 0.9) {
+                id('cache-strategy').textContent = 'Write-through';
+            } else if (readPct > 0.7) {
+                id('cache-strategy').textContent = 'Write-behind';
+            } else {
+                id('cache-strategy').textContent = 'Cache-aside';
+            }
+
+            // Consistency model
+            if (totalQps > 10000) {
+                id('consistency-model').textContent = 'Eventual (AP)';
+                id('consistency-model').style.color = 'var(--bs-warning)';
+            } else {
+                id('consistency-model').textContent = 'Strong (CP)';
+                id('consistency-model').style.color = 'var(--bs-success)';
+            }
+
+            // Queue recommendation
+            if (writeQps > 1000) {
+                id('queue-recommendation').textContent = 'Kafka';
+            } else if (writeQps > 100) {
+                id('queue-recommendation').textContent = 'RabbitMQ';
+            } else {
+                id('queue-recommendation').textContent = 'Redis Pub/Sub';
+            }
+
+            // API pattern
+            if (readPct > 0.8 && totalQps > 1000) {
+                id('api-pattern').textContent = 'GraphQL';
+            } else if (totalQps > 10000) {
+                id('api-pattern').textContent = 'gRPC';
+            } else {
+                id('api-pattern').textContent = 'REST';
+            }
+
+            // Deploy strategy
+            if (totalQps > 5000) {
+                id('deploy-strategy').textContent = 'Canary';
+            } else {
+                id('deploy-strategy').textContent = 'Blue-Green';
+            }
+
+            // Scaling strategy
+            if (totalQps > 1000) {
+                id('scaling-strategy').textContent = 'Horizontal + Auto';
+                id('scaling-strategy').style.color = 'var(--bs-success)';
+            } else {
+                id('scaling-strategy').textContent = 'Vertical';
+                id('scaling-strategy').style.color = 'var(--bs-info)';
+            }
+        }
+
         function calculate(){
             // Inputs
             const calls=num(id('calls-per-day').value);
@@ -636,6 +806,7 @@
             const cacheMisses=readQps*(1-cachePct);
             const dbReadQps=cacheMisses;
             const dbWriteQps=writeQps;
+            const dbTotalQps=dbReadQps+dbWriteQps;
 
             // Network calculations
             const ingress=writeQps*objSize;
@@ -651,9 +822,25 @@
             const apiServersPerRegion=Math.ceil(peakQps/1000);
             const apiServers=apiServersPerRegion*regions;
             const cacheNodes=Math.ceil(cacheQps/100000)*regions;
-            const dbShards=Math.ceil(totalStorage/1e12);
-            const dbInstances=dbShards*rep;
+            const dbShards=Math.max(1, Math.ceil(totalStorage/1e12));
+
+            // For event-driven: separate read/write clusters
+            let dbInstances;
+            let dbNote = '';
+            if (writeQps > 1000 && readPct > 0.8) {
+                // Event-driven architecture with CQRS
+                const writeInstances = Math.ceil(writeQps/5000) * rep; // Write cluster
+                const readInstances = Math.ceil(dbReadQps/10000) * rep; // Read replicas
+                dbInstances = writeInstances + readInstances;
+                dbNote = ` (${writeInstances}W+${readInstances}R)`;
+            } else {
+                dbInstances = dbShards * rep;
+            }
+
             const queueWorkers=Math.ceil(writeQps/500)*regions;
+
+            // Queue depth estimation (5 minute retention)
+            const queueDepth = writeQps * 60 * 5;
 
             // Cache memory (assuming 10% of active data in cache)
             const cacheMemory=totalStorage*0.1/regions;
@@ -688,38 +875,28 @@
 
             // Update outputs
             id('total-qps').value=fmt(totalQps);
-            id('read-qps').value=fmt(readQps);
-            id('write-qps').value=fmt(writeQps);
+            id('read-write-qps').value=`${fmt(readQps)}/${fmt(writeQps)}`;
             id('peak-qps').value=fmt(peakQps);
             id('rpm').value=fmt(rpm);
-            id('daily-requests').value=fmt(calls);
 
-            id('cache-qps').value=fmt(cacheQps);
-            id('cache-misses').value=fmt(cacheMisses);
-            id('db-read-qps').value=fmt(dbReadQps);
-            id('db-write-qps').value=fmt(dbWriteQps);
-            id('cache-memory').value=bytes(cacheMemory);
-            id('db-shards').value=dbShards;
-
-            id('ingress-bw').value=bw(ingress);
-            id('egress-bw').value=bw(egress);
-            id('peak-bw').value=bw(peakBw);
             id('daily-storage').value=bytes(dailyStorage);
             id('total-storage').value=bytes(totalStorage);
             id('storage-replicated').value=bytes(storageReplicated);
+            id('cache-memory').value=bytes(cacheMemory);
 
             id('api-servers').value=apiServers;
             id('cache-nodes').value=cacheNodes;
-            id('db-instances').value=dbInstances;
-            id('queue-workers').value=queueWorkers;
+            id('db-instances').value=dbInstances + dbNote;
+            id('queue-depth').value=fmt(queueDepth) + ' msgs';
             id('downtime').value=downtimeStr;
-            id('est-cost').value=`${fmt(totalCost)}`;
 
             // Latency outputs
             id('cache-read-latency').value=`${cacheReadLatency.toFixed(1)} ms`;
             id('db-read-latency').value=`${dbReadLatency.toFixed(1)} ms`;
             id('db-write-latency').value=`${dbWriteLatency.toFixed(1)} ms`;
             id('api-total-latency').value=`${apiTotalLatency.toFixed(1)} ms`;
+
+            id('est-cost').value=`$${fmt(totalCost)}`;
 
             // Update visualization
             updateVisualization({
@@ -733,6 +910,7 @@
                 cacheQps: cacheQps,
                 dbReadQps: dbReadQps,
                 dbWriteQps: dbWriteQps,
+                dbTotalQps: dbTotalQps,
                 dbInstances: dbInstances,
                 dbShards: dbShards,
                 storage: totalStorage,
@@ -742,6 +920,9 @@
                 peakBw: peakBw,
                 latency: apiTotalLatency
             });
+
+            // Update architecture decisions
+            updateArchitectureDecisions(totalQps, readPct, writeQps, totalStorage);
         }
 
         function updateVisualization(data) {
@@ -751,37 +932,17 @@
             id('viz-regions').textContent = data.regions;
             id('viz-api-count').textContent = data.apiServers;
             id('viz-cache-nodes').textContent = data.cacheNodes;
-            id('viz-cache-mem').textContent = bytes(data.cacheMemory);
             id('viz-cache-hit').textContent = data.cacheHit.toFixed(0);
             id('viz-cache-qps').textContent = fmt(data.cacheQps);
             id('viz-db-read-qps').textContent = fmt(data.dbReadQps);
             id('viz-db-write-qps').textContent = fmt(data.dbWriteQps);
-            id('viz-db-instances').textContent = data.dbInstances;
+            id('viz-db-total-qps').textContent = fmt(data.dbTotalQps);
             id('viz-db-shards').textContent = data.dbShards;
             id('viz-storage').textContent = bytes(data.storage);
             id('viz-storage-daily').textContent = bytes(data.dailyStorage);
             id('viz-ingress').textContent = bw(data.ingress);
             id('viz-egress').textContent = bw(data.egress);
             id('viz-peak-bw').textContent = bw(data.peakBw);
-            id('viz-latency').textContent = `${data.latency.toFixed(1)} ms`;
-
-            // Update API server visualization
-            const apiViz = id('api-servers-viz');
-            apiViz.innerHTML = '';
-            const maxServers = Math.min(data.apiServers, 12); // Show max 12 servers
-            for (let i = 0; i < maxServers; i++) {
-                const server = document.createElement('div');
-                server.className = 'arch-box';
-                server.style.cssText = 'width: 40px; height: 40px; background: #17a2b8; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white;';
-                server.innerHTML = '<i class="bi bi-server"></i>';
-                apiViz.appendChild(server);
-            }
-            if (data.apiServers > maxServers) {
-                const more = document.createElement('div');
-                more.style.cssText = 'width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #666; font-weight: bold;';
-                more.textContent = `+${data.apiServers - maxServers}`;
-                apiViz.appendChild(more);
-            }
         }
 
         // Attach listeners
@@ -807,9 +968,9 @@
         });
 
         // Initial calculation
-        id('write-ratio').value = 20; // Set initial write ratio
+        id('write-ratio').value = 20;
         calculate();
-    })();
+    });
 </script>
 </body>
 </html>
