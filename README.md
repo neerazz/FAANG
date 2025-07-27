@@ -37,27 +37,21 @@ Tech interviews are evolving, but the fundamentals remain the same. The problems
 ---
 
 ## [Complexities & Big O Explained](https://www.bigocheatsheet.com/)
-
 Understanding time and space complexity is crucial for writing efficient code and acing interviews. Here’s a high-level overview:
 
 | Complexity Type | Notation   | Example Algorithm                | Typical Use Case             |
 |-----------------|------------|----------------------------------|------------------------------|
 | Constant        | O(1)       | Hash table lookup                | Accessing array element      |
 | Logarithmic     | O(log n)   | Binary search                    | Searching in sorted array    |
-| Linear          | O(n)       | Linear search                    | Traversing a list            |
 | Linearithmic    | O(n log n) | Merge sort, Heap sort            | Efficient sorting            |
 | Quadratic       | O(n^2)     | Bubble sort, Selection sort      | Simple nested loops          |
 | Cubic           | O(n^3)     | Floyd-Warshall, 3-nested loops   | Some DP, matrix operations   |
-| Exponential     | O(2^n)     | Recursive backtracking           | Subset, permutation problems |
 | Factorial       | O(n!)      | Traveling Salesman, permutations | Brute-force combinatorics    |
 
-**Best/Average/Worst Case:**
 - Always clarify which case you’re analyzing in interviews.
 - Amortized analysis (e.g., dynamic array resizing) is also common.
-
 **Why Big O?**
 Big O notation helps you compare algorithms and predict performance as input size grows. Interviewers expect you to:
-- State time/space complexity for your solution
 - Optimize when possible
 - Justify trade-offs
 
@@ -105,42 +99,28 @@ Big O notation helps you compare algorithms and predict performance as input siz
 
 
 ## DataStructures & Algorithm Problems
-
 > **Explore by Topic:**
 > - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
 > - [Hash Table](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#hash-table)
-> - [Binary Search](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#binary-search)
 > - [Recursion](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#recursion)
 > - [Backtracking](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#backtracking)
 > - [Divide and Conquer](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#divide-and-conquer)
-> - [Greedy Algorithm](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#greedy-algorithm)
-> - [Dynamic Programming](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#dynamic-programming)
-> - [Graph](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#graph)
-
-> **Explore by Company:**
 > - [Google](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#google)
-> - [Amazon](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#amazon)
 > - [Meta (Facebook)](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#facebook)
 > - [Apple](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#apple)
 > - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#microsoft)
-> - [Nvidia](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#nvidia)
 > - [Tesla](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#tesla)
 > - [Uber](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#uber)
 > - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#linkedin)
-
 ---
-
 
 ## Contests
 
 Sharpen your skills and benchmark yourself with real contest problems:
-
 - [Leetcode Contests](https://github.com/neerazz/CodingContests/tree/main/leetcode) (Biweekly & Weekly)
 - [Hackerrank Contests](https://github.com/neerazz/CodingContests/tree/main/hackerrank)
 - [Google Kickstart](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart) ([2020](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2020), [2021](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2021))
-- [CodeForces](https://github.com/neerazz/CodingContests/tree/main/codeforces)
 
----
 
 
 ## [System Design](https://github.com/neerazz/faang-system-design/blob/master/README.md)
@@ -149,11 +129,7 @@ Sharpen your skills and benchmark yourself with real contest problems:
 > - [4 Weeks System Design Roadmap](https://github.com/neerazz/faang-system-design/blob/master/4%20week%20system%20design%20plan.md)
 
 **General Design Questions:**
-- [Tiny URL](https://github.com/neerazz/faang-system-design/tree/master/systemsdesign/tiny-url)
-- [Cab Booking Service](https://github.com/neerazz/faang-system-design/tree/master/systemsdesign/cab-booking-system)
-- [Amazon](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Amazon%20System%20Design.png)
 - [Zoom](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Zoom%20System%20Design.png)
-- [Google Map](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Google%20Maps%20Design.png)
 - [Facebook](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Facebook%20System%20Design.png)
 - [Hotel Booking](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Hoel%20Booking%20System.png)
 - [Uber](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Uber%20System%20Design.png)
