@@ -1,4 +1,3 @@
-
 <p align="center">
   <img height="100" src="https://www.pcr-online.biz/wp-content/uploads/faang-own-logo-660x330.jpg" alt="FAANG Logo">
 </p>
@@ -144,8 +143,7 @@ Sharpen your skills and benchmark yourself with real contest problems:
 ---
 
 
-## System Design
-
+## [System Design](https://github.com/neerazz/faang-system-design/blob/master/README.md)
 > [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
 > - [4 Week Basics SD (LLD & HSD) Roadmap](https://github.com/neerazz/faang-system-design/blob/master/4%20Weeks%20basics%20SD.md)
 > - [4 Weeks System Design Roadmap](https://github.com/neerazz/faang-system-design/blob/master/4%20week%20system%20design%20plan.md)
