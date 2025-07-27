@@ -63,9 +63,9 @@ not related to hard core competitive coding.
 
 ## [Contests](https://github.com/neerazz/FAANG/tree/master/Algorithms/Neeraj/contest)
 
-> - [Hackerrank](https://github.com/neerazz/CodingContests/tree/main/hackerrank)
 > - [Leetcode](https://github.com/neerazz/CodingContests/tree/main/leetcode)
 >   - `Includes both Biweekly and Weekly contest.`
+> - [Hackerrank](https://github.com/neerazz/CodingContests/tree/main/hackerrank)
 > - [Google Kickstart](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart)
 >   - [2020](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2020)
 >   - [2021](https://github.com/neerazz/CodingContests/tree/main/goolgeKickstart/y2021)
@@ -76,8 +76,8 @@ not related to hard core competitive coding.
 > [Tips for System Design](https://github.com/neerazz/faang-system-design/blob/master/Tips_for_system_design.md)
 
 > #### General Design Questions:
->   - [Tiny URL](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/systemsdesign/tiny-url)
->   - [Cab Booking Service](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/systemsdesign/cab-booking-system)
+>   - [Tiny URL](https://github.com/neerazz/faang-system-design/tree/master/systemsdesign/tiny-url)
+>   - [Cab Booking Service](https://github.com/neerazz/faang-system-design/tree/master/systemsdesign/cab-booking-system)
 >   - [Amazon](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Amazon%20System%20Design.png)
 >   - [Zoom](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Zoom%20System%20Design.png)
 >   - [Google Map](https://github.com/neerazz/faang-system-design/blob/master/Resources/architecture-diagrams/Google%20Maps%20Design.png)
@@ -90,14 +90,14 @@ not related to hard core competitive coding.
 
 ## OOPS Design:
 
-> - [Design Library Management System](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/libraryManagment)
-> - [Design Parking Lot](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/parkinglot)
-> - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/callCenter/CallCenter.java)
-> - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/DesignHitCounter.java)
-> - [Design Linux Find Command](https://github.com/neerazz/faang-system-design/blob/master/Neeraj/oops/designs/LinuxFindFilter.java)
-> - [Design ATM](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/atm)
-> - [Design Movie Ticket System](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/movieTicketSystem)
-> - [Design Pharmacy Shop](https://github.com/neerazz/faang-system-design/tree/master/Neeraj/oops/designs/pharmacyshop)
+> - [Design Library Management System](https://github.com/neerazz/faang-system-design/tree/master/oops/designs/libraryManagment)
+> - [Design Parking Lot](https://github.com/neerazz/faang-system-design/blob/master/oops/designs/parkinglot)
+> - [Design Call Center](https://github.com/neerazz/faang-system-design/blob/master/oops/designs/callCenter/CallCenter.java)
+> - [Design Hit Counter](https://github.com/neerazz/faang-system-design/blob/master/oops/designs/DesignHitCounter.java)
+> - [Design Linux Find Command](https://github.com/neerazz/faang-system-design/blob/master/oops/designs/LinuxFindFilter.java)
+> - [Design ATM](https://github.com/neerazz/faang-system-design/tree/master/oops/designs/atm)
+> - [Design Movie Ticket System](https://github.com/neerazz/faang-system-design/tree/master/oops/designs/movieTicketSystem)
+> - [Design Pharmacy Shop](https://github.com/neerazz/faang-system-design/tree/master/oops/designs/pharmacyshop)
 >
 >> TODO
 >> - [Design Vending Machine](https://leetcode.com/discuss/interview-question/982302/FANNG-question-OOP-please-post-your-solutions-to-this)

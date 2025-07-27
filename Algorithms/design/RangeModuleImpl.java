@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 /**
  * Created on:  Aug 10, 2021
@@ -21,6 +22,45 @@ public class RangeModuleImpl {
         System.out.println(obj.queryRange(2, 4));
         System.out.println(obj.queryRange(2, 9));
         System.out.println(obj.queryRange(4, 6));
+    }
+
+    static class RangeModule_2 {
+
+        TreeMap<Integer, Integer> map;
+
+        public RangeModule_2() {
+            map = new TreeMap<>();
+        }
+
+        public void addRange(int left, int right) {
+            Integer start = map.floorKey(left);
+            Integer end = map.floorKey(right);
+            if (start != null && map.get(start) >= left) {
+                left = start;
+            }
+            if (end != null && map.get(end) > right) {
+                right = map.get(end);
+            }
+            map.subMap(left, false, right, true).clear();
+            map.put(left, right);
+        }
+
+        public boolean queryRange(int left, int right) {
+            Integer start = map.floorKey(left);
+            return start != null && map.get(start) >= right;
+        }
+
+        public void removeRange(int left, int right) {
+            Integer start = map.floorKey(left);
+            Integer end = map.floorKey(right);
+            if (start != null && map.get(start) > left) {
+                map.put(start, left);
+            }
+            if (end != null && map.get(end) > right) {
+                map.put(right, map.get(end));
+            }
+            map.subMap(left, true, right, false).clear();
+        }
     }
 
     static class RangeModule {
