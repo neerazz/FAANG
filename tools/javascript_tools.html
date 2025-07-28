@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <title>Senior Engineer Interview Toolkit</title>
+    <title>Principal Engineer Interview Toolkit</title>
     <style>
         body{padding-top:50px}
         .navbar{height:50px}
@@ -24,7 +24,7 @@
         .input-label{font-size:.75rem;min-width:70px}
         .form-control-sm{padding:0.15rem 0.5rem;font-size:.75rem}
         .btn-sm{padding:0.15rem 0.5rem;font-size:.75rem}
-
+        
         /* Architecture visualization styles */
         .arch-node {
             transition: all 0.2s ease;
@@ -69,42 +69,42 @@
         [data-bs-theme="dark"] #architecture-diagram {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
         }
-
+        
         .nav-tabs .nav-link {
             padding: 0.4rem 1rem;
             font-size: 0.85rem;
         }
-
+        
         .decision-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 8px;
             font-size: 0.7rem;
         }
-
+        
         .decision-item {
             background: var(--bs-secondary-bg);
             padding: 6px 10px;
             border-radius: 4px;
             border-left: 3px solid var(--bs-primary);
         }
-
+        
         .compact-row {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
-
+        
         .compact-col {
             flex: 1;
             min-width: 200px;
         }
-
+        
         h6 {
             font-size: 0.85rem;
             margin-bottom: 8px;
         }
-
+        
         .tab-content {
             padding-top: 15px;
         }
@@ -135,7 +135,7 @@
             </button>
         </li>
     </ul>
-
+    
     <div class="tab-content" id="mainTabContent">
         <!-- System Design Tab -->
         <div class="tab-pane fade show active" id="system-content" role="tabpanel">
@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="compact-col">
                             <h6>Data & Storage</h6>
                             <div class="input-horizontal">
@@ -185,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="compact-col">
                             <h6>Reliability & Performance</h6>
                             <div class="input-horizontal">
@@ -229,11 +229,11 @@
                                     <span id="viz-total-qps">0</span> QPS
                                 </div>
                             </div>
-
+                            
                             <div class="flow-line" style="min-width: 50px;">
                                 <span class="flow-label" style="font-size: 1.2rem;">→</span>
                             </div>
-
+                            
                             <!-- CDN/LB -->
                             <div class="arch-node" style="background: #6c757d; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
                                 <i class="bi bi-globe" style="font-size: 1.2rem;"></i><br>
@@ -242,11 +242,11 @@
                                     <span id="viz-regions">0</span> regions
                                 </div>
                             </div>
-
+                            
                             <div class="flow-line" style="min-width: 50px;">
                                 <span class="flow-label" style="font-size: 1.2rem;">→</span>
                             </div>
-
+                            
                             <!-- API -->
                             <div class="arch-node" style="background: #17a2b8; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
                                 <i class="bi bi-server" style="font-size: 1.2rem;"></i><br>
@@ -255,7 +255,7 @@
                                     <span id="viz-api-count">0</span> servers
                                 </div>
                             </div>
-
+                            
                             <div class="flow-line" style="min-width: 60px;">
                                 <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
                                     <span class="flow-label" style="color:#28a745; font-size: 0.8rem;">Cache: <span id="viz-cache-qps">0</span></span>
@@ -263,7 +263,7 @@
                                     <span class="flow-label" style="color:#dc3545; font-size: 0.8rem;">DB: <span id="viz-db-total-qps">0</span></span>
                                 </div>
                             </div>
-
+                            
                             <!-- Cache/DB -->
                             <div style="display:flex;flex-direction:column;gap:15px;">
                                 <div class="arch-node" style="background: #28a745; color: white; padding: 12px 18px; min-width: 120px; font-size: 0.85rem;">
@@ -281,11 +281,11 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="flow-line" style="min-width: 50px;">
                                 <span class="flow-label" style="font-size: 1.2rem;">→</span>
                             </div>
-
+                            
                             <!-- Storage -->
                             <div class="arch-node" style="background: #6f42c1; color: white; padding: 15px 20px; min-width: 120px; font-size: 0.9rem;">
                                 <i class="bi bi-hdd-stack-fill" style="font-size: 1.2rem;"></i><br>
@@ -296,7 +296,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <!-- Network Bar -->
                         <div style="display: flex; justify-content: space-around; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 4px; margin-top: 15px;">
                             <div style="text-align: center;">
@@ -345,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-3">
                     <div class="card card-compact shadow-sm">
                         <div class="card-body">
@@ -369,7 +369,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-3">
                     <div class="card card-compact shadow-sm">
                         <div class="card-body">
@@ -397,7 +397,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-3">
                     <div class="card card-compact shadow-sm">
                         <div class="card-body">
@@ -466,7 +466,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-md-6">
                     <div class="card card-compact shadow-sm">
                         <div class="card-body">
@@ -507,7 +507,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- LeetCode Tab -->
         <div class="tab-pane fade" id="leetcode-content" role="tabpanel">
             <div class="card card-compact shadow-sm">
@@ -533,7 +533,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="section-header mt-3">Common Patterns & Complexities</div>
                     <div class="row" style="font-size: 0.75rem;">
                         <div class="col-md-4">
@@ -593,14 +593,14 @@
             });
         }
         initTooltips();
-
+        
         // Reinitialize tooltips on tab change
         document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
             tab.addEventListener('shown.bs.tab', () => {
                 setTimeout(initTooltips, 100);
             });
         });
-
+        
         // Theme toggle
         const ts=document.getElementById('theme-switcher');
         const lbl=document.querySelector('label[for="theme-switcher"]');
@@ -614,7 +614,7 @@
         const inp=document.getElementById('masterInput');
         const clsOut=document.getElementById('javaClassOutput');
         const arrOut=document.getElementById('javaArrayOutput');
-
+        
         function genClass(url){
             try{
                 if(!url.startsWith('http')){clsOut.value='';return;}
@@ -625,11 +625,11 @@
                 clsOut.value=`class ${name} {}`;
             }catch{clsOut.value='';}
         }
-
+        
         function genArray(txt){
             arrOut.value=txt.replaceAll('[','{').replaceAll(']','}').replaceAll('"','\'');
         }
-
+        
         inp.addEventListener('input',e=>{
             const t=e.target.value.trim();
             genClass(t);
@@ -653,7 +653,7 @@
         // Read/Write percentage sync
         const readInput = document.getElementById('read-ratio');
         const writeInput = document.getElementById('write-ratio');
-
+        
         readInput.addEventListener('input', () => {
             const readVal = parseFloat(readInput.value) || 0;
             writeInput.value = (100 - readVal).toFixed(0);
@@ -670,7 +670,7 @@
             if(v.endsWith('t'))return parseFloat(v)*1e12;
             return parseFloat(v)||0;
         };
-
+        
         const size=v=>{
             if(!v) return 0;
             v=v.toString().toLowerCase();
@@ -681,23 +681,23 @@
             if(v.includes('tb'))return n*1099511627776;
             return n;
         };
-
+        
         const bytes=b=>{
             if(!b)return'0 B';
             const u=['B','KB','MB','GB','TB','PB'];
             const i=Math.floor(Math.log(b)/Math.log(1024));
             return`${(b/Math.pow(1024,i)).toFixed(2)} ${u[i]}`;
         };
-
+        
         const bw=b=>`${(b*8/1e6).toFixed(2)} Mbps`;
-
+        
         const fmt=n=>{
             if(n>=1e9)return`${(n/1e9).toFixed(2)}B`;
             if(n>=1e6)return`${(n/1e6).toFixed(2)}M`;
             if(n>=1e3)return`${(n/1e3).toFixed(2)}K`;
             return n.toFixed(2);
         };
-
+        
         const id=x=>document.getElementById(x);
 
         function updateArchitectureDecisions(totalQps, readPct, writeQps, storageSize) {
@@ -715,7 +715,7 @@
                 id('arch-pattern').textContent = 'Service-oriented';
                 id('arch-pattern').style.color = 'var(--bs-info)';
             }
-
+            
             // DB recommendation
             if (writeQps > 10000 || storageSize > 1e12) {
                 id('db-recommendation').textContent = 'Cassandra/DynamoDB';
@@ -727,7 +727,7 @@
                 id('db-recommendation').textContent = 'PostgreSQL';
                 id('db-recommendation').style.color = 'var(--bs-success)';
             }
-
+            
             // Cache strategy
             if (readPct > 0.9) {
                 id('cache-strategy').textContent = 'Write-through';
@@ -736,7 +736,7 @@
             } else {
                 id('cache-strategy').textContent = 'Cache-aside';
             }
-
+            
             // Consistency model
             if (totalQps > 10000) {
                 id('consistency-model').textContent = 'Eventual (AP)';
@@ -745,7 +745,7 @@
                 id('consistency-model').textContent = 'Strong (CP)';
                 id('consistency-model').style.color = 'var(--bs-success)';
             }
-
+            
             // Queue recommendation
             if (writeQps > 1000) {
                 id('queue-recommendation').textContent = 'Kafka';
@@ -754,7 +754,7 @@
             } else {
                 id('queue-recommendation').textContent = 'Redis Pub/Sub';
             }
-
+            
             // API pattern
             if (readPct > 0.8 && totalQps > 1000) {
                 id('api-pattern').textContent = 'GraphQL';
@@ -763,14 +763,14 @@
             } else {
                 id('api-pattern').textContent = 'REST';
             }
-
+            
             // Deploy strategy
             if (totalQps > 5000) {
                 id('deploy-strategy').textContent = 'Canary';
             } else {
                 id('deploy-strategy').textContent = 'Blue-Green';
             }
-
+            
             // Scaling strategy
             if (totalQps > 1000) {
                 id('scaling-strategy').textContent = 'Horizontal + Auto';
@@ -823,7 +823,7 @@
             const apiServers=apiServersPerRegion*regions;
             const cacheNodes=Math.ceil(cacheQps/100000)*regions;
             const dbShards=Math.max(1, Math.ceil(totalStorage/1e12));
-
+            
             // For event-driven: separate read/write clusters
             let dbInstances;
             let dbNote = '';
@@ -836,9 +836,9 @@
             } else {
                 dbInstances = dbShards * rep;
             }
-
+            
             const queueWorkers=Math.ceil(writeQps/500)*regions;
-
+            
             // Queue depth estimation (5 minute retention)
             const queueDepth = writeQps * 60 * 5;
 
@@ -920,7 +920,7 @@
                 peakBw: peakBw,
                 latency: apiTotalLatency
             });
-
+            
             // Update architecture decisions
             updateArchitectureDecisions(totalQps, readPct, writeQps, totalStorage);
         }
@@ -947,7 +947,7 @@
 
         // Attach listeners
         ['calls-per-day','obj-size','read-ratio','cache-hit','replicas','retention-years',
-            'latency-p99','availability','regions','peak-factor'].forEach(idStr=>{
+         'latency-p99','availability','regions','peak-factor'].forEach(idStr=>{
             const el=document.getElementById(idStr);
             if(el) el.addEventListener('input',calculate);
         });
