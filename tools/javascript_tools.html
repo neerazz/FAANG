@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <title>Principal Engineer Interview Toolkit</title>
+    <title>Interview Toolkit</title>
     <style>
         body{padding-top:50px}
         .navbar{height:50px}
@@ -113,7 +113,7 @@
 <body>
 <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="font-size:0.95rem;">Principal Engineer Toolkit</a>
+        <a class="navbar-brand" href="#" style="font-size:0.95rem;">Interview Toolkit</a>
         <div class="form-check form-switch ms-auto">
             <input class="form-check-input" type="checkbox" role="switch" id="theme-switcher">
             <label class="form-check-label text-light" for="theme-switcher"><i class="bi bi-moon-stars-fill"></i></label>
@@ -621,8 +621,8 @@
                 const parts=new URL(url).pathname.split('/').filter(Boolean);
                 if(parts[0]!=='problems'){clsOut.value='';return;}
                 const slug=parts[1];
-                const name='LC_'+slug.split('-').map(w=>w[0].toUpperCase()+w.slice(1)).join('');
-                clsOut.value=`class ${name} {}`;
+                const name=slug.split('-').map(w=>w[0].toUpperCase()+w.slice(1)).join('');
+                clsOut.value=`${name}`;
             }catch{clsOut.value='';}
         }
         
