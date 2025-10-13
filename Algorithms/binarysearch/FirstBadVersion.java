@@ -1,49 +1,36 @@
-/*
-https://leetcode.com/explore/learn/card/binary-search/126/template-ii/947/
-You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
-Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one, which causes all the following ones to be bad.
-You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+/* The isBadVersion API is defined in the parent class VersionControl.
+      boolean isBadVersion(int version); */
 
-Example:
-Given n = 5, and version = 4 is the first bad version.
-call isBadVersion(3) -> false
-call isBadVersion(5) -> true
-call isBadVersion(4) -> true
-Then 4 is the first bad version.
- */
-public class FirstBadVersion {
-    static int badVersion;
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int left = 1;
+        int right = n;
 
-    public static void main(String[] args) {
-        badVersion = 4;
-        System.out.println("Answer is:" + firstBadVersion(5) + " should be " + badVersion);
-        badVersion = 1;
-        System.out.println("Answer is:" + firstBadVersion(1) + " should be " + badVersion);
-        badVersion = 1;
-        System.out.println("Answer is:" + firstBadVersion(2) + " should be " + badVersion);
-        badVersion = 1702766719;
-        System.out.println("Answer is:" + firstBadVersion(2126753390) + " should be " + badVersion);
-    }
-
-    public static int firstBadVersion(int n) {
-        if (n == 1) return n;
-        return firstBadVersionHelper(1, n);
-    }
-
-    private static int firstBadVersionHelper(int start, int end) {
-        if (end - start == 1) {
-            if (isBadVersion(start)) return start;
-            return end;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (isBadVersion(mid)) {
+                // This could be the first bad version, or there might be one before it.
+                // So, we check the left side.
+                right = mid;
+            } else {
+                // This version is good, so the first bad version must be after it.
+                left = mid + 1;
+            }
         }
-        int mid = start + (end - start) / 2;
-        if (isBadVersion(mid)) {
-            return firstBadVersionHelper(start, mid);
-        } else {
-            return firstBadVersionHelper(mid, end);
-        }
-    }
 
-    private static boolean isBadVersion(int mid) {
-        return mid >= badVersion;
+        // When the loop terminates, left and right will be pointing to the same element,
+        // which is the first bad version.
+        return left;
     }
 }
+
+// Note: The VersionControl class and isBadVersion API are provided by LeetCode.
+// To run this locally, you would need a mock implementation.
+/*
+class VersionControl {
+    boolean isBadVersion(int version) {
+        // Mock implementation
+        return version >= 4; // Assuming 4 is the first bad version
+    }
+}
+*/
