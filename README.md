@@ -25,14 +25,15 @@ Tech interviews are evolving, but the fundamentals remain the same. The problems
 
 1. [Complexities & Big O Explained](#complexities--big-o-explained)
 2. [Resources & Training Material](#resources-and-training-material)
-3. [Data Structures & Algorithm Problems](#datastructures--algorithm-problems)
+3. [Data Structures & Algorithm Patterns](#data-structures--algorithm-patterns)
 4. [Contests](#contests)
 5. [System Design](#system-design)
 6. [OOPS Design](#oops-design)
 7. [Important Links](#important-links)
-8. [How to Use This Repo](#how-to-use-this-repo)
-9. [How to Contribute](#how-to-contribute)
-10. [When to Contribute](#when-to-contribute)
+8. [LeetCode FAQ](#leetcode-faq)
+9. [How to Use This Repo](#how-to-use-this-repo)
+10. [How to Contribute](#how-to-contribute)
+11. [When to Contribute](#when-to-contribute)
 
 ---
 
@@ -98,20 +99,31 @@ Big O notation helps you compare algorithms and predict performance as input siz
 ---
 
 
-## DataStructures & Algorithm Problems
-> **Explore by Topic:**
-> - [Array, Linked List, Stack, Heap, Tree, Queue](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#datastructures--algorithm-problems)
-> - [Hash Table](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#hash-table)
-> - [Recursion](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#recursion)
-> - [Backtracking](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#backtracking)
-> - [Divide and Conquer](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Topic.md#divide-and-conquer)
-> - [Google](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#google)
-> - [Meta (Facebook)](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#facebook)
-> - [Apple](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#apple)
-> - [Microsoft](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#microsoft)
-> - [Tesla](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#tesla)
-> - [Uber](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#uber)
-> - [LinkedIn](https://github.com/neerazz/FAANG/blob/master/Top_LeetCode_Questions_By_Company.md#linkedin)
+## Data Structures & Algorithm Patterns
+
+This section provides in-depth explanations, complexity analyses, and common Java patterns for key data structures and algorithms.
+
+### Data Structures
+- **[Arrays](./dataStructures/arrays/README.md)**: Two Pointers, Sliding Window.
+- **[Linked Lists](./dataStructures/LinkedList/README.md)**: Fast & Slow Pointers, In-place Reversal.
+- **[Stacks](./dataStructures/stack/README.md)**: Monotonic Stack, Parentheses Matching.
+- **[Queues](./dataStructures/queue/README.md)**: Breadth-First Search (BFS).
+- **[Hash Tables](./dataStructures/hashtable/README.md)**: Frequency Counting, Two Sum pattern.
+- **[Heaps (Priority Queues)](./dataStructures/heapAndSort/README.md)**: Top K Elements.
+- **[Binary Trees](./dataStructures/binarytree/README.md)**: DFS & BFS Traversals.
+- **[Tries](./dataStructures/trie/README.md)**: Prefix Searching.
+- **[Graphs](./dataStructures/graph/README.md)**: Representations and Traversals.
+- **[Union-Find](./dataStructures/unionfind/README.md)**: Dynamic Connectivity.
+
+### Algorithms
+- **[Binary Search](./Algorithms/binarysearch/README.md)**: Standard and Boundary Search.
+- **[DFS & BFS](./Algorithms/dfs-bfs/README.md)**: Graph and Tree Traversal.
+- **[Sliding Window](./Algorithms/sliding-window/README.md)**: Fixed and Variable Size Windows.
+- **[Two Pointers](./Algorithms/two-pointer/README.md)**: Opposite Ends and Fast/Slow Pointers.
+- **[Recursion & Backtracking](./Algorithms/recursion-backtracking/README.md)**: Permutations, Subsets, Combinations.
+- **[Dynamic Programming](./Algorithms/dynamic-problem/README.md)**: Memoization and Tabulation.
+- **[Greedy Algorithms](./Algorithms/greedy-algorithum/README.md)**: Locally Optimal Choices.
+- **[Topological Sort](./Algorithms/topologicalsort/README.md)**: For Directed Acyclic Graphs.
 ---
 
 ## Contests
@@ -159,6 +171,12 @@ Sharpen your skills and benchmark yourself with real contest problems:
 ## Important Links
 
 - [Hacking Software Engineering Interviews](https://github.com/neerazz/FAANG/blob/master/ImportantLinks.md#hacking-software-engineering-interviews)
+
+---
+
+## LeetCode FAQ
+
+- **[Frequently Asked Technical Questions](./LeetCode_FAQ.md)**: Answers to common questions about the LeetCode platform, such as dealing with TLEs, static variables, and submission environments.
 
 ---
 
