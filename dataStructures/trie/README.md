@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Trie (Prefix Tree)"
+parent: "Data Structures"
+---
+
 # Trie (Prefix Tree)
 
 A Trie, also known as a prefix tree, is a special tree-like data structure that is very efficient for retrieving a key in a dataset of strings. With a trie, you can search for a word or a prefix in a time complexity proportional to the length of the word, `O(L)`, where `L` is the length of the word.

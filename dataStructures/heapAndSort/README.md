@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Heaps and Sorting"
+parent: "Data Structures"
+---
+
 # Heaps and Sorting
 
 This section covers the heap data structure and various sorting algorithms.

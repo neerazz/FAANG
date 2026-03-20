@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Queues"
+parent: "Data Structures"
+---
+
 # Queues
 
 A queue is a linear data structure that follows the First-In, First-Out (FIFO) principle. This means the first element added to the queue will be the first one to be removed.
@@ -33,6 +39,7 @@ Queues are ideal for problems that involve:
 BFS is a common graph and tree traversal algorithm that uses a queue to explore nodes level by level.
 
 ```java
+{% raw %}
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Set;
@@ -79,6 +86,7 @@ class Solution {
         }
     }
 }
+{% endraw %}
 ```
 
 **Example Problem:** [Number of Islands](https://leetcode.com/problems/number-of-islands/)

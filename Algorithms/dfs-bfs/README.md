@@ -1,3 +1,9 @@
+---
+layout: default
+title: "DFS (Depth-First Search) and BFS (Breadth-First Search)"
+parent: "Algorithms"
+---
+
 # DFS (Depth-First Search) and BFS (Breadth-First Search)
 
 DFS and BFS are two fundamental graph and tree traversal algorithms.
@@ -17,6 +23,7 @@ DFS explores as far as possible along each branch before backtracking. It can be
 This is the most common way to implement DFS for graph/grid problems.
 
 ```java
+{% raw %}
 class Solution {
     public void dfs(int r, int c, boolean[][] visited, char[][] grid) {
         int ROWS = grid.length;
@@ -36,6 +43,7 @@ class Solution {
         dfs(r, c - 1, visited, grid);
     }
 }
+{% endraw %}
 ```
 
 ---
@@ -53,6 +61,7 @@ BFS explores all of the neighbor nodes at the present depth prior to moving on t
 ### Template: BFS
 
 ```java
+{% raw %}
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -86,6 +95,7 @@ class Solution {
         }
     }
 }
+{% endraw %}
 ```
 
 **Example Problem for both:** [Number of Islands](https://leetcode.com/problems/number-of-islands/)

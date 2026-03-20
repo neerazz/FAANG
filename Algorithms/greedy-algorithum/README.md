@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Greedy Algorithms"
+parent: "Algorithms"
+---
+
 # Greedy Algorithms
 
 A greedy algorithm is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. It makes the locally optimal choice at each stage with the hope of finding a global optimum.

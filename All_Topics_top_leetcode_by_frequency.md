@@ -1,3 +1,9 @@
+---
+layout: default
+title: "All Topics Top Frequency"
+nav_order: 4
+---
+
 ## LeetCode [Explore](https://leetcode.com/explore/learn/)
 
 | **#** | **Title** | **Acceptance** | **Difficulty** |

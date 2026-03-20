@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Data Structures"
+parent: "Data Structures"
+---
+
 # Data Structures
 
 ## Course assignments

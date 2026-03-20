@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Two Pointers"
+parent: "Algorithms"
+---
+
 # Two Pointers
 
 The two-pointers technique is a common pattern used to solve problems involving sorted arrays or linked lists. It involves using two pointers to iterate through the data structure, often from opposite ends or at different speeds.

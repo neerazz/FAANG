@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Top LeetCode by Company"
+nav_order: 3
+---
+
 # Questions by Companies
 
 ## Google

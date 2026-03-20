@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Linked Lists"
+parent: "Data Structures"
+---
+
 # Linked Lists
 
 A linked list is a linear data structure where elements are not stored in contiguous memory locations. Instead, each element (node) contains a data field and a reference (or link) to the next node in the sequence.

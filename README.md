@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Home"
+nav_order: 1
+permalink: /
+---
+
 <p align="center">
   <img height="100" src="https://www.pcr-online.biz/wp-content/uploads/faang-own-logo-660x330.jpg" alt="FAANG Logo">
 </p>

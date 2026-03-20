@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Algorithmic Toolbox"
+parent: "Algorithms"
+---
+
 # Algorithmic Toolbox
 
 ## Course assignments

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Recursion and Backtracking"
+parent: "Algorithms"
+---
+
 # Recursion and Backtracking
 
 ## Recursion
