@@ -36,6 +36,8 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: |
