@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Sliding Window"
+parent: "Algorithms"
+---
+
 # Sliding Window
 
 The sliding window is a technique used to efficiently solve problems that involve a contiguous subarray or substring. A "window" of a certain size slides over the data, and we perform some computation on the elements within that window.

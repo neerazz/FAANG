@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Dynamic Programming (DP)"
+parent: "Algorithms"
+---
+
 # Dynamic Programming (DP)
 
 Dynamic Programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.

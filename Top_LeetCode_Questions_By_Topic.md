@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Top LeetCode by Topic"
+nav_order: 2
+---
+
 # DataStructures & Algorithm Problems
 
 ## Array, Linked List, Stack, Heap, Graph, Tree, Queue

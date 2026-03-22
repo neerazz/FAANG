@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Graphs"
+parent: "Data Structures"
+---
+
 # Graphs
 
 A graph is a non-linear data structure consisting of **nodes** (or vertices) and **edges** that connect these nodes. Graphs are used to model relationships between objects.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "LeetCode FAQ"
+nav_order: 6
+---
+
 # LeetCode FAQ
 
 This document answers some frequently asked technical questions about the LeetCode platform, based on common user queries.

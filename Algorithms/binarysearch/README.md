@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Binary Search"
+parent: "Algorithms"
+---
+
 # Binary Search
 
 Binary search is a highly efficient searching algorithm that works on **sorted** arrays. It repeatedly divides the search interval in half. If the value of the search key is less than the item in the middle of the interval, it narrows the interval to the lower half. Otherwise, it narrows it to the upper half.

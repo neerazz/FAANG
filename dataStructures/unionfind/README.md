@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Union-Find (Disjoint Set Union)"
+parent: "Data Structures"
+---
+
 # Union-Find (Disjoint Set Union)
 
 The Union-Find data structure, also known as Disjoint Set Union (DSU), is used to keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets. It provides two main operations:

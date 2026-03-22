@@ -1,0 +1,19 @@
+theme: "just-the-docs"
+remote_theme: just-the-docs/just-the-docs
+
+title: FAANG & Modern Tech Interviews
+description: A comprehensive collection of solutions, explanations, and resources for mastering coding interviews at top tech companies.
+url: "https://neerazz.github.io/FAANG"
+baseurl: "/FAANG"
+
+color_scheme: dark
+
+# Heading Anchor Links
+heading_anchors: true
+
+# Navigation Settings
+nav_sort: case_insensitive
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag

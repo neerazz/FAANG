@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Arrays"
+parent: "Data Structures"
+---
+
 # Arrays
 
 An array is a data structure that stores a collection of elements of the same type in contiguous memory locations. Each element is identified by an index or a key.

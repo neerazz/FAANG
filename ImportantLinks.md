@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Important Links"
+nav_order: 7
+---
+
 # Hacking Software Engineering Interviews
 
 ## Recruiting Platforms with Technical Prescreen

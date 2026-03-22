@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Topological Sort"
+parent: "Algorithms"
+---
+
 # Topological Sort
 
 Topological Sort is a linear ordering of vertices in a **Directed Acyclic Graph (DAG)**. For every directed edge from vertex `u` to vertex `v`, vertex `u` comes before vertex `v` in the ordering.
