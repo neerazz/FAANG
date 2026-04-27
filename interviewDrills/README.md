@@ -21,6 +21,7 @@ Short, runnable drills for candidates who want more than a problem list. Each dr
 | Drill | Pattern | Why it matters |
 | --- | --- | --- |
 | [Top K Frequent Words]({% link interviewDrills/top-k-frequent-words.md %}) | Hash map + bounded heap | Common screening shape for search, ranking, logs, and product analytics questions. |
+| [Longest Substring Without Repeating Characters]({% link interviewDrills/longest-substring-without-repeating.md %}) | Sliding window + last-seen index map | Core string/window question that exposes pointer movement and off-by-one mistakes fast. |
 
 ## Practice rule
 
