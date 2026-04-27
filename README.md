@@ -30,17 +30,18 @@ Tech interviews are evolving, but the fundamentals remain the same. The problems
 
 ## 📚 Table of Contents
 
-1. [Complexities & Big O Explained](#complexities--big-o-explained)
-2. [Resources & Training Material](#resources-and-training-material)
-3. [Data Structures & Algorithm Patterns](#data-structures--algorithm-patterns)
-4. [Contests](#contests)
-5. [System Design](#system-design)
-6. [OOPS Design](#oops-design)
-7. [Important Links](#important-links)
-8. [LeetCode FAQ](#leetcode-faq)
-9. [How to Use This Repo](#how-to-use-this-repo)
-10. [How to Contribute](#how-to-contribute)
-11. [When to Contribute](#when-to-contribute)
+1. [Interview Drills]({% link interviewDrills/README.md %})
+2. [Complexities & Big O Explained](#complexities--big-o-explained)
+3. [Resources & Training Material](#resources-and-training-material)
+4. [Data Structures & Algorithm Patterns](#data-structures--algorithm-patterns)
+5. [Contests](#contests)
+6. [System Design](#system-design)
+7. [OOPS Design](#oops-design)
+8. [Important Links](#important-links)
+9. [LeetCode FAQ](#leetcode-faq)
+10. [How to Use This Repo](#how-to-use-this-repo)
+11. [How to Contribute](#how-to-contribute)
+12. [When to Contribute](#when-to-contribute)
 
 ---
 
