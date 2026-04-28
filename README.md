@@ -11,6 +11,11 @@ permalink: /
 
 # FAANG, the Magnificent Seven & Modern Tech Interviews (2025)
 
+[![Stars](https://img.shields.io/github/stars/neerazz/FAANG?style=social)](https://github.com/neerazz/FAANG/stargazers)
+[![Forks](https://img.shields.io/github/forks/neerazz/FAANG?style=social)](https://github.com/neerazz/FAANG/network/members)
+
+Maintained by **Neeraj Kumar Singh Beshane** — Staff security engineer × peer-reviewed AI-safety researcher (Parafin). I build the boring, invisible parts of security for $8B fintech rails powering Amazon, DoorDash, Walmart & TikTok Shop — and for the AI systems we're all about to depend on. [LinkedIn](https://www.linkedin.com/in/neerajkumarsinghb) · [Medium](https://medium.com/@neerazz) · [ORCID](https://orcid.org/0000-0002-0097-4450)
+
 > **Note:** While the term "FAANG" (Meta, Amazon, Apple, Netflix, Google) is still widely recognized, the tech world in 2025 often refers to the "Magnificent Seven" (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) as the dominant group of companies shaping the industry and interview trends. This repository keeps the FAANG name for legacy and recognition, but covers all major tech interview patterns.
 
 Welcome! This repository is a comprehensive collection of solutions, explanations, and resources for mastering coding interviews at top tech companies. Whether you're preparing for interviews at FAANG, the Magnificent Seven, or any leading tech firm, you'll find:
