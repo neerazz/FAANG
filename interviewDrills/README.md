@@ -21,6 +21,7 @@ Short, runnable drills for candidates who want more than a problem list. Each dr
 | Drill | Pattern | Why it matters |
 | --- | --- | --- |
 | [Top K Frequent Words]({% link interviewDrills/top-k-frequent-words.md %}) | Hash map + bounded heap | Common screening shape for search, ranking, logs, and product analytics questions. |
+| [Daily Temperatures]({% link interviewDrills/daily-temperatures.md %}) | Monotonic decreasing stack of indices | Standard "next greater element" framing — separates candidates who reach for `O(n^2)` from those who recognize the stack pattern. |
 
 ## Practice rule
 
