@@ -23,6 +23,7 @@ Short, runnable drills for candidates who want more than a problem list. Each dr
 | [Top K Frequent Words]({% link interviewDrills/top-k-frequent-words.md %}) | Hash map + bounded heap | Common screening shape for search, ranking, logs, and product analytics questions. |
 | [Daily Temperatures]({% link interviewDrills/daily-temperatures.md %}) | Monotonic decreasing stack of indices | Standard "next greater element" framing — separates candidates who reach for `O(n^2)` from those who recognize the stack pattern. |
 | [LRU Cache]({% link interviewDrills/lru-cache.md %}) | Hash map + doubly linked list with sentinels | The canonical "design a data structure" warmup — checks whether you compose two primitives for O(1) ops instead of grabbing a `LinkedHashMap` one-liner. |
+| [Course Schedule II]({% link interviewDrills/course-schedule-ii.md %}) | Topological sort via Kahn's BFS over indegrees | Tests whether you spot the DAG and reach for an O(V + E) topological order with cycle detection that collapses to a single length check. |
 
 ## Practice rule
 
