@@ -1,20 +1,15 @@
----
-layout: default
-title: "Home"
-nav_order: 1
-permalink: /
----
+
 
 <p align="center">
   <img height="100" src="https://www.pcr-online.biz/wp-content/uploads/faang-own-logo-660x330.jpg" alt="FAANG Logo">
 </p>
 
-# FAANG, the Magnificent Seven & Modern Tech Interviews (2025)
+# FAANG, the Magnificent Seven & Modern Tech Interviews (2026)
 
 [![Stars](https://img.shields.io/github/stars/neerazz/FAANG?style=social)](https://github.com/neerazz/FAANG/stargazers)
 [![Forks](https://img.shields.io/github/forks/neerazz/FAANG?style=social)](https://github.com/neerazz/FAANG/network/members)
 
-Maintained by **Neeraj Kumar Singh Beshane** — Staff security engineer × peer-reviewed AI-safety researcher (Parafin). I build the boring, invisible parts of security for $8B fintech rails powering Amazon, DoorDash, Walmart & TikTok Shop — and for the AI systems we're all about to depend on. [LinkedIn](https://www.linkedin.com/in/neerajkumarsinghb) · [Medium](https://medium.com/@neerazz) · [ORCID](https://orcid.org/0000-0002-0097-4450)
+Maintained by **Neeraj Kumar Singh Beshane** — Staff security engineer × peer-reviewed AI-safety researcher (Parafin). I build the boring, invisible parts of security for $8B fintech rails powering Amazon, DoorDash, Walmart & TikTok Shop — and for the AI systems we're all about to depend on. [LinkedIn](https://www.linkedin.com/in/neerajkumarsinghb) · [Medium](https://medium.com/@neerazz) · [ORCID](https://orcid.org/0009-0002-2125-1805)
 
 > **Note:** While the term "FAANG" (Meta, Amazon, Apple, Netflix, Google) is still widely recognized, the tech world in 2025 often refers to the "Magnificent Seven" (Apple, Microsoft, Alphabet, Amazon, Nvidia, Meta, Tesla) as the dominant group of companies shaping the industry and interview trends. This repository keeps the FAANG name for legacy and recognition, but covers all major tech interview patterns.
 
@@ -35,18 +30,18 @@ Tech interviews are evolving, but the fundamentals remain the same. The problems
 
 ## 📚 Table of Contents
 
-1. [Interview Drills]({% link interviewDrills/README.md %})
-2. [Complexities & Big O Explained](#complexities--big-o-explained)
-3. [Resources & Training Material](#resources-and-training-material)
-4. [Data Structures & Algorithm Patterns](#data-structures--algorithm-patterns)
-5. [Contests](#contests)
-6. [System Design](#system-design)
-7. [OOPS Design](#oops-design)
-8. [Important Links](#important-links)
-9. [LeetCode FAQ](#leetcode-faq)
-10. [How to Use This Repo](#how-to-use-this-repo)
-11. [How to Contribute](#how-to-contribute)
-12. [When to Contribute](#when-to-contribute)
+- [Interview Drills](.interviewDrills/README.md)
+- [Complexities & Big O Explained](#complexities--big-o-explained)
+- [Resources & Training Material](#resources-and-training-material)
+- [Data Structures & Algorithm Patterns](#data-structures--algorithm-patterns)
+- [Contests](#contests)
+- [System Design](#system-design)
+- [OOPS Design](#oops-design)
+- [Important Links](#important-links)
+- [LeetCode FAQ](#leetcode-faq)
+- [How to Use This Repo](#how-to-use-this-repo)
+- [How to Contribute](#how-to-contribute)
+- [When to Contribute](#when-to-contribute)
 
 ---
 
