@@ -1,6 +1,6 @@
 /**
  * Created on:  Jun 30, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ#problem-statement
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/longest-subarray-with-ones-after-replacement-hard
  */
 
 public class ReplacingOnes {

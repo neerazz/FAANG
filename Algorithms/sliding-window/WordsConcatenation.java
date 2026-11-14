@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/Y5YDWzqPn7O
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-4-words-concatenation-hard
  */
 
 public class WordsConcatenation {

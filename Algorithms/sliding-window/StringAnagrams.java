@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/YQ8N2OZq0VM
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-2string-anagrams-hard
  */
 
 public class StringAnagrams {

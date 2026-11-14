@@ -74,7 +74,7 @@ nav_order: 7
 * [MassiveTechInterview Blogspot](http://massivetechinterview.blogspot.com)
 * [Quora: How do I prepare to answer design questions in a technical-interview](https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview)
 * [Gainlo Blog: System Design Interview Questions](http://blog.gainlo.co/index.php/category/system-design-interview-questions)
-* [Educative: Grokking the System Design Interview](https://www.educative.io/collection/5668639101419520/5649050225344512)
+* [Educative: Grokking the System Design Interview](https://www.designgurus.io/course/grokking-the-system-design-interview)
 * [The System Design Primer, Donne Martin](https://github.com/donnemartin/system-design-primer)
 * [System_Design Preparation, by Shashank Khare](https://github.com/shashank88/system_design)
 * [Fight for 200 commits, by Eric Zhang](https://github.com/FreemanZhang/system-design)

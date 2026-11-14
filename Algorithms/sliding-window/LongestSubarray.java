@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 04, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/B6VypRxPolJ
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/longest-subarray-with-ones-after-replacement-hard
  */
 
 public class LongestSubarray {

@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/7nPmB8mZ6vj
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-rotation-count-medium
  */
 
 public class RotationCountOfRotatedArray {

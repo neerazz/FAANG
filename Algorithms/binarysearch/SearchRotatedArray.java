@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/N8XZQ1q1O46
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-2-search-in-rotated-array-medium
  */
 
 public class SearchRotatedArray {

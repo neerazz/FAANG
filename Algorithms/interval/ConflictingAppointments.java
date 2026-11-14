@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Jul 08, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/qVV79nGVgAG
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/conflicting-appointments-medium
  */
 
 public class ConflictingAppointments {

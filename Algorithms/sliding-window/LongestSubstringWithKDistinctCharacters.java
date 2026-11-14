@@ -3,7 +3,7 @@ import java.util.Map;
 
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/YQQwQMWLx80
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/longest-substring-with-k-distinct-characters-medium
  */
 
 public class LongestSubstringWithKDistinctCharacters {

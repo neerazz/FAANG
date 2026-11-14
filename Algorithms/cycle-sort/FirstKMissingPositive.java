@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * Created on:  Jul 13, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/q2LA7G0ANX0
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-find-the-first-k-missing-positive-numbers-hard
  */
 
 public class FirstKMissingPositive {

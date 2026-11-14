@@ -3,7 +3,7 @@ import java.util.Set;
 
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/YMzBx1gE5EO
+ * Questions: https://www.designgurus.io/course/grokking-the-coding-interview
  */
 
 public class NoRepeatSubstring {

@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/mElknO5OKBO
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/triplets-with-smaller-sum-medium
  * Given an array arr of unsorted numbers and a target sum, count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k are three different indices. Write a function to return the count of such triplets.
  * <p>
  * Example 1:

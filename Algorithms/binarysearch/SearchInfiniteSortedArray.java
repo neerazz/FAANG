@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/B1ZW38kXJB2
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/search-in-a-sorted-infinite-array-medium
  */
 
 public class SearchInfiniteSortedArray {

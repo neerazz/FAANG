@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/N8vB7OVYo2D
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-permutation-in-a-string-hard
  */
 
 public class PermutationInAString {

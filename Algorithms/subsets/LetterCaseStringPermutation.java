@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/xVlKmyX542P
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/string-permutations-by-changing-case-medium
  */
 
 public class LetterCaseStringPermutation {

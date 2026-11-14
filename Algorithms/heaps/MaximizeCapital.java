@@ -2,7 +2,7 @@ import java.util.PriorityQueue;
 
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/B6x69OLX4jY
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/maximize-capital-hard
  */
 
 public class MaximizeCapital {

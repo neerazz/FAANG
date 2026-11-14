@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Jul 13, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/B8qXVqVwDKY
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/cyclic-sort-easy
  */
 
 public class CycleSort {

@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 18, 2021
- * Ref : https://www.educative.io/courses/grokking-the-coding-interview/RMyRR6wZoYK
+ * Ref : https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/bitonic-array-maximum-easy
  * <p>
  * Find the maximum value in a given Bitonic array. An array is considered bitonic if it is monotonically increasing and then monotonically decreasing. Monotonically increasing or decreasing means that for any index i in the array arr[i] != arr[i+1].
  * <p>

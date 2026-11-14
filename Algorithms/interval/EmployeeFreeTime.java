@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * Created on:  Jul 08, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/xVlyyv3rR93
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-employee-free-time-hard
  */
 
 public class EmployeeFreeTime {

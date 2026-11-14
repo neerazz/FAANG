@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/longest-substring-with-same-letters-after-replacement-hard
  */
 
 public class LongestSubstringWithSameLettersAfterReplacement {

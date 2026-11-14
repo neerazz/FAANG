@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/R1B78K9oBEz
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/number-range-medium
  */
 
 public class FindRange {

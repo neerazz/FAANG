@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/3YlQz7PE7OA
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/triplet-sum-close-to-target-medium
  */
 
 public class TripletSumCloseToTarget {

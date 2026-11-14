@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/xVV1jA29YK9
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-tree-diameter-medium
  * Given a binary tree, find the length of its diameter. The diameter of a tree is the number of nodes on the longest path between any two leaf nodes. The diameter of a tree may or may not pass through the root.
  * <p>
  * Note: You can always assume that there are at least two leaf nodes in the given tree.

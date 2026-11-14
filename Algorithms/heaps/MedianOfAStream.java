@@ -2,7 +2,7 @@ import java.util.PriorityQueue;
 
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3Yj2BmpyEy4
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/find-the-median-of-a-number-stream-medium
  */
 
 class MedianOfAStream {

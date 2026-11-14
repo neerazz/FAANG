@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/gxk639mrr5r
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/triplet-sum-to-zero-medium
  */
 
 public class TripletSumToZero {

@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 02, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3wDJAYG2pAR
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-smallest-window-containing-substring-hard
  */
 
 public class MinimumWindowSubstringSD {

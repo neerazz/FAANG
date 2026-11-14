@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/RMV1GV1yPYz
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-6-subarrays-with-product-less-than-a-target-medium
  * Problem Statement #
  * Given an array with positive numbers and a target number, find all of its contiguous subarrays whose product is less than the target number.
  * <p>

@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 06, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/N7rwVyAZl6D
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/linkedlist-cycle-easy
  */
 
 public class LinkedListCycleLength {
