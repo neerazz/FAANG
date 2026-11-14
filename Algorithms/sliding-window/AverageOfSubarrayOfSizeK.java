@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created on:  Jun 28, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/7D5NNZWQ8Wr
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/introduction-to-sliding-window-pattern
  */
 
 public class AverageOfSubarrayOfSizeK {

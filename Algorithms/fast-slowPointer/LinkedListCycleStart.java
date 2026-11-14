@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 06, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/N7pvEn86YrN
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/start-of-linkedlist-cycle-medium
  */
 
 public class LinkedListCycleStart {

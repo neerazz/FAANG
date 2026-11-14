@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 07, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/gx6BMKoWqR9
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-count-of-structurally-unique-binary-search-trees-hard
  */
 
 public class CountUniqueTrees {

@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 /**
  * Created on:  Jul 08, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/xVoBRZz7RwP
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-minimum-meeting-rooms-hard
  */
 
 public class MinimumMeetingRooms {

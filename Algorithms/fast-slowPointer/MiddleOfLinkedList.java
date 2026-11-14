@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 06, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3j5GD3EQMGM
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/middle-of-the-linkedlist-easy
  */
 
 public class MiddleOfLinkedList {

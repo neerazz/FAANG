@@ -3,7 +3,7 @@ import java.util.Map;
 
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/Bn2KLlOR0lQ
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/fruits-into-baskets-medium
  */
 
 public class FruitsIntoBaskets {

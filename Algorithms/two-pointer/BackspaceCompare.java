@@ -2,7 +2,7 @@ import java.util.Stack;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/g7pBzR12YPl
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-2-comparing-strings-containing-backspaces-medium
  */
 
 public class BackspaceCompare {

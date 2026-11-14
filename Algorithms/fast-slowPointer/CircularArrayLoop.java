@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 07, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3jY0GKpPDxr
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-3-cycle-in-a-circular-array-hard
  */
 
 public class CircularArrayLoop {

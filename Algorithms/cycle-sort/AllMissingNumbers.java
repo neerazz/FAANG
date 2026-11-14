@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Created on:  Jul 13, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/Y52qNM0ljWK
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/find-all-missing-numbers-easy
  */
 
 public class AllMissingNumbers {

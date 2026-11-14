@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/mymvP915LY9
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/minimum-difference-element-medium
  */
 
 public class MinimumDifference {

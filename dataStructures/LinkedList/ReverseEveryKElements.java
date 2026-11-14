@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/RMZylvkGznR
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/reverse-every-kelement-sublist-medium
  * <p>
  * Given the head of a LinkedList and a number ‘k’, reverse every ‘k’ sized sub-list starting from the head.
  * <p>

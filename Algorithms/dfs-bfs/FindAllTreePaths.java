@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/B815A0y2Ajn
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/all-paths-for-a-sum-medium
  */
 
 public class FindAllTreePaths {

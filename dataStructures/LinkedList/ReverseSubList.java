@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 14, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/qVANqMonoB2#problem-statement
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/reverse-a-sublist-medium
  */
 
 public class ReverseSubList {

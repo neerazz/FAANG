@@ -1,6 +1,6 @@
 /**
  * Created on:  Jun 30, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/R8DVgjq78yR#problem-statement
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/longest-substring-with-same-letters-after-replacement-hard
  */
 
 public class CharacterReplacement {

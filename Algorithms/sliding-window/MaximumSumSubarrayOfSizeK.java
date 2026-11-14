@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 05, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/JPKr0kqLGNP
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/maximum-sum-subarray-of-size-k-easy
  */
 
 public class MaximumSumSubarrayOfSizeK {

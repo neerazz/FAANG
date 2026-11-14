@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 08, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/R8LzZQlj8lO
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/orderagnostic-binary-search-easy
  */
 
 public class OrderAgnosticBinarySearch {

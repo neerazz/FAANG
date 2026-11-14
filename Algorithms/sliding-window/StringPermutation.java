@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Jun 30, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/N8vB7OVYo2D#permutation-in-a-string-hard
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-permutation-in-a-string-hard
  */
 
 public class StringPermutation {

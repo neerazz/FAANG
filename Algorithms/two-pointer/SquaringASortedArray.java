@@ -1,6 +1,6 @@
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/R1ppNG3nV9R
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/squaring-a-sorted-array-easy
  */
 
 public class SquaringASortedArray {

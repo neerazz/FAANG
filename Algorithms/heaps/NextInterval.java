@@ -3,7 +3,7 @@ import java.util.TreeSet;
 
 /**
  * Created on:  Jul 16, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/gkkmqXO6zrY
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-next-interval-hard
  */
 
 public class NextInterval {

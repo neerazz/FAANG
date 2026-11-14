@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Created on:  Jul 08, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3jKlyNMJPEM
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/insert-interval-medium
  */
 
 public class InsertInterval {

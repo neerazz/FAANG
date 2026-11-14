@@ -1,6 +1,6 @@
 /**
  * Created on:  Nov 13, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/xog6q15W9GP
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/pair-with-target-sum-easy
  * Problem Statement #
  * Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target.
  * <p>

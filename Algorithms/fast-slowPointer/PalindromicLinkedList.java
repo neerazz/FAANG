@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 06, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/B1PzmqOKDLQ
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-palindrome-linkedlist-medium
  */
 
 public class PalindromicLinkedList {

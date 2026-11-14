@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Created on:  Oct 07, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/gx7O7nO0R8l
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-1-evaluate-expression-hard
  */
 
 public class EvaluateExpression {

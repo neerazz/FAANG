@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Created on:  Oct 07, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/3j9V2QL3Ky9
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-2-structurally-unique-binary-search-trees-hard
  */
 
 public class UniqueTrees {

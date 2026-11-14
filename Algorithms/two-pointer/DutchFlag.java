@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 /**
  * Created on:  Oct 06, 2020
- * Questions: https://www.educative.io/courses/grokking-the-coding-interview/RMBxV6jz6Q0
+ * Questions: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/dutch-national-flag-problem-medium
  */
 
 public class DutchFlag {

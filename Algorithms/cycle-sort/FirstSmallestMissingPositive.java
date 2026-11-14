@@ -1,6 +1,6 @@
 /**
  * Created on:  Jul 13, 2021
- * Ref: https://www.educative.io/courses/grokking-the-coding-interview/3jEXWgB5ZmM
+ * Ref: https://www.designgurus.io/course-play/grokking-the-coding-interview/doc/problem-challenge-2-find-the-smallest-missing-positive-number-medium
  */
 
 public class FirstSmallestMissingPositive {
